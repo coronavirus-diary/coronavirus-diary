@@ -17,13 +17,31 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  encrypted_moor:
+    path: dependencies/moor/extras/encryption
   equatable: ^1.1.1
   flutter:
     sdk: flutter
   flutter_bloc: ^3.2.0
   hydrated_bloc: ^3.0.0
   meta: ^1.1.8
+  moor:
+    path: dependencies/moor/moor
+  moor_ffi:
+    path: dependencies/moor/moor_ffi
+  path_provider: ^1.6.5
+  path: ^1.6.4
+  sqflite: any
   timeline_list: ^0.0.5
+
+dependency_overrides:
+  moor_generator:
+    path: dependencies/moor/moor_generator
+  sqflite:
+    git:
+      url: https://www.github.com/davidmartos96/sqflite_sqlcipher.git
+      path: sqflite
+      ref: 50a4ac06b323e1ce3d0cd055125a6f4a7454f2d5
 
 dev_dependencies:
   build_runner: ^1.8.0

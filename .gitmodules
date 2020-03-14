@@ -1,0 +1,3 @@
+[submodule "dependencies/moor"]
+	path = dependencies/moor
+	url = git@github.com:simolus3/moor.git
