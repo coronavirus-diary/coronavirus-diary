@@ -16,6 +16,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
   final double locationAltitude;
   final SubjectiveQuestions subjectiveQuestions;
   final Vitals vitals;
+  final String assessment;
   Checkup(
       {@required this.id,
       @required this.created,
@@ -23,8 +24,9 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       this.locationLong,
       this.locationAccuracy,
       this.locationAltitude,
-      @required this.subjectiveQuestions,
-      @required this.vitals});
+      this.subjectiveQuestions,
+      this.vitals,
+      this.assessment});
   factory Checkup.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
@@ -49,6 +51,8 @@ class Checkup extends DataClass implements Insertable<Checkup> {
               data['${effectivePrefix}subjective_questions'])),
       vitals: $CheckupsTable.$converter1.mapToDart(
           stringType.mapFromDatabaseResponse(data['${effectivePrefix}vitals'])),
+      assessment: stringType
+          .mapFromDatabaseResponse(data['${effectivePrefix}assessment']),
     );
   }
   factory Checkup.fromJson(Map<String, dynamic> json,
@@ -64,6 +68,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       subjectiveQuestions:
           serializer.fromJson<SubjectiveQuestions>(json['subjectiveQuestions']),
       vitals: serializer.fromJson<Vitals>(json['vitals']),
+      assessment: serializer.fromJson<String>(json['assessment']),
     );
   }
   @override
@@ -79,6 +84,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       'subjectiveQuestions':
           serializer.toJson<SubjectiveQuestions>(subjectiveQuestions),
       'vitals': serializer.toJson<Vitals>(vitals),
+      'assessment': serializer.toJson<String>(assessment),
     };
   }
 
@@ -106,6 +112,9 @@ class Checkup extends DataClass implements Insertable<Checkup> {
           : Value(subjectiveQuestions),
       vitals:
           vitals == null && nullToAbsent ? const Value.absent() : Value(vitals),
+      assessment: assessment == null && nullToAbsent
+          ? const Value.absent()
+          : Value(assessment),
     );
   }
 
@@ -117,7 +126,8 @@ class Checkup extends DataClass implements Insertable<Checkup> {
           double locationAccuracy,
           double locationAltitude,
           SubjectiveQuestions subjectiveQuestions,
-          Vitals vitals}) =>
+          Vitals vitals,
+          String assessment}) =>
       Checkup(
         id: id ?? this.id,
         created: created ?? this.created,
@@ -127,6 +137,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
         locationAltitude: locationAltitude ?? this.locationAltitude,
         subjectiveQuestions: subjectiveQuestions ?? this.subjectiveQuestions,
         vitals: vitals ?? this.vitals,
+        assessment: assessment ?? this.assessment,
       );
   @override
   String toString() {
@@ -138,7 +149,8 @@ class Checkup extends DataClass implements Insertable<Checkup> {
           ..write('locationAccuracy: $locationAccuracy, ')
           ..write('locationAltitude: $locationAltitude, ')
           ..write('subjectiveQuestions: $subjectiveQuestions, ')
-          ..write('vitals: $vitals')
+          ..write('vitals: $vitals, ')
+          ..write('assessment: $assessment')
           ..write(')'))
         .toString();
   }
@@ -156,8 +168,10 @@ class Checkup extends DataClass implements Insertable<Checkup> {
                       locationAccuracy.hashCode,
                       $mrjc(
                           locationAltitude.hashCode,
-                          $mrjc(subjectiveQuestions.hashCode,
-                              vitals.hashCode))))))));
+                          $mrjc(
+                              subjectiveQuestions.hashCode,
+                              $mrjc(
+                                  vitals.hashCode, assessment.hashCode)))))))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
@@ -169,7 +183,8 @@ class Checkup extends DataClass implements Insertable<Checkup> {
           other.locationAccuracy == this.locationAccuracy &&
           other.locationAltitude == this.locationAltitude &&
           other.subjectiveQuestions == this.subjectiveQuestions &&
-          other.vitals == this.vitals);
+          other.vitals == this.vitals &&
+          other.assessment == this.assessment);
 }
 
 class CheckupsCompanion extends UpdateCompanion<Checkup> {
@@ -181,6 +196,7 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
   final Value<double> locationAltitude;
   final Value<SubjectiveQuestions> subjectiveQuestions;
   final Value<Vitals> vitals;
+  final Value<String> assessment;
   const CheckupsCompanion({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
@@ -190,6 +206,7 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
     this.locationAltitude = const Value.absent(),
     this.subjectiveQuestions = const Value.absent(),
     this.vitals = const Value.absent(),
+    this.assessment = const Value.absent(),
   });
   CheckupsCompanion.insert({
     this.id = const Value.absent(),
@@ -198,10 +215,10 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
     this.locationLong = const Value.absent(),
     this.locationAccuracy = const Value.absent(),
     this.locationAltitude = const Value.absent(),
-    @required SubjectiveQuestions subjectiveQuestions,
-    @required Vitals vitals,
-  })  : subjectiveQuestions = Value(subjectiveQuestions),
-        vitals = Value(vitals);
+    this.subjectiveQuestions = const Value.absent(),
+    this.vitals = const Value.absent(),
+    this.assessment = const Value.absent(),
+  });
   CheckupsCompanion copyWith(
       {Value<int> id,
       Value<DateTime> created,
@@ -210,7 +227,8 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
       Value<double> locationAccuracy,
       Value<double> locationAltitude,
       Value<SubjectiveQuestions> subjectiveQuestions,
-      Value<Vitals> vitals}) {
+      Value<Vitals> vitals,
+      Value<String> assessment}) {
     return CheckupsCompanion(
       id: id ?? this.id,
       created: created ?? this.created,
@@ -220,6 +238,7 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
       locationAltitude: locationAltitude ?? this.locationAltitude,
       subjectiveQuestions: subjectiveQuestions ?? this.subjectiveQuestions,
       vitals: vitals ?? this.vitals,
+      assessment: assessment ?? this.assessment,
     );
   }
 }
@@ -312,7 +331,7 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
     return GeneratedTextColumn(
       'subjective_questions',
       $tableName,
-      false,
+      true,
     );
   }
 
@@ -324,7 +343,19 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
     return GeneratedTextColumn(
       'vitals',
       $tableName,
-      false,
+      true,
+    );
+  }
+
+  final VerificationMeta _assessmentMeta = const VerificationMeta('assessment');
+  GeneratedTextColumn _assessment;
+  @override
+  GeneratedTextColumn get assessment => _assessment ??= _constructAssessment();
+  GeneratedTextColumn _constructAssessment() {
+    return GeneratedTextColumn(
+      'assessment',
+      $tableName,
+      true,
     );
   }
 
@@ -337,7 +368,8 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
         locationAccuracy,
         locationAltitude,
         subjectiveQuestions,
-        vitals
+        vitals,
+        assessment
       ];
   @override
   $CheckupsTable get asDslTable => this;
@@ -381,6 +413,10 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
     context.handle(
         _subjectiveQuestionsMeta, const VerificationResult.success());
     context.handle(_vitalsMeta, const VerificationResult.success());
+    if (d.assessment.present) {
+      context.handle(_assessmentMeta,
+          assessment.isAcceptableValue(d.assessment.value, _assessmentMeta));
+    }
     return context;
   }
 
@@ -424,6 +460,9 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
       final converter = $CheckupsTable.$converter1;
       map['vitals'] =
           Variable<String, StringType>(converter.mapToSql(d.vitals.value));
+    }
+    if (d.assessment.present) {
+      map['assessment'] = Variable<String, StringType>(d.assessment.value);
     }
     return map;
   }
