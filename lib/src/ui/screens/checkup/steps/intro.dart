@@ -13,12 +13,13 @@ class _IntroStepState extends State<IntroStep> {
   @override
   Widget build(BuildContext context) {
     return QuestionView(
+      padding: EdgeInsets.only(bottom: 50),
       questions: [
         Question(
           title: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(bottom: 40),
+                padding: EdgeInsets.only(bottom: 20),
                 child: FaIcon(
                   FontAwesomeIcons.check,
                   color: Colors.white.withOpacity(0.7),
@@ -26,9 +27,12 @@ class _IntroStepState extends State<IntroStep> {
                 ),
               ),
               Text(
-                "It's time for your checkup. This blurb will prepare you for it and highlight your right to submit only the data that you choose.",
+                "It's time for your checkup.",
               ),
             ],
+          ),
+          subtitle: Text(
+            "This blurb will prepare you for it and highlight your right to submit only the data that you choose.",
           ),
         ),
       ],

@@ -14,6 +14,7 @@ class _CoughStepState extends State<CoughStep> {
   @override
   Widget build(BuildContext context) {
     return QuestionView(
+      padding: EdgeInsets.only(bottom: 50),
       questions: [
         Question(
           title: Text('Do you have a cough?'),

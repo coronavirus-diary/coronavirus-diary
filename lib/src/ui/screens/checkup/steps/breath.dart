@@ -14,6 +14,7 @@ class _BreathStepState extends State<BreathStep> {
   @override
   Widget build(BuildContext context) {
     return QuestionView(
+      padding: EdgeInsets.only(bottom: 50),
       questions: [
         Question(
           title: Text('Are you experiencing shortness of breath?'),

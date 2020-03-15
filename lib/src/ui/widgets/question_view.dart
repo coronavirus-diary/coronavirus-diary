@@ -15,8 +15,13 @@ class Question {
 class QuestionView extends StatefulWidget {
   final List<Question> questions;
   final Color color;
+  final EdgeInsetsGeometry padding;
 
-  const QuestionView({@required this.questions, this.color});
+  const QuestionView({
+    @required this.questions,
+    this.color,
+    this.padding,
+  });
 
   @override
   _QuestionViewState createState() => _QuestionViewState();
@@ -37,12 +42,15 @@ class _QuestionViewState extends State<QuestionView> {
                   ),
             ),
             if (question.subtitle != null)
-              DefaultTextStyle(
-                child: question.subtitle,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle.copyWith(
-                      color: Colors.white,
-                    ),
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: DefaultTextStyle(
+                  child: question.subtitle,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.subtitle.copyWith(
+                        color: Colors.white,
+                      ),
+                ),
               ),
             if (question.input != null)
               Padding(
@@ -58,6 +66,7 @@ class _QuestionViewState extends State<QuestionView> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: widget.padding,
       color: widget.color ?? Theme.of(context).primaryColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
