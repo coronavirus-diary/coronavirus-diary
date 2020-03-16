@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:coronavirus_diary/src/blocs/activity/activity.dart';
 import 'package:coronavirus_diary/src/ui/screens/activity/activity_list.dart';
@@ -19,6 +20,13 @@ class _ActivityScreenState extends State<ActivityScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('My activity'),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () =>
+                Navigator.pushNamed(context, ActivityCreateScreen.routeName),
+            icon: FaIcon(FontAwesomeIcons.plus),
+          ),
+        ],
       ),
       body: BlocBuilder<ActivityBloc, ActivityHistoryState>(
         builder: (context, state) {
@@ -29,27 +37,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
             }
             return LoadingIndicator('Loading activity');
           } else if (state is ActivityHistoryLoaded) {
-            return Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: RaisedButton(
-                        onPressed: () => Navigator.pushNamed(
-                            context, ActivityCreateScreen.routeName),
-                        child: Text('Add an activity'),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: ActivityList(activities: state.activities),
-                  ),
-                ],
-              ),
-            );
+            return ActivityList(activities: state.activities);
           } else {
             return Center(
               child: Text('Activity loading failed.'),
