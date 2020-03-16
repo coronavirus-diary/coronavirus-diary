@@ -30,15 +30,18 @@ class _ActivityScreenState extends State<ActivityScreen> {
             return LoadingIndicator('Loading activity');
           } else if (state is ActivityHistoryLoaded) {
             return Container(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: <Widget>[
-                  SizedBox(
-                    width: double.infinity,
-                    child: RaisedButton(
-                      onPressed: () => Navigator.pushNamed(
-                          context, ActivityCreateScreen.routeName),
-                      child: Text('Add an activity'),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: RaisedButton(
+                        onPressed: () => Navigator.pushNamed(
+                            context, ActivityCreateScreen.routeName),
+                        child: Text('Add an activity'),
+                      ),
                     ),
                   ),
                   Expanded(
