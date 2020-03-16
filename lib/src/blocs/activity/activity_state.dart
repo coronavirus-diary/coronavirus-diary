@@ -1,26 +1,26 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:coronavirus_diary/src/data/models/event.dart';
+import 'package:coronavirus_diary/src/data/database/database.dart';
 
-abstract class ActivityState extends Equatable {
-  const ActivityState();
+abstract class ActivityHistoryState extends Equatable {
+  const ActivityHistoryState();
 
   @override
   List<Object> get props => [];
 }
 
-class ActivityNotLoaded extends ActivityState {}
+class ActivityHistoryNotLoaded extends ActivityHistoryState {}
 
-class ActivityLoading extends ActivityState {}
+class ActivityHistoryLoading extends ActivityHistoryState {}
 
-class ActivityLoaded extends ActivityState {
-  final List<Event> events;
+class ActivityHistoryLoaded extends ActivityHistoryState {
+  final List<ActivityWithLocation> activities;
 
-  const ActivityLoaded({this.events});
+  const ActivityHistoryLoaded({this.activities});
 }
 
-class ActivityLoadingFailed extends ActivityState {
+class ActivityHistoryLoadingFailed extends ActivityHistoryState {
   final Exception exception;
 
-  const ActivityLoadingFailed({this.exception});
+  const ActivityHistoryLoadingFailed({this.exception});
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:coronavirus_diary/src/data/models/event.dart';
+import 'package:coronavirus_diary/src/data/database/database.dart';
 
 class LocationCard extends StatelessWidget {
-  final LocationEvent locationEvent;
+  final ActivityWithLocation activity;
 
-  const LocationCard([this.locationEvent]);
+  const LocationCard([this.activity]);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,8 @@ class LocationCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.title,
               ),
             ),
-            Text('Latitude: ${locationEvent.latitude}'),
-            Text('Longitude: ${locationEvent.longitude}'),
+            Text('Latitude: ${activity.location.lat}'),
+            Text('Longitude: ${activity.location.long}'),
           ],
         ),
       ),

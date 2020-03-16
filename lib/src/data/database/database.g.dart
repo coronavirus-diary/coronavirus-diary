@@ -7,17 +7,257 @@ part of 'database.dart';
 // **************************************************************************
 
 // ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
+class Activity extends DataClass implements Insertable<Activity> {
+  final int id;
+  final DateTime created;
+  final int location_id;
+  final String participants;
+  Activity(
+      {@required this.id,
+      @required this.created,
+      this.location_id,
+      this.participants});
+  factory Activity.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+      {String prefix}) {
+    final effectivePrefix = prefix ?? '';
+    final intType = db.typeSystem.forDartType<int>();
+    final dateTimeType = db.typeSystem.forDartType<DateTime>();
+    final stringType = db.typeSystem.forDartType<String>();
+    return Activity(
+      id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
+      created: dateTimeType
+          .mapFromDatabaseResponse(data['${effectivePrefix}created']),
+      location_id: intType
+          .mapFromDatabaseResponse(data['${effectivePrefix}location_id']),
+      participants: stringType
+          .mapFromDatabaseResponse(data['${effectivePrefix}participants']),
+    );
+  }
+  factory Activity.fromJson(Map<String, dynamic> json,
+      {ValueSerializer serializer}) {
+    serializer ??= moorRuntimeOptions.defaultSerializer;
+    return Activity(
+      id: serializer.fromJson<int>(json['id']),
+      created: serializer.fromJson<DateTime>(json['created']),
+      location_id: serializer.fromJson<int>(json['location_id']),
+      participants: serializer.fromJson<String>(json['participants']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer serializer}) {
+    serializer ??= moorRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'created': serializer.toJson<DateTime>(created),
+      'location_id': serializer.toJson<int>(location_id),
+      'participants': serializer.toJson<String>(participants),
+    };
+  }
+
+  @override
+  ActivitiesCompanion createCompanion(bool nullToAbsent) {
+    return ActivitiesCompanion(
+      id: id == null && nullToAbsent ? const Value.absent() : Value(id),
+      created: created == null && nullToAbsent
+          ? const Value.absent()
+          : Value(created),
+      location_id: location_id == null && nullToAbsent
+          ? const Value.absent()
+          : Value(location_id),
+      participants: participants == null && nullToAbsent
+          ? const Value.absent()
+          : Value(participants),
+    );
+  }
+
+  Activity copyWith(
+          {int id, DateTime created, int location_id, String participants}) =>
+      Activity(
+        id: id ?? this.id,
+        created: created ?? this.created,
+        location_id: location_id ?? this.location_id,
+        participants: participants ?? this.participants,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('Activity(')
+          ..write('id: $id, ')
+          ..write('created: $created, ')
+          ..write('location_id: $location_id, ')
+          ..write('participants: $participants')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => $mrjf($mrjc(
+      id.hashCode,
+      $mrjc(created.hashCode,
+          $mrjc(location_id.hashCode, participants.hashCode))));
+  @override
+  bool operator ==(dynamic other) =>
+      identical(this, other) ||
+      (other is Activity &&
+          other.id == this.id &&
+          other.created == this.created &&
+          other.location_id == this.location_id &&
+          other.participants == this.participants);
+}
+
+class ActivitiesCompanion extends UpdateCompanion<Activity> {
+  final Value<int> id;
+  final Value<DateTime> created;
+  final Value<int> location_id;
+  final Value<String> participants;
+  const ActivitiesCompanion({
+    this.id = const Value.absent(),
+    this.created = const Value.absent(),
+    this.location_id = const Value.absent(),
+    this.participants = const Value.absent(),
+  });
+  ActivitiesCompanion.insert({
+    this.id = const Value.absent(),
+    this.created = const Value.absent(),
+    this.location_id = const Value.absent(),
+    this.participants = const Value.absent(),
+  });
+  ActivitiesCompanion copyWith(
+      {Value<int> id,
+      Value<DateTime> created,
+      Value<int> location_id,
+      Value<String> participants}) {
+    return ActivitiesCompanion(
+      id: id ?? this.id,
+      created: created ?? this.created,
+      location_id: location_id ?? this.location_id,
+      participants: participants ?? this.participants,
+    );
+  }
+}
+
+class $ActivitiesTable extends Activities
+    with TableInfo<$ActivitiesTable, Activity> {
+  final GeneratedDatabase _db;
+  final String _alias;
+  $ActivitiesTable(this._db, [this._alias]);
+  final VerificationMeta _idMeta = const VerificationMeta('id');
+  GeneratedIntColumn _id;
+  @override
+  GeneratedIntColumn get id => _id ??= _constructId();
+  GeneratedIntColumn _constructId() {
+    return GeneratedIntColumn('id', $tableName, false,
+        hasAutoIncrement: true, declaredAsPrimaryKey: true);
+  }
+
+  final VerificationMeta _createdMeta = const VerificationMeta('created');
+  GeneratedDateTimeColumn _created;
+  @override
+  GeneratedDateTimeColumn get created => _created ??= _constructCreated();
+  GeneratedDateTimeColumn _constructCreated() {
+    return GeneratedDateTimeColumn('created', $tableName, false,
+        defaultValue: currentDateAndTime);
+  }
+
+  final VerificationMeta _location_idMeta =
+      const VerificationMeta('location_id');
+  GeneratedIntColumn _location_id;
+  @override
+  GeneratedIntColumn get location_id => _location_id ??= _constructLocationId();
+  GeneratedIntColumn _constructLocationId() {
+    return GeneratedIntColumn('location_id', $tableName, true,
+        $customConstraints: 'NULL REFERENCES locations(id)');
+  }
+
+  final VerificationMeta _participantsMeta =
+      const VerificationMeta('participants');
+  GeneratedTextColumn _participants;
+  @override
+  GeneratedTextColumn get participants =>
+      _participants ??= _constructParticipants();
+  GeneratedTextColumn _constructParticipants() {
+    return GeneratedTextColumn(
+      'participants',
+      $tableName,
+      true,
+    );
+  }
+
+  @override
+  List<GeneratedColumn> get $columns =>
+      [id, created, location_id, participants];
+  @override
+  $ActivitiesTable get asDslTable => this;
+  @override
+  String get $tableName => _alias ?? 'activities';
+  @override
+  final String actualTableName = 'activities';
+  @override
+  VerificationContext validateIntegrity(ActivitiesCompanion d,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    if (d.id.present) {
+      context.handle(_idMeta, id.isAcceptableValue(d.id.value, _idMeta));
+    }
+    if (d.created.present) {
+      context.handle(_createdMeta,
+          created.isAcceptableValue(d.created.value, _createdMeta));
+    }
+    if (d.location_id.present) {
+      context.handle(_location_idMeta,
+          location_id.isAcceptableValue(d.location_id.value, _location_idMeta));
+    }
+    if (d.participants.present) {
+      context.handle(
+          _participantsMeta,
+          participants.isAcceptableValue(
+              d.participants.value, _participantsMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Activity map(Map<String, dynamic> data, {String tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
+    return Activity.fromData(data, _db, prefix: effectivePrefix);
+  }
+
+  @override
+  Map<String, Variable> entityToSql(ActivitiesCompanion d) {
+    final map = <String, Variable>{};
+    if (d.id.present) {
+      map['id'] = Variable<int, IntType>(d.id.value);
+    }
+    if (d.created.present) {
+      map['created'] = Variable<DateTime, DateTimeType>(d.created.value);
+    }
+    if (d.location_id.present) {
+      map['location_id'] = Variable<int, IntType>(d.location_id.value);
+    }
+    if (d.participants.present) {
+      map['participants'] = Variable<String, StringType>(d.participants.value);
+    }
+    return map;
+  }
+
+  @override
+  $ActivitiesTable createAlias(String alias) {
+    return $ActivitiesTable(_db, alias);
+  }
+}
+
 class Checkup extends DataClass implements Insertable<Checkup> {
   final int id;
   final DateTime created;
-  final int location;
+  final int location_id;
   final SubjectiveQuestions subjectiveQuestions;
   final Vitals vitals;
   final String assessment;
   Checkup(
       {@required this.id,
       @required this.created,
-      this.location,
+      this.location_id,
       this.subjectiveQuestions,
       this.vitals,
       this.assessment});
@@ -31,8 +271,8 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       created: dateTimeType
           .mapFromDatabaseResponse(data['${effectivePrefix}created']),
-      location:
-          intType.mapFromDatabaseResponse(data['${effectivePrefix}location']),
+      location_id: intType
+          .mapFromDatabaseResponse(data['${effectivePrefix}location_id']),
       subjectiveQuestions: $CheckupsTable.$converter0.mapToDart(
           stringType.mapFromDatabaseResponse(
               data['${effectivePrefix}subjective_questions'])),
@@ -48,7 +288,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
     return Checkup(
       id: serializer.fromJson<int>(json['id']),
       created: serializer.fromJson<DateTime>(json['created']),
-      location: serializer.fromJson<int>(json['location']),
+      location_id: serializer.fromJson<int>(json['location_id']),
       subjectiveQuestions:
           serializer.fromJson<SubjectiveQuestions>(json['subjectiveQuestions']),
       vitals: serializer.fromJson<Vitals>(json['vitals']),
@@ -61,7 +301,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'created': serializer.toJson<DateTime>(created),
-      'location': serializer.toJson<int>(location),
+      'location_id': serializer.toJson<int>(location_id),
       'subjectiveQuestions':
           serializer.toJson<SubjectiveQuestions>(subjectiveQuestions),
       'vitals': serializer.toJson<Vitals>(vitals),
@@ -76,9 +316,9 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       created: created == null && nullToAbsent
           ? const Value.absent()
           : Value(created),
-      location: location == null && nullToAbsent
+      location_id: location_id == null && nullToAbsent
           ? const Value.absent()
-          : Value(location),
+          : Value(location_id),
       subjectiveQuestions: subjectiveQuestions == null && nullToAbsent
           ? const Value.absent()
           : Value(subjectiveQuestions),
@@ -93,14 +333,14 @@ class Checkup extends DataClass implements Insertable<Checkup> {
   Checkup copyWith(
           {int id,
           DateTime created,
-          int location,
+          int location_id,
           SubjectiveQuestions subjectiveQuestions,
           Vitals vitals,
           String assessment}) =>
       Checkup(
         id: id ?? this.id,
         created: created ?? this.created,
-        location: location ?? this.location,
+        location_id: location_id ?? this.location_id,
         subjectiveQuestions: subjectiveQuestions ?? this.subjectiveQuestions,
         vitals: vitals ?? this.vitals,
         assessment: assessment ?? this.assessment,
@@ -110,7 +350,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
     return (StringBuffer('Checkup(')
           ..write('id: $id, ')
           ..write('created: $created, ')
-          ..write('location: $location, ')
+          ..write('location_id: $location_id, ')
           ..write('subjectiveQuestions: $subjectiveQuestions, ')
           ..write('vitals: $vitals, ')
           ..write('assessment: $assessment')
@@ -124,7 +364,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       $mrjc(
           created.hashCode,
           $mrjc(
-              location.hashCode,
+              location_id.hashCode,
               $mrjc(subjectiveQuestions.hashCode,
                   $mrjc(vitals.hashCode, assessment.hashCode))))));
   @override
@@ -133,7 +373,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       (other is Checkup &&
           other.id == this.id &&
           other.created == this.created &&
-          other.location == this.location &&
+          other.location_id == this.location_id &&
           other.subjectiveQuestions == this.subjectiveQuestions &&
           other.vitals == this.vitals &&
           other.assessment == this.assessment);
@@ -142,14 +382,14 @@ class Checkup extends DataClass implements Insertable<Checkup> {
 class CheckupsCompanion extends UpdateCompanion<Checkup> {
   final Value<int> id;
   final Value<DateTime> created;
-  final Value<int> location;
+  final Value<int> location_id;
   final Value<SubjectiveQuestions> subjectiveQuestions;
   final Value<Vitals> vitals;
   final Value<String> assessment;
   const CheckupsCompanion({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.location = const Value.absent(),
+    this.location_id = const Value.absent(),
     this.subjectiveQuestions = const Value.absent(),
     this.vitals = const Value.absent(),
     this.assessment = const Value.absent(),
@@ -157,7 +397,7 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
   CheckupsCompanion.insert({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.location = const Value.absent(),
+    this.location_id = const Value.absent(),
     this.subjectiveQuestions = const Value.absent(),
     this.vitals = const Value.absent(),
     this.assessment = const Value.absent(),
@@ -165,14 +405,14 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
   CheckupsCompanion copyWith(
       {Value<int> id,
       Value<DateTime> created,
-      Value<int> location,
+      Value<int> location_id,
       Value<SubjectiveQuestions> subjectiveQuestions,
       Value<Vitals> vitals,
       Value<String> assessment}) {
     return CheckupsCompanion(
       id: id ?? this.id,
       created: created ?? this.created,
-      location: location ?? this.location,
+      location_id: location_id ?? this.location_id,
       subjectiveQuestions: subjectiveQuestions ?? this.subjectiveQuestions,
       vitals: vitals ?? this.vitals,
       assessment: assessment ?? this.assessment,
@@ -202,12 +442,13 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
         defaultValue: currentDateAndTime);
   }
 
-  final VerificationMeta _locationMeta = const VerificationMeta('location');
-  GeneratedIntColumn _location;
+  final VerificationMeta _location_idMeta =
+      const VerificationMeta('location_id');
+  GeneratedIntColumn _location_id;
   @override
-  GeneratedIntColumn get location => _location ??= _constructLocation();
-  GeneratedIntColumn _constructLocation() {
-    return GeneratedIntColumn('location', $tableName, true,
+  GeneratedIntColumn get location_id => _location_id ??= _constructLocationId();
+  GeneratedIntColumn _constructLocationId() {
+    return GeneratedIntColumn('location_id', $tableName, true,
         $customConstraints: 'NULL REFERENCES locations(id)');
   }
 
@@ -251,7 +492,7 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
 
   @override
   List<GeneratedColumn> get $columns =>
-      [id, created, location, subjectiveQuestions, vitals, assessment];
+      [id, created, location_id, subjectiveQuestions, vitals, assessment];
   @override
   $CheckupsTable get asDslTable => this;
   @override
@@ -269,9 +510,9 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
       context.handle(_createdMeta,
           created.isAcceptableValue(d.created.value, _createdMeta));
     }
-    if (d.location.present) {
-      context.handle(_locationMeta,
-          location.isAcceptableValue(d.location.value, _locationMeta));
+    if (d.location_id.present) {
+      context.handle(_location_idMeta,
+          location_id.isAcceptableValue(d.location_id.value, _location_idMeta));
     }
     context.handle(
         _subjectiveQuestionsMeta, const VerificationResult.success());
@@ -300,8 +541,8 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
     if (d.created.present) {
       map['created'] = Variable<DateTime, DateTimeType>(d.created.value);
     }
-    if (d.location.present) {
-      map['location'] = Variable<int, IntType>(d.location.value);
+    if (d.location_id.present) {
+      map['location_id'] = Variable<int, IntType>(d.location_id.value);
     }
     if (d.subjectiveQuestions.present) {
       final converter = $CheckupsTable.$converter0;
@@ -332,17 +573,17 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
 class Location extends DataClass implements Insertable<Location> {
   final int id;
   final DateTime created;
-  final double locationLat;
-  final double locationLong;
-  final double locationAccuracy;
-  final double locationAltitude;
+  final double lat;
+  final double long;
+  final double accuracy;
+  final double altitude;
   Location(
       {@required this.id,
       @required this.created,
-      this.locationLat,
-      this.locationLong,
-      this.locationAccuracy,
-      this.locationAltitude});
+      this.lat,
+      this.long,
+      this.accuracy,
+      this.altitude});
   factory Location.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
@@ -353,14 +594,12 @@ class Location extends DataClass implements Insertable<Location> {
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       created: dateTimeType
           .mapFromDatabaseResponse(data['${effectivePrefix}created']),
-      locationLat: doubleType
-          .mapFromDatabaseResponse(data['${effectivePrefix}location_lat']),
-      locationLong: doubleType
-          .mapFromDatabaseResponse(data['${effectivePrefix}location_long']),
-      locationAccuracy: doubleType
-          .mapFromDatabaseResponse(data['${effectivePrefix}location_accuracy']),
-      locationAltitude: doubleType
-          .mapFromDatabaseResponse(data['${effectivePrefix}location_altitude']),
+      lat: doubleType.mapFromDatabaseResponse(data['${effectivePrefix}lat']),
+      long: doubleType.mapFromDatabaseResponse(data['${effectivePrefix}long']),
+      accuracy: doubleType
+          .mapFromDatabaseResponse(data['${effectivePrefix}accuracy']),
+      altitude: doubleType
+          .mapFromDatabaseResponse(data['${effectivePrefix}altitude']),
     );
   }
   factory Location.fromJson(Map<String, dynamic> json,
@@ -369,10 +608,10 @@ class Location extends DataClass implements Insertable<Location> {
     return Location(
       id: serializer.fromJson<int>(json['id']),
       created: serializer.fromJson<DateTime>(json['created']),
-      locationLat: serializer.fromJson<double>(json['locationLat']),
-      locationLong: serializer.fromJson<double>(json['locationLong']),
-      locationAccuracy: serializer.fromJson<double>(json['locationAccuracy']),
-      locationAltitude: serializer.fromJson<double>(json['locationAltitude']),
+      lat: serializer.fromJson<double>(json['lat']),
+      long: serializer.fromJson<double>(json['long']),
+      accuracy: serializer.fromJson<double>(json['accuracy']),
+      altitude: serializer.fromJson<double>(json['altitude']),
     );
   }
   @override
@@ -381,10 +620,10 @@ class Location extends DataClass implements Insertable<Location> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'created': serializer.toJson<DateTime>(created),
-      'locationLat': serializer.toJson<double>(locationLat),
-      'locationLong': serializer.toJson<double>(locationLong),
-      'locationAccuracy': serializer.toJson<double>(locationAccuracy),
-      'locationAltitude': serializer.toJson<double>(locationAltitude),
+      'lat': serializer.toJson<double>(lat),
+      'long': serializer.toJson<double>(long),
+      'accuracy': serializer.toJson<double>(accuracy),
+      'altitude': serializer.toJson<double>(altitude),
     };
   }
 
@@ -395,45 +634,41 @@ class Location extends DataClass implements Insertable<Location> {
       created: created == null && nullToAbsent
           ? const Value.absent()
           : Value(created),
-      locationLat: locationLat == null && nullToAbsent
+      lat: lat == null && nullToAbsent ? const Value.absent() : Value(lat),
+      long: long == null && nullToAbsent ? const Value.absent() : Value(long),
+      accuracy: accuracy == null && nullToAbsent
           ? const Value.absent()
-          : Value(locationLat),
-      locationLong: locationLong == null && nullToAbsent
+          : Value(accuracy),
+      altitude: altitude == null && nullToAbsent
           ? const Value.absent()
-          : Value(locationLong),
-      locationAccuracy: locationAccuracy == null && nullToAbsent
-          ? const Value.absent()
-          : Value(locationAccuracy),
-      locationAltitude: locationAltitude == null && nullToAbsent
-          ? const Value.absent()
-          : Value(locationAltitude),
+          : Value(altitude),
     );
   }
 
   Location copyWith(
           {int id,
           DateTime created,
-          double locationLat,
-          double locationLong,
-          double locationAccuracy,
-          double locationAltitude}) =>
+          double lat,
+          double long,
+          double accuracy,
+          double altitude}) =>
       Location(
         id: id ?? this.id,
         created: created ?? this.created,
-        locationLat: locationLat ?? this.locationLat,
-        locationLong: locationLong ?? this.locationLong,
-        locationAccuracy: locationAccuracy ?? this.locationAccuracy,
-        locationAltitude: locationAltitude ?? this.locationAltitude,
+        lat: lat ?? this.lat,
+        long: long ?? this.long,
+        accuracy: accuracy ?? this.accuracy,
+        altitude: altitude ?? this.altitude,
       );
   @override
   String toString() {
     return (StringBuffer('Location(')
           ..write('id: $id, ')
           ..write('created: $created, ')
-          ..write('locationLat: $locationLat, ')
-          ..write('locationLong: $locationLong, ')
-          ..write('locationAccuracy: $locationAccuracy, ')
-          ..write('locationAltitude: $locationAltitude')
+          ..write('lat: $lat, ')
+          ..write('long: $long, ')
+          ..write('accuracy: $accuracy, ')
+          ..write('altitude: $altitude')
           ..write(')'))
         .toString();
   }
@@ -444,60 +679,58 @@ class Location extends DataClass implements Insertable<Location> {
       $mrjc(
           created.hashCode,
           $mrjc(
-              locationLat.hashCode,
-              $mrjc(
-                  locationLong.hashCode,
-                  $mrjc(locationAccuracy.hashCode,
-                      locationAltitude.hashCode))))));
+              lat.hashCode,
+              $mrjc(long.hashCode,
+                  $mrjc(accuracy.hashCode, altitude.hashCode))))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
       (other is Location &&
           other.id == this.id &&
           other.created == this.created &&
-          other.locationLat == this.locationLat &&
-          other.locationLong == this.locationLong &&
-          other.locationAccuracy == this.locationAccuracy &&
-          other.locationAltitude == this.locationAltitude);
+          other.lat == this.lat &&
+          other.long == this.long &&
+          other.accuracy == this.accuracy &&
+          other.altitude == this.altitude);
 }
 
 class LocationsCompanion extends UpdateCompanion<Location> {
   final Value<int> id;
   final Value<DateTime> created;
-  final Value<double> locationLat;
-  final Value<double> locationLong;
-  final Value<double> locationAccuracy;
-  final Value<double> locationAltitude;
+  final Value<double> lat;
+  final Value<double> long;
+  final Value<double> accuracy;
+  final Value<double> altitude;
   const LocationsCompanion({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.locationLat = const Value.absent(),
-    this.locationLong = const Value.absent(),
-    this.locationAccuracy = const Value.absent(),
-    this.locationAltitude = const Value.absent(),
+    this.lat = const Value.absent(),
+    this.long = const Value.absent(),
+    this.accuracy = const Value.absent(),
+    this.altitude = const Value.absent(),
   });
   LocationsCompanion.insert({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.locationLat = const Value.absent(),
-    this.locationLong = const Value.absent(),
-    this.locationAccuracy = const Value.absent(),
-    this.locationAltitude = const Value.absent(),
+    this.lat = const Value.absent(),
+    this.long = const Value.absent(),
+    this.accuracy = const Value.absent(),
+    this.altitude = const Value.absent(),
   });
   LocationsCompanion copyWith(
       {Value<int> id,
       Value<DateTime> created,
-      Value<double> locationLat,
-      Value<double> locationLong,
-      Value<double> locationAccuracy,
-      Value<double> locationAltitude}) {
+      Value<double> lat,
+      Value<double> long,
+      Value<double> accuracy,
+      Value<double> altitude}) {
     return LocationsCompanion(
       id: id ?? this.id,
       created: created ?? this.created,
-      locationLat: locationLat ?? this.locationLat,
-      locationLong: locationLong ?? this.locationLong,
-      locationAccuracy: locationAccuracy ?? this.locationAccuracy,
-      locationAltitude: locationAltitude ?? this.locationAltitude,
+      lat: lat ?? this.lat,
+      long: long ?? this.long,
+      accuracy: accuracy ?? this.accuracy,
+      altitude: altitude ?? this.altitude,
     );
   }
 }
@@ -525,71 +758,57 @@ class $LocationsTable extends Locations
         defaultValue: currentDateAndTime);
   }
 
-  final VerificationMeta _locationLatMeta =
-      const VerificationMeta('locationLat');
-  GeneratedRealColumn _locationLat;
+  final VerificationMeta _latMeta = const VerificationMeta('lat');
+  GeneratedRealColumn _lat;
   @override
-  GeneratedRealColumn get locationLat =>
-      _locationLat ??= _constructLocationLat();
-  GeneratedRealColumn _constructLocationLat() {
+  GeneratedRealColumn get lat => _lat ??= _constructLat();
+  GeneratedRealColumn _constructLat() {
     return GeneratedRealColumn(
-      'location_lat',
+      'lat',
       $tableName,
       true,
     );
   }
 
-  final VerificationMeta _locationLongMeta =
-      const VerificationMeta('locationLong');
-  GeneratedRealColumn _locationLong;
+  final VerificationMeta _longMeta = const VerificationMeta('long');
+  GeneratedRealColumn _long;
   @override
-  GeneratedRealColumn get locationLong =>
-      _locationLong ??= _constructLocationLong();
-  GeneratedRealColumn _constructLocationLong() {
+  GeneratedRealColumn get long => _long ??= _constructLong();
+  GeneratedRealColumn _constructLong() {
     return GeneratedRealColumn(
-      'location_long',
+      'long',
       $tableName,
       true,
     );
   }
 
-  final VerificationMeta _locationAccuracyMeta =
-      const VerificationMeta('locationAccuracy');
-  GeneratedRealColumn _locationAccuracy;
+  final VerificationMeta _accuracyMeta = const VerificationMeta('accuracy');
+  GeneratedRealColumn _accuracy;
   @override
-  GeneratedRealColumn get locationAccuracy =>
-      _locationAccuracy ??= _constructLocationAccuracy();
-  GeneratedRealColumn _constructLocationAccuracy() {
+  GeneratedRealColumn get accuracy => _accuracy ??= _constructAccuracy();
+  GeneratedRealColumn _constructAccuracy() {
     return GeneratedRealColumn(
-      'location_accuracy',
+      'accuracy',
       $tableName,
       true,
     );
   }
 
-  final VerificationMeta _locationAltitudeMeta =
-      const VerificationMeta('locationAltitude');
-  GeneratedRealColumn _locationAltitude;
+  final VerificationMeta _altitudeMeta = const VerificationMeta('altitude');
+  GeneratedRealColumn _altitude;
   @override
-  GeneratedRealColumn get locationAltitude =>
-      _locationAltitude ??= _constructLocationAltitude();
-  GeneratedRealColumn _constructLocationAltitude() {
+  GeneratedRealColumn get altitude => _altitude ??= _constructAltitude();
+  GeneratedRealColumn _constructAltitude() {
     return GeneratedRealColumn(
-      'location_altitude',
+      'altitude',
       $tableName,
       true,
     );
   }
 
   @override
-  List<GeneratedColumn> get $columns => [
-        id,
-        created,
-        locationLat,
-        locationLong,
-        locationAccuracy,
-        locationAltitude
-      ];
+  List<GeneratedColumn> get $columns =>
+      [id, created, lat, long, accuracy, altitude];
   @override
   $LocationsTable get asDslTable => this;
   @override
@@ -607,27 +826,20 @@ class $LocationsTable extends Locations
       context.handle(_createdMeta,
           created.isAcceptableValue(d.created.value, _createdMeta));
     }
-    if (d.locationLat.present) {
-      context.handle(_locationLatMeta,
-          locationLat.isAcceptableValue(d.locationLat.value, _locationLatMeta));
+    if (d.lat.present) {
+      context.handle(_latMeta, lat.isAcceptableValue(d.lat.value, _latMeta));
     }
-    if (d.locationLong.present) {
+    if (d.long.present) {
       context.handle(
-          _locationLongMeta,
-          locationLong.isAcceptableValue(
-              d.locationLong.value, _locationLongMeta));
+          _longMeta, long.isAcceptableValue(d.long.value, _longMeta));
     }
-    if (d.locationAccuracy.present) {
-      context.handle(
-          _locationAccuracyMeta,
-          locationAccuracy.isAcceptableValue(
-              d.locationAccuracy.value, _locationAccuracyMeta));
+    if (d.accuracy.present) {
+      context.handle(_accuracyMeta,
+          accuracy.isAcceptableValue(d.accuracy.value, _accuracyMeta));
     }
-    if (d.locationAltitude.present) {
-      context.handle(
-          _locationAltitudeMeta,
-          locationAltitude.isAcceptableValue(
-              d.locationAltitude.value, _locationAltitudeMeta));
+    if (d.altitude.present) {
+      context.handle(_altitudeMeta,
+          altitude.isAcceptableValue(d.altitude.value, _altitudeMeta));
     }
     return context;
   }
@@ -649,19 +861,17 @@ class $LocationsTable extends Locations
     if (d.created.present) {
       map['created'] = Variable<DateTime, DateTimeType>(d.created.value);
     }
-    if (d.locationLat.present) {
-      map['location_lat'] = Variable<double, RealType>(d.locationLat.value);
+    if (d.lat.present) {
+      map['lat'] = Variable<double, RealType>(d.lat.value);
     }
-    if (d.locationLong.present) {
-      map['location_long'] = Variable<double, RealType>(d.locationLong.value);
+    if (d.long.present) {
+      map['long'] = Variable<double, RealType>(d.long.value);
     }
-    if (d.locationAccuracy.present) {
-      map['location_accuracy'] =
-          Variable<double, RealType>(d.locationAccuracy.value);
+    if (d.accuracy.present) {
+      map['accuracy'] = Variable<double, RealType>(d.accuracy.value);
     }
-    if (d.locationAltitude.present) {
-      map['location_altitude'] =
-          Variable<double, RealType>(d.locationAltitude.value);
+    if (d.altitude.present) {
+      map['altitude'] = Variable<double, RealType>(d.altitude.value);
     }
     return map;
   }
@@ -672,8 +882,10 @@ class $LocationsTable extends Locations
   }
 }
 
-abstract class _$Database extends GeneratedDatabase {
-  _$Database(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+abstract class _$AppDatabase extends GeneratedDatabase {
+  _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+  $ActivitiesTable _activities;
+  $ActivitiesTable get activities => _activities ??= $ActivitiesTable(this);
   $CheckupsTable _checkups;
   $CheckupsTable get checkups => _checkups ??= $CheckupsTable(this);
   $LocationsTable _locations;
@@ -681,5 +893,6 @@ abstract class _$Database extends GeneratedDatabase {
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities => [checkups, locations];
+  List<DatabaseSchemaEntity> get allSchemaEntities =>
+      [activities, checkups, locations];
 }

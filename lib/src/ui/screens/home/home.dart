@@ -16,11 +16,29 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Coronavirus Diary'),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () =>
-              Navigator.pushNamed(context, CheckupScreen.routeName),
-          child: Text('Start checkup'),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, ActivityScreen.routeName),
+                child: Text('Enter social activity'),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, CheckupScreen.routeName),
+                child: Text('Start checkup'),
+              ),
+            ),
+          ],
         ),
       ),
     );

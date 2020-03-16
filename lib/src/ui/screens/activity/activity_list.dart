@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:timeline_list/timeline.dart';
 import 'package:timeline_list/timeline_model.dart';
 
-import 'package:coronavirus_diary/src/data/models/event.dart';
+import 'package:coronavirus_diary/src/data/database/database.dart';
 import 'activity_cards/index.dart';
 
 class ActivityList extends StatefulWidget {
-  final List<Event> events;
+  final List<ActivityWithLocation> activities;
 
   const ActivityList([
-    this.events = const [],
+    this.activities = const [],
   ]);
 
   @override
@@ -19,16 +19,17 @@ class ActivityList extends StatefulWidget {
 class _ActivityListState extends State<ActivityList> {
   @override
   Widget build(BuildContext context) {
+    if (widget.activities.length == 0) {
+      return Center(
+        child: Text('No activity found.'),
+      );
+    }
+
     return Timeline.builder(
-      itemCount: widget.events.length,
+      itemCount: widget.activities.length,
       itemBuilder: (BuildContext context, int index) {
-        final Event event = widget.events[index];
-        switch (event.runtimeType) {
-          case LocationEvent:
-            return TimelineModel(LocationCard(event));
-          default:
-            return null;
-        }
+        final ActivityWithLocation activity = widget.activities[index];
+        return TimelineModel(LocationCard(activity));
       },
     );
   }

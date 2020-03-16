@@ -5,8 +5,8 @@ class Locations extends Table {
   DateTimeColumn get created => dateTime().withDefault(currentDateAndTime)();
 
   // Location
-  RealColumn get locationLat => real().nullable()();
-  RealColumn get locationLong => real().nullable()();
-  RealColumn get locationAccuracy => real().nullable()();
-  RealColumn get locationAltitude => real().nullable()();
+  RealColumn get lat => real().nullable()();
+  RealColumn get long => real().nullable()();
+  RealColumn get accuracy => real().nullable()();
+  RealColumn get altitude => real().nullable()();
 }
