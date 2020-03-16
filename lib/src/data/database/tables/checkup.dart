@@ -10,7 +10,7 @@ class Checkups extends Table {
   DateTimeColumn get created => dateTime().withDefault(currentDateAndTime)();
 
   // Location
-  IntColumn get location_id =>
+  IntColumn get locationId =>
       integer().nullable().customConstraint('NULL REFERENCES locations(id)')();
 
   // Subjective questions

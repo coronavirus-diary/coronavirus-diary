@@ -31,6 +31,7 @@ dependencies:
   moor_ffi: any
   path_provider: ^1.6.5
   path: ^1.6.4
+  provider: ^4.0.4
   sqflite: any
   timeline_list: ^0.0.5
 

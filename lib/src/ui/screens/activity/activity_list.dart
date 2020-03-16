@@ -8,9 +8,9 @@ import 'activity_cards/index.dart';
 class ActivityList extends StatefulWidget {
   final List<ActivityWithLocation> activities;
 
-  const ActivityList([
+  const ActivityList({
     this.activities = const [],
-  ]);
+  });
 
   @override
   _ActivityListState createState() => _ActivityListState();

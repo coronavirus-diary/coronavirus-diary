@@ -27,11 +27,15 @@ class AppDatabase extends _$AppDatabase {
   @override
   int get schemaVersion => 1;
 
+  Future<int> addLocation(LocationsCompanion entry) {
+    return into(locations).insert(entry);
+  }
+
   Future<List<ActivityWithLocation>> allActivities() async {
     final rows = await select(activities).join([
       leftOuterJoin(
-        activities,
-        activities.location_id.equalsExp(locations.id),
+        locations,
+        locations.id.equalsExp(activities.locationId),
       ),
     ]).get();
 
@@ -41,6 +45,10 @@ class AppDatabase extends _$AppDatabase {
         location: resultRow.readTable(locations),
       );
     }).toList();
+  }
+
+  Future<int> addActivity(ActivitiesCompanion entry) async {
+    return into(activities).insert(entry);
   }
 }
 

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:coronavirus_diary/src/blocs/activity/activity.dart';
 import 'package:coronavirus_diary/src/ui/screens/activity/activity_list.dart';
 import 'package:coronavirus_diary/src/ui/router.dart';
+import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
 
 class ActivityScreen extends StatefulWidget {
   static const routeName = '/activity';
@@ -17,23 +20,39 @@ class _ActivityScreenState extends State<ActivityScreen> {
       appBar: AppBar(
         title: Text('My activity'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              width: double.infinity,
-              child: RaisedButton(
-                onPressed: () => Navigator.pushNamed(
-                    context, ActivityCreateScreen.routeName),
-                child: Text('Add an activity'),
+      body: BlocBuilder<ActivityBloc, ActivityHistoryState>(
+        builder: (context, state) {
+          if (state is ActivityHistoryNotLoaded ||
+              state is ActivityHistoryLoading) {
+            if (state is ActivityHistoryNotLoaded) {
+              context.bloc<ActivityBloc>().add(RetrieveActivity());
+            }
+            return LoadingIndicator('Loading activity');
+          } else if (state is ActivityHistoryLoaded) {
+            return Container(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    width: double.infinity,
+                    child: RaisedButton(
+                      onPressed: () => Navigator.pushNamed(
+                          context, ActivityCreateScreen.routeName),
+                      child: Text('Add an activity'),
+                    ),
+                  ),
+                  Expanded(
+                    child: ActivityList(activities: state.activities),
+                  ),
+                ],
               ),
-            ),
-            Expanded(
-              child: ActivityList(),
-            ),
-          ],
-        ),
+            );
+          } else {
+            return Center(
+              child: Text('Activity loading failed.'),
+            );
+          }
+        },
       ),
     );
   }

@@ -10,12 +10,12 @@ part of 'database.dart';
 class Activity extends DataClass implements Insertable<Activity> {
   final int id;
   final DateTime created;
-  final int location_id;
+  final int locationId;
   final String participants;
   Activity(
       {@required this.id,
       @required this.created,
-      this.location_id,
+      this.locationId,
       this.participants});
   factory Activity.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
@@ -27,7 +27,7 @@ class Activity extends DataClass implements Insertable<Activity> {
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       created: dateTimeType
           .mapFromDatabaseResponse(data['${effectivePrefix}created']),
-      location_id: intType
+      locationId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}location_id']),
       participants: stringType
           .mapFromDatabaseResponse(data['${effectivePrefix}participants']),
@@ -39,7 +39,7 @@ class Activity extends DataClass implements Insertable<Activity> {
     return Activity(
       id: serializer.fromJson<int>(json['id']),
       created: serializer.fromJson<DateTime>(json['created']),
-      location_id: serializer.fromJson<int>(json['location_id']),
+      locationId: serializer.fromJson<int>(json['locationId']),
       participants: serializer.fromJson<String>(json['participants']),
     );
   }
@@ -49,7 +49,7 @@ class Activity extends DataClass implements Insertable<Activity> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'created': serializer.toJson<DateTime>(created),
-      'location_id': serializer.toJson<int>(location_id),
+      'locationId': serializer.toJson<int>(locationId),
       'participants': serializer.toJson<String>(participants),
     };
   }
@@ -61,9 +61,9 @@ class Activity extends DataClass implements Insertable<Activity> {
       created: created == null && nullToAbsent
           ? const Value.absent()
           : Value(created),
-      location_id: location_id == null && nullToAbsent
+      locationId: locationId == null && nullToAbsent
           ? const Value.absent()
-          : Value(location_id),
+          : Value(locationId),
       participants: participants == null && nullToAbsent
           ? const Value.absent()
           : Value(participants),
@@ -71,11 +71,11 @@ class Activity extends DataClass implements Insertable<Activity> {
   }
 
   Activity copyWith(
-          {int id, DateTime created, int location_id, String participants}) =>
+          {int id, DateTime created, int locationId, String participants}) =>
       Activity(
         id: id ?? this.id,
         created: created ?? this.created,
-        location_id: location_id ?? this.location_id,
+        locationId: locationId ?? this.locationId,
         participants: participants ?? this.participants,
       );
   @override
@@ -83,7 +83,7 @@ class Activity extends DataClass implements Insertable<Activity> {
     return (StringBuffer('Activity(')
           ..write('id: $id, ')
           ..write('created: $created, ')
-          ..write('location_id: $location_id, ')
+          ..write('locationId: $locationId, ')
           ..write('participants: $participants')
           ..write(')'))
         .toString();
@@ -93,43 +93,43 @@ class Activity extends DataClass implements Insertable<Activity> {
   int get hashCode => $mrjf($mrjc(
       id.hashCode,
       $mrjc(created.hashCode,
-          $mrjc(location_id.hashCode, participants.hashCode))));
+          $mrjc(locationId.hashCode, participants.hashCode))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
       (other is Activity &&
           other.id == this.id &&
           other.created == this.created &&
-          other.location_id == this.location_id &&
+          other.locationId == this.locationId &&
           other.participants == this.participants);
 }
 
 class ActivitiesCompanion extends UpdateCompanion<Activity> {
   final Value<int> id;
   final Value<DateTime> created;
-  final Value<int> location_id;
+  final Value<int> locationId;
   final Value<String> participants;
   const ActivitiesCompanion({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.location_id = const Value.absent(),
+    this.locationId = const Value.absent(),
     this.participants = const Value.absent(),
   });
   ActivitiesCompanion.insert({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.location_id = const Value.absent(),
+    this.locationId = const Value.absent(),
     this.participants = const Value.absent(),
   });
   ActivitiesCompanion copyWith(
       {Value<int> id,
       Value<DateTime> created,
-      Value<int> location_id,
+      Value<int> locationId,
       Value<String> participants}) {
     return ActivitiesCompanion(
       id: id ?? this.id,
       created: created ?? this.created,
-      location_id: location_id ?? this.location_id,
+      locationId: locationId ?? this.locationId,
       participants: participants ?? this.participants,
     );
   }
@@ -158,11 +158,10 @@ class $ActivitiesTable extends Activities
         defaultValue: currentDateAndTime);
   }
 
-  final VerificationMeta _location_idMeta =
-      const VerificationMeta('location_id');
-  GeneratedIntColumn _location_id;
+  final VerificationMeta _locationIdMeta = const VerificationMeta('locationId');
+  GeneratedIntColumn _locationId;
   @override
-  GeneratedIntColumn get location_id => _location_id ??= _constructLocationId();
+  GeneratedIntColumn get locationId => _locationId ??= _constructLocationId();
   GeneratedIntColumn _constructLocationId() {
     return GeneratedIntColumn('location_id', $tableName, true,
         $customConstraints: 'NULL REFERENCES locations(id)');
@@ -183,8 +182,7 @@ class $ActivitiesTable extends Activities
   }
 
   @override
-  List<GeneratedColumn> get $columns =>
-      [id, created, location_id, participants];
+  List<GeneratedColumn> get $columns => [id, created, locationId, participants];
   @override
   $ActivitiesTable get asDslTable => this;
   @override
@@ -202,9 +200,9 @@ class $ActivitiesTable extends Activities
       context.handle(_createdMeta,
           created.isAcceptableValue(d.created.value, _createdMeta));
     }
-    if (d.location_id.present) {
-      context.handle(_location_idMeta,
-          location_id.isAcceptableValue(d.location_id.value, _location_idMeta));
+    if (d.locationId.present) {
+      context.handle(_locationIdMeta,
+          locationId.isAcceptableValue(d.locationId.value, _locationIdMeta));
     }
     if (d.participants.present) {
       context.handle(
@@ -232,8 +230,8 @@ class $ActivitiesTable extends Activities
     if (d.created.present) {
       map['created'] = Variable<DateTime, DateTimeType>(d.created.value);
     }
-    if (d.location_id.present) {
-      map['location_id'] = Variable<int, IntType>(d.location_id.value);
+    if (d.locationId.present) {
+      map['location_id'] = Variable<int, IntType>(d.locationId.value);
     }
     if (d.participants.present) {
       map['participants'] = Variable<String, StringType>(d.participants.value);
@@ -250,14 +248,14 @@ class $ActivitiesTable extends Activities
 class Checkup extends DataClass implements Insertable<Checkup> {
   final int id;
   final DateTime created;
-  final int location_id;
+  final int locationId;
   final SubjectiveQuestions subjectiveQuestions;
   final Vitals vitals;
   final String assessment;
   Checkup(
       {@required this.id,
       @required this.created,
-      this.location_id,
+      this.locationId,
       this.subjectiveQuestions,
       this.vitals,
       this.assessment});
@@ -271,7 +269,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       created: dateTimeType
           .mapFromDatabaseResponse(data['${effectivePrefix}created']),
-      location_id: intType
+      locationId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}location_id']),
       subjectiveQuestions: $CheckupsTable.$converter0.mapToDart(
           stringType.mapFromDatabaseResponse(
@@ -288,7 +286,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
     return Checkup(
       id: serializer.fromJson<int>(json['id']),
       created: serializer.fromJson<DateTime>(json['created']),
-      location_id: serializer.fromJson<int>(json['location_id']),
+      locationId: serializer.fromJson<int>(json['locationId']),
       subjectiveQuestions:
           serializer.fromJson<SubjectiveQuestions>(json['subjectiveQuestions']),
       vitals: serializer.fromJson<Vitals>(json['vitals']),
@@ -301,7 +299,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'created': serializer.toJson<DateTime>(created),
-      'location_id': serializer.toJson<int>(location_id),
+      'locationId': serializer.toJson<int>(locationId),
       'subjectiveQuestions':
           serializer.toJson<SubjectiveQuestions>(subjectiveQuestions),
       'vitals': serializer.toJson<Vitals>(vitals),
@@ -316,9 +314,9 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       created: created == null && nullToAbsent
           ? const Value.absent()
           : Value(created),
-      location_id: location_id == null && nullToAbsent
+      locationId: locationId == null && nullToAbsent
           ? const Value.absent()
-          : Value(location_id),
+          : Value(locationId),
       subjectiveQuestions: subjectiveQuestions == null && nullToAbsent
           ? const Value.absent()
           : Value(subjectiveQuestions),
@@ -333,14 +331,14 @@ class Checkup extends DataClass implements Insertable<Checkup> {
   Checkup copyWith(
           {int id,
           DateTime created,
-          int location_id,
+          int locationId,
           SubjectiveQuestions subjectiveQuestions,
           Vitals vitals,
           String assessment}) =>
       Checkup(
         id: id ?? this.id,
         created: created ?? this.created,
-        location_id: location_id ?? this.location_id,
+        locationId: locationId ?? this.locationId,
         subjectiveQuestions: subjectiveQuestions ?? this.subjectiveQuestions,
         vitals: vitals ?? this.vitals,
         assessment: assessment ?? this.assessment,
@@ -350,7 +348,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
     return (StringBuffer('Checkup(')
           ..write('id: $id, ')
           ..write('created: $created, ')
-          ..write('location_id: $location_id, ')
+          ..write('locationId: $locationId, ')
           ..write('subjectiveQuestions: $subjectiveQuestions, ')
           ..write('vitals: $vitals, ')
           ..write('assessment: $assessment')
@@ -364,7 +362,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       $mrjc(
           created.hashCode,
           $mrjc(
-              location_id.hashCode,
+              locationId.hashCode,
               $mrjc(subjectiveQuestions.hashCode,
                   $mrjc(vitals.hashCode, assessment.hashCode))))));
   @override
@@ -373,7 +371,7 @@ class Checkup extends DataClass implements Insertable<Checkup> {
       (other is Checkup &&
           other.id == this.id &&
           other.created == this.created &&
-          other.location_id == this.location_id &&
+          other.locationId == this.locationId &&
           other.subjectiveQuestions == this.subjectiveQuestions &&
           other.vitals == this.vitals &&
           other.assessment == this.assessment);
@@ -382,14 +380,14 @@ class Checkup extends DataClass implements Insertable<Checkup> {
 class CheckupsCompanion extends UpdateCompanion<Checkup> {
   final Value<int> id;
   final Value<DateTime> created;
-  final Value<int> location_id;
+  final Value<int> locationId;
   final Value<SubjectiveQuestions> subjectiveQuestions;
   final Value<Vitals> vitals;
   final Value<String> assessment;
   const CheckupsCompanion({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.location_id = const Value.absent(),
+    this.locationId = const Value.absent(),
     this.subjectiveQuestions = const Value.absent(),
     this.vitals = const Value.absent(),
     this.assessment = const Value.absent(),
@@ -397,7 +395,7 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
   CheckupsCompanion.insert({
     this.id = const Value.absent(),
     this.created = const Value.absent(),
-    this.location_id = const Value.absent(),
+    this.locationId = const Value.absent(),
     this.subjectiveQuestions = const Value.absent(),
     this.vitals = const Value.absent(),
     this.assessment = const Value.absent(),
@@ -405,14 +403,14 @@ class CheckupsCompanion extends UpdateCompanion<Checkup> {
   CheckupsCompanion copyWith(
       {Value<int> id,
       Value<DateTime> created,
-      Value<int> location_id,
+      Value<int> locationId,
       Value<SubjectiveQuestions> subjectiveQuestions,
       Value<Vitals> vitals,
       Value<String> assessment}) {
     return CheckupsCompanion(
       id: id ?? this.id,
       created: created ?? this.created,
-      location_id: location_id ?? this.location_id,
+      locationId: locationId ?? this.locationId,
       subjectiveQuestions: subjectiveQuestions ?? this.subjectiveQuestions,
       vitals: vitals ?? this.vitals,
       assessment: assessment ?? this.assessment,
@@ -442,11 +440,10 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
         defaultValue: currentDateAndTime);
   }
 
-  final VerificationMeta _location_idMeta =
-      const VerificationMeta('location_id');
-  GeneratedIntColumn _location_id;
+  final VerificationMeta _locationIdMeta = const VerificationMeta('locationId');
+  GeneratedIntColumn _locationId;
   @override
-  GeneratedIntColumn get location_id => _location_id ??= _constructLocationId();
+  GeneratedIntColumn get locationId => _locationId ??= _constructLocationId();
   GeneratedIntColumn _constructLocationId() {
     return GeneratedIntColumn('location_id', $tableName, true,
         $customConstraints: 'NULL REFERENCES locations(id)');
@@ -492,7 +489,7 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
 
   @override
   List<GeneratedColumn> get $columns =>
-      [id, created, location_id, subjectiveQuestions, vitals, assessment];
+      [id, created, locationId, subjectiveQuestions, vitals, assessment];
   @override
   $CheckupsTable get asDslTable => this;
   @override
@@ -510,9 +507,9 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
       context.handle(_createdMeta,
           created.isAcceptableValue(d.created.value, _createdMeta));
     }
-    if (d.location_id.present) {
-      context.handle(_location_idMeta,
-          location_id.isAcceptableValue(d.location_id.value, _location_idMeta));
+    if (d.locationId.present) {
+      context.handle(_locationIdMeta,
+          locationId.isAcceptableValue(d.locationId.value, _locationIdMeta));
     }
     context.handle(
         _subjectiveQuestionsMeta, const VerificationResult.success());
@@ -541,8 +538,8 @@ class $CheckupsTable extends Checkups with TableInfo<$CheckupsTable, Checkup> {
     if (d.created.present) {
       map['created'] = Variable<DateTime, DateTimeType>(d.created.value);
     }
-    if (d.location_id.present) {
-      map['location_id'] = Variable<int, IntType>(d.location_id.value);
+    if (d.locationId.present) {
+      map['location_id'] = Variable<int, IntType>(d.locationId.value);
     }
     if (d.subjectiveQuestions.present) {
       final converter = $CheckupsTable.$converter0;

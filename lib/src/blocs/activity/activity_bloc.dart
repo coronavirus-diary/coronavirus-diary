@@ -1,15 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
+import 'package:moor/moor.dart';
 
 import 'package:coronavirus_diary/src/data/database/database.dart';
 
 import 'activity.dart';
 
 class ActivityBloc extends Bloc<ActivityEvent, ActivityHistoryState> {
-  final AppDatabase database = AppDatabase();
+  final AppDatabase database;
 
-  ActivityBloc();
+  ActivityBloc({@required this.database});
 
   @override
   ActivityHistoryState get initialState => ActivityHistoryNotLoaded();
@@ -20,6 +22,10 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityHistoryState> {
       case RetrieveActivity:
         yield ActivityHistoryLoading();
         yield* _mapRetrieveActivityToState(event);
+        break;
+      case AddActivity:
+        yield ActivityHistoryLoading();
+        yield* _mapAddActivityToState(event);
         break;
     }
   }
@@ -33,5 +39,18 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityHistoryState> {
       // Activity loading failed, return an error
       yield ActivityHistoryLoadingFailed(exception: exception);
     }
+  }
+
+  Stream<ActivityHistoryState> _mapAddActivityToState(
+      AddActivity event) async* {
+    // Add activity
+    final int location = await database.addLocation(event.locationEntry);
+    await database.addActivity(event.activityEntry.copyWith(
+      locationId: Value(location),
+    ));
+
+    // Retrieve all activities
+    List<ActivityWithLocation> activities = await database.allActivities();
+    yield ActivityHistoryLoaded(activities: activities);
   }
 }

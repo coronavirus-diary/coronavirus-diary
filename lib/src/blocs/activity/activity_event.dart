@@ -1,3 +1,4 @@
+import 'package:coronavirus_diary/src/data/database/database.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ActivityEvent extends Equatable {
@@ -8,3 +9,13 @@ abstract class ActivityEvent extends Equatable {
 }
 
 class RetrieveActivity extends ActivityEvent {}
+
+class AddActivity extends ActivityEvent {
+  final LocationsCompanion locationEntry;
+  final ActivitiesCompanion activityEntry;
+
+  const AddActivity({this.locationEntry, this.activityEntry});
+
+  @override
+  List<Object> get props => [locationEntry, activityEntry];
+}

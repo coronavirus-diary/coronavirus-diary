@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/fa_icon.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:moor/moor.dart' as moor;
+
+import 'package:coronavirus_diary/src/data/database/database.dart';
+import 'package:coronavirus_diary/src/blocs/activity/activity.dart';
 
 class ActivityCreateScreen extends StatefulWidget {
   static const routeName = '/activity/create';
@@ -13,7 +17,18 @@ class ActivityCreateScreen extends StatefulWidget {
 class _ActivityCreateScreenState extends State<ActivityCreateScreen> {
   Position _currentPosition;
 
-  void _saveActivity(BuildContext context) {
+  void _saveActivity(BuildContext context) async {
+    await context.bloc<ActivityBloc>().add(
+          AddActivity(
+            locationEntry: LocationsCompanion(
+              lat: moor.Value(_currentPosition.latitude),
+              long: moor.Value(_currentPosition.longitude),
+              accuracy: moor.Value(_currentPosition.accuracy),
+              altitude: moor.Value(_currentPosition.altitude),
+            ),
+            activityEntry: ActivitiesCompanion(),
+          ),
+        );
     Navigator.pop(context);
   }
 
