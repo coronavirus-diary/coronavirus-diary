@@ -13,12 +13,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Text _getTrackingEnabled(PreferencesState state) {
+  Widget _getTrackingTile(PreferencesState state) {
+    Widget title;
+    Widget subtitle;
     if (state.preferences.trackLocation) {
-      return const Text('Automatically recording location');
+      title = Text('Automatically recording location');
+      subtitle = Text('Description text');
     } else {
-      return const Text('Automatically record location');
+      title = Text('Automatically record location');
+      subtitle = Text('Description text');
     }
+    return SwitchListTile(
+      title: title,
+      subtitle: subtitle,
+      value: state.preferences.trackLocation,
+      onChanged: (bool value) {
+        Preferences newPreferences = Preferences.clone(state.preferences);
+        newPreferences.trackLocation = value;
+        context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
+      },
+      secondary: const FaIcon(FontAwesomeIcons.locationArrow),
+    );
   }
 
   @override
@@ -33,19 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               Container(
                 color: Color.fromRGBO(238, 238, 238, 1),
-                child: SwitchListTile(
-                  title: _getTrackingEnabled(state),
-                  value: state.preferences.trackLocation,
-                  onChanged: (bool value) {
-                    Preferences newPreferences =
-                        Preferences.clone(state.preferences);
-                    newPreferences.trackLocation = value;
-                    context
-                        .bloc<PreferencesBloc>()
-                        .add(UpdatePreferences(newPreferences));
-                  },
-                  secondary: const FaIcon(FontAwesomeIcons.locationArrow),
-                ),
+                child: _getTrackingTile(state),
               ),
               Expanded(
                 child: Container(
