@@ -21,22 +21,24 @@ class _CoughStepState extends State<CoughStep> {
           subtitle: Text('How often?'),
           input: SimpleSlider(
             value: 1,
-            labels: [
-              Label(
-                child: FaIcon(
-                  FontAwesomeIcons.solidSmile,
-                  color: Colors.white,
-                ),
+            labels: <FlutterSliderHatchMarkLabel>[
+              FlutterSliderHatchMarkLabel(
                 percent: 0,
+                label: Text('Rarely'),
               ),
-              Label(
-                child: FaIcon(
-                  FontAwesomeIcons.solidFrown,
-                  color: Colors.white,
-                ),
+              FlutterSliderHatchMarkLabel(
                 percent: 100,
+                label: Text('Constantly'),
               ),
             ],
+            startIcon: FaIcon(
+              FontAwesomeIcons.solidSmile,
+              color: Colors.white,
+            ),
+            endIcon: FaIcon(
+              FontAwesomeIcons.solidFrown,
+              color: Colors.white,
+            ),
           ),
         ),
       ],

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_xlider/flutter_xlider.dart';
 
-class Label {
-  final Widget child;
-  final double percent;
-
-  const Label({
-    @required this.child,
-    @required this.percent,
-  });
-}
+export 'package:flutter_xlider/flutter_xlider.dart';
 
 class SimpleSlider extends StatefulWidget {
   final double value;
   final Function(int handlerIndex, dynamic lowerValue, dynamic upperValue)
       onChange;
-  final List<Label> labels;
+  final List<FlutterSliderHatchMarkLabel> labels;
+  final Widget startIcon;
+  final Widget endIcon;
 
-  const SimpleSlider({@required this.value, this.onChange, this.labels});
+  const SimpleSlider({
+    @required this.value,
+    this.onChange,
+    this.labels,
+    this.startIcon,
+    this.endIcon,
+  });
 
   @override
   _SimpleSliderState createState() => _SimpleSliderState();
@@ -53,61 +53,56 @@ class _SimpleSliderState extends State<SimpleSlider> {
         height: 20,
       ),
       density: 0.04,
-      labels: widget.labels
-          .where((Label label) => label.percent != 0 && label.percent != 100)
-          .map((Label label) {
-        return FlutterSliderHatchMarkLabel(
-          percent: label.percent,
-          label: label.child,
-        );
-      }).toList(),
+      labels: widget.labels,
+      labelBox: FlutterSliderSizedBox(
+        width: 100,
+        height: 20,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    Label firstLabel =
-        widget.labels.firstWhere((Label label) => label.percent == 0);
-    Label lastLabel =
-        widget.labels.firstWhere((Label label) => label.percent == 100);
-
-    return Row(
-      children: <Widget>[
-        if (firstLabel != null)
-          Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: firstLabel.child,
-          ),
-        Expanded(
-          child: FlutterSlider(
-            min: 1,
-            max: 5,
-            onDragging: _setValue,
-            onDragCompleted: _setValue,
-            values: [_value],
-            handler: FlutterSliderHandler(
-              child: Text(_value.round().toString()),
+    return DefaultTextStyle(
+      style: TextStyle(color: Colors.white),
+      child: Row(
+        children: <Widget>[
+          if (widget.startIcon != null)
+            Padding(
+              padding: EdgeInsets.only(right: 10),
+              child: widget.startIcon,
             ),
-            hatchMark: _getHatchMark(),
-            tooltip: FlutterSliderTooltip(disabled: true),
-            trackBar: FlutterSliderTrackBar(
-              inactiveTrackBar: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white.withOpacity(0.4),
+          Expanded(
+            child: FlutterSlider(
+              min: 1,
+              max: 5,
+              onDragging: _setValue,
+              onDragCompleted: _setValue,
+              values: [_value],
+              handler: FlutterSliderHandler(
+                child: Text(_value.round().toString()),
               ),
-              activeTrackBar: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                color: Colors.white,
+              hatchMark: _getHatchMark(),
+              tooltip: FlutterSliderTooltip(disabled: true),
+              trackBar: FlutterSliderTrackBar(
+                inactiveTrackBar: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white.withOpacity(0.4),
+                ),
+                activeTrackBar: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-        ),
-        if (lastLabel != null)
-          Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: lastLabel.child,
-          ),
-      ],
+          if (widget.endIcon != null)
+            Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: widget.endIcon,
+            ),
+        ],
+      ),
     );
   }
 }

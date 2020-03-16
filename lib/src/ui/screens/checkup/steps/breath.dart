@@ -21,22 +21,14 @@ class _BreathStepState extends State<BreathStep> {
           subtitle: Text('Do you feel like you can\'t get enough air?'),
           input: SimpleSlider(
             value: 1,
-            labels: [
-              Label(
-                child: FaIcon(
-                  FontAwesomeIcons.solidSmile,
-                  color: Colors.white,
-                ),
-                percent: 0,
-              ),
-              Label(
-                child: FaIcon(
-                  FontAwesomeIcons.solidFrown,
-                  color: Colors.white,
-                ),
-                percent: 100,
-              ),
-            ],
+            startIcon: FaIcon(
+              FontAwesomeIcons.solidSmile,
+              color: Colors.white,
+            ),
+            endIcon: FaIcon(
+              FontAwesomeIcons.solidFrown,
+              color: Colors.white,
+            ),
           ),
         ),
       ],
