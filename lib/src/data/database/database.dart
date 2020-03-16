@@ -32,12 +32,19 @@ class AppDatabase extends _$AppDatabase {
   }
 
   Future<List<ActivityWithLocation>> allActivities() async {
-    final rows = await select(activities).join([
+    final rows = await (select(activities).join([
       leftOuterJoin(
         locations,
         locations.id.equalsExp(activities.locationId),
       ),
-    ]).get();
+    ])
+          ..orderBy([
+            OrderingTerm(
+              expression: activities.created,
+              mode: OrderingMode.desc,
+            ),
+          ]))
+        .get();
 
     return rows.map((resultRow) {
       return ActivityWithLocation(

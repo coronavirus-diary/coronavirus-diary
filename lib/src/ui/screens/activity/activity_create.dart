@@ -16,6 +16,19 @@ class ActivityCreateScreen extends StatefulWidget {
 
 class _ActivityCreateScreenState extends State<ActivityCreateScreen> {
   Position _currentPosition;
+  TextEditingController _participantsController;
+
+  @override
+  void initState() {
+    super.initState();
+    _participantsController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _participantsController.dispose();
+    super.dispose();
+  }
 
   void _saveActivity(BuildContext context) async {
     await context.bloc<ActivityBloc>().add(
@@ -26,7 +39,9 @@ class _ActivityCreateScreenState extends State<ActivityCreateScreen> {
               accuracy: moor.Value(_currentPosition.accuracy),
               altitude: moor.Value(_currentPosition.altitude),
             ),
-            activityEntry: ActivitiesCompanion(),
+            activityEntry: ActivitiesCompanion(
+              participants: moor.Value(_participantsController.text),
+            ),
           ),
         );
     Navigator.pop(context);
@@ -67,7 +82,12 @@ class _ActivityCreateScreenState extends State<ActivityCreateScreen> {
         child: Column(
           children: <Widget>[
             Text(_currentPosition.toString()),
-            TextFormField(),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Participant names (comma separated)',
+              ),
+              controller: _participantsController,
+            ),
           ],
         ),
       ),

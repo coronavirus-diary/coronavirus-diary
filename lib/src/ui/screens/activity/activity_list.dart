@@ -26,6 +26,7 @@ class _ActivityListState extends State<ActivityList> {
     }
 
     return Timeline.builder(
+      position: TimelinePosition.Left,
       itemCount: widget.activities.length,
       itemBuilder: (BuildContext context, int index) {
         final ActivityWithLocation activity = widget.activities[index];

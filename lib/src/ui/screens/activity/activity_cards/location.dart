@@ -18,12 +18,13 @@ class LocationCard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Text(
-                'Location event',
+                'Location update',
                 style: Theme.of(context).textTheme.title,
               ),
             ),
             Text('Latitude: ${activity.location.lat}'),
             Text('Longitude: ${activity.location.long}'),
+            Text('Participants: ${activity.activity.participants}'),
           ],
         ),
       ),
