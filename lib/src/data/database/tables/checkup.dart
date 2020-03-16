@@ -10,10 +10,8 @@ class Checkups extends Table {
   DateTimeColumn get created => dateTime().withDefault(currentDateAndTime)();
 
   // Location
-  RealColumn get locationLat => real().nullable()();
-  RealColumn get locationLong => real().nullable()();
-  RealColumn get locationAccuracy => real().nullable()();
-  RealColumn get locationAltitude => real().nullable()();
+  IntColumn get location =>
+      integer().nullable().customConstraint('NULL REFERENCES locations(id)')();
 
   // Subjective questions
   TextColumn get subjectiveQuestions =>
