@@ -1,7 +1,7 @@
-import 'package:coronavirus_diary/src/ui/router.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coronavirus_diary/src/ui/screens/activity/activity_list.dart';
+import 'package:coronavirus_diary/src/ui/router.dart';
 
 class ActivityScreen extends StatefulWidget {
   static const routeName = '/activity';
