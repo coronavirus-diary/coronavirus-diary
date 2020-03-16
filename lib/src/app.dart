@@ -6,6 +6,7 @@ import 'blocs/activity/activity.dart';
 import 'blocs/preferences/preferences.dart';
 import 'data/database/database.dart';
 import 'ui/router.dart';
+import 'utils/geofencing.dart';
 
 class DiaryApp extends StatelessWidget {
   @override
@@ -31,10 +32,15 @@ class DiaryApp extends StatelessWidget {
             },
           ),
         ],
-        child: MaterialApp(
-          title: 'Coronavirus Diary',
-          routes: appRoutes,
-          initialRoute: initialRoute,
+        child: BlocBuilder<PreferencesBloc, PreferencesState>(
+          builder: (context, state) {
+            initGeofencing(state, context.bloc<ActivityBloc>());
+            return MaterialApp(
+              title: 'Coronavirus Diary',
+              routes: appRoutes,
+              initialRoute: initialRoute,
+            );
+          },
         ),
       ),
     );

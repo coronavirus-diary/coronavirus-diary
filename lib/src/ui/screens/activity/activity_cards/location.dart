@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'package:coronavirus_diary/src/data/database/database.dart';
 
@@ -18,7 +19,8 @@ class LocationCard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Text(
-                'Location update',
+                DateFormat('kk:mm (yyyy-MM-dd)')
+                    .format(activity.activity.created),
                 style: Theme.of(context).textTheme.title,
               ),
             ),
