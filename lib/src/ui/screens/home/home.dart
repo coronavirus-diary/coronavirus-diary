@@ -32,7 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
         newPreferences.trackLocation = value;
         context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
       },
-      secondary: const FaIcon(FontAwesomeIcons.locationArrow),
+      secondary: const FaIcon(
+        FontAwesomeIcons.locationArrow,
+      ),
     );
   }
 
