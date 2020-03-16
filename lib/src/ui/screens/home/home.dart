@@ -63,8 +63,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: double.infinity,
                         child: RaisedButton(
                           onPressed: () => Navigator.pushNamed(
-                              context, ActivityScreen.routeName),
+                              context, ActivityCreateScreen.routeName),
                           child: Text('Enter social activity'),
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: RaisedButton(
+                          onPressed: () => Navigator.pushNamed(
+                              context, ActivityScreen.routeName),
+                          child: Text('View activities'),
                         ),
                       ),
                       SizedBox(
