@@ -1,5 +1,6 @@
-import 'package:coronavirus_diary/src/data/database/database.dart';
 import 'package:equatable/equatable.dart';
+
+import 'package:coronavirus_diary/src/data/database/database.dart';
 
 abstract class ActivityEvent extends Equatable {
   const ActivityEvent();

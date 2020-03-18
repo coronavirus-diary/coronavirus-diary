@@ -57,6 +57,14 @@ class AppDatabase extends _$AppDatabase {
   Future<int> addActivity(ActivitiesCompanion entry) async {
     return into(activities).insert(entry);
   }
+
+  Future<int> addCheckup(CheckupsCompanion entry) async {
+    return into(checkups).insert(entry);
+  }
+
+  Stream<Checkup> watchCheckup(int id) {
+    return (select(checkups)..where((t) => t.id.equals(id))).watchSingle();
+  }
 }
 
 class ActivityWithLocation {

@@ -17,10 +17,16 @@ class ActivityHistoryLoaded extends ActivityHistoryState {
   final List<ActivityWithLocation> activities;
 
   const ActivityHistoryLoaded({this.activities});
+
+  @override
+  List<Object> get props => [activities];
 }
 
 class ActivityHistoryLoadingFailed extends ActivityHistoryState {
   final Exception exception;
 
   const ActivityHistoryLoadingFailed({this.exception});
+
+  @override
+  List<Object> get props => [exception];
 }
