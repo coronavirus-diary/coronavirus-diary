@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 final ThemeData appTheme = ThemeData.light().copyWith(
+  appBarTheme: AppBarTheme(color: Colors.lightBlue),
+  scaffoldBackgroundColor: Colors.blue,
+  backgroundColor: Colors.white,
+  accentColor: Colors.yellowAccent,
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(color: Colors.black),
     border: OutlineInputBorder(
@@ -19,4 +23,16 @@ final ThemeData appTheme = ThemeData.light().copyWith(
       fontSize: 16,
     ),
   ),
+  textTheme: ThemeData.dark().textTheme,
+  primaryTextTheme: ThemeData.dark().primaryTextTheme,
+  accentTextTheme: ThemeData.dark().accentTextTheme,
+  buttonTheme: ThemeData.dark().buttonTheme.copyWith(
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        buttonColor: Colors.white.withOpacity(0.8),
+        textTheme: ButtonTextTheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          side: BorderSide.none,
+        ),
+      ),
 );
