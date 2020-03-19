@@ -2,7 +2,10 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:coronavirus_diary/src/data/models/checkups.dart';
 import 'checkup.dart';
+
+export 'package:coronavirus_diary/src/data/models/checkups.dart';
 
 class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   CheckupBloc();
@@ -13,13 +16,45 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   @override
   Stream<CheckupState> mapEventToState(CheckupEvent event) async* {
     switch (event.runtimeType) {
-      case AddCheckup:
-        yield* _mapAddCheckupToState(event);
+      case StartCheckup:
+        yield* _mapStartCheckupToState(event);
+        break;
+      case UpdateLocalCheckup:
+        yield* _mapUpdateLocalCheckupToState(event);
+        break;
+      case UpdateRemoteCheckup:
+        yield* _mapUpdateRemoteCheckupToState(event);
+        break;
+      case CompleteCheckup:
+        yield* _mapCompleteCheckupToState(event);
         break;
     }
   }
 
-  Stream<CheckupState> _mapAddCheckupToState(AddCheckup event) async* {
-    // Send checkup to API and return its ID
+  Stream<CheckupState> _mapStartCheckupToState(StartCheckup event) async* {
+    // Create checkup using API
+    yield CheckupStateInProgress(
+      checkup: Checkup(),
+    );
+  }
+
+  Stream<CheckupState> _mapUpdateLocalCheckupToState(
+      UpdateLocalCheckup event) async* {
+    // Don't send to API yet
+    yield CheckupStateInProgress(
+      checkup: event.updatedCheckup,
+    );
+  }
+
+  Stream<CheckupState> _mapUpdateRemoteCheckupToState(
+      UpdateRemoteCheckup event) async* {
+    // Patch checkup using API
+    print('Saving checkup to server');
+  }
+
+  Stream<CheckupState> _mapCompleteCheckupToState(
+      CompleteCheckup event) async* {
+    // Patch checkup using API
+    yield CheckupStateCompleted();
   }
 }

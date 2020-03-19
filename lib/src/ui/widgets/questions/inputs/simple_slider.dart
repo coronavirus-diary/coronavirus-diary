@@ -7,8 +7,7 @@ class SimpleSlider extends StatefulWidget {
   final double value;
   final double min;
   final double max;
-  final Function(int handlerIndex, dynamic lowerValue, dynamic upperValue)
-      onChange;
+  final Function(double value) onChange;
   final List<FlutterSliderHatchMarkLabel> labels;
   final Widget startIcon;
   final Widget endIcon;
@@ -40,6 +39,7 @@ class _SimpleSliderState extends State<SimpleSlider> {
     setState(() {
       _value = lowerValue;
     });
+    widget.onChange(lowerValue);
   }
 
   FlutterSliderHatchMark _getHatchMark() {

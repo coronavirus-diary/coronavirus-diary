@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
+import 'package:coronavirus_diary/src/ui/router.dart';
 import 'package:coronavirus_diary/src/ui/widgets/questions/question_view.dart';
 import 'index.dart';
 
@@ -11,6 +13,35 @@ class SubjectiveStep extends StatefulWidget implements CheckupStep {
 }
 
 class _SubjectiveStepState extends State<SubjectiveStep> {
+  void _updateCheckup(
+    Question question,
+    dynamic value,
+    CheckupStateInProgress checkupState,
+  ) {
+    Checkup checkup = checkupState.checkup;
+
+    final SubjectiveQuestionResponse newResponse = SubjectiveQuestionResponse(
+      id: question.id,
+      response: value,
+    );
+
+    // Check if we have an existing response
+    final int existingResponseIndex = checkup.subjectiveResponses.indexWhere(
+      (SubjectiveQuestionResponse response) => response.id == question.id,
+    );
+
+    // Replace or add the new response
+    if (existingResponseIndex != -1) {
+      checkup.subjectiveResponses[existingResponseIndex] = newResponse;
+    } else {
+      checkup.subjectiveResponses.add(newResponse);
+    }
+
+    context
+        .bloc<CheckupBloc>()
+        .add(UpdateLocalCheckup(updatedCheckup: checkup));
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsBloc, QuestionsState>(
@@ -21,10 +52,23 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
           );
         }
 
-        final QuestionsStateLoaded convertedState = state;
-        return QuestionView(
-          padding: EdgeInsets.only(bottom: 50),
-          questions: convertedState.questions,
+        final QuestionsStateLoaded questionState = state;
+        return BlocBuilder<CheckupBloc, CheckupState>(
+          builder: (context, state) {
+            if (state.runtimeType != CheckupStateInProgress) {
+              // We should never hit this, but if we do, let's
+              // do something reasonable
+              Navigator.pushNamed(context, CheckupScreen.routeName);
+            }
+
+            final CheckupStateInProgress checkupState = state;
+            return QuestionView(
+              padding: EdgeInsets.only(bottom: 50),
+              questions: questionState.questions,
+              onChange: (Question question, dynamic value) =>
+                  _updateCheckup(question, value, checkupState),
+            );
+          },
         );
       },
     );

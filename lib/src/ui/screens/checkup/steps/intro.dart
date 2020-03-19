@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+
+import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 
 import 'index.dart';
 
@@ -23,7 +26,7 @@ class _IntroStepState extends State<IntroStep> {
             Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: FaIcon(
-                FontAwesomeIcons.check,
+                FontAwesomeIcons.solidSmile,
                 color: Colors.white.withOpacity(0.7),
                 size: 100,
               ),
@@ -48,13 +51,14 @@ class _IntroStepState extends State<IntroStep> {
             Padding(
               padding: EdgeInsets.only(top: 20),
               child: RaisedButton(
-                onPressed: () =>
-                    Provider.of<PageController>(context, listen: false)
-                        .nextPage(
-                  duration: Duration(milliseconds: 400),
-                  curve: Curves.easeInOut,
-                ),
-                child: Text('Continue'),
+                onPressed: () {
+                  context.bloc<CheckupBloc>().add(StartCheckup());
+                  Provider.of<PageController>(context, listen: false).nextPage(
+                    duration: Duration(milliseconds: 400),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                child: Text('Start checkup'),
               ),
             ),
           ],

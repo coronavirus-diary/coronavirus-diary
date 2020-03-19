@@ -7,11 +7,13 @@ class QuestionView extends StatefulWidget {
   final List<Question> questions;
   final Color color;
   final EdgeInsetsGeometry padding;
+  final Function(Question question, dynamic value) onChange;
 
   const QuestionView({
     @required this.questions,
     this.color,
     this.padding,
+    this.onChange,
   });
 
   @override
@@ -23,6 +25,7 @@ class _QuestionViewState extends State<QuestionView> {
     return widget.questions
         .map((Question question) => QuestionItem(
               question: question,
+              onChange: (dynamic value) => widget.onChange(question, value),
             ))
         .toList();
   }

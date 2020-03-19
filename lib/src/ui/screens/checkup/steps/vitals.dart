@@ -47,6 +47,15 @@ class _VitalsStepState extends State<VitalsStep> {
                       "Take out your thermometer and record your temperature.",
                   number: 5,
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Center(
+                    child: RaisedButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text('Return to Checkup'),
+                    ),
+                  ),
+                ),
               ],
             ),
           ],

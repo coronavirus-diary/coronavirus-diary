@@ -5,6 +5,7 @@ import 'package:coronavirus_diary/src/data/models/questions.dart';
 class QuestionsRepository {
   Future<List<Question>> listQuestions() async => [
         SliderQuestion(
+          id: '5325',
           title: 'Are you experiencing shortness of breath?',
           subtitle: "Do you feel like you can't get enough air?",
           min: 0,
@@ -12,6 +13,7 @@ class QuestionsRepository {
           initialValue: 0,
         ),
         SliderQuestion(
+          id: '32444',
           title: 'Do you have a cough?',
           min: 0,
           max: 4,
@@ -22,6 +24,7 @@ class QuestionsRepository {
           },
         ),
         SliderQuestion(
+          id: '4664',
           title: "Have you felt like you've had a fever?",
           min: 0,
           max: 4,

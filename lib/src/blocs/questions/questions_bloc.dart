@@ -7,6 +7,8 @@ import 'package:meta/meta.dart';
 import 'package:coronavirus_diary/src/data/repositories/questions.dart';
 import 'questions.dart';
 
+export 'package:coronavirus_diary/src/data/models/questions.dart';
+
 class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
   final QuestionsRepository questionsRepository;
 

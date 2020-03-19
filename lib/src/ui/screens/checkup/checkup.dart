@@ -2,18 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
+import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
 import 'steps/index.dart';
 
-class CheckupScreen extends StatefulWidget {
+class CheckupScreen extends StatelessWidget {
   static const routeName = '/checkup';
 
   @override
-  _CheckupScreenState createState() => _CheckupScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider<CheckupBloc>(
+      create: (context) => CheckupBloc(),
+      child: CheckupScreenBody(),
+    );
+  }
 }
 
-class _CheckupScreenState extends State<CheckupScreen> {
+class CheckupScreenBody extends StatefulWidget {
+  @override
+  _CheckupScreenBodyState createState() => _CheckupScreenBodyState();
+}
+
+class _CheckupScreenBodyState extends State<CheckupScreenBody> {
   PageController _pageController;
   int currentIndex = 0;
   CheckupStep currentStep = steps[0];
@@ -30,6 +41,17 @@ class _CheckupScreenState extends State<CheckupScreen> {
     super.dispose();
   }
 
+  void _handlePageChange(int index) {
+    setState(() {
+      currentIndex = index;
+      currentStep = steps[index];
+    });
+
+    if (currentIndex > 1) {
+      context.bloc<CheckupBloc>().add(UpdateRemoteCheckup());
+    }
+  }
+
   Widget _getUnloadedBody(QuestionsState state) {
     if (state is QuestionsStateNotLoaded) {
       context.bloc<QuestionsBloc>().add(LoadQuestions());
@@ -38,7 +60,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
   }
 
   Widget _getProgressBar(QuestionsState state) {
-    double percentComplete = (currentIndex - 1) / (steps.length - 1);
+    double percentComplete = (currentIndex) / (steps.length - 1);
     bool isLastPage = currentIndex == steps.length - 1;
 
     // Remember to update this if steps are added that do not count towards the total
@@ -91,10 +113,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
       children: <Widget>[
         PageView.builder(
           controller: _pageController,
-          onPageChanged: (int index) => setState(() {
-            currentIndex = index;
-            currentStep = steps[index];
-          }),
+          onPageChanged: _handlePageChange,
           itemCount: steps.length,
           itemBuilder: (BuildContext context, int index) {
             return steps[index];
@@ -132,19 +151,22 @@ class _CheckupScreenState extends State<CheckupScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<QuestionsBloc, QuestionsState>(
-      builder: (context, state) {
-        return ChangeNotifierProvider<PageController>(
-          create: (context) => _pageController,
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text('Your Health Checkup'),
+    return BlocProvider<CheckupBloc>(
+      create: (context) => CheckupBloc(),
+      child: BlocBuilder<QuestionsBloc, QuestionsState>(
+        builder: (context, state) {
+          return ChangeNotifierProvider<PageController>(
+            create: (context) => _pageController,
+            child: Scaffold(
+              appBar: AppBar(
+                title: Text('Your Health Checkup'),
+              ),
+              backgroundColor: Theme.of(context).primaryColor,
+              body: _getBody(state),
             ),
-            backgroundColor: Theme.of(context).primaryColor,
-            body: _getBody(state),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

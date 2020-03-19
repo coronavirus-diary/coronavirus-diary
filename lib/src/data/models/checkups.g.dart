@@ -12,16 +12,8 @@ Checkup _$CheckupFromJson(Map<String, dynamic> json) {
     created: json['created'] == null
         ? null
         : DateTime.parse(json['created'] as String),
-    subjectiveResponses: (json['subjective_responses'] as List)
-        ?.map((e) => e == null
-            ? null
-            : SubjectiveQuestionResponse.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    vitalsResponses: (json['vitals_responses'] as List)
-        ?.map((e) => e == null
-            ? null
-            : VitalsResponse.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    subjectiveResponses: json['subjective_responses'],
+    vitalsResponses: json['vitals_responses'],
   );
 }
 
@@ -38,7 +30,7 @@ SubjectiveQuestionResponse _$SubjectiveQuestionResponseFromJson(
     Map<String, dynamic> json) {
   return SubjectiveQuestionResponse(
     id: json['id'] as String,
-    response: json['response'] as String,
+    response: json['response'],
   );
 }
 

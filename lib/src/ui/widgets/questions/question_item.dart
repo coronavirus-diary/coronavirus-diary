@@ -5,8 +5,9 @@ import 'inputs/index.dart';
 
 class QuestionItem extends StatefulWidget {
   final Question question;
+  final Function(dynamic value) onChange;
 
-  const QuestionItem({this.question});
+  const QuestionItem({this.question, this.onChange});
 
   @override
   _QuestionItemState createState() => _QuestionItemState();
@@ -36,6 +37,7 @@ class _QuestionItemState extends State<QuestionItem> {
           min: question.min,
           max: question.max,
           labels: _getHatchMarkLabels(question),
+          onChange: widget.onChange,
         );
       default:
         return Container();

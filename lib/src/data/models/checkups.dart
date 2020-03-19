@@ -4,29 +4,34 @@ part 'checkups.g.dart';
 
 @JsonSerializable()
 class Checkup {
-  final String id;
-  final DateTime created;
-  final List<SubjectiveQuestionResponse> subjectiveResponses;
-  final List<VitalsResponse> vitalsResponses;
+  String id;
+  DateTime created;
+  List<SubjectiveQuestionResponse> subjectiveResponses;
+  List<VitalsResponse> vitalsResponses;
 
-  const Checkup({
+  Checkup({
     this.id,
     this.created,
-    this.subjectiveResponses,
-    this.vitalsResponses,
-  });
+    subjectiveResponses,
+    vitalsResponses,
+  })  : subjectiveResponses = subjectiveResponses ?? [],
+        vitalsResponses = vitalsResponses ?? [];
 
   factory Checkup.fromJson(Map<String, dynamic> json) =>
       _$CheckupFromJson(json);
   Map<String, dynamic> toJson() => _$CheckupToJson(this);
+
+  @override
+  String toString() =>
+      'Checkup { id: $id, created: $created, subjectiveResponses: $subjectiveResponses, vitalsResponses: $vitalsResponses }';
 }
 
 @JsonSerializable()
 class SubjectiveQuestionResponse {
   final String id;
-  final String response;
+  dynamic response;
 
-  const SubjectiveQuestionResponse({
+  SubjectiveQuestionResponse({
     this.id,
     this.response,
   });
@@ -34,15 +39,19 @@ class SubjectiveQuestionResponse {
   factory SubjectiveQuestionResponse.fromJson(Map<String, dynamic> json) =>
       _$SubjectiveQuestionResponseFromJson(json);
   Map<String, dynamic> toJson() => _$SubjectiveQuestionResponseToJson(this);
+
+  @override
+  String toString() =>
+      'SubjectiveQuestionResponse { id: $id, response: $response }';
 }
 
 @JsonSerializable()
 class VitalsResponse {
   final String id;
-  final String response;
-  final String dataSource;
+  String response;
+  String dataSource;
 
-  const VitalsResponse({
+  VitalsResponse({
     this.id,
     this.response,
     this.dataSource,
@@ -51,4 +60,8 @@ class VitalsResponse {
   factory VitalsResponse.fromJson(Map<String, dynamic> json) =>
       _$VitalsResponseFromJson(json);
   Map<String, dynamic> toJson() => _$VitalsResponseToJson(this);
+
+  @override
+  String toString() =>
+      'VitalsResponse { id: $id, response: $response, dataSource: $dataSource }';
 }

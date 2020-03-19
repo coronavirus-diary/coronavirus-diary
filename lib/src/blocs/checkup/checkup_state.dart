@@ -11,11 +11,16 @@ abstract class CheckupState extends Equatable {
 
 class CheckupStateNotCreated extends CheckupState {}
 
-class CheckupStateCreated extends CheckupState {
+class CheckupStateInProgress extends CheckupState {
   final Checkup checkup;
 
-  const CheckupStateCreated(this.checkup);
+  const CheckupStateInProgress({this.checkup});
 
   @override
   List<Object> get props => [checkup];
+
+  @override
+  String toString() => 'CheckupStateInProgress { checkup: $checkup }';
 }
+
+class CheckupStateCompleted extends CheckupState {}
