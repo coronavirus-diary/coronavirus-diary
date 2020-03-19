@@ -7,6 +7,9 @@ abstract class CheckupEvent extends Equatable {
 
   @override
   List<Object> get props => [];
+
+  @override
+  bool get stringify => true;
 }
 
 class StartCheckup extends CheckupEvent {}
@@ -18,23 +21,8 @@ class UpdateLocalCheckup extends CheckupEvent {
 
   @override
   List<Object> get props => [updatedCheckup];
-
-  @override
-  String toString() => 'UpdateLocalCheckup { updatedCheckup: $updatedCheckup }';
 }
 
-class UpdateRemoteCheckup extends CheckupEvent {
-  @override
-  List<Object> get props => [];
+class UpdateRemoteCheckup extends CheckupEvent {}
 
-  @override
-  String toString() => 'UpdateRemoteCheckup';
-}
-
-class CompleteCheckup extends CheckupEvent {
-  @override
-  List<Object> get props => [];
-
-  @override
-  String toString() => 'CompleteCheckup';
-}
+class CompleteCheckup extends CheckupEvent {}

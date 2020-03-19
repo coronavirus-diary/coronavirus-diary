@@ -52,7 +52,7 @@ class _VitalsStepState extends State<VitalsStep> {
                   child: Center(
                     child: RaisedButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text('Return to Checkup'),
+                      child: Text('Return to checkup'),
                     ),
                   ),
                 ),

@@ -52,11 +52,17 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
     }
   }
 
-  Widget _getUnloadedBody(QuestionsState state) {
-    if (state is QuestionsStateNotLoaded) {
+  Widget _getUnloadedBody(
+    CheckupState checkupState,
+    QuestionsState questionsState,
+  ) {
+    if (checkupState is CheckupStateNotCreated) {
+      context.bloc<CheckupBloc>().add(StartCheckup());
+    }
+    if (questionsState is QuestionsStateNotLoaded) {
       context.bloc<QuestionsBloc>().add(LoadQuestions());
     }
-    return LoadingIndicator('Loading checkup');
+    return LoadingIndicator('Loading your health checkup');
   }
 
   Widget _getProgressBar(QuestionsState state) {
@@ -139,34 +145,49 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
     return errorBody;
   }
 
-  Widget _getBody(QuestionsState state) {
-    if (state is QuestionsStateNotLoaded || state is QuestionsStateLoading) {
-      return _getUnloadedBody(state);
-    } else if (state is QuestionsStateLoaded && state.questions.length > 0) {
-      return _getLoadedBody(state);
+  Widget _getBody(CheckupState checkupState, QuestionsState questionsState) {
+    if (questionsState is QuestionsStateNotLoaded ||
+        questionsState is QuestionsStateLoading ||
+        checkupState is! CheckupStateInProgress) {
+      return _getUnloadedBody(checkupState, questionsState);
+    } else if (questionsState is QuestionsStateLoaded &&
+        questionsState.questions.length > 0) {
+      return _getLoadedBody(questionsState);
     } else {
-      return _getErrorBody(state);
+      return _getErrorBody(questionsState);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CheckupBloc>(
-      create: (context) => CheckupBloc(),
-      child: BlocBuilder<QuestionsBloc, QuestionsState>(
-        builder: (context, state) {
-          return ChangeNotifierProvider<PageController>(
-            create: (context) => _pageController,
-            child: Scaffold(
-              appBar: AppBar(
-                title: Text('Your Health Checkup'),
+    return BlocConsumer<CheckupBloc, CheckupState>(
+      listener: (context, state) {
+        print(context);
+        print(state);
+      },
+      builder: (context, state) {
+        final CheckupState checkupState = state;
+
+        return BlocBuilder<QuestionsBloc, QuestionsState>(
+          builder: (context, state) {
+            final QuestionsState questionsState = state;
+
+            return ChangeNotifierProvider<PageController>(
+              create: (context) => _pageController,
+              child: Scaffold(
+                appBar: AppBar(
+                  title: Text('Your Health Checkup'),
+                ),
+                backgroundColor: Theme.of(context).primaryColor,
+                body: _getBody(
+                  checkupState,
+                  questionsState,
+                ),
               ),
-              backgroundColor: Theme.of(context).primaryColor,
-              body: _getBody(state),
-            ),
-          );
-        },
-      ),
+            );
+          },
+        );
+      },
     );
   }
 }

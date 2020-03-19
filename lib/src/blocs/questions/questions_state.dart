@@ -7,6 +7,9 @@ abstract class QuestionsState extends Equatable {
 
   @override
   List<Object> get props => [];
+
+  @override
+  bool get stringify => true;
 }
 
 class QuestionsStateNotLoaded extends QuestionsState {}
@@ -28,5 +31,5 @@ class QuestionsStateLoadingFailed extends QuestionsState {
   const QuestionsStateLoadingFailed([this.exception]);
 
   @override
-  String toString() => 'CourseListError { exception: $exception }';
+  List<Object> get props => [exception];
 }

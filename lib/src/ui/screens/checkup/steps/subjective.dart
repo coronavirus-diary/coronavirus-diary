@@ -46,7 +46,7 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsBloc, QuestionsState>(
       builder: (context, state) {
-        if (state.runtimeType != QuestionsStateLoaded) {
+        if (state is! QuestionsStateLoaded) {
           return Container(
             child: Text('Questions could not be loaded.'),
           );
@@ -55,10 +55,12 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
         final QuestionsStateLoaded questionState = state;
         return BlocBuilder<CheckupBloc, CheckupState>(
           builder: (context, state) {
-            if (state.runtimeType != CheckupStateInProgress) {
+            if (state is! CheckupStateInProgress) {
               // We should never hit this, but if we do, let's
-              // do something reasonable
+              // navigate back to the beginning to make sure
+              // the checkup is created.
               Navigator.pushNamed(context, CheckupScreen.routeName);
+              return Container();
             }
 
             final CheckupStateInProgress checkupState = state;

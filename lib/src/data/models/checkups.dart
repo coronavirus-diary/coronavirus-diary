@@ -6,15 +6,18 @@ part 'checkups.g.dart';
 class Checkup {
   String id;
   DateTime created;
+  bool dataContributionPreference;
   List<SubjectiveQuestionResponse> subjectiveResponses;
   List<VitalsResponse> vitalsResponses;
 
   Checkup({
     this.id,
     this.created,
+    dataContributionPreference,
     subjectiveResponses,
     vitalsResponses,
-  })  : subjectiveResponses = subjectiveResponses ?? [],
+  })  : dataContributionPreference = dataContributionPreference ?? true,
+        subjectiveResponses = subjectiveResponses ?? [],
         vitalsResponses = vitalsResponses ?? [];
 
   factory Checkup.fromJson(Map<String, dynamic> json) =>
@@ -23,7 +26,7 @@ class Checkup {
 
   @override
   String toString() =>
-      'Checkup { id: $id, created: $created, subjectiveResponses: $subjectiveResponses, vitalsResponses: $vitalsResponses }';
+      'Checkup { id: $id, created: $created, dataContributionPreference: $dataContributionPreference, subjectiveResponses: $subjectiveResponses, vitalsResponses: $vitalsResponses }';
 }
 
 @JsonSerializable()

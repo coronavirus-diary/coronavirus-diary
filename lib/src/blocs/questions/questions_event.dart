@@ -5,6 +5,9 @@ abstract class QuestionsEvent extends Equatable {
 
   @override
   List<Object> get props => [];
+
+  @override
+  bool get stringify => true;
 }
 
 class LoadQuestions extends QuestionsEvent {}

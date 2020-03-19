@@ -12,6 +12,7 @@ Checkup _$CheckupFromJson(Map<String, dynamic> json) {
     created: json['created'] == null
         ? null
         : DateTime.parse(json['created'] as String),
+    dataContributionPreference: json['data_contribution_preference'],
     subjectiveResponses: json['subjective_responses'],
     vitalsResponses: json['vitals_responses'],
   );
@@ -20,6 +21,7 @@ Checkup _$CheckupFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$CheckupToJson(Checkup instance) => <String, dynamic>{
       'id': instance.id,
       'created': instance.created?.toIso8601String(),
+      'data_contribution_preference': instance.dataContributionPreference,
       'subjective_responses':
           instance.subjectiveResponses?.map((e) => e?.toJson())?.toList(),
       'vitals_responses':

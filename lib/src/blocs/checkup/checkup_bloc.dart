@@ -33,6 +33,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
 
   Stream<CheckupState> _mapStartCheckupToState(StartCheckup event) async* {
     // Create checkup using API
+    yield CheckupStateCreating();
     yield CheckupStateInProgress(
       checkup: Checkup(),
     );

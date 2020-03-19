@@ -7,6 +7,9 @@ abstract class PreferencesEvent extends Equatable {
 
   @override
   List<Object> get props => [];
+
+  @override
+  bool get stringify => true;
 }
 
 class UpdatePreferences extends PreferencesEvent {
