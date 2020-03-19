@@ -37,8 +37,8 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
 
   @override
   void dispose() {
-    _pageController.dispose();
     super.dispose();
+    _pageController.dispose();
   }
 
   void _handlePageChange(int index) {
