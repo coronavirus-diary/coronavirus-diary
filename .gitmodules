@@ -1,6 +1,0 @@
-[submodule "dependencies/moor"]
-	path = dependencies/moor
-	url = git@github.com:simolus3/moor.git
-[submodule "dependencies/sqflite_sqlcipher"]
-	path = dependencies/sqflite_sqlcipher
-	url = git@github.com:davidmartos96/sqflite_sqlcipher.git

@@ -4,16 +4,9 @@ part 'preferences.g.dart';
 
 @JsonSerializable()
 class Preferences {
-  bool trackLocation;
+  Preferences();
 
-  Preferences({
-    this.trackLocation = false,
-  });
-
-  Preferences.clone(Preferences preferences)
-      : this(
-          trackLocation: preferences.trackLocation,
-        );
+  Preferences.clone(Preferences preferences) : this();
 
   factory Preferences.fromJson(Map<String, dynamic> json) =>
       _$PreferencesFromJson(json);

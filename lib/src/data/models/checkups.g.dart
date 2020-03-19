@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'vitals.dart';
+part of 'checkups.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Vitals _$VitalsFromJson(Map<String, dynamic> json) {
-  return Vitals();
+Checkup _$CheckupFromJson(Map<String, dynamic> json) {
+  return Checkup();
 }
 
-Map<String, dynamic> _$VitalsToJson(Vitals instance) => <String, dynamic>{};
+Map<String, dynamic> _$CheckupToJson(Checkup instance) => <String, dynamic>{};

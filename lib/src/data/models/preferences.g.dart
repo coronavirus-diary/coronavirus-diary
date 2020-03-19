@@ -7,12 +7,8 @@ part of 'preferences.dart';
 // **************************************************************************
 
 Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
-  return Preferences(
-    trackLocation: json['trackLocation'] as bool,
-  );
+  return Preferences();
 }
 
 Map<String, dynamic> _$PreferencesToJson(Preferences instance) =>
-    <String, dynamic>{
-      'trackLocation': instance.trackLocation,
-    };
+    <String, dynamic>{};
