@@ -4,7 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/data/repositories/questions.dart';
-import 'ui/router.dart';
+import 'package:coronavirus_diary/src/ui/assets/theme.dart';
+import 'package:coronavirus_diary/src/ui/router.dart';
 
 class DiaryApp extends StatelessWidget {
   @override
@@ -28,6 +29,7 @@ class DiaryApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             title: 'Coronavirus Diary',
+            theme: appTheme,
             routes: appRoutes,
             initialRoute: initialRoute,
           );

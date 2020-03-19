@@ -38,8 +38,12 @@ class _CheckupScreenState extends State<CheckupScreen> {
   }
 
   Widget _getProgressBar(QuestionsState state) {
-    double percentComplete = currentIndex - 1 / steps.length;
-    String percentCompleteText = (percentComplete * 100).round().toString();
+    double percentComplete = (currentIndex - 1) / (steps.length - 1);
+    bool isLastPage = currentIndex == steps.length - 1;
+
+    // Remember to update this if steps are added that do not count towards the total
+    String percentCompleteText = 'Step ${currentIndex} of ${steps.length - 1}';
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: Column(
@@ -53,7 +57,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  '$percentCompleteText% Complete',
+                  percentCompleteText,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -64,7 +68,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
                     duration: Duration(milliseconds: 400),
                     curve: Curves.easeInOut,
                   ),
-                  child: Text('Continue'),
+                  child: Text(isLastPage ? 'Submit' : 'Continue'),
                 ),
               ],
             ),

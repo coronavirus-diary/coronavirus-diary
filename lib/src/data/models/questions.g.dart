@@ -13,7 +13,7 @@ SliderQuestion _$SliderQuestionFromJson(Map<String, dynamic> json) {
     subtitle: json['subtitle'],
     min: (json['min'] as num)?.toDouble(),
     max: (json['max'] as num)?.toDouble(),
-    initialValue: (json['initialValue'] as num)?.toDouble(),
+    initialValue: (json['initial_value'] as num)?.toDouble(),
     labels: (json['labels'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
     ),
@@ -27,7 +27,7 @@ Map<String, dynamic> _$SliderQuestionToJson(SliderQuestion instance) =>
       'subtitle': instance.subtitle,
       'min': instance.min,
       'max': instance.max,
-      'initialValue': instance.initialValue,
+      'initial_value': instance.initialValue,
       'labels': instance.labels,
     };
 
