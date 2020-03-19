@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
-import 'package:coronavirus_diary/src/data/models/questions.dart';
-import 'package:coronavirus_diary/src/ui/widgets/questions/question_view.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements CheckupStep {
@@ -45,6 +44,18 @@ class _IntroStepState extends State<IntroStep> {
                     color: Colors.white,
                   ),
               textAlign: TextAlign.center,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: RaisedButton(
+                onPressed: () =>
+                    Provider.of<PageController>(context, listen: false)
+                        .nextPage(
+                  duration: Duration(milliseconds: 400),
+                  curve: Curves.easeInOut,
+                ),
+                child: Text('Continue'),
+              ),
             ),
           ],
         ),

@@ -67,7 +67,6 @@ class _SimpleSliderState extends State<SimpleSlider> {
 
   @override
   Widget build(BuildContext context) {
-    print(_value);
     return DefaultTextStyle(
       style: TextStyle(color: Colors.white),
       child: Row(

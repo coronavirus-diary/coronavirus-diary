@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
@@ -36,10 +37,52 @@ class _CheckupScreenState extends State<CheckupScreen> {
     return LoadingIndicator('Loading checkup');
   }
 
-  Widget _getLoadedBody(QuestionsState state) {
-    double percentComplete = currentIndex / steps.length;
+  Widget _getProgressBar(QuestionsState state) {
+    double percentComplete = currentIndex - 1 / steps.length;
     String percentCompleteText = (percentComplete * 100).round().toString();
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  '$percentCompleteText% Complete',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                ),
+                RaisedButton(
+                  onPressed: () => _pageController.nextPage(
+                    duration: Duration(milliseconds: 400),
+                    curve: Curves.easeInOut,
+                  ),
+                  child: Text('Continue'),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+            child: LinearProgressIndicator(
+              value: percentComplete,
+              backgroundColor: Colors.white.withOpacity(0.2),
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
+  Widget _getLoadedBody(QuestionsState state) {
     return Stack(
       children: <Widget>[
         PageView.builder(
@@ -53,42 +96,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
             return steps[index];
           },
         ),
-        if (currentStep != null)
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () => _pageController.nextPage(
-                    duration: Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
-                  ),
-                  child: Text('Continue'),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    '$percentCompleteText% Complete',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                  child: LinearProgressIndicator(
-                    value: percentComplete,
-                    backgroundColor: Colors.white.withOpacity(0.2),
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                  ),
-                ),
-              ],
-            ),
-          ),
+        if (currentStep != null && currentIndex > 0) _getProgressBar(state),
       ],
     );
   }
@@ -122,12 +130,15 @@ class _CheckupScreenState extends State<CheckupScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsBloc, QuestionsState>(
       builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('Checkup time!'),
+        return ChangeNotifierProvider<PageController>(
+          create: (context) => _pageController,
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text('Your Health Checkup'),
+            ),
+            backgroundColor: Theme.of(context).primaryColor,
+            body: _getBody(state),
           ),
-          backgroundColor: Theme.of(context).primaryColor,
-          body: _getBody(state),
         );
       },
     );
