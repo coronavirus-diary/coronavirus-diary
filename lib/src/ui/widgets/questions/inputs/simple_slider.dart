@@ -5,6 +5,8 @@ export 'package:flutter_xlider/flutter_xlider.dart';
 
 class SimpleSlider extends StatefulWidget {
   final double value;
+  final double min;
+  final double max;
   final Function(int handlerIndex, dynamic lowerValue, dynamic upperValue)
       onChange;
   final List<FlutterSliderHatchMarkLabel> labels;
@@ -13,6 +15,8 @@ class SimpleSlider extends StatefulWidget {
 
   const SimpleSlider({
     @required this.value,
+    @required this.min,
+    @required this.max,
     this.onChange,
     this.labels,
     this.startIcon,
@@ -63,6 +67,7 @@ class _SimpleSliderState extends State<SimpleSlider> {
 
   @override
   Widget build(BuildContext context) {
+    print(_value);
     return DefaultTextStyle(
       style: TextStyle(color: Colors.white),
       child: Row(
@@ -74,13 +79,16 @@ class _SimpleSliderState extends State<SimpleSlider> {
             ),
           Expanded(
             child: FlutterSlider(
-              min: 1,
-              max: 5,
+              min: widget.min,
+              max: widget.max,
               onDragging: _setValue,
               onDragCompleted: _setValue,
               values: [_value],
               handler: FlutterSliderHandler(
-                child: Text(_value.round().toString()),
+                child: Text(
+                  (_value.round() + 1).toString(),
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
               hatchMark: _getHatchMark(),
               tooltip: FlutterSliderTooltip(disabled: true),

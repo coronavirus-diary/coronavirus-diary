@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'blocs/preferences/preferences.dart';
+import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
+import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
+import 'package:coronavirus_diary/src/data/repositories/questions.dart';
 import 'ui/router.dart';
 
 class DiaryApp extends StatelessWidget {
@@ -12,6 +14,13 @@ class DiaryApp extends StatelessWidget {
         BlocProvider<PreferencesBloc>(
           create: (context) {
             return PreferencesBloc();
+          },
+        ),
+        BlocProvider<QuestionsBloc>(
+          create: (context) {
+            return QuestionsBloc(
+              questionsRepository: QuestionsRepository(),
+            );
           },
         ),
       ],
