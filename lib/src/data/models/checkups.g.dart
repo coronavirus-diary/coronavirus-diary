@@ -13,7 +13,9 @@ Checkup _$CheckupFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['created'] as String),
     dataContributionPreference: json['data_contribution_preference'],
-    location: json['location'],
+    location: json['location'] == null
+        ? null
+        : CheckupLocation.fromJson(json['location'] as Map<String, dynamic>),
     subjectiveResponses: json['subjective_responses'],
     vitalsResponses: json['vitals_responses'],
   );

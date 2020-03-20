@@ -35,7 +35,7 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
         context: context,
         checkupState: checkupState,
         updateFunction: (Checkup checkup) {
-          checkup.location.postalCode = postalCode;
+          checkup.location = CheckupLocation(postalCode: postalCode);
           return checkup;
         },
       );

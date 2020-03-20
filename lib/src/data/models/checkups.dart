@@ -15,11 +15,10 @@ class Checkup {
     this.id,
     this.created,
     dataContributionPreference,
-    location,
+    this.location,
     subjectiveResponses,
     vitalsResponses,
   })  : dataContributionPreference = dataContributionPreference ?? true,
-        location = location ?? CheckupLocation(),
         subjectiveResponses = subjectiveResponses ?? [],
         vitalsResponses = vitalsResponses ?? [];
 

@@ -20,6 +20,9 @@ class _IntroStepState extends State<IntroStep> {
     Checkup checkup = checkupState.checkup;
     checkup.dataContributionPreference = value;
 
+    // Make sure to clear location
+    checkup.location = null;
+
     context
         .bloc<CheckupBloc>()
         .add(UpdateLocalCheckup(updatedCheckup: checkup));
