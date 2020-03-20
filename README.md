@@ -1,12 +1,13 @@
 # Coronavirus Diary
 _Ethically sourcing data for the fight against disease._
 
-Coronavirus Diary is a mobile application that allows users to record their medical status, location, and activities to an encrypted vault on their device. If the user experiences symptoms in line with the disease, they will be prompted to contact their physician.
+Coronavirus Diary is a mobile application that allows users to complete daily health checkups and receive personalized symptom assessments. If the user experiences symptoms in line with the disease, they will be prompted to contact their physician.
 
-In the case that a user contracts the disease, they can release their historical data to a physician to aid in treatment, research, and containment effort.
+The user can choose submit their checkup data to aid in the COV-SARS-2 response efforts. This data will enable both medical and political authorities to coordinate a well-informed response to the outbreak and predict upcoming spikes in infections.
 
-## Get started
-Clone the repository. Make sure you include the `--recursive` flag.
-```bash
-git clone git@github.com:joshua-s/coronavirus-diary.git --recursive
-```
+## Calling all contributors!
+Are you eager to use your skills to do good and aid humanity? We are building a very ambitious platform and your contribution could make a huge difference.
+
+The pandemic is expanding rapidly and this project needs to ship as soon as possible.
+
+Get started [here](CONTRIBUTING.md).
