@@ -25,7 +25,6 @@ class TutorialStep extends StatelessWidget {
         child: Text(
           number.toString(),
           style: TextStyle(
-            color: Colors.white,
             fontSize: 14,
           ),
         ),

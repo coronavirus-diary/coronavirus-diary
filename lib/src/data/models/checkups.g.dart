@@ -13,6 +13,7 @@ Checkup _$CheckupFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['created'] as String),
     dataContributionPreference: json['data_contribution_preference'],
+    location: json['location'],
     subjectiveResponses: json['subjective_responses'],
     vitalsResponses: json['vitals_responses'],
   );
@@ -22,6 +23,7 @@ Map<String, dynamic> _$CheckupToJson(Checkup instance) => <String, dynamic>{
       'id': instance.id,
       'created': instance.created?.toIso8601String(),
       'data_contribution_preference': instance.dataContributionPreference,
+      'location': instance.location?.toJson(),
       'subjective_responses':
           instance.subjectiveResponses?.map((e) => e?.toJson())?.toList(),
       'vitals_responses':
@@ -56,4 +58,15 @@ Map<String, dynamic> _$VitalsResponseToJson(VitalsResponse instance) =>
       'id': instance.id,
       'response': instance.response,
       'data_source': instance.dataSource,
+    };
+
+CheckupLocation _$CheckupLocationFromJson(Map<String, dynamic> json) {
+  return CheckupLocation(
+    postalCode: json['postal_code'] as String,
+  );
+}
+
+Map<String, dynamic> _$CheckupLocationToJson(CheckupLocation instance) =>
+    <String, dynamic>{
+      'postal_code': instance.postalCode,
     };

@@ -42,6 +42,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   Stream<CheckupState> _mapUpdateLocalCheckupToState(
       UpdateLocalCheckup event) async* {
     // Don't send to API yet
+    print(event.updatedCheckup);
     yield CheckupStateInProgress(
       checkup: event.updatedCheckup,
     );

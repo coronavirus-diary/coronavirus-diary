@@ -5,6 +5,7 @@ import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/ui/router.dart';
 import 'package:coronavirus_diary/src/ui/widgets/questions/question_view.dart';
+import 'package:coronavirus_diary/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class SubjectiveStep extends StatefulWidget implements CheckupStep {
@@ -18,28 +19,32 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
     dynamic value,
     CheckupStateInProgress checkupState,
   ) {
-    Checkup checkup = checkupState.checkup;
+    updateCheckup(
+      checkupState: checkupState,
+      context: context,
+      updateFunction: (Checkup checkup) {
+        final SubjectiveQuestionResponse newResponse =
+            SubjectiveQuestionResponse(
+          id: question.id,
+          response: value,
+        );
 
-    final SubjectiveQuestionResponse newResponse = SubjectiveQuestionResponse(
-      id: question.id,
-      response: value,
+        // Check if we have an existing response
+        final int existingResponseIndex =
+            checkup.subjectiveResponses.indexWhere(
+          (SubjectiveQuestionResponse response) => response.id == question.id,
+        );
+
+        // Replace or add the new response
+        if (existingResponseIndex != -1) {
+          checkup.subjectiveResponses[existingResponseIndex] = newResponse;
+        } else {
+          checkup.subjectiveResponses.add(newResponse);
+        }
+
+        return checkup;
+      },
     );
-
-    // Check if we have an existing response
-    final int existingResponseIndex = checkup.subjectiveResponses.indexWhere(
-      (SubjectiveQuestionResponse response) => response.id == question.id,
-    );
-
-    // Replace or add the new response
-    if (existingResponseIndex != -1) {
-      checkup.subjectiveResponses[existingResponseIndex] = newResponse;
-    } else {
-      checkup.subjectiveResponses.add(newResponse);
-    }
-
-    context
-        .bloc<CheckupBloc>()
-        .add(UpdateLocalCheckup(updatedCheckup: checkup));
   }
 
   @override

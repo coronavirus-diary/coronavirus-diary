@@ -7,6 +7,7 @@ class Checkup {
   String id;
   DateTime created;
   bool dataContributionPreference;
+  CheckupLocation location;
   List<SubjectiveQuestionResponse> subjectiveResponses;
   List<VitalsResponse> vitalsResponses;
 
@@ -14,9 +15,11 @@ class Checkup {
     this.id,
     this.created,
     dataContributionPreference,
+    location,
     subjectiveResponses,
     vitalsResponses,
   })  : dataContributionPreference = dataContributionPreference ?? true,
+        location = location ?? CheckupLocation(),
         subjectiveResponses = subjectiveResponses ?? [],
         vitalsResponses = vitalsResponses ?? [];
 
@@ -26,7 +29,8 @@ class Checkup {
 
   @override
   String toString() =>
-      'Checkup { id: $id, created: $created, dataContributionPreference: $dataContributionPreference, subjectiveResponses: $subjectiveResponses, vitalsResponses: $vitalsResponses }';
+      'Checkup { id: $id, created: $created, dataContributionPreference: $dataContributionPreference, '
+      'location: $location, subjectiveResponses: $subjectiveResponses, vitalsResponses: $vitalsResponses }';
 }
 
 @JsonSerializable()
@@ -67,4 +71,20 @@ class VitalsResponse {
   @override
   String toString() =>
       'VitalsResponse { id: $id, response: $response, dataSource: $dataSource }';
+}
+
+@JsonSerializable()
+class CheckupLocation {
+  String postalCode;
+
+  CheckupLocation({
+    this.postalCode,
+  });
+
+  factory CheckupLocation.fromJson(Map<String, dynamic> json) =>
+      _$CheckupLocationFromJson(json);
+  Map<String, dynamic> toJson() => _$CheckupLocationToJson(this);
+
+  @override
+  String toString() => 'CheckupLocation { postalCode: $postalCode }';
 }

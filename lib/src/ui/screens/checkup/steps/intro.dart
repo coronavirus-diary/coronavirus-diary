@@ -93,6 +93,12 @@ class _IntroStepState extends State<IntroStep> {
                   title: Text(
                     'Contribute my data to the COVID-19 response effort.',
                   ),
+                  subtitle: Container(
+                    margin: EdgeInsets.only(top: 5),
+                    child: Text(
+                      'We will ask for your approximate location.',
+                    ),
+                  ),
                   activeColor: Colors.white,
                   onChanged: (bool value) =>
                       _updateDataContributionPreference(value, checkupState),

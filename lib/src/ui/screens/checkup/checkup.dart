@@ -5,13 +5,15 @@ import 'package:provider/provider.dart';
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
-import 'steps/index.dart';
+import 'checkup_loaded_body.dart';
 
 class CheckupScreen extends StatelessWidget {
   static const routeName = '/checkup';
 
   @override
   Widget build(BuildContext context) {
+    // Initializing the bloc provider here so that the bloc is
+    // accessible to all functions in the checkup screen body
     return BlocProvider<CheckupBloc>(
       create: (context) => CheckupBloc(),
       child: CheckupScreenBody(),
@@ -25,9 +27,9 @@ class CheckupScreenBody extends StatefulWidget {
 }
 
 class _CheckupScreenBodyState extends State<CheckupScreenBody> {
+  // Storing the page controller at this level so that we can access it
+  // across the entire checkup experience
   PageController _pageController;
-  int currentIndex = 0;
-  CheckupStep currentStep = steps[0];
 
   @override
   void initState() {
@@ -41,17 +43,6 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
     _pageController.dispose();
   }
 
-  void _handlePageChange(int index) {
-    setState(() {
-      currentIndex = index;
-      currentStep = steps[index];
-    });
-
-    if (currentIndex > 1) {
-      context.bloc<CheckupBloc>().add(UpdateRemoteCheckup());
-    }
-  }
-
   Widget _getUnloadedBody(
     CheckupState checkupState,
     QuestionsState questionsState,
@@ -63,71 +54,6 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
       context.bloc<QuestionsBloc>().add(LoadQuestions());
     }
     return LoadingIndicator('Loading your health checkup');
-  }
-
-  Widget _getProgressBar(QuestionsState state) {
-    double percentComplete = (currentIndex) / (steps.length - 1);
-    bool isLastPage = currentIndex == steps.length - 1;
-
-    // Remember to update this if steps are added that do not count towards the total
-    String percentCompleteText = 'Step ${currentIndex} of ${steps.length - 1}';
-
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  percentCompleteText,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                ),
-                RaisedButton(
-                  onPressed: () => _pageController.nextPage(
-                    duration: Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
-                  ),
-                  child: Text(isLastPage ? 'Submit' : 'Continue'),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-            child: LinearProgressIndicator(
-              value: percentComplete,
-              backgroundColor: Colors.white.withOpacity(0.2),
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _getLoadedBody(QuestionsState state) {
-    return Stack(
-      children: <Widget>[
-        PageView.builder(
-          controller: _pageController,
-          onPageChanged: _handlePageChange,
-          itemCount: steps.length,
-          itemBuilder: (BuildContext context, int index) {
-            return steps[index];
-          },
-        ),
-        if (currentStep != null && currentIndex > 0) _getProgressBar(state),
-      ],
-    );
   }
 
   Widget _getErrorBody(QuestionsState state) {
@@ -152,7 +78,7 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
       return _getUnloadedBody(checkupState, questionsState);
     } else if (questionsState is QuestionsStateLoaded &&
         questionsState.questions.length > 0) {
-      return _getLoadedBody(questionsState);
+      return CheckupLoadedBody();
     } else {
       return _getErrorBody(questionsState);
     }
@@ -160,11 +86,7 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CheckupBloc, CheckupState>(
-      listener: (context, state) {
-        print(context);
-        print(state);
-      },
+    return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
         final CheckupState checkupState = state;
 
