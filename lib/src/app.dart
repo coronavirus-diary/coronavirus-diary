@@ -23,7 +23,7 @@ class DiaryApp extends StatelessWidget {
           create: (context) {
             return QuestionsBloc(
               questionsRepository: QuestionsRepository(),
-            );
+            )..add(LoadQuestions());
           },
         ),
       ],
