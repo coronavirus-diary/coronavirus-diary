@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+
+import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
+import 'package:coronavirus_diary/src/ui/router.dart';
 
 class CheckupProgressBar extends StatelessWidget {
   final int currentIndex;
@@ -9,6 +13,19 @@ class CheckupProgressBar extends StatelessWidget {
     this.currentIndex,
     this.stepsLength,
   });
+
+  _handleNextButton(BuildContext context) {
+    bool isLastPage = currentIndex == stepsLength - 1;
+    if (isLastPage) {
+      context.bloc<CheckupBloc>().add(CompleteCheckup());
+      Navigator.pushNamed(context, AssessmentScreen.routeName);
+    } else {
+      Provider.of<PageController>(context, listen: false).nextPage(
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +55,7 @@ class CheckupProgressBar extends StatelessWidget {
                   ),
                 ),
                 RaisedButton(
-                  onPressed: () =>
-                      Provider.of<PageController>(context, listen: false)
-                          .nextPage(
-                    duration: Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
-                  ),
+                  onPressed: () => _handleNextButton(context),
                   child: Text(isLastPage ? 'Submit' : 'Continue'),
                 ),
               ],

@@ -30,7 +30,7 @@ class Checkup {
 
   @override
   String toString() =>
-      'Checkup { id: $id, created: $created, dataContributionPreference: $dataContributionPreference, '
+      'Checkup { id: $id, userId: $userId, created: $created, dataContributionPreference: $dataContributionPreference, '
       'location: $location, subjectiveResponses: $subjectiveResponses, vitalsResponses: $vitalsResponses }';
 }
 

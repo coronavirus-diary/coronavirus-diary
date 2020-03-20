@@ -3,35 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
 import 'checkup_loaded_body.dart';
 
-class CheckupScreen extends StatelessWidget {
+class CheckupScreen extends StatefulWidget {
   static const routeName = '/checkup';
 
   @override
-  Widget build(BuildContext context) {
-    // Initializing the bloc provider here so that the bloc is
-    // accessible to all functions in the checkup screen body
-    return BlocBuilder<PreferencesBloc, PreferencesState>(
-      builder: (context, state) {
-        return BlocProvider<CheckupBloc>(
-          create: (context) => CheckupBloc(preferencesState: state),
-          child: CheckupScreenBody(),
-        );
-      },
-    );
-  }
+  _CheckupScreenState createState() => _CheckupScreenState();
 }
 
-class CheckupScreenBody extends StatefulWidget {
-  @override
-  _CheckupScreenBodyState createState() => _CheckupScreenBodyState();
-}
-
-class _CheckupScreenBodyState extends State<CheckupScreenBody> {
+class _CheckupScreenState extends State<CheckupScreen> {
   // Storing the page controller at this level so that we can access it
   // across the entire checkup experience
   PageController _pageController;
@@ -52,11 +35,11 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
     CheckupState checkupState,
     QuestionsState questionsState,
   ) {
-    if (checkupState is CheckupStateNotCreated) {
-      context.bloc<CheckupBloc>().add(StartCheckup());
-    }
     if (questionsState is QuestionsStateNotLoaded) {
       context.bloc<QuestionsBloc>().add(LoadQuestions());
+    }
+    if (checkupState is CheckupStateNotCreated) {
+      context.bloc<CheckupBloc>().add(StartCheckup());
     }
     return LoadingIndicator('Loading your health checkup');
   }
@@ -67,22 +50,32 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
     if (state is QuestionsStateLoaded && state.questions.length == 0) {
       errorBody = Text(
         'The checkup experience is not currently available. Please try again later.',
+        textAlign: TextAlign.center,
       );
     } else {
       errorBody = Text(
-          'There was an error retrieving the checkup experience. Please try again later.');
+        'There was an error retrieving the checkup experience. Please try again later.',
+        textAlign: TextAlign.center,
+      );
     }
 
-    return errorBody;
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: errorBody,
+      ),
+    );
   }
 
   Widget _getBody(CheckupState checkupState, QuestionsState questionsState) {
     if (questionsState is QuestionsStateNotLoaded ||
         questionsState is QuestionsStateLoading ||
-        checkupState is! CheckupStateInProgress) {
+        checkupState is CheckupStateNotCreated ||
+        checkupState is CheckupStateCreating) {
       return _getUnloadedBody(checkupState, questionsState);
     } else if (questionsState is QuestionsStateLoaded &&
-        questionsState.questions.length > 0) {
+        questionsState.questions.length > 0 &&
+        checkupState is CheckupStateInProgress) {
       return CheckupLoadedBody();
     } else {
       return _getErrorBody(questionsState);

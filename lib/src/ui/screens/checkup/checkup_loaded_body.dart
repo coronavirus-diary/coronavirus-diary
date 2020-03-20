@@ -62,7 +62,7 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
     });
 
     // Destination-specific actions
-    if (currentIndex > 1) {
+    if (currentIndex > 1 && currentIndex < steps.length - 1) {
       context.bloc<CheckupBloc>().add(UpdateRemoteCheckup());
     }
   }
