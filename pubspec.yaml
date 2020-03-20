@@ -30,6 +30,7 @@ dependencies:
   path_provider: ^1.6.5
   path: ^1.6.4
   provider: ^4.0.4
+  uuid: ^2.0.4
 
 dev_dependencies:
   build_runner: ^1.8.0

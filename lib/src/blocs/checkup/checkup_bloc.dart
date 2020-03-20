@@ -2,13 +2,16 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/data/models/checkups.dart';
 import 'checkup.dart';
 
 export 'package:coronavirus_diary/src/data/models/checkups.dart';
 
 class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
-  CheckupBloc();
+  final PreferencesState preferencesState;
+
+  CheckupBloc({this.preferencesState});
 
   @override
   CheckupState get initialState => CheckupStateNotCreated();
@@ -35,7 +38,9 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     // Create checkup using API
     yield CheckupStateCreating();
     yield CheckupStateInProgress(
-      checkup: Checkup(),
+      checkup: Checkup(
+        userId: preferencesState.preferences.userId,
+      ),
     );
   }
 

@@ -5,6 +5,7 @@ part 'checkups.g.dart';
 @JsonSerializable()
 class Checkup {
   String id;
+  String userId;
   DateTime created;
   bool dataContributionPreference;
   CheckupLocation location;
@@ -13,6 +14,7 @@ class Checkup {
 
   Checkup({
     this.id,
+    this.userId,
     this.created,
     dataContributionPreference,
     this.location,

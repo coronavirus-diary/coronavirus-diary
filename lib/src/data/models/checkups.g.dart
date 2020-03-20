@@ -9,6 +9,7 @@ part of 'checkups.dart';
 Checkup _$CheckupFromJson(Map<String, dynamic> json) {
   return Checkup(
     id: json['id'] as String,
+    userId: json['user_id'] as String,
     created: json['created'] == null
         ? null
         : DateTime.parse(json['created'] as String),
@@ -23,6 +24,7 @@ Checkup _$CheckupFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$CheckupToJson(Checkup instance) => <String, dynamic>{
       'id': instance.id,
+      'user_id': instance.userId,
       'created': instance.created?.toIso8601String(),
       'data_contribution_preference': instance.dataContributionPreference,
       'location': instance.location?.toJson(),

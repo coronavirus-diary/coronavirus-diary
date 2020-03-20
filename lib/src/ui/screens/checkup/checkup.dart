@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
+import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
 import 'checkup_loaded_body.dart';
@@ -14,9 +15,13 @@ class CheckupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initializing the bloc provider here so that the bloc is
     // accessible to all functions in the checkup screen body
-    return BlocProvider<CheckupBloc>(
-      create: (context) => CheckupBloc(),
-      child: CheckupScreenBody(),
+    return BlocBuilder<PreferencesBloc, PreferencesState>(
+      builder: (context, state) {
+        return BlocProvider<CheckupBloc>(
+          create: (context) => CheckupBloc(preferencesState: state),
+          child: CheckupScreenBody(),
+        );
+      },
     );
   }
 }
