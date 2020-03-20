@@ -39,7 +39,8 @@ class CheckupProgressBar extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed: () =>
-                      Provider.of<PageController>(context).nextPage(
+                      Provider.of<PageController>(context, listen: false)
+                          .nextPage(
                     duration: Duration(milliseconds: 400),
                     curve: Curves.easeInOut,
                   ),
