@@ -14,11 +14,11 @@ final ThemeData appTheme = ThemeData.light().copyWith(
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(color: Colors.black),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderRadius: BorderRadius.circular(5),
       borderSide: BorderSide.none,
     ),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderRadius: BorderRadius.circular(5),
       borderSide: BorderSide.none,
     ),
     filled: true,
@@ -37,7 +37,7 @@ final ThemeData appTheme = ThemeData.light().copyWith(
         buttonColor: Colors.white.withOpacity(0.8),
         textTheme: ButtonTextTheme.primary,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.circular(10),
           side: BorderSide.none,
         ),
       ),

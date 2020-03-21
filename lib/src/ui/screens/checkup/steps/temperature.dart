@@ -107,9 +107,10 @@ class _TemperatureStepState extends State<TemperatureStep> {
             ),
             keyboardType: TextInputType.number,
             inputFormatters: [
-              WhitelistingTextInputFormatter.digitsOnly,
+              WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
             ],
             autovalidate: true,
+            autofocus: true,
             validator: (String value) {
               if (value != '') {
                 final double numberValue = double.parse(value);
