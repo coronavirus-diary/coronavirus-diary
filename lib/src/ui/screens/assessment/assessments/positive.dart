@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
 import 'package:coronavirus_diary/src/ui/widgets/stay_safe.dart';
 
 class PositiveAssessment extends StatefulWidget {
@@ -10,8 +11,7 @@ class PositiveAssessment extends StatefulWidget {
 class _PositiveAssessmentState extends State<PositiveAssessment> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
+    return ScrollableBody(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

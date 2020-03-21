@@ -1,3 +1,4 @@
+import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -133,59 +134,62 @@ class _TemperatureStepState extends State<TemperatureStep> {
         );
         return Padding(
           padding: EdgeInsets.all(40),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: Container(),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: Text(
-                  "Take your temperature",
-                  style: Theme.of(context).textTheme.title.copyWith(
-                        color: Colors.white,
-                        fontSize: 26,
-                      ),
-                  textAlign: TextAlign.center,
+          child: ScrollableBody(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Container(),
                 ),
-              ),
-              TextFormField(
-                initialValue:
-                    existingResponse != null ? existingResponse.toString() : '',
-                onChanged: (String value) =>
-                    _updateTemperature(double.parse(value), checkupState),
-                decoration: InputDecoration(
-                  icon: FaIcon(
-                    FontAwesomeIcons.thermometerHalf,
-                    color: Colors.white,
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Text(
+                    "Take your temperature",
+                    style: Theme.of(context).textTheme.title.copyWith(
+                          color: Colors.white,
+                          fontSize: 26,
+                        ),
+                    textAlign: TextAlign.center,
                   ),
-                  labelText: 'Enter your temperature',
-                  hasFloatingPlaceholder: false,
-                  suffixText: '℉',
                 ),
-                keyboardType: TextInputType.number,
-                inputFormatters: [
-                  WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
-                ],
-                autovalidate: true,
-                autofocus: true,
-                validator: _validateTemperature,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
+                TextFormField(
+                  initialValue: existingResponse != null
+                      ? existingResponse.toString()
+                      : '',
+                  onChanged: (String value) =>
+                      _updateTemperature(double.parse(value), checkupState),
+                  decoration: InputDecoration(
+                    icon: FaIcon(
+                      FontAwesomeIcons.thermometerHalf,
+                      color: Colors.white,
+                    ),
+                    labelText: 'Enter your temperature',
+                    hasFloatingPlaceholder: false,
+                    suffixText: '℉',
+                  ),
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
+                  ],
+                  autovalidate: true,
+                  autofocus: true,
+                  validator: _validateTemperature,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 50),
-                child: RaisedButton(
-                  onPressed: _showInstructions,
-                  child: Text('Need help? Click for instructions.'),
+                Container(
+                  margin: EdgeInsets.only(top: 50),
+                  child: RaisedButton(
+                    onPressed: _showInstructions,
+                    child: Text('Need help? Click for instructions.'),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

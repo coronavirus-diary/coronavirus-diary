@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/ui/router.dart';
+import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
 
 class GetStartedStep extends StatelessWidget {
   void _completeTutorial(BuildContext context, PreferencesState state) {
@@ -27,40 +28,44 @@ class GetStartedStep extends StatelessWidget {
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
         return SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                width: double.infinity,
-                color: Colors.white.withOpacity(0.2),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                margin: EdgeInsets.only(bottom: 20),
-                child: Center(
-                  child: FaIcon(
-                    FontAwesomeIcons.handHoldingHeart,
-                    color: Colors.white,
-                    size: 80,
+          child: ScrollableBody(
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 40),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    width: double.infinity,
+                    color: Colors.white.withOpacity(0.2),
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: Center(
+                      child: FaIcon(
+                        FontAwesomeIcons.handHoldingHeart,
+                        color: Colors.white,
+                        size: 80,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    margin: EdgeInsets.only(bottom: 50),
+                    child: Text(
+                      "You've joined the Coronavirus Diary community!",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.title,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    child: RaisedButton(
+                      onPressed: () => _completeTutorial(context, state),
+                      child: Text('Click here to get started'),
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                margin: EdgeInsets.only(bottom: 50),
-                child: Text(
-                  "You've joined the Coronavirus Diary community!",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.title,
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                margin: EdgeInsets.only(bottom: 40),
-                child: RaisedButton(
-                  onPressed: () => _completeTutorial(context, state),
-                  child: Text('Click here to get started'),
-                ),
-              ),
-            ],
+            ),
           ),
         );
       },

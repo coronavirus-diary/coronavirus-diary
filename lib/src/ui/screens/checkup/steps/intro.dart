@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
+import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements CheckupStep {
@@ -32,7 +33,7 @@ class _IntroStepState extends State<IntroStep> {
     return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
         final CheckupStateInProgress checkupState = state;
-        return SingleChildScrollView(
+        return ScrollableBody(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

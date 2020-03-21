@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/ui/router.dart';
+import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
 import 'package:coronavirus_diary/src/ui/widgets/share.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -138,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     tooltip: 'DEBUG MODE ONLY: Clear user data',
                   ),
           ),
-          body: SingleChildScrollView(
+          body: ScrollableBody(
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 40),
               alignment: Alignment.center,
