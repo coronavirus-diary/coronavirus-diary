@@ -20,7 +20,7 @@ class _NegativeAssessmentState extends State<NegativeAssessment> {
             margin: EdgeInsets.only(bottom: 10),
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: FaIcon(
-              FontAwesomeIcons.solidSmile,
+              FontAwesomeIcons.heartbeat,
               color: Colors.white,
               size: 70,
             ),

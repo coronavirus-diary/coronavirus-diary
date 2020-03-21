@@ -38,7 +38,7 @@ class DiaryApp extends StatelessWidget {
               title: 'Coronavirus Diary',
               theme: appTheme,
               routes: appRoutes,
-              initialRoute: initialRoute,
+              initialRoute: getInitialRoute(state),
             ),
           );
         },

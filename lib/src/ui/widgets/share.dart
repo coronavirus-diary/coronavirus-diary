@@ -9,7 +9,7 @@ class ShareApp extends StatelessWidget {
     void _shareApp() {
       Share.share(
         'Worried that you might have COVID-19? '
-        'Download this app to checkup on your health and support your community: APP_LINK',
+        'Download this app to check up on your health and support your community: APP_LINK',
       );
     }
 
@@ -24,8 +24,8 @@ class ShareApp extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 10),
             child: FaIcon(
-              FontAwesomeIcons.heartbeat,
-              color: Colors.red,
+              FontAwesomeIcons.handHoldingHeart,
+              color: Colors.white,
               size: 40,
             ),
           ),

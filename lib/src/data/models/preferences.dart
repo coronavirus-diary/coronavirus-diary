@@ -9,21 +9,32 @@ part 'preferences.g.dart';
 @JsonSerializable()
 class Preferences {
   final String userId;
+  final bool completedTutorial;
+  final bool agreedToTerms;
   final Assessment lastAssessment;
 
   Preferences({
     userId,
+    completedTutorial,
+    this.agreedToTerms,
     this.lastAssessment,
-  }) : userId = userId ??
-            Uuid().v4(options: {
-              'grng': UuidUtil.cryptoRNG,
-            });
+  })  : completedTutorial = completedTutorial ?? false,
+        userId = userId ??
+            Uuid().v4(
+              options: {
+                'grng': UuidUtil.cryptoRNG,
+              },
+            );
 
   Preferences cloneWith({
+    bool completedTutorial,
+    bool agreedToTerms,
     Assessment lastAssessment,
   }) {
     return Preferences(
       userId: this.userId,
+      completedTutorial: completedTutorial ?? this.completedTutorial,
+      agreedToTerms: agreedToTerms ?? this.agreedToTerms,
       lastAssessment: lastAssessment ?? this.lastAssessment,
     );
   }
