@@ -61,14 +61,6 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
         final QuestionsStateLoaded questionState = state;
         return BlocBuilder<CheckupBloc, CheckupState>(
           builder: (context, state) {
-            if (state is! CheckupStateInProgress) {
-              // We should never hit this, but if we do, let's
-              // navigate back to the beginning to make sure
-              // the checkup is created.
-              Navigator.pushNamed(context, CheckupScreen.routeName);
-              return Container();
-            }
-
             final CheckupStateInProgress checkupState = state;
             return QuestionView(
               padding: EdgeInsets.only(bottom: 80),

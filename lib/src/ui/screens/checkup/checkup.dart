@@ -86,8 +86,9 @@ class _CheckupScreenState extends State<CheckupScreen> {
       case CheckupStateCreating:
         return _getUnloadedBody(checkupState);
       case CheckupStateInProgress:
-      case CheckupStateCompleting:
         return CheckupLoadedBody();
+      case CheckupStateCompleting:
+        return Container();
       case CheckupStateCompleted:
         _handleCheckupCompletion(preferencesState, checkupState);
         return null;

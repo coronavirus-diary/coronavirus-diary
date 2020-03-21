@@ -32,14 +32,6 @@ class _IntroStepState extends State<IntroStep> {
   Widget build(BuildContext context) {
     return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
-        if (state is! CheckupStateInProgress) {
-          // We should never hit this, but if we do, let's
-          // navigate back to the beginning to make sure
-          // the checkup is created.
-          Navigator.pushNamed(context, CheckupScreen.routeName);
-          return Container();
-        }
-
         final CheckupStateInProgress checkupState = state;
         return SingleChildScrollView(
           child: Column(
