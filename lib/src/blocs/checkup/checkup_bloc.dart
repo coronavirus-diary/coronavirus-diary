@@ -57,6 +57,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     if (state is! CheckupStateInProgress) return;
 
     // Don't send to API yet
+    // TODO: remove this
     print(event.updatedCheckup);
     yield CheckupStateInProgress(
       checkup: event.updatedCheckup,
@@ -90,6 +91,9 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     final CheckupStateInProgress currentState = state;
     final Checkup currentCheckup = currentState.checkup;
 
+    // TODO: remove this
+    print(currentCheckup.toJson().toString());
+
     // Make sure checkup is up to date on server
     final Checkup checkup =
         await checkupsRepository.updateCheckup(currentCheckup);
@@ -97,6 +101,9 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     // Complete checkup
     final Assessment assessment =
         await checkupsRepository.completeCheckup(checkup.id);
+
+    // TODO: remove this
+    print(assessment.toJson().toString());
 
     // Complete checkup using API
     yield CheckupStateCompleted(assessment: assessment);

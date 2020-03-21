@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
+import 'package:coronavirus_diary/src/ui/router.dart';
 import 'package:coronavirus_diary/src/ui/widgets/tutorial_step.dart';
+import 'package:coronavirus_diary/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class TemperatureStep extends StatefulWidget implements CheckupStep {
@@ -11,6 +15,52 @@ class TemperatureStep extends StatefulWidget implements CheckupStep {
 }
 
 class _TemperatureStepState extends State<TemperatureStep> {
+  String _validateTemperature(String value) {
+    if (value != '') {
+      final double numberValue = double.parse(value);
+      if (numberValue > 150) {
+        return 'Please enter a value below 150 ℉';
+      } else if (numberValue < 70) {
+        return 'Please enter a value above 70 ℉';
+      }
+    }
+    return null;
+  }
+
+  void _updateTemperature(
+    double value,
+    CheckupStateInProgress checkupState,
+  ) {
+    // Validate before saving
+    if (_validateTemperature(value.toString()) != null) return;
+
+    updateCheckup(
+      checkupState: checkupState,
+      context: context,
+      updateFunction: (Checkup checkup) {
+        final VitalsResponse newResponse = VitalsResponse(
+          id: 'temperature',
+          response: value,
+          dataSource: 'MANUAL_INPUT',
+        );
+
+        // Check if we have an existing response
+        final int existingResponseIndex = checkup.vitalsResponses.indexWhere(
+          (VitalsResponse response) => response.id == newResponse.id,
+        );
+
+        // Replace or add the new response
+        if (existingResponseIndex != -1) {
+          checkup.vitalsResponses[existingResponseIndex] = newResponse;
+        } else {
+          checkup.vitalsResponses.add(newResponse);
+        }
+
+        return checkup;
+      },
+    );
+  }
+
   Future<void> _showInstructions() async {
     await showDialog<void>(
       context: context,
@@ -74,68 +124,80 @@ class _TemperatureStepState extends State<TemperatureStep> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(40),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(bottom: 20),
-            child: Container(),
-          ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 20),
-            child: Text(
-              "Take your temperature",
-              style: Theme.of(context).textTheme.title.copyWith(
-                    color: Colors.white,
-                    fontSize: 26,
-                  ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              icon: FaIcon(
-                FontAwesomeIcons.thermometerHalf,
-                color: Colors.white,
+    return BlocBuilder<CheckupBloc, CheckupState>(
+      builder: (context, state) {
+        if (state is! CheckupStateInProgress) {
+          // We should never hit this, but if we do, let's
+          // navigate back to the beginning to make sure
+          // the checkup is created.
+          Navigator.pushNamed(context, CheckupScreen.routeName);
+          return Container();
+        }
+
+        final CheckupStateInProgress checkupState = state;
+        final VitalsResponse existingResponse =
+            checkupState.checkup.vitalsResponses.firstWhere(
+          (VitalsResponse response) => response.id == 'temperature',
+          orElse: () => null,
+        );
+        return Padding(
+          padding: EdgeInsets.all(40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(bottom: 20),
+                child: Container(),
               ),
-              labelText: 'Enter your temperature',
-              hasFloatingPlaceholder: false,
-              suffixText: '℉',
-            ),
-            keyboardType: TextInputType.number,
-            inputFormatters: [
-              WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
+              Padding(
+                padding: EdgeInsets.only(bottom: 20),
+                child: Text(
+                  "Take your temperature",
+                  style: Theme.of(context).textTheme.title.copyWith(
+                        color: Colors.white,
+                        fontSize: 26,
+                      ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              TextFormField(
+                initialValue:
+                    existingResponse != null ? existingResponse.toString() : '',
+                onChanged: (String value) =>
+                    _updateTemperature(double.parse(value), checkupState),
+                decoration: InputDecoration(
+                  icon: FaIcon(
+                    FontAwesomeIcons.thermometerHalf,
+                    color: Colors.white,
+                  ),
+                  labelText: 'Enter your temperature',
+                  hasFloatingPlaceholder: false,
+                  suffixText: '℉',
+                ),
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
+                ],
+                autovalidate: true,
+                autofocus: true,
+                validator: _validateTemperature,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                child: RaisedButton(
+                  onPressed: _showInstructions,
+                  child: Text('Need help? Click for instructions.'),
+                ),
+              ),
             ],
-            autovalidate: true,
-            autofocus: true,
-            validator: (String value) {
-              if (value != '') {
-                final double numberValue = double.parse(value);
-                if (numberValue > 150) {
-                  return 'Please enter a value below 150 ℉';
-                } else if (numberValue < 70) {
-                  return 'Please enter a value above 70 ℉';
-                }
-              }
-              return null;
-            },
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-            ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 50),
-            child: RaisedButton(
-              onPressed: _showInstructions,
-              child: Text('Need help? Click for instructions.'),
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

@@ -56,7 +56,7 @@ class SubjectiveQuestionResponse {
 @JsonSerializable()
 class VitalsResponse {
   final String id;
-  String response;
+  dynamic response;
   String dataSource;
 
   VitalsResponse({

@@ -52,7 +52,7 @@ Map<String, dynamic> _$SubjectiveQuestionResponseToJson(
 VitalsResponse _$VitalsResponseFromJson(Map<String, dynamic> json) {
   return VitalsResponse(
     id: json['id'] as String,
-    response: json['response'] as String,
+    response: json['response'],
     dataSource: json['data_source'] as String,
   );
 }

@@ -32,7 +32,8 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
         // Check if we have an existing response
         final int existingResponseIndex =
             checkup.subjectiveResponses.indexWhere(
-          (SubjectiveQuestionResponse response) => response.id == question.id,
+          (SubjectiveQuestionResponse response) =>
+              response.id == newResponse.id,
         );
 
         // Replace or add the new response
