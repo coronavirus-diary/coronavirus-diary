@@ -20,6 +20,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
   // Storing the page controller at this level so that we can access it
   // across the entire checkup experience
   PageController _pageController;
+  bool _showLoadingAssessmentHUD = false;
 
   @override
   void initState() {
@@ -88,10 +89,8 @@ class _CheckupScreenState extends State<CheckupScreen> {
       case CheckupStateInProgress:
         return CheckupLoadedBody();
       case CheckupStateCompleting:
-        return Container();
       case CheckupStateCompleted:
-        _handleCheckupCompletion(preferencesState, checkupState);
-        return null;
+        return Container();
       default:
         return _getErrorBody();
     }
@@ -103,12 +102,23 @@ class _CheckupScreenState extends State<CheckupScreen> {
       builder: (context, state) {
         final PreferencesState preferencesState = state;
 
-        return BlocBuilder<CheckupBloc, CheckupState>(
+        return BlocConsumer<CheckupBloc, CheckupState>(
+          listener: (context, state) {
+            if (state is CheckupStateCompleting) {
+              if (!_showLoadingAssessmentHUD) {
+                setState(() {
+                  _showLoadingAssessmentHUD = true;
+                });
+              }
+            } else if (state is CheckupStateCompleted) {
+              _handleCheckupCompletion(preferencesState, state);
+            }
+          },
           builder: (context, state) {
             final CheckupState checkupState = state;
 
             return WidgetHUD(
-              showHUD: checkupState is CheckupStateCompleting,
+              showHUD: _showLoadingAssessmentHUD,
               hud: HUD(label: 'Loading your assessment'),
               builder: (context) {
                 return ChangeNotifierProvider<PageController>.value(

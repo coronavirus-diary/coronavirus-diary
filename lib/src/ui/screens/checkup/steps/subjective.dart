@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
-import 'package:coronavirus_diary/src/ui/router.dart';
 import 'package:coronavirus_diary/src/ui/widgets/questions/question_view.dart';
 import 'package:coronavirus_diary/src/ui/utils/checkups.dart';
 import 'index.dart';

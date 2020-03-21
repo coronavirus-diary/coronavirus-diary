@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
-import 'package:coronavirus_diary/src/ui/router.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements CheckupStep {
