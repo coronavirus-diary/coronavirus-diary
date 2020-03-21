@@ -37,7 +37,7 @@ class GetStartedStep extends StatelessWidget {
                 margin: EdgeInsets.only(bottom: 20),
                 child: Center(
                   child: FaIcon(
-                    FontAwesomeIcons.handsHelping,
+                    FontAwesomeIcons.handHoldingHeart,
                     color: Colors.white,
                     size: 80,
                   ),

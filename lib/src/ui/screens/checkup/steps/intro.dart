@@ -89,8 +89,8 @@ class _IntroStepState extends State<IntroStep> {
                 child: SwitchListTile(
                   contentPadding: EdgeInsets.all(20),
                   secondary: FaIcon(
-                    FontAwesomeIcons.heartbeat,
-                    color: Colors.red,
+                    FontAwesomeIcons.handHoldingHeart,
+                    color: Colors.white,
                     size: 35,
                   ),
                   title: Text(

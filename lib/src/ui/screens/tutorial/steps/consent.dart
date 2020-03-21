@@ -42,7 +42,7 @@ class ConsentStep extends StatelessWidget {
                 return Stack(
                   children: <Widget>[
                     Markdown(
-                      padding: EdgeInsets.fromLTRB(20, 40, 20, 100),
+                      padding: EdgeInsets.fromLTRB(20, 40, 20, 150),
                       data: snapshot.data,
                       styleSheet:
                           MarkdownStyleSheet.fromTheme(Theme.of(context))

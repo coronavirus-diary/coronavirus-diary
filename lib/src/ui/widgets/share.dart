@@ -24,8 +24,8 @@ class ShareApp extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 10),
             child: FaIcon(
-              FontAwesomeIcons.heartbeat,
-              color: Colors.red,
+              FontAwesomeIcons.handHoldingHeart,
+              color: Colors.white,
               size: 40,
             ),
           ),
