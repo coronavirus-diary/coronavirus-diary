@@ -18,7 +18,7 @@ var appRoutes = {
 };
 
 String getInitialRoute(PreferencesState preferencesState) {
-  if (preferencesState.preferences.isFirstLoad) {
+  if (!preferencesState.preferences.completedTutorial) {
     return TutorialScreen.routeName;
   } else {
     return HomeScreen.routeName;

@@ -9,18 +9,18 @@ part of 'preferences.dart';
 Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
   return Preferences(
     userId: json['user_id'],
+    completedTutorial: json['completed_tutorial'],
+    agreedToTerms: json['agreed_to_terms'] as bool,
     lastAssessment: json['last_assessment'] == null
         ? null
         : Assessment.fromJson(json['last_assessment'] as Map<String, dynamic>),
-    isFirstLoad: json['is_first_load'],
-    consented: json['consented'],
   );
 }
 
 Map<String, dynamic> _$PreferencesToJson(Preferences instance) =>
     <String, dynamic>{
       'user_id': instance.userId,
+      'completed_tutorial': instance.completedTutorial,
+      'agreed_to_terms': instance.agreedToTerms,
       'last_assessment': instance.lastAssessment?.toJson(),
-      'is_first_load': instance.isFirstLoad,
-      'consented': instance.consented,
     };

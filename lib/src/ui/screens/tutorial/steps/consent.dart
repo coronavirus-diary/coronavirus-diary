@@ -2,70 +2,126 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:provider/provider.dart';
 
+import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
 
 class ConsentStep extends StatelessWidget {
+  void _handleResponse(
+      {BuildContext context, PreferencesState state, bool response}) {
+    // Save response
+    Preferences newPreferences = state.preferences.cloneWith(
+      agreedToTerms: response,
+    );
+    context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
+
+    // Navigate to next page
+    Provider.of<PageController>(context, listen: false).nextPage(
+      duration: Duration(milliseconds: 400),
+      curve: Curves.easeInOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: FutureBuilder(
-        future: rootBundle.loadString('assets/copy/consent.md'),
-        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-          if (snapshot.hasData) {
-            return Stack(
-              children: <Widget>[
-                Markdown(
-                  padding: EdgeInsets.fromLTRB(20, 40, 20, 100),
-                  data: snapshot.data,
-                  styleSheet:
-                      MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
-                    blockSpacing: 20,
-                    h1Align: WrapAlignment.center,
-                    p: TextStyle(fontSize: 18),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: <Color>[
-                          Theme.of(context).primaryColor,
-                          Theme.of(context).primaryColor.withOpacity(0.6),
-                          Theme.of(context).primaryColor.withOpacity(0),
-                        ],
-                        stops: <double>[0, 0.8, 1.0],
+    return BlocBuilder<PreferencesBloc, PreferencesState>(
+      builder: (context, state) {
+        final bool agreed = state.preferences.agreedToTerms != null &&
+            state.preferences.agreedToTerms;
+        final bool rejected = state.preferences.agreedToTerms != null &&
+            !state.preferences.agreedToTerms;
+
+        return SafeArea(
+          child: FutureBuilder(
+            future: rootBundle.loadString('assets/copy/consent.md'),
+            builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+              if (snapshot.hasData) {
+                return Stack(
+                  children: <Widget>[
+                    Markdown(
+                      padding: EdgeInsets.fromLTRB(20, 40, 20, 100),
+                      data: snapshot.data,
+                      styleSheet:
+                          MarkdownStyleSheet.fromTheme(Theme.of(context))
+                              .copyWith(
+                        blockSpacing: 20,
+                        h1Align: WrapAlignment.center,
+                        p: TextStyle(fontSize: 18),
                       ),
                     ),
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          RaisedButton(
-                            onPressed: () => {},
-                            child: Text('No'),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: <Color>[
+                              Theme.of(context).primaryColor,
+                              Theme.of(context).primaryColor.withOpacity(0.6),
+                              Theme.of(context).primaryColor.withOpacity(0),
+                            ],
+                            stops: <double>[0, 0.8, 1.0],
                           ),
-                          RaisedButton(
-                            onPressed: () => {},
-                            child: Text('I agree'),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              RaisedButton(
+                                onPressed: () => _handleResponse(
+                                  context: context,
+                                  state: state,
+                                  response: false,
+                                ),
+                                child: rejected
+                                    ? Row(
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.close,
+                                            color: Colors.red,
+                                          ),
+                                          Text('Did not agree'),
+                                        ],
+                                      )
+                                    : Text('No'),
+                              ),
+                              RaisedButton(
+                                onPressed: () => _handleResponse(
+                                  context: context,
+                                  state: state,
+                                  response: true,
+                                ),
+                                child: agreed
+                                    ? Row(
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.check,
+                                            color: Colors.green,
+                                          ),
+                                          Text('Agreed'),
+                                        ],
+                                      )
+                                    : Text('I agree'),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ],
-            );
-          } else {
-            return LoadingIndicator('Loading...');
-          }
-        },
-      ),
+                  ],
+                );
+              } else {
+                return LoadingIndicator('Loading...');
+              }
+            },
+          ),
+        );
+      },
     );
   }
 }
