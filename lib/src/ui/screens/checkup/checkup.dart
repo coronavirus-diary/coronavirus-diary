@@ -1,37 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hud/flutter_hud.dart';
 import 'package:provider/provider.dart';
 
 import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
-import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
+import 'package:coronavirus_diary/src/ui/router.dart';
 import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
 import 'checkup_loaded_body.dart';
 
-class CheckupScreen extends StatelessWidget {
+class CheckupScreen extends StatefulWidget {
   static const routeName = '/checkup';
 
   @override
-  Widget build(BuildContext context) {
-    // Initializing the bloc provider here so that the bloc is
-    // accessible to all functions in the checkup screen body
-    return BlocBuilder<PreferencesBloc, PreferencesState>(
-      builder: (context, state) {
-        return BlocProvider<CheckupBloc>(
-          create: (context) => CheckupBloc(preferencesState: state),
-          child: CheckupScreenBody(),
-        );
-      },
-    );
-  }
+  _CheckupScreenState createState() => _CheckupScreenState();
 }
 
-class CheckupScreenBody extends StatefulWidget {
-  @override
-  _CheckupScreenBodyState createState() => _CheckupScreenBodyState();
-}
-
-class _CheckupScreenBodyState extends State<CheckupScreenBody> {
+class _CheckupScreenState extends State<CheckupScreen> {
   // Storing the page controller at this level so that we can access it
   // across the entire checkup experience
   PageController _pageController;
@@ -50,67 +35,96 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
 
   Widget _getUnloadedBody(
     CheckupState checkupState,
-    QuestionsState questionsState,
   ) {
     if (checkupState is CheckupStateNotCreated) {
       context.bloc<CheckupBloc>().add(StartCheckup());
     }
-    if (questionsState is QuestionsStateNotLoaded) {
-      context.bloc<QuestionsBloc>().add(LoadQuestions());
-    }
     return LoadingIndicator('Loading your health checkup');
   }
 
-  Widget _getErrorBody(QuestionsState state) {
-    Widget errorBody;
-
-    if (state is QuestionsStateLoaded && state.questions.length == 0) {
-      errorBody = Text(
-        'The checkup experience is not currently available. Please try again later.',
-      );
-    } else {
-      errorBody = Text(
-          'There was an error retrieving the checkup experience. Please try again later.');
-    }
-
-    return errorBody;
+  Widget _getErrorBody() {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Text(
+          'There was an error retrieving the checkup experience. Please try again later.',
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
   }
 
-  Widget _getBody(CheckupState checkupState, QuestionsState questionsState) {
-    if (questionsState is QuestionsStateNotLoaded ||
-        questionsState is QuestionsStateLoading ||
-        checkupState is! CheckupStateInProgress) {
-      return _getUnloadedBody(checkupState, questionsState);
-    } else if (questionsState is QuestionsStateLoaded &&
-        questionsState.questions.length > 0) {
-      return CheckupLoadedBody();
-    } else {
-      return _getErrorBody(questionsState);
+  void _handleCheckupCompletion(
+    PreferencesState preferencesState,
+    CheckupStateCompleted checkupState,
+  ) {
+    // Remember assessment
+    if (preferencesState.preferences.lastAssessment !=
+        checkupState.assessment) {
+      Preferences newPreferences = preferencesState.preferences.cloneWith(
+        lastAssessment: checkupState.assessment,
+      );
+      context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
+    }
+
+    // Navigate to assessment view
+    Navigator.pushReplacementNamed(
+      context,
+      AssessmentScreen.routeName,
+      arguments: AssessmentScreenArguments(
+        assessment: checkupState.assessment,
+      ),
+    );
+  }
+
+  Widget _getBody(
+    PreferencesState preferencesState,
+    CheckupState checkupState,
+  ) {
+    switch (checkupState.runtimeType) {
+      case CheckupStateNotCreated:
+      case CheckupStateCreating:
+        return _getUnloadedBody(checkupState);
+      case CheckupStateInProgress:
+      case CheckupStateCompleting:
+        return CheckupLoadedBody();
+      case CheckupStateCompleted:
+        _handleCheckupCompletion(preferencesState, checkupState);
+        return null;
+      default:
+        return _getErrorBody();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CheckupBloc, CheckupState>(
+    return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
-        final CheckupState checkupState = state;
+        final PreferencesState preferencesState = state;
 
-        return BlocBuilder<QuestionsBloc, QuestionsState>(
+        return BlocBuilder<CheckupBloc, CheckupState>(
           builder: (context, state) {
-            final QuestionsState questionsState = state;
+            final CheckupState checkupState = state;
 
-            return ChangeNotifierProvider<PageController>(
-              create: (context) => _pageController,
-              child: Scaffold(
-                appBar: AppBar(
-                  title: Text('Your Health Checkup'),
-                ),
-                backgroundColor: Theme.of(context).primaryColor,
-                body: _getBody(
-                  checkupState,
-                  questionsState,
-                ),
-              ),
+            return WidgetHUD(
+              showHUD: checkupState is CheckupStateCompleting,
+              hud: HUD(label: 'Loading your assessment'),
+              builder: (context) {
+                return ChangeNotifierProvider<PageController>(
+                  create: (context) => _pageController,
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title: Text('Your Health Checkup'),
+                      leading: IconButton(
+                        icon: Icon(Icons.close),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ),
+                    backgroundColor: Theme.of(context).primaryColor,
+                    body: _getBody(preferencesState, checkupState),
+                  ),
+                );
+              },
             );
           },
         );

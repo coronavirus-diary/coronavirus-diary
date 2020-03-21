@@ -1,16 +1,17 @@
 PODS:
   - Flutter (1.0.0)
-  - FMDB/SQLCipher (2.7.5):
-    - SQLCipher
-  - moor_ffi (0.0.1):
+  - geolocator (5.3.0):
+    - Flutter
+  - google_api_availability (2.0.3):
+    - Flutter
+  - location_permissions (2.0.5):
     - Flutter
   - path_provider (0.0.1):
     - Flutter
   - path_provider_macos (0.0.1):
     - Flutter
-  - sqflite (0.0.1):
+  - share (0.5.2):
     - Flutter
-    - FMDB/SQLCipher (~> 2.7.5)
   - SQLCipher (4.1.0):
     - SQLCipher/standard (= 4.1.0)
   - SQLCipher/common (4.1.0)
@@ -19,36 +20,42 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - moor_ffi (from `.symlinks/plugins/moor_ffi/ios`)
+  - geolocator (from `.symlinks/plugins/geolocator/ios`)
+  - google_api_availability (from `.symlinks/plugins/google_api_availability/ios`)
+  - location_permissions (from `.symlinks/plugins/location_permissions/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
-  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - share (from `.symlinks/plugins/share/ios`)
   - SQLCipher (~> 4.1.0)
 
 SPEC REPOS:
   trunk:
-    - FMDB
     - SQLCipher
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  moor_ffi:
-    :path: ".symlinks/plugins/moor_ffi/ios"
+  geolocator:
+    :path: ".symlinks/plugins/geolocator/ios"
+  google_api_availability:
+    :path: ".symlinks/plugins/google_api_availability/ios"
+  location_permissions:
+    :path: ".symlinks/plugins/location_permissions/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   path_provider_macos:
     :path: ".symlinks/plugins/path_provider_macos/ios"
-  sqflite:
-    :path: ".symlinks/plugins/sqflite/ios"
+  share:
+    :path: ".symlinks/plugins/share/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  moor_ffi: d66c9470c18e9cb333423bbcb493c105c6c774c6
+  geolocator: 7cdcf71180b80913b3cd84ab715d3b5365b378af
+  google_api_availability: 526574c9a5a0ae541e18c65f98e47afc11f53c8b
+  location_permissions: 4a49d4e5bec5b653643e551ab77963cc99bb0e4a
   path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
-  sqflite: dc1dd7fd0c3603c33bd1c0b2e90d38182e3ddb37
+  share: bae0a282aab4483288913fc4dc0b935d4b491f2e
   SQLCipher: efbdb52cdbe340bcd892b1b14297df4e07241b7f
 
 PODFILE CHECKSUM: c1f56ec578e7dc933512aa9b9b86b80eb2a5b47d
