@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
-import 'package:coronavirus_diary/src/ui/router.dart';
+import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
 
 class CheckupProgressBar extends StatelessWidget {
   final int currentIndex;
   final int stepsLength;
+  final bool isLastPage;
+  final double percentComplete;
 
   const CheckupProgressBar({
     this.currentIndex,
     this.stepsLength,
-  });
+  })  : isLastPage = currentIndex == stepsLength - 1,
+        percentComplete = (currentIndex) / (stepsLength - 1);
 
   _handleNextButton(BuildContext context) {
-    bool isLastPage = currentIndex == stepsLength - 1;
     if (isLastPage) {
-      Navigator.pushReplacementNamed(context, AssessmentScreen.routeName);
+      context.bloc<CheckupBloc>().add(CompleteCheckup());
     } else {
       Provider.of<PageController>(context, listen: false).nextPage(
         duration: Duration(milliseconds: 400),
@@ -26,9 +29,6 @@ class CheckupProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double percentComplete = (currentIndex) / (stepsLength - 1);
-    bool isLastPage = currentIndex == stepsLength - 1;
-
     // Remember to update this if steps are added that do not count towards the total
     String percentCompleteText = 'Step ${currentIndex} of ${stepsLength - 1}';
 

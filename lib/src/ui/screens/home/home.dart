@@ -85,11 +85,26 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 40),
+            margin: EdgeInsets.only(bottom: 20),
             child: Text(
               'If you continue to experience symptoms, please check back tomorrow.',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.subtitle,
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 40),
+            margin: EdgeInsets.only(bottom: 40),
+            width: double.infinity,
+            child: RaisedButton(
+              onPressed: () => Navigator.pushNamed(
+                context,
+                AssessmentScreen.routeName,
+                arguments: AssessmentScreenArguments(
+                  assessment: state.preferences.lastAssessment,
+                ),
+              ),
+              child: Text('View my assessment'),
             ),
           ),
           ShareApp(),
@@ -106,10 +121,12 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: Text('Coronavirus Diary'),
           ),
-          body: Container(
-            padding: EdgeInsets.symmetric(vertical: 40),
-            alignment: Alignment.center,
-            child: _getBody(state),
+          body: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 40),
+              alignment: Alignment.center,
+              child: _getBody(state),
+            ),
           ),
         );
       },
