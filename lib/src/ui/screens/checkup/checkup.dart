@@ -29,8 +29,8 @@ class _CheckupScreenState extends State<CheckupScreen> {
 
   @override
   void dispose() {
-    _pageController.dispose();
     super.dispose();
+    _pageController.dispose();
   }
 
   Widget _getUnloadedBody(
@@ -110,8 +110,8 @@ class _CheckupScreenState extends State<CheckupScreen> {
               showHUD: checkupState is CheckupStateCompleting,
               hud: HUD(label: 'Loading your assessment'),
               builder: (context) {
-                return ChangeNotifierProvider<PageController>(
-                  create: (context) => _pageController,
+                return ChangeNotifierProvider<PageController>.value(
+                  value: _pageController,
                   child: Scaffold(
                     appBar: AppBar(
                       title: Text('Your Health Checkup'),

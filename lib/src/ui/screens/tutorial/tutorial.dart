@@ -23,8 +23,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
 
   @override
   void dispose() {
-    _pageController.dispose();
     super.dispose();
+    _pageController.dispose();
   }
 
   @override
@@ -32,8 +32,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
         return Scaffold(
-          body: ChangeNotifierProvider(
-            create: (context) => _pageController,
+          body: ChangeNotifierProvider<PageController>.value(
+            value: _pageController,
             child: PageView(
               controller: _pageController,
               children: <Widget>[
