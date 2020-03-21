@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:coronavirus_diary/src/ui/screens/assessment/share.dart';
+import 'package:coronavirus_diary/src/ui/widgets/share.dart';
 
 class PositiveAssessment extends StatefulWidget {
   @override
@@ -37,7 +37,7 @@ class _PositiveAssessmentState extends State<PositiveAssessment> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
               "You are showing symptoms that may be of concern. "
-              "Please limit your contact with other people until you have a chance to follow up with a physician",
+              "Please limit your contact with other people until you have a chance to follow up with a physician.",
               style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
               textAlign: TextAlign.center,
             ),

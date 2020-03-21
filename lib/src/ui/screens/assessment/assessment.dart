@@ -22,13 +22,16 @@ class AssessmentScreen extends StatelessWidget {
               context.bloc<CheckupBloc>().add(CompleteCheckup());
             } else if (state is CheckupStateCompleted) {
               // Remember assessment
-              Preferences newPreferences =
-                  preferencesState.preferences.cloneWith(
-                lastAssessment: state.assessment,
-              );
-              context
-                  .bloc<PreferencesBloc>()
-                  .add(UpdatePreferences(newPreferences));
+              if (preferencesState.preferences.lastAssessment !=
+                  state.assessment) {
+                Preferences newPreferences =
+                    preferencesState.preferences.cloneWith(
+                  lastAssessment: state.assessment,
+                );
+                context
+                    .bloc<PreferencesBloc>()
+                    .add(UpdatePreferences(newPreferences));
+              }
 
               switch (state.assessment.matchesPuiSymptoms) {
                 case true:

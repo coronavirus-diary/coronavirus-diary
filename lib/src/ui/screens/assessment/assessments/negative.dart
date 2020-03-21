@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:coronavirus_diary/src/ui/screens/assessment/share.dart';
+import 'package:coronavirus_diary/src/ui/widgets/share.dart';
 
 class NegativeAssessment extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _NegativeAssessmentState extends State<NegativeAssessment> {
             margin: EdgeInsets.only(bottom: 20),
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
-              "If you continue to experience symptoms, please check in tomorrow. ",
+              "If you continue to experience symptoms, please check in tomorrow.",
               style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
               textAlign: TextAlign.center,
             ),

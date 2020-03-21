@@ -20,16 +20,19 @@ class Preferences {
             });
 
   Preferences cloneWith({
-    Preferences preferences,
     Assessment lastAssessment,
   }) {
     return Preferences(
-      userId: preferences.userId,
-      lastAssessment: lastAssessment ?? preferences.lastAssessment,
+      userId: this.userId,
+      lastAssessment: lastAssessment ?? this.lastAssessment,
     );
   }
 
   factory Preferences.fromJson(Map<String, dynamic> json) =>
       _$PreferencesFromJson(json);
   Map<String, dynamic> toJson() => _$PreferencesToJson(this);
+
+  @override
+  String toString() =>
+      'Preferences { userId: $userId, lastAssessment: $lastAssessment }';
 }
