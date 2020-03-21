@@ -16,7 +16,7 @@ class CheckupsRepository {
   }
 
   Future<Assessment> completeCheckup(String id) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 2));
     return Assessment(
       processed: DateTime.now(),
       matchesPuiSymptoms: Random().nextBool(),

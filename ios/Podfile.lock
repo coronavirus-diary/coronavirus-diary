@@ -10,6 +10,8 @@ PODS:
     - Flutter
   - path_provider_macos (0.0.1):
     - Flutter
+  - share (0.5.2):
+    - Flutter
   - SQLCipher (4.1.0):
     - SQLCipher/standard (= 4.1.0)
   - SQLCipher/common (4.1.0)
@@ -23,6 +25,7 @@ DEPENDENCIES:
   - location_permissions (from `.symlinks/plugins/location_permissions/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
+  - share (from `.symlinks/plugins/share/ios`)
   - SQLCipher (~> 4.1.0)
 
 SPEC REPOS:
@@ -42,6 +45,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   path_provider_macos:
     :path: ".symlinks/plugins/path_provider_macos/ios"
+  share:
+    :path: ".symlinks/plugins/share/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
@@ -50,6 +55,7 @@ SPEC CHECKSUMS:
   location_permissions: 4a49d4e5bec5b653643e551ab77963cc99bb0e4a
   path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
+  share: bae0a282aab4483288913fc4dc0b935d4b491f2e
   SQLCipher: efbdb52cdbe340bcd892b1b14297df4e07241b7f
 
 PODFILE CHECKSUM: c1f56ec578e7dc933512aa9b9b86b80eb2a5b47d

@@ -73,6 +73,10 @@ class _CheckupScreenState extends State<CheckupScreen> {
           child: Scaffold(
             appBar: AppBar(
               title: Text('Your Health Checkup'),
+              leading: IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
             backgroundColor: Theme.of(context).primaryColor,
             body: _getBody(checkupState),

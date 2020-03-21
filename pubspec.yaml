@@ -31,6 +31,7 @@ dependencies:
   path_provider: ^1.6.5
   path: ^1.6.4
   provider: ^4.0.4
+  share: ^0.6.3+6
   uuid: ^2.0.4
 
 dev_dependencies:
