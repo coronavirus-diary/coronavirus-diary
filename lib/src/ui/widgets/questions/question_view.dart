@@ -32,16 +32,13 @@ class _QuestionViewState extends State<QuestionView> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: TextStyle(color: Colors.white),
-      child: Container(
-        padding: widget.padding,
-        color: widget.color ?? Theme.of(context).primaryColor,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: _getQuestions(),
-          ),
+    return Container(
+      padding: widget.padding,
+      color: widget.color ?? Theme.of(context).primaryColor,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: _getQuestions(),
         ),
       ),
     );

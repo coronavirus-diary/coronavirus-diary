@@ -67,49 +67,46 @@ class _SimpleSliderState extends State<SimpleSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: TextStyle(color: Colors.white),
-      child: Row(
-        children: <Widget>[
-          if (widget.startIcon != null)
-            Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: widget.startIcon,
-            ),
-          Expanded(
-            child: FlutterSlider(
-              min: widget.min,
-              max: widget.max,
-              onDragging: _setValue,
-              onDragCompleted: _setValue,
-              values: [_value],
-              handler: FlutterSliderHandler(
-                child: Text(
-                  (_value.round() + 1).toString(),
-                  style: TextStyle(color: Colors.black),
-                ),
+    return Row(
+      children: <Widget>[
+        if (widget.startIcon != null)
+          Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: widget.startIcon,
+          ),
+        Expanded(
+          child: FlutterSlider(
+            min: widget.min,
+            max: widget.max,
+            onDragging: _setValue,
+            onDragCompleted: _setValue,
+            values: [_value],
+            handler: FlutterSliderHandler(
+              child: Text(
+                (_value.round() + 1).toString(),
+                style: TextStyle(color: Colors.black),
               ),
-              hatchMark: _getHatchMark(),
-              tooltip: FlutterSliderTooltip(disabled: true),
-              trackBar: FlutterSliderTrackBar(
-                inactiveTrackBar: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white.withOpacity(0.4),
-                ),
-                activeTrackBar: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
-                  color: Colors.white,
-                ),
+            ),
+            hatchMark: _getHatchMark(),
+            tooltip: FlutterSliderTooltip(disabled: true),
+            trackBar: FlutterSliderTrackBar(
+              inactiveTrackBar: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white.withOpacity(0.4),
+              ),
+              activeTrackBar: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                color: Colors.white,
               ),
             ),
           ),
-          if (widget.endIcon != null)
-            Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: widget.endIcon,
-            ),
-        ],
-      ),
+        ),
+        if (widget.endIcon != null)
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: widget.endIcon,
+          ),
+      ],
     );
   }
 }

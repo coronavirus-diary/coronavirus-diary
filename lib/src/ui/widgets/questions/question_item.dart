@@ -50,22 +50,18 @@ class _QuestionItemState extends State<QuestionItem> {
       padding: EdgeInsets.all(40),
       child: Column(
         children: <Widget>[
-          DefaultTextStyle(
-            child: Text(widget.question.title),
+          Text(
+            widget.question.title,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.title.copyWith(
-                  color: Colors.white,
-                ),
+            style: Theme.of(context).textTheme.title,
           ),
           if (widget.question.subtitle != null)
             Padding(
               padding: EdgeInsets.only(top: 20),
-              child: DefaultTextStyle(
-                child: Text(widget.question.subtitle),
+              child: Text(
+                widget.question.subtitle,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle.copyWith(
-                      color: Colors.white,
-                    ),
+                style: Theme.of(context).textTheme.subtitle,
               ),
             ),
           _getInput(),

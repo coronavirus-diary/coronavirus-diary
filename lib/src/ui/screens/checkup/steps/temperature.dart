@@ -16,7 +16,10 @@ class _TemperatureStepState extends State<TemperatureStep> {
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
-          title: const Text('How to take your temperature:'),
+          title: Text(
+            'How to take your temperature:',
+            style: Theme.of(context).dialogTheme.titleTextStyle,
+          ),
           contentPadding: EdgeInsets.all(20),
           children: <Widget>[
             Column(
@@ -26,26 +29,31 @@ class _TemperatureStepState extends State<TemperatureStep> {
                 TutorialStep(
                   text: "Wash your hands using soap and water",
                   number: 1,
+                  textColor: Colors.black,
                 ),
                 TutorialStep(
                   text:
                       "Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.",
                   number: 2,
+                  textColor: Colors.black,
                 ),
                 TutorialStep(
                   text:
                       "Put the tip of your thermometer under your tongue and gently close your lips.",
                   number: 3,
+                  textColor: Colors.black,
                 ),
                 TutorialStep(
                   text:
                       "Keep your lips closed and the thermometer under your tongue until you hear a beep.",
                   number: 4,
+                  textColor: Colors.black,
                 ),
                 TutorialStep(
                   text:
                       "Take out your thermometer and record your temperature.",
                   number: 5,
+                  textColor: Colors.black,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20),

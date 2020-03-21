@@ -4,6 +4,10 @@ final ThemeData appTheme = ThemeData.light().copyWith(
   appBarTheme: AppBarTheme(
     color: Colors.lightBlue,
   ),
+  dialogTheme: DialogTheme(
+    titleTextStyle: TextStyle(color: Colors.black),
+    contentTextStyle: TextStyle(color: Colors.black),
+  ),
   scaffoldBackgroundColor: Colors.blue,
   backgroundColor: Colors.white,
   accentColor: Colors.yellowAccent,
