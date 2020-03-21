@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
@@ -14,6 +16,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  void _debugRestart() {
+    // Clear state
+    context.bloc<PreferencesBloc>().add(UpdatePreferences(Preferences()));
+
+    // Restart app
+    Phoenix.rebirth(context);
+  }
+
   Widget _getBody(PreferencesState state) {
     final DateTime now = DateTime.now();
     final DateTime today = DateTime(now.year, now.month, now.day);
@@ -120,6 +130,13 @@ class _HomeScreenState extends State<HomeScreen> {
         return Scaffold(
           appBar: AppBar(
             title: Text('Coronavirus Diary'),
+            leading: kReleaseMode
+                ? null
+                : IconButton(
+                    onPressed: _debugRestart,
+                    icon: Icon(Icons.delete),
+                    tooltip: 'DEBUG MODE ONLY: Clear user data',
+                  ),
           ),
           body: SingleChildScrollView(
             child: Container(
