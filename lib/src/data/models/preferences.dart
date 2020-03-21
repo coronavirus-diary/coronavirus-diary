@@ -10,14 +10,22 @@ part 'preferences.g.dart';
 class Preferences {
   final String userId;
   final Assessment lastAssessment;
+  final bool isFirstLoad;
+  final bool consented;
 
   Preferences({
     userId,
     this.lastAssessment,
-  }) : userId = userId ??
-            Uuid().v4(options: {
-              'grng': UuidUtil.cryptoRNG,
-            });
+    isFirstLoad,
+    consented,
+  })  : userId = userId ??
+            Uuid().v4(
+              options: {
+                'grng': UuidUtil.cryptoRNG,
+              },
+            ),
+        isFirstLoad = isFirstLoad ?? true,
+        consented = consented ?? false;
 
   Preferences cloneWith({
     Assessment lastAssessment,

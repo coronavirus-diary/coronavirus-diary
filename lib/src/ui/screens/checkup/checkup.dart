@@ -29,8 +29,8 @@ class _CheckupScreenState extends State<CheckupScreen> {
 
   @override
   void dispose() {
-    super.dispose();
     _pageController.dispose();
+    super.dispose();
   }
 
   Widget _getUnloadedBody(
