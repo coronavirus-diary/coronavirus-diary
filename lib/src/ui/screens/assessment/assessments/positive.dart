@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:coronavirus_diary/src/ui/widgets/share.dart';
+import 'package:coronavirus_diary/src/ui/widgets/stay_safe.dart';
 
 class PositiveAssessment extends StatefulWidget {
   @override
@@ -51,7 +51,7 @@ class _PositiveAssessmentState extends State<PositiveAssessment> {
               textAlign: TextAlign.center,
             ),
           ),
-          ShareApp(),
+          StaySafe(),
         ],
       ),
     );
