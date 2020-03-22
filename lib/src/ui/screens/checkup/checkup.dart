@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
 import 'package:provider/provider.dart';
 
-import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
-import 'package:coronavirus_diary/src/ui/router.dart';
-import 'package:coronavirus_diary/src/ui/widgets/loading_indicator.dart';
+import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/ui/router.dart';
+import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 import 'checkup_loaded_body.dart';
 
 class CheckupScreen extends StatefulWidget {

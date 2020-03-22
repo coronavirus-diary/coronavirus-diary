@@ -1,9 +1,9 @@
-import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-import 'package:coronavirus_diary/src/ui/widgets/tutorial_step.dart';
+import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
 
 class IntroStep extends StatelessWidget {
   @override
@@ -28,7 +28,7 @@ class IntroStep extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 margin: EdgeInsets.only(bottom: 40),
                 child: Text(
-                  "Welcome to Coronavirus Diary",
+                  "Welcome to the CovidNearMe App",
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.title,
                 ),

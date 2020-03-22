@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:coronavirus_diary/src/ui/widgets/tutorial_step.dart';
+import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
 
 class StaySafe extends StatelessWidget {
   @override

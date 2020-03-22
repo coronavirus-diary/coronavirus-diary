@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:coronavirus_diary/src/data/models/questions.dart';
+import 'package:covidnearme/src/data/models/questions.dart';
 
 abstract class QuestionsState extends Equatable {
   const QuestionsState();

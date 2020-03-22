@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'steps/index.dart';
 
 class TutorialScreen extends StatefulWidget {

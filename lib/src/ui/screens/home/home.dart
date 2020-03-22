@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
-import 'package:coronavirus_diary/src/ui/router.dart';
-import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
-import 'package:coronavirus_diary/src/ui/widgets/share.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/ui/router.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/ui/widgets/share.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/';
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('Coronavirus Diary'),
+            title: Text('CovidNearMe'),
             leading: kReleaseMode
                 ? null
                 : IconButton(

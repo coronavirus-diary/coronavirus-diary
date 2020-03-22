@@ -1,5 +1,5 @@
-import 'package:coronavirus_diary/src/data/models/assessments.dart';
-import 'package:coronavirus_diary/src/data/models/checkups.dart';
+import 'package:covidnearme/src/data/models/assessments.dart';
+import 'package:covidnearme/src/data/models/checkups.dart';
 
 abstract class CheckupState {
   const CheckupState();

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:coronavirus_diary/src/data/models/questions.dart';
+import 'package:covidnearme/src/data/models/questions.dart';
 
 class QuestionsRepository {
   Future<List<Question>> listQuestions() async => [

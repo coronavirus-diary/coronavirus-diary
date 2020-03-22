@@ -1,12 +1,12 @@
-import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
-import 'package:coronavirus_diary/src/ui/widgets/tutorial_step.dart';
-import 'package:coronavirus_diary/src/ui/utils/checkups.dart';
+import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
+import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class TemperatureStep extends StatefulWidget implements CheckupStep {

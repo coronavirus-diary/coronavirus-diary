@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
-import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
-import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
-import 'package:coronavirus_diary/src/data/repositories/checkups.dart';
-import 'package:coronavirus_diary/src/data/repositories/questions.dart';
-import 'package:coronavirus_diary/src/ui/assets/theme.dart';
-import 'package:coronavirus_diary/src/ui/router.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/data/repositories/checkups.dart';
+import 'package:covidnearme/src/data/repositories/questions.dart';
+import 'package:covidnearme/src/ui/assets/theme.dart';
+import 'package:covidnearme/src/ui/router.dart';
 
-class DiaryApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -35,7 +35,7 @@ class DiaryApp extends StatelessWidget {
               checkupsRepository: CheckupsRepository(),
             ),
             child: MaterialApp(
-              title: 'Coronavirus Diary',
+              title: 'CovidNearMe',
               theme: appTheme,
               routes: appRoutes,
               initialRoute: getInitialRoute(state),

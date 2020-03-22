@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
-import 'package:coronavirus_diary/src/data/models/checkups.dart';
-import 'package:coronavirus_diary/src/data/repositories/checkups.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/data/models/checkups.dart';
+import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'checkup.dart';
 
-export 'package:coronavirus_diary/src/data/models/assessments.dart';
-export 'package:coronavirus_diary/src/data/models/checkups.dart';
+export 'package:covidnearme/src/data/models/assessments.dart';
+export 'package:covidnearme/src/data/models/checkups.dart';
 
 class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   final PreferencesState preferencesState;

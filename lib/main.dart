@@ -9,6 +9,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   BlocSupervisor.delegate = await HydratedBlocDelegate.build();
   runApp(Phoenix(
-    child: DiaryApp(),
+    child: App(),
   ));
 }

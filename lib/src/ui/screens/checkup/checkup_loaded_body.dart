@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
-import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
-import 'package:coronavirus_diary/src/blocs/questions/questions.dart';
-import 'package:coronavirus_diary/src/ui/utils/checkups.dart';
+import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'steps/index.dart';
 import 'checkup_progress_bar.dart';
 

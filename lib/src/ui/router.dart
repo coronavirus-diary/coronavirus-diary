@@ -1,4 +1,4 @@
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 
 import 'screens/assessment/assessment.dart';
 import 'screens/checkup/checkup.dart';

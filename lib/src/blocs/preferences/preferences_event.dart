@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:coronavirus_diary/src/data/models/preferences.dart';
+import 'package:covidnearme/src/data/models/preferences.dart';
 
 abstract class PreferencesEvent extends Equatable {
   const PreferencesEvent();

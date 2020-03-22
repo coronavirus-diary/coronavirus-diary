@@ -4,10 +4,10 @@ import 'dart:developer' as developer;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
-import 'package:coronavirus_diary/src/data/repositories/questions.dart';
+import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'questions.dart';
 
-export 'package:coronavirus_diary/src/data/models/questions.dart';
+export 'package:covidnearme/src/data/models/questions.dart';
 
 class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
   final QuestionsRepository questionsRepository;

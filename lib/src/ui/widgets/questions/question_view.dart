@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:coronavirus_diary/src/data/models/questions.dart';
+import 'package:covidnearme/src/data/models/questions.dart';
 import 'question_item.dart';
 
 class QuestionView extends StatefulWidget {

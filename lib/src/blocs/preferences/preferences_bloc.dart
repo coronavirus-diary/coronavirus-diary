@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-import 'package:coronavirus_diary/src/data/models/preferences.dart';
+import 'package:covidnearme/src/data/models/preferences.dart';
 import 'preferences.dart';
 
-export 'package:coronavirus_diary/src/data/models/preferences.dart';
+export 'package:covidnearme/src/data/models/preferences.dart';
 
 class PreferencesBloc extends HydratedBloc<PreferencesEvent, PreferencesState> {
   // Use previously cached initialState if it's available

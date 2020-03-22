@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:coronavirus_diary/src/blocs/preferences/preferences.dart';
-import 'package:coronavirus_diary/src/ui/router.dart';
-import 'package:coronavirus_diary/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/ui/router.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 
 class GetStartedStep extends StatelessWidget {
   void _completeTutorial(BuildContext context, PreferencesState state) {
@@ -51,7 +51,7 @@ class GetStartedStep extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     margin: EdgeInsets.only(bottom: 50),
                     child: Text(
-                      "You've joined the Coronavirus Diary community!",
+                      "You've joined the CovidNearMe community!",
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.title,
                     ),

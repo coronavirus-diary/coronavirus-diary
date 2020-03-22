@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:coronavirus_diary/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 
 void updateCheckup({
   @required CheckupStateInProgress checkupState,

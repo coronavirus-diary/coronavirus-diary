@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:coronavirus_diary/src/data/models/checkups.dart';
+import 'package:covidnearme/src/data/models/checkups.dart';
 
 abstract class CheckupEvent extends Equatable {
   const CheckupEvent();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:coronavirus_diary/src/data/models/assessments.dart';
+import 'package:covidnearme/src/data/models/assessments.dart';
 import 'assessments/index.dart';
 
 class AssessmentScreenArguments {
