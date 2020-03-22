@@ -11,6 +11,10 @@ class QuestionsRepository {
           min: 0,
           max: 4,
           initialValue: 0,
+          labels: {
+            '0': "I can breathe fine",
+            '4': "I can't breathe at all",
+          },
         ),
         SliderQuestion(
           id: '32444',
@@ -32,7 +36,7 @@ class QuestionsRepository {
           labels: {
             '0': "No",
             '2': "Maybe?",
-            '4': "I'm burning up.",
+            '4': "I'm burning up",
           },
         ),
       ];
