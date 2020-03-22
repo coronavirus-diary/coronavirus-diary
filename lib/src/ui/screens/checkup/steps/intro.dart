@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements CheckupStep {
@@ -17,13 +18,20 @@ class _IntroStepState extends State<IntroStep> {
     bool value,
     CheckupStateInProgress checkupState,
   ) {
-    Checkup checkup = checkupState.checkup;
-    checkup.dataContributionPreference = value;
+    updateCheckup(
+      context: context,
+      checkupState: checkupState,
+      updateFunction: (Checkup checkup) {
+        checkup.dataContributionPreference = value;
 
-    // Make sure to clear location
-    checkup.location = null;
+        // Make sure to clear location if the user has disabled data sharing
+        if (!value) {
+          checkup.location = null;
+        }
 
-    context.bloc<CheckupBloc>().add(UpdateCheckup(updatedCheckup: checkup));
+        return checkup;
+      },
+    );
   }
 
   @override
