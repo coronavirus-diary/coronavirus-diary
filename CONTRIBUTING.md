@@ -32,7 +32,7 @@ We use GitHub to host code, to track issues and feature requests, as well as acc
 Pull requests are the best way to propose changes to the codebase. We use a loose version of Git Flow
 and actively welcome your pull requests:
 
-1. Fork the repo.
+1. Set up your local development environment. See [USAGE.md](USAGE.md) for instructions.
 2. Create a new branch based on `develop`:
    - Feature branches should start with `feature/`
    - Bugfix branches should start with `bug/`

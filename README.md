@@ -10,4 +10,4 @@ Are you eager to use your skills to do good and aid humanity? We are building a 
 
 The pandemic is expanding rapidly and this project needs to ship as soon as possible.
 
-Get started [here](CONTRIBUTING.md).
+You can get started [here](CONTRIBUTING.md).
