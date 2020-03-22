@@ -32,14 +32,14 @@ We use GitHub to host code, to track issues and feature requests, as well as acc
 Pull requests are the best way to propose changes to the codebase. We use a loose version of Git Flow
 and actively welcome your pull requests:
 
-1. Fork the repo and create your branch from `develop`:
+1. Fork the repo.
+2. Create a new branch based on `develop`:
    - Feature branches should start with `feature/`
    - Bugfix branches should start with `bug/`
-2. Add tests if applicable.
-3. Make sure your code lints.
-4. Issue that pull request!
+3. Implement your changes.
+4. Add tests if applicable.
+5. Make sure your code lints.
+6. Issue that pull request!
 
 ### Any contributions you make will be under the MIT Software License
 When you submit code changes, your submissions are understood to be under the same [MIT License](LICENSE) that covers the project.
-
-Feel free to contact the maintainers if that's a concern.
