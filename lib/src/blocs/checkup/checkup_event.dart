@@ -14,15 +14,13 @@ abstract class CheckupEvent extends Equatable {
 
 class StartCheckup extends CheckupEvent {}
 
-class UpdateLocalCheckup extends CheckupEvent {
+class UpdateCheckup extends CheckupEvent {
   final Checkup updatedCheckup;
 
-  const UpdateLocalCheckup({this.updatedCheckup});
+  const UpdateCheckup({this.updatedCheckup});
 
   @override
   List<Object> get props => [updatedCheckup];
 }
-
-class UpdateRemoteCheckup extends CheckupEvent {}
 
 class CompleteCheckup extends CheckupEvent {}

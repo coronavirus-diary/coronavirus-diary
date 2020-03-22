@@ -23,9 +23,7 @@ class _IntroStepState extends State<IntroStep> {
     // Make sure to clear location
     checkup.location = null;
 
-    context
-        .bloc<CheckupBloc>()
-        .add(UpdateLocalCheckup(updatedCheckup: checkup));
+    context.bloc<CheckupBloc>().add(UpdateCheckup(updatedCheckup: checkup));
   }
 
   @override

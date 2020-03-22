@@ -54,8 +54,6 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
       if (checkupState.checkup.dataContributionPreference == true) {
         await _saveCurrentLocation(checkupState);
       }
-    } else if (currentIndex > 0 && currentIndex < steps.length - 1) {
-      context.bloc<CheckupBloc>().add(UpdateRemoteCheckup());
     }
 
     setState(() {
