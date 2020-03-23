@@ -2,8 +2,6 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-export 'package:flutter_xlider/flutter_xlider.dart';
-
 class SimpleSlider extends StatefulWidget {
   final double value;
   final double min;
