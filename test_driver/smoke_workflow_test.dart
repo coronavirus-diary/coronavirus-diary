@@ -1,8 +1,6 @@
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
-const String debugResetAppMessage = 'DEBUG MODE ONLY: Clear user data';
-
 // Note: the tests in this file require running in order.
 void main() {
   FlutterDriver driver;
