@@ -43,6 +43,7 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^3.2.5
   file: ^5.1.0
+  pedantic: ^1.8.0
 
 flutter:
   uses-material-design: true
