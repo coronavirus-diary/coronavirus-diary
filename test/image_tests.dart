@@ -15,7 +15,7 @@ void main() {
       TestWidgetsFlutterBinding.ensureInitialized();
   setUp(() async {
     // Use a hermetic file system that is cleaned up between tests.
-    final fs = MemoryFileSystem();
+    final fs = MemoryFileSystem.test();
 
     BlocSupervisor.delegate = await HydratedBlocDelegate.build(
       storageDirectory: fs.systemTempDirectory.createTempSync(),
@@ -27,10 +27,10 @@ void main() {
     binding.window.devicePixelRatioTestValue = 1.2;
   });
 
-  testWidgets('tutorial step looks correct', (WidgetTester tester) async {
+  testWidgets('tutorial step matches golden file', (WidgetTester tester) async {
     final key = UniqueKey();
-
     await tester.pumpWidget(App(key: key));
+
     await expectLater(
       find.byKey(key),
       matchesGoldenFile('goldens/tutorial.png'),
@@ -38,10 +38,10 @@ void main() {
     expect(tester, meetsGuideline(textContrastGuideline));
   });
 
-  testWidgets('terms page looks correct', (WidgetTester tester) async {
+  testWidgets('terms page matches golden vile', (WidgetTester tester) async {
     final key = UniqueKey();
-
     await tester.pumpWidget(App(key: key));
+
     await tester.tap(find.byType(RaisedButton));
     await tester.pumpAndSettle();
 
