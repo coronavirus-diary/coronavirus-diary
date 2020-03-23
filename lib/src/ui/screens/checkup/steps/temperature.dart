@@ -147,7 +147,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
         );
         return ScrollableBody(
           child: Padding(
-            padding: const EdgeInsets.all(40.0),
+            padding: const EdgeInsets.all(40),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
