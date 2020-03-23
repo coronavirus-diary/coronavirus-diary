@@ -21,7 +21,7 @@ void main() {
       emitsInOrder(
         [
           QuestionsStateNotLoaded(),
-          // No further events are emitted.
+          emitsDone,
         ],
       ),
     );
@@ -41,6 +41,7 @@ void main() {
           const QuestionsStateNotLoaded(),
           const QuestionsStateLoading(),
           isA<QuestionsStateLoaded>(),
+          emitsDone,
         ],
       ),
     );
@@ -59,6 +60,7 @@ void main() {
           const QuestionsStateNotLoaded(),
           const QuestionsStateLoading(),
           isA<QuestionsStateLoadingFailed>(),
+          emitsDone,
         ],
       ),
     );
