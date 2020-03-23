@@ -15,7 +15,7 @@ class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
   QuestionsBloc({@required this.questionsRepository});
 
   @override
-  QuestionsState get initialState => QuestionsStateNotLoaded();
+  QuestionsState get initialState => const QuestionsStateNotLoaded();
 
   @override
   Stream<QuestionsState> mapEventToState(QuestionsEvent event) async* {
@@ -27,12 +27,12 @@ class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
   }
 
   Stream<QuestionsState> _mapLoadQuestionsToState(LoadQuestions event) async* {
-    yield QuestionsStateLoading();
+    yield const QuestionsStateLoading();
 
     try {
       final questions = await questionsRepository.listQuestions();
       yield QuestionsStateLoaded(questions);
-    } catch (exception) {
+    } on Exception catch (exception) {
       developer.log(
         'Could not load questions list',
         error: exception,
