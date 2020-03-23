@@ -135,7 +135,7 @@ abstract class AppLocalizations {
   String get checkupProgressBarSubmit;
 
   // Continue to the next checkup screen
-  String get checkupProgressBarContinue;
+  String get checkupProgressBarNext;
 
   // Heading at the top of the Your Health Checkup screen
   String get introStepTimeForYourCheckup;

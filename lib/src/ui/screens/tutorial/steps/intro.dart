@@ -22,7 +22,6 @@ class IntroStep extends StatelessWidget {
                 margin: EdgeInsets.only(bottom: 20),
                 child: FaIcon(
                   FontAwesomeIcons.bookMedical,
-                  color: Colors.white,
                   size: 80,
                 ),
               ),
@@ -44,30 +43,30 @@ class IntroStep extends StatelessWidget {
                       text: localizations.tutorialIntroStepCompleteACheckup,
                       icon: FaIcon(
                         FontAwesomeIcons.check,
-                        color: Colors.white,
                         size: 30,
                       ),
-                      leadingBackgroundColor: Colors.white.withOpacity(0.2),
+                      leadingBackgroundColor:
+                          Theme.of(context).accentColor.withOpacity(0.5),
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
                       text: localizations.tutorialIntroStepRecieveAssessment,
                       icon: FaIcon(
                         FontAwesomeIcons.heartbeat,
-                        color: Colors.white,
                         size: 30,
                       ),
-                      leadingBackgroundColor: Colors.white.withOpacity(0.2),
+                      leadingBackgroundColor:
+                          Theme.of(context).accentColor.withOpacity(0.5),
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
                       text: localizations.tutorialIntroStepAidEffort,
                       icon: FaIcon(
                         FontAwesomeIcons.handHoldingHeart,
-                        color: Colors.white,
                         size: 30,
                       ),
-                      leadingBackgroundColor: Colors.white.withOpacity(0.2),
+                      leadingBackgroundColor:
+                          Theme.of(context).accentColor.withOpacity(0.5),
                       leadingPadding: EdgeInsets.all(20),
                     ),
                   ],

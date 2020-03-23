@@ -53,7 +53,10 @@ class ConsentStep extends StatelessWidget {
                               .copyWith(
                         blockSpacing: 20,
                         h1Align: WrapAlignment.center,
-                        p: TextStyle(fontSize: 18),
+                        p: TextStyle(
+                          fontSize: 18,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                       ),
                     ),
                     Align(
@@ -64,9 +67,15 @@ class ConsentStep extends StatelessWidget {
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter,
                             colors: <Color>[
-                              Theme.of(context).primaryColor,
-                              Theme.of(context).primaryColor.withOpacity(0.6),
-                              Theme.of(context).primaryColor.withOpacity(0),
+                              Theme.of(context).colorScheme.surface,
+                              Theme.of(context)
+                                  .colorScheme
+                                  .surface
+                                  .withOpacity(0.5),
+                              Theme.of(context)
+                                  .colorScheme
+                                  .surface
+                                  .withOpacity(0),
                             ],
                             stops: <double>[0, 0.8, 1.0],
                           ),

@@ -44,86 +44,93 @@ class _IntroStepState extends State<IntroStep> {
       builder: (context, state) {
         final CheckupStateInProgress checkupState = state;
         return ScrollableBody(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(bottom: 20),
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: FaIcon(
-                  FontAwesomeIcons.heartbeat,
-                  color: Colors.white,
-                  size: 100,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 20),
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: Text(
-                  localizations.introStepTimeForYourCheckup,
-                  style: Theme.of(context).textTheme.title,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 20),
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: Text(
-                  localizations.introStepWeWillAskQuestions,
-                  style: Theme.of(context).textTheme.subtitle,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 20),
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: Text(
-                  localizations.introStepAtTheEnd,
-                  style: Theme.of(context).textTheme.subtitle,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 20),
-                color: Colors.white.withOpacity(0.2),
-                child: SwitchListTile(
-                  contentPadding: EdgeInsets.all(20),
-                  secondary: FaIcon(
-                    FontAwesomeIcons.handHoldingHeart,
-                    color: Colors.white,
-                    size: 35,
+          child: Container(
+            color: Theme.of(context).colorScheme.surface,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  child: FaIcon(
+                    FontAwesomeIcons.heartbeat,
+                    size: 100,
                   ),
-                  title: Text(
-                    localizations.introStepSwitchLabelContributeData,
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  child: Text(
+                    localizations.introStepTimeForYourCheckup,
+                    style: Theme.of(context).textTheme.title,
+                    textAlign: TextAlign.center,
                   ),
-                  subtitle: Container(
-                    margin: EdgeInsets.only(top: 5),
-                    child: Text(
-                      localizations.introStepSwitchLabelCollectPostalCode,
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  child: Text(
+                    localizations.introStepWeWillAskQuestions,
+                    style: Theme.of(context).textTheme.subtitle,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  child: Text(
+                    localizations.introStepAtTheEnd,
+                    style: Theme.of(context).textTheme.subtitle,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Container(
+                  decoration: ShapeDecoration(
+                    color: Theme.of(context).colorScheme.surface,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                      side: BorderSide(),
                     ),
                   ),
-                  activeColor: Colors.white,
-                  onChanged: (bool value) =>
-                      _updateDataContributionPreference(value, checkupState),
-                  value: checkupState.checkup.dataContributionPreference,
+                  margin: EdgeInsets.all(20),
+                  child: SwitchListTile(
+                    activeColor: Theme.of(context).accentColor,
+                    contentPadding: EdgeInsets.all(20),
+                    secondary: FaIcon(
+                      FontAwesomeIcons.handHoldingHeart,
+                      size: 35,
+                    ),
+                    title: Text(
+                      localizations.introStepSwitchLabelContributeData,
+                    ),
+                    subtitle: Container(
+                      margin: EdgeInsets.only(top: 5),
+                      child: Text(
+                        localizations.introStepSwitchLabelCollectPostalCode,
+                      ),
+                    ),
+                    onChanged: (bool value) =>
+                        _updateDataContributionPreference(value, checkupState),
+                    value: checkupState.checkup.dataContributionPreference,
+                  ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 20),
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: RaisedButton(
-                  onPressed: () {
-                    Provider.of<PageController>(context, listen: false)
-                        .nextPage(
-                      duration: Duration(milliseconds: 400),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  child: Text(localizations.introStepButtonStartLabel),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  child: RaisedButton(
+                    onPressed: () {
+                      Provider.of<PageController>(context, listen: false)
+                          .nextPage(
+                        duration: Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: Text(localizations.introStepButtonStartLabel),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

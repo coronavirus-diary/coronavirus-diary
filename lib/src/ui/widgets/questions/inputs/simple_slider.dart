@@ -76,9 +76,10 @@ class _SimpleSliderState extends State<SimpleSlider> {
               child: SliderTheme(
                 data: SliderThemeData(
                   trackHeight: 4,
-                  activeTrackColor: Colors.white,
-                  inactiveTrackColor: Colors.white.withOpacity(0.4),
-                  thumbColor: Colors.white,
+                  activeTrackColor: Theme.of(context).colorScheme.onSurface,
+                  inactiveTrackColor:
+                      Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
+                  thumbColor: Theme.of(context).primaryColor,
                   tickMarkShape: SliderTickMarkShape.noTickMark,
                   trackShape: _HatchedTrackShape(
                     hatchCount: divisions + 1,
@@ -89,7 +90,7 @@ class _SimpleSliderState extends State<SimpleSlider> {
                       ..text = TextSpan(
                         style: TextStyle(
                           fontSize: 16,
-                          color: theme.colorScheme.onSurface,
+                          color: theme.colorScheme.onSecondary,
                         ),
                         text: '${_value.round() + 1}',
                       )

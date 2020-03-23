@@ -45,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.only(bottom: 20),
             child: FaIcon(
               FontAwesomeIcons.questionCircle,
-              color: Colors.white,
               size: 80,
             ),
           ),
@@ -88,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.only(bottom: 20),
             child: FaIcon(
               FontAwesomeIcons.checkCircle,
-              color: Colors.white,
               size: 80,
             ),
           ),

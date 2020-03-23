@@ -29,11 +29,13 @@ class CheckupProgressBar extends StatelessWidget {
         children: <Widget>[
           ExcludeSemantics(
             child: SizedBox(
-              height: 20,
+              height: 14,
               child: LinearProgressIndicator(
                 value: percentComplete,
-                backgroundColor: Colors.white.withOpacity(0.2),
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                backgroundColor:
+                    Theme.of(context).colorScheme.surface.withOpacity(0.2),
+                valueColor: AlwaysStoppedAnimation<Color>(
+                    Theme.of(context).accentColor),
               ),
             ),
           ),
@@ -45,7 +47,6 @@ class CheckupProgressBar extends StatelessWidget {
                 Text(
                   percentCompleteText,
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 14,
                   ),
                 ),

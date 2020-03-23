@@ -15,7 +15,11 @@ class LoadingIndicator extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 20),
             child: CircularProgressIndicator(),
           ),
-          if (message.isNotEmpty) Text(message),
+          if (message.isNotEmpty)
+            Text(
+              message,
+              style: Theme.of(context).textTheme.headline,
+            ),
         ],
       ),
     );
