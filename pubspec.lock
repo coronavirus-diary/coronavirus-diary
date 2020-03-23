@@ -198,9 +198,11 @@ packages:
   flutter_hud:
     dependency: "direct main"
     description:
-      name: flutter_hud
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: "0d5ed29fc2aa97dff2863ab824dba48264048c6a"
+      resolved-ref: "0d5ed29fc2aa97dff2863ab824dba48264048c6a"
+      url: "https://github.com/eyro-labs/flutter_hud.git"
+    source: git
     version: "0.2.1"
   flutter_launcher_icons:
     dependency: "direct main"
@@ -603,7 +605,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.11"
+    version: "0.2.15"
   timing:
     dependency: transitive
     description:
