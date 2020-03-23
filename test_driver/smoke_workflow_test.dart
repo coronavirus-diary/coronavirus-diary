@@ -44,8 +44,8 @@ void main() {
     // 1. Shortness of breath
     // 2. cough
     // 3. fever
-    // These likely need value keys so the driver test can confirm
-    // that values update correctly.
+    // These will need value keys or other labels so the driver test
+    // c an confirm that values update correctly.
     await driver.tap(find.text('Continue'));
 
     // Take your temperature is a text entry that
