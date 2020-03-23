@@ -68,5 +68,3 @@ void _loadRobotoFont() async {
 
   await fontLoader.load();
 }
-
-
