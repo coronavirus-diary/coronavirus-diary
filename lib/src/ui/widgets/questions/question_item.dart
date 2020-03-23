@@ -57,7 +57,7 @@ class _QuestionItemState extends State<QuestionItem> {
           ),
           if (widget.question.subtitle != null)
             Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Text(
                 widget.question.subtitle,
                 textAlign: TextAlign.center,
