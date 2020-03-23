@@ -12,9 +12,13 @@ abstract class QuestionsState extends Equatable {
   bool get stringify => true;
 }
 
-class QuestionsStateNotLoaded extends QuestionsState {}
+class QuestionsStateNotLoaded extends QuestionsState {
+  const QuestionsStateNotLoaded();
+}
 
-class QuestionsStateLoading extends QuestionsState {}
+class QuestionsStateLoading extends QuestionsState {
+  const QuestionsStateLoading();
+}
 
 class QuestionsStateLoaded extends QuestionsState {
   final List<Question> questions;

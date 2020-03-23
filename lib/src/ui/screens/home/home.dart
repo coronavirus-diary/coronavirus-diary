@@ -10,6 +10,8 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/share.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key key}) : super(key: key);
+
   static const routeName = '/';
 
   @override

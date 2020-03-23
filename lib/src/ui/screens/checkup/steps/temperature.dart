@@ -15,16 +15,29 @@ class TemperatureStep extends StatefulWidget implements CheckupStep {
 }
 
 class _TemperatureStepState extends State<TemperatureStep> {
+  bool _isCelsius = false;
+
   String _validateTemperature(String value) {
     if (value != '') {
       final double numberValue = double.parse(value);
-      if (numberValue > 150) {
-        return 'Please enter a value below 150 ℉';
-      } else if (numberValue < 70) {
-        return 'Please enter a value above 70 ℉';
+
+      if (numberValue > _upperTemperatureLimit) {
+        return 'Please enter a value below ${_formatTemperature(_upperTemperatureLimit)}';
+      } else if (numberValue < _lowerTemperatureLimit) {
+        return 'Please enter a value above ${_formatTemperature(_lowerTemperatureLimit)}';
       }
     }
     return null;
+  }
+
+  double get _upperTemperatureLimit => _isCelsius ? 65.5 : 150.0;
+  double get _lowerTemperatureLimit => _isCelsius ? 21.1 : 70.0;
+  String _formatTemperature(double temperature) =>
+      "$temperature ${_isCelsius ? '℃' : '℉'}";
+
+  double _toFahrenheit(double value) {
+    if (!_isCelsius) return value;
+    return value * (9.0 / 5.0) + 32.0;
   }
 
   void _updateTemperature(
@@ -40,7 +53,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
       updateFunction: (Checkup checkup) {
         final VitalsResponse newResponse = VitalsResponse(
           id: 'temperature',
-          response: value,
+          response: _toFahrenheit(value),
           dataSource: 'MANUAL_INPUT',
         );
 
@@ -62,12 +75,18 @@ class _TemperatureStepState extends State<TemperatureStep> {
   }
 
   Future<void> _showInstructions() async {
+    final categoryFontStyle = TextStyle(
+      color: Theme.of(context).primaryColor,
+      fontWeight: FontWeight.bold,
+      fontSize: 18,
+    );
+
     await showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
           title: Text(
-            'How to take your temperature:',
+            'When and how to take your temperature:',
             style: Theme.of(context).dialogTheme.titleTextStyle,
           ),
           contentPadding: EdgeInsets.all(20),
@@ -76,6 +95,27 @@ class _TemperatureStepState extends State<TemperatureStep> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Divider(),
+                Text(
+                  'When?',
+                  style: categoryFontStyle,
+                ),
+                TutorialStep(
+                  text: "Wait 30 minutes after eating, drinking, or exercising",
+                  number: 1,
+                  textColor: Colors.black,
+                ),
+                TutorialStep(
+                  text:
+                      "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)",
+                  number: 2,
+                  textColor: Colors.black,
+                ),
+                Divider(),
+                Text(
+                  'How?',
+                  style: categoryFontStyle,
+                ),
                 TutorialStep(
                   text: "Wash your hands using soap and water",
                   number: 1,
@@ -132,9 +172,9 @@ class _TemperatureStepState extends State<TemperatureStep> {
           (VitalsResponse response) => response.id == 'temperature',
           orElse: () => null,
         );
-        return Padding(
-          padding: EdgeInsets.all(40),
-          child: ScrollableBody(
+        return ScrollableBody(
+          child: Padding(
+            padding: const EdgeInsets.all(40),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -154,32 +194,52 @@ class _TemperatureStepState extends State<TemperatureStep> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                TextFormField(
-                  initialValue: existingResponse != null
-                      ? existingResponse.toString()
-                      : '',
-                  onChanged: (String value) =>
-                      _updateTemperature(double.parse(value), checkupState),
-                  decoration: InputDecoration(
-                    icon: FaIcon(
-                      FontAwesomeIcons.thermometerHalf,
-                      color: Colors.white,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Expanded(
+                      child: TextFormField(
+                        initialValue: existingResponse != null
+                            ? existingResponse.toString()
+                            : '',
+                        onChanged: (String value) => _updateTemperature(
+                            double.parse(value), checkupState),
+                        decoration: InputDecoration(
+                          errorMaxLines: 2,
+                          icon: FaIcon(
+                            FontAwesomeIcons.thermometerHalf,
+                            color: Colors.white,
+                          ),
+                          labelText: 'Enter your temperature',
+                          hasFloatingPlaceholder: false,
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          WhitelistingTextInputFormatter(
+                              RegExp(r'^\d+\.?\d{0,1}$')),
+                        ],
+                        autovalidate: true,
+                        autofocus: true,
+                        validator: _validateTemperature,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
-                    labelText: 'Enter your temperature',
-                    hasFloatingPlaceholder: false,
-                    suffixText: '℉',
-                  ),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
+                    Container(
+                      alignment: Alignment.topCenter,
+                      margin: EdgeInsets.only(left: 10),
+                      child: RaisedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isCelsius = !_isCelsius;
+                          });
+                        },
+                        child: _isCelsius ? const Text('℃') : const Text('℉'),
+                      ),
+                    ),
                   ],
-                  autovalidate: true,
-                  autofocus: true,
-                  validator: _validateTemperature,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                  ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 50),

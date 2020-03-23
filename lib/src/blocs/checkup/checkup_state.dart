@@ -5,9 +5,13 @@ abstract class CheckupState {
   const CheckupState();
 }
 
-class CheckupStateNotCreated extends CheckupState {}
+class CheckupStateNotCreated extends CheckupState {
+  const CheckupStateNotCreated();
+}
 
-class CheckupStateCreating extends CheckupState {}
+class CheckupStateCreating extends CheckupState {
+  const CheckupStateCreating();
+}
 
 class CheckupStateInProgress extends CheckupState {
   final Checkup checkup;
@@ -18,7 +22,9 @@ class CheckupStateInProgress extends CheckupState {
   String toString() => 'CheckupStateInProgress { checkup: $checkup }';
 }
 
-class CheckupStateCompleting extends CheckupState {}
+class CheckupStateCompleting extends CheckupState {
+  const CheckupStateCompleting();
+}
 
 class CheckupStateCompleted extends CheckupState {
   final Assessment assessment;

@@ -20,7 +20,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   });
 
   @override
-  CheckupState get initialState => CheckupStateNotCreated();
+  CheckupState get initialState => const CheckupStateNotCreated();
 
   @override
   Stream<CheckupState> mapEventToState(CheckupEvent event) async* {
@@ -38,7 +38,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   }
 
   Stream<CheckupState> _mapStartCheckupToState(StartCheckup event) async* {
-    yield CheckupStateCreating();
+    yield const CheckupStateCreating();
 
     // Create checkup using API
     final Checkup newCheckup = await checkupsRepository.createCheckup(Checkup(
@@ -64,7 +64,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     if (state is! CheckupStateInProgress) return;
 
     // Notify app that we are waiting to submit data
-    yield CheckupStateCompleting();
+    yield const CheckupStateCompleting();
 
     // Retrieve current checkup
     final CheckupStateInProgress currentState = state;
