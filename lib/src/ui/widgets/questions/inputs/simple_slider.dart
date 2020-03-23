@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
@@ -48,7 +48,7 @@ class _SimpleSliderState extends State<SimpleSlider> {
     final theme = Theme.of(context);
     final int divisions = widget.max.round();
     Set<int> longLabels = widget.labels == null
-        ? Set()
+        ? const <int>{}
         : Set.from(widget.labels.keys.map(int.parse));
     List<Widget> bottomLabelsChildren = [];
     final labels = widget.labels == null ? Map() : widget.labels;
@@ -167,10 +167,10 @@ class _ValuedThumbShape extends RoundSliderThumbShape {
   }) {
     valuePainter.layout();
     final double radius = [
-      labelPainter.width / 2 * sqrt2,
-      labelPainter.height / 2 * sqrt2,
+      labelPainter.width / 2 * math.sqrt2,
+      labelPainter.height / 2 * math.sqrt2,
       _radius,
-    ].reduce(max);
+    ].reduce(math.max);
 
     final Tween<double> elevationTween = Tween<double>(
       begin: 1,
@@ -186,7 +186,7 @@ class _ValuedThumbShape extends RoundSliderThumbShape {
           height: 2 * radius,
         ),
         0,
-        pi * 2,
+        math.pi * 2,
       );
     context.canvas.drawShadow(path, Colors.black, evaluatedElevation, true);
 
@@ -240,7 +240,7 @@ class _HatchedTrackShape extends SliderTrackShape {
     final double trackTop =
         offset.dy + (parentBox.size.height - trackHeight) / 2;
     final double trackWidth =
-        parentBox.size.width - max(thumbWidth, overlayWidth);
+        parentBox.size.width - math.max(thumbWidth, overlayWidth);
     return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
   }
 
@@ -336,7 +336,7 @@ class _HatchedTrackShape extends SliderTrackShape {
       context.canvas.drawRect(
         Rect.fromLTWH(
           x - _hatchWidth / 2,
-          trackRect.bottom + 4,
+          trackRect.bottom + 2, // Leave a small gap from the track.
           _hatchWidth,
           longHatches.contains(i) ? _longHatchHeight : _hatchHeight,
         ),
@@ -411,7 +411,7 @@ class _RectangularSliderValueIndicatorPathPainter {
   double _upperRectangleWidth(
       TextPainter labelPainter, double scale, double textScaleFactor) {
     final double unscaledWidth =
-        max(_minLabelWidth * textScaleFactor, labelPainter.width) +
+        math.max(_minLabelWidth * textScaleFactor, labelPainter.width) +
             _labelPadding * 2;
     return unscaledWidth * scale;
   }
