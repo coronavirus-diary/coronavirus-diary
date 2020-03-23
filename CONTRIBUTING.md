@@ -40,13 +40,14 @@ Pull requests are the best way to propose changes to the codebase. We use a loos
 and actively welcome your pull requests:
 
 1. Set up your local development environment. See [USAGE.md](USAGE.md) for instructions.
-2. Create a new branch based on `develop`:
+1. Make sure to use the latest Flutter stable-channel SDK release.
+1. Create a new branch based on `develop`:
    - Feature branches should start with `feature/`
    - Bugfix branches should start with `bug/`
-3. Implement your changes.
-4. Add tests if applicable.
-5. Make sure your code lints.
-6. Issue that pull request!
+1. Implement your changes.
+1. Add tests if applicable.
+1. Make sure your code lints.
+1. Issue that pull request!
 
 ### Any contributions you make will be under the MIT Software License
 When you submit code changes, your submissions are understood to be under the same [MIT License](LICENSE) that covers the project.
