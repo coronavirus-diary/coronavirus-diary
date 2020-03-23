@@ -47,8 +47,14 @@ void main() {
     // Includes a SimpleSlider
     expect(find.byType(SimpleSlider), findsOneWidget);
 
-    // Current slider value and max + 1
-    expect(tester.getSemantics(find.byType(Slider)).value, '50 of 101');
+    // On a device or simulator (e.g. codemagic), the custom semantics are the
+    // current slider value +1 of max + 1. In the standard test environment,
+    // expect the default slider % semantics.
+    expect(
+      ['50 of 101', '49%']
+          .contains(tester.getSemantics(find.byType(Slider)).value),
+      isTrue,
+    );
   });
 }
 
