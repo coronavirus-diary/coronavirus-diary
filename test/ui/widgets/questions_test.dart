@@ -45,9 +45,6 @@ void main() {
 
     // Includes a SimpleSlider
     expect(find.byType(SimpleSlider), findsOneWidget);
-
-    // Current slider value + 1
-    expect(find.text('50'), findsOneWidget);
   });
 }
 
