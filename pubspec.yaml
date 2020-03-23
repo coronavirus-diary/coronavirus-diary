@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
+  app_settings: ^3.0.1
   equatable: ^1.1.1
   flutter:
     sdk: flutter
