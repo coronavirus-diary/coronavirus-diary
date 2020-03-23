@@ -15,16 +15,29 @@ class TemperatureStep extends StatefulWidget implements CheckupStep {
 }
 
 class _TemperatureStepState extends State<TemperatureStep> {
+  bool _isCelsius = false;
+
   String _validateTemperature(String value) {
     if (value != '') {
       final double numberValue = double.parse(value);
-      if (numberValue > 150) {
-        return 'Please enter a value below 150 ℉';
-      } else if (numberValue < 70) {
-        return 'Please enter a value above 70 ℉';
+
+      if (numberValue > _upperTemperatureLimit) {
+        return 'Please enter a value below ${_formatTemperature(_upperTemperatureLimit)}';
+      } else if (numberValue < _lowerTemperatureLimit) {
+        return 'Please enter a value above ${_formatTemperature(_lowerTemperatureLimit)}';
       }
     }
     return null;
+  }
+
+  double get _upperTemperatureLimit => _isCelsius ? 65.5 : 150.0;
+  double get _lowerTemperatureLimit => _isCelsius ? 21.1 : 70.0;
+  String _formatTemperature(double temperature) =>
+      "$temperature ${_isCelsius ? '℃' : '℉'}";
+
+  double _toFahrenheit(double value) {
+    if (!_isCelsius) return value;
+    return value * (9.0 / 5.0) + 32.0;
   }
 
   void _updateTemperature(
@@ -40,7 +53,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
       updateFunction: (Checkup checkup) {
         final VitalsResponse newResponse = VitalsResponse(
           id: 'temperature',
-          response: value,
+          response: _toFahrenheit(value),
           dataSource: 'MANUAL_INPUT',
         );
 
@@ -154,32 +167,52 @@ class _TemperatureStepState extends State<TemperatureStep> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                TextFormField(
-                  initialValue: existingResponse != null
-                      ? existingResponse.toString()
-                      : '',
-                  onChanged: (String value) =>
-                      _updateTemperature(double.parse(value), checkupState),
-                  decoration: InputDecoration(
-                    icon: FaIcon(
-                      FontAwesomeIcons.thermometerHalf,
-                      color: Colors.white,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Expanded(
+                      child: TextFormField(
+                        initialValue: existingResponse != null
+                            ? existingResponse.toString()
+                            : '',
+                        onChanged: (String value) => _updateTemperature(
+                            double.parse(value), checkupState),
+                        decoration: InputDecoration(
+                          errorMaxLines: 2,
+                          icon: FaIcon(
+                            FontAwesomeIcons.thermometerHalf,
+                            color: Colors.white,
+                          ),
+                          labelText: 'Enter your temperature',
+                          hasFloatingPlaceholder: false,
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          WhitelistingTextInputFormatter(
+                              RegExp(r'^\d+\.?\d{0,1}$')),
+                        ],
+                        autovalidate: true,
+                        autofocus: true,
+                        validator: _validateTemperature,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
-                    labelText: 'Enter your temperature',
-                    hasFloatingPlaceholder: false,
-                    suffixText: '℉',
-                  ),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
+                    Container(
+                      alignment: Alignment.topCenter,
+                      margin: EdgeInsets.only(left: 10),
+                      child: RaisedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isCelsius = !_isCelsius;
+                          });
+                        },
+                        child: _isCelsius ? const Text('℃') : const Text('℉'),
+                      ),
+                    ),
                   ],
-                  autovalidate: true,
-                  autofocus: true,
-                  validator: _validateTemperature,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                  ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 50),
