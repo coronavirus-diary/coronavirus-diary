@@ -38,11 +38,13 @@ dependencies:
   uuid: ^2.0.4
 
 dev_dependencies:
+  bloc_test: ^4.0.0
   build_runner: ^1.8.0
   flutter_test:
     sdk: flutter
   json_serializable: ^3.2.5
   file: ^5.1.0
+  mockito: ^4.1.1
 
 flutter:
   uses-material-design: true
