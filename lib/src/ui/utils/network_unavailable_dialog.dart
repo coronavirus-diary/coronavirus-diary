@@ -43,12 +43,9 @@ class NetworkUnavailableDialog {
                       .apply(color: Colors.white),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                child: RaisedButton(
-                  child: const Text('Open Network Preferences'),
-                  onPressed: () async => await AppSettings.openWIFISettings(),
-                ),
+              RaisedButton(
+                child: const Text('Open Network Preferences'),
+                onPressed: () async => await AppSettings.openWIFISettings(),
               )
             ],
           ),
