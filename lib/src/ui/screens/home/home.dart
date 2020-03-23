@@ -148,6 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 IconButton(
                   onPressed: _displayNetworkCard,
                   icon: Icon(Icons.network_check),
+                  tooltip: 'DEBUG MODE ONLY: Manually display network dialog',
                 ),
             ],
           ),
