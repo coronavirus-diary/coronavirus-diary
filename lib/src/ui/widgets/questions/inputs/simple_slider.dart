@@ -10,7 +10,7 @@ class SimpleSlider extends StatefulWidget {
   final double min;
   final double max;
   final Function(double value) onChange;
-  final List<FlutterSliderHatchMarkLabel> labels;
+  final Map<String, String> labels;
   final Widget startIcon;
   final Widget endIcon;
 
@@ -37,13 +37,6 @@ class _SimpleSliderState extends State<SimpleSlider> {
     _value = widget.value;
   }
 
-  void _setValue(int handlerIndex, dynamic lowerValue, dynamic upperValue) {
-    setState(() {
-      _value = lowerValue;
-    });
-    widget.onChange(lowerValue);
-  }
-
   void _onChanged(double value) {
     setState(() {
       _value = value;
@@ -51,33 +44,30 @@ class _SimpleSliderState extends State<SimpleSlider> {
     widget.onChange(value);
   }
 
-  FlutterSliderHatchMark _getHatchMark() {
-    if (widget.labels == null) return null;
-
-    return FlutterSliderHatchMark(
-      smallLine: FlutterSliderSizedBox(
-        decoration: BoxDecoration(color: Colors.white.withOpacity(0.4)),
-        width: 2,
-        height: 10,
-      ),
-      bigLine: FlutterSliderSizedBox(
-        decoration: BoxDecoration(color: Colors.white.withOpacity(0.4)),
-        width: 2,
-        height: 20,
-      ),
-      density: 0.04,
-      labels: widget.labels,
-      labelBox: FlutterSliderSizedBox(
-        width: 100,
-        height: 20,
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     print(widget.labels);
+
+    final theme = Theme.of(context);
+    final int divisions = widget.max.round();
+    Set<int> longLabels = widget.labels == null
+        ? Set()
+        : Set.from(widget.labels.keys.map(int.parse));
     List<Widget> bottomLabelsChildren = [];
+    final labels = widget.labels == null ? Map() : widget.labels;
+    for (int i = 0; i <= divisions; i++) {
+      String label = labels[i.toString()];
+      if (label == null) {
+        bottomLabelsChildren.add(Spacer());
+      } else {
+        print('adding label $label');
+        bottomLabelsChildren.add(
+          Expanded(
+            child: Center(child: Text(label)),
+          ),
+        );
+      }
+    }
 
     return Column(
       children: <Widget>[
@@ -93,50 +83,47 @@ class _SimpleSliderState extends State<SimpleSlider> {
                 data: SliderThemeData(
                   trackHeight: 4,
                   activeTrackColor: Colors.white,
-                  inactiveTrackColor: Colors.white.withOpacity(0.3),
+                  inactiveTrackColor: Colors.white.withOpacity(0.4),
                   thumbColor: Colors.white,
                   tickMarkShape: SliderTickMarkShape.noTickMark,
-                  trackShape: HatchedTrackShape(),
-                  thumbShape: ValuedThumbShape(),
+                  trackShape: _HatchedTrackShape(
+                    hatchCount: divisions + 1,
+                    longHatches: longLabels,
+                  ),
+                  thumbShape: _ValuedThumbShape(
+                    valuePainter: TextPainter()
+                      ..text = TextSpan(
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: theme.colorScheme.onSurface,
+                        ),
+                        text: '${_value.round() + 1}',
+                      )
+                      ..textDirection = Directionality.of(context)
+                      ..textScaleFactor =
+                          MediaQuery.of(context).textScaleFactor,
+                  ),
                   overlayShape: RoundSliderOverlayShape(overlayRadius: 32),
                   overlayColor: Colors.white12,
-                  valueIndicatorColor: Colors.white,
-                  valueIndicatorTextStyle: TextStyle(color: Colors.black),
+                  valueIndicatorShape: _RectangularSliderValueIndicatorShape(),
+                  valueIndicatorColor: Color.alphaBlend(
+                    theme.colorScheme.onSurface.withOpacity(0.60),
+                    theme.colorScheme.surface.withOpacity(0.90),
+                  ),
+                  valueIndicatorTextStyle: TextStyle(
+                    fontSize: 16,
+                    color: theme.colorScheme.surface,
+                  ),
                 ),
                 child: Slider(
                   min: widget.min,
                   max: widget.max,
                   value: _value,
-                  divisions: 4,
+                  divisions: divisions,
                   label: '${_value.round() + 1}',
                   onChanged: _onChanged,
                 ),
               ),
-//          child: FlutterSlider(
-//            min: widget.min,
-//            max: widget.max,
-//            onDragging: _setValue,
-//            onDragCompleted: _setValue,
-//            values: [_value],
-//            handler: FlutterSliderHandler(
-//              child: Text(
-//                (_value.round() + 1).toString(),
-//                style: TextStyle(color: Colors.black),
-//              ),
-//            ),
-//            hatchMark: _getHatchMark(),
-//            tooltip: FlutterSliderTooltip(disabled: true),
-//            trackBar: FlutterSliderTrackBar(
-//              inactiveTrackBar: BoxDecoration(
-//                borderRadius: BorderRadius.circular(20),
-//                color: Colors.white.withOpacity(0.4),
-//              ),
-//              activeTrackBar: BoxDecoration(
-//                borderRadius: BorderRadius.circular(4),
-//                color: Colors.white,
-//              ),
-//            ),
-//          ),
             ),
             if (widget.endIcon != null)
               Padding(
@@ -145,32 +132,24 @@ class _SimpleSliderState extends State<SimpleSlider> {
               ),
           ],
         ),
-//        Row(
-//          children: <Widget>[
-//            Expanded(
-//              child: widget.labels.firstWhere((e) => e.percent == 0)?.label,
-//            ),
-//            Expanded(
-//              child: widget.labels.firstWhere((e) => e.percent == 25)?.label,
-//            ),
-//            Expanded(
-//              child: widget.labels.firstWhere((e) => e.percent == 50)?.label,
-//            ),
-//            Expanded(
-//              child: widget.labels.firstWhere((e) => e.percent == 75)?.label,
-//            ),
-//            Expanded(
-//              child: widget.labels.firstWhere((e) => e.percent == 100)?.label,
-//            ),
-//          ],
-//        ),
+        Row(
+          children: bottomLabelsChildren,
+        ),
       ],
     );
   }
 }
 
-class ValuedThumbShape extends RoundSliderThumbShape {
-  static const double _radius = 16;
+// The following shapes are derived from the latest Material Slider from
+// https://github.com/flutter/flutter/blob/d121b5bfa9ff51726aa2af84081653e66ba76d47/packages/flutter/lib/src/material/slider_theme.dart
+// They have been modified to fit the theme of this app.
+
+class _ValuedThumbShape extends RoundSliderThumbShape {
+  static const double _radius = 20;
+
+  _ValuedThumbShape({this.valuePainter});
+
+  final TextPainter valuePainter;
 
   @override
   Size getPreferredSize(bool isEnabled, bool isDiscrete) {
@@ -190,7 +169,7 @@ class ValuedThumbShape extends RoundSliderThumbShape {
     TextDirection textDirection,
     double value,
   }) {
-    labelPainter.layout();
+    valuePainter.layout();
     final double radius = [
       labelPainter.width / 2 * sqrt2,
       labelPainter.height / 2 * sqrt2,
@@ -221,21 +200,22 @@ class ValuedThumbShape extends RoundSliderThumbShape {
       Paint()..color = sliderTheme.thumbColor,
     );
 
-    labelPainter.paint(
-      context.canvas,
-      center - Offset(labelPainter.width / 2, labelPainter.height / 2),
-    );
+    if (activationAnimation.value == 0) {
+      valuePainter.paint(
+        context.canvas,
+        center - Offset(labelPainter.width / 2, labelPainter.height / 2),
+      );
+    }
   }
 }
 
-// Derived from https://github.com/flutter/flutter/blob/d121b5bfa9ff51726aa2af84081653e66ba76d47/packages/flutter/lib/src/material/slider_theme.dart
-class HatchedTrackShape extends SliderTrackShape {
-  HatchedTrackShape({
-    this.divisions = 4,
-    this.longHatches = const {0, 4},
+class _HatchedTrackShape extends SliderTrackShape {
+  _HatchedTrackShape({
+    this.hatchCount = 5,
+    this.longHatches = const {},
   });
 
-  final int divisions;
+  final int hatchCount;
   final Set<int> longHatches;
 
   static const double _hatchWidth = 2;
@@ -353,9 +333,10 @@ class HatchedTrackShape extends SliderTrackShape {
       rightTrackPaint,
     );
 
-    for (int i = 0; i <= divisions; i++) {
-      final int index = textDirection == TextDirection.rtl ? divisions - i : i;
-      final double x = trackRect.left + index / divisions * trackRect.width;
+    for (int i = 0; i < hatchCount; i++) {
+      final int index = textDirection == TextDirection.rtl ? hatchCount - i : i;
+      final double x =
+          trackRect.left + index / (hatchCount - 1) * trackRect.width;
       context.canvas.drawRect(
         Rect.fromLTWH(
           x - _hatchWidth / 2,
@@ -366,5 +347,141 @@ class HatchedTrackShape extends SliderTrackShape {
         inactivePaint,
       );
     }
+  }
+}
+
+class _RectangularSliderValueIndicatorShape extends SliderComponentShape {
+  /// Create a slider value indicator that resembles a rectangular tooltip.
+  const _RectangularSliderValueIndicatorShape();
+
+  static const _RectangularSliderValueIndicatorPathPainter _pathPainter =
+      _RectangularSliderValueIndicatorPathPainter();
+
+  @override
+  Size getPreferredSize(
+    bool isEnabled,
+    bool isDiscrete,
+  ) {
+    return _pathPainter.getPreferredSize(isEnabled, isDiscrete);
+  }
+
+  @override
+  void paint(
+    PaintingContext context,
+    Offset center, {
+    Animation<double> activationAnimation,
+    Animation<double> enableAnimation,
+    bool isDiscrete,
+    TextPainter labelPainter,
+    RenderBox parentBox,
+    SliderThemeData sliderTheme,
+    TextDirection textDirection,
+    double value,
+  }) {
+    final Canvas canvas = context.canvas;
+    final double scale = activationAnimation.value;
+    _pathPainter.paint(
+      parentBox: parentBox,
+      canvas: canvas,
+      center: center,
+      scale: scale,
+      labelPainter: labelPainter,
+      backgroundPaintColor: sliderTheme.valueIndicatorColor,
+    );
+  }
+}
+
+class _RectangularSliderValueIndicatorPathPainter {
+  const _RectangularSliderValueIndicatorPathPainter();
+
+  static const double _triangleHeight = 8.0;
+  static const double _labelPadding = 16.0;
+  static const double _preferredHeight = 32.0;
+  static const double _minLabelWidth = 16.0;
+  static const double _bottomTipYOffset = 16.0;
+  static const double _preferredHalfHeight = _preferredHeight / 2;
+  static const double _upperRectRadius = 4;
+
+  Size getPreferredSize(
+    bool isEnabled,
+    bool isDiscrete,
+  ) {
+    return Size(
+      _minLabelWidth + _labelPadding * 2,
+      _preferredHeight,
+    );
+  }
+
+  double _upperRectangleWidth(
+      TextPainter labelPainter, double scale, double textScaleFactor) {
+    final double unscaledWidth =
+        max(_minLabelWidth * textScaleFactor, labelPainter.width) +
+            _labelPadding * 2;
+    return unscaledWidth * scale;
+  }
+
+  void paint({
+    RenderBox parentBox,
+    Canvas canvas,
+    Offset center,
+    double scale,
+    TextPainter labelPainter,
+    Color backgroundPaintColor,
+    Color strokePaintColor,
+  }) {
+    if (scale == 0.0) {
+      // Zero scale essentially means "do not draw anything", so it's safe to just return.
+      return;
+    }
+
+    labelPainter.layout();
+    final double textScaleFactor = labelPainter.height / 16;
+    final sizeWithOverflow = parentBox.size;
+
+    final double rectangleWidth =
+        _upperRectangleWidth(labelPainter, scale, textScaleFactor);
+
+    final double rectHeight = labelPainter.height + _labelPadding;
+    final Rect upperRect = Rect.fromLTWH(
+      -rectangleWidth / 2,
+      -_triangleHeight - rectHeight,
+      rectangleWidth,
+      rectHeight,
+    );
+
+    final Path trianglePath = Path()
+      ..lineTo(-_triangleHeight, -_triangleHeight)
+      ..lineTo(_triangleHeight, -_triangleHeight)
+      ..close();
+    final Paint fillPaint = Paint()..color = backgroundPaintColor;
+    final RRect upperRRect = RRect.fromRectAndRadius(
+        upperRect, const Radius.circular(_upperRectRadius));
+    trianglePath.addRRect(upperRRect);
+
+    canvas.save();
+    // Prepare the canvas for the base of the tooltip, which is relative to the
+    // center of the thumb.
+    canvas.translate(
+        center.dx, center.dy - _bottomTipYOffset * textScaleFactor);
+    canvas.scale(scale, scale);
+    if (strokePaintColor != null) {
+      final Paint strokePaint = Paint()
+        ..color = strokePaintColor
+        ..strokeWidth = 1.0
+        ..style = PaintingStyle.stroke;
+      canvas.drawPath(trianglePath, strokePaint);
+    }
+    canvas.drawPath(trianglePath, fillPaint);
+
+    // The label text is centered within the value indicator.
+    final double bottomTipToUpperRectTranslateY =
+        -_preferredHalfHeight / 2 - upperRect.height;
+    canvas.translate(0, bottomTipToUpperRectTranslateY);
+    final Offset boxCenter = Offset(0, upperRect.height / 2);
+    final Offset halfLabelPainterOffset =
+        Offset(labelPainter.width / 2, labelPainter.height / 2);
+    final Offset labelOffset = boxCenter - halfLabelPainterOffset;
+    labelPainter.paint(canvas, labelOffset);
+    canvas.restore();
   }
 }

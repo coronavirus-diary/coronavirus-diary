@@ -14,20 +14,6 @@ class QuestionItem extends StatefulWidget {
 }
 
 class _QuestionItemState extends State<QuestionItem> {
-  List<FlutterSliderHatchMarkLabel> _getHatchMarkLabels(
-      SliderQuestion question) {
-    if (question.labels == null) return [];
-
-    List<FlutterSliderHatchMarkLabel> labels = [];
-    question.labels.forEach((String key, String value) {
-      labels.add(FlutterSliderHatchMarkLabel(
-        label: Text(value),
-        percent: (double.parse(key) / question.max) * 100,
-      ));
-    });
-    return labels;
-  }
-
   Widget _getInput() {
     switch (widget.question.runtimeType) {
       case SliderQuestion:
@@ -36,7 +22,7 @@ class _QuestionItemState extends State<QuestionItem> {
           value: question.initialValue,
           min: question.min,
           max: question.max,
-          labels: _getHatchMarkLabels(question),
+          labels: question.labels,
           onChange: widget.onChange,
         );
       default:
@@ -47,7 +33,7 @@ class _QuestionItemState extends State<QuestionItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(40),
+      padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       child: Column(
         children: <Widget>[
           Text(
