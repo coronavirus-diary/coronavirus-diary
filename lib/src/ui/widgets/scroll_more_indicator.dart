@@ -10,10 +10,13 @@ class ScrollMoreIndicator extends StatefulWidget {
     Key key,
     this.child,
     @required this.controller,
+    this.margin = 50.0,
   })  : assert(controller != null),
         super(key: key);
 
   final Widget child;
+
+  final double margin;
 
   final ScrollController controller;
 
@@ -53,7 +56,7 @@ class _ScrollMoreIndicatorState extends State<ScrollMoreIndicator> {
       return;
     }
     bool atBottom = widget.controller.position.pixels >=
-        widget.controller.position.maxScrollExtent;
+        widget.controller.position.maxScrollExtent - widget.margin;
     if (atBottom != _atBottom) {
       setState(() {
         _atBottom = atBottom;
@@ -96,62 +99,64 @@ class _ScrollMoreIndicatorState extends State<ScrollMoreIndicator> {
           bottom: 0.0,
           left: 0.0,
           right: 0.0,
-          child: IgnorePointer(
-            ignoring: _atBottom,
-            child: AnimatedContainer(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: <Color>[
-                    backColor.withOpacity(0.0),
-                    backColor.withOpacity(_atBottom ? 0.0 : 1.0),
-                  ],
-                  stops: <double>[0.0, 0.5],
+          child: ExcludeSemantics(
+            child: IgnorePointer(
+              ignoring: _atBottom,
+              child: AnimatedContainer(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: <Color>[
+                      backColor.withOpacity(0.0),
+                      backColor.withOpacity(_atBottom ? 0.0 : 1.0),
+                    ],
+                    stops: <double>[0.0, 0.5],
+                  ),
                 ),
-              ),
-              duration: const Duration(milliseconds: 100),
-              curve: Curves.easeInOut,
-              padding: EdgeInsets.only(top: iconSize / 2.0),
-              child: AnimatedOpacity(
-                opacity: _atBottom ? 0.0 : 1.0,
-                onEnd: () {
-                  setState(() {
-                    _steadyState = true;
-                  });
-                },
                 duration: const Duration(milliseconds: 100),
                 curve: Curves.easeInOut,
-                child: TickerMode(
-                  enabled: !_atBottom || !_steadyState,
-                  child: Center(
-                    heightFactor: 1.0,
-                    child: GestureDetector(
-                      onTap: _handleScrollDown,
-                      child: Stack(
-                        fit: StackFit.passthrough,
-                        alignment: Alignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: iconSize / 2.0),
-                            child: Text('SCROLL FOR MORE',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    .copyWith(color: textColor)),
-                          ),
-                          Positioned(
-                            bottom: -iconSize / 4.0,
-                            child: Bob(
-                              distance: iconSize / 20.0,
-                              child: Icon(
-                                Icons.expand_more,
-                                color: textColor,
-                                size: iconSize,
+                padding: EdgeInsets.only(top: iconSize / 2.0),
+                child: AnimatedOpacity(
+                  opacity: _atBottom ? 0.0 : 1.0,
+                  onEnd: () {
+                    setState(() {
+                      _steadyState = true;
+                    });
+                  },
+                  duration: const Duration(milliseconds: 100),
+                  curve: Curves.easeInOut,
+                  child: TickerMode(
+                    enabled: !_atBottom || !_steadyState,
+                    child: Center(
+                      heightFactor: 1.0,
+                      child: GestureDetector(
+                        onTap: _handleScrollDown,
+                        child: Stack(
+                          fit: StackFit.passthrough,
+                          alignment: Alignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(bottom: iconSize / 2.0),
+                              child: Text('SCROLL FOR MORE',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .button
+                                      .copyWith(color: textColor)),
+                            ),
+                            Positioned(
+                              bottom: -iconSize / 4.0,
+                              child: Bob(
+                                distance: iconSize / 20.0,
+                                child: Icon(
+                                  Icons.expand_more,
+                                  color: textColor,
+                                  size: iconSize,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
