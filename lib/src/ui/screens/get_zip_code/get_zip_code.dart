@@ -16,11 +16,11 @@ class _GetZipCodeState extends State<GetZipCodeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Where Are You?')),
+      appBar: AppBar(title: const Text('Where Are You?')),
       body: Column(children: <Widget>[
         Container(
-          padding: EdgeInsets.all(20),
-          child: Text(
+          padding: const EdgeInsets.all(20),
+          child: const Text(
               'Please enter your zip code, or the zip code of the hospital '
               'you would go to, so that we can track the number of cases '
               'around specific hospitals.'),
@@ -46,14 +46,14 @@ class _GetZipCodeState extends State<GetZipCodeScreen> {
           children: <Widget>[
             Spacer(),
             RaisedButton(
-              child: Text('Skip Location'),
+              child: const Text('Skip Location'),
               onPressed: () {
                 Navigator.of(context).pop(null);
               },
             ),
             Spacer(),
             RaisedButton(
-              child: Text('Submit'),
+              child: const Text('Submit'),
               onPressed: _postalCode == null
                   ? null
                   : () {
