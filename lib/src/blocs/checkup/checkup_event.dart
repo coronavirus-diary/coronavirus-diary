@@ -12,7 +12,9 @@ abstract class CheckupEvent extends Equatable {
   bool get stringify => true;
 }
 
-class StartCheckup extends CheckupEvent {}
+class StartCheckup extends CheckupEvent {
+  const StartCheckup();
+}
 
 class UpdateCheckup extends CheckupEvent {
   final Checkup updatedCheckup;
@@ -23,4 +25,6 @@ class UpdateCheckup extends CheckupEvent {
   List<Object> get props => [updatedCheckup];
 }
 
-class CompleteCheckup extends CheckupEvent {}
+class CompleteCheckup extends CheckupEvent {
+  const CompleteCheckup();
+}

@@ -14,7 +14,7 @@ class Preferences {
   final Assessment lastAssessment;
 
   Preferences({
-    userId,
+    String userId,
     completedTutorial,
     this.agreedToTerms,
     this.lastAssessment,
