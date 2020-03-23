@@ -9,7 +9,7 @@ void main() {
   MemoryFileSystem fs;
   setUp(() async {
     // Use a hermetic file system that is cleaned up between tests.
-    fs = MemoryFileSystem();
+    fs = MemoryFileSystem.test();
 
     BlocSupervisor.delegate = await HydratedBlocDelegate.build(
       storageDirectory: fs.systemTempDirectory.createTempSync(),
