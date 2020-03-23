@@ -85,7 +85,7 @@ class ConsentStep extends StatelessWidget {
                                             Icons.close,
                                             color: Colors.red,
                                           ),
-                                          Text('Did not agree'),
+                                          Text('No'),
                                         ],
                                       )
                                     : Text('No'),
@@ -103,7 +103,7 @@ class ConsentStep extends StatelessWidget {
                                             Icons.check,
                                             color: Colors.green,
                                           ),
-                                          Text('Agreed'),
+                                          Text('I agree'),
                                         ],
                                       )
                                     : Text('I agree'),
