@@ -1,7 +1,7 @@
 # Coronavirus Diary
 _Ethically sourcing data for the fight against disease._
 
-[![Codemagic build status](https://api.codemagic.io/apps/5e77c814dd1d6d3087308b89/5e77c814dd1d6d3087308b88/status_badge.svg)](https://codemagic.io/apps/5e77c814dd1d6d3087308b89/5e77c814dd1d6d3087308b88/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/5e77c814dd1d6d3087308b89/5e781e03ec3bd82b6a8a8af3/status_badge.svg)](https://codemagic.io/apps/5e77c814dd1d6d3087308b89/5e781e03ec3bd82b6a8a8af3/latest_build)
 
 Coronavirus Diary is a mobile application that allows users to complete daily health checkups and receive personalized symptom assessments. If the user experiences symptoms in line with the disease, they will be prompted to contact their physician.
 

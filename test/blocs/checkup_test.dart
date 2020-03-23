@@ -2,6 +2,7 @@ import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:pedantic/pedantic.dart';
 
 void main() {
   test(
@@ -9,7 +10,7 @@ void main() {
       'CompleteCheckup', () async {
     final bloc = CheckupBloc();
     bloc.add(NotCheckupEvent());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -27,7 +28,7 @@ void main() {
       'other than CheckupStateInProgress', () async {
     final bloc = CheckupBloc();
     bloc.add(CompleteCheckup());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -45,7 +46,7 @@ void main() {
       'other than CheckupStateInProgress', () async {
     final bloc = CheckupBloc();
     bloc.add(UpdateCheckup());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -66,7 +67,7 @@ void main() {
       preferencesState: FakePreferencesState(),
     );
     bloc.add(StartCheckup());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -91,7 +92,7 @@ void main() {
     );
     bloc.add(StartCheckup());
     bloc.add(UpdateCheckup());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -118,7 +119,7 @@ void main() {
     );
     bloc.add(StartCheckup());
     bloc.add(CompleteCheckup());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
