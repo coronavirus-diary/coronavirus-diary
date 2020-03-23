@@ -9,6 +9,8 @@ import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class SubjectiveStep extends StatefulWidget implements CheckupStep {
+  bool get isLastStep => false;
+
   @override
   _SubjectiveStepState createState() => _SubjectiveStepState();
 }
@@ -64,10 +66,11 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
           builder: (context, state) {
             final CheckupStateInProgress checkupState = state;
             return QuestionView(
-              padding: EdgeInsets.only(bottom: 80),
+              padding: EdgeInsets.only(top: 20, bottom: 80),
               questions: questionState.questions,
               onChange: (Question question, dynamic value) =>
                   _updateCheckup(question, value, checkupState),
+              isLastStep: widget.isLastStep,
             );
           },
         );

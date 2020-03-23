@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +12,8 @@ import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class TemperatureStep extends StatefulWidget implements CheckupStep {
+  bool get isLastStep => true;
+
   @override
   _TemperatureStepState createState() => _TemperatureStepState();
 }
@@ -242,12 +245,13 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: EdgeInsets.only(top: 25, bottom: 40),
                   child: RaisedButton(
                     onPressed: _showInstructions,
                     child: Text(localizations.temperatureStepHelp),
                   ),
                 ),
+                StepFinishedButton(isLastStep: true),
               ],
             ),
           ),
