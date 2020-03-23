@@ -123,19 +123,16 @@ class _CheckupScreenState extends State<CheckupScreen> {
               builder: (context) {
                 return ChangeNotifierProvider<PageController>.value(
                   value: _pageController,
-                  child: MediaQuery(
-                    data: MediaQuery.of(context).copyWith(textScaleFactor: 3),
-                    child: Scaffold(
-                      appBar: AppBar(
-                        title: Text('Your Health Checkup'),
-                        leading: IconButton(
-                          icon: Icon(Icons.close),
-                          onPressed: () => Navigator.pop(context),
-                        ),
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title: Text('Your Health Checkup'),
+                      leading: IconButton(
+                        icon: Icon(Icons.close),
+                        onPressed: () => Navigator.pop(context),
                       ),
-                      backgroundColor: Theme.of(context).primaryColor,
-                      body: _getBody(preferencesState, checkupState),
                     ),
+                    backgroundColor: Theme.of(context).primaryColor,
+                    body: _getBody(preferencesState, checkupState),
                   ),
                 );
               },
