@@ -14,7 +14,7 @@ void main() {
   test('QuestionsBloc only responds to LoadQuestions events', () async {
     final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
     bloc.add(NotQuestion());
-    bloc.close();
+    await bloc.close();
 
     await expectLater(
       bloc,
@@ -32,7 +32,7 @@ void main() {
       'a LoadQuestions event', () async {
     final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
     bloc.add(LoadQuestions());
-    bloc.close();
+    await bloc.close();
 
     await expectLater(
       bloc,
@@ -51,7 +51,7 @@ void main() {
       () async {
     final bloc = QuestionsBloc(questionsRepository: FakeQuestionsRepository());
     bloc.add(LoadQuestions());
-    bloc.close();
+    await bloc.close();
 
     await expectLater(
       bloc,
