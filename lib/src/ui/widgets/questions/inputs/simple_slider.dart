@@ -46,8 +46,6 @@ class _SimpleSliderState extends State<SimpleSlider> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.labels);
-
     final theme = Theme.of(context);
     final int divisions = widget.max.round();
     Set<int> longLabels = widget.labels == null
@@ -60,7 +58,6 @@ class _SimpleSliderState extends State<SimpleSlider> {
       if (label == null) {
         bottomLabelsChildren.add(Spacer());
       } else {
-        print('adding label $label');
         bottomLabelsChildren.add(
           Expanded(
             child: Center(child: Text(label)),
