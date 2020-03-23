@@ -45,6 +45,9 @@ void main() {
 
     // Includes a SimpleSlider
     expect(find.byType(SimpleSlider), findsOneWidget);
+
+    // Current slider value + 1
+//    expect(find.bySemanticsLabel(RegExp('50 of 101')), findsOneWidget);
   });
 }
 

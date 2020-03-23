@@ -116,6 +116,9 @@ class _SimpleSliderState extends State<SimpleSlider> {
                   divisions: divisions,
                   label: '${_value.round() + 1}',
                   onChanged: _onChanged,
+                  semanticFormatterCallback: (double value) {
+                    return '${value.round() + 1} of ${widget.max.round() + 1}';
+                  },
                 ),
               ),
             ),
