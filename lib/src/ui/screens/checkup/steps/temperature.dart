@@ -132,9 +132,9 @@ class _TemperatureStepState extends State<TemperatureStep> {
           (VitalsResponse response) => response.id == 'temperature',
           orElse: () => null,
         );
-        return Padding(
-          padding: EdgeInsets.all(40),
-          child: ScrollableBody(
+        return ScrollableBody(
+          child: Padding(
+            padding: const EdgeInsets.all(40.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
