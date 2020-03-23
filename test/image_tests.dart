@@ -62,7 +62,7 @@ void _loadRobotoFont() async {
       final fontData = File(file.path)
           .readAsBytes()
           .then((bytes) => ByteData.view(Uint8List.fromList(bytes).buffer));
-      fontLoader..addFont(fontData);
+      fontLoader.addFont(fontData);
     }
   }
 
