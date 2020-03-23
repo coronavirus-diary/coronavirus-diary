@@ -28,11 +28,8 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
       case StartCheckup:
         yield* _mapStartCheckupToState(event);
         break;
-      case UpdateLocalCheckup:
-        yield* _mapUpdateLocalCheckupToState(event);
-        break;
-      case UpdateRemoteCheckup:
-        yield* _mapUpdateRemoteCheckupToState(event);
+      case UpdateCheckup:
+        yield* _mapUpdateCheckupToState(event);
         break;
       case CompleteCheckup:
         yield* _mapCompleteCheckupToState(event);
@@ -51,32 +48,14 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     yield CheckupStateInProgress(checkup: newCheckup);
   }
 
-  Stream<CheckupState> _mapUpdateLocalCheckupToState(
-      UpdateLocalCheckup event) async* {
+  Stream<CheckupState> _mapUpdateCheckupToState(UpdateCheckup event) async* {
     // Exit if checkup is not in progress
     if (state is! CheckupStateInProgress) return;
 
-    // Don't send to API yet
-    // TODO: remove this
-    print(event.updatedCheckup);
+    // Set state to updated checkup
     yield CheckupStateInProgress(
       checkup: event.updatedCheckup,
     );
-  }
-
-  Stream<CheckupState> _mapUpdateRemoteCheckupToState(
-      UpdateRemoteCheckup event) async* {
-    // Exit if checkup is not in progress
-    if (state is! CheckupStateInProgress) return;
-
-    // Retrieve current checkup
-    final CheckupStateInProgress currentState = state;
-    final Checkup currentCheckup = currentState.checkup;
-
-    // Patch checkup using API and return it (to handle server-side updates)
-    final Checkup checkup =
-        await checkupsRepository.updateCheckup(currentCheckup);
-    yield CheckupStateInProgress(checkup: checkup);
   }
 
   Stream<CheckupState> _mapCompleteCheckupToState(
@@ -91,7 +70,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     final CheckupStateInProgress currentState = state;
     final Checkup currentCheckup = currentState.checkup;
 
-    // TODO: remove this
+    // TODO: remove this when API is integrated
     print(currentCheckup.toJson().toString());
 
     // Make sure checkup is up to date on server
@@ -102,7 +81,7 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
     final Assessment assessment =
         await checkupsRepository.completeCheckup(checkup.id);
 
-    // TODO: remove this
+    // TODO: remove this when API is integrated
     print(assessment.toJson().toString());
 
     // Complete checkup using API

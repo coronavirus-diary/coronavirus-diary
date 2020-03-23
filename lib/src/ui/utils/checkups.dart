@@ -12,5 +12,5 @@ void updateCheckup({
   Checkup updatedCheckup = updateFunction(checkup);
   context
       .bloc<CheckupBloc>()
-      .add(UpdateLocalCheckup(updatedCheckup: updatedCheckup));
+      .add(UpdateCheckup(updatedCheckup: updatedCheckup));
 }

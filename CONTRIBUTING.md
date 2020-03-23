@@ -10,6 +10,13 @@ You can help out by:
 - Proposing new features
 - Becoming a maintainer
 
+## Branches
+
+We're using the following branches to manage work:
+- `develop` is semi-stable and should be used as the branch to fork from
+- `master` is stable and ready for prod (or it will be once we merge in the first release)
+- `feature`, `bug` branches: unstable development
+
 ## How to report bugs
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/joshua-s/coronavirus-diary/issues/new/choose); it's that easy!
 
