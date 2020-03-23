@@ -72,6 +72,6 @@ class NotQuestion extends QuestionsEvent {}
 class FakeQuestionsRepository implements QuestionsRepository {
   @override
   Future<List<Question>> listQuestions() {
-    throw Exception('Failed to load');
+    throw Exception('Failed to load.');
   }
 }
