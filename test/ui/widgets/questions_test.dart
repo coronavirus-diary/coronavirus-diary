@@ -40,6 +40,8 @@ void main() {
         ),
       ),
     );
+    await tester.pump();
+    await tester.pumpAndSettle();
 
     expect(find.text('subtitle'), findsOneWidget);
     expect(find.text('title'), findsOneWidget);
@@ -47,7 +49,8 @@ void main() {
     // Includes a SimpleSlider
     expect(find.byType(SimpleSlider), findsOneWidget);
 
-    expect(tester.getSemantics(find.byType(Slider)).value, '49%');
+    // Current slider value and max + 1
+    expect(tester.getSemantics(find.byType(Slider)).value, '50 of 101');
   });
 }
 
