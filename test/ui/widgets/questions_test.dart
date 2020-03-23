@@ -2,6 +2,7 @@ import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/simple_slider.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -46,8 +47,7 @@ void main() {
     // Includes a SimpleSlider
     expect(find.byType(SimpleSlider), findsOneWidget);
 
-    // Current slider value + 1
-//    expect(find.bySemanticsLabel(RegExp('50 of 101')), findsOneWidget);
+    expect(tester.getSemantics(find.byType(Slider)).value, '49%');
   });
 }
 
