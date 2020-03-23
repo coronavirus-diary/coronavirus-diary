@@ -40,8 +40,6 @@ void main() {
         ),
       ),
     );
-    await tester.pump();
-    await tester.pumpAndSettle();
 
     expect(find.text('subtitle'), findsOneWidget);
     expect(find.text('title'), findsOneWidget);
