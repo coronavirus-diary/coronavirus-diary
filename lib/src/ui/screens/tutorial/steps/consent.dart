@@ -18,11 +18,13 @@ class ConsentStep extends StatelessWidget {
     );
     context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
 
-    // Navigate to next page
-    Provider.of<PageController>(context, listen: false).nextPage(
-      duration: Duration(milliseconds: 400),
-      curve: Curves.easeInOut,
-    );
+    if (response) {
+      // Advance to the next page if consent is given.
+      Provider.of<PageController>(context, listen: false).nextPage(
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   @override
