@@ -34,9 +34,9 @@ class SliderQuestion extends Question {
   final Map<String, String> labels;
 
   SliderQuestion({
-    id,
-    title,
-    subtitle,
+    String id,
+    String title,
+    String subtitle,
     this.min,
     this.max,
     this.initialValue,
