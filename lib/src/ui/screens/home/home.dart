@@ -5,6 +5,7 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/share.dart';
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _getBody(PreferencesState state) {
     final DateTime now = DateTime.now();
     final DateTime today = DateTime(now.year, now.month, now.day);
+    final localizations = AppLocalizations.of(context);
 
     if (state.preferences.lastAssessment == null ||
         state.preferences.lastAssessment.processed.isBefore(today)) {
@@ -48,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-              "Concerned about your health?",
+              localizations.homeScreenHeading,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.title,
             ),
@@ -57,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-              "Are you experiencing symptoms? Have you been in contact with someone who is infected?",
+              localizations.homeScreenDoYouHaveSymptoms,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.body2,
             ),
@@ -69,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: RaisedButton(
               onPressed: () =>
                   Navigator.pushNamed(context, CheckupScreen.routeName),
-              child: Text('Check up on your health'),
+              child: Text(localizations.homeScreenCheckupButtonLabel),
             ),
           ),
           ShareApp(),
@@ -91,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-              'You have completed your checkup for today!',
+              localizations.homeScreenYouHaveCompletedCheckup,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.title,
             ),
@@ -100,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-              'If you continue to experience symptoms, please check back tomorrow.',
+            localizations.homeScreenCheckBackTomorrow,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.subtitle,
             ),
@@ -117,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   assessment: state.preferences.lastAssessment,
                 ),
               ),
-              child: Text('View my assessment'),
+              child: Text(localizations.homeScreenViewMyAssessment),
             ),
           ),
           ShareApp(),

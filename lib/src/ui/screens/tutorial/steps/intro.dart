@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,6 +9,7 @@ import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
 class IntroStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return SafeArea(
       child: ScrollableBody(
         child: Container(
@@ -28,7 +30,7 @@ class IntroStep extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 margin: EdgeInsets.only(bottom: 40),
                 child: Text(
-                  "Welcome to the CovidNearMe App",
+                  localizations.tutorialIntroStepWelcome,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.title,
                 ),
@@ -39,7 +41,7 @@ class IntroStep extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     TutorialStep(
-                      text: 'Complete a daily health checkup.',
+                      text: localizations.tutorialIntroStepCompleteACheckup,
                       icon: FaIcon(
                         FontAwesomeIcons.check,
                         color: Colors.white,
@@ -49,7 +51,7 @@ class IntroStep extends StatelessWidget {
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
-                      text: 'Receive a personalized health assessment.',
+                      text: localizations.tutorialIntroStepRecieveAssessment,
                       icon: FaIcon(
                         FontAwesomeIcons.heartbeat,
                         color: Colors.white,
@@ -59,7 +61,7 @@ class IntroStep extends StatelessWidget {
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
-                      text: 'Aid COVID-19 response efforts.',
+                      text: localizations.tutorialIntroStepAidEffort,
                       icon: FaIcon(
                         FontAwesomeIcons.handHoldingHeart,
                         color: Colors.white,
@@ -81,7 +83,7 @@ class IntroStep extends StatelessWidget {
                       curve: Curves.easeInOut,
                     )
                   },
-                  child: Text('Click here to learn more'),
+                  child: Text(localizations.tutorialIntroStepLearnMore),
                 ),
               ),
             ],

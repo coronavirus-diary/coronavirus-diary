@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_view.dart';
 import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
@@ -53,7 +54,7 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
       builder: (context, state) {
         if (state is! QuestionsStateLoaded) {
           return Container(
-            child: Text('Questions could not be loaded.'),
+            child: Text(AppLocalizations.of(context).subjectiveStepQuestionsLoadedError),
           );
         }
 

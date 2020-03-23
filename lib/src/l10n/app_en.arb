@@ -1,0 +1,308 @@
+{
+  "@@locale": "en",
+
+  "assessmentScreenTitle": "Your Personalized Assessment",
+  "@assessmentScreenTitle": {
+    "description": "The title of the AssesmentScreen"
+  },
+
+  "negativeAssessmentTestingCriteria": "You don't meet testing criteria",
+  "@negativeAssessmentTestingCriteria": {
+    "description": "The patient does not require further testing"
+  },
+
+  "negativeAssessmentCheckInTomorrow": "If you continue to experience symptoms, please check in tomorrow.",
+  "@negativeAssessmentCheckInTomorrow": {
+    "description": "The patient should check in again tomorrow"
+  },
+
+  "negativeAssessmentConsultPhysician": "If they become serious, please consult a physician.",
+  "@negativeAssessmentConsultPhysician": {
+    "description": "Advise the patient to consult a doctor if their symptoms worsen"
+  },
+
+  "positiveAssessmentConsultPhysician": "Please contact your physician",
+  "@positiveAssessmentConsultPhysician": {
+    "description": "Advise the patient to consult a doctor"
+  },
+
+  "positiveAssessmentShowingSymptoms": "You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.",
+  "@positiveAssessmentShowingSymptoms": {
+    "description": "Advise the patient to avoid contact with others until they've seen a doctor"
+  },
+
+  "positiveAssessmentDoNotPanic":  "Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
+  "@positiveAssessmentDoNotPanic": {
+    "description": "Advise the patient to remain calm"
+  },
+
+  "checkupScreenErrorRetrievingExperience": "There was an error retrieving the checkup experience. Please try again later.",
+  "@checkupScreenErrorRetrievingExperience": {
+    "description": "An error occured while trying to fetch data"
+  },
+
+  "checkupScreenHUDLabel": "Loading your assessment",
+  "@checkupScreenHUDLabel": {
+    "description": "A label that indicates that the app is busy loading the patient's assessment"
+  },
+
+  "checkupScreenTitle": "Your Health Checkup",
+  "@checkupScreenTitle": {
+    "description": "Title for the checkup screen"
+  },
+
+  "checkupProgressBarPercentCompleteText": "Step {stepIndex} of {stepCount}",
+  "@checkupProgressBarPercentCompleteText": {
+    "description": "Which step in the overall process is the patient currently working on",
+    "placeholders": {
+      "stepIndex": {
+        "type": "int",
+        "format": "compactLong"
+      },
+      "stepCount": {
+        "type": "int",
+        "format": "compactLong"
+      }
+    }
+  },
+
+  "checkupProgressBarSubmit": "Submit",
+  "@checkupProgressBarSubmit": {
+    "description": "Submit the data on the current checkup screen"
+  },
+
+  "checkupProgressBarContinue": "Continue",
+  "@checkupProgressBarContinue": {
+    "description": "Continue to the next checkup screen"
+  },
+
+  "introStepTimeForYourCheckup": "It's time for your checkup.",
+  "@introStepTimeForYourCheckup": {
+    "description": "Heading at the top of the Your Health Checkup screen"
+  },
+
+  "introStepWeWillAskQuestions": "We will ask you a few questions and have you take your temperature.",
+  "@introStepWeWillAskQuestions": {
+    "description": "Tell the patient what they will be doing with the app"
+  },
+
+  "introStepAtTheEnd": "At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.",
+  "@introStepAtTheEnd": {
+    "description": "Explain what the app will tell the patient once they have answered the questions"
+  },
+
+  "introStepSwitchLabelContributeData": "Contribute my data to the COVID-19 response effort.",
+  "@introStepSwitchLabelContributeData": {
+    "description": "Explain that turning the switch on means that the patient data will be shared with the COVID-19 response effort"
+  },
+
+  "introStepSwitchLabelCollectPostalCode": "We will collect your zip code.",
+  "@introStepSwitchLabelCollectPostalCode": {
+    "description": "Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's zip code"
+  },
+
+  "introStepButtonStartLabel": "Start checkup",
+  "@introStepButtonStartLabel": {
+    "description": "Starts the checkup by showing the first checkup screen"
+  },
+
+  "subjectiveStepQuestionsLoadedError": "Questions could not be loaded.",
+  "@subjectiveStepQuestionsLoadedError": {
+    "description": "An internal error occurred, the checkup questions failed to load"
+  },
+
+  "temperatureStepPleaseEnterValueBelow": "Please enter a value below 150 ℉",
+  "@temperatureStepPleaseEnterValueBelow": {
+    "description": "Ask the user to correct their temperature reading"
+  },
+
+  "temperatureStepPleaseEnterValueAbove": "Please enter a value above 70 ℉",
+  "@temperatureStepPleaseEnterValueAbove": {
+    "description": "Ask the user to correct their temperature reading"
+  },
+
+  "temperatureStepHowToDialogTitle": "When and how to take your temperature:",
+  "@temperatureStepHowToDialogTitle": {
+    "description": "Title for a dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepHowToDialogStep1": "Wash your hands using soap and water",
+  "@temperatureStepHowToDialogStep1": {
+    "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepHowToDialogStep2": "Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.",
+  "@temperatureStepHowToDialogStep2": {
+    "description": "Step 2 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepHowToDialogStep3": "Put the tip of your thermometer under your tongue and gently close your lips.",
+  "@temperatureStepHowToDialogStep3": {
+    "description": "Step 3 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepHowToDialogStep4": "Keep your lips closed and the thermometer under your tongue until you hear a beep.",
+  "@temperatureStepHowToDialogStep4": {
+    "description": "Step 4 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepHowToDialogStep5": "Take out your thermometer and record your temperature.",
+  "@temperatureStepHowToDialogStep5": {
+    "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepHowToDialogReturn": "Return to checkup",
+  "@temperatureStepHowToDialogReturn": {
+    "description": "Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureStepTitle": "Take your temperature",
+  "@temperatureStepTitle": {
+    "description": "Title that appears above the textfield where the user enters their temperature"
+  },
+
+  "temperatureStepInputLabel": "Enter your temperature",
+  "@temperatureStepInputLabel": {
+    "description": "Title that appears within the textfield where the user enters their temperature"
+  },
+
+  "temperatureStepHelp": "Need help? Click for instructions.",
+  "@temperatureStepHelp": {
+    "description": "Label for a button that brings up a help screen"
+  },
+
+  "homeScreenHeading": "Concerned about your health?",
+  "@homeScreenHeading": {
+    "description": "Heading text for the home screen"
+  },
+
+  "homeScreenHeading": "Concerned about your health?",
+  "@homeScreenHeading": {
+    "description": "Heading text for the home screen"
+  },
+
+  "homeScreenDoYouHaveSymptoms": "Are you experiencing symptoms? Have you been in contact with someone who is infected?",
+  "@homeScreenDoYouHaveSymptoms": {
+    "description": "Subheading text for the home screen"
+  },
+
+  "homeScreenCheckupButtonLabel": "Check up on your health",
+  "@homeScreenCheckupButtonLabel": {
+    "description": "Label for a button that shows the checkup screen"
+  },
+
+  "homeScreenYouHaveCompletedCheckup": "You have completed your checkup for today!",
+  "@homeScreenYouHaveCompletedCheckup": {
+    "description": "Tell the user that they've already completed a checkup today"
+  },
+
+  "homeScreenCheckBackTomorrow": "If you continue to experience symptoms, please check back tomorrow.",
+  "@homeScreenCheckBackTomorrow": {
+    "description": "Tell a user that has already completed their checkup that they can check again tomorrow"
+  },
+
+  "homeScreenViewMyAssessment": "View my assessment",
+  "@homeScreenViewMyAssessment": {
+    "description": "View the assement of the checkup data"
+  },
+
+  "shareAppDownloadPrompt": "Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK",
+  "@shareAppDownloadPrompt": {
+    "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime"
+  },
+
+  "shareAppProtectYourCommunity": "Protect Your Community",
+  "@shareAppProtectYourCommunity": {
+    "description": "Title for the app sharing sheet, see https://pub.dev/packages/share"
+  },
+
+  "shareAppWithFriendsEtc": "Share this app with your friends, coworkers, and family (especially grandparents).",
+  "@shareAppWithFriendsEtc": {
+    "description": "Subheading for the app sharing sheet, see https://pub.dev/packages/share"
+  },
+
+  "shareAppNow": "Share now",
+  "@shareAppNow": {
+    "description": "Final prompt to share the app for the app sharing sheeting, see https://pub.dev/packages/share"
+  },
+
+  "staySafeTitle": "Stay Safe",
+  "@staySafeTitle": {
+    "description": "Title for the screen that lists 3 steps for staying safe"
+  },
+
+  "staySafeWashYourHands": "Wash your hands",
+  "@staySafeWashYourHands": {
+    "description": "Step 1 for the screen that lists 3 steps for staying safe"
+  },
+
+  "staySafeLimitContact": "Limit contact with other people.",
+  "@staySafeLimitContact": {
+    "description": "Step 2 for the screen that lists 3 steps for staying safe"
+  },
+
+  "staySafeCheckBackIf": "Check back in if you continue to experience symptoms.",
+  "@staySafeCheckBackIf": {
+    "description": "Step 3 for the screen that lists 3 steps for staying safe"
+  },
+
+  "tutorialIntroStepWelcome": "Welcome to the CovidNearMe App",
+  "@tutorialIntroStepWelcome": {
+    "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
+  },
+
+  "tutorialIntroStepCompleteACheckup": "Complete a daily health checkup.",
+  "@tutorialIntroStepCompleteACheckup": {
+    "description": "Describes the outcome of running the app"
+  },
+
+  "tutorialIntroStepRecieveAssessment": "Receive a personalized health assessment.",
+  "@tutorialIntroStepRecieveAssessment": {
+    "description": "Describes the benefit of the app"
+  },
+
+  "tutorialIntroStepAidEffort": "Aid COVID-19 response efforts.",
+  "@tutorialIntroStepAidEffort": {
+    "description": "Describes the benefit of the app to the community."
+  },
+
+  "tutorialIntroStepLearnMore": "Click here to learn more",
+  "@tutorialIntroStepLearnMore": {
+    "description": "Label for the button that shows the next app screen"
+  },
+
+  "getStartedStepJoined": "You've joined the CovidNearMe community!",
+  "@getStartedStepJoined": {
+    "description": "Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated"
+  },
+
+  "getStartedStepClick": "Click here to get started",
+  "@getStartedStepClick": {
+    "description": "Label for the button that shows the next app screen"
+  },
+
+  "consentStepDidNotAgree": "Did not agree",
+  "@consentStepDidNotAgree": {
+    "description": "Label for the button that indicates that the user did not accept the app license"
+  },
+
+  "consentStepNo": "No",
+  "@consentStepNo": {
+    "description": "Label for the button that indicates that the user will not accept the app license"
+  },
+
+  "consentStepAgreed": "Agree",
+  "@consentStepAgreed": {
+    "description": "Label for the button that indicates that the user did accept the app license"
+  },
+
+  "consentStepIAgree": "I Agree",
+  "@consentStepIAgree": {
+    "description": "Label for the button that indicates that the user will accept the app license"
+  },
+
+  "consentStepLoading": "Loading...",
+  "@consentStepLoading": {
+    "description": "Displayed while the app is loading the next screen"
+  }
+}
