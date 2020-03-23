@@ -167,5 +167,5 @@ class FakeCheckupsRepository implements CheckupsRepository {
 
 class FakePreferencesState implements PreferencesState {
   @override
-  Preferences get preferences => Preferences(userId: '1');
+  Preferences get preferences => Preferences(userId: '2');
 }
