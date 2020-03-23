@@ -1,6 +1,7 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:pedantic/pedantic.dart';
 
 void main() {
   test('LoadQuestions has no props by default', () {
@@ -14,7 +15,7 @@ void main() {
   test('QuestionsBloc only responds to LoadQuestions events', () async {
     final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
     bloc.add(NotQuestion());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -32,7 +33,7 @@ void main() {
       'a LoadQuestions event', () async {
     final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
     bloc.add(LoadQuestions());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
@@ -51,7 +52,7 @@ void main() {
       () async {
     final bloc = QuestionsBloc(questionsRepository: FakeQuestionsRepository());
     bloc.add(LoadQuestions());
-    bloc.close();
+    unawaited(bloc.close());
 
     await expectLater(
       bloc,
