@@ -22,21 +22,38 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
   CheckupStep currentStep = steps[0];
 
   void _saveCurrentLocation(CheckupStateInProgress checkupState) async {
-    final Geolocator geolocator = Geolocator();
-    final GeolocationStatus permission =
-        await geolocator.checkGeolocationPermissionStatus(
-            locationPermission: GeolocationPermission.locationWhenInUse);
-    if (permission == GeolocationStatus.granted ||
-        permission == GeolocationStatus.restricted) {
-      final Position position = await geolocator.getCurrentPosition(
-        locationPermissionLevel: GeolocationPermission.locationWhenInUse,
-      );
-      final List<Placemark> places = await geolocator.placemarkFromCoordinates(
-        position.latitude,
-        position.longitude,
-      );
-      final String postalCode = places[0].postalCode;
-
+    bool showLocationFallback = true;
+    String postalCode;
+    try {
+      final Geolocator geolocator = Geolocator();
+      final GeolocationStatus permission =
+          await geolocator.checkGeolocationPermissionStatus(
+              locationPermission: GeolocationPermission.locationWhenInUse);
+      if (permission == GeolocationStatus.granted ||
+          permission == GeolocationStatus.restricted) {
+        final Position position = await geolocator.getCurrentPosition(
+          locationPermissionLevel: GeolocationPermission.locationWhenInUse,
+        );
+        final List<Placemark> places =
+            await geolocator.placemarkFromCoordinates(
+          position.latitude,
+          position.longitude,
+        );
+        final String postalCode = places[0].postalCode;
+        showLocationFallback = false;
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+    if (showLocationFallback) {
+      //This returns a String, but putting an explicit type here fails.
+      final result =
+          await Navigator.pushNamed(context, GetZipCodeScreen.routeName);
+      if (result != null) {
+        postalCode = result;
+      }
+    }
+    if (postalCode != null) {
       updateCheckup(
         context: context,
         checkupState: checkupState,
@@ -45,20 +62,6 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
           return checkup;
         },
       );
-    } else {
-      //This returns a String, but putting an explicit type here fails.
-      final dynamic postalCode =
-          await Navigator.pushNamed(context, GetZipCodeScreen.routeName);
-      if (postalCode != null) {
-        updateCheckup(
-          context: context,
-          checkupState: checkupState,
-          updateFunction: (Checkup checkup) {
-            checkup.location = CheckupLocation(postalCode: postalCode);
-            return checkup;
-          },
-        );
-      }
     }
   }
 
