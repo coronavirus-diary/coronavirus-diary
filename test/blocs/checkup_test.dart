@@ -141,31 +141,23 @@ void main() {
 class NotCheckupEvent extends CheckupEvent {}
 
 class FakeCheckupsRepository implements CheckupsRepository {
-  FakeCheckupsRepository({
-    this.assessment,
-    this.checkup,
-  });
-
-  final Assessment assessment;
-  final Checkup checkup;
-
   @override
   Future<Assessment> completeCheckup(String id) async {
-    return assessment ?? Assessment();
+    return Assessment();
   }
 
   @override
   Future<Checkup> createCheckup(Checkup checkup) async {
-    return checkup ?? Checkup();
+    return Checkup();
   }
 
   @override
   Future<Checkup> updateCheckup(Checkup updatedCheckup) async {
-    return checkup ?? Checkup();
+    return Checkup();
   }
 }
 
 class FakePreferencesState implements PreferencesState {
   @override
-  Preferences get preferences => Preferences(userId: '2');
+  Preferences get preferences => Preferences(userId: '1');
 }
