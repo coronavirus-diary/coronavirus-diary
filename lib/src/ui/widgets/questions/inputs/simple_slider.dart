@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_xlider/flutter_xlider.dart';
 
 export 'package:flutter_xlider/flutter_xlider.dart';
 
@@ -433,7 +432,6 @@ class _RectangularSliderValueIndicatorPathPainter {
 
     labelPainter.layout();
     final double textScaleFactor = labelPainter.height / 16;
-    final sizeWithOverflow = parentBox.size;
 
     final double rectangleWidth =
         _upperRectangleWidth(labelPainter, scale, textScaleFactor);
