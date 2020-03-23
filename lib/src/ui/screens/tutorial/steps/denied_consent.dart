@@ -54,11 +54,11 @@ class DeniedConsent extends StatelessWidget {
                             children: <Widget>[
                               RaisedButton(
                                 onPressed: () => Provider.of<PageController>(
-                                        context,
-                                        listen: false)
-                                    .previousPage(
-                                        duration: Duration(microseconds: 400),
-                                        curve: Curves.easeInOut),
+                                  context,
+                                  listen: false,
+                                ).previousPage(
+                                    duration: Duration(microseconds: 400),
+                                    curve: Curves.easeInOut),
                                 child: Text('Go Back'),
                               ),
                             ],
