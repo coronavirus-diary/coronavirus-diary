@@ -75,12 +75,18 @@ class _TemperatureStepState extends State<TemperatureStep> {
   }
 
   Future<void> _showInstructions() async {
+    final categoryFontStyle = TextStyle(
+      color: Theme.of(context).primaryColor,
+      fontWeight: FontWeight.bold,
+      fontSize: 18,
+    );
+
     await showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
           title: Text(
-            'How to take your temperature:',
+            'When and how to take your temperature:',
             style: Theme.of(context).dialogTheme.titleTextStyle,
           ),
           contentPadding: EdgeInsets.all(20),
@@ -89,6 +95,27 @@ class _TemperatureStepState extends State<TemperatureStep> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Divider(),
+                Text(
+                  'When?',
+                  style: categoryFontStyle,
+                ),
+                TutorialStep(
+                  text: "Wait 30 minutes after eating, drinking, or exercising",
+                  number: 1,
+                  textColor: Colors.black,
+                ),
+                TutorialStep(
+                  text:
+                      "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)",
+                  number: 2,
+                  textColor: Colors.black,
+                ),
+                Divider(),
+                Text(
+                  'How?',
+                  style: categoryFontStyle,
+                ),
                 TutorialStep(
                   text: "Wash your hands using soap and water",
                   number: 1,
