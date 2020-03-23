@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Install and configure the Flutter framework: https://flutter.dev/docs/get-started/install
+1. Install and configure the latest stable-channel Flutter framework: https://flutter.dev/docs/get-started/install
 
 2. Add the Flutter and Dart plugins to your IDE: https://flutter.dev/docs/get-started/editor
 
