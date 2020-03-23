@@ -96,7 +96,7 @@ class _IntroStepState extends State<IntroStep> {
                   subtitle: Container(
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
-                      'We will collect your postal code.',
+                      'We will collect your zip code.',
                     ),
                   ),
                   activeColor: Colors.white,
