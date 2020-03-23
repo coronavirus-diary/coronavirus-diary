@@ -11,9 +11,7 @@ void main() {
     expect(LoadQuestions().toString(), 'LoadQuestions()');
   });
 
-  test(
-      'QuestionsBloc does not yield additional states if it receives actions '
-      'other than LoadQuestions', () async {
+  test('QuestionsBloc only responds to LoadQuestions events', () async {
     final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
     bloc.add(NotQuestion());
     bloc.close();
