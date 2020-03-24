@@ -26,7 +26,6 @@ class ShareApp extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 10),
             child: FaIcon(
               FontAwesomeIcons.handHoldingHeart,
-              color: Colors.white,
               size: 40,
             ),
           ),
@@ -49,9 +48,12 @@ class ShareApp extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          RaisedButton(
-            onPressed: _shareApp,
-            child: Text(localizations.shareAppNow),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+              onPressed: _shareApp,
+              child: Text(localizations.shareAppNow),
+            ),
           ),
         ],
       ),

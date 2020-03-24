@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 
 import 'question_item.dart';
 import 'step_finished_button.dart';
-import '../scrollable_body.dart';
 
 class QuestionView extends StatefulWidget {
   final List<Question> questions;
@@ -39,7 +39,7 @@ class _QuestionViewState extends State<QuestionView> {
   Widget build(BuildContext context) {
     return Container(
       padding: widget.padding,
-      color: widget.color ?? Theme.of(context).primaryColor,
+      color: widget.color ?? Theme.of(context).colorScheme.surface,
       child: ScrollableBody(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

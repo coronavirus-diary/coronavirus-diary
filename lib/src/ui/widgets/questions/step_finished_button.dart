@@ -18,6 +18,7 @@ class StepFinishedButton extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
+      alignment: isLastStep ? null : AlignmentDirectional.centerEnd,
       width: 400,
       child: RaisedButton(
         onPressed: () {
@@ -32,7 +33,7 @@ class StepFinishedButton extends StatelessWidget {
         },
         child: Text(isLastStep
             ? localizations.checkupProgressBarSubmit
-            : localizations.checkupProgressBarContinue),
+            : localizations.checkupProgressBarNext),
       ),
     );
   }

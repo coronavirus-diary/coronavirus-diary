@@ -62,10 +62,10 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get checkupProgressBarSubmit => 'Submit';
+  String get checkupProgressBarSubmit => 'SUBMIT';
 
   @override
-  String get checkupProgressBarContinue => 'Continue';
+  String get checkupProgressBarNext => 'NEXT';
 
   @override
   String get introStepTimeForYourCheckup => 'It\'s time for your checkup.';

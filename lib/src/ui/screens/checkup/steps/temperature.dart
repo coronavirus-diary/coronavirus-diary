@@ -106,45 +106,38 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   localizations.temperatureStepWhenHeading,
                   style: categoryFontStyle,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepWait30Minutes,
                   number: 1,
-                  textColor: Colors.black,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepWait6Hours,
                   number: 2,
-                  textColor: Colors.black,
                 ),
                 Divider(),
                 Text(
                   'How?',
                   style: categoryFontStyle,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepHowToDialogStep1,
                   number: 1,
-                  textColor: Colors.black,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepHowToDialogStep2,
                   number: 2,
-                  textColor: Colors.black,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepHowToDialogStep3,
                   number: 3,
-                  textColor: Colors.black,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepHowToDialogStep4,
                   number: 4,
-                  textColor: Colors.black,
                 ),
-                TutorialStep(
+                _InstructionStep(
                   text: localizations.temperatureStepHowToDialogStep5,
                   number: 5,
-                  textColor: Colors.black,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20),
@@ -176,87 +169,108 @@ class _TemperatureStepState extends State<TemperatureStep> {
           orElse: () => null,
         );
         return ScrollableBody(
-          child: Padding(
-            padding: const EdgeInsets.all(40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: Container(),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: Text(
-                    localizations.temperatureStepTitle,
-                    style: Theme.of(context).textTheme.title.copyWith(
-                          color: Colors.white,
-                          fontSize: 26,
-                        ),
-                    textAlign: TextAlign.center,
+          child: Container(
+            color: Theme.of(context).backgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 40, left: 40, right: 40),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Container(),
                   ),
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Expanded(
-                      child: TextFormField(
-                        initialValue: existingResponse != null
-                            ? existingResponse.toString()
-                            : '',
-                        onChanged: (String value) => _updateTemperature(
-                            double.parse(value), checkupState),
-                        decoration: InputDecoration(
-                          errorMaxLines: 2,
-                          icon: FaIcon(
-                            FontAwesomeIcons.thermometerHalf,
-                            color: Colors.white,
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 24),
+                    child: Text(
+                      localizations.temperatureStepTitle,
+                      style: Theme.of(context).textTheme.title.copyWith(
+                            fontSize: 26,
                           ),
-                          labelText: localizations.temperatureStepInputLabel,
-                          hasFloatingPlaceholder: false,
-                        ),
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          WhitelistingTextInputFormatter(
-                              RegExp(r'^\d+\.?\d{0,1}$')),
-                        ],
-                        autovalidate: true,
-                        autofocus: true,
-                        validator: _validateTemperature,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
-                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    Container(
-                      alignment: Alignment.topCenter,
-                      margin: EdgeInsets.only(left: 10),
-                      child: RaisedButton(
-                        onPressed: () {
-                          setState(() {
-                            _isCelsius = !_isCelsius;
-                          });
-                        },
-                        child: _isCelsius ? const Text('℃') : const Text('℉'),
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 25, bottom: 40),
-                  child: RaisedButton(
-                    onPressed: _showInstructions,
-                    child: Text(localizations.temperatureStepHelp),
                   ),
-                ),
-                StepFinishedButton(isLastStep: true),
-              ],
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                        child: TextFormField(
+                          initialValue: existingResponse != null
+                              ? existingResponse.toString()
+                              : '',
+                          onChanged: (String value) => _updateTemperature(
+                              double.parse(value), checkupState),
+                          decoration: InputDecoration(
+                            errorMaxLines: 2,
+                            border: OutlineInputBorder(),
+                            filled: true,
+                            fillColor: Colors.transparent,
+                            icon: FaIcon(
+                              FontAwesomeIcons.thermometerHalf,
+                            ),
+                            labelText: 'Temperature',
+                            hasFloatingPlaceholder: true,
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            WhitelistingTextInputFormatter(
+                                RegExp(r'^\d+\.?\d{0,1}$')),
+                          ],
+                          autovalidate: true,
+                          autofocus: true,
+                          validator: _validateTemperature,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topCenter,
+                        margin: EdgeInsets.only(left: 10),
+                        child: RaisedButton(
+                          onPressed: () {
+                            setState(() {
+                              _isCelsius = !_isCelsius;
+                            });
+                          },
+                          child: _isCelsius ? const Text('℃') : const Text('℉'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 25, bottom: 40),
+                    child: RaisedButton(
+                      onPressed: _showInstructions,
+                      child: Text(localizations.temperatureStepHelp),
+                    ),
+                  ),
+                  StepFinishedButton(isLastStep: true),
+                ],
+              ),
             ),
           ),
         );
       },
+    );
+  }
+}
+
+class _InstructionStep extends StatelessWidget {
+  const _InstructionStep({Key key, this.text, this.number}) : super(key: key);
+
+  final String text;
+  final int number;
+
+  @override
+  Widget build(BuildContext context) {
+    return TutorialStep(
+      text: text,
+      number: number,
+      leadingBackgroundColor: Theme.of(context).colorScheme.secondary,
+      numberColor: Theme.of(context).colorScheme.onSecondary,
     );
   }
 }

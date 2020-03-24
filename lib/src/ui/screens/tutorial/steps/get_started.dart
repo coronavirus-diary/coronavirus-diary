@@ -38,7 +38,7 @@ class GetStartedStep extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     width: double.infinity,
-                    color: Colors.white.withOpacity(0.2),
+                    color: Theme.of(context).accentColor.withOpacity(0.5),
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     margin: EdgeInsets.only(bottom: 20),
                     child: Center(
