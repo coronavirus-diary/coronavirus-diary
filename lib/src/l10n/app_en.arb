@@ -327,7 +327,7 @@
   },
 
   "deniedConsentBackButton": "Go back to the informed consent screen",
-  "@consentStepLoading": {
+  "@deniedConsentBackButton": {
     "description": "Label for the back button on the denied consent screen"
   }
 }
