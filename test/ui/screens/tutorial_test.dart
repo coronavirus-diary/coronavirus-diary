@@ -1,7 +1,6 @@
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/l10n/app_localizations_en.dart';
 import 'package:covidnearme/src/ui/screens/tutorial/steps/consent.dart';
 import 'package:covidnearme/src/ui/screens/tutorial/steps/get_started.dart';
 import 'package:covidnearme/src/ui/screens/tutorial/steps/intro.dart';
