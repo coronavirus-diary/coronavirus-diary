@@ -35,7 +35,6 @@ class _TutorialScreenState extends State<TutorialScreen> {
           body: ChangeNotifierProvider<PageController>.value(
             value: _pageController,
             child: PageView(
-
               physics: NeverScrollableScrollPhysics(),
               controller: _pageController,
               children: <Widget>[

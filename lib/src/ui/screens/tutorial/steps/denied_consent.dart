@@ -59,7 +59,9 @@ class DeniedConsent extends StatelessWidget {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8,),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8,
+                          ),
                           child: Markdown(
                             physics: NeverScrollableScrollPhysics(),
                             padding: EdgeInsets.fromLTRB(20, 40, 20, 150),
