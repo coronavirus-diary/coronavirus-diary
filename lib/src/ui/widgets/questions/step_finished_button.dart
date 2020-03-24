@@ -17,7 +17,7 @@ class StepFinishedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return Container(
-      padding: EdgeInsets.only(left: 20, right: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       width: 400,
       child: RaisedButton(
         onPressed: () {
