@@ -12,12 +12,8 @@ import 'package:file/memory.dart';
 
 void main() {
   setUp(() async {
-    // Use a hermetic file system that is cleaned up between tests.
-    final fs = MemoryFileSystem.test();
-
     BlocSupervisor.delegate = await AppHydratedBlocDelegate.build(
-      storageDirectory: fs.systemTempDirectory.createTempSync(),
-    );
+        storageDirectory: MemoryFileSystem.test().currentDirectory);
   });
 
   testWidgets('Tutorial intro step displays learn more button',
