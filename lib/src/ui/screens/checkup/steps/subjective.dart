@@ -54,7 +54,8 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
       builder: (context, state) {
         if (state is! QuestionsStateLoaded) {
           return Container(
-            child: Text(AppLocalizations.of(context).subjectiveStepQuestionsLoadedError),
+            child: Text(AppLocalizations.of(context)
+                .subjectiveStepQuestionsLoadedError),
           );
         }
 

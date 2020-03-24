@@ -32,7 +32,8 @@ class CheckupProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     // Remember to update this if steps are added that do not count towards the total
     final AppLocalizations localizations = AppLocalizations.of(context);
-    String percentCompleteText = localizations.checkupProgressBarPercentCompleteText(currentIndex, stepsLength);
+    String percentCompleteText = localizations
+        .checkupProgressBarPercentCompleteText(currentIndex, stepsLength);
     return Align(
       alignment: Alignment.bottomCenter,
       child: Column(
@@ -55,8 +56,8 @@ class CheckupProgressBar extends StatelessWidget {
                 RaisedButton(
                   onPressed: () => _handleNextButton(context),
                   child: Text(isLastPage
-                    ? localizations.checkupProgressBarSubmit
-                    : localizations.checkupProgressBarContinue),
+                      ? localizations.checkupProgressBarSubmit
+                      : localizations.checkupProgressBarContinue),
                 ),
               ],
             ),

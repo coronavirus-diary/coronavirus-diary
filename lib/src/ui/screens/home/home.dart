@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-            localizations.homeScreenCheckBackTomorrow,
+              localizations.homeScreenCheckBackTomorrow,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.subtitle,
             ),

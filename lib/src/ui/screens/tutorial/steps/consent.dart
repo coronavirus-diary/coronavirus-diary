@@ -89,7 +89,8 @@ class ConsentStep extends StatelessWidget {
                                             Icons.close,
                                             color: Colors.red,
                                           ),
-                                          Text(localizations.consentStepDidNotAgree),
+                                          Text(localizations
+                                              .consentStepDidNotAgree),
                                         ],
                                       )
                                     : Text(localizations.consentStepNo),

@@ -1,4 +1,3 @@
-
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -13,25 +12,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get assessmentScreenTitle => 'Your Personalized Assessment';
 
   @override
-  String get negativeAssessmentTestingCriteria => 'You don\'t meet testing criteria';
+  String get negativeAssessmentTestingCriteria =>
+      'You don\'t meet testing criteria';
 
   @override
-  String get negativeAssessmentCheckInTomorrow => 'If you continue to experience symptoms, please check in tomorrow.';
+  String get negativeAssessmentCheckInTomorrow =>
+      'If you continue to experience symptoms, please check in tomorrow.';
 
   @override
-  String get negativeAssessmentConsultPhysician => 'If they become serious, please consult a physician.';
+  String get negativeAssessmentConsultPhysician =>
+      'If they become serious, please consult a physician.';
 
   @override
-  String get positiveAssessmentConsultPhysician => 'Please contact your physician';
+  String get positiveAssessmentConsultPhysician =>
+      'Please contact your physician';
 
   @override
-  String get positiveAssessmentShowingSymptoms => 'You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.';
+  String get positiveAssessmentShowingSymptoms =>
+      'You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.';
 
   @override
-  String get positiveAssessmentDoNotPanic => 'Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.';
+  String get positiveAssessmentDoNotPanic =>
+      'Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.';
 
   @override
-  String get checkupScreenErrorRetrievingExperience => 'There was an error retrieving the checkup experience. Please try again later.';
+  String get checkupScreenErrorRetrievingExperience =>
+      'There was an error retrieving the checkup experience. Please try again later.';
 
   @override
   String get checkupScreenHUDLabel => 'Loading your assessment';
@@ -41,14 +47,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String checkupProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -65,46 +71,58 @@ class AppLocalizationsEn extends AppLocalizations {
   String get introStepTimeForYourCheckup => 'It\'s time for your checkup.';
 
   @override
-  String get introStepWeWillAskQuestions => 'We will ask you a few questions and have you take your temperature.';
+  String get introStepWeWillAskQuestions =>
+      'We will ask you a few questions and have you take your temperature.';
 
   @override
-  String get introStepAtTheEnd => 'At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.';
+  String get introStepAtTheEnd =>
+      'At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.';
 
   @override
-  String get introStepSwitchLabelContributeData => 'Contribute my data to the COVID-19 response effort.';
+  String get introStepSwitchLabelContributeData =>
+      'Contribute my data to the COVID-19 response effort.';
 
   @override
-  String get introStepSwitchLabelCollectPostalCode => 'We will collect your postal code.';
+  String get introStepSwitchLabelCollectPostalCode =>
+      'We will collect your postal code.';
 
   @override
   String get introStepButtonStartLabel => 'Start checkup';
 
   @override
-  String get subjectiveStepQuestionsLoadedError => 'Questions could not be loaded.';
+  String get subjectiveStepQuestionsLoadedError =>
+      'Questions could not be loaded.';
 
   @override
-  String get temperatureStepPleaseEnterValueBelow => 'Please enter a value below 150 ℉';
+  String get temperatureStepPleaseEnterValueBelow =>
+      'Please enter a value below 150 ℉';
 
   @override
-  String get temperatureStepPleaseEnterValueAbove => 'Please enter a value above 70 ℉';
+  String get temperatureStepPleaseEnterValueAbove =>
+      'Please enter a value above 70 ℉';
 
   @override
   String get temperatureStepHowToDialogTitle => 'How to take your temperature:';
 
   @override
-  String get temperatureStepHowToDialogStep1 => 'Wash your hands using soap and water';
+  String get temperatureStepHowToDialogStep1 =>
+      'Wash your hands using soap and water';
 
   @override
-  String get temperatureStepHowToDialogStep2 => 'Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.';
+  String get temperatureStepHowToDialogStep2 =>
+      'Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.';
 
   @override
-  String get temperatureStepHowToDialogStep3 => 'Put the tip of your thermometer under your tongue and gently close your lips.';
+  String get temperatureStepHowToDialogStep3 =>
+      'Put the tip of your thermometer under your tongue and gently close your lips.';
 
   @override
-  String get temperatureStepHowToDialogStep4 => 'Keep your lips closed and the thermometer under your tongue until you hear a beep.';
+  String get temperatureStepHowToDialogStep4 =>
+      'Keep your lips closed and the thermometer under your tongue until you hear a beep.';
 
   @override
-  String get temperatureStepHowToDialogStep5 => 'Take out your thermometer and record your temperature.';
+  String get temperatureStepHowToDialogStep5 =>
+      'Take out your thermometer and record your temperature.';
 
   @override
   String get temperatureStepHowToDialogReturn => 'Return to checkup';
@@ -122,28 +140,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeScreenHeading => 'Concerned about your health?';
 
   @override
-  String get homeScreenDoYouHaveSymptoms => 'Are you experiencing symptoms? Have you been in contact with someone who is infected?';
+  String get homeScreenDoYouHaveSymptoms =>
+      'Are you experiencing symptoms? Have you been in contact with someone who is infected?';
 
   @override
   String get homeScreenCheckupButtonLabel => 'Check up on your health';
 
   @override
-  String get homeScreenYouHaveCompletedCheckup => 'You have completed your checkup for today!';
+  String get homeScreenYouHaveCompletedCheckup =>
+      'You have completed your checkup for today!';
 
   @override
-  String get homeScreenCheckBackTomorrow => 'If you continue to experience symptoms, please check back tomorrow.';
+  String get homeScreenCheckBackTomorrow =>
+      'If you continue to experience symptoms, please check back tomorrow.';
 
   @override
   String get homeScreenViewMyAssessment => 'View my assessment';
 
   @override
-  String get shareAppDownloadPrompt => 'Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK';
+  String get shareAppDownloadPrompt =>
+      'Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK';
 
   @override
   String get shareAppProtectYourCommunity => 'Protect Your Community';
 
   @override
-  String get shareAppWithFriendsEtc => 'Share this app with your friends, coworkers, and family (especially grandparents).';
+  String get shareAppWithFriendsEtc =>
+      'Share this app with your friends, coworkers, and family (especially grandparents).';
 
   @override
   String get shareAppNow => 'Share now';
@@ -158,16 +181,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get staySafeLimitContact => 'Limit contact with other people.';
 
   @override
-  String get staySafeCheckBackIf => 'Check back in if you continue to experience symptoms.';
+  String get staySafeCheckBackIf =>
+      'Check back in if you continue to experience symptoms.';
 
   @override
   String get tutorialIntroStepWelcome => 'Welcome to the CovidNearMe App';
 
   @override
-  String get tutorialIntroStepCompleteACheckup => 'Complete a daily health checkup.';
+  String get tutorialIntroStepCompleteACheckup =>
+      'Complete a daily health checkup.';
 
   @override
-  String get tutorialIntroStepRecieveAssessment => 'Receive a personalized health assessment.';
+  String get tutorialIntroStepRecieveAssessment =>
+      'Receive a personalized health assessment.';
 
   @override
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
@@ -176,7 +202,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tutorialIntroStepLearnMore => 'Click here to learn more';
 
   @override
-  String get getStartedStepJoined => 'You\'ve joined the CovidNearMe community!';
+  String get getStartedStepJoined =>
+      'You\'ve joined the CovidNearMe community!';
 
   @override
   String get getStartedStepClick => 'Click here to get started';
