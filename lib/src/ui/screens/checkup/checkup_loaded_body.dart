@@ -49,17 +49,17 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
     CheckupStateInProgress checkupState,
     QuestionsState questionsState,
   ) async {
-    // Origin-specific actions
-    if (currentIndex == 0) {
-      if (checkupState.checkup.dataContributionPreference == true) {
-        await _saveCurrentLocation(checkupState);
-      }
-    }
-
+    final int oldIndex = currentIndex;
     setState(() {
       currentIndex = index;
       currentStep = steps[index];
     });
+    // Origin-specific actions
+    if (oldIndex == 0) {
+      if (checkupState.checkup.dataContributionPreference == true) {
+        await _saveCurrentLocation(checkupState);
+      }
+    }
   }
 
   @override
@@ -71,10 +71,10 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
         return BlocBuilder<QuestionsBloc, QuestionsState>(
           builder: (context, state) {
             final QuestionsState questionsState = state;
-
             return Stack(
               children: <Widget>[
                 PageView.builder(
+                  physics: NeverScrollableScrollPhysics(),
                   controller: Provider.of<PageController>(context),
                   onPageChanged: (int index) => _handlePageChange(
                     index,
@@ -86,11 +86,15 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
                     return steps[index];
                   },
                 ),
-                if (currentStep != null && currentIndex > 0)
-                  CheckupProgressBar(
-                    currentIndex: currentIndex,
-                    stepsLength: steps.length,
-                  ),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  child: currentStep != null && currentIndex > 0
+                      ? CheckupProgressBar(
+                          currentIndex: currentIndex,
+                          stepsLength: steps.length,
+                        )
+                      : null,
+                ),
               ],
             );
           },

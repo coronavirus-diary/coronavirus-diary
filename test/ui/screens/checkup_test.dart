@@ -34,6 +34,25 @@ void main() {
 
     expect(find.text("It's time for your checkup."), findsOneWidget);
   });
+
+  testWidgets('Cannot advance to the next screen by scrolling', (tester) async {
+    const String page1 = "It's time for your checkup.";
+    const String page2 = "Step 1 of 2";
+
+    await tester.pumpWidget(setUpCheckupScreen());
+    await tester.pumpAndSettle();
+
+    expect(find.text(page1), findsOneWidget);
+    await tester.drag(find.text(page1), Offset(-400, 0));
+    await tester.pumpAndSettle();
+    expect(find.text(page1), findsOneWidget);
+    expect(find.text(page2), findsNothing);
+
+    await tester.tap(find.text('Start checkup'));
+    await tester.pumpAndSettle();
+    expect(find.text(page1), findsNothing);
+    expect(find.text(page2), findsOneWidget);
+  });
 }
 
 Widget setUpCheckupScreen({
