@@ -1,4 +1,6 @@
 PODS:
+  - "app_settings (3.0.0+1)":
+    - Flutter
   - Flutter (1.0.0)
   - geolocator (5.3.0):
     - Flutter
@@ -19,6 +21,7 @@ PODS:
     - SQLCipher/common
 
 DEPENDENCIES:
+  - app_settings (from `.symlinks/plugins/app_settings/ios`)
   - Flutter (from `Flutter`)
   - geolocator (from `.symlinks/plugins/geolocator/ios`)
   - google_api_availability (from `.symlinks/plugins/google_api_availability/ios`)
@@ -33,6 +36,8 @@ SPEC REPOS:
     - SQLCipher
 
 EXTERNAL SOURCES:
+  app_settings:
+    :path: ".symlinks/plugins/app_settings/ios"
   Flutter:
     :path: Flutter
   geolocator:
@@ -49,6 +54,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/share/ios"
 
 SPEC CHECKSUMS:
+  app_settings: d103828c9f5d515c4df9ee754dabd443f7cedcf3
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   geolocator: 7cdcf71180b80913b3cd84ab715d3b5365b378af
   google_api_availability: 526574c9a5a0ae541e18c65f98e47afc11f53c8b
@@ -60,4 +66,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c1f56ec578e7dc933512aa9b9b86b80eb2a5b47d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
