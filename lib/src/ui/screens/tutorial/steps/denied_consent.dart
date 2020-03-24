@@ -16,6 +16,7 @@ class DeniedConsent extends StatelessWidget {
       appBar: AppBar(
         brightness: Brightness.light,
         leading: IconButton(
+          tooltip: 'Go back to the informed consent screen',
           icon: Icon(Icons.arrow_back),
           onPressed: () => Provider.of<PageController>(
             context,
