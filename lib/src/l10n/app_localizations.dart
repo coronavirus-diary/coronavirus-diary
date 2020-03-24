@@ -292,6 +292,9 @@ abstract class AppLocalizations {
 
   // Message shown on the banner displayed when no network connection is detected
   String get networkUnavailableBannerMessage;
+
+  // Label for the back button on the denied consent screen
+  String get deniedConsentBackButton;
 }
 
 class _AppLocalizationsDelegate

@@ -338,6 +338,10 @@
 
   "networkUnavailableBannerMessage": "You seem to be offline. Please check your network settings and try again.",
   "@networkUnavailableBannerMessage": {
-    "description": "Message shown on the banner displayed when no network connection is detected"
+    "description": "Message shown on the banner displayed when no network connection is detected",
+
+  "deniedConsentBackButton": "Go back to the informed consent screen",
+  "@deniedConsentBackButton": {
+    "description": "Label for the back button on the denied consent screen"
   }
 }

@@ -5,14 +5,12 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 class CheckupProgressBar extends StatelessWidget {
   final int currentIndex;
   final int stepsLength;
-  final bool isLastPage;
   final double percentComplete;
 
   const CheckupProgressBar({
     this.currentIndex,
     this.stepsLength,
-  })  : isLastPage = currentIndex == stepsLength - 1,
-        percentComplete = (currentIndex) / (stepsLength - 1);
+  }) : percentComplete = (currentIndex) / (stepsLength - 1);
 
   @override
   Widget build(BuildContext context) {

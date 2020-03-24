@@ -247,4 +247,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get networkUnavailableBannerMessage =>
       'You seem to be offline. Please check your network settings and try again.';
+
+  String get deniedConsentBackButton =>
+      'Go back to the informed consent screen';
 }

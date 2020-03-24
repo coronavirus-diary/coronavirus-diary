@@ -30,6 +30,19 @@ void main() {
     await driver.waitFor(checkupButton);
   });
 
+  test('User can go back from the checkup screen to home', () async {
+    // From state above, proceede to checkup screen.
+    final checkupButton = find.text('Check up on your health');
+    await driver.tap(checkupButton);
+
+    // Click on the close button.
+    final closeButton = find.byTooltip('Go back to the home page.');
+    await driver.tap(closeButton);
+
+    // Back on the home screen.
+    await driver.waitFor(find.text('Check up on your health'));
+  });
+
   test('User can checkup on their health', () async {
     // From state above, proceede to checkup screen.
     final checkupButton = find.text('Check up on your health');
@@ -55,6 +68,15 @@ void main() {
     // Finally, there is a progress screen and a contact screen.
     await driver.waitFor(find.text('Stay Safe'));
   }, skip: true); // This test can't run due to location permission dialog.
+
+  test('User can tap on delete data and back to the first page', () async {
+    // Click on the delete data button.
+    final deleteDataButton = find.byTooltip('DEBUG MODE ONLY: Clear user data');
+    await driver.tap(deleteDataButton);
+
+    // Back to the welcome screen.
+    await driver.waitFor(find.text('Welcome to the CovidNearMe App'));
+  });
 
   tearDown(() async {
     await driver?.close();
