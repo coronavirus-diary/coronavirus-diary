@@ -126,7 +126,8 @@ class _CheckupScreenState extends State<CheckupScreen> {
                   value: _pageController,
                   child: Scaffold(
                     appBar: AppBar(
-                      title: Text(AppLocalizations.of(context).checkupScreenTitle),
+                      title:
+                          Text(AppLocalizations.of(context).checkupScreenTitle),
                       leading: IconButton(
                         icon: Icon(Icons.close),
                         onPressed: () => Navigator.pop(context),

@@ -3,6 +3,7 @@ import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/questions/questions_bloc.dart';
 import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/screens/checkup/checkup.dart';
 import 'package:file/memory.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,8 @@ Widget setUpCheckupScreen({
   );
   preferences ??= PreferencesBloc();
   return MaterialApp(
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    supportedLocales: AppLocalizations.supportedLocales,
     home: Scaffold(
       body: BlocProvider(
         create: (BuildContext context) => questions,

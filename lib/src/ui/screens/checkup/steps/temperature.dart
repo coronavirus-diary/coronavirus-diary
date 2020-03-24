@@ -149,7 +149,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   child: Center(
                     child: RaisedButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text(localizations.temperatureStepHowToDialogReturn),
+                      child:
+                          Text(localizations.temperatureStepHowToDialogReturn),
                     ),
                   ),
                 ),
