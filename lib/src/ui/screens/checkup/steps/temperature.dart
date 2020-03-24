@@ -100,17 +100,16 @@ class _TemperatureStepState extends State<TemperatureStep> {
               children: <Widget>[
                 Divider(),
                 Text(
-                  'When?',
+                  localizations.temperatureStepWhenHeading,
                   style: categoryFontStyle,
                 ),
                 TutorialStep(
-                  text: "Wait 30 minutes after eating, drinking, or exercising",
+                  text: localizations.temperatureStepWait30Minutes,
                   number: 1,
                   textColor: Colors.black,
                 ),
                 TutorialStep(
-                  text:
-                      "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)",
+                  text: localizations.temperatureStepWait6Hours,
                   number: 2,
                   textColor: Colors.black,
                 ),

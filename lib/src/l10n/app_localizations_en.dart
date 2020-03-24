@@ -84,7 +84,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get introStepSwitchLabelCollectPostalCode =>
-      'We will collect your postal code.';
+      'We will collect your zip code.';
 
   @override
   String get introStepButtonStartLabel => 'Start checkup';
@@ -92,6 +92,20 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get subjectiveStepQuestionsLoadedError =>
       'Questions could not be loaded.';
+
+  @override
+  String get temperatureStepWhenHeading => 'When?';
+
+  @override
+  String get temperatureStepWait30Minutes =>
+      'Wait 30 minutes after eating, drinking, or exercising';
+
+  @override
+  String get temperatureStepWait6Hours =>
+      'Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)';
+
+  @override
+  String get temperatureStepHowHeading => 'How?';
 
   @override
   String get temperatureStepPleaseEnterValueBelow =>
@@ -102,7 +116,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please enter a value above 70 ℉';
 
   @override
-  String get temperatureStepHowToDialogTitle => 'How to take your temperature:';
+  String get temperatureStepHowToDialogTitle =>
+      'When and how to take your temperature:';
 
   @override
   String get temperatureStepHowToDialogStep1 =>

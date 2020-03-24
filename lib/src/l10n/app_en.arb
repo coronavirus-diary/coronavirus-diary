@@ -111,6 +111,26 @@
     "description": "An internal error occurred, the checkup questions failed to load"
   },
 
+  "temperatureStepWhenHeading": "When?",
+  "@temperatureStepWhenHeading": {
+    "description": "Subsection heading for recommendations about when to measure the user's temperature"
+  },
+
+  "temperatureStepWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising",
+  "@temperatureStepWait30Minutes": {
+    "description": "User advice"
+  },
+
+  "temperatureStepWait6Hours": "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)",
+  "@temperatureStepWait6Hours": {
+    "description": "User advice"
+  },
+
+  "temperatureStepHowHeading": "How?",
+  "@temperatureStepHowHeading": {
+    "description": "Subsection heading for recommendations about how to measure the user's temperature"
+  },
+
   "temperatureStepPleaseEnterValueBelow": "Please enter a value below 150 ℉",
   "@temperatureStepPleaseEnterValueBelow": {
     "description": "Ask the user to correct their temperature reading"
