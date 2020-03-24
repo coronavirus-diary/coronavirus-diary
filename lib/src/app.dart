@@ -6,6 +6,7 @@ import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/assets/theme.dart';
 import 'package:covidnearme/src/ui/router.dart';
 
@@ -41,6 +42,8 @@ class App extends StatelessWidget {
               theme: appTheme,
               routes: appRoutes,
               initialRoute: getInitialRoute(state),
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
             ),
           );
         },

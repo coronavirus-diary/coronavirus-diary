@@ -7,6 +7,7 @@ final ThemeData appTheme = ThemeData.light().copyWith(
   dialogTheme: DialogTheme(
     titleTextStyle: TextStyle(color: Colors.black),
     contentTextStyle: TextStyle(color: Colors.black),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
   ),
   scaffoldBackgroundColor: Colors.blue,
   backgroundColor: Colors.white,

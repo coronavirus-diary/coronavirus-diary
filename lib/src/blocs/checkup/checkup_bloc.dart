@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/data/models/checkups.dart';
 import 'package:covidnearme/src/data/repositories/checkups.dart';
+import 'package:meta/meta.dart';
 import 'checkup.dart';
 
 export 'package:covidnearme/src/data/models/assessments.dart';
@@ -15,8 +16,8 @@ class CheckupBloc extends Bloc<CheckupEvent, CheckupState> {
   final CheckupsRepository checkupsRepository;
 
   CheckupBloc({
-    this.preferencesState,
-    this.checkupsRepository,
+    @required this.preferencesState,
+    @required this.checkupsRepository,
   });
 
   @override

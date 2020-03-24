@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
 import 'question_item.dart';
+import '../scrollable_body.dart';
 
 class QuestionView extends StatefulWidget {
   final List<Question> questions;
@@ -35,7 +36,7 @@ class _QuestionViewState extends State<QuestionView> {
     return Container(
       padding: widget.padding,
       color: widget.color ?? Theme.of(context).primaryColor,
-      child: SingleChildScrollView(
+      child: ScrollableBody(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: _getQuestions(),
