@@ -31,20 +31,22 @@ class _TutorialScreenState extends State<TutorialScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
-        return Scaffold(
-          body: ChangeNotifierProvider<PageController>.value(
-            value: _pageController,
-            child: PageView(
-              physics: NeverScrollableScrollPhysics(),
-              controller: _pageController,
-              children: <Widget>[
-                IntroStep(),
-                ConsentStep(),
-                if (state.preferences.agreedToTerms == true) GetStartedStep(),
-                if (state.preferences.agreedToTerms == false) DeniedConsent(),
-              ],
+        return WillPopScope(
+          child: Scaffold(
+            body: ChangeNotifierProvider<PageController>.value(
+              value: _pageController,
+              child: PageView(
+                physics: NeverScrollableScrollPhysics(),
+                controller: _pageController,
+                children: <Widget>[
+                  IntroStep(),
+                  ConsentStep(),
+                  if (state.preferences.agreedToTerms == true) GetStartedStep(),
+                  if (state.preferences.agreedToTerms == false) DeniedConsent(),
+                ],
+              ),
             ),
-          ),
+          ), onWillPop: () => Future.value(false),
         );
       },
     );
