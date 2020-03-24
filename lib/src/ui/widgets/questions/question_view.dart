@@ -46,6 +46,7 @@ class _QuestionViewState extends State<QuestionView> {
           children: [
             ..._getQuestions(),
             StepFinishedButton(),
+            SizedBox(height: 20),
           ],
         ),
       ),
