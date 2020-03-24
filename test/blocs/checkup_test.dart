@@ -8,7 +8,10 @@ void main() {
   test(
       'CheckupBloc only responds to StartCheckup, UpdateCheckup, and '
       'CompleteCheckup', () async {
-    final bloc = CheckupBloc();
+    final bloc = CheckupBloc(
+      checkupsRepository: FakeCheckupsRepository(),
+      preferencesState: FakePreferencesState(),
+    );
     bloc.add(NotCheckupEvent());
     unawaited(bloc.close());
 
@@ -26,7 +29,10 @@ void main() {
   test(
       'CheckupBloc does not update if CompleteCheckup is recieved in a state '
       'other than CheckupStateInProgress', () async {
-    final bloc = CheckupBloc();
+    final bloc = CheckupBloc(
+      checkupsRepository: FakeCheckupsRepository(),
+      preferencesState: FakePreferencesState(),
+    );
     bloc.add(CompleteCheckup());
     unawaited(bloc.close());
 
@@ -44,7 +50,10 @@ void main() {
   test(
       'CheckupBloc does not update if UpdateCheckup is recieved in a state '
       'other than CheckupStateInProgress', () async {
-    final bloc = CheckupBloc();
+    final bloc = CheckupBloc(
+      checkupsRepository: FakeCheckupsRepository(),
+      preferencesState: FakePreferencesState(),
+    );
     bloc.add(UpdateCheckup());
     unawaited(bloc.close());
 
