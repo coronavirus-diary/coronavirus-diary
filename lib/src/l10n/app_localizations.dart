@@ -289,6 +289,9 @@ abstract class AppLocalizations {
 
   // Displayed while the app is loading the next screen
   String get consentStepLoading;
+
+  // Label for the back button on the denied consent screen
+  String get deniedConsentBackButton;
 }
 
 class _AppLocalizationsDelegate

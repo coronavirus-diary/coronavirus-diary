@@ -33,7 +33,7 @@ void main() {
 
   testWidgets('Cannot advance to the next screen by scrolling', (tester) async {
     const String page1 = "It's time for your checkup.";
-    const String page2 = "Step 1 of 3";
+    const String page2 = "Step 1 of 2";
 
     await tester.pumpWidget(setUpCheckupScreen());
     await tester.pumpAndSettle();
