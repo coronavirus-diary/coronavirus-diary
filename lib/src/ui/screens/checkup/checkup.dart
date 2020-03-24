@@ -38,7 +38,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
     CheckupState checkupState,
   ) {
     if (checkupState is CheckupStateNotCreated) {
-      context.bloc<CheckupBloc>().add(StartCheckup());
+      context.bloc<CheckupBloc>().add(const StartCheckup());
     }
     return LoadingIndicator('Loading your health checkup');
   }
