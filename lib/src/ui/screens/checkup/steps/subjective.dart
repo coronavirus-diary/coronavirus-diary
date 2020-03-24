@@ -66,7 +66,6 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
           builder: (context, state) {
             final CheckupStateInProgress checkupState = state;
             return QuestionView(
-              padding: EdgeInsets.only(top: 20, bottom: 80),
               questions: questionState.questions,
               onChange: (Question question, dynamic value) =>
                   _updateCheckup(question, value, checkupState),

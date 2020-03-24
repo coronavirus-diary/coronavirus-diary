@@ -71,30 +71,33 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
         return BlocBuilder<QuestionsBloc, QuestionsState>(
           builder: (context, state) {
             final QuestionsState questionsState = state;
-            return Stack(
+            return Column(
+              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                PageView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  controller: Provider.of<PageController>(context),
-                  onPageChanged: (int index) => _handlePageChange(
-                    index,
-                    checkupState,
-                    questionsState,
-                  ),
-                  itemCount: steps.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return steps[index];
-                  },
-                ),
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 200),
                   child: currentStep != null && currentIndex > 0
                       ? CheckupProgressBar(
-                          currentIndex: currentIndex,
-                          // Subtract one because the intro isn't really a step.
-                          stepsLength: steps.length - 1,
-                        )
-                      : null,
+                    currentIndex: currentIndex,
+                    // Subtract one because the intro isn't really a step.
+                    stepsLength: steps.length - 1,
+                  )
+                      : Container(),
+                ),
+                Expanded(
+                  child: PageView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    controller: Provider.of<PageController>(context),
+                    onPageChanged: (int index) => _handlePageChange(
+                      index,
+                      checkupState,
+                      questionsState,
+                    ),
+                    itemCount: steps.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return steps[index];
+                    },
+                  ),
                 ),
               ],
             );
