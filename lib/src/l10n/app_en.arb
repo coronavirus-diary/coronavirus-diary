@@ -324,5 +324,10 @@
   "consentStepLoading": "Loading...",
   "@consentStepLoading": {
     "description": "Displayed while the app is loading the next screen"
+  },
+
+  "deniedConsentBackButton": "Go back to the informed consent screen",
+  "@deniedConsentBackButton": {
+    "description": "Label for the back button on the denied consent screen"
   }
 }

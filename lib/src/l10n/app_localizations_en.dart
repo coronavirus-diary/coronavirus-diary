@@ -237,4 +237,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get consentStepLoading => 'Loading...';
+
+  @override
+  String get deniedConsentBackButton =>
+      'Go back to the informed consent screen';
 }

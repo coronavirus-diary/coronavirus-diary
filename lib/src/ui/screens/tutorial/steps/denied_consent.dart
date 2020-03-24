@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,10 +13,12 @@ import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 class DeniedConsent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
         leading: IconButton(
+          tooltip: localizations.deniedConsentBackButton,
           icon: Icon(Icons.arrow_back),
           onPressed: () => Provider.of<PageController>(
             context,
