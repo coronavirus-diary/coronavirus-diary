@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 import 'checkup_loaded_body.dart';
@@ -48,7 +49,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Text(
-          'There was an error retrieving the checkup experience. Please try again later.',
+          AppLocalizations.of(context).checkupScreenErrorRetrievingExperience,
           textAlign: TextAlign.center,
         ),
       ),
@@ -125,7 +126,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
                   value: _pageController,
                   child: Scaffold(
                     appBar: AppBar(
-                      title: Text('Your Health Checkup'),
+                      title: Text(AppLocalizations.of(context).checkupScreenTitle),
                       leading: IconButton(
                         icon: Icon(Icons.close),
                         onPressed: () => Navigator.pop(context),

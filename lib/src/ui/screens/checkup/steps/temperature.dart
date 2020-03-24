@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
 import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
@@ -21,6 +22,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
     if (value != '') {
       final double numberValue = double.parse(value);
 
+      // TODO(hansmuller) l10n
       if (numberValue > _upperTemperatureLimit) {
         return 'Please enter a value below ${_formatTemperature(_upperTemperatureLimit)}';
       } else if (numberValue < _lowerTemperatureLimit) {
@@ -84,9 +86,10 @@ class _TemperatureStepState extends State<TemperatureStep> {
     await showDialog<void>(
       context: context,
       builder: (BuildContext context) {
+        final AppLocalizations localizations = AppLocalizations.of(context);
         return SimpleDialog(
           title: Text(
-            'When and how to take your temperature:',
+            localizations.temperatureStepHowToDialogTitle,
             style: Theme.of(context).dialogTheme.titleTextStyle,
           ),
           contentPadding: EdgeInsets.all(20),
@@ -117,31 +120,27 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   style: categoryFontStyle,
                 ),
                 TutorialStep(
-                  text: "Wash your hands using soap and water",
+                  text: localizations.temperatureStepHowToDialogStep1,
                   number: 1,
                   textColor: Colors.black,
                 ),
                 TutorialStep(
-                  text:
-                      "Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.",
+                  text: localizations.temperatureStepHowToDialogStep2,
                   number: 2,
                   textColor: Colors.black,
                 ),
                 TutorialStep(
-                  text:
-                      "Put the tip of your thermometer under your tongue and gently close your lips.",
+                  text: localizations.temperatureStepHowToDialogStep3,
                   number: 3,
                   textColor: Colors.black,
                 ),
                 TutorialStep(
-                  text:
-                      "Keep your lips closed and the thermometer under your tongue until you hear a beep.",
+                  text: localizations.temperatureStepHowToDialogStep4,
                   number: 4,
                   textColor: Colors.black,
                 ),
                 TutorialStep(
-                  text:
-                      "Take out your thermometer and record your temperature.",
+                  text: localizations.temperatureStepHowToDialogStep5,
                   number: 5,
                   textColor: Colors.black,
                 ),
@@ -150,7 +149,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   child: Center(
                     child: RaisedButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text('Return to checkup'),
+                      child: Text(localizations.temperatureStepHowToDialogReturn),
                     ),
                   ),
                 ),
@@ -164,6 +163,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
         final CheckupStateInProgress checkupState = state;
@@ -186,7 +186,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Text(
-                    "Take your temperature",
+                    localizations.temperatureStepTitle,
                     style: Theme.of(context).textTheme.title.copyWith(
                           color: Colors.white,
                           fontSize: 26,
@@ -210,7 +210,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                             FontAwesomeIcons.thermometerHalf,
                             color: Colors.white,
                           ),
-                          labelText: 'Enter your temperature',
+                          labelText: localizations.temperatureStepInputLabel,
                           hasFloatingPlaceholder: false,
                         ),
                         keyboardType: TextInputType.number,
@@ -245,7 +245,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   margin: EdgeInsets.only(top: 50),
                   child: RaisedButton(
                     onPressed: _showInstructions,
-                    child: Text('Need help? Click for instructions.'),
+                    child: Text(localizations.temperatureStepHelp),
                   ),
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/stay_safe.dart';
 
@@ -27,7 +28,7 @@ class _PositiveAssessmentState extends State<PositiveAssessment> {
             margin: EdgeInsets.only(bottom: 20),
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
-              "Please contact your physician",
+              AppLocalizations.of(context).positiveAssessmentConsultPhysician,
               style: Theme.of(context).textTheme.title,
               textAlign: TextAlign.center,
             ),
@@ -36,8 +37,7 @@ class _PositiveAssessmentState extends State<PositiveAssessment> {
             margin: EdgeInsets.only(bottom: 20),
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
-              "You are showing symptoms that may be of concern. "
-              "Please limit your contact with other people until you have a chance to follow up with a physician.",
+              AppLocalizations.of(context).positiveAssessmentShowingSymptoms,
               style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
               textAlign: TextAlign.center,
             ),
@@ -46,7 +46,7 @@ class _PositiveAssessmentState extends State<PositiveAssessment> {
             margin: EdgeInsets.only(bottom: 40),
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Text(
-              "Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
+              AppLocalizations.of(context).positiveAssessmentDoNotPanic,
               style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
               textAlign: TextAlign.center,
             ),

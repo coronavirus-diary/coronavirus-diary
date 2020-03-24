@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 
@@ -25,6 +26,7 @@ class GetStartedStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
         return SafeArea(
@@ -51,7 +53,7 @@ class GetStartedStep extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     margin: EdgeInsets.only(bottom: 50),
                     child: Text(
-                      "You've joined the CovidNearMe community!",
+                      localizations.getStartedStepJoined,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.title,
                     ),
@@ -60,7 +62,7 @@ class GetStartedStep extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: RaisedButton(
                       onPressed: () => _completeTutorial(context, state),
-                      child: Text('Click here to get started'),
+                      child: Text(localizations.getStartedStepClick),
                     ),
                   ),
                 ],
