@@ -9,6 +9,10 @@ import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements CheckupStep {
+  bool readyToContinue() => true;
+
+  String notReadyUserMessage() => null;
+
   @override
   _IntroStepState createState() => _IntroStepState();
 }

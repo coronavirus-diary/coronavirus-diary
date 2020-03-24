@@ -90,6 +90,9 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
                   CheckupProgressBar(
                     currentIndex: currentIndex,
                     stepsLength: steps.length,
+                    isReadyToContinue: currentStep.readyToContinue,
+                    getNotReadyToContinueMessage:
+                        currentStep.notReadyUserMessage,
                   ),
               ],
             );

@@ -8,6 +8,9 @@ import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class SubjectiveStep extends StatefulWidget implements CheckupStep {
+  bool readyToContinue() => true;
+
+  String notReadyUserMessage() => null;
   @override
   _SubjectiveStepState createState() => _SubjectiveStepState();
 }

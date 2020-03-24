@@ -10,24 +10,47 @@ import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class TemperatureStep extends StatefulWidget implements CheckupStep {
+  bool readyToContinue() => _state._readyToContinue;
+
   @override
-  _TemperatureStepState createState() => _TemperatureStepState();
+  String notReadyUserMessage() => _state._validateTemperatureUserMessage;
+
+  final _TemperatureStepState _state = _TemperatureStepState();
+  @override
+  _TemperatureStepState createState() => _state;
 }
 
 class _TemperatureStepState extends State<TemperatureStep> {
   bool _isCelsius = false;
 
-  String _validateTemperature(String value) {
-    if (value != '') {
-      final double numberValue = double.parse(value);
+  bool _readyToContinue = false;
+  String _validateTemperatureUserMessage;
 
-      if (numberValue > _upperTemperatureLimit) {
-        return 'Please enter a value below ${_formatTemperature(_upperTemperatureLimit)}';
+  String _validateTemperature(String value) {
+    _validateTemperatureUserMessage = null;
+    if (value == null) {
+      _validateTemperatureUserMessage =
+          'Please enter your temperature before continuing.';
+    } else {
+      final double numberValue = double.tryParse(value);
+      if (numberValue == null) {
+        // We force numeric keyboard, the value should always be parsable to a double unless
+        // it is ''. We throw in debug to catch potential bugs.
+        // Remove this if the app supports platforms like web and desktops where physical keyboard is the
+        // default input method.
+        assert(value == '');
+        // User might use a physical keyboard even using the mobile app, we will still display an error method in production
+        _validateTemperatureUserMessage = 'Please enter a temperature.';
+      } else if (numberValue > _upperTemperatureLimit) {
+        _validateTemperatureUserMessage =
+            'Please enter a value below ${_formatTemperature(_upperTemperatureLimit)}';
       } else if (numberValue < _lowerTemperatureLimit) {
-        return 'Please enter a value above ${_formatTemperature(_lowerTemperatureLimit)}';
+        _validateTemperatureUserMessage =
+            'Please enter a value above ${_formatTemperature(_lowerTemperatureLimit)}';
       }
     }
-    return null;
+    _readyToContinue = _validateTemperatureUserMessage == null;
+    return _validateTemperatureUserMessage;
   }
 
   double get _upperTemperatureLimit => _isCelsius ? 65.5 : 150.0;
