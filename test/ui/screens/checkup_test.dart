@@ -49,14 +49,14 @@ Widget setUpCheckupScreen({
   return MaterialApp(
     home: Scaffold(
       body: BlocProvider(
-        child: BlocProvider(
-          child: BlocProvider(
-            child: CheckupScreen(),
-            create: (BuildContext context) => preferences,
-          ),
-          create: (BuildContext context) => checkup,
-        ),
         create: (BuildContext context) => questions,
+        child: BlocProvider(
+          create: (BuildContext context) => checkup,
+          child: BlocProvider(
+            create: (BuildContext context) => preferences,
+            child: CheckupScreen(),
+          ),
+        ),
       ),
     ),
   );
