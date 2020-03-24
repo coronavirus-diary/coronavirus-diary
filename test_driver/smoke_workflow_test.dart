@@ -36,7 +36,7 @@ void main() {
     await driver.tap(checkupButton);
 
     // Click on the close button.
-    final closeButton = find.byTooltip('DEBUG MODE ONLY: Go back to home.');
+    final closeButton = find.byTooltip('Go back to the home page.');
     await driver.tap(closeButton);
 
     // Back on the home screen.
@@ -69,10 +69,6 @@ void main() {
     await driver.waitFor(find.text('Stay Safe'));
   }, skip: true); // This test can't run due to location permission dialog.
 
-  tearDown(() async {
-    await driver?.close();
-  });
-
   test('User can tap on delete data and back to the first page', () async {
     // Click on the delete data button.
     final deleteDataButton = find.byTooltip('DEBUG MODE ONLY: Clear user data');
@@ -80,5 +76,9 @@ void main() {
 
     // Back to the welcome screen.
     await driver.waitFor(find.text('Welcome to the CovidNearMe App'));
+  });
+
+  tearDown(() async {
+    await driver?.close();
   });
 }

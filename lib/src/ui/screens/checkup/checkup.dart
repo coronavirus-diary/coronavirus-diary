@@ -129,7 +129,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
                       leading: IconButton(
                         icon: Icon(Icons.close),
                         onPressed: () => Navigator.pop(context),
-                        tooltip: 'DEBUG MODE ONLY: Go back to home.',
+                        tooltip: 'Go back to the home page.',
                       ),
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
