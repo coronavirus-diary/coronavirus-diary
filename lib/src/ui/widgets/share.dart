@@ -3,14 +3,15 @@ import 'package:font_awesome_flutter/fa_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:share/share.dart';
 
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+
 class ShareApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
+
     void _shareApp() {
-      Share.share(
-        'Worried that you might have COVID-19? '
-        'Download this app to check up on your health and support your community: APP_LINK',
-      );
+      Share.share(localizations.shareAppDownloadPrompt);
     }
 
     return Container(
@@ -32,7 +33,7 @@ class ShareApp extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 10),
             child: Text(
-              "Protect Your Community",
+              localizations.shareAppProtectYourCommunity,
               style: Theme.of(context).textTheme.title,
               textAlign: TextAlign.center,
             ),
@@ -40,7 +41,7 @@ class ShareApp extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-              "Share this app with your friends, coworkers, and family (especially grandparents).",
+              localizations.shareAppWithFriendsEtc,
               style: Theme.of(context).textTheme.body1.copyWith(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -50,7 +51,7 @@ class ShareApp extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: _shareApp,
-            child: Text('Share now'),
+            child: Text(localizations.shareAppNow),
           ),
         ],
       ),

@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
@@ -36,6 +37,7 @@ class _IntroStepState extends State<IntroStep> {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
         final CheckupStateInProgress checkupState = state;
@@ -57,7 +59,7 @@ class _IntroStepState extends State<IntroStep> {
                 margin: EdgeInsets.only(bottom: 20),
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  "It's time for your checkup.",
+                  localizations.introStepTimeForYourCheckup,
                   style: Theme.of(context).textTheme.title,
                   textAlign: TextAlign.center,
                 ),
@@ -66,7 +68,7 @@ class _IntroStepState extends State<IntroStep> {
                 margin: EdgeInsets.only(bottom: 20),
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  "We will ask you a few questions and have you take your temperature.",
+                  localizations.introStepWeWillAskQuestions,
                   style: Theme.of(context).textTheme.subtitle,
                   textAlign: TextAlign.center,
                 ),
@@ -75,7 +77,7 @@ class _IntroStepState extends State<IntroStep> {
                 margin: EdgeInsets.only(bottom: 20),
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  "At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.",
+                  localizations.introStepAtTheEnd,
                   style: Theme.of(context).textTheme.subtitle,
                   textAlign: TextAlign.center,
                 ),
@@ -91,12 +93,12 @@ class _IntroStepState extends State<IntroStep> {
                     size: 35,
                   ),
                   title: Text(
-                    'Contribute my data to the COVID-19 response effort.',
+                    localizations.introStepSwitchLabelContributeData,
                   ),
                   subtitle: Container(
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
-                      'We will collect your zip code.',
+                      localizations.introStepSwitchLabelCollectPostalCode,
                     ),
                   ),
                   activeColor: Colors.white,
@@ -116,7 +118,7 @@ class _IntroStepState extends State<IntroStep> {
                       curve: Curves.easeInOut,
                     );
                   },
-                  child: Text('Start checkup'),
+                  child: Text(localizations.introStepButtonStartLabel),
                 ),
               ),
             ],

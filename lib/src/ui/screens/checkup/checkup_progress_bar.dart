@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 class CheckupProgressBar extends StatelessWidget {
   final int currentIndex;
@@ -30,8 +31,8 @@ class CheckupProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Remember to update this if steps are added that do not count towards the total
-    String percentCompleteText = 'Step ${currentIndex} of ${stepsLength - 1}';
-
+    final AppLocalizations localizations = AppLocalizations.of(context);
+    String percentCompleteText = localizations.checkupProgressBarPercentCompleteText(currentIndex, stepsLength);
     return Align(
       alignment: Alignment.bottomCenter,
       child: Column(
@@ -53,7 +54,9 @@ class CheckupProgressBar extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed: () => _handleNextButton(context),
-                  child: Text(isLastPage ? 'Submit' : 'Continue'),
+                  child: Text(isLastPage
+                    ? localizations.checkupProgressBarSubmit
+                    : localizations.checkupProgressBarContinue),
                 ),
               ],
             ),
