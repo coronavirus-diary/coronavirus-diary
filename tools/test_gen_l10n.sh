@@ -12,8 +12,8 @@ REPO_ROOT="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
 
 DART="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart"
 DARTFMT="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt"
-GEN_L10N="$REPO_ROOT/tools/gen_l10n.dart" # TODO make this safer
-ARB_DIR="$REPO_ROOT/lib/src/l10n" # TODO make this safer
+GEN_L10N="$REPO_ROOT/tools/gen_l10n.dart"
+ARB_DIR="$REPO_ROOT/lib/src/l10n"
 
 # Generate localizations
 "$DART" "$GEN_L10N" --arb-dir "$ARB_DIR"
