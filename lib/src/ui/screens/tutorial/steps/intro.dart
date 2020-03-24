@@ -30,7 +30,8 @@ class IntroStep extends StatelessWidget {
                 margin: EdgeInsets.only(bottom: 40),
                 child: Text(
                   localizations.tutorialIntroStepWelcome,
-                  semanticsLabel: localizations.tutorialIntroStepWelcomeSemanticsLabel,
+                  semanticsLabel:
+                      localizations.tutorialIntroStepWelcomeSemanticsLabel,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.title,
                 ),

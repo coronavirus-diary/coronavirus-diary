@@ -135,7 +135,8 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('CovidNearMe',
+            title: Text(
+              'CovidNearMe',
               semanticsLabel: 'Covid Near Me',
             ),
             leading: kReleaseMode
