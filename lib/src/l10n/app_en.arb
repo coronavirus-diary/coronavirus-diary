@@ -66,13 +66,13 @@
     }
   },
 
-  "checkupProgressBarSubmit": "Submit",
+  "checkupProgressBarSubmit": "SUBMIT",
   "@checkupProgressBarSubmit": {
-    "description": "Submit the data on the current checkup screen"
+    "description": "Submit the data for the checkup"
   },
 
-  "checkupProgressBarContinue": "Continue",
-  "@checkupProgressBarContinue": {
+  "checkupProgressBarNext": "NEXT",
+  "@checkupProgressBarNext": {
     "description": "Continue to the next checkup screen"
   },
 

@@ -1,44 +1,54 @@
 import 'package:flutter/material.dart';
 
+const Color _primaryColor = Color(0xff143a65);
+const Color _accentColor = Color(0xff5dcaab);
+const Color _textColor = _primaryColor;
+
 final ThemeData appTheme = ThemeData.light().copyWith(
   appBarTheme: AppBarTheme(
-    color: Colors.lightBlue,
+    color: _primaryColor,
   ),
   dialogTheme: DialogTheme(
-    titleTextStyle: TextStyle(color: Colors.black),
+    titleTextStyle: TextStyle(color: _textColor),
     contentTextStyle: TextStyle(color: Colors.black),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
   ),
-  scaffoldBackgroundColor: Colors.blue,
+  scaffoldBackgroundColor: Colors.white,
+  primaryColor: _primaryColor,
   backgroundColor: Colors.white,
-  accentColor: Colors.yellowAccent,
+  accentColor: _accentColor,
+  iconTheme: ThemeData.light().iconTheme.copyWith(color: _primaryColor),
   inputDecorationTheme: InputDecorationTheme(
-    labelStyle: TextStyle(color: Colors.black),
+    labelStyle: TextStyle(color: _textColor),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(2),
       borderSide: BorderSide.none,
     ),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(2),
       borderSide: BorderSide.none,
     ),
-    filled: true,
-    fillColor: Colors.white.withOpacity(0.8),
     contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
     errorStyle: TextStyle(
-      color: Colors.white,
+      color: _textColor,
       fontSize: 16,
     ),
   ),
-  textTheme: ThemeData.dark().textTheme,
-  primaryTextTheme: ThemeData.dark().primaryTextTheme,
-  accentTextTheme: ThemeData.dark().accentTextTheme,
-  buttonTheme: ThemeData.dark().buttonTheme.copyWith(
+  textSelectionColor: _accentColor,
+  textSelectionHandleColor: _accentColor,
+  textTheme: ThemeData.light().textTheme,
+  primaryTextTheme: ThemeData.light().primaryTextTheme,
+  accentTextTheme: ThemeData.light().accentTextTheme,
+  colorScheme: ThemeData.light().colorScheme.copyWith(
+        primary: _primaryColor,
+        secondary: _accentColor,
+      ),
+  buttonTheme: ThemeData.light().buttonTheme.copyWith(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-        buttonColor: Colors.white.withOpacity(0.8),
+        buttonColor: _primaryColor,
         textTheme: ButtonTextTheme.primary,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(2),
           side: BorderSide.none,
         ),
       ),

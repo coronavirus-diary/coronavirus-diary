@@ -131,11 +131,11 @@ abstract class AppLocalizations {
   // Which step in the overall process is the patient currently working on
   String checkupProgressBarPercentCompleteText(int stepIndex, int stepCount);
 
-  // Submit the data on the current checkup screen
+  // Submit the data for the checkup
   String get checkupProgressBarSubmit;
 
   // Continue to the next checkup screen
-  String get checkupProgressBarContinue;
+  String get checkupProgressBarNext;
 
   // Heading at the top of the Your Health Checkup screen
   String get introStepTimeForYourCheckup;

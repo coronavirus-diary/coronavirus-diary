@@ -91,7 +91,8 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
                   child: currentStep != null && currentIndex > 0
                       ? CheckupProgressBar(
                           currentIndex: currentIndex,
-                          stepsLength: steps.length,
+                          // Subtract one because the intro isn't really a step.
+                          stepsLength: steps.length - 1,
                         )
                       : null,
                 ),

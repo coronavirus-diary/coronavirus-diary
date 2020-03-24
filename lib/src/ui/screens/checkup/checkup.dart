@@ -120,7 +120,12 @@ class _CheckupScreenState extends State<CheckupScreen> {
 
             return WidgetHUD(
               showHUD: _showLoadingAssessmentHUD,
-              hud: HUD(label: 'Loading your assessment'),
+              hud: HUD(
+                color: Theme.of(context).colorScheme.surface,
+                opacity: 1.0,
+                labelStyle: Theme.of(context).textTheme.headline,
+                label: 'Loading your assessment',
+              ),
               builder: (context) {
                 return ChangeNotifierProvider<PageController>.value(
                   value: _pageController,
@@ -133,7 +138,7 @@ class _CheckupScreenState extends State<CheckupScreen> {
                         onPressed: () => Navigator.pop(context),
                       ),
                     ),
-                    backgroundColor: Theme.of(context).primaryColor,
+                    backgroundColor: Theme.of(context).backgroundColor,
                     body: _getBody(preferencesState, checkupState),
                   ),
                 );
