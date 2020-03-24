@@ -54,6 +54,7 @@ class GetStartedStep extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 50),
                     child: Text(
                       localizations.getStartedStepJoined,
+                      semanticsLabel: localizations.getStartedStepJoinedSemanticsLabel,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.title,
                     ),
