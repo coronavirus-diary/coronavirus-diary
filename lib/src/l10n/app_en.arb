@@ -296,7 +296,7 @@
     "description": "Label for the button that indicates that the user did accept the app license"
   },
 
-  "consentStepIAgree": "I Agree",
+  "consentStepIAgree": "I agree",
   "@consentStepIAgree": {
     "description": "Label for the button that indicates that the user will accept the app license"
   },

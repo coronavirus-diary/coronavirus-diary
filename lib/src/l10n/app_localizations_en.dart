@@ -218,7 +218,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get consentStepAgreed => 'Agree';
 
   @override
-  String get consentStepIAgree => 'I Agree';
+  String get consentStepIAgree => 'I agree';
 
   @override
   String get consentStepLoading => 'Loading...';
