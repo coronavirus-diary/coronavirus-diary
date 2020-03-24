@@ -111,7 +111,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                 alignment: Alignment.topCenter,
                 child: Text(
                   localizations.temperatureStepHowToDialogTitle,
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headline,
                   textAlign: TextAlign.center,
                 ),
               ),
