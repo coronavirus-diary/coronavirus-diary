@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 final ThemeData appTheme = ThemeData.light().copyWith(
   appBarTheme: AppBarTheme(
     color: Colors.lightBlue,
+//    color: Colors.red,
   ),
   dialogTheme: DialogTheme(
     titleTextStyle: TextStyle(color: Colors.black),
