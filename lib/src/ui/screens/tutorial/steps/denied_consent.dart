@@ -12,11 +12,8 @@ import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 class DeniedConsent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Color _primaryColor = Color(0xFF133A65);
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: (_primaryColor),
         brightness: Brightness.light,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -30,7 +27,6 @@ class DeniedConsent extends StatelessWidget {
         ),
         title: Text('Your Health Checkup'),
       ),
-      backgroundColor: Colors.white,
       body: BlocBuilder<PreferencesBloc, PreferencesState>(
         builder: (context, state) {
           return SafeArea(
@@ -46,13 +42,12 @@ class DeniedConsent extends StatelessWidget {
                         child: Icon(
                           Icons.report_problem,
                           size: 100,
-                          color: _primaryColor,
                         ),
                       ),
                       Text(
                         'Consent denied',
                         style: TextStyle(
-                          color: _primaryColor,
+                          color: Theme.of(context).primaryColor,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -69,7 +64,6 @@ class DeniedConsent extends StatelessWidget {
                             styleSheet:
                                 MarkdownStyleSheet.fromTheme(Theme.of(context))
                                     .copyWith(
-//                              blockSpacing: 20,
                               h1Align: WrapAlignment.center,
                               p: TextStyle(
                                 fontSize: 18,
