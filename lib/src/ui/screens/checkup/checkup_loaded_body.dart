@@ -88,11 +88,12 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
                 ),
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 200),
-                  child: currentStep != null && currentIndex > 0 ?
-                    CheckupProgressBar(
-                      currentIndex: currentIndex,
-                      stepsLength: steps.length,
-                    ): null,
+                  child: currentStep != null && currentIndex > 0
+                      ? CheckupProgressBar(
+                          currentIndex: currentIndex,
+                          stepsLength: steps.length,
+                        )
+                      : null,
                 ),
               ],
             );

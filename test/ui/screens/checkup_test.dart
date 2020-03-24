@@ -33,7 +33,7 @@ void main() {
 
     expect(find.text("It's time for your checkup."), findsOneWidget);
   });
-  
+
   testWidgets('Cannot advance to the next screen by scrolling', (tester) async {
     const String page1 = "It's time for your checkup.";
     const String page2 = "Step 1 of 2";
