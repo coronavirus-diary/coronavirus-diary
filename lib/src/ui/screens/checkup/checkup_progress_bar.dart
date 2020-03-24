@@ -62,12 +62,14 @@ class CheckupProgressBar extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 20,
-            child: LinearProgressIndicator(
-              value: percentComplete,
-              backgroundColor: Colors.white.withOpacity(0.2),
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+          ExcludeSemantics(
+            child: SizedBox(
+              height: 20,
+              child: LinearProgressIndicator(
+                value: percentComplete,
+                backgroundColor: Colors.white.withOpacity(0.2),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+              ),
             ),
           ),
         ],
