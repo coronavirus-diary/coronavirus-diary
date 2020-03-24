@@ -63,7 +63,7 @@ class _IntroStepState extends State<IntroStep> {
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     localizations.introStepTimeForYourCheckup,
-                    style: Theme.of(context).textTheme.title,
+                    style: Theme.of(context).textTheme.headline6,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -72,7 +72,7 @@ class _IntroStepState extends State<IntroStep> {
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     localizations.introStepWeWillAskQuestions,
-                    style: Theme.of(context).textTheme.subtitle,
+                    style: Theme.of(context).textTheme.subtitle2,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -81,7 +81,7 @@ class _IntroStepState extends State<IntroStep> {
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     localizations.introStepAtTheEnd,
-                    style: Theme.of(context).textTheme.subtitle,
+                    style: Theme.of(context).textTheme.subtitle2,
                     textAlign: TextAlign.center,
                   ),
                 ),
