@@ -46,8 +46,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
                 ],
               ),
             ),
-          ),
-          onWillPop: () => Future.value(false),
+          ), onWillPop: () => Future.value(false),
         );
       },
     );
