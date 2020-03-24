@@ -1,12 +1,20 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/simple_slider.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_item.dart';
+import 'package:file/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  setUp(() async {
+    BlocSupervisor.delegate = await AppHydratedBlocDelegate.build(
+        storageDirectory: MemoryFileSystem.test().currentDirectory);
+  });
+
   testWidgets('QuestionItem displays question values for non-SliderQuestion',
       (tester) async {
     await tester.pumpWidget(

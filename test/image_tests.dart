@@ -2,25 +2,20 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:covidnearme/src/app.dart';
+import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:file/memory.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 void main() {
   final TestWidgetsFlutterBinding binding =
       TestWidgetsFlutterBinding.ensureInitialized();
+
   setUp(() async {
-    // Use a hermetic file system that is cleaned up between tests.
-    final fs = MemoryFileSystem.test();
-
-    BlocSupervisor.delegate = await HydratedBlocDelegate.build(
-      storageDirectory: fs.systemTempDirectory.createTempSync(),
-    );
-
+    BlocSupervisor.delegate = await AppHydratedBlocDelegate.build(
+        storageDirectory: MemoryFileSystem.test().currentDirectory);
     await _loadRobotoFont();
 
     binding.window.physicalSizeTestValue = Size(500, 800);
