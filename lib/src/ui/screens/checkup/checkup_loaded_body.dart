@@ -39,11 +39,12 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
           position.latitude,
           position.longitude,
         );
-        final String postalCode = places[0].postalCode;
+        postalCode = places[0].postalCode;
         showLocationFallback = false;
       }
     } catch (e) {
-      print(e.toString());
+      final exceptionText = e.toString();
+      print('Failed trying to access location services: $exceptionText');
     }
     if (showLocationFallback) {
       //This returns a String, but putting an explicit type here fails.
