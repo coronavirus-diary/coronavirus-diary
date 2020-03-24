@@ -35,11 +35,11 @@ void main() {
     final checkupButton = find.text('Check up on your health');
     await driver.tap(checkupButton);
 
-    // Click on the close button
+    // Click on the close button.
     final closeButton = find.byTooltip('DEBUG MODE ONLY: Go back to home.');
     await driver.tap(closeButton);
 
-    // Back on the home screen
+    // Back on the home screen.
     await driver.waitFor(find.text('Check up on your health'));
   });
 
@@ -74,11 +74,11 @@ void main() {
   });
 
   test('User can tap on delete data and back to the first page', () async {
-    // Click on the delete data button
+    // Click on the delete data button.
     final deleteDataButton = find.byTooltip('DEBUG MODE ONLY: Clear user data');
     await driver.tap(deleteDataButton);
 
-    // Back the previous screen
+    // Back to the welcome screen.
     await driver.waitFor(find.text('Welcome to the CovidNearMe App'));
   });
 }
