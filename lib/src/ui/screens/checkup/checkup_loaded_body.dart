@@ -72,16 +72,15 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
           builder: (context, state) {
             final QuestionsState questionsState = state;
             return Column(
-              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 200),
                   child: currentStep != null && currentIndex > 0
                       ? CheckupProgressBar(
-                    currentIndex: currentIndex,
-                    // Subtract one because the intro isn't really a step.
-                    stepsLength: steps.length - 1,
-                  )
+                          currentIndex: currentIndex,
+                          // Subtract one because the intro isn't really a step.
+                          stepsLength: steps.length - 1,
+                        )
                       : Container(),
                 ),
                 Expanded(
