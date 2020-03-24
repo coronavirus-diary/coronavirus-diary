@@ -7,6 +7,8 @@ import 'dart:io';
 
 import 'localizations_utils.dart';
 
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 // The set of date formats that can be automatically localized.
 //
 // The localizations generation tool makes use of the intl library's

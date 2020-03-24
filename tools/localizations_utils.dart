@@ -9,6 +9,8 @@ import 'dart:io';
 import 'package:args/args.dart' as argslib;
 import 'package:meta/meta.dart';
 
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 typedef HeaderGenerator = String Function(String regenerateInstructions);
 typedef ConstructorGenerator = String Function(LocaleInfo locale);
 

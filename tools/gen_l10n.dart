@@ -13,6 +13,8 @@ import 'gen_l10n_lib.dart';
 import 'gen_l10n_types.dart';
 import 'localizations_utils.dart';
 
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 Future<void> main(List<String> arguments) async {
   final argslib.ArgParser parser = argslib.ArgParser();
   parser.addFlag(

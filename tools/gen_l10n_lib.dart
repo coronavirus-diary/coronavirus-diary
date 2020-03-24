@@ -13,6 +13,8 @@ import 'gen_l10n_templates.dart';
 import 'gen_l10n_types.dart';
 import 'localizations_utils.dart';
 
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 List<String> generateMethodParameters(Message message) {
   assert(message.placeholders.isNotEmpty);
   final Placeholder countPlaceholder =
