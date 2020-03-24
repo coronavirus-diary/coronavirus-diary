@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 class CheckupProgressBar extends StatelessWidget {
@@ -17,17 +14,6 @@ class CheckupProgressBar extends StatelessWidget {
   })  : isLastPage = currentIndex == stepsLength - 1,
         percentComplete = (currentIndex) / (stepsLength - 1);
 
-  _handleNextButton(BuildContext context) {
-    if (isLastPage) {
-      context.bloc<CheckupBloc>().add(CompleteCheckup());
-    } else {
-      Provider.of<PageController>(context, listen: false).nextPage(
-        duration: Duration(milliseconds: 400),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     // Remember to update this if steps are added that do not count towards the total
@@ -35,12 +21,22 @@ class CheckupProgressBar extends StatelessWidget {
     String percentCompleteText = localizations
         .checkupProgressBarPercentCompleteText(currentIndex, stepsLength);
     return Align(
-      alignment: Alignment.bottomCenter,
+      alignment: Alignment.topCenter,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          ExcludeSemantics(
+            child: SizedBox(
+              height: 20,
+              child: LinearProgressIndicator(
+                value: percentComplete,
+                backgroundColor: Colors.white.withOpacity(0.2),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Row(
@@ -50,26 +46,10 @@ class CheckupProgressBar extends StatelessWidget {
                   percentCompleteText,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 14,
                   ),
                 ),
-                RaisedButton(
-                  onPressed: () => _handleNextButton(context),
-                  child: Text(isLastPage
-                      ? localizations.checkupProgressBarSubmit
-                      : localizations.checkupProgressBarContinue),
-                ),
               ],
-            ),
-          ),
-          ExcludeSemantics(
-            child: SizedBox(
-              height: 20,
-              child: LinearProgressIndicator(
-                value: percentComplete,
-                backgroundColor: Colors.white.withOpacity(0.2),
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-              ),
             ),
           ),
         ],

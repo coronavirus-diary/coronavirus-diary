@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
+
 import 'question_item.dart';
+import 'step_finished_button.dart';
 import '../scrollable_body.dart';
 
 class QuestionView extends StatefulWidget {
@@ -9,12 +11,14 @@ class QuestionView extends StatefulWidget {
   final Color color;
   final EdgeInsetsGeometry padding;
   final Function(Question question, dynamic value) onChange;
+  final bool isLastStep;
 
   const QuestionView({
     @required this.questions,
     this.color,
     this.padding,
     this.onChange,
+    this.isLastStep,
   });
 
   @override
@@ -39,7 +43,10 @@ class _QuestionViewState extends State<QuestionView> {
       child: ScrollableBody(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: _getQuestions(),
+          children: [
+            ..._getQuestions(),
+            StepFinishedButton(),
+          ],
         ),
       ),
     );

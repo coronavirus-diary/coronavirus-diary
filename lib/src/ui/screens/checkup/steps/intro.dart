@@ -10,6 +10,8 @@ import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements CheckupStep {
+  bool get isLastStep => false;
+
   @override
   _IntroStepState createState() => _IntroStepState();
 }
