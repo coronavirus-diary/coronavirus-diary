@@ -39,6 +39,10 @@ final ThemeData appTheme = ThemeData.light().copyWith(
   textTheme: ThemeData.light().textTheme,
   primaryTextTheme: ThemeData.light().primaryTextTheme,
   accentTextTheme: ThemeData.light().accentTextTheme,
+  colorScheme: ThemeData.light().colorScheme.copyWith(
+        primary: _primaryColor,
+        secondary: _accentColor,
+      ),
   buttonTheme: ThemeData.light().buttonTheme.copyWith(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         buttonColor: _primaryColor,

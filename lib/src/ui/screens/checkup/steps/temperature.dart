@@ -269,7 +269,7 @@ class _InstructionStep extends StatelessWidget {
     return TutorialStep(
       text: text,
       number: number,
-      leadingBackgroundColor: Theme.of(context).accentColor,
+      leadingBackgroundColor: Theme.of(context).colorScheme.secondary,
       numberColor: Theme.of(context).colorScheme.onSecondary,
     );
   }
