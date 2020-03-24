@@ -2,6 +2,7 @@ import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/simple_slider.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -46,8 +47,14 @@ void main() {
     // Includes a SimpleSlider
     expect(find.byType(SimpleSlider), findsOneWidget);
 
-    // Current slider value + 1
-    expect(find.text('50'), findsOneWidget);
+    // On a device or simulator (e.g. codemagic), the custom semantics are the
+    // current slider value +1 of max + 1. In the standard test environment,
+    // expect the default slider % semantics.
+    expect(
+      ['50 of 101', '49%']
+          .contains(tester.getSemantics(find.byType(Slider)).value),
+      isTrue,
+    );
   });
 }
 

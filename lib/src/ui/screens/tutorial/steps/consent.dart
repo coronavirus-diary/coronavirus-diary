@@ -18,11 +18,13 @@ class ConsentStep extends StatelessWidget {
     );
     context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
 
-    // Navigate to next page
-    Provider.of<PageController>(context, listen: false).nextPage(
-      duration: Duration(milliseconds: 400),
-      curve: Curves.easeInOut,
-    );
+    if (response) {
+      // Advance to the next page if consent is given.
+      Provider.of<PageController>(context, listen: false).nextPage(
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   @override
@@ -85,7 +87,7 @@ class ConsentStep extends StatelessWidget {
                                             Icons.close,
                                             color: Colors.red,
                                           ),
-                                          Text('Did not agree'),
+                                          Text('No'),
                                         ],
                                       )
                                     : Text('No'),
@@ -103,7 +105,7 @@ class ConsentStep extends StatelessWidget {
                                             Icons.check,
                                             color: Colors.green,
                                           ),
-                                          Text('Agreed'),
+                                          Text('I agree'),
                                         ],
                                       )
                                     : Text('I agree'),

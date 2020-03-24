@@ -21,7 +21,8 @@ void main() {
     );
   });
 
-  testWidgets('CheckupScreen transitions from loading to health checkup', (tester) async {
+  testWidgets('CheckupScreen transitions from loading to health checkup',
+      (tester) async {
     await tester.pumpWidget(setUpCheckupScreen());
 
     // Loading screen
@@ -32,7 +33,7 @@ void main() {
 
     expect(find.text("It's time for your checkup."), findsOneWidget);
   });
-
+  
   testWidgets('Cannot advance to the next screen by scrolling', (tester) async {
     const String page1 = "It's time for your checkup.";
     const String page2 = "Step 1 of 2";
