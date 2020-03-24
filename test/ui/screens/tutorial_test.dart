@@ -1,4 +1,5 @@
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:covidnearme/src/ui/screens/tutorial/steps/consent.dart';
 import 'package:covidnearme/src/ui/screens/tutorial/steps/get_started.dart';
 import 'package:covidnearme/src/ui/screens/tutorial/steps/intro.dart';
@@ -7,15 +8,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:file/memory.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 void main() {
-  MemoryFileSystem fs;
   setUp(() async {
     // Use a hermetic file system that is cleaned up between tests.
-    fs = MemoryFileSystem.test();
+    final fs = MemoryFileSystem.test();
 
-    BlocSupervisor.delegate = await HydratedBlocDelegate.build(
+    BlocSupervisor.delegate = await AppHydratedBlocDelegate.build(
       storageDirectory: fs.systemTempDirectory.createTempSync(),
     );
   });
@@ -55,10 +54,11 @@ Widget setUpTutorialScreen({
 }) {
   preferences ??= PreferencesBloc();
   return MaterialApp(
-      home: Scaffold(
-    body: BlocProvider(
-      create: (BuildContext context) => preferences,
-      child: child,
+    home: Scaffold(
+      body: BlocProvider(
+        create: (BuildContext context) => preferences,
+        child: child,
+      ),
     ),
-  ));
+  );
 }
