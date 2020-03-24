@@ -237,4 +237,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get consentStepLoading => 'Loading...';
+
+  @override
+  String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
+
+  @override
+  String get networkUnavailableBannerConnectToWiFi => 'CONNECT TO WIFI';
+
+  @override
+  String get networkUnavailableBannerMessage =>
+      'You seem to be offline. Please check your network settings and try again.';
 }

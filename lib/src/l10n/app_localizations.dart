@@ -283,6 +283,15 @@ abstract class AppLocalizations {
 
   // Displayed while the app is loading the next screen
   String get consentStepLoading;
+
+  // Label for button that indicates that the user will continue using the app offline
+  String get networkUnavailableBannerContinueOffline;
+
+  // Label for button that opens the system network settings
+  String get networkUnavailableBannerConnectToWiFi;
+
+  // Message shown on the banner displayed when no network connection is detected
+  String get networkUnavailableBannerMessage;
 }
 
 class _AppLocalizationsDelegate
