@@ -53,11 +53,18 @@ class _SimpleSliderState extends State<SimpleSlider> {
     for (int i = 0; i <= divisions; i++) {
       String label = labels[i.toString()];
       if (label == null) {
-        bottomLabelsChildren.add(Spacer());
+        bottomLabelsChildren.add(Spacer(
+          flex: 9,
+        ));
       } else {
         bottomLabelsChildren.add(
           Expanded(
-            child: Center(child: Text(label)),
+            flex: 10,
+            child: Center(
+                child: Text(
+              label,
+              textAlign: TextAlign.center,
+            )),
           ),
         );
       }
