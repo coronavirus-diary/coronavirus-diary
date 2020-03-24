@@ -19,6 +19,7 @@ Future<void> main(List<String> arguments) async {
   final argslib.ArgParser parser = argslib.ArgParser();
   parser.addFlag(
     'help',
+    abbr: 'h',
     defaultsTo: false,
     negatable: false,
     help: 'Print this help message.',
@@ -106,11 +107,11 @@ Future<void> main(List<String> arguments) async {
       )
       ..loadResources()
       ..writeOutputFile();
-  } on FileSystemException catch (e) {
-    exitWithError(e.message);
-  } on FormatException catch (e) {
-    exitWithError(e.message);
-  } on L10nException catch (e) {
-    exitWithError(e.message);
+  } on FileSystemException catch (e, stackTrace) {
+    exitWithError('${e.message}\n$stackTrace');
+  } on FormatException catch (e, stackTrace) {
+    exitWithError('${e.message}\n$stackTrace');
+  } on L10nException catch (e, stackTrace) {
+    exitWithError('${e.message}\n$stackTrace');
   }
 }
