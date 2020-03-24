@@ -149,7 +149,7 @@ abstract class AppLocalizations {
   // Explain that turning the switch on means that the patient data will be shared with the COVID-19 response effort
   String get introStepSwitchLabelContributeData;
 
-  // Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's postal code
+  // Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's zip code
   String get introStepSwitchLabelCollectPostalCode;
 
   // Starts the checkup by showing the first checkup screen
@@ -157,6 +157,18 @@ abstract class AppLocalizations {
 
   // An internal error occurred, the checkup questions failed to load
   String get subjectiveStepQuestionsLoadedError;
+
+  // Subsection heading for recommendations about when to measure the user's temperature
+  String get temperatureStepWhenHeading;
+
+  // User advice
+  String get temperatureStepWait30Minutes;
+
+  // User advice
+  String get temperatureStepWait6Hours;
+
+  // Subsection heading for recommendations about how to measure the user's temperature
+  String get temperatureStepHowHeading;
 
   // Ask the user to correct their temperature reading
   String get temperatureStepPleaseEnterValueBelow;
