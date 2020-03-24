@@ -16,9 +16,6 @@ void main() {
   setUp(() async {
     BlocSupervisor.delegate = await AppHydratedBlocDelegate.build(
         storageDirectory: MemoryFileSystem.test().currentDirectory);
-  });
-
-  setUp(() async {
     await _loadRobotoFont();
 
     binding.window.physicalSizeTestValue = Size(500, 800);
