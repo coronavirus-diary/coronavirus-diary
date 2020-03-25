@@ -8,6 +8,7 @@ workflows:
     triggering:
       events:
         - push
+        - pull_request
       branch_patterns:
         - pattern: '*'
           include: true
@@ -62,6 +63,7 @@ workflows:
     triggering:
       events:
         - tag
+        - pull_request
       branch_patterns:
         - pattern: '*'
           include: true
@@ -115,6 +117,7 @@ workflows:
       events:
         - push
         - tag
+        - pull_request
       branch_patterns:
         - pattern: '*'
           include: true
