@@ -6,6 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// Displays a [MaterialBanner] when network connectivity is lost.
 class NetworkUnavailableBanner extends StatefulWidget {
+  final Connectivity connectivity;
+
   NetworkUnavailableBanner({this.connectivity});
 
   /// Displays a [NetworkUnavailableBanner] above [widget] when network
@@ -27,8 +29,6 @@ class NetworkUnavailableBanner extends StatefulWidget {
   @override
   _NetworkUnavailableBannerState createState() =>
       _NetworkUnavailableBannerState();
-
-  final Connectivity connectivity;
 }
 
 class _NetworkUnavailableBannerState extends State<NetworkUnavailableBanner> {
