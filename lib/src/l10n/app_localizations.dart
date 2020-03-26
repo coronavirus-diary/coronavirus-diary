@@ -295,15 +295,6 @@ abstract class AppLocalizations {
 
   // Label for the back button on the denied consent screen
   String get deniedConsentBackButton;
-  
-  // Label for button that indicates that the user will continue using the app offline
-  String get networkUnavailableBannerContinueOffline;
-
-  // Label for button that opens the system network settings
-  String get networkUnavailableBannerConnectToWiFi;
-
-  // Message shown on the banner displayed when no network connection is detected
-  String get networkUnavailableBannerMessage;
 }
 
 class _AppLocalizationsDelegate
