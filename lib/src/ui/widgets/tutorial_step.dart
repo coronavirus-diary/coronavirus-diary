@@ -8,6 +8,7 @@ class TutorialStep extends StatelessWidget {
   final Color leadingBackgroundColor;
   final Color numberColor;
   final Color textColor;
+  final double fontSize;
 
   const TutorialStep({
     this.text,
@@ -17,7 +18,9 @@ class TutorialStep extends StatelessWidget {
     this.leadingBackgroundColor,
     this.numberColor,
     this.textColor,
-  });
+    this.fontSize = 18.0,
+  }) : assert(icon == null || number == null,
+            "Can't specify both icon and number");
 
   Widget _getLeading(BuildContext context) {
     if (icon == null && number == null) return null;
@@ -49,18 +52,23 @@ class TutorialStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.only(bottom: 10),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _getLeading(context),
+          if (icon != null || number != null) _getLeading(context),
           Flexible(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontSize: 18,
-                color: textColor,
-              ),
+            child: Column(
+              children: <Widget>[
+                if (icon != null || number != null) SizedBox(height: 10),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    color: textColor,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

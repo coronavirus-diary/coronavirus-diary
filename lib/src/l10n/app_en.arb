@@ -141,7 +141,7 @@
     "description": "Ask the user to correct their temperature reading"
   },
 
-  "temperatureStepHowToDialogTitle": "When and how to take your temperature:",
+  "temperatureStepHowToDialogTitle": "Taking your Temperature",
   "@temperatureStepHowToDialogTitle": {
     "description": "Title for a dialog that explains how to take your temperature in 5 steps"
   },
@@ -186,7 +186,7 @@
     "description": "Title that appears within the textfield where the user enters their temperature"
   },
 
-  "temperatureStepHelp": "Need help? Click for instructions.",
+  "temperatureStepHelp": "How to check your temperature",
   "@temperatureStepHelp": {
     "description": "Label for a button that brings up a help screen"
   },

@@ -116,8 +116,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please enter a value above 70 ℉';
 
   @override
-  String get temperatureStepHowToDialogTitle =>
-      'When and how to take your temperature:';
+  String get temperatureStepHowToDialogTitle => 'Taking your Temperature';
 
   @override
   String get temperatureStepHowToDialogStep1 =>
@@ -149,7 +148,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get temperatureStepInputLabel => 'Enter your temperature';
 
   @override
-  String get temperatureStepHelp => 'Need help? Click for instructions.';
+  String get temperatureStepHelp => 'How to check your temperature';
 
   @override
   String get homeScreenHeading => 'Concerned about your health?';

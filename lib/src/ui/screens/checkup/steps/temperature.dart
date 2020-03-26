@@ -1,4 +1,5 @@
 import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
+import 'package:covidnearme/src/ui/widgets/scroll_more_indicator.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -86,72 +87,83 @@ class _TemperatureStepState extends State<TemperatureStep> {
       fontSize: 18,
     );
 
-    await showDialog<void>(
+    ScrollController controller = ScrollController();
+
+    await showModalBottomSheet<void>(
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       context: context,
       builder: (BuildContext context) {
         final AppLocalizations localizations = AppLocalizations.of(context);
-        return SimpleDialog(
-          title: Text(
-            localizations.temperatureStepHowToDialogTitle,
-            style: Theme.of(context).dialogTheme.titleTextStyle,
-          ),
-          contentPadding: EdgeInsets.all(20),
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Divider(),
-                Text(
-                  localizations.temperatureStepWhenHeading,
-                  style: categoryFontStyle,
+        return ScrollMoreIndicator(
+          controller: controller,
+          child: ListView(
+            controller: controller,
+            padding: EdgeInsets.all(20),
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(10),
+                alignment: Alignment.topCenter,
+                child: Text(
+                  localizations.temperatureStepHowToDialogTitle,
+                  style: Theme.of(context).textTheme.headline,
+                  textAlign: TextAlign.center,
                 ),
-                _InstructionStep(
-                  text: localizations.temperatureStepWait30Minutes,
-                  number: 1,
-                ),
-                _InstructionStep(
-                  text: localizations.temperatureStepWait6Hours,
-                  number: 2,
-                ),
-                Divider(),
-                Text(
-                  'How?',
-                  style: categoryFontStyle,
-                ),
-                _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep1,
-                  number: 1,
-                ),
-                _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep2,
-                  number: 2,
-                ),
-                _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep3,
-                  number: 3,
-                ),
-                _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep4,
-                  number: 4,
-                ),
-                _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep5,
-                  number: 5,
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  child: Center(
-                    child: RaisedButton(
-                      onPressed: () => Navigator.pop(context),
-                      child:
-                          Text(localizations.temperatureStepHowToDialogReturn),
-                    ),
+              ),
+              Text(
+                localizations.temperatureStepWhenHeading,
+                style: categoryFontStyle,
+              ),
+              SizedBox(height: 10),
+              _InstructionStep(
+                text: localizations.temperatureStepWait30Minutes,
+                number: 1,
+              ),
+              _InstructionStep(
+                text: localizations.temperatureStepWait6Hours,
+                number: 2,
+              ),
+              Text(
+                'How?',
+                style: categoryFontStyle,
+              ),
+              SizedBox(height: 10),
+              _InstructionStep(
+                text: localizations.temperatureStepHowToDialogStep1,
+                number: 1,
+              ),
+              _InstructionStep(
+                text: localizations.temperatureStepHowToDialogStep2,
+                number: 2,
+              ),
+              _InstructionStep(
+                text: localizations.temperatureStepHowToDialogStep3,
+                number: 3,
+              ),
+              _InstructionStep(
+                text: localizations.temperatureStepHowToDialogStep4,
+                number: 4,
+              ),
+              _InstructionStep(
+                text: localizations.temperatureStepHowToDialogStep5,
+                number: 5,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                child: Center(
+                  child: RaisedButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(localizations.temperatureStepHowToDialogReturn),
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         );
       },
     );
@@ -269,6 +281,7 @@ class _InstructionStep extends StatelessWidget {
     return TutorialStep(
       text: text,
       number: number,
+      fontSize: 16.0,
       leadingBackgroundColor: Theme.of(context).colorScheme.secondary,
       numberColor: Theme.of(context).colorScheme.onSecondary,
     );
