@@ -494,5 +494,15 @@
   "scrollMoreIndicatorMessage": "SCROLL FOR MORE",
   "@scrollMoreIndicatorMessage": {
     "description": "Let the user that they can scroll to see more content"
+  },
+
+  "tutorialIntroStepWelcomeSemanticsLabel": "Welcome to the Covid Near Me App",
+  "@tutorialIntroStepWelcomeSemanticsLabel": {
+    "description": "Semantics Label for tutorialIntroStepWelcome."
+  },
+
+  "getStartedStepJoinedSemanticsLabel": "You've joined the Covid Near Me community!",
+  "@getStartedStepJoinedSemanticsLabel": {
+    "description": "Semantics Label for getStartedStepsJoined."
   }
 }
