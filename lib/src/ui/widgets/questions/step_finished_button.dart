@@ -16,15 +16,15 @@ class StepFinishedButton extends StatelessWidget {
   final bool validated;
 
   Widget _getCompletionMessage(AppLocalizations localizations) {
-    return SizedBox(
-      height: 36,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: 36),
       child: validated
           ? null
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                localizations.checkupProgressBarAnswerAllQuestions,
-                textAlign: TextAlign.end,
+                localizations.checkupStepFinishedAnswerAllQuestions,
+                textAlign: isLastStep ? TextAlign.center : TextAlign.end,
               ),
             ),
     );
@@ -45,7 +45,8 @@ class StepFinishedButton extends StatelessWidget {
                     if (isLastStep) {
                       context.bloc<CheckupBloc>().add(CompleteCheckup());
                     } else {
-                      Provider.of<PageController>(context, listen: false).nextPage(
+                      Provider.of<PageController>(context, listen: false)
+                          .nextPage(
                         duration: Duration(milliseconds: 400),
                         curve: Curves.easeInOut,
                       );

@@ -138,7 +138,7 @@ abstract class AppLocalizations {
   String get checkupStepFinishedNext;
 
   // Prompt when all the questions haven't been answered yet.
-  String get checkupProgressBarAnswerAllQuestions;
+  String get checkupStepFinishedAnswerAllQuestions;
 
   // Heading at the top of the Your Health Checkup screen
   String get introStepTimeForYourCheckup;

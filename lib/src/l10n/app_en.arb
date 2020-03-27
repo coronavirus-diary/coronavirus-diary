@@ -65,8 +65,8 @@
     "description": "Continue to the next checkup screen"
   },
 
-  "checkupProgressBarAnswerAllQuestions": "Please answer all the questions to continue",
-  "@checkupProgressBarAnswerAllQuestions": {
+  "checkupStepFinishedAnswerAllQuestions": "Please answer all the questions to continue",
+  "@checkupStepFinishedAnswerAllQuestions": {
     "description": "Prompt when all the questions haven't been answered yet."
   },
 

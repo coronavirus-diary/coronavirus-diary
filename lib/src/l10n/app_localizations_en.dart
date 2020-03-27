@@ -68,7 +68,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get checkupStepFinishedNext => 'NEXT';
 
   @override
-  String get checkupProgressBarAnswerAllQuestions =>
+  String get checkupStepFinishedAnswerAllQuestions =>
       'Please answer all the questions to continue';
 
   @override

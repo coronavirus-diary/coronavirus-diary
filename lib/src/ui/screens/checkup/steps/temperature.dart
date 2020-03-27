@@ -24,7 +24,6 @@ class _TemperatureStepState extends State<TemperatureStep> {
 
   String _validateTemperature(String value) {
     if (value != '') {
-      print('Parsing $value');
       final double numberValue = double.parse(value);
 
       // TODO(hansmuller) l10n
@@ -39,7 +38,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
 
   double get _upperTemperatureLimit => _isCelsius ? 65.5 : 150.0;
   double get _lowerTemperatureLimit => _isCelsius ? 21.1 : 70.0;
-  String _formatTemperature(double temperature) => "$temperature ${_isCelsius ? '℃' : '℉'}";
+  String _formatTemperature(double temperature) =>
+      "$temperature ${_isCelsius ? '℃' : '℉'}";
 
   double _toFahrenheit(double value) {
     if (!_isCelsius) return value;
@@ -188,7 +188,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
     return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
         final CheckupStateInProgress checkupState = state;
-        final VitalsResponse existingResponse = checkupState.checkup.vitalsResponses.firstWhere(
+        final VitalsResponse existingResponse =
+            checkupState.checkup.vitalsResponses.firstWhere(
           (VitalsResponse response) => response.id == 'temperature',
           orElse: () => null,
         );
@@ -211,8 +212,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(
-                    height: 100,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: 100),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -221,8 +222,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
                             initialValue: existingResponse != null
                                 ? existingResponse.response.toString()
                                 : '',
-                            onChanged: (String value) =>
-                                _updateTemperature(double.parse(value), checkupState),
+                            onChanged: (String value) => _updateTemperature(
+                                double.parse(value), checkupState),
                             decoration: InputDecoration(
                               errorMaxLines: 2,
                               border: OutlineInputBorder(),
@@ -233,7 +234,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
                             ),
                             keyboardType: TextInputType.number,
                             inputFormatters: [
-                              WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,1}$')),
+                              WhitelistingTextInputFormatter(
+                                  RegExp(r'^\d+\.?\d{0,1}$')),
                             ],
                             autovalidate: true,
                             autofocus: true,
@@ -253,7 +255,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
                                 _isCelsius = !_isCelsius;
                               });
                             },
-                            child: _isCelsius ? const Text('℃') : const Text('℉'),
+                            child:
+                                _isCelsius ? const Text('℃') : const Text('℉'),
                           ),
                         ),
                       ],
