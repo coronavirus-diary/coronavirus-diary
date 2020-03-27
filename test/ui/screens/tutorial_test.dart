@@ -19,7 +19,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(setUpTutorialScreen(child: IntroStep()));
 
-    expect(find.text('Click here to learn more'), findsOneWidget);
+    expect(find.text('LEARN MORE'), findsOneWidget);
   });
 
   testWidgets('Tutorial consent step displays correctly',
@@ -34,8 +34,8 @@ void main() {
     // Finish loading transition.
     await tester.pumpAndSettle();
 
-    expect(find.text('No'), findsOneWidget);
-    expect(find.text('I agree'), findsOneWidget);
+    expect(find.text('NO'), findsOneWidget);
+    expect(find.text('I AGREE'), findsOneWidget);
 
     // Doesn't have large text at a text scale factor of 1.0.
     await tester.pumpWidget(

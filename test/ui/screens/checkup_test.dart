@@ -44,7 +44,7 @@ void main() {
     expect(find.text(page1), findsOneWidget);
     expect(find.text(page2), findsNothing);
 
-    await tester.tap(find.text('Start checkup'));
+    await tester.tap(find.text('START CHECKUP'));
     await tester.pumpAndSettle();
     expect(find.text(page1), findsNothing);
     expect(find.text(page2), findsOneWidget);
