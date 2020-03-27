@@ -194,49 +194,61 @@ class _TemperatureStepState extends State<TemperatureStep> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Stack(
                   children: <Widget>[
-                    Expanded(
-                      child: TextFormField(
-                        initialValue: existingResponse != null
-                            ? existingResponse.toString()
-                            : '',
-                        onChanged: (String value) => _updateTemperature(
-                            double.parse(value), checkupState),
-                        decoration: InputDecoration(
-                          errorMaxLines: 2,
-                          icon: FaIcon(
-                            FontAwesomeIcons.thermometerHalf,
-                            color: Colors.white,
-                          ),
-                          labelText: 'Enter your temperature',
-                          hasFloatingPlaceholder: false,
+                    TextFormField(
+                      initialValue: existingResponse != null
+                          ? existingResponse.toString()
+                          : '',
+                      onChanged: (String value) =>
+                          _updateTemperature(double.parse(value), checkupState),
+                      decoration: InputDecoration(
+                        errorMaxLines: 2,
+                        icon: FaIcon(
+                          FontAwesomeIcons.thermometerHalf,
+                          color: Colors.white,
                         ),
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          WhitelistingTextInputFormatter(
-                              RegExp(r'^\d+\.?\d{0,1}$')),
-                        ],
-                        autovalidate: true,
-                        autofocus: true,
-                        validator: _validateTemperature,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
+                        labelText: 'Enter your temperature',
+                        labelStyle: TextStyle(color: Colors.black45),
+                        hasFloatingPlaceholder: false,
+                      ),
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        WhitelistingTextInputFormatter(
+                            RegExp(r'^\d+\.?\d{0,1}$')),
+                      ],
+                      autovalidate: true,
+                      autofocus: true,
+                      validator: _validateTemperature,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
                       ),
                     ),
                     Container(
-                      alignment: Alignment.topCenter,
-                      margin: EdgeInsets.only(left: 10),
-                      child: RaisedButton(
-                        onPressed: () {
+                      alignment: Alignment.centerRight,
+                      margin: const EdgeInsets.only(right: 4),
+                      child: DropdownButton<String>(
+                        value: _isCelsius ? '℃' : '℉',
+                        underline: Container(),
+                        items: <String>['℃', '℉'].map(
+                          (String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            );
+                          },
+                        ).toList(),
+                        onChanged: (value) {
                           setState(() {
-                            _isCelsius = !_isCelsius;
+                            _isCelsius = value == '℃';
                           });
                         },
-                        child: _isCelsius ? const Text('℃') : const Text('℉'),
                       ),
                     ),
                   ],
