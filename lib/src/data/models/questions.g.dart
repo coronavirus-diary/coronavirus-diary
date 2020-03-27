@@ -6,8 +6,8 @@ part of 'questions.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SliderQuestion _$SliderQuestionFromJson(Map<String, dynamic> json) {
-  return SliderQuestion(
+ScaleQuestion _$ScaleQuestionFromJson(Map<String, dynamic> json) {
+  return ScaleQuestion(
     id: json['id'],
     title: json['title'],
     subtitle: json['subtitle'],
@@ -17,7 +17,7 @@ SliderQuestion _$SliderQuestionFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$SliderQuestionToJson(SliderQuestion instance) =>
+Map<String, dynamic> _$ScaleQuestionToJson(ScaleQuestion instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

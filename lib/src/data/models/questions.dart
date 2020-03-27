@@ -15,8 +15,8 @@ abstract class Question {
 
   factory Question.fromJson(Map<String, dynamic> json) {
     switch (json['type']) {
-      case SliderQuestion.TYPE:
-        return SliderQuestion.fromJson(json);
+      case ScaleQuestion.TYPE:
+        return ScaleQuestion.fromJson(json);
       default:
         return UnknownQuestion.fromJson(json);
     }
@@ -25,14 +25,14 @@ abstract class Question {
 }
 
 @JsonSerializable()
-class SliderQuestion extends Question {
+class ScaleQuestion extends Question {
   static const TYPE = 'slider';
 
   final int initialValue;
   final List<String> labels;
   final List<String> semanticLabels;
 
-  SliderQuestion({
+  ScaleQuestion({
     String id,
     String title,
     String subtitle,
@@ -45,10 +45,10 @@ class SliderQuestion extends Question {
           subtitle: subtitle,
         );
 
-  factory SliderQuestion.fromJson(Map<String, dynamic> json) =>
-      _$SliderQuestionFromJson(json);
+  factory ScaleQuestion.fromJson(Map<String, dynamic> json) =>
+      _$ScaleQuestionFromJson(json);
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = _$SliderQuestionToJson(this);
+    Map<String, dynamic> json = _$ScaleQuestionToJson(this);
     json['type'] = TYPE;
     return json;
   }

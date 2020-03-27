@@ -35,7 +35,7 @@ class _QuestionViewState extends State<QuestionView> {
     return widget.questions
         .map((Question question) => QuestionItem(
               question: question,
-              onChange: (dynamic value) {
+              onChanged: (dynamic value) {
                 _answered.add(question);
                 return widget.onChange(question, value);
               },

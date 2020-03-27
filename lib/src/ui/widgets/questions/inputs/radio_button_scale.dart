@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-class RadioButtonScale extends StatefulWidget {
-  RadioButtonScale({
+@immutable
+class RadioButtonScale extends StatelessWidget {
+  const RadioButtonScale({
     Key key,
-    this.initialValue,
+    this.value,
     @required this.labels,
     @required this.semanticLabels,
     this.onChanged,
@@ -12,31 +13,11 @@ class RadioButtonScale extends StatefulWidget {
         assert(semanticLabels.length == labels.length),
         super(key: key);
 
-  final int initialValue;
+  final int value;
   final List<String> labels;
   final List<String> semanticLabels;
   final ValueChanged<int> onChanged;
-
-  @override
-  _RadioButtonScaleState createState() => _RadioButtonScaleState();
-}
-
-class _RadioButtonScaleState extends State<RadioButtonScale> {
-  bool get enabled => widget.onChanged != null;
-  int radioValue;
-
-  @override
-  void initState() {
-    super.initState();
-    radioValue = widget.initialValue;
-  }
-
-  void _handleRadioChange(int value) {
-    setState(() {
-      radioValue = value;
-      widget.onChanged?.call(value);
-    });
-  }
+  bool get enabled => onChanged != null;
 
   @override
   Widget build(BuildContext context) {
@@ -47,25 +28,26 @@ class _RadioButtonScaleState extends State<RadioButtonScale> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              for (int index = 0; index < widget.labels.length; ++index)
+              for (int index = 0; index < labels.length; ++index)
                 Expanded(
                   flex: 2,
                   child: Column(
                     children: <Widget>[
                       Semantics(
-                        label: widget.semanticLabels[index],
+                        explicitChildNodes: false,
+                        label: semanticLabels[index],
                         value: '${index + 1}',
                         child: Radio(
-                          onChanged: _handleRadioChange,
+                          onChanged: onChanged,
                           value: index,
-                          groupValue: radioValue,
+                          groupValue: value,
                           activeColor: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       ExcludeSemantics(
                         child: Center(
                           child: Text(
-                            widget.labels[index],
+                            labels[index],
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -83,7 +65,7 @@ class _RadioButtonScaleState extends State<RadioButtonScale> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Spacer(flex: 1),
-                for (int index = 0; index < widget.labels.length - 1; ++index)
+                for (int index = 0; index < labels.length - 1; ++index)
                   Expanded(
                       flex: 2,
                       child: Divider(

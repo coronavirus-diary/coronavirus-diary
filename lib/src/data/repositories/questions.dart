@@ -4,7 +4,7 @@ import 'package:covidnearme/src/data/models/questions.dart';
 
 class QuestionsRepository {
   Future<List<Question>> listQuestions() async => [
-        SliderQuestion(
+        ScaleQuestion(
           id: '5325',
           title: 'Are you experiencing shortness of breath?',
           subtitle: "Do you feel like you can't get enough air?",
@@ -24,7 +24,7 @@ class QuestionsRepository {
             "I can hardly breathe at all",
           ],
         ),
-        SliderQuestion(
+        ScaleQuestion(
           id: '32444',
           title: 'Do you have a cough?',
           initialValue: null,
@@ -43,7 +43,7 @@ class QuestionsRepository {
             'Constantly',
           ],
         ),
-        SliderQuestion(
+        ScaleQuestion(
           id: '4664',
           title: "Have you felt like you've had a fever?",
           initialValue: null,
