@@ -5,6 +5,7 @@ import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/l10n/app_localizations_en.dart';
 import 'package:covidnearme/src/ui/screens/checkup/checkup.dart';
 import 'package:file/memory.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,15 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text(page1), findsOneWidget);
     expect(find.text(page2), findsNothing);
+  });
+
+  testWidgets('Can advance to the next screen by clicking button',
+      (tester) async {
+    const String page1 = "It's time for your checkup.";
+    const String page2 = "Step 1 of 2";
+
+    await tester.pumpWidget(setUpCheckupScreen());
+    await tester.pumpAndSettle();
 
     await tester.tap(find.text('START CHECKUP'));
     await tester.pumpAndSettle();
@@ -56,7 +66,10 @@ Widget setUpCheckupScreen({
   CheckupBloc checkup,
   PreferencesBloc preferences,
 }) {
-  questions ??= QuestionsBloc(questionsRepository: QuestionsRepository());
+  questions ??= QuestionsBloc(
+    questionsRepository: QuestionsRepository(),
+    localizations: AppLocalizationsEn(),
+  );
   checkup ??= CheckupBloc(
     preferencesState: PreferencesState(preferences: Preferences()),
     checkupsRepository: CheckupsRepository(),
@@ -72,7 +85,7 @@ Widget setUpCheckupScreen({
           create: (BuildContext context) => checkup,
           child: BlocProvider(
             create: (BuildContext context) => preferences,
-            child: CheckupScreen(),
+            child: CheckupScreenBody(),
           ),
         ),
       ),

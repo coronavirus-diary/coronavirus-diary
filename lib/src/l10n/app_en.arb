@@ -333,5 +333,135 @@
   "deniedConsentBackButton": "Go back to the informed consent screen",
   "@deniedConsentBackButton": {
     "description": "Label for the back button on the denied consent screen"
+  },
+
+  "questionShortnessOfBreathTitle": "Are you experiencing shortness of breath?",
+  "@questionShortnessOfBreathTitle": {
+    "description": "Question title."
+  },
+
+  "questionShortnessOfBreathSubtitle": "Do you feel like you can't get enough air?",
+  "@questionShortnessOfBreathSubtitle": {
+    "description": "Question subtitle."
+  },
+
+  "questionShortnessOfBreathAnswer0": "I can breathe fine",
+  "@questionShortnessOfBreathAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionShortnessOfBreathAnswer4": "I can hardly breathe at all",
+  "@questionShortnessOfBreathAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionShortnessOfBreathSemantics0": "I can breathe fine",
+  "@questionShortnessOfBreathSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics1": "I have a little trouble breathing",
+  "@questionShortnessOfBreathSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics2": "I have some trouble breathing",
+  "@questionShortnessOfBreathSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics3": "It is difficult to breathe",
+  "@questionShortnessOfBreathSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics4": "I can hardly breathe at all",
+  "@questionShortnessOfBreathSemantics4": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughTitle": "Do you have a cough?",
+  "@questionHaveACoughTitle": {
+    "description": "Question title."
+  },
+
+  "questionHaveACoughAnswer0": "Never",
+  "@questionHaveACoughAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionHaveACoughAnswer4": "Constantly",
+  "@questionHaveACoughAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionHaveACoughSemantics0": "Never",
+  "@questionHaveACoughSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics1": "Occasionally",
+  "@questionHaveACoughSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics2": "Sometimes",
+  "@questionHaveACoughSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics3": "Often",
+  "@questionHaveACoughSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics4": "Constantly",
+  "@questionHaveACoughSemantics4": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverTitle": "Have you felt like you've had a fever?",
+  "@questionHaveAFeverTitle": {
+    "description": "Question title."
+  },
+
+  "questionHaveAFeverAnswer0": "No",
+  "@questionHaveAFeverAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionHaveAFeverAnswer4": "Maybe?",
+  "@questionHaveAFeverAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionHaveAFeverAnswer4": "I'm burning up",
+  "@questionHaveAFeverAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionHaveAFeverSemantics0": "No",
+  "@questionHaveAFeverSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics1": "Unlikely",
+  "@questionHaveAFeverSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics2": "Maybe",
+  "@questionHaveAFeverSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics3": "Sometimes",
+  "@questionHaveAFeverSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics4": "I'm burning up",
+  "@questionHaveAFeverSemantics4": {
+    "description": "Question accessibility semantics description."
   }
 }
