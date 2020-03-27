@@ -41,9 +41,8 @@ void main() {
           question: SliderQuestion(
             title: 'title',
             subtitle: 'subtitle',
-            max: 100,
-            min: 0,
-            initialValue: 49,
+            initialValue: 4,
+            labels: ['one', 'two', 'three', 'four', 'five', 'six'],
           ),
         ),
       ),

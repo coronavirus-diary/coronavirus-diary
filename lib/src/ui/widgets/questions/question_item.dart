@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
-import 'inputs/index.dart';
+import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
 
-class QuestionItem extends StatefulWidget {
+class QuestionItem extends StatelessWidget {
   final Question question;
-  final Function(dynamic value) onChange;
+  final ValueChanged<int> onChange;
 
   const QuestionItem({this.question, this.onChange});
 
-  @override
-  _QuestionItemState createState() => _QuestionItemState();
-}
-
-class _QuestionItemState extends State<QuestionItem> {
   Widget _getInput() {
-    switch (widget.question.runtimeType) {
+    switch (question.runtimeType) {
       case SliderQuestion:
-        final SliderQuestion question = widget.question;
-        return SimpleSlider(
-          value: question.initialValue,
-          min: question.min,
-          max: question.max,
-          labels: question.labels,
-          onChange: widget.onChange,
+        final SliderQuestion sliderQuestion = question;
+        return RadioButtonScale(
+          labels: sliderQuestion.labels,
+          initialValue: sliderQuestion.initialValue,
+          semanticLabels: sliderQuestion.semanticLabels,
+          onChanged: onChange,
         );
       default:
         return Container();
@@ -33,19 +27,19 @@ class _QuestionItemState extends State<QuestionItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+      padding: EdgeInsets.only(bottom: 40, left: 20, right: 20),
       child: Column(
         children: <Widget>[
           Text(
-            widget.question.title,
+            question.title,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.title,
           ),
-          if (widget.question.subtitle != null)
+          if (question.subtitle != null)
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Text(
-                widget.question.subtitle,
+                question.subtitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.subtitle,
               ),

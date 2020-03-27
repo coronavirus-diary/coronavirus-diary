@@ -28,19 +28,17 @@ abstract class Question {
 class SliderQuestion extends Question {
   static const TYPE = 'slider';
 
-  final double min;
-  final double max;
-  final double initialValue;
-  final Map<String, String> labels;
+  final int initialValue;
+  final List<String> labels;
+  final List<String> semanticLabels;
 
   SliderQuestion({
     String id,
     String title,
     String subtitle,
-    this.min,
-    this.max,
     this.initialValue,
     this.labels,
+    this.semanticLabels,
   }) : super(
           id: id,
           title: title,

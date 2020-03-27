@@ -10,7 +10,7 @@ class CheckupProgressBar extends StatelessWidget {
   const CheckupProgressBar({
     this.currentIndex,
     this.stepsLength,
-  }) : percentComplete = (currentIndex) / (stepsLength - 1);
+  }) : percentComplete = currentIndex / stepsLength;
 
   @override
   Widget build(BuildContext context) {
