@@ -16,7 +16,6 @@ class ConsentStep extends StatelessWidget {
       {BuildContext context, PreferencesState state, bool response}) {
     // Save response
     Preferences newPreferences = state.preferences.cloneWith(
-      completedTutorial: response,
       agreedToTerms: response,
     );
     context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));

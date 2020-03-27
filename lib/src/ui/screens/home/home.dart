@@ -38,28 +38,30 @@ class _HomeScreenState extends State<HomeScreen> {
         state.preferences.lastAssessment.processed.isBefore(today)) {
       return Column(
         children: <Widget>[
-          Container(
-            width: double.infinity,
-            color: Theme.of(context).accentColor.withOpacity(0.5),
-            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Center(
-              child: FaIcon(
-                FontAwesomeIcons.handHoldingHeart,
-                color: Colors.white,
-                size: 80,
+          if (!state.preferences.completedTutorial)
+            Container(
+              width: double.infinity,
+              color: Theme.of(context).accentColor.withOpacity(0.5),
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+              margin: EdgeInsets.only(bottom: 20),
+              child: Center(
+                child: FaIcon(
+                  FontAwesomeIcons.handHoldingHeart,
+                  color: Colors.white,
+                  size: 80,
+                ),
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Text(
-              localizations.getStartedStepJoined,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.title,
+          if (!state.preferences.completedTutorial)
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              margin: EdgeInsets.only(bottom: 20),
+              child: Text(
+                localizations.getStartedStepJoined,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.title,
+              ),
             ),
-          ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
