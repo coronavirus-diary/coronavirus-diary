@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 
 class ConsentStep extends StatelessWidget {
@@ -19,11 +20,21 @@ class ConsentStep extends StatelessWidget {
     );
     context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
 
-    // Advance to the next page if consent is given.
-    Provider.of<PageController>(context, listen: false).nextPage(
-      duration: Duration(milliseconds: 400),
-      curve: Curves.easeInOut,
-    );
+    if (response) {
+      // Navigate to home page and put it at the
+      // bottom of the navigation stack if consent is given.
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        HomeScreen.routeName,
+        (Route<dynamic> route) => false,
+      );
+    } else {
+      // Advance to the denied consent page if consent is not given.
+      Provider.of<PageController>(context, listen: false).nextPage(
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   @override
@@ -31,10 +42,10 @@ class ConsentStep extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
-        final bool agreed =
-            state.preferences.agreedToTerms != null && state.preferences.agreedToTerms;
-        final bool rejected =
-            state.preferences.agreedToTerms != null && !state.preferences.agreedToTerms;
+        final bool agreed = state.preferences.agreedToTerms != null &&
+            state.preferences.agreedToTerms;
+        final bool rejected = state.preferences.agreedToTerms != null &&
+            !state.preferences.agreedToTerms;
 
         return SafeArea(
           child: FutureBuilder(
@@ -46,7 +57,9 @@ class ConsentStep extends StatelessWidget {
                     Markdown(
                       padding: EdgeInsets.fromLTRB(20, 40, 20, 150),
                       data: snapshot.data,
-                      styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
+                      styleSheet:
+                          MarkdownStyleSheet.fromTheme(Theme.of(context))
+                              .copyWith(
                         blockSpacing: 20,
                         h1Align: WrapAlignment.center,
                         p: Theme.of(context).textTheme.body2.copyWith(
@@ -64,8 +77,14 @@ class ConsentStep extends StatelessWidget {
                             end: Alignment.topCenter,
                             colors: <Color>[
                               Theme.of(context).colorScheme.surface,
-                              Theme.of(context).colorScheme.surface.withOpacity(0.5),
-                              Theme.of(context).colorScheme.surface.withOpacity(0),
+                              Theme.of(context)
+                                  .colorScheme
+                                  .surface
+                                  .withOpacity(0.5),
+                              Theme.of(context)
+                                  .colorScheme
+                                  .surface
+                                  .withOpacity(0),
                             ],
                             stops: <double>[0, 0.8, 1.0],
                           ),
@@ -94,7 +113,8 @@ class ConsentStep extends StatelessWidget {
                                               Icons.close,
                                               color: Colors.red,
                                             ),
-                                            Text(localizations.consentStepDidNotAgree),
+                                            Text(localizations
+                                                .consentStepDidNotAgree),
                                           ],
                                         )
                                       : Text(localizations.consentStepNo),
@@ -116,7 +136,8 @@ class ConsentStep extends StatelessWidget {
                                               Icons.check,
                                               color: Colors.green,
                                             ),
-                                            Text(localizations.consentStepAgreed),
+                                            Text(localizations
+                                                .consentStepAgreed),
                                           ],
                                         )
                                       : Text(localizations.consentStepIAgree),

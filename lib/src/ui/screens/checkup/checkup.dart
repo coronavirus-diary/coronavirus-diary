@@ -66,6 +66,9 @@ class _CheckupScreenState extends State<CheckupScreen> {
         checkupState.assessment) {
       Preferences newPreferences = preferencesState.preferences.cloneWith(
         lastAssessment: checkupState.assessment,
+        // If they've completed an assessment, then don't show them the welcome
+        // screen again.
+        completedTutorial: true,
       );
       context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
     }
