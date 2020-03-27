@@ -158,7 +158,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Are you experiencing symptoms? Have you been in contact with someone who is infected?';
 
   @override
-  String get homeScreenCheckupButtonLabel => 'GET A HEALTH CHECKUP';
+  String get homeScreenCheckupButtonLabel => 'START HEALTH CHECKUP';
 
   @override
   String get homeScreenYouHaveCompletedCheckup =>
