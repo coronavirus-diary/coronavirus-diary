@@ -8,7 +8,9 @@ if [ -z "$FLUTTER_ROOT" ]; then
   exit 1
 fi
 
-REPO_ROOT="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P )"
+
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
 DART="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart"
 DARTFMT="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt"
