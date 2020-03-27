@@ -8,7 +8,7 @@ if [ -z "$FLUTTER_ROOT" ]; then
   exit 1
 fi
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P )"
 
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
