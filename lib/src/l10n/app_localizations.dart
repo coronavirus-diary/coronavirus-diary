@@ -295,6 +295,81 @@ abstract class AppLocalizations {
 
   // Label for the back button on the denied consent screen
   String get deniedConsentBackButton;
+
+  // Question title.
+  String get questionShortnessOfBreathTitle;
+
+  // Question subtitle.
+  String get questionShortnessOfBreathSubtitle;
+
+  // Question answer.
+  String get questionShortnessOfBreathAnswer0;
+
+  // Question answer.
+  String get questionShortnessOfBreathAnswer4;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics3;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics4;
+
+  // Question title.
+  String get questionHaveACoughTitle;
+
+  // Question answer.
+  String get questionHaveACoughAnswer0;
+
+  // Question answer.
+  String get questionHaveACoughAnswer4;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics3;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics4;
+
+  // Question title.
+  String get questionHaveAFeverTitle;
+
+  // Question answer.
+  String get questionHaveAFeverAnswer0;
+
+  // Question answer.
+  String get questionHaveAFeverAnswer4;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics3;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics4;
 }
 
 class _AppLocalizationsDelegate

@@ -1,65 +1,67 @@
 import 'dart:async';
 
 import 'package:covidnearme/src/data/models/questions.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 class QuestionsRepository {
-  Future<List<Question>> listQuestions() async => [
+  Future<List<Question>> listQuestions(AppLocalizations localizations) async =>
+      [
         ScaleQuestion(
           id: '5325',
-          title: 'Are you experiencing shortness of breath?',
-          subtitle: "Do you feel like you can't get enough air?",
+          title: localizations.questionShortnessOfBreathTitle,
+          subtitle: localizations.questionShortnessOfBreathSubtitle,
           initialValue: null,
           labels: [
-            'I can breathe fine',
+            localizations.questionShortnessOfBreathAnswer0,
             '',
             '',
             '',
-            "I can hardly breathe at all",
+            localizations.questionShortnessOfBreathAnswer4,
           ],
           semanticLabels: [
-            'I can breathe fine',
-            'I have a little trouble breathing',
-            'I have some trouble breathing',
-            'It is difficult to breathe',
-            "I can hardly breathe at all",
+            localizations.questionShortnessOfBreathSemantics0,
+            localizations.questionShortnessOfBreathSemantics1,
+            localizations.questionShortnessOfBreathSemantics2,
+            localizations.questionShortnessOfBreathSemantics3,
+            localizations.questionShortnessOfBreathSemantics4,
           ],
         ),
         ScaleQuestion(
           id: '32444',
-          title: 'Do you have a cough?',
+          title: localizations.questionHaveACoughTitle,
           initialValue: null,
           labels: [
-            'Never',
+            localizations.questionHaveACoughAnswer0,
             '',
             '',
             '',
-            'Constantly',
+            localizations.questionHaveACoughAnswer4,
           ],
           semanticLabels: [
-            'Never',
-            'Occasionally',
-            'Sometimes',
-            'Often',
-            'Constantly',
+            localizations.questionHaveACoughSemantics0,
+            localizations.questionHaveACoughSemantics1,
+            localizations.questionHaveACoughSemantics2,
+            localizations.questionHaveACoughSemantics3,
+            localizations.questionHaveACoughSemantics4,
           ],
         ),
         ScaleQuestion(
           id: '4664',
-          title: "Have you felt like you've had a fever?",
+          title: localizations.questionHaveAFeverTitle,
           initialValue: null,
           labels: [
-            'No',
+            localizations.questionHaveAFeverAnswer0,
             '',
-            'Maybe?',
             '',
-            "I'm burning up",
+            '',
+            localizations.questionHaveAFeverAnswer4,
           ],
           semanticLabels: [
-            'No',
-            'Unlikely',
-            'Maybe',
-            'Probably',
-            "I'm burning up",
+            localizations.questionHaveAFeverSemantics0,
+            localizations.questionHaveAFeverSemantics1,
+            localizations.questionHaveAFeverSemantics2,
+            localizations.questionHaveAFeverSemantics3,
+            localizations.questionHaveAFeverSemantics4,
           ],
         ),
       ];

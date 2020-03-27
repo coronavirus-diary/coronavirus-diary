@@ -251,4 +251,86 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get deniedConsentBackButton =>
       'Go back to the informed consent screen';
+
+  @override
+  String get questionShortnessOfBreathTitle =>
+      'Are you experiencing shortness of breath?';
+
+  @override
+  String get questionShortnessOfBreathSubtitle =>
+      'Do you feel like you can\'t get enough air?';
+
+  @override
+  String get questionShortnessOfBreathAnswer0 => 'I can breathe fine';
+
+  @override
+  String get questionShortnessOfBreathAnswer4 => 'I can hardly breathe at all';
+
+  @override
+  String get questionShortnessOfBreathSemantics0 => 'I can breathe fine';
+
+  @override
+  String get questionShortnessOfBreathSemantics1 =>
+      'I have a little trouble breathing';
+
+  @override
+  String get questionShortnessOfBreathSemantics2 =>
+      'I have some trouble breathing';
+
+  @override
+  String get questionShortnessOfBreathSemantics3 =>
+      'It is difficult to breathe';
+
+  @override
+  String get questionShortnessOfBreathSemantics4 =>
+      'I can hardly breathe at all';
+
+  @override
+  String get questionHaveACoughTitle => 'Do you have a cough?';
+
+  @override
+  String get questionHaveACoughAnswer0 => 'Never';
+
+  @override
+  String get questionHaveACoughAnswer4 => 'Constantly';
+
+  @override
+  String get questionHaveACoughSemantics0 => 'Never';
+
+  @override
+  String get questionHaveACoughSemantics1 => 'Occasionally';
+
+  @override
+  String get questionHaveACoughSemantics2 => 'Sometimes';
+
+  @override
+  String get questionHaveACoughSemantics3 => 'Often';
+
+  @override
+  String get questionHaveACoughSemantics4 => 'Constantly';
+
+  @override
+  String get questionHaveAFeverTitle =>
+      'Have you felt like you\'ve had a fever?';
+
+  @override
+  String get questionHaveAFeverAnswer0 => 'No';
+
+  @override
+  String get questionHaveAFeverAnswer4 => 'I\'m burning up';
+
+  @override
+  String get questionHaveAFeverSemantics0 => 'No';
+
+  @override
+  String get questionHaveAFeverSemantics1 => 'Unlikely';
+
+  @override
+  String get questionHaveAFeverSemantics2 => 'Maybe';
+
+  @override
+  String get questionHaveAFeverSemantics3 => 'Sometimes';
+
+  @override
+  String get questionHaveAFeverSemantics4 => 'I\'m burning up';
 }
