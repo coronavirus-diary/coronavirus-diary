@@ -21,6 +21,7 @@ void main() {
         setUpConfiguration(
           NetworkUnavailableBanner(
             connectivity: connectivity,
+            dismissable: true,
           ),
         ),
       );

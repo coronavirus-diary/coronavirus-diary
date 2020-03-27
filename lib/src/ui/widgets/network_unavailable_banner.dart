@@ -7,8 +7,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 /// Displays a [MaterialBanner] when network connectivity is lost.
 class NetworkUnavailableBanner extends StatefulWidget {
   final Connectivity connectivity;
+  final bool dismissable;
 
-  NetworkUnavailableBanner({this.connectivity});
+  NetworkUnavailableBanner({this.connectivity, this.dismissable = false});
 
   /// Displays a [NetworkUnavailableBanner] above [widget] when network
   /// connectivity is lost.
@@ -100,14 +101,16 @@ class _NetworkUnavailableBannerState extends State<NetworkUnavailableBanner> {
                           size: 40,
                         ),
                         actions: <Widget>[
-                          FlatButton(
-                            child: Text(
-                              AppLocalizations.of(context)
-                                  .networkUnavailableBannerContinueOffline,
+                          // Only show "CONTINUE OFFLINE" when offline support is enabled.
+                          if (widget.dismissable)
+                            FlatButton(
+                              child: Text(
+                                AppLocalizations.of(context)
+                                    .networkUnavailableBannerContinueOffline,
+                              ),
+                              onPressed: () async =>
+                                  setState(() => _dismissed = true),
                             ),
-                            onPressed: () async =>
-                                setState(() => _dismissed = true),
-                          ),
                           FlatButton(
                             child: Text(
                               AppLocalizations.of(context)
