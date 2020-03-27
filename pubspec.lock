@@ -141,6 +141,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
+  connectivity:
+    dependency: "direct main"
+    description:
+      name: connectivity
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.8+2"
+  connectivity_macos:
+    dependency: transitive
+    description:
+      name: connectivity_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0+2"
+  connectivity_platform_interface:
+    dependency: transitive
+    description:
+      name: connectivity_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   convert:
     dependency: transitive
     description:
@@ -230,6 +251,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.4"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_markdown:
     dependency: "direct main"
     description:
@@ -249,13 +275,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_xlider:
-    dependency: "direct main"
-    description:
-      name: flutter_xlider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.2.0"
   font_awesome_flutter:
     dependency: "direct main"
     description:
@@ -422,6 +441,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6+3"
+  mockito:
+    dependency: "direct dev"
+    description:
+      name: mockito
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.1"
   multi_server_socket:
     dependency: transitive
     description:
@@ -554,7 +580,7 @@ packages:
       name: pub_semver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.4"
+    version: "1.4.2"
   pubspec_parse:
     dependency: transitive
     description:
@@ -772,4 +798,4 @@ packages:
     version: "2.2.0"
 sdks:
   dart: ">=2.7.0 <3.0.0"
-  flutter: ">=1.12.8 <2.0.0"
+  flutter: ">=1.12.13+hotfix.5 <2.0.0"

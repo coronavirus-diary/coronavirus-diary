@@ -7,7 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
-import 'package:covidnearme/src/ui/utils/network_unavailable_dialog.dart';
+import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/share.dart';
 
@@ -28,8 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
     // Restart app
     Phoenix.rebirth(context);
   }
-
-  void _displayNetworkCard() => NetworkUnavailableDialog.show(context);
 
   Widget _getBody(PreferencesState state) {
     final DateTime now = DateTime.now();
@@ -143,20 +141,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: Icon(Icons.delete),
                     tooltip: 'DEBUG MODE ONLY: Clear user data',
                   ),
-            actions: <Widget>[
-              if (!kReleaseMode)
-                IconButton(
-                  onPressed: _displayNetworkCard,
-                  icon: Icon(Icons.network_check),
-                  tooltip: 'DEBUG MODE ONLY: Manually display network dialog',
-                ),
-            ],
           ),
-          body: ScrollableBody(
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 40),
-              alignment: Alignment.center,
-              child: _getBody(state),
+          body: NetworkUnavailableBanner.wrap(
+            ScrollableBody(
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 40),
+                alignment: Alignment.center,
+                child: _getBody(state),
+              ),
             ),
           ),
         );

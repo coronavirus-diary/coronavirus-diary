@@ -8,6 +8,7 @@ import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
+import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'checkup_loaded_body.dart';
 
 class CheckupScreen extends StatefulWidget {
@@ -140,7 +141,9 @@ class _CheckupScreenState extends State<CheckupScreen> {
                       ),
                     ),
                     backgroundColor: Theme.of(context).backgroundColor,
-                    body: _getBody(preferencesState, checkupState),
+                    body: NetworkUnavailableBanner.wrap(
+                      _getBody(preferencesState, checkupState),
+                    ),
                   ),
                 );
               },

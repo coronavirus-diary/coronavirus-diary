@@ -238,6 +238,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get consentStepLoading => 'Loading...';
 
   @override
+  String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
+
+  @override
+  String get networkUnavailableBannerConnectToWiFi => 'CONNECT TO WIFI';
+
+  @override
+  String get networkUnavailableBannerMessage =>
+      'You seem to be offline. Please check your network settings and try again.';
+
+  @override
   String get deniedConsentBackButton =>
       'Go back to the informed consent screen';
 }

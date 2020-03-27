@@ -1,67 +1,57 @@
 {
-  "@@locale": "en",
-
-  "assessmentScreenTitle": "Your Personalized Assessment",
-  "@assessmentScreenTitle": {
-    "description": "The title of the AssesmentScreen"
-  },
-
-  "negativeAssessmentTestingCriteria": "You don't meet testing criteria",
-  "@negativeAssessmentTestingCriteria": {
-    "description": "The patient does not require further testing"
-  },
-
-  "negativeAssessmentCheckInTomorrow": "If you continue to experience symptoms, please check in tomorrow.",
-  "@negativeAssessmentCheckInTomorrow": {
-    "description": "The patient should check in again tomorrow"
-  },
-
-  "negativeAssessmentConsultPhysician": "If they become serious, please consult a physician.",
-  "@negativeAssessmentConsultPhysician": {
-    "description": "Advise the patient to consult a doctor if their symptoms worsen"
-  },
-
-  "positiveAssessmentConsultPhysician": "Please contact your physician",
-  "@positiveAssessmentConsultPhysician": {
-    "description": "Advise the patient to consult a doctor"
-  },
-
-  "positiveAssessmentShowingSymptoms": "You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.",
-  "@positiveAssessmentShowingSymptoms": {
-    "description": "Advise the patient to avoid contact with others until they've seen a doctor"
-  },
-
-  "positiveAssessmentDoNotPanic":  "Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
-  "@positiveAssessmentDoNotPanic": {
-    "description": "Advise the patient to remain calm"
-  },
-
-  "checkupScreenErrorRetrievingExperience": "There was an error retrieving the checkup experience. Please try again later.",
-  "@checkupScreenErrorRetrievingExperience": {
-    "description": "An error occured while trying to fetch data"
-  },
-
-  "checkupScreenHUDLabel": "Loading your assessment",
-  "@checkupScreenHUDLabel": {
-    "description": "A label that indicates that the app is busy loading the patient's assessment"
-  },
-
-  "checkupScreenTitle": "Your Health Checkup",
-  "@checkupScreenTitle": {
-    "description": "Title for the checkup screen"
-  },
-
-  "checkupProgressBarPercentCompleteText": "Step {stepIndex} of {stepCount}",
-  "@checkupProgressBarPercentCompleteText": {
-    "description": "Which step in the overall process is the patient currently working on",
-    "placeholders": {
-      "stepIndex": {
-        "type": "int",
-        "format": "compactLong"
-      },
-      "stepCount": {
-        "type": "int",
-        "format": "compactLong"
+   "@@locale":"en",
+   "assessmentScreenTitle":"Your Personalized Assessment",
+   "@assessmentScreenTitle":{
+      "description":"The title of the AssesmentScreen"
+   },
+   "negativeAssessmentTestingCriteria":"You don't meet testing criteria",
+   "@negativeAssessmentTestingCriteria":{
+      "description":"The patient does not require further testing"
+   },
+   "negativeAssessmentCheckInTomorrow":"If you continue to experience symptoms, please check in tomorrow.",
+   "@negativeAssessmentCheckInTomorrow":{
+      "description":"The patient should check in again tomorrow"
+   },
+   "negativeAssessmentConsultPhysician":"If they become serious, please consult a physician.",
+   "@negativeAssessmentConsultPhysician":{
+      "description":"Advise the patient to consult a doctor if their symptoms worsen"
+   },
+   "positiveAssessmentConsultPhysician":"Please contact your physician",
+   "@positiveAssessmentConsultPhysician":{
+      "description":"Advise the patient to consult a doctor"
+   },
+   "positiveAssessmentShowingSymptoms":"You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.",
+   "@positiveAssessmentShowingSymptoms":{
+      "description":"Advise the patient to avoid contact with others until they've seen a doctor"
+   },
+   "positiveAssessmentDoNotPanic":"Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
+   "@positiveAssessmentDoNotPanic":{
+      "description":"Advise the patient to remain calm"
+   },
+   "checkupScreenErrorRetrievingExperience":"There was an error retrieving the checkup experience. Please try again later.",
+   "@checkupScreenErrorRetrievingExperience":{
+      "description":"An error occured while trying to fetch data"
+   },
+   "checkupScreenHUDLabel":"Loading your assessment",
+   "@checkupScreenHUDLabel":{
+      "description":"A label that indicates that the app is busy loading the patient's assessment"
+   },
+   "checkupScreenTitle":"Your Health Checkup",
+   "@checkupScreenTitle":{
+      "description":"Title for the checkup screen"
+   },
+   "checkupProgressBarPercentCompleteText":"Step {stepIndex} of {stepCount}",
+   "@checkupProgressBarPercentCompleteText":{
+      "description":"Which step in the overall process is the patient currently working on",
+      "placeholders":{
+         "stepIndex":{
+            "type":"int",
+            "format":"compactLong"
+         },
+         "stepCount":{
+            "type":"int",
+            "format":"compactLong"
+         }
       }
     }
   },
@@ -324,6 +314,21 @@
   "consentStepLoading": "Loading...",
   "@consentStepLoading": {
     "description": "Displayed while the app is loading the next screen"
+  },
+  
+  "networkUnavailableBannerContinueOffline":"CONTINUE OFFLINE",
+  "@networkUnavailableBannerContinueOffline":{
+     "description":"Label for button that indicates that the user will continue using the app offline"
+  },
+
+  "networkUnavailableBannerConnectToWiFi":"CONNECT TO WIFI",
+  "@networkUnavailableBannerConnectToWiFi":{
+     "description":"Label for button that opens the system network settings"
+  },
+
+  "networkUnavailableBannerMessage":"You seem to be offline. Please check your network settings and try again.",
+  "@networkUnavailableBannerMessage":{
+     "description":"Message shown on the banner displayed when no network connection is detected"
   },
 
   "deniedConsentBackButton": "Go back to the informed consent screen",
