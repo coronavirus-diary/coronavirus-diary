@@ -21,7 +21,7 @@ void main() {
         setUpConfiguration(
           NetworkUnavailableBanner(
             connectivity: connectivity,
-            dismissable: true,
+            dismissible: true,
           ),
         ),
       );
@@ -57,12 +57,12 @@ void main() {
       expect(find.byType(Container), findsOneWidget);
     }
 
-    testWidgets('and is dismissable', (tester) async {
+    testWidgets('and is dismissible', (tester) async {
       await testBannerAppears(tester);
       await testDismissBanner(tester);
     });
 
-    testWidgets('and is dismissable multiple times', (tester) async {
+    testWidgets('and is dismissible multiple times', (tester) async {
       await testBannerAppears(tester);
       await testDismissBanner(tester);
       await testRestoredConnectivity(tester);
