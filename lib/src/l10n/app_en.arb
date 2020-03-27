@@ -196,7 +196,7 @@
     "description": "Subheading text for the home screen"
   },
 
-  "homeScreenCheckupButtonLabel": "GET A HEALTH CHECKUP",
+  "homeScreenCheckupButtonLabel": "START HEALTH CHECKUP",
   "@homeScreenCheckupButtonLabel": {
     "description": "Label for a button that shows the checkup screen"
   },

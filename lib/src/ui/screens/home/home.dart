@@ -169,7 +169,9 @@ class _HomeScreenState extends State<HomeScreen> {
           body: NetworkUnavailableBanner.wrap(
             ScrollableBody(
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 40),
+                padding: state.preferences.completedTutorial
+                    ? EdgeInsets.symmetric(vertical: 40)
+                    : EdgeInsets.only(bottom: 40),
                 alignment: Alignment.center,
                 child: _getBody(state),
               ),
