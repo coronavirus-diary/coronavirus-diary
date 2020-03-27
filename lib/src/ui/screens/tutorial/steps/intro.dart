@@ -50,7 +50,7 @@ class IntroStep extends StatelessWidget {
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
-                      text: localizations.tutorialIntroStepRecieveAssessment,
+                      text: localizations.tutorialIntroStepReceiveAssessment,
                       icon: FaIcon(
                         FontAwesomeIcons.heartbeat,
                         size: 30,

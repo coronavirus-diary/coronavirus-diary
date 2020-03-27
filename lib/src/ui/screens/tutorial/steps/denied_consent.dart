@@ -65,12 +65,16 @@ class DeniedConsent extends StatelessWidget {
                             physics: NeverScrollableScrollPhysics(),
                             padding: EdgeInsets.fromLTRB(20, 40, 20, 150),
                             data: snapshot.data,
-                            styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
+                            styleSheet:
+                                MarkdownStyleSheet.fromTheme(Theme.of(context))
+                                    .copyWith(
                               h1Align: WrapAlignment.center,
                               p: Theme.of(context).textTheme.body2.copyWith(
-                                    color: Theme.of(context).colorScheme.onSurface,
+                                    color:
+                                        Theme.of(context).colorScheme.onSurface,
                                   ),
-                              textScaleFactor: MediaQuery.of(context).textScaleFactor,
+                              textScaleFactor:
+                                  MediaQuery.of(context).textScaleFactor,
                             ),
                           ),
                         ),

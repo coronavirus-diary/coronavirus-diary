@@ -87,7 +87,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'We will collect your zip code.';
 
   @override
-  String get introStepButtonStartLabel => 'Start checkup';
+  String get introStepButtonStartLabel => 'START CHECKUP';
 
   @override
   String get subjectiveStepQuestionsLoadedError =>
@@ -158,7 +158,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Are you experiencing symptoms? Have you been in contact with someone who is infected?';
 
   @override
-  String get homeScreenCheckupButtonLabel => 'Check up on your health';
+  String get homeScreenCheckupButtonLabel => 'START HEALTH CHECKUP';
 
   @override
   String get homeScreenYouHaveCompletedCheckup =>
@@ -183,7 +183,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Share this app with your friends, coworkers, and family (especially grandparents).';
 
   @override
-  String get shareAppNow => 'Share now';
+  String get shareAppNow => 'SHARE NOW';
 
   @override
   String get staySafeTitle => 'Stay Safe';
@@ -206,33 +206,30 @@ class AppLocalizationsEn extends AppLocalizations {
       'Complete a daily health checkup.';
 
   @override
-  String get tutorialIntroStepRecieveAssessment =>
+  String get tutorialIntroStepReceiveAssessment =>
       'Receive a personalized health assessment.';
 
   @override
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
 
   @override
-  String get tutorialIntroStepLearnMore => 'Click here to learn more';
+  String get tutorialIntroStepLearnMore => 'LEARN MORE';
 
   @override
   String get getStartedStepJoined =>
       'You\'ve joined the CovidNearMe community!';
 
   @override
-  String get getStartedStepClick => 'Click here to get started';
+  String get consentStepDidNotAgree => 'DID NOT AGREE';
 
   @override
-  String get consentStepDidNotAgree => 'Did not agree';
+  String get consentStepNo => 'NO';
 
   @override
-  String get consentStepNo => 'No';
+  String get consentStepAgreed => 'AGREED';
 
   @override
-  String get consentStepAgreed => 'Agree';
-
-  @override
-  String get consentStepIAgree => 'I agree';
+  String get consentStepIAgree => 'I AGREE';
 
   @override
   String get consentStepLoading => 'Loading...';
