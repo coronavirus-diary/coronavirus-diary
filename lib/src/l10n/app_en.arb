@@ -325,7 +325,7 @@
      "description":"Message shown on the banner displayed when no network connection is detected"
   },
 
-  "deniedConsentBackButton": "GO BACK",
+  "deniedConsentBackButton": "Go back to the informed consent screen",
   "@deniedConsentBackButton": {
     "description": "Label for the back button on the denied consent screen"
   }
