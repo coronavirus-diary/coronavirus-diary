@@ -16,15 +16,15 @@ void main() {
         storageDirectory: MemoryFileSystem.test().currentDirectory);
   });
 
-  testWidgets('Tutorial intro step displays learn more button',
-      (WidgetTester tester) async {
+  testWidgets('Tutorial intro step displays learn more button', (WidgetTester tester) async {
     await tester.pumpWidget(setUpTutorialScreen(child: IntroStep()));
 
     expect(find.text('Click here to learn more'), findsOneWidget);
   });
 
-  testWidgets('Tutorial consent step displays yes and no button',
-      (WidgetTester tester) async {
+  testWidgets('Tutorial consent step displays correctly', (WidgetTester tester) async {
+    // Displays Yes/No buttons.
+    await tester.pumpWidget(Container());
     await tester.pumpWidget(setUpTutorialScreen(child: ConsentStep()));
 
     // Loading screen.
@@ -35,10 +35,44 @@ void main() {
 
     expect(find.text('No'), findsOneWidget);
     expect(find.text('I agree'), findsOneWidget);
+
+    // Doesn't have large text at a text scale factor of 1.0.
+    await tester.pumpWidget(
+      setUpTutorialScreen(
+        child: ConsentStep(),
+        textScaleFactor: 1.0,
+      ),
+    );
+
+    // Finish loading transition.
+    await tester.pumpAndSettle();
+
+    // 200 is relatively arbitrary limit, but works with the current text.
+    expect(find.byElementPredicate((Element element) {
+      return (element.widget.runtimeType == RichText &&
+          (element.widget as RichText).text.toPlainText().contains('COVID-19') &&
+          element.size.height < 200);
+    }), findsWidgets);
+
+    // Does have large text at a text scale factor of 3.0.
+    await tester.pumpWidget(
+      setUpTutorialScreen(
+        child: ConsentStep(),
+        textScaleFactor: 3.0,
+      ),
+    );
+
+    // Finish loading transition.
+    await tester.pumpAndSettle();
+
+    expect(find.byElementPredicate((Element element) {
+      return (element.widget.runtimeType == RichText &&
+          (element.widget as RichText).text.toPlainText().contains('COVID-19') &&
+          element.size.height > 200);
+    }), findsWidgets);
   });
 
-  testWidgets('Tutorial get_started step displays get started button',
-      (WidgetTester tester) async {
+  testWidgets('Tutorial get_started step displays get started button', (WidgetTester tester) async {
     await tester.pumpWidget(setUpTutorialScreen(child: GetStartedStep()));
 
     expect(find.text('Click here to get started'), findsOneWidget);
@@ -47,6 +81,7 @@ void main() {
 
 Widget setUpTutorialScreen({
   PreferencesBloc preferences,
+  double textScaleFactor = 1.0,
   @required Widget child,
 }) {
   preferences ??= PreferencesBloc();
@@ -54,7 +89,12 @@ Widget setUpTutorialScreen({
     home: Scaffold(
       body: BlocProvider(
         create: (BuildContext context) => preferences,
-        child: child,
+        child: Builder(builder: (BuildContext context) {
+          return MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: textScaleFactor),
+            child: child,
+          );
+        }),
       ),
     ),
     localizationsDelegates: AppLocalizations.localizationsDelegates,
