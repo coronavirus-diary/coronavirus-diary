@@ -165,7 +165,7 @@
     "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
   },
 
-  "temperatureStepHowToDialogReturn": "Return to checkup",
+  "temperatureStepHowToDialogReturn": "RETURN TO CHECKUP",
   "@temperatureStepHowToDialogReturn": {
     "description": "Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps"
   },

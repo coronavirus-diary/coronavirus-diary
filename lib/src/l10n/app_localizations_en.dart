@@ -143,7 +143,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Take out your thermometer and record your temperature.';
 
   @override
-  String get temperatureStepHowToDialogReturn => 'Return to checkup';
+  String get temperatureStepHowToDialogReturn => 'RETURN TO CHECKUP';
 
   @override
   String get temperatureStepTitle => 'Take your temperature';

@@ -93,7 +93,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
     );
   }
 
-  Future<void> _showInstructions() async {
+  Future<void> _showInstructions(BuildContext context) async {
     final categoryFontStyle = TextStyle(
       color: Theme.of(context).primaryColor,
       fontWeight: FontWeight.bold,
@@ -102,80 +102,73 @@ class _TemperatureStepState extends State<TemperatureStep> {
 
     ScrollController controller = ScrollController();
 
-    await showModalBottomSheet<void>(
-      isScrollControlled: true,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-      ),
+    await showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         final AppLocalizations localizations = AppLocalizations.of(context);
-        return ScrollMoreIndicator(
-          controller: controller,
-          child: ListView(
+        final ThemeData theme = Theme.of(context);
+        return Scaffold(
+          appBar: AppBar(title: Text(
+            localizations.temperatureStepHowToDialogTitle,
+            style: theme.textTheme.headline.copyWith(color: theme.colorScheme.onBackground),
+            textAlign: TextAlign.center,
+          ),),
+          body: ScrollMoreIndicator(
             controller: controller,
-            padding: EdgeInsets.all(20),
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.topCenter,
-                child: Text(
-                  localizations.temperatureStepHowToDialogTitle,
-                  style: Theme.of(context).textTheme.headline,
-                  textAlign: TextAlign.center,
+            child: ListView(
+              controller: controller,
+              padding: EdgeInsets.all(20),
+              children: <Widget>[
+                Text(
+                  localizations.temperatureStepWhenHeading,
+                  style: categoryFontStyle,
                 ),
-              ),
-              Text(
-                localizations.temperatureStepWhenHeading,
-                style: categoryFontStyle,
-              ),
-              SizedBox(height: 10),
-              _InstructionStep(
-                text: localizations.temperatureStepWait30Minutes,
-                number: 1,
-              ),
-              _InstructionStep(
-                text: localizations.temperatureStepWait6Hours,
-                number: 2,
-              ),
-              Text(
-                'How?',
-                style: categoryFontStyle,
-              ),
-              SizedBox(height: 10),
-              _InstructionStep(
-                text: localizations.temperatureStepHowToDialogStep1,
-                number: 1,
-              ),
-              _InstructionStep(
-                text: localizations.temperatureStepHowToDialogStep2,
-                number: 2,
-              ),
-              _InstructionStep(
-                text: localizations.temperatureStepHowToDialogStep3,
-                number: 3,
-              ),
-              _InstructionStep(
-                text: localizations.temperatureStepHowToDialogStep4,
-                number: 4,
-              ),
-              _InstructionStep(
-                text: localizations.temperatureStepHowToDialogStep5,
-                number: 5,
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                child: Center(
-                  child: RaisedButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Text(localizations.temperatureStepHowToDialogReturn),
+                SizedBox(height: 10),
+                _InstructionStep(
+                  text: localizations.temperatureStepWait30Minutes,
+                  number: 1,
+                ),
+                _InstructionStep(
+                  text: localizations.temperatureStepWait6Hours,
+                  number: 2,
+                ),
+                Text(
+                  'How?',
+                  style: categoryFontStyle,
+                ),
+                SizedBox(height: 10),
+                _InstructionStep(
+                  text: localizations.temperatureStepHowToDialogStep1,
+                  number: 1,
+                ),
+                _InstructionStep(
+                  text: localizations.temperatureStepHowToDialogStep2,
+                  number: 2,
+                ),
+                _InstructionStep(
+                  text: localizations.temperatureStepHowToDialogStep3,
+                  number: 3,
+                ),
+                _InstructionStep(
+                  text: localizations.temperatureStepHowToDialogStep4,
+                  number: 4,
+                ),
+                _InstructionStep(
+                  text: localizations.temperatureStepHowToDialogStep5,
+                  number: 5,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Center(
+                    child: RaisedButton(
+                      onPressed: () => Navigator.pop(context),
+                      child:
+                          Text(localizations.temperatureStepHowToDialogReturn),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
@@ -265,7 +258,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   Container(
                     margin: EdgeInsets.only(top: 25, bottom: 40),
                     child: RaisedButton(
-                      onPressed: _showInstructions,
+                      onPressed: () => _showInstructions(context),
                       child: Text(localizations.temperatureStepHelp),
                     ),
                   ),
