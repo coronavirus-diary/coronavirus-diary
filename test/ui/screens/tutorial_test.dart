@@ -22,7 +22,9 @@ void main() {
     expect(find.text('Click here to learn more'), findsOneWidget);
   });
 
-  testWidgets('Tutorial consent step displays yes and no button', (WidgetTester tester) async {
+  testWidgets('Tutorial consent step displays correctly', (WidgetTester tester) async {
+    // Displays Yes/No buttons.
+    await tester.pumpWidget(Container());
     await tester.pumpWidget(setUpTutorialScreen(child: ConsentStep()));
 
     // Loading screen.
@@ -33,9 +35,8 @@ void main() {
 
     expect(find.text('No'), findsOneWidget);
     expect(find.text('I agree'), findsOneWidget);
-  });
 
-  testWidgets('Tutorial consent step responds to textScaleFactor', (WidgetTester tester) async {
+    // Doesn't have large text at a text scale factor of 1.0.
     await tester.pumpWidget(
       setUpTutorialScreen(
         child: ConsentStep(),
@@ -53,6 +54,7 @@ void main() {
           element.size.height < 200);
     }), findsWidgets);
 
+    // Does have large text at a text scale factor of 3.0.
     await tester.pumpWidget(
       setUpTutorialScreen(
         child: ConsentStep(),
