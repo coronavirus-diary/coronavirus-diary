@@ -4,7 +4,6 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
@@ -21,6 +20,7 @@ class TemperatureStep extends StatefulWidget implements CheckupStep {
 
 class _TemperatureStepState extends State<TemperatureStep> {
   bool _isCelsius = false;
+  bool _isValid = false;
 
   String _validateTemperature(String value) {
     if (value != '') {
@@ -51,7 +51,20 @@ class _TemperatureStepState extends State<TemperatureStep> {
     CheckupStateInProgress checkupState,
   ) {
     // Validate before saving
-    if (_validateTemperature(value.toString()) != null) return;
+    if (_validateTemperature(value.toString()) != null) {
+      if (_isValid) {
+        setState(() {
+          _isValid = false;
+        });
+        return;
+      }
+    } else {
+      if (!_isValid) {
+        setState(() {
+          _isValid = true;
+        });
+      }
+    }
 
     updateCheckup(
       checkupState: checkupState,
@@ -190,10 +203,6 @@ class _TemperatureStepState extends State<TemperatureStep> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: Container(),
-                  ),
-                  Padding(
                     padding: EdgeInsets.only(bottom: 24),
                     child: Text(
                       localizations.temperatureStepTitle,
@@ -203,54 +212,55 @@ class _TemperatureStepState extends State<TemperatureStep> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Expanded(
-                        child: TextFormField(
-                          initialValue: existingResponse != null
-                              ? existingResponse.toString()
-                              : '',
-                          onChanged: (String value) => _updateTemperature(
-                              double.parse(value), checkupState),
-                          decoration: InputDecoration(
-                            errorMaxLines: 2,
-                            border: OutlineInputBorder(),
-                            filled: true,
-                            fillColor: Colors.transparent,
-                            icon: FaIcon(
-                              FontAwesomeIcons.thermometerHalf,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: 100),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Expanded(
+                          child: TextFormField(
+                            initialValue: existingResponse != null
+                                ? existingResponse.response.toString()
+                                : '',
+                            onChanged: (String value) => _updateTemperature(
+                                double.parse(value), checkupState),
+                            decoration: InputDecoration(
+                              errorMaxLines: 2,
+                              border: OutlineInputBorder(),
+                              filled: true,
+                              fillColor: Colors.transparent,
+                              labelText: 'Temperature',
+                              hasFloatingPlaceholder: true,
                             ),
-                            labelText: 'Temperature',
-                            hasFloatingPlaceholder: true,
-                          ),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            WhitelistingTextInputFormatter(
-                                RegExp(r'^\d+\.?\d{0,1}$')),
-                          ],
-                          autovalidate: true,
-                          autofocus: true,
-                          validator: _validateTemperature,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              WhitelistingTextInputFormatter(
+                                  RegExp(r'^\d+\.?\d{0,1}$')),
+                            ],
+                            autovalidate: true,
+                            autofocus: true,
+                            validator: _validateTemperature,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        alignment: Alignment.topCenter,
-                        margin: EdgeInsets.only(left: 10),
-                        child: RaisedButton(
-                          onPressed: () {
-                            setState(() {
-                              _isCelsius = !_isCelsius;
-                            });
-                          },
-                          child: _isCelsius ? const Text('℃') : const Text('℉'),
+                        Container(
+                          alignment: Alignment.topCenter,
+                          margin: EdgeInsets.only(left: 10),
+                          child: RaisedButton(
+                            onPressed: () {
+                              setState(() {
+                                _isCelsius = !_isCelsius;
+                              });
+                            },
+                            child:
+                                _isCelsius ? const Text('℃') : const Text('℉'),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 25, bottom: 40),
@@ -259,7 +269,10 @@ class _TemperatureStepState extends State<TemperatureStep> {
                       child: Text(localizations.temperatureStepHelp),
                     ),
                   ),
-                  StepFinishedButton(isLastStep: true),
+                  StepFinishedButton(
+                    isLastStep: true,
+                    validated: _isValid,
+                  ),
                 ],
               ),
             ),

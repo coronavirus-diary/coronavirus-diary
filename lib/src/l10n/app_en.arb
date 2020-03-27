@@ -55,14 +55,19 @@
     }
   },
 
-  "checkupProgressBarSubmit": "SUBMIT",
-  "@checkupProgressBarSubmit": {
+  "checkupStepFinishedSubmit": "SUBMIT",
+  "@checkupStepFinishedSubmit": {
     "description": "Submit the data for the checkup"
   },
 
-  "checkupProgressBarNext": "NEXT",
-  "@checkupProgressBarNext": {
+  "checkupStepFinishedNext": "NEXT",
+  "@checkupStepFinishedNext": {
     "description": "Continue to the next checkup screen"
+  },
+
+  "checkupStepFinishedAnswerAllQuestions": "Please answer all the questions to continue",
+  "@checkupStepFinishedAnswerAllQuestions": {
+    "description": "Prompt when all the questions haven't been answered yet."
   },
 
   "introStepTimeForYourCheckup": "It's time for your checkup.",

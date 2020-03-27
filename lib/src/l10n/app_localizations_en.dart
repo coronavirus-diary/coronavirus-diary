@@ -62,10 +62,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get checkupProgressBarSubmit => 'SUBMIT';
+  String get checkupStepFinishedSubmit => 'SUBMIT';
 
   @override
-  String get checkupProgressBarNext => 'NEXT';
+  String get checkupStepFinishedNext => 'NEXT';
+
+  @override
+  String get checkupStepFinishedAnswerAllQuestions =>
+      'Please answer all the questions to continue';
 
   @override
   String get introStepTimeForYourCheckup => 'It\'s time for your checkup.';

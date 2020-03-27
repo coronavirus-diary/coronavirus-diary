@@ -4,40 +4,63 @@ import 'package:covidnearme/src/data/models/questions.dart';
 
 class QuestionsRepository {
   Future<List<Question>> listQuestions() async => [
-        SliderQuestion(
+        ScaleQuestion(
           id: '5325',
           title: 'Are you experiencing shortness of breath?',
           subtitle: "Do you feel like you can't get enough air?",
-          min: 0,
-          max: 4,
-          initialValue: 0,
-          labels: {
-            '0': "I can breathe fine",
-            '4': "I can't breathe at all",
-          },
+          initialValue: null,
+          labels: [
+            'I can breathe fine',
+            '',
+            '',
+            '',
+            "I can hardly breathe at all",
+          ],
+          semanticLabels: [
+            'I can breathe fine',
+            'I have a little trouble breathing',
+            'I have some trouble breathing',
+            'It is difficult to breathe',
+            "I can hardly breathe at all",
+          ],
         ),
-        SliderQuestion(
+        ScaleQuestion(
           id: '32444',
           title: 'Do you have a cough?',
-          min: 0,
-          max: 4,
-          initialValue: 0,
-          labels: {
-            '0': 'Never',
-            '4': 'Constantly',
-          },
+          initialValue: null,
+          labels: [
+            'Never',
+            '',
+            '',
+            '',
+            'Constantly',
+          ],
+          semanticLabels: [
+            'Never',
+            'Occasionally',
+            'Sometimes',
+            'Often',
+            'Constantly',
+          ],
         ),
-        SliderQuestion(
+        ScaleQuestion(
           id: '4664',
           title: "Have you felt like you've had a fever?",
-          min: 0,
-          max: 4,
-          initialValue: 0,
-          labels: {
-            '0': "No",
-            '2': "Maybe?",
-            '4': "I'm burning up",
-          },
+          initialValue: null,
+          labels: [
+            'No',
+            '',
+            'Maybe?',
+            '',
+            "I'm burning up",
+          ],
+          semanticLabels: [
+            'No',
+            'Unlikely',
+            'Maybe',
+            'Probably',
+            "I'm burning up",
+          ],
         ),
       ];
 }

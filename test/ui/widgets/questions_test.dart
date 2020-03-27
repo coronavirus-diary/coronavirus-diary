@@ -1,5 +1,6 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/blocs/utils.dart';
+import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/simple_slider.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_item.dart';
 import 'package:file/memory.dart';
@@ -38,12 +39,13 @@ void main() {
     await tester.pumpWidget(
       setUpConfiguration(
         QuestionItem(
-          question: SliderQuestion(
+          onChanged: (int value) {},
+          question: ScaleQuestion(
             title: 'title',
             subtitle: 'subtitle',
-            max: 100,
-            min: 0,
-            initialValue: 49,
+            initialValue: 0,
+            labels: ['one', 'two', 'three'],
+            semanticLabels: ['one', 'two', 'three'],
           ),
         ),
       ),
@@ -51,17 +53,80 @@ void main() {
 
     expect(find.text('subtitle'), findsOneWidget);
     expect(find.text('title'), findsOneWidget);
+    expect(find.byType(RadioButtonScale), findsOneWidget);
 
-    // Includes a SimpleSlider
-    expect(find.byType(SimpleSlider), findsOneWidget);
-
-    // On a device or simulator (e.g. codemagic), the custom semantics are the
-    // current slider value +1 of max + 1. In the standard test environment,
-    // expect the default slider % semantics.
     expect(
-      ['50 of 101', '49%']
-          .contains(tester.getSemantics(find.byType(Slider)).value),
-      isTrue,
+      tester.getSemantics(find.bySemanticsLabel('one')),
+      matchesSemantics(
+        value: '1',
+        isChecked: true,
+        isEnabled: true,
+        hasCheckedState: true,
+        hasEnabledState: true,
+        isInMutuallyExclusiveGroup: true,
+        hasTapAction: true,
+        isFocusable: true,
+      ),
+    );
+
+    expect(
+      tester.getSemantics(find.bySemanticsLabel('two')),
+      matchesSemantics(
+        value: '2',
+        isChecked: false,
+        isEnabled: true,
+        hasCheckedState: true,
+        hasEnabledState: true,
+        isInMutuallyExclusiveGroup: true,
+        hasTapAction: true,
+        isFocusable: true,
+      ),
+    );
+
+    expect(
+      tester.getSemantics(find.bySemanticsLabel('three')),
+      matchesSemantics(
+        value: '3',
+        isChecked: false,
+        isEnabled: true,
+        hasCheckedState: true,
+        hasEnabledState: true,
+        isInMutuallyExclusiveGroup: true,
+        hasTapAction: true,
+        isFocusable: true,
+      ),
+    );
+
+    Finder findRadio(int value) {
+      return find.byWidgetPredicate(
+        (Widget widget) => widget is Radio<int> && widget.value == value,
+      );
+    }
+
+    await tester.tap(findRadio(1));
+    await tester.pumpAndSettle();
+
+    expect(
+      (tester.widget(find.byType(RadioButtonScale)) as RadioButtonScale).value,
+      equals(1),
+    );
+    expect(
+      (tester.widget(findRadio(1)) as Radio<int>).groupValue,
+      equals(1),
+    );
+    expect(
+      tester.getSemantics(findRadio(1)),
+      matchesSemantics(
+        value: '2',
+        isChecked: true,
+        isEnabled: true,
+        hasCheckedState: true,
+        hasEnabledState: true,
+        isInMutuallyExclusiveGroup: true,
+        textDirection: TextDirection.ltr,
+        hasTapAction: true,
+        isFocusable: true,
+      ),
     );
   });
 }

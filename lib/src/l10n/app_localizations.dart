@@ -132,10 +132,13 @@ abstract class AppLocalizations {
   String checkupProgressBarPercentCompleteText(int stepIndex, int stepCount);
 
   // Submit the data for the checkup
-  String get checkupProgressBarSubmit;
+  String get checkupStepFinishedSubmit;
 
   // Continue to the next checkup screen
-  String get checkupProgressBarNext;
+  String get checkupStepFinishedNext;
+
+  // Prompt when all the questions haven't been answered yet.
+  String get checkupStepFinishedAnswerAllQuestions;
 
   // Heading at the top of the Your Health Checkup screen
   String get introStepTimeForYourCheckup;
