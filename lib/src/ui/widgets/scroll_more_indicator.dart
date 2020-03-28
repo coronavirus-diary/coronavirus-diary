@@ -141,7 +141,8 @@ class _ScrollMoreIndicatorState extends State<ScrollMoreIndicator> {
                           children: <Widget>[
                             Padding(
                               padding: EdgeInsets.only(bottom: iconSize / 2.0),
-                              child: Text(localizations.scrollMoreIndicatorMessage,
+                              child: Text(
+                                  localizations.scrollMoreIndicatorMessage,
                                   style: Theme.of(context)
                                       .textTheme
                                       .button

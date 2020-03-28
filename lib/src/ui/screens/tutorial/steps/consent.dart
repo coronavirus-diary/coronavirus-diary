@@ -52,8 +52,7 @@ class ConsentStep extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(20, 40, 20, 150),
                 data: localizations.consentStepQuestion,
                 styleSheet:
-                    MarkdownStyleSheet.fromTheme(Theme.of(context))
-                        .copyWith(
+                    MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
                   blockSpacing: 20,
                   h1Align: WrapAlignment.center,
                   p: Theme.of(context).textTheme.body2.copyWith(
@@ -71,14 +70,8 @@ class ConsentStep extends StatelessWidget {
                       end: Alignment.topCenter,
                       colors: <Color>[
                         Theme.of(context).colorScheme.surface,
-                        Theme.of(context)
-                            .colorScheme
-                            .surface
-                            .withOpacity(0.5),
-                        Theme.of(context)
-                            .colorScheme
-                            .surface
-                            .withOpacity(0),
+                        Theme.of(context).colorScheme.surface.withOpacity(0.5),
+                        Theme.of(context).colorScheme.surface.withOpacity(0),
                       ],
                       stops: <double>[0, 0.8, 1.0],
                     ),
@@ -107,8 +100,8 @@ class ConsentStep extends StatelessWidget {
                                         Icons.close,
                                         color: Colors.red,
                                       ),
-                                      Text(localizations
-                                          .consentStepDidNotAgree),
+                                      Text(
+                                          localizations.consentStepDidNotAgree),
                                     ],
                                   )
                                 : Text(localizations.consentStepNo),
@@ -130,8 +123,7 @@ class ConsentStep extends StatelessWidget {
                                         Icons.check,
                                         color: Colors.green,
                                       ),
-                                      Text(localizations
-                                          .consentStepAgreed),
+                                      Text(localizations.consentStepAgreed),
                                     ],
                                   )
                                 : Text(localizations.consentStepIAgree),
