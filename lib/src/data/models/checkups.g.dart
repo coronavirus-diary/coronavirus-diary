@@ -66,11 +66,13 @@ Map<String, dynamic> _$VitalsResponseToJson(VitalsResponse instance) =>
 
 CheckupLocation _$CheckupLocationFromJson(Map<String, dynamic> json) {
   return CheckupLocation(
-    postalCode: json['postal_code'] as String,
+    zipCode: json['zip_code'] as String,
+    country: json['country'] as String,
   );
 }
 
 Map<String, dynamic> _$CheckupLocationToJson(CheckupLocation instance) =>
     <String, dynamic>{
-      'postal_code': instance.postalCode,
+      'zip_code': instance.zipCode,
+      'country': instance.country,
     };

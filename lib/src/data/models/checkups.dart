@@ -76,10 +76,12 @@ class VitalsResponse {
 
 @JsonSerializable()
 class CheckupLocation {
-  String postalCode;
+  String zipCode;
+  String country;
 
   CheckupLocation({
-    this.postalCode,
+    this.zipCode,
+    this.country,
   });
 
   factory CheckupLocation.fromJson(Map<String, dynamic> json) =>
@@ -87,5 +89,6 @@ class CheckupLocation {
   Map<String, dynamic> toJson() => _$CheckupLocationToJson(this);
 
   @override
-  String toString() => 'CheckupLocation { postalCode: $postalCode }';
+  String toString() =>
+      'CheckupLocation { zipCode: $zipCode, country: $country }';
 }

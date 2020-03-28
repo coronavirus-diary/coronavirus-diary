@@ -29,13 +29,13 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
         position.latitude,
         position.longitude,
       );
-      final String postalCode = places[0].postalCode;
+      final String zipCode = places[0].postalCode;
 
       updateCheckup(
         context: context,
         checkupState: checkupState,
         updateFunction: (Checkup checkup) {
-          checkup.location = CheckupLocation(postalCode: postalCode);
+          checkup.location = CheckupLocation(zipCode: zipCode);
           return checkup;
         },
       );

@@ -13,17 +13,15 @@ class QuestionsRepository {
           initialValue: null,
           labels: [
             localizations.questionShortnessOfBreathAnswer0,
-            '',
-            '',
-            '',
-            localizations.questionShortnessOfBreathAnswer4,
+            localizations.questionShortnessOfBreathAnswer1,
+            localizations.questionShortnessOfBreathAnswer2,
+            localizations.questionShortnessOfBreathAnswer3,
           ],
           semanticLabels: [
             localizations.questionShortnessOfBreathSemantics0,
             localizations.questionShortnessOfBreathSemantics1,
             localizations.questionShortnessOfBreathSemantics2,
             localizations.questionShortnessOfBreathSemantics3,
-            localizations.questionShortnessOfBreathSemantics4,
           ],
         ),
         ScaleQuestion(
@@ -32,17 +30,33 @@ class QuestionsRepository {
           initialValue: null,
           labels: [
             localizations.questionHaveACoughAnswer0,
-            '',
-            '',
-            '',
-            localizations.questionHaveACoughAnswer4,
+            localizations.questionHaveACoughAnswer1,
+            localizations.questionHaveACoughAnswer2,
+            localizations.questionHaveACoughAnswer3,
           ],
           semanticLabels: [
             localizations.questionHaveACoughSemantics0,
             localizations.questionHaveACoughSemantics1,
             localizations.questionHaveACoughSemantics2,
             localizations.questionHaveACoughSemantics3,
-            localizations.questionHaveACoughSemantics4,
+          ],
+        ),
+        ScaleQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '0',
+          title: localizations.questionHaveNauseaTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionHaveNauseaAnswer0,
+            localizations.questionHaveNauseaAnswer1,
+            localizations.questionHaveNauseaAnswer2,
+            localizations.questionHaveNauseaAnswer3,
+          ],
+          semanticLabels: [
+            localizations.questionHaveNauseaSemantics0,
+            localizations.questionHaveNauseaSemantics1,
+            localizations.questionHaveNauseaSemantics2,
+            localizations.questionHaveNauseaSemantics3,
           ],
         ),
         ScaleQuestion(
@@ -51,17 +65,13 @@ class QuestionsRepository {
           initialValue: null,
           labels: [
             localizations.questionHaveAFeverAnswer0,
-            '',
-            '',
-            '',
-            localizations.questionHaveAFeverAnswer4,
+            localizations.questionHaveAFeverAnswer1,
+            localizations.questionHaveAFeverAnswer2,
           ],
           semanticLabels: [
             localizations.questionHaveAFeverSemantics0,
             localizations.questionHaveAFeverSemantics1,
             localizations.questionHaveAFeverSemantics2,
-            localizations.questionHaveAFeverSemantics3,
-            localizations.questionHaveAFeverSemantics4,
           ],
         ),
       ];

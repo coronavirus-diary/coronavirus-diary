@@ -194,6 +194,9 @@ abstract class AppLocalizations {
   // Error that is displayed if the temperature entered is not in a valid temperature range.
   String get temperatureStepTemperatureOutOfRangeError;
 
+  // Label for entry field
+  String get temperatureStepTemperatureLabel;
+
   // Step 1 in the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogStep1;
 
@@ -220,6 +223,30 @@ abstract class AppLocalizations {
 
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
+
+  // Title that appears above the textfield where the user enters their location
+  String get locationStepTitle;
+
+  // Error that appears when the user enters their zip code incorrectly.
+  String get locationStepInvalidZipCode;
+
+  // Error that appears when the user enters their country incorrectly.
+  String get locationStepInvalidCountry;
+
+  // Title that appears within the textfield where the user enters their ZIP code
+  String get locationStepZipCode;
+
+  // Helper text describing what to enter in the text field for country.
+  String get locationStepCountryHelper;
+
+  // Radio button selection indicating that the user lives in the USA.
+  String get locationStepInUSA;
+
+  // Radio button selection indicating that the user lives outside of the USA.
+  String get locationStepAnotherCountry;
+
+  // Title that appears within the textfield where the user enters their country
+  String get locationStepCountry;
 
   // Heading text for the home screen
   String get homeScreenHeading;
@@ -318,7 +345,13 @@ abstract class AppLocalizations {
   String get questionShortnessOfBreathAnswer0;
 
   // Question answer.
-  String get questionShortnessOfBreathAnswer4;
+  String get questionShortnessOfBreathAnswer1;
+
+  // Question answer.
+  String get questionShortnessOfBreathAnswer2;
+
+  // Question answer.
+  String get questionShortnessOfBreathAnswer3;
 
   // Question accessibility semantics description.
   String get questionShortnessOfBreathSemantics0;
@@ -332,9 +365,6 @@ abstract class AppLocalizations {
   // Question accessibility semantics description.
   String get questionShortnessOfBreathSemantics3;
 
-  // Question accessibility semantics description.
-  String get questionShortnessOfBreathSemantics4;
-
   // Question title.
   String get questionHaveACoughTitle;
 
@@ -342,7 +372,13 @@ abstract class AppLocalizations {
   String get questionHaveACoughAnswer0;
 
   // Question answer.
-  String get questionHaveACoughAnswer4;
+  String get questionHaveACoughAnswer1;
+
+  // Question answer.
+  String get questionHaveACoughAnswer2;
+
+  // Question answer.
+  String get questionHaveACoughAnswer3;
 
   // Question accessibility semantics description.
   String get questionHaveACoughSemantics0;
@@ -356,8 +392,32 @@ abstract class AppLocalizations {
   // Question accessibility semantics description.
   String get questionHaveACoughSemantics3;
 
+  // Question title.
+  String get questionHaveNauseaTitle;
+
+  // Question answer.
+  String get questionHaveNauseaAnswer0;
+
+  // Question answer.
+  String get questionHaveNauseaAnswer1;
+
+  // Question answer.
+  String get questionHaveNauseaAnswer2;
+
+  // Question answer.
+  String get questionHaveNauseaAnswer3;
+
   // Question accessibility semantics description.
-  String get questionHaveACoughSemantics4;
+  String get questionHaveNauseaSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionHaveNauseaSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionHaveNauseaSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionHaveNauseaSemantics3;
 
   // Question title.
   String get questionHaveAFeverTitle;
@@ -366,7 +426,10 @@ abstract class AppLocalizations {
   String get questionHaveAFeverAnswer0;
 
   // Question answer.
-  String get questionHaveAFeverAnswer4;
+  String get questionHaveAFeverAnswer1;
+
+  // Question answer.
+  String get questionHaveAFeverAnswer2;
 
   // Question accessibility semantics description.
   String get questionHaveAFeverSemantics0;
@@ -376,12 +439,6 @@ abstract class AppLocalizations {
 
   // Question accessibility semantics description.
   String get questionHaveAFeverSemantics2;
-
-  // Question accessibility semantics description.
-  String get questionHaveAFeverSemantics3;
-
-  // Question accessibility semantics description.
-  String get questionHaveAFeverSemantics4;
 
   // Let the user that they can scroll to see more content
   String get scrollMoreIndicatorMessage;

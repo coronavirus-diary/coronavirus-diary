@@ -1,7 +1,6 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
-import 'package:covidnearme/src/ui/widgets/questions/inputs/simple_slider.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_item.dart';
 import 'package:file/memory.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +29,8 @@ void main() {
     expect(find.text('subtitle'), findsOneWidget);
     expect(find.text('title'), findsOneWidget);
 
-    // Does not display slider for non-Slider questions.
-    expect(find.byType(SimpleSlider), findsNothing);
+    // Does not display scale for non-Scale questions.
+    expect(find.byType(RadioButtonScale), findsNothing);
   });
 
   testWidgets('QuestionItem displays question values for SliderQuestion',
