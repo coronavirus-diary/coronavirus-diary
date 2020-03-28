@@ -98,6 +98,15 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
+  // The long informed consent question asked of users
+  String get consentStepQuestion;
+
+  // Heading for the page show reminds the user that they've said no
+  String get deniedConsentHeading;
+
+  // The app's response if the user does not agree to the informed consent question
+  String get deniedConsentMessage;
+
   // The title of the AssessmentScreen
   String get assessmentScreenTitle;
 
@@ -370,6 +379,9 @@ abstract class AppLocalizations {
 
   // Question accessibility semantics description.
   String get questionHaveAFeverSemantics4;
+
+  // Let the user that they can scroll to see more content
+  String get scrollMoreIndicatorMessage;
 }
 
 class _AppLocalizationsDelegate

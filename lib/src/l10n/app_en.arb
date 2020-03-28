@@ -1,45 +1,71 @@
 {
   "@@locale": "en",
+
+  "consentStepQuestion": "# Informed Consent\n\nSince the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.\n\nYou are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.\n\nTotal daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.\n\nYou can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.\n\nWe will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.\n\nIf this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"No\".",
+  "@consentStepQuestion": {
+    "description": "The long informed consent question asked of users"
+  },
+
+  "deniedConsentHeading": "Consent denied",
+  "@deniedConsentHeading":  {
+    "description": "Heading for the page show reminds the user that they've said no"
+  },
+
+  "deniedConsentMessage": "We need you to grant the App consent to perform the required action.",
+  "@deniedConsentMessage":  {
+    "description": "The app's response if the user does not agree to the informed consent question"
+  },
+
   "assessmentScreenTitle": "Your Personalized Assessment",
   "@assessmentScreenTitle": {
     "description": "The title of the AssessmentScreen"
   },
+
   "negativeAssessmentTestingCriteria": "You don't meet testing criteria",
   "@negativeAssessmentTestingCriteria": {
     "description": "The patient does not require further testing"
   },
+
   "negativeAssessmentCheckInTomorrow": "If you continue to experience symptoms, please check in tomorrow.",
   "@negativeAssessmentCheckInTomorrow": {
     "description": "The patient should check in again tomorrow"
   },
+
   "negativeAssessmentConsultPhysician": "If they become serious, please consult a physician.",
   "@negativeAssessmentConsultPhysician": {
     "description": "Advise the patient to consult a doctor if their symptoms worsen"
   },
+
   "positiveAssessmentConsultPhysician": "Please contact your physician",
   "@positiveAssessmentConsultPhysician": {
     "description": "Advise the patient to consult a doctor"
   },
+
   "positiveAssessmentShowingSymptoms": "You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.",
   "@positiveAssessmentShowingSymptoms": {
     "description": "Advise the patient to avoid contact with others until they've seen a doctor"
   },
+
   "positiveAssessmentDoNotPanic":  "Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
   "@positiveAssessmentDoNotPanic": {
     "description": "Advise the patient to remain calm"
   },
+
   "checkupScreenErrorRetrievingExperience": "There was an error retrieving the checkup experience. Please try again later.",
   "@checkupScreenErrorRetrievingExperience": {
     "description": "An error occurred while trying to fetch data"
   },
+
   "checkupScreenHUDLabel": "Loading your assessment",
   "@checkupScreenHUDLabel": {
     "description": "A label that indicates that the app is busy loading the patient's assessment"
   },
+
   "checkupScreenTitle": "Your Health Checkup",
   "@checkupScreenTitle": {
     "description": "Title for the checkup screen"
   },
+
   "checkupProgressBarPercentCompleteText": "Step {stepIndex} of {stepCount}",
   "@checkupProgressBarPercentCompleteText": {
     "description": "Which step in the overall process is the patient currently working on",
@@ -463,5 +489,10 @@
   "questionHaveAFeverSemantics4": "I'm burning up",
   "@questionHaveAFeverSemantics4": {
     "description": "Question accessibility semantics description."
+  },
+
+  "scrollMoreIndicatorMessage": "SCROLL FOR MORE",
+  "@scrollMoreIndicatorMessage": {
+    "description": "Let the user that they can scroll to see more content"
   }
 }

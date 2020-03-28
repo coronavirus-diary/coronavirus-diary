@@ -3,6 +3,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+
 import 'bob.dart';
 
 class ScrollMoreIndicator extends StatefulWidget {
@@ -86,6 +88,7 @@ class _ScrollMoreIndicatorState extends State<ScrollMoreIndicator> {
     final Color textColor = DefaultTextStyle.of(context).style.color;
     final Color backColor = Theme.of(context).scaffoldBackgroundColor;
     final double iconSize = 48.0 * MediaQuery.of(context).textScaleFactor;
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return Stack(
       fit: StackFit.passthrough,
       children: <Widget>[
@@ -138,7 +141,8 @@ class _ScrollMoreIndicatorState extends State<ScrollMoreIndicator> {
                           children: <Widget>[
                             Padding(
                               padding: EdgeInsets.only(bottom: iconSize / 2.0),
-                              child: Text('SCROLL FOR MORE',
+                              child: Text(
+                                  localizations.scrollMoreIndicatorMessage,
                                   style: Theme.of(context)
                                       .textTheme
                                       .button

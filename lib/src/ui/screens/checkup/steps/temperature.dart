@@ -108,11 +108,14 @@ class _TemperatureStepState extends State<TemperatureStep> {
         final AppLocalizations localizations = AppLocalizations.of(context);
         final ThemeData theme = Theme.of(context);
         return Scaffold(
-          appBar: AppBar(title: Text(
-            localizations.temperatureStepHowToDialogTitle,
-            style: theme.textTheme.headline.copyWith(color: theme.colorScheme.onBackground),
-            textAlign: TextAlign.center,
-          ),),
+          appBar: AppBar(
+            title: Text(
+              localizations.temperatureStepHowToDialogTitle,
+              style: theme.textTheme.headline
+                  .copyWith(color: theme.colorScheme.onBackground),
+              textAlign: TextAlign.center,
+            ),
+          ),
           body: ScrollMoreIndicator(
             controller: controller,
             child: ListView(
@@ -133,7 +136,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   number: 2,
                 ),
                 Text(
-                  'How?',
+                  localizations.temperatureStepHowHeading,
                   style: categoryFontStyle,
                 ),
                 SizedBox(height: 10),
