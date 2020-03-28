@@ -266,7 +266,7 @@
   },
 
   "tutorialIntroStepDescription": "CovidNearMe is a US Centers for Disease Control project to help the public respond to the novel coronavirus (COVID-19). It allows you to:",
-  "@tutorialIntroStepWelcome": {
+  "@tutorialIntroStepDescription": {
     "description": "Brief description of the app, just below the Heading."
   },
 
