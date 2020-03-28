@@ -44,7 +44,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   children: <Widget>[
                     IntroStep(),
                     ConsentStep(),
-                    if (state.preferences.agreedToTerms == false) DeniedConsent(),
+                    if (state.preferences.agreedToTerms == false)
+                      DeniedConsent(),
                   ],
                 ),
               ),

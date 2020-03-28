@@ -382,6 +382,12 @@ abstract class AppLocalizations {
 
   // Let the user that they can scroll to see more content
   String get scrollMoreIndicatorMessage;
+
+  // Semantics Label for tutorialIntroStepWelcome.
+  String get tutorialIntroStepWelcomeSemanticsLabel;
+
+  // Semantics Label for getStartedStepsJoined.
+  String get getStartedStepJoinedSemanticsLabel;
 }
 
 class _AppLocalizationsDelegate

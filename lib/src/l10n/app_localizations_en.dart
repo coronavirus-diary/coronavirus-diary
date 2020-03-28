@@ -358,4 +358,12 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
+
+  @override
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Welcome to the Covid Near Me App';
+
+  @override
+  String get getStartedStepJoinedSemanticsLabel =>
+      'You\'ve joined the Covid Near Me community!';
 }
