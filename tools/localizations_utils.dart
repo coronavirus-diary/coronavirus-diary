@@ -446,7 +446,9 @@ String generateString(String value, {bool escapeDollar = true}) {
       .replaceAll('"', '\\"')
       .replaceAll(backslash, '\\\\');
 
-  return "'$value'";
+  // At this point "\n" - backslash followed by newline - will have been converted to
+  // a newline character, which can only appear in a triple-quoted string.
+  return value.contains('\n') ? "'''$value'''" : "'$value'";
 }
 
 /// Only used to generate localization strings for the Kannada locale ('kn') because

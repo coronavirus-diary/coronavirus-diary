@@ -133,7 +133,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   number: 2,
                 ),
                 Text(
-                  'How?',
+                  localizations.temperatureStepHowHeading,
                   style: categoryFontStyle,
                 ),
                 SizedBox(height: 10),

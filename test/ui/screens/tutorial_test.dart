@@ -28,12 +28,6 @@ void main() {
     await tester.pumpWidget(Container());
     await tester.pumpWidget(setUpTutorialScreen(child: ConsentStep()));
 
-    // Loading screen.
-    expect(find.text('Loading...'), findsOneWidget);
-
-    // Finish loading transition.
-    await tester.pumpAndSettle();
-
     expect(find.text('NO'), findsOneWidget);
     expect(find.text('I AGREE'), findsOneWidget);
 
