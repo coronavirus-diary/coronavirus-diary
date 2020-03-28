@@ -254,6 +254,9 @@ abstract class AppLocalizations {
   // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
   String get tutorialIntroStepWelcome;
 
+  // Brief description of the app, just below the Heading.
+  String get tutorialIntroStepDescription;
+
   // Describes the outcome of running the app
   String get tutorialIntroStepCompleteACheckup;
 
@@ -264,7 +267,7 @@ abstract class AppLocalizations {
   String get tutorialIntroStepAidEffort;
 
   // Label for the button that shows the next app screen
-  String get tutorialIntroStepLearnMore;
+  String get tutorialIntroStepGetStarted;
 
   // Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated
   String get getStartedStepJoined;

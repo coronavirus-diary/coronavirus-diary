@@ -203,7 +203,11 @@ class AppLocalizationsEn extends AppLocalizations {
       'Check back in if you continue to experience symptoms.';
 
   @override
-  String get tutorialIntroStepWelcome => 'Welcome to the CovidNearMe App';
+  String get tutorialIntroStepWelcome => 'Welcome to CovidNearMe';
+
+  @override
+  String get tutorialIntroStepDescription =>
+      'CovidNearMe is a US Centers for Disease Control project to help the public respond to the novel coronavirus (COVID-19). It allows you to:';
 
   @override
   String get tutorialIntroStepCompleteACheckup =>
@@ -217,7 +221,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
 
   @override
-  String get tutorialIntroStepLearnMore => 'LEARN MORE';
+  String get tutorialIntroStepGetStarted => 'GET STARTED';
 
   @override
   String get getStartedStepJoined =>
