@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer' as developer;
 
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -11,8 +12,10 @@ export 'package:covidnearme/src/data/models/questions.dart';
 
 class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
   final QuestionsRepository questionsRepository;
+  final AppLocalizations localizations;
 
-  QuestionsBloc({@required this.questionsRepository});
+  QuestionsBloc(
+      {@required this.questionsRepository, @required this.localizations});
 
   @override
   QuestionsState get initialState => const QuestionsStateNotLoaded();
@@ -30,7 +33,7 @@ class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
     yield const QuestionsStateLoading();
 
     try {
-      final questions = await questionsRepository.listQuestions();
+      final questions = await questionsRepository.listQuestions(localizations);
       yield QuestionsStateLoaded(questions);
     } on Exception catch (exception) {
       developer.log(

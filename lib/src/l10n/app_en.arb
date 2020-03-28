@@ -1,56 +1,45 @@
 {
   "@@locale": "en",
-
   "assessmentScreenTitle": "Your Personalized Assessment",
   "@assessmentScreenTitle": {
-    "description": "The title of the AssesmentScreen"
+    "description": "The title of the AssessmentScreen"
   },
-
   "negativeAssessmentTestingCriteria": "You don't meet testing criteria",
   "@negativeAssessmentTestingCriteria": {
     "description": "The patient does not require further testing"
   },
-
   "negativeAssessmentCheckInTomorrow": "If you continue to experience symptoms, please check in tomorrow.",
   "@negativeAssessmentCheckInTomorrow": {
     "description": "The patient should check in again tomorrow"
   },
-
   "negativeAssessmentConsultPhysician": "If they become serious, please consult a physician.",
   "@negativeAssessmentConsultPhysician": {
     "description": "Advise the patient to consult a doctor if their symptoms worsen"
   },
-
   "positiveAssessmentConsultPhysician": "Please contact your physician",
   "@positiveAssessmentConsultPhysician": {
     "description": "Advise the patient to consult a doctor"
   },
-
   "positiveAssessmentShowingSymptoms": "You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.",
   "@positiveAssessmentShowingSymptoms": {
     "description": "Advise the patient to avoid contact with others until they've seen a doctor"
   },
-
   "positiveAssessmentDoNotPanic":  "Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
   "@positiveAssessmentDoNotPanic": {
     "description": "Advise the patient to remain calm"
   },
-
   "checkupScreenErrorRetrievingExperience": "There was an error retrieving the checkup experience. Please try again later.",
   "@checkupScreenErrorRetrievingExperience": {
-    "description": "An error occured while trying to fetch data"
+    "description": "An error occurred while trying to fetch data"
   },
-
   "checkupScreenHUDLabel": "Loading your assessment",
   "@checkupScreenHUDLabel": {
     "description": "A label that indicates that the app is busy loading the patient's assessment"
   },
-
   "checkupScreenTitle": "Your Health Checkup",
   "@checkupScreenTitle": {
     "description": "Title for the checkup screen"
   },
-
   "checkupProgressBarPercentCompleteText": "Step {stepIndex} of {stepCount}",
   "@checkupProgressBarPercentCompleteText": {
     "description": "Which step in the overall process is the patient currently working on",
@@ -66,14 +55,19 @@
     }
   },
 
-  "checkupProgressBarSubmit": "SUBMIT",
-  "@checkupProgressBarSubmit": {
+  "checkupStepFinishedSubmit": "SUBMIT",
+  "@checkupStepFinishedSubmit": {
     "description": "Submit the data for the checkup"
   },
 
-  "checkupProgressBarNext": "NEXT",
-  "@checkupProgressBarNext": {
+  "checkupStepFinishedNext": "NEXT",
+  "@checkupStepFinishedNext": {
     "description": "Continue to the next checkup screen"
+  },
+
+  "checkupStepFinishedAnswerAllQuestions": "Please answer all the questions to continue",
+  "@checkupStepFinishedAnswerAllQuestions": {
+    "description": "Prompt when all the questions haven't been answered yet."
   },
 
   "introStepTimeForYourCheckup": "It's time for your checkup.",
@@ -101,7 +95,7 @@
     "description": "Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's zip code"
   },
 
-  "introStepButtonStartLabel": "Start checkup",
+  "introStepButtonStartLabel": "START CHECKUP",
   "@introStepButtonStartLabel": {
     "description": "Starts the checkup by showing the first checkup screen"
   },
@@ -141,7 +135,7 @@
     "description": "Ask the user to correct their temperature reading"
   },
 
-  "temperatureStepHowToDialogTitle": "When and how to take your temperature:",
+  "temperatureStepHowToDialogTitle": "Taking your Temperature",
   "@temperatureStepHowToDialogTitle": {
     "description": "Title for a dialog that explains how to take your temperature in 5 steps"
   },
@@ -171,7 +165,7 @@
     "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
   },
 
-  "temperatureStepHowToDialogReturn": "Return to checkup",
+  "temperatureStepHowToDialogReturn": "RETURN TO CHECKUP",
   "@temperatureStepHowToDialogReturn": {
     "description": "Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps"
   },
@@ -186,7 +180,7 @@
     "description": "Title that appears within the textfield where the user enters their temperature"
   },
 
-  "temperatureStepHelp": "Need help? Click for instructions.",
+  "temperatureStepHelp": "How to check your temperature",
   "@temperatureStepHelp": {
     "description": "Label for a button that brings up a help screen"
   },
@@ -206,7 +200,7 @@
     "description": "Subheading text for the home screen"
   },
 
-  "homeScreenCheckupButtonLabel": "Check up on your health",
+  "homeScreenCheckupButtonLabel": "START HEALTH CHECKUP",
   "@homeScreenCheckupButtonLabel": {
     "description": "Label for a button that shows the checkup screen"
   },
@@ -223,7 +217,7 @@
 
   "homeScreenViewMyAssessment": "View my assessment",
   "@homeScreenViewMyAssessment": {
-    "description": "View the assement of the checkup data"
+    "description": "View the assessment of the checkup data"
   },
 
   "shareAppDownloadPrompt": "Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK",
@@ -241,7 +235,7 @@
     "description": "Subheading for the app sharing sheet, see https://pub.dev/packages/share"
   },
 
-  "shareAppNow": "Share now",
+  "shareAppNow": "SHARE NOW",
   "@shareAppNow": {
     "description": "Final prompt to share the app for the app sharing sheeting, see https://pub.dev/packages/share"
   },
@@ -276,8 +270,8 @@
     "description": "Describes the outcome of running the app"
   },
 
-  "tutorialIntroStepRecieveAssessment": "Receive a personalized health assessment.",
-  "@tutorialIntroStepRecieveAssessment": {
+  "tutorialIntroStepReceiveAssessment": "Receive a personalized health assessment.",
+  "@tutorialIntroStepReceiveAssessment": {
     "description": "Describes the benefit of the app"
   },
 
@@ -286,7 +280,7 @@
     "description": "Describes the benefit of the app to the community."
   },
 
-  "tutorialIntroStepLearnMore": "Click here to learn more",
+  "tutorialIntroStepLearnMore": "LEARN MORE",
   "@tutorialIntroStepLearnMore": {
     "description": "Label for the button that shows the next app screen"
   },
@@ -296,27 +290,22 @@
     "description": "Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated"
   },
 
-  "getStartedStepClick": "Click here to get started",
-  "@getStartedStepClick": {
-    "description": "Label for the button that shows the next app screen"
-  },
-
-  "consentStepDidNotAgree": "Did not agree",
+  "consentStepDidNotAgree": "DID NOT AGREE",
   "@consentStepDidNotAgree": {
     "description": "Label for the button that indicates that the user did not accept the app license"
   },
 
-  "consentStepNo": "No",
+  "consentStepNo": "NO",
   "@consentStepNo": {
     "description": "Label for the button that indicates that the user will not accept the app license"
   },
 
-  "consentStepAgreed": "Agree",
+  "consentStepAgreed": "AGREED",
   "@consentStepAgreed": {
     "description": "Label for the button that indicates that the user did accept the app license"
   },
 
-  "consentStepIAgree": "I agree",
+  "consentStepIAgree": "I AGREE",
   "@consentStepIAgree": {
     "description": "Label for the button that indicates that the user will accept the app license"
   },
@@ -326,8 +315,153 @@
     "description": "Displayed while the app is loading the next screen"
   },
 
+  "networkUnavailableBannerContinueOffline":"CONTINUE OFFLINE",
+  "@networkUnavailableBannerContinueOffline":{
+     "description":"Label for button that indicates that the user will continue using the app offline"
+  },
+
+  "networkUnavailableBannerConnectToWiFi":"CONNECT TO WIFI",
+  "@networkUnavailableBannerConnectToWiFi":{
+     "description":"Label for button that opens the system network settings"
+  },
+
+  "networkUnavailableBannerMessage":"You seem to be offline. Please check your network settings and try again.",
+  "@networkUnavailableBannerMessage":{
+     "description":"Message shown on the banner displayed when no network connection is detected"
+  },
+
   "deniedConsentBackButton": "Go back to the informed consent screen",
   "@deniedConsentBackButton": {
     "description": "Label for the back button on the denied consent screen"
+  },
+
+  "questionShortnessOfBreathTitle": "Are you experiencing shortness of breath?",
+  "@questionShortnessOfBreathTitle": {
+    "description": "Question title."
+  },
+
+  "questionShortnessOfBreathSubtitle": "Do you feel like you can't get enough air?",
+  "@questionShortnessOfBreathSubtitle": {
+    "description": "Question subtitle."
+  },
+
+  "questionShortnessOfBreathAnswer0": "I can breathe fine",
+  "@questionShortnessOfBreathAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionShortnessOfBreathAnswer4": "I can hardly breathe at all",
+  "@questionShortnessOfBreathAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionShortnessOfBreathSemantics0": "I can breathe fine",
+  "@questionShortnessOfBreathSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics1": "I have a little trouble breathing",
+  "@questionShortnessOfBreathSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics2": "I have some trouble breathing",
+  "@questionShortnessOfBreathSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics3": "It is difficult to breathe",
+  "@questionShortnessOfBreathSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionShortnessOfBreathSemantics4": "I can hardly breathe at all",
+  "@questionShortnessOfBreathSemantics4": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughTitle": "Do you have a cough?",
+  "@questionHaveACoughTitle": {
+    "description": "Question title."
+  },
+
+  "questionHaveACoughAnswer0": "Never",
+  "@questionHaveACoughAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionHaveACoughAnswer4": "Constantly",
+  "@questionHaveACoughAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionHaveACoughSemantics0": "Never",
+  "@questionHaveACoughSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics1": "Occasionally",
+  "@questionHaveACoughSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics2": "Sometimes",
+  "@questionHaveACoughSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics3": "Often",
+  "@questionHaveACoughSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveACoughSemantics4": "Constantly",
+  "@questionHaveACoughSemantics4": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverTitle": "Have you felt like you've had a fever?",
+  "@questionHaveAFeverTitle": {
+    "description": "Question title."
+  },
+
+  "questionHaveAFeverAnswer0": "No",
+  "@questionHaveAFeverAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionHaveAFeverAnswer4": "Maybe?",
+  "@questionHaveAFeverAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionHaveAFeverAnswer4": "I'm burning up",
+  "@questionHaveAFeverAnswer4": {
+    "description": "Question answer."
+  },
+
+  "questionHaveAFeverSemantics0": "No",
+  "@questionHaveAFeverSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics1": "Unlikely",
+  "@questionHaveAFeverSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics2": "Maybe",
+  "@questionHaveAFeverSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics3": "Sometimes",
+  "@questionHaveAFeverSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverSemantics4": "I'm burning up",
+  "@questionHaveAFeverSemantics4": {
+    "description": "Question accessibility semantics description."
   }
 }

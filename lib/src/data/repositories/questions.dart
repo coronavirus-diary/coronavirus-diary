@@ -1,43 +1,68 @@
 import 'dart:async';
 
 import 'package:covidnearme/src/data/models/questions.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 class QuestionsRepository {
-  Future<List<Question>> listQuestions() async => [
-        SliderQuestion(
+  Future<List<Question>> listQuestions(AppLocalizations localizations) async =>
+      [
+        ScaleQuestion(
           id: '5325',
-          title: 'Are you experiencing shortness of breath?',
-          subtitle: "Do you feel like you can't get enough air?",
-          min: 0,
-          max: 4,
-          initialValue: 0,
-          labels: {
-            '0': "I can breathe fine",
-            '4': "I can't breathe at all",
-          },
+          title: localizations.questionShortnessOfBreathTitle,
+          subtitle: localizations.questionShortnessOfBreathSubtitle,
+          initialValue: null,
+          labels: [
+            localizations.questionShortnessOfBreathAnswer0,
+            '',
+            '',
+            '',
+            localizations.questionShortnessOfBreathAnswer4,
+          ],
+          semanticLabels: [
+            localizations.questionShortnessOfBreathSemantics0,
+            localizations.questionShortnessOfBreathSemantics1,
+            localizations.questionShortnessOfBreathSemantics2,
+            localizations.questionShortnessOfBreathSemantics3,
+            localizations.questionShortnessOfBreathSemantics4,
+          ],
         ),
-        SliderQuestion(
+        ScaleQuestion(
           id: '32444',
-          title: 'Do you have a cough?',
-          min: 0,
-          max: 4,
-          initialValue: 0,
-          labels: {
-            '0': 'Never',
-            '4': 'Constantly',
-          },
+          title: localizations.questionHaveACoughTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionHaveACoughAnswer0,
+            '',
+            '',
+            '',
+            localizations.questionHaveACoughAnswer4,
+          ],
+          semanticLabels: [
+            localizations.questionHaveACoughSemantics0,
+            localizations.questionHaveACoughSemantics1,
+            localizations.questionHaveACoughSemantics2,
+            localizations.questionHaveACoughSemantics3,
+            localizations.questionHaveACoughSemantics4,
+          ],
         ),
-        SliderQuestion(
+        ScaleQuestion(
           id: '4664',
-          title: "Have you felt like you've had a fever?",
-          min: 0,
-          max: 4,
-          initialValue: 0,
-          labels: {
-            '0': "No",
-            '2': "Maybe?",
-            '4': "I'm burning up",
-          },
+          title: localizations.questionHaveAFeverTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionHaveAFeverAnswer0,
+            '',
+            '',
+            '',
+            localizations.questionHaveAFeverAnswer4,
+          ],
+          semanticLabels: [
+            localizations.questionHaveAFeverSemantics0,
+            localizations.questionHaveAFeverSemantics1,
+            localizations.questionHaveAFeverSemantics2,
+            localizations.questionHaveAFeverSemantics3,
+            localizations.questionHaveAFeverSemantics4,
+          ],
         ),
       ];
 }

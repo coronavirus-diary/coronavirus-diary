@@ -6,11 +6,14 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'question_item.dart';
 import 'step_finished_button.dart';
 
+typedef QuestionResponseCallback = void Function(
+    Question question, dynamic value);
+
 class QuestionView extends StatefulWidget {
   final List<Question> questions;
   final Color color;
   final EdgeInsetsGeometry padding;
-  final Function(Question question, dynamic value) onChange;
+  final QuestionResponseCallback onChange;
   final bool isLastStep;
 
   const QuestionView({
@@ -26,13 +29,22 @@ class QuestionView extends StatefulWidget {
 }
 
 class _QuestionViewState extends State<QuestionView> {
+  Set<Question> _answered = {};
+
   List<Widget> _getQuestions() {
     return widget.questions
         .map((Question question) => QuestionItem(
               question: question,
-              onChange: (dynamic value) => widget.onChange(question, value),
+              onChanged: (dynamic value) {
+                _answered.add(question);
+                return widget.onChange(question, value);
+              },
             ))
         .toList();
+  }
+
+  bool get _allQuestionsAnswered {
+    return widget.questions.toSet().difference(_answered).isEmpty;
   }
 
   @override
@@ -45,7 +57,7 @@ class _QuestionViewState extends State<QuestionView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ..._getQuestions(),
-            StepFinishedButton(),
+            StepFinishedButton(validated: _allQuestionsAnswered),
             SizedBox(height: 20),
           ],
         ),

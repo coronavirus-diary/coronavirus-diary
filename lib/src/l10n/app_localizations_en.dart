@@ -62,10 +62,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get checkupProgressBarSubmit => 'SUBMIT';
+  String get checkupStepFinishedSubmit => 'SUBMIT';
 
   @override
-  String get checkupProgressBarNext => 'NEXT';
+  String get checkupStepFinishedNext => 'NEXT';
+
+  @override
+  String get checkupStepFinishedAnswerAllQuestions =>
+      'Please answer all the questions to continue';
 
   @override
   String get introStepTimeForYourCheckup => 'It\'s time for your checkup.';
@@ -87,7 +91,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'We will collect your zip code.';
 
   @override
-  String get introStepButtonStartLabel => 'Start checkup';
+  String get introStepButtonStartLabel => 'START CHECKUP';
 
   @override
   String get subjectiveStepQuestionsLoadedError =>
@@ -116,8 +120,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please enter a value above 70 ℉';
 
   @override
-  String get temperatureStepHowToDialogTitle =>
-      'When and how to take your temperature:';
+  String get temperatureStepHowToDialogTitle => 'Taking your Temperature';
 
   @override
   String get temperatureStepHowToDialogStep1 =>
@@ -140,7 +143,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Take out your thermometer and record your temperature.';
 
   @override
-  String get temperatureStepHowToDialogReturn => 'Return to checkup';
+  String get temperatureStepHowToDialogReturn => 'RETURN TO CHECKUP';
 
   @override
   String get temperatureStepTitle => 'Take your temperature';
@@ -149,7 +152,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get temperatureStepInputLabel => 'Enter your temperature';
 
   @override
-  String get temperatureStepHelp => 'Need help? Click for instructions.';
+  String get temperatureStepHelp => 'How to check your temperature';
 
   @override
   String get homeScreenHeading => 'Concerned about your health?';
@@ -159,7 +162,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Are you experiencing symptoms? Have you been in contact with someone who is infected?';
 
   @override
-  String get homeScreenCheckupButtonLabel => 'Check up on your health';
+  String get homeScreenCheckupButtonLabel => 'START HEALTH CHECKUP';
 
   @override
   String get homeScreenYouHaveCompletedCheckup =>
@@ -184,7 +187,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Share this app with your friends, coworkers, and family (especially grandparents).';
 
   @override
-  String get shareAppNow => 'Share now';
+  String get shareAppNow => 'SHARE NOW';
 
   @override
   String get staySafeTitle => 'Stay Safe';
@@ -207,38 +210,127 @@ class AppLocalizationsEn extends AppLocalizations {
       'Complete a daily health checkup.';
 
   @override
-  String get tutorialIntroStepRecieveAssessment =>
+  String get tutorialIntroStepReceiveAssessment =>
       'Receive a personalized health assessment.';
 
   @override
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
 
   @override
-  String get tutorialIntroStepLearnMore => 'Click here to learn more';
+  String get tutorialIntroStepLearnMore => 'LEARN MORE';
 
   @override
   String get getStartedStepJoined =>
       'You\'ve joined the CovidNearMe community!';
 
   @override
-  String get getStartedStepClick => 'Click here to get started';
+  String get consentStepDidNotAgree => 'DID NOT AGREE';
 
   @override
-  String get consentStepDidNotAgree => 'Did not agree';
+  String get consentStepNo => 'NO';
 
   @override
-  String get consentStepNo => 'No';
+  String get consentStepAgreed => 'AGREED';
 
   @override
-  String get consentStepAgreed => 'Agree';
-
-  @override
-  String get consentStepIAgree => 'I agree';
+  String get consentStepIAgree => 'I AGREE';
 
   @override
   String get consentStepLoading => 'Loading...';
 
   @override
+  String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
+
+  @override
+  String get networkUnavailableBannerConnectToWiFi => 'CONNECT TO WIFI';
+
+  @override
+  String get networkUnavailableBannerMessage =>
+      'You seem to be offline. Please check your network settings and try again.';
+
+  @override
   String get deniedConsentBackButton =>
       'Go back to the informed consent screen';
+
+  @override
+  String get questionShortnessOfBreathTitle =>
+      'Are you experiencing shortness of breath?';
+
+  @override
+  String get questionShortnessOfBreathSubtitle =>
+      'Do you feel like you can\'t get enough air?';
+
+  @override
+  String get questionShortnessOfBreathAnswer0 => 'I can breathe fine';
+
+  @override
+  String get questionShortnessOfBreathAnswer4 => 'I can hardly breathe at all';
+
+  @override
+  String get questionShortnessOfBreathSemantics0 => 'I can breathe fine';
+
+  @override
+  String get questionShortnessOfBreathSemantics1 =>
+      'I have a little trouble breathing';
+
+  @override
+  String get questionShortnessOfBreathSemantics2 =>
+      'I have some trouble breathing';
+
+  @override
+  String get questionShortnessOfBreathSemantics3 =>
+      'It is difficult to breathe';
+
+  @override
+  String get questionShortnessOfBreathSemantics4 =>
+      'I can hardly breathe at all';
+
+  @override
+  String get questionHaveACoughTitle => 'Do you have a cough?';
+
+  @override
+  String get questionHaveACoughAnswer0 => 'Never';
+
+  @override
+  String get questionHaveACoughAnswer4 => 'Constantly';
+
+  @override
+  String get questionHaveACoughSemantics0 => 'Never';
+
+  @override
+  String get questionHaveACoughSemantics1 => 'Occasionally';
+
+  @override
+  String get questionHaveACoughSemantics2 => 'Sometimes';
+
+  @override
+  String get questionHaveACoughSemantics3 => 'Often';
+
+  @override
+  String get questionHaveACoughSemantics4 => 'Constantly';
+
+  @override
+  String get questionHaveAFeverTitle =>
+      'Have you felt like you\'ve had a fever?';
+
+  @override
+  String get questionHaveAFeverAnswer0 => 'No';
+
+  @override
+  String get questionHaveAFeverAnswer4 => 'I\'m burning up';
+
+  @override
+  String get questionHaveAFeverSemantics0 => 'No';
+
+  @override
+  String get questionHaveAFeverSemantics1 => 'Unlikely';
+
+  @override
+  String get questionHaveAFeverSemantics2 => 'Maybe';
+
+  @override
+  String get questionHaveAFeverSemantics3 => 'Sometimes';
+
+  @override
+  String get questionHaveAFeverSemantics4 => 'I\'m burning up';
 }

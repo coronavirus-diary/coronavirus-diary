@@ -1,5 +1,7 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/l10n/app_localizations_en.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pedantic/pedantic.dart';
 
@@ -13,7 +15,10 @@ void main() {
   });
 
   test('QuestionsBloc only responds to LoadQuestions events', () async {
-    final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
+    final bloc = QuestionsBloc(
+      questionsRepository: QuestionsRepository(),
+      localizations: AppLocalizationsEn(),
+    );
     bloc.add(NotQuestion());
     unawaited(bloc.close());
 
@@ -31,7 +36,10 @@ void main() {
   test(
       'QuestionsBloc returns the question list after loading when it receives '
       'a LoadQuestions event', () async {
-    final bloc = QuestionsBloc(questionsRepository: QuestionsRepository());
+    final bloc = QuestionsBloc(
+      questionsRepository: QuestionsRepository(),
+      localizations: AppLocalizationsEn(),
+    );
     bloc.add(LoadQuestions());
     unawaited(bloc.close());
 
@@ -50,7 +58,10 @@ void main() {
 
   test('QuestionsBloc catches Exceptions thrown when loading the question list',
       () async {
-    final bloc = QuestionsBloc(questionsRepository: FakeQuestionsRepository());
+    final bloc = QuestionsBloc(
+      questionsRepository: FakeQuestionsRepository(),
+      localizations: AppLocalizationsEn(),
+    );
     bloc.add(LoadQuestions());
     unawaited(bloc.close());
 
@@ -72,7 +83,7 @@ class NotQuestion extends QuestionsEvent {}
 
 class FakeQuestionsRepository implements QuestionsRepository {
   @override
-  Future<List<Question>> listQuestions() {
+  Future<List<Question>> listQuestions(AppLocalizations localizations) {
     throw Exception('Failed to load.');
   }
 }

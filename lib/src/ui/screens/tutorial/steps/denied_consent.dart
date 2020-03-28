@@ -49,6 +49,7 @@ class DeniedConsent extends StatelessWidget {
                       ),
                       Text(
                         'Consent denied',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
                           fontSize: 20,
@@ -68,10 +69,12 @@ class DeniedConsent extends StatelessWidget {
                                 MarkdownStyleSheet.fromTheme(Theme.of(context))
                                     .copyWith(
                               h1Align: WrapAlignment.center,
-                              p: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
+                              p: Theme.of(context).textTheme.body2.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.onSurface,
+                                  ),
+                              textScaleFactor:
+                                  MediaQuery.of(context).textScaleFactor,
                             ),
                           ),
                         ),

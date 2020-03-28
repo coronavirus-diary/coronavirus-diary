@@ -98,7 +98,7 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
-  // The title of the AssesmentScreen
+  // The title of the AssessmentScreen
   String get assessmentScreenTitle;
 
   // The patient does not require further testing
@@ -119,7 +119,7 @@ abstract class AppLocalizations {
   // Advise the patient to remain calm
   String get positiveAssessmentDoNotPanic;
 
-  // An error occured while trying to fetch data
+  // An error occurred while trying to fetch data
   String get checkupScreenErrorRetrievingExperience;
 
   // A label that indicates that the app is busy loading the patient's assessment
@@ -132,10 +132,13 @@ abstract class AppLocalizations {
   String checkupProgressBarPercentCompleteText(int stepIndex, int stepCount);
 
   // Submit the data for the checkup
-  String get checkupProgressBarSubmit;
+  String get checkupStepFinishedSubmit;
 
   // Continue to the next checkup screen
-  String get checkupProgressBarNext;
+  String get checkupStepFinishedNext;
+
+  // Prompt when all the questions haven't been answered yet.
+  String get checkupStepFinishedAnswerAllQuestions;
 
   // Heading at the top of the Your Health Checkup screen
   String get introStepTimeForYourCheckup;
@@ -221,7 +224,7 @@ abstract class AppLocalizations {
   // Tell a user that has already completed their checkup that they can check again tomorrow
   String get homeScreenCheckBackTomorrow;
 
-  // View the assement of the checkup data
+  // View the assessment of the checkup data
   String get homeScreenViewMyAssessment;
 
   // Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime
@@ -255,7 +258,7 @@ abstract class AppLocalizations {
   String get tutorialIntroStepCompleteACheckup;
 
   // Describes the benefit of the app
-  String get tutorialIntroStepRecieveAssessment;
+  String get tutorialIntroStepReceiveAssessment;
 
   // Describes the benefit of the app to the community.
   String get tutorialIntroStepAidEffort;
@@ -265,9 +268,6 @@ abstract class AppLocalizations {
 
   // Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated
   String get getStartedStepJoined;
-
-  // Label for the button that shows the next app screen
-  String get getStartedStepClick;
 
   // Label for the button that indicates that the user did not accept the app license
   String get consentStepDidNotAgree;
@@ -284,8 +284,92 @@ abstract class AppLocalizations {
   // Displayed while the app is loading the next screen
   String get consentStepLoading;
 
+  // Label for button that indicates that the user will continue using the app offline
+  String get networkUnavailableBannerContinueOffline;
+
+  // Label for button that opens the system network settings
+  String get networkUnavailableBannerConnectToWiFi;
+
+  // Message shown on the banner displayed when no network connection is detected
+  String get networkUnavailableBannerMessage;
+
   // Label for the back button on the denied consent screen
   String get deniedConsentBackButton;
+
+  // Question title.
+  String get questionShortnessOfBreathTitle;
+
+  // Question subtitle.
+  String get questionShortnessOfBreathSubtitle;
+
+  // Question answer.
+  String get questionShortnessOfBreathAnswer0;
+
+  // Question answer.
+  String get questionShortnessOfBreathAnswer4;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics3;
+
+  // Question accessibility semantics description.
+  String get questionShortnessOfBreathSemantics4;
+
+  // Question title.
+  String get questionHaveACoughTitle;
+
+  // Question answer.
+  String get questionHaveACoughAnswer0;
+
+  // Question answer.
+  String get questionHaveACoughAnswer4;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics3;
+
+  // Question accessibility semantics description.
+  String get questionHaveACoughSemantics4;
+
+  // Question title.
+  String get questionHaveAFeverTitle;
+
+  // Question answer.
+  String get questionHaveAFeverAnswer0;
+
+  // Question answer.
+  String get questionHaveAFeverAnswer4;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics1;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics2;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics3;
+
+  // Question accessibility semantics description.
+  String get questionHaveAFeverSemantics4;
 }
 
 class _AppLocalizationsDelegate

@@ -1,29 +1,45 @@
 import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
-import 'inputs/index.dart';
+import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
 
 class QuestionItem extends StatefulWidget {
   final Question question;
-  final Function(dynamic value) onChange;
+  final ValueChanged<int> onChanged;
 
-  const QuestionItem({this.question, this.onChange});
+  const QuestionItem({this.question, this.onChanged});
 
   @override
   _QuestionItemState createState() => _QuestionItemState();
 }
 
 class _QuestionItemState extends State<QuestionItem> {
+  int currentValue;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.question is ScaleQuestion) {
+      currentValue = (widget.question as ScaleQuestion).initialValue;
+    }
+  }
+
+  void _handleRadioChange(int value) {
+    setState(() {
+      currentValue = value;
+      widget.onChanged?.call(value);
+    });
+  }
+
   Widget _getInput() {
     switch (widget.question.runtimeType) {
-      case SliderQuestion:
-        final SliderQuestion question = widget.question;
-        return SimpleSlider(
-          value: question.initialValue,
-          min: question.min,
-          max: question.max,
-          labels: question.labels,
-          onChange: widget.onChange,
+      case ScaleQuestion:
+        final ScaleQuestion sliderQuestion = widget.question;
+        return RadioButtonScale(
+          labels: sliderQuestion.labels,
+          value: currentValue,
+          semanticLabels: sliderQuestion.semanticLabels,
+          onChanged: widget.onChanged == null ? null : _handleRadioChange,
         );
       default:
         return Container();
@@ -33,7 +49,7 @@ class _QuestionItemState extends State<QuestionItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+      padding: EdgeInsets.only(bottom: 40, left: 20, right: 20),
       child: Column(
         children: <Widget>[
           Text(

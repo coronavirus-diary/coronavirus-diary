@@ -1,3 +1,5 @@
+import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
@@ -8,16 +10,48 @@ import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
+import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
+
 import 'checkup_loaded_body.dart';
 
 class CheckupScreen extends StatefulWidget {
   static const routeName = '/checkup';
+
+  const CheckupScreen();
 
   @override
   _CheckupScreenState createState() => _CheckupScreenState();
 }
 
 class _CheckupScreenState extends State<CheckupScreen> {
+  AppLocalizations localizations;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    localizations = AppLocalizations.of(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<QuestionsBloc>(
+        create: (context) {
+          return QuestionsBloc(
+            questionsRepository: QuestionsRepository(),
+            localizations: localizations,
+          )..add(LoadQuestions());
+        },
+        lazy: false,
+        child: CheckupScreenBody());
+  }
+}
+
+class CheckupScreenBody extends StatefulWidget {
+  @override
+  _CheckupScreenBodyState createState() => _CheckupScreenBodyState();
+}
+
+class _CheckupScreenBodyState extends State<CheckupScreenBody> {
   // Storing the page controller at this level so that we can access it
   // across the entire checkup experience
   PageController _pageController;
@@ -65,6 +99,9 @@ class _CheckupScreenState extends State<CheckupScreen> {
         checkupState.assessment) {
       Preferences newPreferences = preferencesState.preferences.cloneWith(
         lastAssessment: checkupState.assessment,
+        // If they've completed an assessment, then don't show them the welcome
+        // screen again.
+        completedTutorial: true,
       );
       context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
     }
@@ -140,7 +177,9 @@ class _CheckupScreenState extends State<CheckupScreen> {
                       ),
                     ),
                     backgroundColor: Theme.of(context).backgroundColor,
-                    body: _getBody(preferencesState, checkupState),
+                    body: NetworkUnavailableBanner.wrap(
+                      _getBody(preferencesState, checkupState),
+                    ),
                   ),
                 );
               },
