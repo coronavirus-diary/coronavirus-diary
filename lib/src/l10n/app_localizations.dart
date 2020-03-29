@@ -191,6 +191,9 @@ abstract class AppLocalizations {
   // Title for a dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogTitle;
 
+  // Error that is displayed if the temperature entered is not in a valid temperature range.
+  String get temperatureStepTemperatureOutOfRangeError;
+
   // Step 1 in the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogStep1;
 

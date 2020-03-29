@@ -166,6 +166,11 @@
     "description": "Title for a dialog that explains how to take your temperature in 5 steps"
   },
 
+  "temperatureStepTemperatureOutOfRangeError": "Please enter a valid temperature value.",
+  "@temperatureStepTemperatureOutOfRangeError": {
+    "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
+  },
+
   "temperatureStepHowToDialogStep1": "Wash your hands using soap and water",
   "@temperatureStepHowToDialogStep1": {
     "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
