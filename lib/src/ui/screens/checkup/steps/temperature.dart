@@ -19,30 +19,33 @@ class TemperatureStep extends StatefulWidget implements CheckupStep {
 }
 
 class _TemperatureStepState extends State<TemperatureStep> {
-  bool _isCelsius = false;
-  bool _isValid = false;
+  static const double _celsiusMax = 65.5;
+  static const double _celsiusMin = 21.1;
+  static const double _fahrenheitMax = 150.0;
+  static const double _fahrenheitMin = 70.0;
+  bool get _isCelsius =>
+      _degrees != null && _degrees <= _celsiusMax && _degrees >= _celsiusMin;
+  bool get _isFahrenheit =>
+      _degrees != null &&
+      _degrees <= _fahrenheitMax &&
+      _degrees >= _fahrenheitMin;
+  bool get _isValid => _degrees != null && (_isCelsius || _isFahrenheit);
+  double _degrees;
 
-  String _validateTemperature(String value) {
-    if (value != '') {
-      final double numberValue = double.parse(value);
-
-      // TODO(hansmuller) l10n
-      if (numberValue > _upperTemperatureLimit) {
-        return 'Please enter a value below ${_formatTemperature(_upperTemperatureLimit)}';
-      } else if (numberValue < _lowerTemperatureLimit) {
-        return 'Please enter a value above ${_formatTemperature(_lowerTemperatureLimit)}';
+  String _validateTemperature(String value, AppLocalizations localizations) {
+    if (value.isNotEmpty) {
+      final double degrees = double.parse(value);
+      if (degrees < _celsiusMin ||
+          degrees > _fahrenheitMax ||
+          (degrees < _fahrenheitMin && degrees > _celsiusMax)) {
+        return localizations.temperatureStepTemperatureOutOfRangeError;
       }
     }
     return null;
   }
 
-  double get _upperTemperatureLimit => _isCelsius ? 65.5 : 150.0;
-  double get _lowerTemperatureLimit => _isCelsius ? 21.1 : 70.0;
-  String _formatTemperature(double temperature) =>
-      "$temperature ${_isCelsius ? '℃' : '℉'}";
-
   double _toFahrenheit(double value) {
-    if (!_isCelsius) return value;
+    if (_isFahrenheit) return value;
     return value * (9.0 / 5.0) + 32.0;
   }
 
@@ -50,20 +53,11 @@ class _TemperatureStepState extends State<TemperatureStep> {
     double value,
     CheckupStateInProgress checkupState,
   ) {
-    // Validate before saving
-    if (_validateTemperature(value.toString()) != null) {
-      if (_isValid) {
-        setState(() {
-          _isValid = false;
-        });
-        return;
-      }
-    } else {
-      if (!_isValid) {
-        setState(() {
-          _isValid = true;
-        });
-      }
+    setState(() {
+      _degrees = value;
+    });
+    if (!_isValid) {
+      return;
     }
 
     updateCheckup(
@@ -213,7 +207,9 @@ class _TemperatureStepState extends State<TemperatureStep> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        Spacer(flex: 1),
                         Expanded(
+                          flex: 3,
                           child: TextFormField(
                             initialValue: existingResponse != null
                                 ? existingResponse.response.toString()
@@ -227,34 +223,26 @@ class _TemperatureStepState extends State<TemperatureStep> {
                               fillColor: Colors.transparent,
                               labelText: 'Temperature',
                               hasFloatingPlaceholder: true,
+                              suffix: _isValid
+                                  ? Text(_isCelsius ? '℃' : '℉')
+                                  : null,
                             ),
                             keyboardType: TextInputType.number,
                             inputFormatters: [
                               WhitelistingTextInputFormatter(
-                                  RegExp(r'^\d+\.?\d{0,1}$')),
+                                  RegExp(r'^\d+\.?\d?$')),
                             ],
                             autovalidate: true,
                             autofocus: true,
-                            validator: _validateTemperature,
+                            validator: (String value) =>
+                                _validateTemperature(value, localizations),
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
                             ),
                           ),
                         ),
-                        Container(
-                          alignment: Alignment.topCenter,
-                          margin: EdgeInsets.only(left: 10),
-                          child: RaisedButton(
-                            onPressed: () {
-                              setState(() {
-                                _isCelsius = !_isCelsius;
-                              });
-                            },
-                            child:
-                                _isCelsius ? const Text('℃') : const Text('℉'),
-                          ),
-                        ),
+                        Spacer(flex: 1),
                       ],
                     ),
                   ),

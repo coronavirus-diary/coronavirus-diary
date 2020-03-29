@@ -145,6 +145,10 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get temperatureStepHowToDialogTitle => 'Taking your Temperature';
 
   @override
+  String get temperatureStepTemperatureOutOfRangeError =>
+      'Please enter a valid temperature value.';
+
+  @override
   String get temperatureStepHowToDialogStep1 =>
       'Wash your hands using soap and water';
 
