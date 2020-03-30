@@ -700,6 +700,16 @@
     "description": "Menu item displayed with no country is yet selected."
   },
 
+  "locationStepCountrySearchPrompt": "Please select the country where you are located",
+  "@locationStepCountrySearchPrompt": {
+    "description": "Menu item displayed with no country is yet selected."
+  },
+
+  "locationStepCountryButtonLabel": "Country:",
+  "@locationStepCountryButtonLabel": {
+    "description": "Label for the dropdown button that selects a country."
+  },
+
   "countryCodeAD": "Andorra",
   "@countryCodeAD": {
     "description": "Name of the country 'Andorra'."
