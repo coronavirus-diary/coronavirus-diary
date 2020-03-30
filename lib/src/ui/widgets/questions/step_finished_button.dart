@@ -1,8 +1,8 @@
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 class StepFinishedButton extends StatelessWidget {
@@ -43,7 +43,7 @@ class StepFinishedButton extends StatelessWidget {
             onPressed: validated
                 ? () {
                     if (isLastStep) {
-                      context.bloc<CheckupBloc>().add(CompleteCheckup());
+                      context.bloc<SymptomReportBloc>().add(CompleteSymptomReport());
                     } else {
                       Provider.of<PageController>(context, listen: false)
                           .nextPage(

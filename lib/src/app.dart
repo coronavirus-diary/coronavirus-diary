@@ -1,12 +1,13 @@
+import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
-import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/assets/theme.dart';
 import 'package:covidnearme/src/ui/router.dart';
+
+import 'blocs/symptom_report/symptom_report.dart';
 
 class App extends StatelessWidget {
   const App({Key key}) : super(key: key);
@@ -19,10 +20,10 @@ class App extends StatelessWidget {
       },
       child: BlocBuilder<PreferencesBloc, PreferencesState>(
         builder: (context, state) {
-          return BlocProvider<CheckupBloc>(
-            create: (context) => CheckupBloc(
+          return BlocProvider<SymptomReportBloc>(
+            create: (context) => SymptomReportBloc(
               preferencesState: state,
-              checkupsRepository: CheckupsRepository(),
+              symptomReportsRepository: SymptomReportsRepository(),
             ),
             child: MaterialApp(
               title: 'CovidNearMe',

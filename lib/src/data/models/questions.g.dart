@@ -8,12 +8,13 @@ part of 'questions.dart';
 
 ScaleQuestion _$ScaleQuestionFromJson(Map<String, dynamic> json) {
   return ScaleQuestion(
-    id: json['id'],
-    title: json['title'],
-    subtitle: json['subtitle'],
-    initialValue: (json['initial_value'] as num)?.toInt(),
-    labels: json['labels'] as List<String>,
-    semanticLabels: json['semanticLabels'] as List<String>,
+    id: json['id'] as String,
+    title: json['title'] as String,
+    subtitle: json['subtitle'] as String,
+    initialValue: json['initial_value'] as int,
+    labels: (json['labels'] as List)?.map((e) => e as String)?.toList(),
+    semanticLabels:
+        (json['semantic_labels'] as List)?.map((e) => e as String)?.toList(),
   );
 }
 
@@ -24,7 +25,7 @@ Map<String, dynamic> _$ScaleQuestionToJson(ScaleQuestion instance) =>
       'subtitle': instance.subtitle,
       'initial_value': instance.initialValue,
       'labels': instance.labels,
-      'semanticLabels': instance.semanticLabels,
+      'semantic_labels': instance.semanticLabels,
     };
 
 UnknownQuestion _$UnknownQuestionFromJson(Map<String, dynamic> json) {

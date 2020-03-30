@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 
-class CheckupProgressBar extends StatelessWidget {
+class SymptomReportProgressBar extends StatelessWidget {
   final int currentIndex;
   final int stepsLength;
   final double percentComplete;
 
-  const CheckupProgressBar({
+  const SymptomReportProgressBar({
     this.currentIndex,
     this.stepsLength,
   }) : percentComplete = currentIndex / stepsLength;

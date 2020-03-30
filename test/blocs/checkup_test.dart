@@ -1,6 +1,7 @@
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/data/repositories/checkups.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
+import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pedantic/pedantic.dart';
 
@@ -8,18 +9,18 @@ void main() {
   test(
       'CheckupBloc only responds to StartCheckup, UpdateCheckup, and '
       'CompleteCheckup', () async {
-    final bloc = CheckupBloc(
-      checkupsRepository: FakeCheckupsRepository(),
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),
     );
-    bloc.add(NotCheckupEvent());
+    bloc.add(NotSymptomReportEvent());
     unawaited(bloc.close());
 
     await expectLater(
       bloc,
       emitsInOrder(
         [
-          const CheckupStateNotCreated(),
+          const SymptomReportStateNotCreated(),
           emitsDone,
         ],
       ),
@@ -27,20 +28,20 @@ void main() {
   });
 
   test(
-      'CheckupBloc does not update if CompleteCheckup is recieved in a state '
-      'other than CheckupStateInProgress', () async {
-    final bloc = CheckupBloc(
-      checkupsRepository: FakeCheckupsRepository(),
+      'SymptomReportBloc does not update if CompleteSymptomReport is recieved in a state '
+      'other than SymptomReportStateInProgress', () async {
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),
     );
-    bloc.add(CompleteCheckup());
+    bloc.add(CompleteSymptomReport());
     unawaited(bloc.close());
 
     await expectLater(
       bloc,
       emitsInOrder(
         [
-          const CheckupStateNotCreated(),
+          const SymptomReportStateNotCreated(),
           emitsDone,
         ],
       ),
@@ -48,20 +49,20 @@ void main() {
   });
 
   test(
-      'CheckupBloc does not update if UpdateCheckup is recieved in a state '
-      'other than CheckupStateInProgress', () async {
-    final bloc = CheckupBloc(
-      checkupsRepository: FakeCheckupsRepository(),
+      'SymptomReportBloc does not update if UpdateSymptomReport is recieved in a state '
+      'other than SymptomReportStateInProgress', () async {
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),
     );
-    bloc.add(UpdateCheckup());
+    bloc.add(UpdateSymptomReport());
     unawaited(bloc.close());
 
     await expectLater(
       bloc,
       emitsInOrder(
         [
-          const CheckupStateNotCreated(),
+          const SymptomReportStateNotCreated(),
           emitsDone,
         ],
       ),
@@ -69,23 +70,23 @@ void main() {
   });
 
   test(
-      'CheckupBloc starts checkup process when it receives a StartCheckup event',
+      'SymptomReportBloc starts symptomReport process when it receives a StartSymptomReport event',
       () async {
-    final bloc = CheckupBloc(
-      checkupsRepository: FakeCheckupsRepository(),
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),
     );
-    bloc.add(StartCheckup());
+    bloc.add(StartSymptomReport());
     unawaited(bloc.close());
 
     await expectLater(
       bloc,
       emitsInOrder(
         [
-          const CheckupStateNotCreated(),
-          const CheckupStateCreating(),
-          isA<CheckupStateInProgress>()
-            ..having((s) => s.checkup, 'checkup', isNotNull),
+          const SymptomReportStateNotCreated(),
+          const SymptomReportStateCreating(),
+          isA<SymptomReportStateInProgress>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
           emitsDone,
         ],
       ),
@@ -93,26 +94,26 @@ void main() {
   });
 
   test(
-      'CheckupBloc can update (no-op) checkup when it receives a StartCheckup, '
-      'UpdateCheckup events', () async {
-    final bloc = CheckupBloc(
-      checkupsRepository: FakeCheckupsRepository(),
+      'SymptomReportBloc can update (no-op) symptomReport when it receives a StartSymptomReport, '
+      'UpdateSymptomReport events', () async {
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),
     );
-    bloc.add(StartCheckup());
-    bloc.add(UpdateCheckup());
+    bloc.add(StartSymptomReport());
+    bloc.add(UpdateSymptomReport());
     unawaited(bloc.close());
 
     await expectLater(
       bloc,
       emitsInOrder(
         [
-          const CheckupStateNotCreated(),
-          const CheckupStateCreating(),
-          isA<CheckupStateInProgress>()
-            ..having((s) => s.checkup, 'checkup', isNotNull),
-          isA<CheckupStateInProgress>()
-            ..having((s) => s.checkup, 'checkup', isNotNull),
+          const SymptomReportStateNotCreated(),
+          const SymptomReportStateCreating(),
+          isA<SymptomReportStateInProgress>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
+          isA<SymptomReportStateInProgress>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
           emitsDone,
         ],
       ),
@@ -120,26 +121,26 @@ void main() {
   });
 
   test(
-      'CheckupBloc can complete checkup after receiving StartCheckup, '
-      'CompleteCheckup events', () async {
-    final bloc = CheckupBloc(
-      checkupsRepository: FakeCheckupsRepository(),
+      'SymptomReportBloc can complete symptomReport after receiving StartSymptomReport, '
+      'CompleteSymptomReport events', () async {
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),
     );
-    bloc.add(StartCheckup());
-    bloc.add(CompleteCheckup());
+    bloc.add(StartSymptomReport());
+    bloc.add(CompleteSymptomReport());
     unawaited(bloc.close());
 
     await expectLater(
       bloc,
       emitsInOrder(
         [
-          const CheckupStateNotCreated(),
-          const CheckupStateCreating(),
-          isA<CheckupStateInProgress>()
-            ..having((s) => s.checkup, 'checkup', isNotNull),
-          const CheckupStateCompleting(),
-          isA<CheckupStateCompleted>()
+          const SymptomReportStateNotCreated(),
+          const SymptomReportStateCreating(),
+          isA<SymptomReportStateInProgress>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
+          const SymptomReportStateCompleting(),
+          isA<SymptomReportStateCompleted>()
             ..having((s) => s.assessment, 'assessment', isNotNull),
           emitsDone,
         ],
@@ -148,22 +149,22 @@ void main() {
   });
 }
 
-class NotCheckupEvent extends CheckupEvent {}
+class NotSymptomReportEvent extends SymptomReportEvent {}
 
-class FakeCheckupsRepository implements CheckupsRepository {
+class FakeSymptomReportsRepository implements SymptomReportsRepository {
   @override
-  Future<Assessment> completeCheckup(String id) async {
+  Future<Assessment> completeSymptomReport(String id) async {
     return Assessment();
   }
 
   @override
-  Future<Checkup> createCheckup(Checkup checkup) async {
-    return Checkup();
+  Future<SymptomReport> createSymptomReport(SymptomReport report) async {
+    return SymptomReport();
   }
 
   @override
-  Future<Checkup> updateCheckup(Checkup updatedCheckup) async {
-    return Checkup();
+  Future<SymptomReport> updateSymptomReport(SymptomReport updatedReport) async {
+    return SymptomReport();
   }
 }
 
