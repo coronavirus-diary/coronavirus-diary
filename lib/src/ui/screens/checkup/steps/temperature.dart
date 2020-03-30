@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/ui/widgets/questions/inputs/entry_field.dart';
 import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
 import 'package:covidnearme/src/ui/widgets/scroll_more_indicator.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
@@ -23,12 +24,9 @@ class _TemperatureStepState extends State<TemperatureStep> {
   static const double _celsiusMin = 21.1;
   static const double _fahrenheitMax = 150.0;
   static const double _fahrenheitMin = 70.0;
-  bool get _isCelsius =>
-      _degrees != null && _degrees <= _celsiusMax && _degrees >= _celsiusMin;
+  bool get _isCelsius => _degrees != null && _degrees <= _celsiusMax && _degrees >= _celsiusMin;
   bool get _isFahrenheit =>
-      _degrees != null &&
-      _degrees <= _fahrenheitMax &&
-      _degrees >= _fahrenheitMin;
+      _degrees != null && _degrees <= _fahrenheitMax && _degrees >= _fahrenheitMin;
   bool get _isValid => _degrees != null && (_isCelsius || _isFahrenheit);
   double _degrees;
 
@@ -105,8 +103,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
           appBar: AppBar(
             title: Text(
               localizations.temperatureStepHowToDialogTitle,
-              style: theme.textTheme.headline
-                  .copyWith(color: theme.colorScheme.onBackground),
+              style: theme.textTheme.headline.copyWith(color: theme.colorScheme.onBackground),
               textAlign: TextAlign.center,
             ),
           ),
@@ -159,8 +156,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                   child: Center(
                     child: RaisedButton(
                       onPressed: () => Navigator.pop(context),
-                      child:
-                          Text(localizations.temperatureStepHowToDialogReturn),
+                      child: Text(localizations.temperatureStepHowToDialogReturn),
                     ),
                   ),
                 ),
@@ -178,8 +174,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
     return BlocBuilder<CheckupBloc, CheckupState>(
       builder: (context, state) {
         final CheckupStateInProgress checkupState = state;
-        final VitalsResponse existingResponse =
-            checkupState.checkup.vitalsResponses.firstWhere(
+        final VitalsResponse existingResponse = checkupState.checkup.vitalsResponses.firstWhere(
           (VitalsResponse response) => response.id == 'temperature',
           orElse: () => null,
         );
@@ -210,36 +205,20 @@ class _TemperatureStepState extends State<TemperatureStep> {
                         Spacer(flex: 1),
                         Expanded(
                           flex: 3,
-                          child: TextFormField(
+                          child: EntryField(
                             initialValue: existingResponse != null
                                 ? existingResponse.response.toString()
                                 : '',
-                            onChanged: (String value) => _updateTemperature(
-                                double.parse(value), checkupState),
-                            decoration: InputDecoration(
-                              errorMaxLines: 2,
-                              border: OutlineInputBorder(),
-                              filled: true,
-                              fillColor: Colors.transparent,
-                              labelText:
-                                  localizations.temperatureStepTemperatureLabel,
-                              hasFloatingPlaceholder: true,
-                              suffix: _isValid
-                                  ? Text(_isCelsius ? '℃' : '℉')
-                                  : null,
-                            ),
+                            onChanged: (String value) =>
+                                _updateTemperature(double.parse(value), checkupState),
+                            label: localizations.temperatureStepTemperatureLabel,
+                            suffix: _isValid ? (_isCelsius ? '℃' : '℉') : null,
                             keyboardType: TextInputType.number,
                             inputFormatters: [
-                              WhitelistingTextInputFormatter(
-                                  RegExp(r'^\d+\.?\d?$')),
+                              WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d?$')),
                             ],
                             autofocus: true,
-                            validator: (String value) =>
-                                _validateTemperature(value, localizations),
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                            ),
+                            validator: (String value) => _validateTemperature(value, localizations),
                           ),
                         ),
                         Spacer(flex: 1),

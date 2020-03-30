@@ -9,6 +9,7 @@ class EntryField extends StatelessWidget {
     this.initialValue,
     this.onChanged,
     this.label,
+    this.suffix,
     this.helperText,
     this.validator,
     this.keyboardType = TextInputType.text,
@@ -22,6 +23,7 @@ class EntryField extends StatelessWidget {
   final String helperText;
   final ValueChanged<String> onChanged;
   final String label;
+  final String suffix;
   final FormFieldValidator<String> validator;
   final TextInputType keyboardType;
   final List<TextInputFormatter> inputFormatters;
@@ -38,6 +40,7 @@ class EntryField extends StatelessWidget {
           border: OutlineInputBorder(),
           enabledBorder: OutlineInputBorder(),
           labelText: label,
+          suffix: suffix != null ? Text(suffix) : null,
           helperText: helperText,
           hasFloatingPlaceholder: true,
         ),
