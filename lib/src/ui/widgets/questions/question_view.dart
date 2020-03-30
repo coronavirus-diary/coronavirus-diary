@@ -32,15 +32,37 @@ class _QuestionViewState extends State<QuestionView> {
   Set<Question> _answered = {};
 
   List<Widget> _getQuestions() {
-    return widget.questions
-        .map((Question question) => QuestionItem(
-              question: question,
-              onChanged: (dynamic value) {
-                _answered.add(question);
-                return widget.onChange(question, value);
-              },
-            ))
-        .toList();
+    return widget.questions.map((Question question) {
+      switch (question.runtimeType) {
+        case ScaleQuestion:
+          return QuestionItem(
+            question: question,
+            onChanged: (int value) {
+              _answered.add(question);
+              return widget.onChange?.call(question, value);
+            },
+          );
+        case TextFieldQuestion:
+          return QuestionItem(
+            question: question,
+            onChanged: (String value) {
+              _answered.add(question);
+              return widget.onChange?.call(question, value);
+            },
+          );
+          break;
+        case TemperatureQuestion:
+          return QuestionItem(
+            question: question,
+            onChanged: (double value) {
+              _answered.add(question);
+              return widget.onChange?.call(question, value);
+            },
+          );
+          break;
+      }
+      return Container();
+    }).toList();
   }
 
   bool get _allQuestionsAnswered {

@@ -21,6 +21,7 @@ void main() {
       Directionality(
         child: QuestionItem(
           question: FakeQuestion(),
+          onChanged: (dynamic value) {},
         ),
         textDirection: TextDirection.ltr,
       ),
@@ -40,6 +41,7 @@ void main() {
         QuestionItem(
           onChanged: (int value) {},
           question: ScaleQuestion(
+            id: '0',
             title: 'title',
             subtitle: 'subtitle',
             initialValue: 0,

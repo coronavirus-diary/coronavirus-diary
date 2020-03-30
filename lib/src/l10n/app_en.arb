@@ -585,6 +585,101 @@
     "description": "Question accessibility semantics description."
   },
 
+  "questionHowHighWasYourFever": "How high did your temperature get today (if you took it)?",
+  "@questionHowHighWasYourFever": {
+    "description": "Question title."
+  },
+
+  "questionHaveYouBeenFluTestedTitle": "Have you been tested for flu, pneumonia, or other respiratory illness?",
+  "@questionHaveYouBeenFluTestedTitle": {
+    "description": "Question title."
+  },
+
+  "questionYes": "Yes",
+  "@questionYes": {
+    "description": "Question answer."
+  },
+
+  "questionNo": "No",
+  "@questionNo": {
+    "description": "Question answer."
+  },
+
+  "questionHaveYouBeenFluTestedSemantics0": "Yes, I have been tested for flu, pneumonia, or other respiratory illness.",
+  "@questionHaveYouBeenFluTestedSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveYouBeenFluTestedSemantics1": "No, I have not been tested for flu, pneumonia, or other respiratory illness.",
+  "@questionHaveYouBeenFluTestedSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionFluTestPositiveTitle": "Was the test positive?",
+  "@questionFluTestPositiveTitle": {
+    "description": "Question title."
+  },
+
+  "questionFluTestPositiveSemantics0": "Yes, the test was positive.",
+  "@questionFluTestPositiveSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionFluTestPositiveSemantics1": "No, the test was negative.",
+  "@questionFluTestPositiveSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionWhatWasPositiveTitle": "What did you have?",
+  "@questionWhatWasPositiveTitle": {
+    "description": "Question title."
+  },
+
+  "questionTryForTestingTitle": "Did you try to get tested for COVID-19?",
+    "@questionTryForTestingTitle": {
+      "description": "Question title."
+  },
+
+  "questionTryForTestingSemantics0": "Yes, I tried to get tested for COVID-19.",
+    "@questionTryForTestingSemantics0": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionTryForTestingSemantics1": "No, I didn't try to get tested for COVID-19.",
+    "@questionTryForTestingSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionCovid19TestResultTitle": "What was the result?",
+    "@questionCovid19TestResultTitle": {
+      "description": "Question title."
+  },
+
+  "questionCovid19TestResultAnswer0": "Negative, I don't have COVID-19",
+    "@questionCovid19TestResultAnswer0": {
+      "description": "Question answer."
+  },
+
+  "questionCovid19TestResultAnswer1": "Positive, I have COVID-19",
+    "@questionCovid19TestResultAnswer1": {
+      "description": "Question answer."
+  },
+
+  "questionCovid19TestResultAnswer2": "I don't know yet",
+    "@questionCovid19TestResultAnswer2": {
+      "description": "Question answer."
+  },
+
+  "questionCovid19TestResultAnswer3": "The clinic didn't have tests",
+    "@questionCovid19TestResultAnswer3": {
+      "description": "Question answer."
+  },
+
+  "questionCovid19TestResultAnswer4": "I was turned away because I wasn't sick enough",
+    "@questionCovid19TestResultAnswer4": {
+      "description": "Question answer."
+  },
+
   "scrollMoreIndicatorMessage": "SCROLL FOR MORE",
   "@scrollMoreIndicatorMessage": {
     "description": "Let the user that they can scroll to see more content"

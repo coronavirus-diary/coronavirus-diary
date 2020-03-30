@@ -419,5 +419,72 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get questionHaveAFeverSemantics2 => 'Severe fever, I\'m burning up';
 
   @override
+  String get questionHowHighWasYourFever =>
+      'How high did your temperature get today (if you took it)?';
+
+  @override
+  String get questionHaveYouBeenFluTestedTitle =>
+      'Have you been tested for flu, pneumonia, or other respiratory illness?';
+
+  @override
+  String get questionYes => 'Yes';
+
+  @override
+  String get questionNo => 'No';
+
+  @override
+  String get questionHaveYouBeenFluTestedSemantics0 =>
+      'Yes, I have been tested for flu, pneumonia, or other respiratory illness.';
+
+  @override
+  String get questionHaveYouBeenFluTestedSemantics1 =>
+      'No, I have not been tested for flu, pneumonia, or other respiratory illness.';
+
+  @override
+  String get questionFluTestPositiveTitle => 'Was the test positive?';
+
+  @override
+  String get questionFluTestPositiveSemantics0 => 'Yes, the test was positive.';
+
+  @override
+  String get questionFluTestPositiveSemantics1 => 'No, the test was negative.';
+
+  @override
+  String get questionWhatWasPositiveTitle => 'What did you have?';
+
+  @override
+  String get questionTryForTestingTitle =>
+      'Did you try to get tested for COVID-19?';
+
+  @override
+  String get questionTryForTestingSemantics0 =>
+      'Yes, I tried to get tested for COVID-19.';
+
+  @override
+  String get questionTryForTestingSemantics1 =>
+      'No, I didn\'t try to get tested for COVID-19.';
+
+  @override
+  String get questionCovid19TestResultTitle => 'What was the result?';
+
+  @override
+  String get questionCovid19TestResultAnswer0 =>
+      'Negative, I don\'t have COVID-19';
+
+  @override
+  String get questionCovid19TestResultAnswer1 => 'Positive, I have COVID-19';
+
+  @override
+  String get questionCovid19TestResultAnswer2 => 'I don\'t know yet';
+
+  @override
+  String get questionCovid19TestResultAnswer3 =>
+      'The clinic didn\'t have tests';
+
+  @override
+  String get questionCovid19TestResultAnswer4 =>
+      'I was turned away because I wasn\'t sick enough';
+
+  @override
   String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
 }

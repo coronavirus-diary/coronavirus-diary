@@ -440,6 +440,63 @@ abstract class AppLocalizations {
   // Question accessibility semantics description.
   String get questionHaveAFeverSemantics2;
 
+  // Question title.
+  String get questionHowHighWasYourFever;
+
+  // Question title.
+  String get questionHaveYouBeenFluTestedTitle;
+
+  // Question answer.
+  String get questionYes;
+
+  // Question answer.
+  String get questionNo;
+
+  // Question accessibility semantics description.
+  String get questionHaveYouBeenFluTestedSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionHaveYouBeenFluTestedSemantics1;
+
+  // Question title.
+  String get questionFluTestPositiveTitle;
+
+  // Question accessibility semantics description.
+  String get questionFluTestPositiveSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionFluTestPositiveSemantics1;
+
+  // Question title.
+  String get questionWhatWasPositiveTitle;
+
+  // Question title.
+  String get questionTryForTestingTitle;
+
+  // Question accessibility semantics description.
+  String get questionTryForTestingSemantics0;
+
+  // Question accessibility semantics description.
+  String get questionTryForTestingSemantics1;
+
+  // Question title.
+  String get questionCovid19TestResultTitle;
+
+  // Question answer.
+  String get questionCovid19TestResultAnswer0;
+
+  // Question answer.
+  String get questionCovid19TestResultAnswer1;
+
+  // Question answer.
+  String get questionCovid19TestResultAnswer2;
+
+  // Question answer.
+  String get questionCovid19TestResultAnswer3;
+
+  // Question answer.
+  String get questionCovid19TestResultAnswer4;
+
   // Let the user that they can scroll to see more content
   String get scrollMoreIndicatorMessage;
 }

@@ -6,6 +6,41 @@ part of 'questions.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+TextFieldQuestion _$TextFieldQuestionFromJson(Map<String, dynamic> json) {
+  return TextFieldQuestion(
+    id: json['id'],
+    title: json['title'],
+    subtitle: json['subtitle'],
+    initialValue: json['initial_value'],
+  );
+}
+
+Map<String, dynamic> _$TextFieldQuestionToJson(TextFieldQuestion instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'subtitle': instance.subtitle,
+      'initial_value': instance.initialValue,
+    };
+
+TemperatureQuestion _$TemperatureQuestionFromJson(Map<String, dynamic> json) {
+  return TemperatureQuestion(
+    id: json['id'],
+    title: json['title'],
+    subtitle: json['subtitle'],
+    initialValue: (json['initial_value'] as num).toDouble(),
+  );
+}
+
+Map<String, dynamic> _$TemperatureQuestionToJson(
+        TemperatureQuestion instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'subtitle': instance.subtitle,
+      'initial_value': instance.initialValue.toStringAsFixed(1),
+    };
+
 ScaleQuestion _$ScaleQuestionFromJson(Map<String, dynamic> json) {
   return ScaleQuestion(
     id: json['id'] as String,

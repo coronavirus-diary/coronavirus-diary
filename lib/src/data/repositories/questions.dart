@@ -59,6 +59,45 @@ class QuestionsRepository {
             localizations.questionHaveNauseaSemantics3,
           ],
         ),
+        TemperatureQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '1',
+          title: localizations.questionHowHighWasYourFever,
+        ),
+        ScaleQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '2',
+          title: localizations.questionHaveYouBeenFluTestedTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionNo,
+            localizations.questionYes,
+          ],
+          semanticLabels: [
+            localizations.questionHaveAFeverSemantics1,
+            localizations.questionHaveAFeverSemantics0,
+          ],
+        ),
+        ScaleQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '2',
+          title: localizations.questionFluTestPositiveTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionNo,
+            localizations.questionYes,
+          ],
+          semanticLabels: [
+            localizations.questionFluTestPositiveSemantics1,
+            localizations.questionFluTestPositiveSemantics0,
+          ],
+        ),
+        TextFieldQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '3',
+          title: localizations.questionWhatWasPositiveTitle,
+          initialValue: null,
+        ),
         ScaleQuestion(
           id: '4664',
           title: localizations.questionHaveAFeverTitle,
@@ -72,6 +111,41 @@ class QuestionsRepository {
             localizations.questionHaveAFeverSemantics0,
             localizations.questionHaveAFeverSemantics1,
             localizations.questionHaveAFeverSemantics2,
+          ],
+        ),
+        ScaleQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '4',
+          title: localizations.questionTryForTestingTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionNo,
+            localizations.questionYes,
+          ],
+          semanticLabels: [
+            localizations.questionTryForTestingSemantics1,
+            localizations.questionTryForTestingSemantics0,
+          ],
+        ),
+        ScaleQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '4',
+          title: localizations.questionCovid19TestResultTitle,
+          vertical: true,
+          initialValue: null,
+          labels: [
+            localizations.questionCovid19TestResultAnswer0,
+            localizations.questionCovid19TestResultAnswer1,
+            localizations.questionCovid19TestResultAnswer2,
+            localizations.questionCovid19TestResultAnswer3,
+            localizations.questionCovid19TestResultAnswer4,
+          ],
+          semanticLabels: [
+            localizations.questionCovid19TestResultAnswer0,
+            localizations.questionCovid19TestResultAnswer1,
+            localizations.questionCovid19TestResultAnswer2,
+            localizations.questionCovid19TestResultAnswer3,
+            localizations.questionCovid19TestResultAnswer4,
           ],
         ),
       ];

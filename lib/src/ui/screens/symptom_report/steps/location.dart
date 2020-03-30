@@ -12,7 +12,7 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'index.dart';
 
 class LocationStep extends StatefulWidget implements SymptomReportStep {
-  bool get isLastStep => true;
+  bool get isLastStep => false;
 
   @override
   _LocationStepState createState() => _LocationStepState();
