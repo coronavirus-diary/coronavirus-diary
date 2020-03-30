@@ -107,16 +107,16 @@ abstract class AppLocalizations {
   // The app's response if the user does not agree to the informed consent question
   String get deniedConsentMessage;
 
-  // The title of the ThankYou screen.
+  // The title of the ThankYou screen
   String get thankYouScreenTitle;
 
-  // Return back to the home screen.
+  // Return back to the home screen
   String get thankYouScreenReturnToHome;
 
-  // A note thanking the user for submitting their data.
+  // A note thanking the user for submitting their data
   String get thankYouScreenDataSubmission;
 
-  // Asking the user to report their symptoms again tomorrow.
+  // Asking the user to report their symptoms again tomorrow
   String get thankYouScreenCallToAction;
 
   // An error occurred while trying to fetch data
