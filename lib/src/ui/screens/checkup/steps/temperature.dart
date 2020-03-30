@@ -221,7 +221,8 @@ class _TemperatureStepState extends State<TemperatureStep> {
                               border: OutlineInputBorder(),
                               filled: true,
                               fillColor: Colors.transparent,
-                              labelText: 'Temperature',
+                              labelText:
+                                  localizations.temperatureStepTemperatureLabel,
                               hasFloatingPlaceholder: true,
                               suffix: _isValid
                                   ? Text(_isCelsius ? '℃' : '℉')
@@ -232,7 +233,6 @@ class _TemperatureStepState extends State<TemperatureStep> {
                               WhitelistingTextInputFormatter(
                                   RegExp(r'^\d+\.?\d?$')),
                             ],
-                            autovalidate: true,
                             autofocus: true,
                             validator: (String value) =>
                                 _validateTemperature(value, localizations),

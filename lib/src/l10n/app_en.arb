@@ -171,6 +171,11 @@
     "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
   },
 
+  "temperatureStepTemperatureLabel": "Temperature",
+  "@temperatureStepTemperatureLabel": {
+    "description": "Label for entry field"
+  },
+
   "temperatureStepHowToDialogStep1": "Wash your hands using soap and water",
   "@temperatureStepHowToDialogStep1": {
     "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
@@ -214,6 +219,46 @@
   "temperatureStepHelp": "How to check your temperature",
   "@temperatureStepHelp": {
     "description": "Label for a button that brings up a help screen"
+  },
+
+  "locationStepTitle": "Enter your location",
+  "@locationStepTitle": {
+    "description": "Title that appears above the textfield where the user enters their location"
+  },
+
+  "locationStepInvalidZipCode": "Please enter a valid USPS ZIP code",
+  "@locationStepInvalidZipCode": {
+    "description": "Error that appears when the user enters their zip code incorrectly."
+  },
+
+  "locationStepInvalidCountry": "Please just enter the name of your country",
+  "@locationStepInvalidCountry": {
+    "description": "Error that appears when the user enters their country incorrectly."
+  },
+
+  "locationStepZipCode": "5-Digit ZIP Code",
+  "@locationStepZipCode": {
+    "description": "Title that appears within the textfield where the user enters their ZIP code"
+  },
+
+  "locationStepCountryHelper": "If you are not in the US, what is your country?",
+  "@locationStepCountryHelper": {
+    "description": "Helper text describing what to enter in the text field for country."
+  },
+
+  "locationStepInUSA": "In the United States",
+  "@locationStepInUSA": {
+    "description": "Radio button selection indicating that the user lives in the USA."
+  },
+
+  "locationStepAnotherCountry": "In another country",
+  "@locationStepAnotherCountry": {
+    "description": "Radio button selection indicating that the user lives outside of the USA."
+  },
+
+  "locationStepCountry": "Country",
+  "@locationStepCountry": {
+    "description": "Title that appears within the textfield where the user enters their country"
   },
 
   "homeScreenHeading": "Concerned about your health?",
@@ -376,38 +421,42 @@
     "description": "Question subtitle."
   },
 
-  "questionShortnessOfBreathAnswer0": "I can breathe fine",
+  "questionShortnessOfBreathAnswer0": "None",
   "@questionShortnessOfBreathAnswer0": {
     "description": "Question answer."
   },
 
-  "questionShortnessOfBreathAnswer4": "I can hardly breathe at all",
-  "@questionShortnessOfBreathAnswer4": {
+  "questionShortnessOfBreathAnswer1": "Mild",
+  "@questionShortnessOfBreathAnswer1": {
+    "description": "Question answer."
+  },
+  "questionShortnessOfBreathAnswer2": "Moderate",
+  "@questionShortnessOfBreathAnswer2": {
     "description": "Question answer."
   },
 
-  "questionShortnessOfBreathSemantics0": "I can breathe fine",
+  "questionShortnessOfBreathAnswer3": "Severe",
+  "@questionShortnessOfBreathAnswer3": {
+    "description": "Question answer."
+  },
+
+  "questionShortnessOfBreathSemantics0": "No shortness of breath",
   "@questionShortnessOfBreathSemantics0": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionShortnessOfBreathSemantics1": "I have a little trouble breathing",
+  "questionShortnessOfBreathSemantics1": "Mild shortness of breath",
   "@questionShortnessOfBreathSemantics1": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionShortnessOfBreathSemantics2": "I have some trouble breathing",
+  "questionShortnessOfBreathSemantics2": "Moderate shortness of breath",
   "@questionShortnessOfBreathSemantics2": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionShortnessOfBreathSemantics3": "It is difficult to breathe",
+  "questionShortnessOfBreathSemantics3": "Severe shortness of breath",
   "@questionShortnessOfBreathSemantics3": {
-    "description": "Question accessibility semantics description."
-  },
-
-  "questionShortnessOfBreathSemantics4": "I can hardly breathe at all",
-  "@questionShortnessOfBreathSemantics4": {
     "description": "Question accessibility semantics description."
   },
 
@@ -416,42 +465,92 @@
     "description": "Question title."
   },
 
-  "questionHaveACoughAnswer0": "Never",
+  "questionHaveACoughAnswer0": "None",
   "@questionHaveACoughAnswer0": {
     "description": "Question answer."
   },
 
-  "questionHaveACoughAnswer4": "Constantly",
-  "@questionHaveACoughAnswer4": {
+  "questionHaveACoughAnswer1": "Mild",
+  "@questionHaveACoughAnswer1": {
     "description": "Question answer."
   },
 
-  "questionHaveACoughSemantics0": "Never",
+  "questionHaveACoughAnswer2": "Moderate",
+  "@questionHaveACoughAnswer2": {
+    "description": "Question answer."
+  },
+
+  "questionHaveACoughAnswer3": "Uncontrollable - It hurts!",
+  "@questionHaveACoughAnswer3": {
+    "description": "Question answer."
+  },
+
+  "questionHaveACoughSemantics0": "No cough",
   "@questionHaveACoughSemantics0": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveACoughSemantics1": "Occasionally",
+  "questionHaveACoughSemantics1": "Mild cough",
   "@questionHaveACoughSemantics1": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveACoughSemantics2": "Sometimes",
+  "questionHaveACoughSemantics2": "Moderate cough",
   "@questionHaveACoughSemantics2": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveACoughSemantics3": "Often",
+  "questionHaveACoughSemantics3": "Uncontrollable cough",
   "@questionHaveACoughSemantics3": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveACoughSemantics4": "Constantly",
-  "@questionHaveACoughSemantics4": {
+  "questionHaveNauseaTitle": "Do you feel nauseous, like you might throw up or wish you could?",
+  "@questionHaveNauseaTitle": {
+    "description": "Question title."
+  },
+
+  "questionHaveNauseaAnswer0": "None",
+  "@questionHaveNauseaAnswer0": {
+    "description": "Question answer."
+  },
+
+  "questionHaveNauseaAnswer1": "Mild",
+  "@questionHaveNauseaAnswer1": {
+    "description": "Question answer."
+  },
+
+  "questionHaveNauseaAnswer2": "Moderate",
+  "@questionHaveNauseaAnswer2": {
+    "description": "Question answer."
+  },
+
+  "questionHaveNauseaAnswer3": "Severe",
+  "@questionHaveNauseaAnswer3": {
+    "description": "Question answer."
+  },
+
+  "questionHaveNauseaSemantics0": "No nausea",
+  "@questionHaveNauseaSemantics0": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveAFeverTitle": "Have you felt like you've had a fever?",
+  "questionHaveNauseaSemantics1": "Mild nausea",
+  "@questionHaveNauseaSemantics1": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveNauseaSemantics2": "Moderate nausea",
+  "@questionHaveNauseaSemantics2": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveNauseaSemantics3": "Severe nausea",
+  "@questionHaveNauseaSemantics3": {
+    "description": "Question accessibility semantics description."
+  },
+
+  "questionHaveAFeverTitle": "Have you felt like you've had a fever today?",
   "@questionHaveAFeverTitle": {
     "description": "Question title."
   },
@@ -461,38 +560,28 @@
     "description": "Question answer."
   },
 
-  "questionHaveAFeverAnswer4": "Maybe?",
-  "@questionHaveAFeverAnswer4": {
+  "questionHaveAFeverAnswer1": "Maybe",
+  "@questionHaveAFeverAnswer1": {
     "description": "Question answer."
   },
 
-  "questionHaveAFeverAnswer4": "I'm burning up",
-  "@questionHaveAFeverAnswer4": {
+  "questionHaveAFeverAnswer2": "Severe - I'm burning up",
+  "@questionHaveAFeverAnswer2": {
     "description": "Question answer."
   },
 
-  "questionHaveAFeverSemantics0": "No",
+  "questionHaveAFeverSemantics0": "No fever",
   "@questionHaveAFeverSemantics0": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveAFeverSemantics1": "Unlikely",
+  "questionHaveAFeverSemantics1": "May have a fever",
   "@questionHaveAFeverSemantics1": {
     "description": "Question accessibility semantics description."
   },
 
-  "questionHaveAFeverSemantics2": "Maybe",
+  "questionHaveAFeverSemantics2": "Severe fever, I'm burning up",
   "@questionHaveAFeverSemantics2": {
-    "description": "Question accessibility semantics description."
-  },
-
-  "questionHaveAFeverSemantics3": "Sometimes",
-  "@questionHaveAFeverSemantics3": {
-    "description": "Question accessibility semantics description."
-  },
-
-  "questionHaveAFeverSemantics4": "I'm burning up",
-  "@questionHaveAFeverSemantics4": {
     "description": "Question accessibility semantics description."
   },
 

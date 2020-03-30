@@ -149,6 +149,9 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Please enter a valid temperature value.';
 
   @override
+  String get temperatureStepTemperatureLabel => 'Temperature';
+
+  @override
   String get temperatureStepHowToDialogStep1 =>
       'Wash your hands using soap and water';
 
@@ -179,6 +182,32 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get temperatureStepHelp => 'How to check your temperature';
+
+  @override
+  String get locationStepTitle => 'Enter your location';
+
+  @override
+  String get locationStepInvalidZipCode => 'Please enter a valid USPS ZIP code';
+
+  @override
+  String get locationStepInvalidCountry =>
+      'Please just enter the name of your country';
+
+  @override
+  String get locationStepZipCode => '5-Digit ZIP Code';
+
+  @override
+  String get locationStepCountryHelper =>
+      'If you are not in the US, what is your country?';
+
+  @override
+  String get locationStepInUSA => 'In the United States';
+
+  @override
+  String get locationStepAnotherCountry => 'In another country';
+
+  @override
+  String get locationStepCountry => 'Country';
 
   @override
   String get homeScreenHeading => 'Concerned about your health?';
@@ -287,78 +316,107 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Do you feel like you can\'t get enough air?';
 
   @override
-  String get questionShortnessOfBreathAnswer0 => 'I can breathe fine';
+  String get questionShortnessOfBreathAnswer0 => 'None';
 
   @override
-  String get questionShortnessOfBreathAnswer4 => 'I can hardly breathe at all';
+  String get questionShortnessOfBreathAnswer1 => 'Mild';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'I can breathe fine';
+  String get questionShortnessOfBreathAnswer2 => 'Moderate';
 
   @override
-  String get questionShortnessOfBreathSemantics1 =>
-      'I have a little trouble breathing';
+  String get questionShortnessOfBreathAnswer3 => 'Severe';
+
+  @override
+  String get questionShortnessOfBreathSemantics0 => 'No shortness of breath';
+
+  @override
+  String get questionShortnessOfBreathSemantics1 => 'Mild shortness of breath';
 
   @override
   String get questionShortnessOfBreathSemantics2 =>
-      'I have some trouble breathing';
+      'Moderate shortness of breath';
 
   @override
   String get questionShortnessOfBreathSemantics3 =>
-      'It is difficult to breathe';
-
-  @override
-  String get questionShortnessOfBreathSemantics4 =>
-      'I can hardly breathe at all';
+      'Severe shortness of breath';
 
   @override
   String get questionHaveACoughTitle => 'Do you have a cough?';
 
   @override
-  String get questionHaveACoughAnswer0 => 'Never';
+  String get questionHaveACoughAnswer0 => 'None';
 
   @override
-  String get questionHaveACoughAnswer4 => 'Constantly';
+  String get questionHaveACoughAnswer1 => 'Mild';
 
   @override
-  String get questionHaveACoughSemantics0 => 'Never';
+  String get questionHaveACoughAnswer2 => 'Moderate';
 
   @override
-  String get questionHaveACoughSemantics1 => 'Occasionally';
+  String get questionHaveACoughAnswer3 => 'Uncontrollable - It hurts!';
 
   @override
-  String get questionHaveACoughSemantics2 => 'Sometimes';
+  String get questionHaveACoughSemantics0 => 'No cough';
 
   @override
-  String get questionHaveACoughSemantics3 => 'Often';
+  String get questionHaveACoughSemantics1 => 'Mild cough';
 
   @override
-  String get questionHaveACoughSemantics4 => 'Constantly';
+  String get questionHaveACoughSemantics2 => 'Moderate cough';
+
+  @override
+  String get questionHaveACoughSemantics3 => 'Uncontrollable cough';
+
+  @override
+  String get questionHaveNauseaTitle =>
+      'Do you feel nauseous, like you might throw up or wish you could?';
+
+  @override
+  String get questionHaveNauseaAnswer0 => 'None';
+
+  @override
+  String get questionHaveNauseaAnswer1 => 'Mild';
+
+  @override
+  String get questionHaveNauseaAnswer2 => 'Moderate';
+
+  @override
+  String get questionHaveNauseaAnswer3 => 'Severe';
+
+  @override
+  String get questionHaveNauseaSemantics0 => 'No nausea';
+
+  @override
+  String get questionHaveNauseaSemantics1 => 'Mild nausea';
+
+  @override
+  String get questionHaveNauseaSemantics2 => 'Moderate nausea';
+
+  @override
+  String get questionHaveNauseaSemantics3 => 'Severe nausea';
 
   @override
   String get questionHaveAFeverTitle =>
-      'Have you felt like you\'ve had a fever?';
+      'Have you felt like you\'ve had a fever today?';
 
   @override
   String get questionHaveAFeverAnswer0 => 'No';
 
   @override
-  String get questionHaveAFeverAnswer4 => 'I\'m burning up';
+  String get questionHaveAFeverAnswer1 => 'Maybe';
 
   @override
-  String get questionHaveAFeverSemantics0 => 'No';
+  String get questionHaveAFeverAnswer2 => 'Severe - I\'m burning up';
 
   @override
-  String get questionHaveAFeverSemantics1 => 'Unlikely';
+  String get questionHaveAFeverSemantics0 => 'No fever';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Maybe';
+  String get questionHaveAFeverSemantics1 => 'May have a fever';
 
   @override
-  String get questionHaveAFeverSemantics3 => 'Sometimes';
-
-  @override
-  String get questionHaveAFeverSemantics4 => 'I\'m burning up';
+  String get questionHaveAFeverSemantics2 => 'Severe fever, I\'m burning up';
 
   @override
   String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
