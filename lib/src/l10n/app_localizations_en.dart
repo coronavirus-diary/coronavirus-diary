@@ -184,7 +184,10 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
 
   @override
-  String get locationStepTitle => 'Enter your location';
+  String get tutorialLocationStepTitle => 'Enter your location';
+
+  @override
+  String get locationStepTitle => 'Verify your location';
 
   @override
   String get locationStepInvalidZipCode => 'Please enter a valid USPS ZIP code';

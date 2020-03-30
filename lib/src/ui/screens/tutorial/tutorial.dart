@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/ui/screens/tutorial/steps/consent_branch.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
+
 import 'steps/index.dart';
 
 class TutorialScreen extends StatefulWidget {
@@ -44,8 +46,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   children: <Widget>[
                     IntroStep(),
                     ConsentStep(),
-                    if (state.preferences.agreedToTerms == false)
-                      DeniedConsent(),
+                    ConsentBranchStep(),
                   ],
                 ),
               ),

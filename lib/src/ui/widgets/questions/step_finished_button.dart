@@ -10,10 +10,12 @@ class StepFinishedButton extends StatelessWidget {
     Key key,
     @required this.validated,
     this.isLastStep = false,
+    this.onPressed,
   }) : super(key: key);
 
   final bool isLastStep;
   final bool validated;
+  final VoidCallback onPressed;
 
   Widget _getCompletionMessage(AppLocalizations localizations) {
     return ConstrainedBox(
@@ -30,6 +32,18 @@ class StepFinishedButton extends StatelessWidget {
     );
   }
 
+  void _handleOnPressed(BuildContext context) {
+    onPressed?.call();
+    if (isLastStep) {
+      context.bloc<SymptomReportBloc>().add(CompleteSymptomReport());
+    } else {
+      Provider.of<PageController>(context, listen: false).nextPage(
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
@@ -40,21 +54,7 @@ class StepFinishedButton extends StatelessWidget {
           alignment: isLastStep ? null : AlignmentDirectional.centerEnd,
           width: 400,
           child: RaisedButton(
-            onPressed: validated
-                ? () {
-                    if (isLastStep) {
-                      context
-                          .bloc<SymptomReportBloc>()
-                          .add(CompleteSymptomReport());
-                    } else {
-                      Provider.of<PageController>(context, listen: false)
-                          .nextPage(
-                        duration: Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    }
-                  }
-                : null,
+            onPressed: validated ? () => _handleOnPressed(context) : null,
             child: Text(isLastStep
                 ? localizations.checkupStepFinishedSubmit
                 : localizations.checkupStepFinishedNext),

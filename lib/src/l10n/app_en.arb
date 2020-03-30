@@ -208,12 +208,12 @@
 
   "temperatureStepTitle": "Take your temperature",
   "@temperatureStepTitle": {
-    "description": "Title that appears above the textfield where the user enters their temperature"
+    "description": "Title that appears above the text field where the user enters their temperature"
   },
 
   "temperatureStepInputLabel": "Enter your temperature",
   "@temperatureStepInputLabel": {
-    "description": "Title that appears within the textfield where the user enters their temperature"
+    "description": "Title that appears within the text field where the user enters their temperature"
   },
 
   "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
@@ -221,9 +221,14 @@
     "description": "Label for a button that brings up a help screen"
   },
 
-  "locationStepTitle": "Enter your location",
+  "tutorialLocationStepTitle": "Enter your location",
+  "@tutorialLocationStepTitle": {
+    "description": "Title that appears above the text field where the user enters their location during the tutorial"
+  },
+
+  "locationStepTitle": "Verify your location",
   "@locationStepTitle": {
-    "description": "Title that appears above the textfield where the user enters their location"
+    "description": "Title that appears above the text field where the user enters their location"
   },
 
   "locationStepInvalidZipCode": "Please enter a valid USPS ZIP code",
@@ -238,7 +243,7 @@
 
   "locationStepZipCode": "5-Digit ZIP Code",
   "@locationStepZipCode": {
-    "description": "Title that appears within the textfield where the user enters their ZIP code"
+    "description": "Title that appears within the text field where the user enters their ZIP code"
   },
 
   "locationStepCountryHelper": "If you are not in the US, what is your country?",
@@ -258,7 +263,7 @@
 
   "locationStepCountry": "Country",
   "@locationStepCountry": {
-    "description": "Title that appears within the textfield where the user enters their country"
+    "description": "Title that appears within the text field where the user enters their country"
   },
 
   "homeScreenHeading": "Concerned about your health?",

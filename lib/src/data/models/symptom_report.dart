@@ -5,7 +5,7 @@ part 'symptom_report.g.dart';
 @JsonSerializable(explicitToJson: true)
 class SymptomReport {
   String userId;
-  SymptomReportLocation location;
+  UserLocation location;
   List<QuestionResponse> questionResponses;
   bool dataContributionPreference;
 
@@ -40,19 +40,19 @@ class QuestionResponse {
 }
 
 @JsonSerializable()
-class SymptomReportLocation {
+class UserLocation {
   String zipCode;
 
   /// ISO 3166-1 alpha-2.
   String country;
 
-  SymptomReportLocation({
+  UserLocation({
     this.zipCode,
     this.country,
   });
 
-  factory SymptomReportLocation.fromJson(Map<String, dynamic> json) =>
-      _$SymptomReportLocationFromJson(json);
+  factory UserLocation.fromJson(Map<String, dynamic> json) =>
+      _$UserLocationFromJson(json);
 
-  Map<String, dynamic> toJson() => _$SymptomReportLocationToJson(this);
+  Map<String, dynamic> toJson() => _$UserLocationToJson(this);
 }

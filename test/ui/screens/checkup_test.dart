@@ -78,7 +78,8 @@ Widget setUpCheckupScreen({
   );
   preferences ??= PreferencesBloc();
   return MaterialApp(
-    localizationsDelegates: AppLocalizations.localizationsDelegates.followedBy([CountryLocalizations.delegate]),
+    localizationsDelegates: AppLocalizations.localizationsDelegates
+        .followedBy([CountryLocalizations.delegate]),
     supportedLocales: AppLocalizations.supportedLocales,
     home: Scaffold(
       body: BlocProvider(
