@@ -341,6 +341,11 @@
     "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
   },
 
+  "tutorialIntroStepWelcomeSemanticsLabel": "Welcome to the Covid Near Me App",
+  "@tutorialIntroStepWelcomeSemanticsLabel": {
+    "description": "Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers"
+  },
+
   "tutorialIntroStepCompleteACheckup": "Complete a daily health checkup.",
   "@tutorialIntroStepCompleteACheckup": {
     "description": "Describes the outcome of running the app"
@@ -364,6 +369,11 @@
   "getStartedStepJoined": "You've joined the CovidNearMe community!",
   "@getStartedStepJoined": {
     "description": "Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated"
+  },
+
+  "getStartedStepJoinedSemanticsLabel": "You've joined the Covid Near Me community!",
+  "@getStartedStepJoinedSemanticsLabel": {
+    "description": "Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers"
   },
 
   "consentStepDidNotAgree": "DID NOT AGREE",
