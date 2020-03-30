@@ -33,25 +33,28 @@ class EntryField extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(minHeight: 100),
-      child: TextFormField(
-        initialValue: initialValue,
-        onChanged: onChanged,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          enabledBorder: OutlineInputBorder(),
-          labelText: label,
-          suffix: suffix != null ? Text(suffix) : null,
-          helperText: helperText,
-          hasFloatingPlaceholder: true,
-        ),
-        keyboardType: keyboardType,
-        autovalidate: true,
-        validator: validator,
-        autofocus: autofocus,
-        inputFormatters: inputFormatters,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10.0),
+        child: TextFormField(
+          initialValue: initialValue,
+          onChanged: onChanged,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(),
+            labelText: label,
+            suffix: suffix != null ? Text(suffix) : null,
+            helperText: helperText,
+            hasFloatingPlaceholder: true,
+          ),
+          keyboardType: keyboardType,
+          autovalidate: true,
+          validator: validator,
+          autofocus: autofocus,
+          inputFormatters: inputFormatters,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
         ),
       ),
     );

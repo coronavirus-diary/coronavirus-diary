@@ -446,6 +446,12 @@ abstract class AppLocalizations {
   // Menu item displayed with no country is yet selected.
   String get locationStepNoCountrySelected;
 
+  // Menu item displayed with no country is yet selected.
+  String get locationStepCountrySearchPrompt;
+
+  // Label for the dropdown button that selects a country.
+  String get locationStepCountryButtonLabel;
+
   // Name of the country 'Andorra'.
   String get countryCodeAD;
 
