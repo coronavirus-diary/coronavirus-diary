@@ -495,4 +495,754 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
+
+  @override
+  String get locationStepNoCountrySelected => 'None selected';
+
+  @override
+  String get countryCodeAD => 'Andorra';
+
+  @override
+  String get countryCodeAE => 'United Arab Emirates';
+
+  @override
+  String get countryCodeAF => 'Afghanistan';
+
+  @override
+  String get countryCodeAG => 'Antigua and Barbuda';
+
+  @override
+  String get countryCodeAI => 'Anguilla';
+
+  @override
+  String get countryCodeAL => 'Albania';
+
+  @override
+  String get countryCodeAM => 'Armenia';
+
+  @override
+  String get countryCodeAO => 'Angola';
+
+  @override
+  String get countryCodeAQ => 'Antarctica';
+
+  @override
+  String get countryCodeAR => 'Argentina';
+
+  @override
+  String get countryCodeAS => 'American Samoa';
+
+  @override
+  String get countryCodeAT => 'Austria';
+
+  @override
+  String get countryCodeAU => 'Australia';
+
+  @override
+  String get countryCodeAW => 'Aruba';
+
+  @override
+  String get countryCodeAX => 'Åland Islands';
+
+  @override
+  String get countryCodeAZ => 'Azerbaijan';
+
+  @override
+  String get countryCodeBA => 'Bosnia and Herzegovina';
+
+  @override
+  String get countryCodeBB => 'Barbados';
+
+  @override
+  String get countryCodeBD => 'Bangladesh';
+
+  @override
+  String get countryCodeBE => 'Belgium';
+
+  @override
+  String get countryCodeBF => 'Burkina Faso';
+
+  @override
+  String get countryCodeBG => 'Bulgaria';
+
+  @override
+  String get countryCodeBH => 'Bahrain';
+
+  @override
+  String get countryCodeBI => 'Burundi';
+
+  @override
+  String get countryCodeBJ => 'Benin';
+
+  @override
+  String get countryCodeBL => 'Saint Barthélemy';
+
+  @override
+  String get countryCodeBM => 'Bermuda';
+
+  @override
+  String get countryCodeBN => 'Brunei Darussalam';
+
+  @override
+  String get countryCodeBO => 'Bolivia (Plurinational State of)';
+
+  @override
+  String get countryCodeBQ => 'Bonaire, Sint Eustatius and Saba';
+
+  @override
+  String get countryCodeBR => 'Brazil';
+
+  @override
+  String get countryCodeBS => 'Bahamas';
+
+  @override
+  String get countryCodeBT => 'Bhutan';
+
+  @override
+  String get countryCodeBV => 'Bouvet Island';
+
+  @override
+  String get countryCodeBW => 'Botswana';
+
+  @override
+  String get countryCodeBY => 'Belarus';
+
+  @override
+  String get countryCodeBZ => 'Belize';
+
+  @override
+  String get countryCodeCA => 'Canada';
+
+  @override
+  String get countryCodeCC => 'Cocos (Keeling) Islands';
+
+  @override
+  String get countryCodeCD => 'Congo, Democratic Republic of the';
+
+  @override
+  String get countryCodeCF => 'Central African Republic';
+
+  @override
+  String get countryCodeCG => 'Congo';
+
+  @override
+  String get countryCodeCH => 'Switzerland';
+
+  @override
+  String get countryCodeCI => 'Côte d\'Ivoire';
+
+  @override
+  String get countryCodeCK => 'Cook Islands';
+
+  @override
+  String get countryCodeCL => 'Chile';
+
+  @override
+  String get countryCodeCM => 'Cameroon';
+
+  @override
+  String get countryCodeCN => 'China';
+
+  @override
+  String get countryCodeCO => 'Colombia';
+
+  @override
+  String get countryCodeCR => 'Costa Rica';
+
+  @override
+  String get countryCodeCU => 'Cuba';
+
+  @override
+  String get countryCodeCV => 'Cabo Verde';
+
+  @override
+  String get countryCodeCW => 'Curaçao';
+
+  @override
+  String get countryCodeCX => 'Christmas Island';
+
+  @override
+  String get countryCodeCY => 'Cyprus';
+
+  @override
+  String get countryCodeCZ => 'Czechia';
+
+  @override
+  String get countryCodeDE => 'Germany';
+
+  @override
+  String get countryCodeDJ => 'Djibouti';
+
+  @override
+  String get countryCodeDK => 'Denmark';
+
+  @override
+  String get countryCodeDM => 'Dominica';
+
+  @override
+  String get countryCodeDO => 'Dominican Republic';
+
+  @override
+  String get countryCodeDZ => 'Algeria';
+
+  @override
+  String get countryCodeEC => 'Ecuador';
+
+  @override
+  String get countryCodeEE => 'Estonia';
+
+  @override
+  String get countryCodeEG => 'Egypt';
+
+  @override
+  String get countryCodeEH => 'Western Sahara';
+
+  @override
+  String get countryCodeER => 'Eritrea';
+
+  @override
+  String get countryCodeES => 'Spain';
+
+  @override
+  String get countryCodeET => 'Ethiopia';
+
+  @override
+  String get countryCodeFI => 'Finland';
+
+  @override
+  String get countryCodeFJ => 'Fiji';
+
+  @override
+  String get countryCodeFK => 'Falkland Islands (Malvinas)';
+
+  @override
+  String get countryCodeFM => 'Micronesia (Federated States of)';
+
+  @override
+  String get countryCodeFO => 'Faroe Islands';
+
+  @override
+  String get countryCodeFR => 'France';
+
+  @override
+  String get countryCodeGA => 'Gabon';
+
+  @override
+  String get countryCodeGB => 'United Kingdom';
+
+  @override
+  String get countryCodeGD => 'Grenada';
+
+  @override
+  String get countryCodeGE => 'Georgia';
+
+  @override
+  String get countryCodeGF => 'French Guiana';
+
+  @override
+  String get countryCodeGG => 'Guernsey';
+
+  @override
+  String get countryCodeGH => 'Ghana';
+
+  @override
+  String get countryCodeGI => 'Gibraltar';
+
+  @override
+  String get countryCodeGL => 'Greenland';
+
+  @override
+  String get countryCodeGM => 'Gambia';
+
+  @override
+  String get countryCodeGN => 'Guinea';
+
+  @override
+  String get countryCodeGP => 'Guadeloupe';
+
+  @override
+  String get countryCodeGQ => 'Equatorial Guinea';
+
+  @override
+  String get countryCodeGR => 'Greece';
+
+  @override
+  String get countryCodeGS => 'South Georgia and the South Sandwich Islands';
+
+  @override
+  String get countryCodeGT => 'Guatemala';
+
+  @override
+  String get countryCodeGU => 'Guam';
+
+  @override
+  String get countryCodeGW => 'Guinea-Bissau';
+
+  @override
+  String get countryCodeGY => 'Guyana';
+
+  @override
+  String get countryCodeHK => 'Hong Kong';
+
+  @override
+  String get countryCodeHM => 'Heard Island and McDonald Islands';
+
+  @override
+  String get countryCodeHN => 'Honduras';
+
+  @override
+  String get countryCodeHR => 'Croatia';
+
+  @override
+  String get countryCodeHT => 'Haiti';
+
+  @override
+  String get countryCodeHU => 'Hungary';
+
+  @override
+  String get countryCodeID => 'Indonesia';
+
+  @override
+  String get countryCodeIE => 'Ireland';
+
+  @override
+  String get countryCodeIL => 'Israel';
+
+  @override
+  String get countryCodeIM => 'Isle of Man';
+
+  @override
+  String get countryCodeIN => 'India';
+
+  @override
+  String get countryCodeIO => 'British Indian Ocean Territory';
+
+  @override
+  String get countryCodeIQ => 'Iraq';
+
+  @override
+  String get countryCodeIR => 'Iran (Islamic Republic of)';
+
+  @override
+  String get countryCodeIS => 'Iceland';
+
+  @override
+  String get countryCodeIT => 'Italy';
+
+  @override
+  String get countryCodeJE => 'Jersey';
+
+  @override
+  String get countryCodeJM => 'Jamaica';
+
+  @override
+  String get countryCodeJO => 'Jordan';
+
+  @override
+  String get countryCodeJP => 'Japan';
+
+  @override
+  String get countryCodeKE => 'Kenya';
+
+  @override
+  String get countryCodeKG => 'Kyrgyzstan';
+
+  @override
+  String get countryCodeKH => 'Cambodia';
+
+  @override
+  String get countryCodeKI => 'Kiribati';
+
+  @override
+  String get countryCodeKM => 'Comoros';
+
+  @override
+  String get countryCodeKN => 'Saint Kitts and Nevis';
+
+  @override
+  String get countryCodeKP => 'Korea (Democratic People\'s Republic of)';
+
+  @override
+  String get countryCodeKR => 'Korea, Republic of';
+
+  @override
+  String get countryCodeKW => 'Kuwait';
+
+  @override
+  String get countryCodeKY => 'Cayman Islands';
+
+  @override
+  String get countryCodeKZ => 'Kazakhstan';
+
+  @override
+  String get countryCodeLA => 'Lao People\'s Democratic Republic';
+
+  @override
+  String get countryCodeLB => 'Lebanon';
+
+  @override
+  String get countryCodeLC => 'Saint Lucia';
+
+  @override
+  String get countryCodeLI => 'Liechtenstein';
+
+  @override
+  String get countryCodeLK => 'Sri Lanka';
+
+  @override
+  String get countryCodeLR => 'Liberia';
+
+  @override
+  String get countryCodeLS => 'Lesotho';
+
+  @override
+  String get countryCodeLT => 'Lithuania';
+
+  @override
+  String get countryCodeLU => 'Luxembourg';
+
+  @override
+  String get countryCodeLV => 'Latvia';
+
+  @override
+  String get countryCodeLY => 'Libya';
+
+  @override
+  String get countryCodeMA => 'Morocco';
+
+  @override
+  String get countryCodeMC => 'Monaco';
+
+  @override
+  String get countryCodeMD => 'Moldova, Republic of';
+
+  @override
+  String get countryCodeME => 'Montenegro';
+
+  @override
+  String get countryCodeMF => 'Saint Martin (French part)';
+
+  @override
+  String get countryCodeMG => 'Madagascar';
+
+  @override
+  String get countryCodeMH => 'Marshall Islands';
+
+  @override
+  String get countryCodeMK => 'North Macedonia';
+
+  @override
+  String get countryCodeML => 'Mali';
+
+  @override
+  String get countryCodeMM => 'Myanmar';
+
+  @override
+  String get countryCodeMN => 'Mongolia';
+
+  @override
+  String get countryCodeMO => 'Macao';
+
+  @override
+  String get countryCodeMP => 'Northern Mariana Islands';
+
+  @override
+  String get countryCodeMQ => 'Martinique';
+
+  @override
+  String get countryCodeMR => 'Mauritania';
+
+  @override
+  String get countryCodeMS => 'Montserrat';
+
+  @override
+  String get countryCodeMT => 'Malta';
+
+  @override
+  String get countryCodeMU => 'Mauritius';
+
+  @override
+  String get countryCodeMV => 'Maldives';
+
+  @override
+  String get countryCodeMW => 'Malawi';
+
+  @override
+  String get countryCodeMX => 'Mexico';
+
+  @override
+  String get countryCodeMY => 'Malaysia';
+
+  @override
+  String get countryCodeMZ => 'Mozambique';
+
+  @override
+  String get countryCodeNA => 'Namibia';
+
+  @override
+  String get countryCodeNC => 'New Caledonia';
+
+  @override
+  String get countryCodeNE => 'Niger';
+
+  @override
+  String get countryCodeNF => 'Norfolk Island';
+
+  @override
+  String get countryCodeNG => 'Nigeria';
+
+  @override
+  String get countryCodeNI => 'Nicaragua';
+
+  @override
+  String get countryCodeNL => 'Netherlands';
+
+  @override
+  String get countryCodeNO => 'Norway';
+
+  @override
+  String get countryCodeNP => 'Nepal';
+
+  @override
+  String get countryCodeNR => 'Nauru';
+
+  @override
+  String get countryCodeNU => 'Niue';
+
+  @override
+  String get countryCodeNZ => 'New Zealand';
+
+  @override
+  String get countryCodeOM => 'Oman';
+
+  @override
+  String get countryCodePA => 'Panama';
+
+  @override
+  String get countryCodePE => 'Peru';
+
+  @override
+  String get countryCodePF => 'French Polynesia';
+
+  @override
+  String get countryCodePG => 'Papua New Guinea';
+
+  @override
+  String get countryCodePH => 'Philippines';
+
+  @override
+  String get countryCodePK => 'Pakistan';
+
+  @override
+  String get countryCodePL => 'Poland';
+
+  @override
+  String get countryCodePM => 'Saint Pierre and Miquelon';
+
+  @override
+  String get countryCodePN => 'Pitcairn';
+
+  @override
+  String get countryCodePR => 'Puerto Rico';
+
+  @override
+  String get countryCodePS => 'Palestine, State of';
+
+  @override
+  String get countryCodePT => 'Portugal';
+
+  @override
+  String get countryCodePW => 'Palau';
+
+  @override
+  String get countryCodePY => 'Paraguay';
+
+  @override
+  String get countryCodeQA => 'Qatar';
+
+  @override
+  String get countryCodeRE => 'Réunion';
+
+  @override
+  String get countryCodeRO => 'Romania';
+
+  @override
+  String get countryCodeRS => 'Serbia';
+
+  @override
+  String get countryCodeRU => 'Russian Federation';
+
+  @override
+  String get countryCodeRW => 'Rwanda';
+
+  @override
+  String get countryCodeSA => 'Saudi Arabia';
+
+  @override
+  String get countryCodeSB => 'Solomon Islands';
+
+  @override
+  String get countryCodeSC => 'Seychelles';
+
+  @override
+  String get countryCodeSD => 'Sudan';
+
+  @override
+  String get countryCodeSE => 'Sweden';
+
+  @override
+  String get countryCodeSG => 'Singapore';
+
+  @override
+  String get countryCodeSH => 'Saint Helena Ascension Tristan da Cunha';
+
+  @override
+  String get countryCodeSI => 'Slovenia';
+
+  @override
+  String get countryCodeSJ => 'Svalbard and Jan Mayen';
+
+  @override
+  String get countryCodeSK => 'Slovakia';
+
+  @override
+  String get countryCodeSL => 'Sierra Leone';
+
+  @override
+  String get countryCodeSM => 'San Marino';
+
+  @override
+  String get countryCodeSN => 'Senegal';
+
+  @override
+  String get countryCodeSO => 'Somalia';
+
+  @override
+  String get countryCodeSR => 'Suriname';
+
+  @override
+  String get countryCodeSS => 'South Sudan';
+
+  @override
+  String get countryCodeST => 'Sao Tome and Principe';
+
+  @override
+  String get countryCodeSV => 'El Salvador';
+
+  @override
+  String get countryCodeSX => 'Sint Maarten (Dutch part)';
+
+  @override
+  String get countryCodeSY => 'Syrian Arab Republic';
+
+  @override
+  String get countryCodeSZ => 'Eswatini';
+
+  @override
+  String get countryCodeTC => 'Turks and Caicos Islands';
+
+  @override
+  String get countryCodeTD => 'Chad';
+
+  @override
+  String get countryCodeTF => 'French Southern Territories';
+
+  @override
+  String get countryCodeTG => 'Togo';
+
+  @override
+  String get countryCodeTH => 'Thailand';
+
+  @override
+  String get countryCodeTJ => 'Tajikistan';
+
+  @override
+  String get countryCodeTK => 'Tokelau';
+
+  @override
+  String get countryCodeTL => 'Timor-Leste';
+
+  @override
+  String get countryCodeTM => 'Turkmenistan';
+
+  @override
+  String get countryCodeTN => 'Tunisia';
+
+  @override
+  String get countryCodeTO => 'Tonga';
+
+  @override
+  String get countryCodeTR => 'Turkey';
+
+  @override
+  String get countryCodeTT => 'Trinidad and Tobago';
+
+  @override
+  String get countryCodeTV => 'Tuvalu';
+
+  @override
+  String get countryCodeTW => 'Taiwan, Province of China';
+
+  @override
+  String get countryCodeTZ => 'Tanzania, United Republic of';
+
+  @override
+  String get countryCodeUA => 'Ukraine';
+
+  @override
+  String get countryCodeUG => 'Uganda';
+
+  @override
+  String get countryCodeUM => 'United States Minor Outlying Islands';
+
+  @override
+  String get countryCodeUS => 'United States of America';
+
+  @override
+  String get countryCodeUY => 'Uruguay';
+
+  @override
+  String get countryCodeUZ => 'Uzbekistan';
+
+  @override
+  String get countryCodeVA => 'Holy See';
+
+  @override
+  String get countryCodeVC => 'Saint Vincent and the Grenadines';
+
+  @override
+  String get countryCodeVE => 'Venezuela (Bolivarian Republic of)';
+
+  @override
+  String get countryCodeVG => 'Virgin Islands (British)';
+
+  @override
+  String get countryCodeVI => 'Virgin Islands (U.S.)';
+
+  @override
+  String get countryCodeVN => 'Viet Nam';
+
+  @override
+  String get countryCodeVU => 'Vanuatu';
+
+  @override
+  String get countryCodeWF => 'Wallis and Futuna';
+
+  @override
+  String get countryCodeWS => 'Samoa';
+
+  @override
+  String get countryCodeYE => 'Yemen';
+
+  @override
+  String get countryCodeYT => 'Mayotte';
+
+  @override
+  String get countryCodeZA => 'South Africa';
+
+  @override
+  String get countryCodeZM => 'Zambia';
+
+  @override
+  String get countryCodeZW => 'Zimbabwe';
 }

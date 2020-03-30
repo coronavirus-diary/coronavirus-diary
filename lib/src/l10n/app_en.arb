@@ -693,5 +693,1256 @@
   "scrollMoreIndicatorMessage": "SCROLL FOR MORE",
   "@scrollMoreIndicatorMessage": {
     "description": "Let the user that they can scroll to see more content"
+  },
+
+  "locationStepNoCountrySelected": "None selected",
+  "@locationStepNoCountrySelected": {
+    "description": "Menu item displayed with no country is yet selected."
+  },
+
+  "countryCodeAD": "Andorra",
+  "@countryCodeAD": {
+    "description": "Name of the country 'Andorra'."
+  },
+
+  "countryCodeAE": "United Arab Emirates",
+  "@countryCodeAE": {
+    "description": "Name of the country 'United Arab Emirates'."
+  },
+
+  "countryCodeAF": "Afghanistan",
+  "@countryCodeAF": {
+    "description": "Name of the country 'Afghanistan'."
+  },
+
+  "countryCodeAG": "Antigua and Barbuda",
+  "@countryCodeAG": {
+    "description": "Name of the country 'Antigua and Barbuda'."
+  },
+
+  "countryCodeAI": "Anguilla",
+  "@countryCodeAI": {
+    "description": "Name of the country 'Anguilla'."
+  },
+
+  "countryCodeAL": "Albania",
+  "@countryCodeAL": {
+    "description": "Name of the country 'Albania'."
+  },
+
+  "countryCodeAM": "Armenia",
+  "@countryCodeAM": {
+    "description": "Name of the country 'Armenia'."
+  },
+
+  "countryCodeAO": "Angola",
+  "@countryCodeAO": {
+    "description": "Name of the country 'Angola'."
+  },
+
+  "countryCodeAQ": "Antarctica",
+  "@countryCodeAQ": {
+    "description": "Name of the country 'Antarctica'."
+  },
+
+  "countryCodeAR": "Argentina",
+  "@countryCodeAR": {
+    "description": "Name of the country 'Argentina'."
+  },
+
+  "countryCodeAS": "American Samoa",
+  "@countryCodeAS": {
+    "description": "Name of the country 'American Samoa'."
+  },
+
+  "countryCodeAT": "Austria",
+  "@countryCodeAT": {
+    "description": "Name of the country 'Austria'."
+  },
+
+  "countryCodeAU": "Australia",
+  "@countryCodeAU": {
+    "description": "Name of the country 'Australia'."
+  },
+
+  "countryCodeAW": "Aruba",
+  "@countryCodeAW": {
+    "description": "Name of the country 'Aruba'."
+  },
+
+  "countryCodeAX": "Åland Islands",
+  "@countryCodeAX": {
+    "description": "Name of the country 'Åland Islands'."
+  },
+
+  "countryCodeAZ": "Azerbaijan",
+  "@countryCodeAZ": {
+    "description": "Name of the country 'Azerbaijan'."
+  },
+
+  "countryCodeBA": "Bosnia and Herzegovina",
+  "@countryCodeBA": {
+    "description": "Name of the country 'Bosnia and Herzegovina'."
+  },
+
+  "countryCodeBB": "Barbados",
+  "@countryCodeBB": {
+    "description": "Name of the country 'Barbados'."
+  },
+
+  "countryCodeBD": "Bangladesh",
+  "@countryCodeBD": {
+    "description": "Name of the country 'Bangladesh'."
+  },
+
+  "countryCodeBE": "Belgium",
+  "@countryCodeBE": {
+    "description": "Name of the country 'Belgium'."
+  },
+
+  "countryCodeBF": "Burkina Faso",
+  "@countryCodeBF": {
+    "description": "Name of the country 'Burkina Faso'."
+  },
+
+  "countryCodeBG": "Bulgaria",
+  "@countryCodeBG": {
+    "description": "Name of the country 'Bulgaria'."
+  },
+
+  "countryCodeBH": "Bahrain",
+  "@countryCodeBH": {
+    "description": "Name of the country 'Bahrain'."
+  },
+
+  "countryCodeBI": "Burundi",
+  "@countryCodeBI": {
+    "description": "Name of the country 'Burundi'."
+  },
+
+  "countryCodeBJ": "Benin",
+  "@countryCodeBJ": {
+    "description": "Name of the country 'Benin'."
+  },
+
+  "countryCodeBL": "Saint Barthélemy",
+  "@countryCodeBL": {
+    "description": "Name of the country 'Saint Barthélemy'."
+  },
+
+  "countryCodeBM": "Bermuda",
+  "@countryCodeBM": {
+    "description": "Name of the country 'Bermuda'."
+  },
+
+  "countryCodeBN": "Brunei Darussalam",
+  "@countryCodeBN": {
+    "description": "Name of the country 'Brunei Darussalam'."
+  },
+
+  "countryCodeBO": "Bolivia (Plurinational State of)",
+  "@countryCodeBO": {
+    "description": "Name of the country 'Bolivia (Plurinational State of)'."
+  },
+
+  "countryCodeBQ": "Bonaire, Sint Eustatius and Saba",
+  "@countryCodeBQ": {
+    "description": "Name of the country 'Bonaire, Sint Eustatius and Saba'."
+  },
+
+  "countryCodeBR": "Brazil",
+  "@countryCodeBR": {
+    "description": "Name of the country 'Brazil'."
+  },
+
+  "countryCodeBS": "Bahamas",
+  "@countryCodeBS": {
+    "description": "Name of the country 'Bahamas'."
+  },
+
+  "countryCodeBT": "Bhutan",
+  "@countryCodeBT": {
+    "description": "Name of the country 'Bhutan'."
+  },
+
+  "countryCodeBV": "Bouvet Island",
+  "@countryCodeBV": {
+    "description": "Name of the country 'Bouvet Island'."
+  },
+
+  "countryCodeBW": "Botswana",
+  "@countryCodeBW": {
+    "description": "Name of the country 'Botswana'."
+  },
+
+  "countryCodeBY": "Belarus",
+  "@countryCodeBY": {
+    "description": "Name of the country 'Belarus'."
+  },
+
+  "countryCodeBZ": "Belize",
+  "@countryCodeBZ": {
+    "description": "Name of the country 'Belize'."
+  },
+
+  "countryCodeCA": "Canada",
+  "@countryCodeCA": {
+    "description": "Name of the country 'Canada'."
+  },
+
+  "countryCodeCC": "Cocos (Keeling) Islands",
+  "@countryCodeCC": {
+    "description": "Name of the country 'Cocos (Keeling) Islands'."
+  },
+
+  "countryCodeCD": "Congo, Democratic Republic of the",
+  "@countryCodeCD": {
+    "description": "Name of the country 'Congo, Democratic Republic of the'."
+  },
+
+  "countryCodeCF": "Central African Republic",
+  "@countryCodeCF": {
+    "description": "Name of the country 'Central African Republic'."
+  },
+
+  "countryCodeCG": "Congo",
+  "@countryCodeCG": {
+    "description": "Name of the country 'Congo'."
+  },
+
+  "countryCodeCH": "Switzerland",
+  "@countryCodeCH": {
+    "description": "Name of the country 'Switzerland'."
+  },
+
+  "countryCodeCI": "Côte d'Ivoire",
+  "@countryCodeCI": {
+    "description": "Name of the country 'Côte d'Ivoire'."
+  },
+
+  "countryCodeCK": "Cook Islands",
+  "@countryCodeCK": {
+    "description": "Name of the country 'Cook Islands'."
+  },
+
+  "countryCodeCL": "Chile",
+  "@countryCodeCL": {
+    "description": "Name of the country 'Chile'."
+  },
+
+  "countryCodeCM": "Cameroon",
+  "@countryCodeCM": {
+    "description": "Name of the country 'Cameroon'."
+  },
+
+  "countryCodeCN": "China",
+  "@countryCodeCN": {
+    "description": "Name of the country 'China'."
+  },
+
+  "countryCodeCO": "Colombia",
+  "@countryCodeCO": {
+    "description": "Name of the country 'Colombia'."
+  },
+
+  "countryCodeCR": "Costa Rica",
+  "@countryCodeCR": {
+    "description": "Name of the country 'Costa Rica'."
+  },
+
+  "countryCodeCU": "Cuba",
+  "@countryCodeCU": {
+    "description": "Name of the country 'Cuba'."
+  },
+
+  "countryCodeCV": "Cabo Verde",
+  "@countryCodeCV": {
+    "description": "Name of the country 'Cabo Verde'."
+  },
+
+  "countryCodeCW": "Curaçao",
+  "@countryCodeCW": {
+    "description": "Name of the country 'Curaçao'."
+  },
+
+  "countryCodeCX": "Christmas Island",
+  "@countryCodeCX": {
+    "description": "Name of the country 'Christmas Island'."
+  },
+
+  "countryCodeCY": "Cyprus",
+  "@countryCodeCY": {
+    "description": "Name of the country 'Cyprus'."
+  },
+
+  "countryCodeCZ": "Czechia",
+  "@countryCodeCZ": {
+    "description": "Name of the country 'Czechia'."
+  },
+
+  "countryCodeDE": "Germany",
+  "@countryCodeDE": {
+    "description": "Name of the country 'Germany'."
+  },
+
+  "countryCodeDJ": "Djibouti",
+  "@countryCodeDJ": {
+    "description": "Name of the country 'Djibouti'."
+  },
+
+  "countryCodeDK": "Denmark",
+  "@countryCodeDK": {
+    "description": "Name of the country 'Denmark'."
+  },
+
+  "countryCodeDM": "Dominica",
+  "@countryCodeDM": {
+    "description": "Name of the country 'Dominica'."
+  },
+
+  "countryCodeDO": "Dominican Republic",
+  "@countryCodeDO": {
+    "description": "Name of the country 'Dominican Republic'."
+  },
+
+  "countryCodeDZ": "Algeria",
+  "@countryCodeDZ": {
+    "description": "Name of the country 'Algeria'."
+  },
+
+  "countryCodeEC": "Ecuador",
+  "@countryCodeEC": {
+    "description": "Name of the country 'Ecuador'."
+  },
+
+  "countryCodeEE": "Estonia",
+  "@countryCodeEE": {
+    "description": "Name of the country 'Estonia'."
+  },
+
+  "countryCodeEG": "Egypt",
+  "@countryCodeEG": {
+    "description": "Name of the country 'Egypt'."
+  },
+
+  "countryCodeEH": "Western Sahara",
+  "@countryCodeEH": {
+    "description": "Name of the country 'Western Sahara'."
+  },
+
+  "countryCodeER": "Eritrea",
+  "@countryCodeER": {
+    "description": "Name of the country 'Eritrea'."
+  },
+
+  "countryCodeES": "Spain",
+  "@countryCodeES": {
+    "description": "Name of the country 'Spain'."
+  },
+
+  "countryCodeET": "Ethiopia",
+  "@countryCodeET": {
+    "description": "Name of the country 'Ethiopia'."
+  },
+
+  "countryCodeFI": "Finland",
+  "@countryCodeFI": {
+    "description": "Name of the country 'Finland'."
+  },
+
+  "countryCodeFJ": "Fiji",
+  "@countryCodeFJ": {
+    "description": "Name of the country 'Fiji'."
+  },
+
+  "countryCodeFK": "Falkland Islands (Malvinas)",
+  "@countryCodeFK": {
+    "description": "Name of the country 'Falkland Islands (Malvinas)'."
+  },
+
+  "countryCodeFM": "Micronesia (Federated States of)",
+  "@countryCodeFM": {
+    "description": "Name of the country 'Micronesia (Federated States of)'."
+  },
+
+  "countryCodeFO": "Faroe Islands",
+  "@countryCodeFO": {
+    "description": "Name of the country 'Faroe Islands'."
+  },
+
+  "countryCodeFR": "France",
+  "@countryCodeFR": {
+    "description": "Name of the country 'France'."
+  },
+
+  "countryCodeGA": "Gabon",
+  "@countryCodeGA": {
+    "description": "Name of the country 'Gabon'."
+  },
+
+  "countryCodeGB": "United Kingdom",
+  "@countryCodeGB": {
+    "description": "Name of the country 'United Kingdom'."
+  },
+
+  "countryCodeGD": "Grenada",
+  "@countryCodeGD": {
+    "description": "Name of the country 'Grenada'."
+  },
+
+  "countryCodeGE": "Georgia",
+  "@countryCodeGE": {
+    "description": "Name of the country 'Georgia'."
+  },
+
+  "countryCodeGF": "French Guiana",
+  "@countryCodeGF": {
+    "description": "Name of the country 'French Guiana'."
+  },
+
+  "countryCodeGG": "Guernsey",
+  "@countryCodeGG": {
+    "description": "Name of the country 'Guernsey'."
+  },
+
+  "countryCodeGH": "Ghana",
+  "@countryCodeGH": {
+    "description": "Name of the country 'Ghana'."
+  },
+
+  "countryCodeGI": "Gibraltar",
+  "@countryCodeGI": {
+    "description": "Name of the country 'Gibraltar'."
+  },
+
+  "countryCodeGL": "Greenland",
+  "@countryCodeGL": {
+    "description": "Name of the country 'Greenland'."
+  },
+
+  "countryCodeGM": "Gambia",
+  "@countryCodeGM": {
+    "description": "Name of the country 'Gambia'."
+  },
+
+  "countryCodeGN": "Guinea",
+  "@countryCodeGN": {
+    "description": "Name of the country 'Guinea'."
+  },
+
+  "countryCodeGP": "Guadeloupe",
+  "@countryCodeGP": {
+    "description": "Name of the country 'Guadeloupe'."
+  },
+
+  "countryCodeGQ": "Equatorial Guinea",
+  "@countryCodeGQ": {
+    "description": "Name of the country 'Equatorial Guinea'."
+  },
+
+  "countryCodeGR": "Greece",
+  "@countryCodeGR": {
+    "description": "Name of the country 'Greece'."
+  },
+
+  "countryCodeGS": "South Georgia and the South Sandwich Islands",
+  "@countryCodeGS": {
+    "description": "Name of the country 'South Georgia and the South Sandwich Islands'."
+  },
+
+  "countryCodeGT": "Guatemala",
+  "@countryCodeGT": {
+    "description": "Name of the country 'Guatemala'."
+  },
+
+  "countryCodeGU": "Guam",
+  "@countryCodeGU": {
+    "description": "Name of the country 'Guam'."
+  },
+
+  "countryCodeGW": "Guinea-Bissau",
+  "@countryCodeGW": {
+    "description": "Name of the country 'Guinea-Bissau'."
+  },
+
+  "countryCodeGY": "Guyana",
+  "@countryCodeGY": {
+    "description": "Name of the country 'Guyana'."
+  },
+
+  "countryCodeHK": "Hong Kong",
+  "@countryCodeHK": {
+    "description": "Name of the country 'Hong Kong'."
+  },
+
+  "countryCodeHM": "Heard Island and McDonald Islands",
+  "@countryCodeHM": {
+    "description": "Name of the country 'Heard Island and McDonald Islands'."
+  },
+
+  "countryCodeHN": "Honduras",
+  "@countryCodeHN": {
+    "description": "Name of the country 'Honduras'."
+  },
+
+  "countryCodeHR": "Croatia",
+  "@countryCodeHR": {
+    "description": "Name of the country 'Croatia'."
+  },
+
+  "countryCodeHT": "Haiti",
+  "@countryCodeHT": {
+    "description": "Name of the country 'Haiti'."
+  },
+
+  "countryCodeHU": "Hungary",
+  "@countryCodeHU": {
+    "description": "Name of the country 'Hungary'."
+  },
+
+  "countryCodeID": "Indonesia",
+  "@countryCodeID": {
+    "description": "Name of the country 'Indonesia'."
+  },
+
+  "countryCodeIE": "Ireland",
+  "@countryCodeIE": {
+    "description": "Name of the country 'Ireland'."
+  },
+
+  "countryCodeIL": "Israel",
+  "@countryCodeIL": {
+    "description": "Name of the country 'Israel'."
+  },
+
+  "countryCodeIM": "Isle of Man",
+  "@countryCodeIM": {
+    "description": "Name of the country 'Isle of Man'."
+  },
+
+  "countryCodeIN": "India",
+  "@countryCodeIN": {
+    "description": "Name of the country 'India'."
+  },
+
+  "countryCodeIO": "British Indian Ocean Territory",
+  "@countryCodeIO": {
+    "description": "Name of the country 'British Indian Ocean Territory'."
+  },
+
+  "countryCodeIQ": "Iraq",
+  "@countryCodeIQ": {
+    "description": "Name of the country 'Iraq'."
+  },
+
+  "countryCodeIR": "Iran (Islamic Republic of)",
+  "@countryCodeIR": {
+    "description": "Name of the country 'Iran (Islamic Republic of)'."
+  },
+
+  "countryCodeIS": "Iceland",
+  "@countryCodeIS": {
+    "description": "Name of the country 'Iceland'."
+  },
+
+  "countryCodeIT": "Italy",
+  "@countryCodeIT": {
+    "description": "Name of the country 'Italy'."
+  },
+
+  "countryCodeJE": "Jersey",
+  "@countryCodeJE": {
+    "description": "Name of the country 'Jersey'."
+  },
+
+  "countryCodeJM": "Jamaica",
+  "@countryCodeJM": {
+    "description": "Name of the country 'Jamaica'."
+  },
+
+  "countryCodeJO": "Jordan",
+  "@countryCodeJO": {
+    "description": "Name of the country 'Jordan'."
+  },
+
+  "countryCodeJP": "Japan",
+  "@countryCodeJP": {
+    "description": "Name of the country 'Japan'."
+  },
+
+  "countryCodeKE": "Kenya",
+  "@countryCodeKE": {
+    "description": "Name of the country 'Kenya'."
+  },
+
+  "countryCodeKG": "Kyrgyzstan",
+  "@countryCodeKG": {
+    "description": "Name of the country 'Kyrgyzstan'."
+  },
+
+  "countryCodeKH": "Cambodia",
+  "@countryCodeKH": {
+    "description": "Name of the country 'Cambodia'."
+  },
+
+  "countryCodeKI": "Kiribati",
+  "@countryCodeKI": {
+    "description": "Name of the country 'Kiribati'."
+  },
+
+  "countryCodeKM": "Comoros",
+  "@countryCodeKM": {
+    "description": "Name of the country 'Comoros'."
+  },
+
+  "countryCodeKN": "Saint Kitts and Nevis",
+  "@countryCodeKN": {
+    "description": "Name of the country 'Saint Kitts and Nevis'."
+  },
+
+  "countryCodeKP": "Korea (Democratic People's Republic of)",
+  "@countryCodeKP": {
+    "description": "Name of the country 'Korea (Democratic People's Republic of)'."
+  },
+
+  "countryCodeKR": "Korea, Republic of",
+  "@countryCodeKR": {
+    "description": "Name of the country 'Korea, Republic of'."
+  },
+
+  "countryCodeKW": "Kuwait",
+  "@countryCodeKW": {
+    "description": "Name of the country 'Kuwait'."
+  },
+
+  "countryCodeKY": "Cayman Islands",
+  "@countryCodeKY": {
+    "description": "Name of the country 'Cayman Islands'."
+  },
+
+  "countryCodeKZ": "Kazakhstan",
+  "@countryCodeKZ": {
+    "description": "Name of the country 'Kazakhstan'."
+  },
+
+  "countryCodeLA": "Lao People's Democratic Republic",
+  "@countryCodeLA": {
+    "description": "Name of the country 'Lao People's Democratic Republic'."
+  },
+
+  "countryCodeLB": "Lebanon",
+  "@countryCodeLB": {
+    "description": "Name of the country 'Lebanon'."
+  },
+
+  "countryCodeLC": "Saint Lucia",
+  "@countryCodeLC": {
+    "description": "Name of the country 'Saint Lucia'."
+  },
+
+  "countryCodeLI": "Liechtenstein",
+  "@countryCodeLI": {
+    "description": "Name of the country 'Liechtenstein'."
+  },
+
+  "countryCodeLK": "Sri Lanka",
+  "@countryCodeLK": {
+    "description": "Name of the country 'Sri Lanka'."
+  },
+
+  "countryCodeLR": "Liberia",
+  "@countryCodeLR": {
+    "description": "Name of the country 'Liberia'."
+  },
+
+  "countryCodeLS": "Lesotho",
+  "@countryCodeLS": {
+    "description": "Name of the country 'Lesotho'."
+  },
+
+  "countryCodeLT": "Lithuania",
+  "@countryCodeLT": {
+    "description": "Name of the country 'Lithuania'."
+  },
+
+  "countryCodeLU": "Luxembourg",
+  "@countryCodeLU": {
+    "description": "Name of the country 'Luxembourg'."
+  },
+
+  "countryCodeLV": "Latvia",
+  "@countryCodeLV": {
+    "description": "Name of the country 'Latvia'."
+  },
+
+  "countryCodeLY": "Libya",
+  "@countryCodeLY": {
+    "description": "Name of the country 'Libya'."
+  },
+
+  "countryCodeMA": "Morocco",
+  "@countryCodeMA": {
+    "description": "Name of the country 'Morocco'."
+  },
+
+  "countryCodeMC": "Monaco",
+  "@countryCodeMC": {
+    "description": "Name of the country 'Monaco'."
+  },
+
+  "countryCodeMD": "Moldova, Republic of",
+  "@countryCodeMD": {
+    "description": "Name of the country 'Moldova, Republic of'."
+  },
+
+  "countryCodeME": "Montenegro",
+  "@countryCodeME": {
+    "description": "Name of the country 'Montenegro'."
+  },
+
+  "countryCodeMF": "Saint Martin (French part)",
+  "@countryCodeMF": {
+    "description": "Name of the country 'Saint Martin (French part)'."
+  },
+
+  "countryCodeMG": "Madagascar",
+  "@countryCodeMG": {
+    "description": "Name of the country 'Madagascar'."
+  },
+
+  "countryCodeMH": "Marshall Islands",
+  "@countryCodeMH": {
+    "description": "Name of the country 'Marshall Islands'."
+  },
+
+  "countryCodeMK": "North Macedonia",
+  "@countryCodeMK": {
+    "description": "Name of the country 'North Macedonia'."
+  },
+
+  "countryCodeML": "Mali",
+  "@countryCodeML": {
+    "description": "Name of the country 'Mali'."
+  },
+
+  "countryCodeMM": "Myanmar",
+  "@countryCodeMM": {
+    "description": "Name of the country 'Myanmar'."
+  },
+
+  "countryCodeMN": "Mongolia",
+  "@countryCodeMN": {
+    "description": "Name of the country 'Mongolia'."
+  },
+
+  "countryCodeMO": "Macao",
+  "@countryCodeMO": {
+    "description": "Name of the country 'Macao'."
+  },
+
+  "countryCodeMP": "Northern Mariana Islands",
+  "@countryCodeMP": {
+    "description": "Name of the country 'Northern Mariana Islands'."
+  },
+
+  "countryCodeMQ": "Martinique",
+  "@countryCodeMQ": {
+    "description": "Name of the country 'Martinique'."
+  },
+
+  "countryCodeMR": "Mauritania",
+  "@countryCodeMR": {
+    "description": "Name of the country 'Mauritania'."
+  },
+
+  "countryCodeMS": "Montserrat",
+  "@countryCodeMS": {
+    "description": "Name of the country 'Montserrat'."
+  },
+
+  "countryCodeMT": "Malta",
+  "@countryCodeMT": {
+    "description": "Name of the country 'Malta'."
+  },
+
+  "countryCodeMU": "Mauritius",
+  "@countryCodeMU": {
+    "description": "Name of the country 'Mauritius'."
+  },
+
+  "countryCodeMV": "Maldives",
+  "@countryCodeMV": {
+    "description": "Name of the country 'Maldives'."
+  },
+
+  "countryCodeMW": "Malawi",
+  "@countryCodeMW": {
+    "description": "Name of the country 'Malawi'."
+  },
+
+  "countryCodeMX": "Mexico",
+  "@countryCodeMX": {
+    "description": "Name of the country 'Mexico'."
+  },
+
+  "countryCodeMY": "Malaysia",
+  "@countryCodeMY": {
+    "description": "Name of the country 'Malaysia'."
+  },
+
+  "countryCodeMZ": "Mozambique",
+  "@countryCodeMZ": {
+    "description": "Name of the country 'Mozambique'."
+  },
+
+  "countryCodeNA": "Namibia",
+  "@countryCodeNA": {
+    "description": "Name of the country 'Namibia'."
+  },
+
+  "countryCodeNC": "New Caledonia",
+  "@countryCodeNC": {
+    "description": "Name of the country 'New Caledonia'."
+  },
+
+  "countryCodeNE": "Niger",
+  "@countryCodeNE": {
+    "description": "Name of the country 'Niger'."
+  },
+
+  "countryCodeNF": "Norfolk Island",
+  "@countryCodeNF": {
+    "description": "Name of the country 'Norfolk Island'."
+  },
+
+  "countryCodeNG": "Nigeria",
+  "@countryCodeNG": {
+    "description": "Name of the country 'Nigeria'."
+  },
+
+  "countryCodeNI": "Nicaragua",
+  "@countryCodeNI": {
+    "description": "Name of the country 'Nicaragua'."
+  },
+
+  "countryCodeNL": "Netherlands",
+  "@countryCodeNL": {
+    "description": "Name of the country 'Netherlands'."
+  },
+
+  "countryCodeNO": "Norway",
+  "@countryCodeNO": {
+    "description": "Name of the country 'Norway'."
+  },
+
+  "countryCodeNP": "Nepal",
+  "@countryCodeNP": {
+    "description": "Name of the country 'Nepal'."
+  },
+
+  "countryCodeNR": "Nauru",
+  "@countryCodeNR": {
+    "description": "Name of the country 'Nauru'."
+  },
+
+  "countryCodeNU": "Niue",
+  "@countryCodeNU": {
+    "description": "Name of the country 'Niue'."
+  },
+
+  "countryCodeNZ": "New Zealand",
+  "@countryCodeNZ": {
+    "description": "Name of the country 'New Zealand'."
+  },
+
+  "countryCodeOM": "Oman",
+  "@countryCodeOM": {
+    "description": "Name of the country 'Oman'."
+  },
+
+  "countryCodePA": "Panama",
+  "@countryCodePA": {
+    "description": "Name of the country 'Panama'."
+  },
+
+  "countryCodePE": "Peru",
+  "@countryCodePE": {
+    "description": "Name of the country 'Peru'."
+  },
+
+  "countryCodePF": "French Polynesia",
+  "@countryCodePF": {
+    "description": "Name of the country 'French Polynesia'."
+  },
+
+  "countryCodePG": "Papua New Guinea",
+  "@countryCodePG": {
+    "description": "Name of the country 'Papua New Guinea'."
+  },
+
+  "countryCodePH": "Philippines",
+  "@countryCodePH": {
+    "description": "Name of the country 'Philippines'."
+  },
+
+  "countryCodePK": "Pakistan",
+  "@countryCodePK": {
+    "description": "Name of the country 'Pakistan'."
+  },
+
+  "countryCodePL": "Poland",
+  "@countryCodePL": {
+    "description": "Name of the country 'Poland'."
+  },
+
+  "countryCodePM": "Saint Pierre and Miquelon",
+  "@countryCodePM": {
+    "description": "Name of the country 'Saint Pierre and Miquelon'."
+  },
+
+  "countryCodePN": "Pitcairn",
+  "@countryCodePN": {
+    "description": "Name of the country 'Pitcairn'."
+  },
+
+  "countryCodePR": "Puerto Rico",
+  "@countryCodePR": {
+    "description": "Name of the country 'Puerto Rico'."
+  },
+
+  "countryCodePS": "Palestine, State of",
+  "@countryCodePS": {
+    "description": "Name of the country 'Palestine, State of'."
+  },
+
+  "countryCodePT": "Portugal",
+  "@countryCodePT": {
+    "description": "Name of the country 'Portugal'."
+  },
+
+  "countryCodePW": "Palau",
+  "@countryCodePW": {
+    "description": "Name of the country 'Palau'."
+  },
+
+  "countryCodePY": "Paraguay",
+  "@countryCodePY": {
+    "description": "Name of the country 'Paraguay'."
+  },
+
+  "countryCodeQA": "Qatar",
+  "@countryCodeQA": {
+    "description": "Name of the country 'Qatar'."
+  },
+
+  "countryCodeRE": "Réunion",
+  "@countryCodeRE": {
+    "description": "Name of the country 'Réunion'."
+  },
+
+  "countryCodeRO": "Romania",
+  "@countryCodeRO": {
+    "description": "Name of the country 'Romania'."
+  },
+
+  "countryCodeRS": "Serbia",
+  "@countryCodeRS": {
+    "description": "Name of the country 'Serbia'."
+  },
+
+  "countryCodeRU": "Russian Federation",
+  "@countryCodeRU": {
+    "description": "Name of the country 'Russian Federation'."
+  },
+
+  "countryCodeRW": "Rwanda",
+  "@countryCodeRW": {
+    "description": "Name of the country 'Rwanda'."
+  },
+
+  "countryCodeSA": "Saudi Arabia",
+  "@countryCodeSA": {
+    "description": "Name of the country 'Saudi Arabia'."
+  },
+
+  "countryCodeSB": "Solomon Islands",
+  "@countryCodeSB": {
+    "description": "Name of the country 'Solomon Islands'."
+  },
+
+  "countryCodeSC": "Seychelles",
+  "@countryCodeSC": {
+    "description": "Name of the country 'Seychelles'."
+  },
+
+  "countryCodeSD": "Sudan",
+  "@countryCodeSD": {
+    "description": "Name of the country 'Sudan'."
+  },
+
+  "countryCodeSE": "Sweden",
+  "@countryCodeSE": {
+    "description": "Name of the country 'Sweden'."
+  },
+
+  "countryCodeSG": "Singapore",
+  "@countryCodeSG": {
+    "description": "Name of the country 'Singapore'."
+  },
+
+  "countryCodeSH": "Saint Helena Ascension Tristan da Cunha",
+  "@countryCodeSH": {
+    "description": "Name of the country 'Saint Helena, Ascension and Tristan da Cunha'."
+  },
+
+  "countryCodeSI": "Slovenia",
+  "@countryCodeSI": {
+    "description": "Name of the country 'Slovenia'."
+  },
+
+  "countryCodeSJ": "Svalbard and Jan Mayen",
+  "@countryCodeSJ": {
+    "description": "Name of the country 'Svalbard and Jan Mayen'."
+  },
+
+  "countryCodeSK": "Slovakia",
+  "@countryCodeSK": {
+    "description": "Name of the country 'Slovakia'."
+  },
+
+  "countryCodeSL": "Sierra Leone",
+  "@countryCodeSL": {
+    "description": "Name of the country 'Sierra Leone'."
+  },
+
+  "countryCodeSM": "San Marino",
+  "@countryCodeSM": {
+    "description": "Name of the country 'San Marino'."
+  },
+
+  "countryCodeSN": "Senegal",
+  "@countryCodeSN": {
+    "description": "Name of the country 'Senegal'."
+  },
+
+  "countryCodeSO": "Somalia",
+  "@countryCodeSO": {
+    "description": "Name of the country 'Somalia'."
+  },
+
+  "countryCodeSR": "Suriname",
+  "@countryCodeSR": {
+    "description": "Name of the country 'Suriname'."
+  },
+
+  "countryCodeSS": "South Sudan",
+  "@countryCodeSS": {
+    "description": "Name of the country 'South Sudan'."
+  },
+
+  "countryCodeST": "Sao Tome and Principe",
+  "@countryCodeST": {
+    "description": "Name of the country 'Sao Tome and Principe'."
+  },
+
+  "countryCodeSV": "El Salvador",
+  "@countryCodeSV": {
+    "description": "Name of the country 'El Salvador'."
+  },
+
+  "countryCodeSX": "Sint Maarten (Dutch part)",
+  "@countryCodeSX": {
+    "description": "Name of the country 'Sint Maarten (Dutch part)'."
+  },
+
+  "countryCodeSY": "Syrian Arab Republic",
+  "@countryCodeSY": {
+    "description": "Name of the country 'Syrian Arab Republic'."
+  },
+
+  "countryCodeSZ": "Eswatini",
+  "@countryCodeSZ": {
+    "description": "Name of the country 'Eswatini'."
+  },
+
+  "countryCodeTC": "Turks and Caicos Islands",
+  "@countryCodeTC": {
+    "description": "Name of the country 'Turks and Caicos Islands'."
+  },
+
+  "countryCodeTD": "Chad",
+  "@countryCodeTD": {
+    "description": "Name of the country 'Chad'."
+  },
+
+  "countryCodeTF": "French Southern Territories",
+  "@countryCodeTF": {
+    "description": "Name of the country 'French Southern Territories'."
+  },
+
+  "countryCodeTG": "Togo",
+  "@countryCodeTG": {
+    "description": "Name of the country 'Togo'."
+  },
+
+  "countryCodeTH": "Thailand",
+  "@countryCodeTH": {
+    "description": "Name of the country 'Thailand'."
+  },
+
+  "countryCodeTJ": "Tajikistan",
+  "@countryCodeTJ": {
+    "description": "Name of the country 'Tajikistan'."
+  },
+
+  "countryCodeTK": "Tokelau",
+  "@countryCodeTK": {
+    "description": "Name of the country 'Tokelau'."
+  },
+
+  "countryCodeTL": "Timor-Leste",
+  "@countryCodeTL": {
+    "description": "Name of the country 'Timor-Leste'."
+  },
+
+  "countryCodeTM": "Turkmenistan",
+  "@countryCodeTM": {
+    "description": "Name of the country 'Turkmenistan'."
+  },
+
+  "countryCodeTN": "Tunisia",
+  "@countryCodeTN": {
+    "description": "Name of the country 'Tunisia'."
+  },
+
+  "countryCodeTO": "Tonga",
+  "@countryCodeTO": {
+    "description": "Name of the country 'Tonga'."
+  },
+
+  "countryCodeTR": "Turkey",
+  "@countryCodeTR": {
+    "description": "Name of the country 'Turkey'."
+  },
+
+  "countryCodeTT": "Trinidad and Tobago",
+  "@countryCodeTT": {
+    "description": "Name of the country 'Trinidad and Tobago'."
+  },
+
+  "countryCodeTV": "Tuvalu",
+  "@countryCodeTV": {
+    "description": "Name of the country 'Tuvalu'."
+  },
+
+  "countryCodeTW": "Taiwan, Province of China",
+  "@countryCodeTW": {
+    "description": "Name of the country 'Taiwan, Province of China'."
+  },
+
+  "countryCodeTZ": "Tanzania, United Republic of",
+  "@countryCodeTZ": {
+    "description": "Name of the country 'Tanzania, United Republic of'."
+  },
+
+  "countryCodeUA": "Ukraine",
+  "@countryCodeUA": {
+    "description": "Name of the country 'Ukraine'."
+  },
+
+  "countryCodeUG": "Uganda",
+  "@countryCodeUG": {
+    "description": "Name of the country 'Uganda'."
+  },
+
+  "countryCodeUM": "United States Minor Outlying Islands",
+  "@countryCodeUM": {
+    "description": "Name of the country 'United States Minor Outlying Islands'."
+  },
+
+  "countryCodeUS": "United States of America",
+  "@countryCodeUS": {
+    "description": "Name of the country 'United States of America'."
+  },
+
+  "countryCodeUY": "Uruguay",
+  "@countryCodeUY": {
+    "description": "Name of the country 'Uruguay'."
+  },
+
+  "countryCodeUZ": "Uzbekistan",
+  "@countryCodeUZ": {
+    "description": "Name of the country 'Uzbekistan'."
+  },
+
+  "countryCodeVA": "Holy See",
+  "@countryCodeVA": {
+    "description": "Name of the country 'Holy See'."
+  },
+
+  "countryCodeVC": "Saint Vincent and the Grenadines",
+  "@countryCodeVC": {
+    "description": "Name of the country 'Saint Vincent and the Grenadines'."
+  },
+
+  "countryCodeVE": "Venezuela (Bolivarian Republic of)",
+  "@countryCodeVE": {
+    "description": "Name of the country 'Venezuela (Bolivarian Republic of)'."
+  },
+
+  "countryCodeVG": "Virgin Islands (British)",
+  "@countryCodeVG": {
+    "description": "Name of the country 'Virgin Islands (British)'."
+  },
+
+  "countryCodeVI": "Virgin Islands (U.S.)",
+  "@countryCodeVI": {
+    "description": "Name of the country 'Virgin Islands (U.S.)'."
+  },
+
+  "countryCodeVN": "Viet Nam",
+  "@countryCodeVN": {
+    "description": "Name of the country 'Viet Nam'."
+  },
+
+  "countryCodeVU": "Vanuatu",
+  "@countryCodeVU": {
+    "description": "Name of the country 'Vanuatu'."
+  },
+
+  "countryCodeWF": "Wallis and Futuna",
+  "@countryCodeWF": {
+    "description": "Name of the country 'Wallis and Futuna'."
+  },
+
+  "countryCodeWS": "Samoa",
+  "@countryCodeWS": {
+    "description": "Name of the country 'Samoa'."
+  },
+
+  "countryCodeYE": "Yemen",
+  "@countryCodeYE": {
+    "description": "Name of the country 'Yemen'."
+  },
+
+  "countryCodeYT": "Mayotte",
+  "@countryCodeYT": {
+    "description": "Name of the country 'Mayotte'."
+  },
+
+  "countryCodeZA": "South Africa",
+  "@countryCodeZA": {
+    "description": "Name of the country 'South Africa'."
+  },
+
+  "countryCodeZM": "Zambia",
+  "@countryCodeZM": {
+    "description": "Name of the country 'Zambia'."
+  },
+
+  "countryCodeZW": "Zimbabwe",
+  "@countryCodeZW": {
+    "description": "Name of the country 'Zimbabwe'."
   }
+
 }

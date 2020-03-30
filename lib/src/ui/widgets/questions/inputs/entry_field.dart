@@ -43,6 +43,7 @@ class EntryField extends StatelessWidget {
           border: OutlineInputBorder(),
           enabledBorder: OutlineInputBorder(),
           labelText: label,
+          suffix: suffix != null ? Text(suffix) : null,
           helperText: helperText,
           hasFloatingPlaceholder: true,
           errorMaxLines: 4,
