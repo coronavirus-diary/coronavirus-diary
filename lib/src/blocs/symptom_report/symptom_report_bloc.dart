@@ -61,7 +61,7 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
 
     // Set state to updated checkup
     yield SymptomReportStateInProgress(
-      symptomReport: event.updatedSystemReport,
+      symptomReport: event.updatedSymptomReport,
     );
   }
 

@@ -8,8 +8,8 @@ void updateSymptomReport({
   @required SymptomReport Function(SymptomReport) updateFunction,
   @required BuildContext context,
 }) {
-  SymptomReport systemReport = symptomReportState.symptomReport;
-  SymptomReport updatedSymptomReport = updateFunction(systemReport);
+  SymptomReport symptomReport = symptomReportState.symptomReport;
+  SymptomReport updatedSymptomReport = updateFunction(symptomReport);
   context
       .bloc<SymptomReportBloc>()
       .add(UpdateSymptomReport(updatedSymptomReport: updatedSymptomReport));
