@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:covidnearme/src/data/models/assessments.dart';
-import 'package:covidnearme/src/data/models/checkups.dart';
 import 'package:covidnearme/src/data/models/symptom_report.dart';
 
 class SymptomReportsRepository {
