@@ -12,9 +12,11 @@ class QuestionItem<T> extends StatefulWidget {
   final QuestionItemChanged<T> onChanged;
 
   const QuestionItem({
+    Key key,
     @required this.question,
     @required this.onChanged,
-  }) : assert(onChanged != null);
+  })  : assert(onChanged != null),
+        super(key: key);
 
   @override
   _QuestionItemState<T> createState() => _QuestionItemState<T>();

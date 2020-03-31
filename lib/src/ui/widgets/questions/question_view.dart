@@ -43,18 +43,21 @@ class _QuestionViewState extends State<QuestionView> {
       switch (question.runtimeType) {
         case ScaleQuestion:
           yield QuestionItem<int>(
+            key: ValueKey<Question>(question),
             question: question,
             onChanged: (int value) => onChanged(question, value),
           );
           break;
         case TextFieldQuestion:
           yield QuestionItem<String>(
+            key: ValueKey<Question>(question),
             question: question,
             onChanged: (String value) => onChanged(question, value),
           );
           break;
         case TemperatureQuestion:
           yield QuestionItem<double>(
+            key: ValueKey<Question>(question),
             question: question,
             onChanged: (double value) => onChanged(question, value),
           );
@@ -62,18 +65,29 @@ class _QuestionViewState extends State<QuestionView> {
         case CompositeQuestion:
           CompositeQuestion composite = question;
           yield QuestionItem<dynamic>(
+            key: ValueKey<Question>(composite.children.first),
             question: composite.children.first,
             onChanged: (dynamic value) =>
                 onChanged(composite.children.first, value),
           );
+          bool endReached = false;
           for (int i = 1; i < composite.children.length; ++i) {
-            if (_answered[composite.children[i - 1]] ==
-                composite.answers[i - 1]) {
+            final Question child = composite.children[i];
+            if (!endReached &&
+                _answered[composite.children[i - 1]] ==
+                    composite.answers[i - 1]) {
               yield QuestionItem<dynamic>(
-                question: composite.children[i],
+                key: ValueKey<Question>(child),
+                question: child,
                 onChanged: (dynamic value) =>
-                    onChanged(composite.children[i], value),
+                    onChanged(child, value),
               );
+            } else {
+              endReached = true;
+              // Remove any answers for questions that no longer apply.
+              if (_answered.remove(child) != null) {
+                onChanged(child, null);
+              }
             }
           }
           break;
