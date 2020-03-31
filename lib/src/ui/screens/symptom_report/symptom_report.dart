@@ -125,7 +125,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
       case SymptomReportStateCreating:
         return _getUnloadedBody(symptomReportState);
       case SymptomReportStateInProgress:
-        return SystemReportLoadedBody();
+        return SymptomReportLoadedBody();
       case SymptomReportStateCompleting:
       case SymptomReportStateCompleted:
         return Container();

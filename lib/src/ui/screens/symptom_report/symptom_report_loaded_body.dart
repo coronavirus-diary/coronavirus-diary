@@ -6,16 +6,16 @@ import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/questions/questions.dart';
-import 'package:covidnearme/src/ui/utils/system_reports.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'steps/index.dart';
 import 'symptom_report_progress_bar.dart';
 
-class SystemReportLoadedBody extends StatefulWidget {
+class SymptomReportLoadedBody extends StatefulWidget {
   @override
-  _SystemReportLoadedBodyState createState() => _SystemReportLoadedBodyState();
+  _SymptomReportLoadedBodyState createState() => _SymptomReportLoadedBodyState();
 }
 
-class _SystemReportLoadedBodyState extends State<SystemReportLoadedBody> {
+class _SymptomReportLoadedBodyState extends State<SymptomReportLoadedBody> {
   int currentIndex = 0;
   SymptomReportStep currentStep = steps[0];
 
@@ -32,7 +32,7 @@ class _SystemReportLoadedBodyState extends State<SystemReportLoadedBody> {
       );
       final String zipCode = places[0].postalCode;
 
-      updateSystemReport(
+      updateSymptomReport(
         context: context,
         symptomReportState: symptomReportState,
         updateFunction: (SymptomReport symptomReport) {

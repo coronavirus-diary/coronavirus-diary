@@ -1,6 +1,6 @@
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/data/models/symptom_report.dart';
-import 'package:covidnearme/src/ui/utils/system_reports.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/index.dart';
 import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
@@ -89,7 +89,7 @@ class _LocationStepState extends State<LocationStep> {
       return;
     }
 
-    updateSystemReport(
+    updateSymptomReport(
       symptomReportState: symptomReportState,
       context: context,
       updateFunction: (SymptomReport symptomReport) {
@@ -116,7 +116,7 @@ class _LocationStepState extends State<LocationStep> {
       return;
     }
 
-    updateSystemReport(
+    updateSymptomReport(
       symptomReportState: symptomReportState,
       context: context,
       updateFunction: (SymptomReport symptomReport) {

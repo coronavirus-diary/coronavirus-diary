@@ -16,12 +16,12 @@ class StartSymptomReport extends SymptomReportEvent {
 }
 
 class UpdateSymptomReport extends SymptomReportEvent {
-  final SymptomReport updatedSystemReport;
+  final SymptomReport updatedSymptom;
 
-  const UpdateSymptomReport({this.updatedSystemReport});
+  const UpdateSymptomReport({this.updatedSymptom});
 
   @override
-  List<Object> get props => [updatedSystemReport];
+  List<Object> get props => [updatedSymptom];
 }
 
 class CompleteSymptomReport extends SymptomReportEvent {

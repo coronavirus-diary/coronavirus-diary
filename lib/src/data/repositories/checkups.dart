@@ -2,7 +2,7 @@
 //import 'dart:math';
 //
 //import 'package:covidnearme/src/data/models/assessments.dart';
-//import 'package:covidnearme/src/data/models/system_reports.dart';
+//import 'package:covidnearme/src/data/models/symptom_reports.dart';
 //
 //class CheckupsRepository {
 //  Future<Checkup> createCheckup(Checkup checkup) async {

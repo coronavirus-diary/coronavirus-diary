@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
-import 'package:covidnearme/src/ui/utils/system_reports.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
 class TemperatureStep extends StatefulWidget implements SymptomReportStep {
@@ -61,7 +61,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
       return;
     }
 
-    updateSystemReport(
+    updateSymptomReport(
       symptomReportState: symptomReportState,
       context: context,
       updateFunction: (SymptomReport symptomReport) {

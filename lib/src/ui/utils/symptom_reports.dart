@@ -3,14 +3,14 @@ import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void updateSystemReport({
+void updateSymptomReport({
   @required SymptomReportStateInProgress symptomReportState,
   @required SymptomReport Function(SymptomReport) updateFunction,
   @required BuildContext context,
 }) {
   SymptomReport systemReport = symptomReportState.symptomReport;
-  SymptomReport updatedSystemReport = updateFunction(systemReport);
+  SymptomReport updatedSymptomReport = updateFunction(systemReport);
   context
       .bloc<SymptomReportBloc>()
-      .add(UpdateSymptomReport(updatedSystemReport: updatedSystemReport));
+      .add(UpdateSymptomReport(updatedSymptomReport: updatedSymptomReport));
 }

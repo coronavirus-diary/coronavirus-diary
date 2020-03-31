@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
-import 'package:covidnearme/src/ui/utils/system_reports.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements SymptomReportStep {
@@ -22,7 +22,7 @@ class _IntroStepState extends State<IntroStep> {
     bool value,
     SymptomReportStateInProgress symptomReportState,
   ) {
-    updateSystemReport(
+    updateSymptomReport(
       context: context,
       symptomReportState: symptomReportState,
       updateFunction: (SymptomReport report) {

@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_view.dart';
-import 'package:covidnearme/src/ui/utils/system_reports.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
 class SubjectiveStep extends StatefulWidget implements SymptomReportStep {
@@ -22,7 +22,7 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
     dynamic value,
     SymptomReportStateInProgress symptomReportState,
   ) {
-    updateSystemReport(
+    updateSymptomReport(
       symptomReportState: symptomReportState,
       context: context,
       updateFunction: (SymptomReport symptomReport) {
