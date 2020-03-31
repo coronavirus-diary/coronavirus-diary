@@ -44,7 +44,7 @@ class CompositeQuestion extends Question {
   final List<Question> children;
   // A list of answers, matching the answer needed for the previous question to
   // reveal the next.
-  // There must be one less than the number of questions.
+  // There must be one fewer answer than the number of questions.
   final List<dynamic> answers;
 
   factory CompositeQuestion.fromJson(Map<String, dynamic> json) {

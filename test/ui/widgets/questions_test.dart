@@ -19,7 +19,7 @@ void main() {
       (tester) async {
     await tester.pumpWidget(
       Directionality(
-        child: QuestionItem(
+        child: QuestionItem<dynamic>(
           question: FakeQuestion(),
           onChanged: (dynamic value) {},
         ),
