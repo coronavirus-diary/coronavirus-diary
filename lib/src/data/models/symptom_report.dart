@@ -1,7 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'location.dart';
-
 part 'symptom_report.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -14,9 +12,10 @@ class SymptomReport {
   SymptomReport({
     this.userId,
     this.location,
-    this.questionResponses,
-    this.dataContributionPreference
-  });
+    List<QuestionResponse> questionResponses,
+    bool dataContributionPreference,
+  })  : dataContributionPreference = dataContributionPreference ?? true,
+        questionResponses = questionResponses ?? [];
 
   factory SymptomReport.fromJson(Map<String, dynamic> json) =>
       _$SymptomReportFromJson(json);
@@ -43,6 +42,7 @@ class QuestionResponse {
 @JsonSerializable()
 class SymptomReportLocation {
   String zipCode;
+
   /// ISO 3166-1 alpha-2.
   String country;
 
