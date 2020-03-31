@@ -1,3 +1,5 @@
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
 import 'package:covidnearme/src/ui/widgets/scroll_more_indicator.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
@@ -5,13 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
-import 'package:covidnearme/src/ui/utils/checkups.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
-class TemperatureStep extends StatefulWidget implements CheckupStep {
+class TemperatureStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => true;
 
   @override
@@ -51,7 +52,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
 
   void _updateTemperature(
     double value,
-    CheckupStateInProgress checkupState,
+    SymptomReportStateInProgress symptomReportState,
   ) {
     setState(() {
       _degrees = value;
@@ -60,29 +61,30 @@ class _TemperatureStepState extends State<TemperatureStep> {
       return;
     }
 
-    updateCheckup(
-      checkupState: checkupState,
+    updateSymptomReport(
+      symptomReportState: symptomReportState,
       context: context,
-      updateFunction: (Checkup checkup) {
-        final VitalsResponse newResponse = VitalsResponse(
-          id: 'temperature',
+      updateFunction: (SymptomReport symptomReport) {
+        final QuestionResponse newResponse = QuestionResponse(
+          questionId: 'temperature',
           response: _toFahrenheit(value),
-          dataSource: 'MANUAL_INPUT',
         );
 
         // Check if we have an existing response
-        final int existingResponseIndex = checkup.vitalsResponses.indexWhere(
-          (VitalsResponse response) => response.id == newResponse.id,
+        final int existingResponseIndex =
+            symptomReport.questionResponses.indexWhere(
+          (QuestionResponse response) =>
+              response.questionId == newResponse.questionId,
         );
 
         // Replace or add the new response
         if (existingResponseIndex != -1) {
-          checkup.vitalsResponses[existingResponseIndex] = newResponse;
+          symptomReport.questionResponses[existingResponseIndex] = newResponse;
         } else {
-          checkup.vitalsResponses.add(newResponse);
+          symptomReport.questionResponses.add(newResponse);
         }
 
-        return checkup;
+        return symptomReport;
       },
     );
   }
@@ -175,12 +177,12 @@ class _TemperatureStepState extends State<TemperatureStep> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    return BlocBuilder<CheckupBloc, CheckupState>(
+    return BlocBuilder<SymptomReportBloc, SymptomReportState>(
       builder: (context, state) {
-        final CheckupStateInProgress checkupState = state;
-        final VitalsResponse existingResponse =
-            checkupState.checkup.vitalsResponses.firstWhere(
-          (VitalsResponse response) => response.id == 'temperature',
+        final SymptomReportStateInProgress symtomReportState = state;
+        final QuestionResponse existingResponse =
+            symtomReportState.symptomReport.questionResponses.firstWhere(
+          (QuestionResponse response) => response.questionId == 'temperature',
           orElse: () => null,
         );
         return ScrollableBody(
@@ -215,7 +217,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                                 ? existingResponse.response.toString()
                                 : '',
                             onChanged: (String value) => _updateTemperature(
-                                double.parse(value), checkupState),
+                                double.parse(value), symtomReportState),
                             decoration: InputDecoration(
                               errorMaxLines: 2,
                               border: OutlineInputBorder(),

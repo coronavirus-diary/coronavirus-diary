@@ -2,20 +2,20 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:covidnearme/src/data/models/assessments.dart';
-import 'package:covidnearme/src/data/models/checkups.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 
-class CheckupsRepository {
-  Future<Checkup> createCheckup(Checkup checkup) async {
+class SymptomReportsRepository {
+  Future<SymptomReport> createSymptomReport(SymptomReport report) async {
     await Future.delayed(Duration(seconds: 1));
-    return checkup;
+    return report;
   }
 
-  Future<Checkup> updateCheckup(Checkup updatedCheckup) async {
+  Future<SymptomReport> updateSymptomReport(SymptomReport report) async {
     await Future.delayed(Duration(seconds: 1));
-    return updatedCheckup;
+    return report;
   }
 
-  Future<Assessment> completeCheckup(String id) async {
+  Future<Assessment> completeSymptomReport(String id) async {
     await Future.delayed(Duration(seconds: 2));
     return Assessment(
       processed: DateTime.now(),

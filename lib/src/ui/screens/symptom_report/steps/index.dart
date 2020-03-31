@@ -5,13 +5,13 @@ import 'location.dart';
 import 'subjective.dart';
 import 'temperature.dart';
 
-abstract class CheckupStep extends Widget {
-  CheckupStep();
+abstract class SymptomReportStep extends Widget {
+  SymptomReportStep();
 
   bool get isLastStep;
 }
 
-final List<CheckupStep> steps = [
+final List<SymptomReportStep> steps = [
   IntroStep(),
   LocationStep(),
   SubjectiveStep(),

@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             child: RaisedButton(
               onPressed: () =>
-                  Navigator.pushNamed(context, CheckupScreen.routeName),
+                  Navigator.pushNamed(context, SymptomReportScreen.routeName),
               child: Text(localizations.homeScreenCheckupButtonLabel),
             ),
           ),

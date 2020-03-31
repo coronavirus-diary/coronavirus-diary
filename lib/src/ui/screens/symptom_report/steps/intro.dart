@@ -1,15 +1,16 @@
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
-import 'package:covidnearme/src/ui/utils/checkups.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
-class IntroStep extends StatefulWidget implements CheckupStep {
+class IntroStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => false;
 
   @override
@@ -19,20 +20,20 @@ class IntroStep extends StatefulWidget implements CheckupStep {
 class _IntroStepState extends State<IntroStep> {
   void _updateDataContributionPreference(
     bool value,
-    CheckupStateInProgress checkupState,
+    SymptomReportStateInProgress symptomReportState,
   ) {
-    updateCheckup(
+    updateSymptomReport(
       context: context,
-      checkupState: checkupState,
-      updateFunction: (Checkup checkup) {
-        checkup.dataContributionPreference = value;
+      symptomReportState: symptomReportState,
+      updateFunction: (SymptomReport report) {
+        report.dataContributionPreference = value;
 
         // Make sure to clear location if the user has disabled data sharing
         if (!value) {
-          checkup.location = null;
+          report.location = null;
         }
 
-        return checkup;
+        return report;
       },
     );
   }
@@ -40,9 +41,9 @@ class _IntroStepState extends State<IntroStep> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    return BlocBuilder<CheckupBloc, CheckupState>(
+    return BlocBuilder<SymptomReportBloc, SymptomReportState>(
       builder: (context, state) {
-        final CheckupStateInProgress checkupState = state;
+        final SymptomReportStateInProgress symptomReportState = state;
         return ScrollableBody(
           child: Container(
             color: Theme.of(context).colorScheme.surface,
@@ -111,8 +112,10 @@ class _IntroStepState extends State<IntroStep> {
                       ),
                     ),
                     onChanged: (bool value) =>
-                        _updateDataContributionPreference(value, checkupState),
-                    value: checkupState.checkup.dataContributionPreference,
+                        _updateDataContributionPreference(
+                            value, symptomReportState),
+                    value: symptomReportState
+                        .symptomReport.dataContributionPreference,
                   ),
                 ),
                 Container(

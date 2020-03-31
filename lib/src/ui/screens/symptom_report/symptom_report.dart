@@ -1,29 +1,29 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
 import 'package:provider/provider.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 
-import 'checkup_loaded_body.dart';
+import 'symptom_report_loaded_body.dart';
 
-class CheckupScreen extends StatefulWidget {
-  static const routeName = '/checkup';
+class SymptomReportScreen extends StatefulWidget {
+  static const routeName = '/symptom_report';
 
-  const CheckupScreen();
+  const SymptomReportScreen();
 
   @override
-  _CheckupScreenState createState() => _CheckupScreenState();
+  _SymptomReportScreenState createState() => _SymptomReportScreenState();
 }
 
-class _CheckupScreenState extends State<CheckupScreen> {
+class _SymptomReportScreenState extends State<SymptomReportScreen> {
   AppLocalizations localizations;
 
   @override
@@ -42,16 +42,16 @@ class _CheckupScreenState extends State<CheckupScreen> {
           )..add(LoadQuestions());
         },
         lazy: false,
-        child: CheckupScreenBody());
+        child: SymptomReportScreenBody());
   }
 }
 
-class CheckupScreenBody extends StatefulWidget {
+class SymptomReportScreenBody extends StatefulWidget {
   @override
-  _CheckupScreenBodyState createState() => _CheckupScreenBodyState();
+  _SymptomReportScreenBodyState createState() => _SymptomReportScreenBodyState();
 }
 
-class _CheckupScreenBodyState extends State<CheckupScreenBody> {
+class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   // Storing the page controller at this level so that we can access it
   // across the entire checkup experience
   PageController _pageController;
@@ -70,10 +70,10 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
   }
 
   Widget _getUnloadedBody(
-    CheckupState checkupState,
+    SymptomReportState symptomReportState,
   ) {
-    if (checkupState is CheckupStateNotCreated) {
-      context.bloc<CheckupBloc>().add(const StartCheckup());
+    if (symptomReportState is SymptomReportStateNotCreated) {
+      context.bloc<SymptomReportBloc>().add(const StartSymptomReport());
     }
     return LoadingIndicator('Loading your health checkup');
   }
@@ -92,13 +92,13 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
 
   void _handleCheckupCompletion(
     PreferencesState preferencesState,
-    CheckupStateCompleted checkupState,
+    SymptomReportStateCompleted symptomReportState,
   ) {
     // Remember assessment
     if (preferencesState.preferences.lastAssessment !=
-        checkupState.assessment) {
+        symptomReportState.assessment) {
       Preferences newPreferences = preferencesState.preferences.cloneWith(
-        lastAssessment: checkupState.assessment,
+        lastAssessment: symptomReportState.assessment,
         // If they've completed an assessment, then don't show them the welcome
         // screen again.
         completedTutorial: true,
@@ -111,23 +111,23 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
       context,
       AssessmentScreen.routeName,
       arguments: AssessmentScreenArguments(
-        assessment: checkupState.assessment,
+        assessment: symptomReportState.assessment,
       ),
     );
   }
 
   Widget _getBody(
     PreferencesState preferencesState,
-    CheckupState checkupState,
+    SymptomReportState symptomReportState,
   ) {
-    switch (checkupState.runtimeType) {
-      case CheckupStateNotCreated:
-      case CheckupStateCreating:
-        return _getUnloadedBody(checkupState);
-      case CheckupStateInProgress:
-        return CheckupLoadedBody();
-      case CheckupStateCompleting:
-      case CheckupStateCompleted:
+    switch (symptomReportState.runtimeType) {
+      case SymptomReportStateNotCreated:
+      case SymptomReportStateCreating:
+        return _getUnloadedBody(symptomReportState);
+      case SymptomReportStateInProgress:
+        return SymptomReportLoadedBody();
+      case SymptomReportStateCompleting:
+      case SymptomReportStateCompleted:
         return Container();
       default:
         return _getErrorBody();
@@ -140,20 +140,20 @@ class _CheckupScreenBodyState extends State<CheckupScreenBody> {
       builder: (context, state) {
         final PreferencesState preferencesState = state;
 
-        return BlocConsumer<CheckupBloc, CheckupState>(
+        return BlocConsumer<SymptomReportBloc, SymptomReportState>(
           listener: (context, state) {
-            if (state is CheckupStateCompleting) {
+            if (state is SymptomReportStateCompleting) {
               if (!_showLoadingAssessmentHUD) {
                 setState(() {
                   _showLoadingAssessmentHUD = true;
                 });
               }
-            } else if (state is CheckupStateCompleted) {
+            } else if (state is SymptomReportStateCompleted) {
               _handleCheckupCompletion(preferencesState, state);
             }
           },
           builder: (context, state) {
-            final CheckupState checkupState = state;
+            final SymptomReportState checkupState = state;
 
             return WidgetHUD(
               showHUD: _showLoadingAssessmentHUD,

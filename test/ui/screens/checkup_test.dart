@@ -1,12 +1,12 @@
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/questions/questions_bloc.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/blocs/utils.dart';
-import 'package:covidnearme/src/data/repositories/checkups.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
+import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/l10n/app_localizations_en.dart';
-import 'package:covidnearme/src/ui/screens/checkup/checkup.dart';
+import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
 import 'package:file/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -63,16 +63,16 @@ void main() {
 
 Widget setUpCheckupScreen({
   QuestionsBloc questions,
-  CheckupBloc checkup,
+  SymptomReportBloc checkup,
   PreferencesBloc preferences,
 }) {
   questions ??= QuestionsBloc(
     questionsRepository: QuestionsRepository(),
     localizations: AppLocalizationsEn(),
   );
-  checkup ??= CheckupBloc(
+  checkup ??= SymptomReportBloc(
     preferencesState: PreferencesState(preferences: Preferences()),
-    checkupsRepository: CheckupsRepository(),
+    symptomReportsRepository: SymptomReportsRepository(),
   );
   preferences ??= PreferencesBloc();
   return MaterialApp(
@@ -85,7 +85,7 @@ Widget setUpCheckupScreen({
           create: (BuildContext context) => checkup,
           child: BlocProvider(
             create: (BuildContext context) => preferences,
-            child: CheckupScreenBody(),
+            child: SymptomReportScreenBody(),
           ),
         ),
       ),

@@ -1,3 +1,6 @@
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/index.dart';
 import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
@@ -5,12 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'index.dart';
 
-class LocationStep extends StatefulWidget implements CheckupStep {
+class LocationStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => true;
 
   @override
@@ -78,7 +79,7 @@ class _LocationStepState extends State<LocationStep> {
 
   void _updateZipCode({
     String zipCode,
-    @required CheckupStateInProgress checkupState,
+    @required SymptomReportStateInProgress symptomReportState,
     @required AppLocalizations localizations,
   }) {
     assert(zipCode != null);
@@ -88,24 +89,24 @@ class _LocationStepState extends State<LocationStep> {
       return;
     }
 
-    updateCheckup(
-      checkupState: checkupState,
+    updateSymptomReport(
+      symptomReportState: symptomReportState,
       context: context,
-      updateFunction: (Checkup checkup) {
-        final CheckupLocation newResponse = CheckupLocation(
+      updateFunction: (SymptomReport symptomReport) {
+        final SymptomReportLocation newResponse = SymptomReportLocation(
           zipCode: zipCode,
           country: null,
         );
 
-        checkup.location = newResponse;
-        return checkup;
+        symptomReport.location = newResponse;
+        return symptomReport;
       },
     );
   }
 
   void _updateCountry({
     String country,
-    @required CheckupStateInProgress checkupState,
+    @required SymptomReportStateInProgress symptomReportState,
     @required AppLocalizations localizations,
   }) {
     assert(country != null);
@@ -115,17 +116,17 @@ class _LocationStepState extends State<LocationStep> {
       return;
     }
 
-    updateCheckup(
-      checkupState: checkupState,
+    updateSymptomReport(
+      symptomReportState: symptomReportState,
       context: context,
-      updateFunction: (Checkup checkup) {
-        final CheckupLocation newResponse = CheckupLocation(
+      updateFunction: (SymptomReport symptomReport) {
+        final SymptomReportLocation newResponse = SymptomReportLocation(
           zipCode: null,
           country: country,
         );
 
-        checkup.location = newResponse;
-        return checkup;
+        symptomReport.location = newResponse;
+        return symptomReport;
       },
     );
   }
@@ -133,10 +134,11 @@ class _LocationStepState extends State<LocationStep> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    return BlocBuilder<CheckupBloc, CheckupState>(
+    return BlocBuilder<SymptomReportBloc, SymptomReportState>(
       builder: (context, state) {
-        final CheckupStateInProgress checkupState = state;
-        final CheckupLocation existingResponse = checkupState.checkup.location;
+        final SymptomReportStateInProgress symptomReportState = state;
+        final SymptomReportLocation existingResponse =
+            symptomReportState.symptomReport.location;
         _displayedZip ??=
             existingResponse != null ? existingResponse.zipCode : '';
         _displayedCountry ??=
@@ -195,7 +197,7 @@ class _LocationStepState extends State<LocationStep> {
                       initialValue: _displayedZip,
                       onChanged: (String value) => _updateZipCode(
                         zipCode: value,
-                        checkupState: checkupState,
+                        symptomReportState: symptomReportState,
                         localizations: localizations,
                       ),
                       label: localizations.locationStepZipCode,
@@ -212,7 +214,7 @@ class _LocationStepState extends State<LocationStep> {
                           : '',
                       onChanged: (String value) => _updateCountry(
                         country: value,
-                        checkupState: checkupState,
+                        symptomReportState: symptomReportState,
                         localizations: localizations,
                       ),
                       label: localizations.locationStepCountry,

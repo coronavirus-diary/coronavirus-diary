@@ -1,18 +1,17 @@
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
 
 import 'screens/assessment/assessment.dart';
-import 'screens/checkup/checkup.dart';
 import 'screens/home/home.dart';
 import 'screens/tutorial/tutorial.dart';
 
 export 'screens/assessment/assessment.dart';
-export 'screens/checkup/checkup.dart';
 export 'screens/home/home.dart';
 export 'screens/tutorial/tutorial.dart';
 
 var appRoutes = {
   AssessmentScreen.routeName: (context) => AssessmentScreen(),
-  CheckupScreen.routeName: (context) => CheckupScreen(),
+  SymptomReportScreen.routeName: (context) => SymptomReportScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   TutorialScreen.routeName: (context) => TutorialScreen(),
 };

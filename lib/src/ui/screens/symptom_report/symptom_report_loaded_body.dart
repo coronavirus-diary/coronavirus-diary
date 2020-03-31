@@ -1,24 +1,25 @@
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/questions/questions.dart';
-import 'package:covidnearme/src/ui/utils/checkups.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'steps/index.dart';
-import 'checkup_progress_bar.dart';
+import 'symptom_report_progress_bar.dart';
 
-class CheckupLoadedBody extends StatefulWidget {
+class SymptomReportLoadedBody extends StatefulWidget {
   @override
-  _CheckupLoadedBodyState createState() => _CheckupLoadedBodyState();
+  _SymptomReportLoadedBodyState createState() => _SymptomReportLoadedBodyState();
 }
 
-class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
+class _SymptomReportLoadedBodyState extends State<SymptomReportLoadedBody> {
   int currentIndex = 0;
-  CheckupStep currentStep = steps[0];
+  SymptomReportStep currentStep = steps[0];
 
-  void _saveCurrentLocation(CheckupStateInProgress checkupState) async {
+  void _saveCurrentLocation(SymptomReportStateInProgress symptomReportState) async {
     final Geolocator geolocator = Geolocator();
 
     try {
@@ -31,12 +32,12 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
       );
       final String zipCode = places[0].postalCode;
 
-      updateCheckup(
+      updateSymptomReport(
         context: context,
-        checkupState: checkupState,
-        updateFunction: (Checkup checkup) {
-          checkup.location = CheckupLocation(zipCode: zipCode);
-          return checkup;
+        symptomReportState: symptomReportState,
+        updateFunction: (SymptomReport symptomReport) {
+          symptomReport.location = SymptomReportLocation(zipCode: zipCode);
+          return symptomReport;
         },
       );
     } catch (e) {
@@ -46,7 +47,7 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
 
   void _handlePageChange(
     int index,
-    CheckupStateInProgress checkupState,
+    SymptomReportStateInProgress symptomReportState,
     QuestionsState questionsState,
   ) async {
     final int oldIndex = currentIndex;
@@ -56,17 +57,17 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
     });
     // Origin-specific actions
     if (oldIndex == 0) {
-      if (checkupState.checkup.dataContributionPreference == true) {
-        await _saveCurrentLocation(checkupState);
+      if (symptomReportState.symptomReport.dataContributionPreference == true) {
+        await _saveCurrentLocation(symptomReportState);
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CheckupBloc, CheckupState>(
+    return BlocBuilder<SymptomReportBloc, SymptomReportState>(
       builder: (context, state) {
-        final CheckupState checkupState = state;
+        final SymptomReportState checkupState = state;
 
         return BlocBuilder<QuestionsBloc, QuestionsState>(
           builder: (context, state) {
@@ -76,7 +77,7 @@ class _CheckupLoadedBodyState extends State<CheckupLoadedBody> {
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 200),
                   child: currentStep != null && currentIndex > 0
-                      ? CheckupProgressBar(
+                      ? SymptomReportProgressBar(
                           currentIndex: currentIndex,
                           // Subtract one because the intro isn't really a step.
                           stepsLength: steps.length - 1,

@@ -1,14 +1,15 @@
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:covidnearme/src/blocs/checkup/checkup.dart';
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_view.dart';
-import 'package:covidnearme/src/ui/utils/checkups.dart';
+import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
-class SubjectiveStep extends StatefulWidget implements CheckupStep {
+class SubjectiveStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => false;
 
   @override
@@ -19,33 +20,32 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
   void _updateCheckup(
     Question question,
     dynamic value,
-    CheckupStateInProgress checkupState,
+    SymptomReportStateInProgress symptomReportState,
   ) {
-    updateCheckup(
-      checkupState: checkupState,
+    updateSymptomReport(
+      symptomReportState: symptomReportState,
       context: context,
-      updateFunction: (Checkup checkup) {
-        final SubjectiveQuestionResponse newResponse =
-            SubjectiveQuestionResponse(
-          id: question.id,
+      updateFunction: (SymptomReport symptomReport) {
+        final QuestionResponse newResponse = QuestionResponse(
+          questionId: question.id,
           response: value,
         );
 
         // Check if we have an existing response
         final int existingResponseIndex =
-            checkup.subjectiveResponses.indexWhere(
-          (SubjectiveQuestionResponse response) =>
-              response.id == newResponse.id,
+            symptomReport.questionResponses.indexWhere(
+          (QuestionResponse response) =>
+              response.questionId == newResponse.questionId,
         );
 
         // Replace or add the new response
         if (existingResponseIndex != -1) {
-          checkup.subjectiveResponses[existingResponseIndex] = newResponse;
+          symptomReport.questionResponses[existingResponseIndex] = newResponse;
         } else {
-          checkup.subjectiveResponses.add(newResponse);
+          symptomReport.questionResponses.add(newResponse);
         }
 
-        return checkup;
+        return symptomReport;
       },
     );
   }
@@ -62,9 +62,9 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
         }
 
         final QuestionsStateLoaded questionState = state;
-        return BlocBuilder<CheckupBloc, CheckupState>(
+        return BlocBuilder<SymptomReportBloc, SymptomReportState>(
           builder: (context, state) {
-            final CheckupStateInProgress checkupState = state;
+            final SymptomReportStateInProgress checkupState = state;
             return QuestionView(
               questions: questionState.questions,
               onChange: (Question question, dynamic value) =>

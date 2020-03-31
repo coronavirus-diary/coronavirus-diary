@@ -15,7 +15,7 @@ class Preferences {
 
   Preferences({
     String userId,
-    completedTutorial,
+    bool completedTutorial,
     this.agreedToTerms,
     this.lastAssessment,
   })  : completedTutorial = completedTutorial ?? false,
