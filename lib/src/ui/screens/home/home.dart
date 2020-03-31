@@ -59,6 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: EdgeInsets.only(bottom: 20),
               child: Text(
                 localizations.getStartedStepJoined,
+                semanticsLabel:
+                    localizations.getStartedStepJoinedSemanticsLabel,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.title,
               ),
@@ -158,7 +160,10 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('CovidNearMe'),
+            title: Text(
+              'CovidNearMe',
+              semanticsLabel: 'Covid Near Me',
+            ),
             leading: kReleaseMode
                 ? null
                 : IconButton(

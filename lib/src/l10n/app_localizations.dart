@@ -293,6 +293,9 @@ abstract class AppLocalizations {
   // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
   String get tutorialIntroStepWelcome;
 
+  // Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers
+  String get tutorialIntroStepWelcomeSemanticsLabel;
+
   // Describes the outcome of running the app
   String get tutorialIntroStepCompleteACheckup;
 
@@ -307,6 +310,9 @@ abstract class AppLocalizations {
 
   // Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated
   String get getStartedStepJoined;
+
+  // Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers
+  String get getStartedStepJoinedSemanticsLabel;
 
   // Label for the button that indicates that the user did not accept the app license
   String get consentStepDidNotAgree;
