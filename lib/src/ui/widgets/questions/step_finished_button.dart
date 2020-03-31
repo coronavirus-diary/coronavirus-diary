@@ -43,7 +43,9 @@ class StepFinishedButton extends StatelessWidget {
             onPressed: validated
                 ? () {
                     if (isLastStep) {
-                      context.bloc<SymptomReportBloc>().add(CompleteSymptomReport());
+                      context
+                          .bloc<SymptomReportBloc>()
+                          .add(CompleteSymptomReport());
                     } else {
                       Provider.of<PageController>(context, listen: false)
                           .nextPage(
