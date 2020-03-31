@@ -9,7 +9,6 @@ import 'package:meta/meta.dart';
 import 'symptom_report.dart';
 
 export 'package:covidnearme/src/data/models/assessments.dart';
-export 'package:covidnearme/src/data/models/checkups.dart';
 
 class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   final PreferencesState preferencesState;
