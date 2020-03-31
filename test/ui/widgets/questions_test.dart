@@ -21,6 +21,7 @@ void main() {
       Directionality(
         child: QuestionItem(
           question: FakeQuestion(),
+          onChanged: (dynamic value) {},
         ),
         textDirection: TextDirection.ltr,
       ),
@@ -40,6 +41,7 @@ void main() {
         QuestionItem(
           onChanged: (int value) {},
           question: ScaleQuestion(
+            id: '0',
             title: 'title',
             subtitle: 'subtitle',
             initialValue: 0,
@@ -52,7 +54,10 @@ void main() {
 
     expect(find.text('subtitle'), findsOneWidget);
     expect(find.text('title'), findsOneWidget);
-    expect(find.byType(RadioButtonScale), findsOneWidget);
+    expect(
+        find.byWidgetPredicate((Widget widget) =>
+            widget.runtimeType.toString() == '_HorizontalButtonScale'),
+        findsOneWidget);
 
     expect(
       tester.getSemantics(find.bySemanticsLabel('one')),
@@ -106,7 +111,10 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(
-      (tester.widget(find.byType(RadioButtonScale)) as RadioButtonScale).value,
+      (tester.widget(find.byWidgetPredicate((Widget widget) =>
+                  widget.runtimeType.toString() == '_HorizontalButtonScale'))
+              as RadioButtonScale)
+          .value,
       equals(1),
     );
     expect(

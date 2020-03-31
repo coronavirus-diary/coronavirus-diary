@@ -48,7 +48,8 @@ class _SymptomReportScreenState extends State<SymptomReportScreen> {
 
 class SymptomReportScreenBody extends StatefulWidget {
   @override
-  _SymptomReportScreenBodyState createState() => _SymptomReportScreenBodyState();
+  _SymptomReportScreenBodyState createState() =>
+      _SymptomReportScreenBodyState();
 }
 
 class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {

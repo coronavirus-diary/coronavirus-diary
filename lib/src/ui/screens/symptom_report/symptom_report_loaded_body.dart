@@ -12,14 +12,16 @@ import 'symptom_report_progress_bar.dart';
 
 class SymptomReportLoadedBody extends StatefulWidget {
   @override
-  _SymptomReportLoadedBodyState createState() => _SymptomReportLoadedBodyState();
+  _SymptomReportLoadedBodyState createState() =>
+      _SymptomReportLoadedBodyState();
 }
 
 class _SymptomReportLoadedBodyState extends State<SymptomReportLoadedBody> {
   int currentIndex = 0;
   SymptomReportStep currentStep = steps[0];
 
-  void _saveCurrentLocation(SymptomReportStateInProgress symptomReportState) async {
+  void _saveCurrentLocation(
+      SymptomReportStateInProgress symptomReportState) async {
     final Geolocator geolocator = Geolocator();
 
     try {

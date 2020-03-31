@@ -12,7 +12,7 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'index.dart';
 
 class LocationStep extends StatefulWidget implements SymptomReportStep {
-  bool get isLastStep => true;
+  bool get isLastStep => false;
 
   @override
   _LocationStepState createState() => _LocationStepState();
@@ -166,8 +166,8 @@ class _LocationStepState extends State<LocationStep> {
                     padding: const EdgeInsets.only(bottom: 20.0),
                     child: Column(
                       children: <Widget>[
-                        _LabeledRadio<bool>(
-                          onTap: () {
+                        LabeledRadio<bool>(
+                          onChanged: () {
                             setState(() {
                               _isUSA = true;
                               _updateValidity(_displayedZip, null);
@@ -177,8 +177,8 @@ class _LocationStepState extends State<LocationStep> {
                           groupValue: _isUSA,
                           label: localizations.locationStepInUSA,
                         ),
-                        _LabeledRadio<bool>(
-                          onTap: () {
+                        LabeledRadio<bool>(
+                          onChanged: () {
                             setState(() {
                               _isUSA = false;
                               _updateValidity(null, _displayedCountry);
@@ -222,48 +222,13 @@ class _LocationStepState extends State<LocationStep> {
                       validator: (String string) =>
                           _validateCountry(string, localizations),
                     ),
-                  StepFinishedButton(
-                    isLastStep: false,
-                    validated:
-                        (_isUSA && _zipIsValid) || (!_isUSA && _countryIsValid),
-                  ),
+                  StepFinishedButton(validated: true),
                 ],
               ),
             ),
           ),
         );
       },
-    );
-  }
-}
-
-class _LabeledRadio<T> extends StatelessWidget {
-  const _LabeledRadio({
-    this.onTap,
-    this.value,
-    this.groupValue,
-    this.label,
-  });
-
-  final VoidCallback onTap;
-  final T value;
-  final T groupValue;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Radio<T>(
-          onChanged: (T value) => onTap(),
-          value: value,
-          groupValue: groupValue,
-        ),
-        GestureDetector(
-          onTap: onTap,
-          child: Text(label, style: Theme.of(context).textTheme.button),
-        ),
-      ],
     );
   }
 }

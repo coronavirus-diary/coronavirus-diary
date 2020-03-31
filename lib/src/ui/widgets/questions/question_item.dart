@@ -1,3 +1,5 @@
+import 'package:covidnearme/src/ui/widgets/questions/inputs/entry_field.dart';
+import 'package:covidnearme/src/ui/widgets/questions/inputs/temperature_field.dart';
 import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
@@ -5,16 +7,19 @@ import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.d
 
 class QuestionItem extends StatefulWidget {
   final Question question;
-  final ValueChanged<int> onChanged;
+  final Function onChanged;
 
-  const QuestionItem({this.question, this.onChanged});
+  const QuestionItem({
+    @required this.question,
+    @required this.onChanged,
+  }) : assert(onChanged != null);
 
   @override
   _QuestionItemState createState() => _QuestionItemState();
 }
 
 class _QuestionItemState extends State<QuestionItem> {
-  int currentValue;
+  dynamic currentValue;
 
   @override
   void initState() {
@@ -31,16 +36,52 @@ class _QuestionItemState extends State<QuestionItem> {
     });
   }
 
+  void _handleTextChange(String value) {
+    setState(() {
+      currentValue = value;
+      widget.onChanged?.call(value as dynamic);
+    });
+  }
+
+  void _handleTemperatureChange(double value) {
+    setState(() {
+      currentValue = value;
+      widget.onChanged?.call(value as dynamic);
+    });
+  }
+
   Widget _getInput() {
     switch (widget.question.runtimeType) {
       case ScaleQuestion:
-        final ScaleQuestion sliderQuestion = widget.question;
+        final ScaleQuestion scaleQuestion = widget.question;
         return RadioButtonScale(
-          labels: sliderQuestion.labels,
-          value: currentValue,
-          semanticLabels: sliderQuestion.semanticLabels,
-          onChanged: widget.onChanged == null ? null : _handleRadioChange,
+          labels: scaleQuestion.labels,
+          axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
+          value: currentValue as int,
+          semanticLabels: scaleQuestion.semanticLabels,
+          onChanged: _handleRadioChange,
         );
+        break;
+      case TemperatureQuestion:
+        final TemperatureQuestion temperatureQuestion = widget.question;
+        return Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: TemperatureField(
+            initialValue: temperatureQuestion.initialValue,
+            onChanged: _handleTemperatureChange,
+          ),
+        );
+        break;
+      case TextFieldQuestion:
+        final TextFieldQuestion textFieldQuestion = widget.question;
+        return Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: EntryField(
+            initialValue: textFieldQuestion.initialValue,
+            onChanged: _handleTextChange,
+          ),
+        );
+        break;
       default:
         return Container();
     }

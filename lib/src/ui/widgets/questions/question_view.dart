@@ -32,19 +32,37 @@ class _QuestionViewState extends State<QuestionView> {
   Set<Question> _answered = {};
 
   List<Widget> _getQuestions() {
-    return widget.questions
-        .map((Question question) => QuestionItem(
-              question: question,
-              onChanged: (dynamic value) {
-                _answered.add(question);
-                return widget.onChange(question, value);
-              },
-            ))
-        .toList();
-  }
-
-  bool get _allQuestionsAnswered {
-    return widget.questions.toSet().difference(_answered).isEmpty;
+    return widget.questions.map((Question question) {
+      switch (question.runtimeType) {
+        case ScaleQuestion:
+          return QuestionItem(
+            question: question,
+            onChanged: (int value) {
+              _answered.add(question);
+              return widget.onChange?.call(question, value);
+            },
+          );
+        case TextFieldQuestion:
+          return QuestionItem(
+            question: question,
+            onChanged: (String value) {
+              _answered.add(question);
+              return widget.onChange?.call(question, value);
+            },
+          );
+          break;
+        case TemperatureQuestion:
+          return QuestionItem(
+            question: question,
+            onChanged: (double value) {
+              _answered.add(question);
+              return widget.onChange?.call(question, value);
+            },
+          );
+          break;
+      }
+      return Container();
+    }).toList();
   }
 
   @override
@@ -57,7 +75,7 @@ class _QuestionViewState extends State<QuestionView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ..._getQuestions(),
-            StepFinishedButton(validated: _allQuestionsAnswered),
+            StepFinishedButton(validated: true),
             SizedBox(height: 20),
           ],
         ),
