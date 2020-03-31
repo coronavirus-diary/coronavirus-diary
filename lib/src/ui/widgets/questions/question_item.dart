@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:covidnearme/src/data/models/questions.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
 
-class QuestionItem extends StatefulWidget {
+typedef QuestionItemChanged<T> = void Function(T value);
+
+class QuestionItem<T> extends StatefulWidget {
   final Question question;
-  final Function onChanged;
+  final QuestionItemChanged<T> onChanged;
 
   const QuestionItem({
     @required this.question,

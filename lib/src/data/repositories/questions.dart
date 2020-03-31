@@ -78,74 +78,84 @@ class QuestionsRepository {
             localizations.questionHaveNauseaSemantics3,
           ],
         ),
-        ScaleQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '2',
-          title: localizations.questionHaveYouBeenFluTestedTitle,
-          initialValue: null,
-          labels: [
-            localizations.questionNo,
-            localizations.questionYes,
+        CompositeQuestion(
+          children: <Question>[
+            ScaleQuestion(
+              // TODO(gspencergoog): Insert correct ID here.
+              id: '2',
+              title: localizations.questionHaveYouBeenFluTestedTitle,
+              initialValue: null,
+              labels: [
+                localizations.questionNo,
+                localizations.questionYes,
+              ],
+              semanticLabels: [
+                localizations.questionHaveAFeverSemantics1,
+                localizations.questionHaveAFeverSemantics0,
+              ],
+            ),
+            ScaleQuestion(
+              // TODO(gspencergoog): Insert correct ID here.
+              id: '3',
+              title: localizations.questionFluTestPositiveTitle,
+              initialValue: null,
+              labels: [
+                localizations.questionNo,
+                localizations.questionYes,
+              ],
+              semanticLabels: [
+                localizations.questionFluTestPositiveSemantics1,
+                localizations.questionFluTestPositiveSemantics0,
+              ],
+            ),
+            TextFieldQuestion(
+              // TODO(gspencergoog): Insert correct ID here.
+              id: '4',
+              title: localizations.questionWhatWasPositiveTitle,
+              initialValue: null,
+            ),
           ],
-          semanticLabels: [
-            localizations.questionHaveAFeverSemantics1,
-            localizations.questionHaveAFeverSemantics0,
-          ],
+          answers: <dynamic>[1, 1],
         ),
-        ScaleQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '2',
-          title: localizations.questionFluTestPositiveTitle,
-          initialValue: null,
-          labels: [
-            localizations.questionNo,
-            localizations.questionYes,
+        CompositeQuestion(
+          children: <Question>[
+            ScaleQuestion(
+              // TODO(gspencergoog): Insert correct ID here.
+              id: '5',
+              title: localizations.questionTryForTestingTitle,
+              initialValue: null,
+              labels: [
+                localizations.questionNo,
+                localizations.questionYes,
+              ],
+              semanticLabels: [
+                localizations.questionTryForTestingSemantics1,
+                localizations.questionTryForTestingSemantics0,
+              ],
+            ),
+            ScaleQuestion(
+              // TODO(gspencergoog): Insert correct ID here.
+              id: '6',
+              title: localizations.questionCovid19TestResultTitle,
+              vertical: true,
+              initialValue: null,
+              labels: [
+                localizations.questionCovid19TestResultAnswer0,
+                localizations.questionCovid19TestResultAnswer1,
+                localizations.questionCovid19TestResultAnswer2,
+                localizations.questionCovid19TestResultAnswer3,
+                localizations.questionCovid19TestResultAnswer4,
+              ],
+              semanticLabels: [
+                localizations.questionCovid19TestResultAnswer0,
+                localizations.questionCovid19TestResultAnswer1,
+                localizations.questionCovid19TestResultAnswer2,
+                localizations.questionCovid19TestResultAnswer3,
+                localizations.questionCovid19TestResultAnswer4,
+              ],
+            ),
           ],
-          semanticLabels: [
-            localizations.questionFluTestPositiveSemantics1,
-            localizations.questionFluTestPositiveSemantics0,
-          ],
-        ),
-        TextFieldQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '3',
-          title: localizations.questionWhatWasPositiveTitle,
-          initialValue: null,
-        ),
-        ScaleQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '4',
-          title: localizations.questionTryForTestingTitle,
-          initialValue: null,
-          labels: [
-            localizations.questionNo,
-            localizations.questionYes,
-          ],
-          semanticLabels: [
-            localizations.questionTryForTestingSemantics1,
-            localizations.questionTryForTestingSemantics0,
-          ],
-        ),
-        ScaleQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '4',
-          title: localizations.questionCovid19TestResultTitle,
-          vertical: true,
-          initialValue: null,
-          labels: [
-            localizations.questionCovid19TestResultAnswer0,
-            localizations.questionCovid19TestResultAnswer1,
-            localizations.questionCovid19TestResultAnswer2,
-            localizations.questionCovid19TestResultAnswer3,
-            localizations.questionCovid19TestResultAnswer4,
-          ],
-          semanticLabels: [
-            localizations.questionCovid19TestResultAnswer0,
-            localizations.questionCovid19TestResultAnswer1,
-            localizations.questionCovid19TestResultAnswer2,
-            localizations.questionCovid19TestResultAnswer3,
-            localizations.questionCovid19TestResultAnswer4,
-          ],
+          answers: <dynamic>[1],
         ),
       ];
 }

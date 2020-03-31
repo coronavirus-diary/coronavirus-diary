@@ -67,17 +67,11 @@ Map<String, dynamic> _$ScaleQuestionToJson(ScaleQuestion instance) =>
 
 UnknownQuestion _$UnknownQuestionFromJson(Map<String, dynamic> json) {
   return UnknownQuestion(
-    id: json['id'],
-    title: json['title'],
-    subtitle: json['subtitle'],
     type: json['type'] as String,
   );
 }
 
 Map<String, dynamic> _$UnknownQuestionToJson(UnknownQuestion instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'subtitle': instance.subtitle,
       'type': instance.type,
     };
