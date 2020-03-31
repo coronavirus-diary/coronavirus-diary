@@ -9,7 +9,7 @@ part of 'preferences.dart';
 Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
   return Preferences(
     userId: json['user_id'] as String,
-    completedTutorial: json['completed_tutorial'],
+    completedTutorial: json['completed_tutorial'] as bool,
     agreedToTerms: json['agreed_to_terms'] as bool,
     lastAssessment: json['last_assessment'] == null
         ? null
