@@ -70,6 +70,8 @@ class _CountryDropdownState extends State<CountryDropdown> {
       BuildContext context, AppLocalizations localizations) {
     final List<String> countries = nameToCountryCode.keys.toList();
     countries.sort();
+    countries.remove(countryCodeToName['US']);
+    countries.insert(0, countryCodeToName['US']);
     final List<DropdownMenuItem<String>> result = countries
         .map<DropdownMenuItem<String>>(
           (String country) => DropdownMenuItem<String>(

@@ -23,11 +23,11 @@ class LocationStep extends StatefulWidget implements SymptomReportStep {
 class _LocationStepState extends State<LocationStep> {
   bool _countryIsValid = false;
   bool _zipIsValid = false;
-  bool _isUSA = true;
+  bool get _isUSA => _displayedCountry == "US";
   // Keep the values entered, so that when switching between modes,
   // they stick, but we don't have to update the preferences values.
   String _displayedZip;
-  String _displayedCountry = 'None';
+  String _displayedCountry = 'US';
 
   LocalKey zipCodeKey = ValueKey<String>('ZIP Code');
   LocalKey countryKey = ValueKey<String>('Country');
@@ -155,31 +155,13 @@ class _LocationStepState extends State<LocationStep> {
                       ),
                     ),
                   ),
-                  Column(
-                    children: <Widget>[
-                      LabeledRadio<bool>(
-                        onChanged: () {
-                          setState(() {
-                            _isUSA = true;
-                            _updateValidity();
-                          });
-                        },
-                        value: true,
-                        groupValue: _isUSA,
-                        label: localizations.locationStepInUSA,
-                      ),
-                      LabeledRadio<bool>(
-                        onChanged: () {
-                          setState(() {
-                            _isUSA = false;
-                            _updateValidity();
-                          });
-                        },
-                        value: false,
-                        groupValue: _isUSA,
-                        label: localizations.locationStepAnotherCountry,
-                      ),
-                    ],
+                  CountryDropdown(
+                    onChanged: (String value) => _updateCountry(
+                      countryCode: value,
+                      symptomReportState: symptomReportState,
+                      localizations: localizations,
+                    ),
+                    value: _displayedCountry,
                   ),
                   if (_isUSA)
                     EntryField(
@@ -195,15 +177,6 @@ class _LocationStepState extends State<LocationStep> {
                           decimal: false, signed: false),
                       validator: (String string) =>
                           _validateZipCode(string, localizations),
-                    ),
-                  if (!_isUSA)
-                    CountryDropdown(
-                      onChanged: (String value) => _updateCountry(
-                        countryCode: value,
-                        symptomReportState: symptomReportState,
-                        localizations: localizations,
-                      ),
-                      value: _displayedCountry,
                     ),
                   StepFinishedButton(validated: true),
                 ],

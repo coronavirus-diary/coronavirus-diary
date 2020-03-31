@@ -234,6 +234,7 @@ Map<String, String> getCountryCodeMap(AppLocalizations localizations) {
     'UA': localizations.countryCodeUA,
     'UG': localizations.countryCodeUG,
     'UM': localizations.countryCodeUM,
+    'US': localizations.countryCodeUS,
     'UY': localizations.countryCodeUY,
     'UZ': localizations.countryCodeUZ,
     'VA': localizations.countryCodeVA,
