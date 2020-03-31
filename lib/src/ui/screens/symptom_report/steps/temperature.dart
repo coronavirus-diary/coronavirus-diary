@@ -1,13 +1,14 @@
-import 'package:covidnearme/src/ui/widgets/questions/inputs/temperature_field.dart';
-import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
-import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
-import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
+import 'package:covidnearme/src/ui/widgets/questions/inputs/temperature_field.dart';
+import 'package:covidnearme/src/ui/widgets/questions/step_finished_button.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+
 import 'index.dart';
 
 class TemperatureStep extends StatefulWidget implements SymptomReportStep {
@@ -55,9 +56,9 @@ class _TemperatureStepState extends State<TemperatureStep> {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<SymptomReportBloc, SymptomReportState>(
       builder: (context, state) {
-        final SymptomReportStateInProgress symtomReportState = state;
+        final SymptomReportStateInProgress symptomReportState = state;
         final QuestionResponse existingResponse =
-            symtomReportState.symptomReport.questionResponses.firstWhere(
+            symptomReportState.symptomReport.questionResponses.firstWhere(
           (QuestionResponse response) => response.questionId == 'temperature',
           orElse: () => null,
         );
@@ -87,7 +88,7 @@ class _TemperatureStepState extends State<TemperatureStep> {
                           ? existingResponse.response
                           : null,
                       onChanged: (double value) =>
-                          _updateTemperature(value, symtomReportState),
+                          _updateTemperature(value, symptomReportState),
                       label: localizations.temperatureStepTemperatureLabel,
                       minHeight: 0.0,
                       autofocus: true,
