@@ -222,11 +222,7 @@ class _LocationStepState extends State<LocationStep> {
                       validator: (String string) =>
                           _validateCountry(string, localizations),
                     ),
-                  StepFinishedButton(
-                    isLastStep: false,
-                    validated:
-                        (_isUSA && _zipIsValid) || (!_isUSA && _countryIsValid),
-                  ),
+                  StepFinishedButton(validated: true),
                 ],
               ),
             ),

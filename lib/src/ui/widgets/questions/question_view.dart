@@ -65,10 +65,6 @@ class _QuestionViewState extends State<QuestionView> {
     }).toList();
   }
 
-  bool get _allQuestionsAnswered {
-    return widget.questions.toSet().difference(_answered).isEmpty;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,7 +75,7 @@ class _QuestionViewState extends State<QuestionView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ..._getQuestions(),
-            StepFinishedButton(validated: _allQuestionsAnswered),
+            StepFinishedButton(validated: true),
             SizedBox(height: 20),
           ],
         ),

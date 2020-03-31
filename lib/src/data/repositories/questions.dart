@@ -9,7 +9,6 @@ class QuestionsRepository {
         ScaleQuestion(
           id: '5325',
           title: localizations.questionShortnessOfBreathTitle,
-          subtitle: localizations.questionShortnessOfBreathSubtitle,
           initialValue: null,
           labels: [
             localizations.questionShortnessOfBreathAnswer0,
@@ -42,6 +41,26 @@ class QuestionsRepository {
           ],
         ),
         ScaleQuestion(
+          id: '4664',
+          title: localizations.questionHaveAFeverTitle,
+          initialValue: null,
+          labels: [
+            localizations.questionHaveAFeverAnswer0,
+            localizations.questionHaveAFeverAnswer1,
+            localizations.questionHaveAFeverAnswer2,
+          ],
+          semanticLabels: [
+            localizations.questionHaveAFeverSemantics0,
+            localizations.questionHaveAFeverSemantics1,
+            localizations.questionHaveAFeverSemantics2,
+          ],
+        ),
+        TemperatureQuestion(
+          // TODO(gspencergoog): Insert correct ID here.
+          id: '1',
+          title: localizations.questionHowHighWasYourFever,
+        ),
+        ScaleQuestion(
           // TODO(gspencergoog): Insert correct ID here.
           id: '0',
           title: localizations.questionHaveNauseaTitle,
@@ -58,11 +77,6 @@ class QuestionsRepository {
             localizations.questionHaveNauseaSemantics2,
             localizations.questionHaveNauseaSemantics3,
           ],
-        ),
-        TemperatureQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '1',
-          title: localizations.questionHowHighWasYourFever,
         ),
         ScaleQuestion(
           // TODO(gspencergoog): Insert correct ID here.
@@ -97,21 +111,6 @@ class QuestionsRepository {
           id: '3',
           title: localizations.questionWhatWasPositiveTitle,
           initialValue: null,
-        ),
-        ScaleQuestion(
-          id: '4664',
-          title: localizations.questionHaveAFeverTitle,
-          initialValue: null,
-          labels: [
-            localizations.questionHaveAFeverAnswer0,
-            localizations.questionHaveAFeverAnswer1,
-            localizations.questionHaveAFeverAnswer2,
-          ],
-          semanticLabels: [
-            localizations.questionHaveAFeverSemantics0,
-            localizations.questionHaveAFeverSemantics1,
-            localizations.questionHaveAFeverSemantics2,
-          ],
         ),
         ScaleQuestion(
           // TODO(gspencergoog): Insert correct ID here.

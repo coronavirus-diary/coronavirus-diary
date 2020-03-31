@@ -40,14 +40,12 @@ class TextFieldQuestion extends Question {
   static const TYPE = 'text_field';
 
   final String initialValue;
-  final TextFieldQuestionValidator validator;
 
   TextFieldQuestion({
     @required String id,
     @required String title,
     String subtitle,
     this.initialValue,
-    this.validator,
   }) : super(
           id: id,
           title: title,

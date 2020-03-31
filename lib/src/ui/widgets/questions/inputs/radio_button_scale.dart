@@ -53,10 +53,13 @@ class RadioButtonScale extends StatelessWidget {
                             ),
                           ),
                           ExcludeSemantics(
-                            child: Center(
-                              child: Text(
-                                labels[index],
-                                textAlign: TextAlign.center,
+                            child: GestureDetector(
+                              onTap: () => onChanged(index),
+                              child: Center(
+                                child: Text(
+                                  labels[index],
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                           ),
@@ -118,10 +121,13 @@ class RadioButtonScale extends StatelessWidget {
                           ),
                         ),
                         ExcludeSemantics(
-                          child: Center(
-                            child: Text(
-                              labels[index],
-                              textAlign: TextAlign.center,
+                          child: GestureDetector(
+                            onTap: () => onChanged(index),
+                            child: Center(
+                              child: Text(
+                                labels[index],
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                           ),
                         ),
