@@ -204,7 +204,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
         Expanded(
           flex: 1,
           child: Padding(
-            padding: const EdgeInsetsDirectional.only(start: 10.0),
+            padding: const EdgeInsetsDirectional.only(start: 10.0, top: 10.0),
             child: RaisedButton(
               onPressed: () => _showInstructions(context),
               child: Text(localizations.temperatureStepHelp),
