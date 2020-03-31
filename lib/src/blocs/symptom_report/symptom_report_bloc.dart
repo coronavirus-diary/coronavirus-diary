@@ -5,7 +5,6 @@ import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/data/models/checkups.dart';
 import 'package:meta/meta.dart';
 import 'symptom_report.dart';
 
