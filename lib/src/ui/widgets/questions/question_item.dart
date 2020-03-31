@@ -5,20 +5,24 @@ import 'package:flutter/material.dart';
 import 'package:covidnearme/src/data/models/questions.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
 
-class QuestionItem extends StatefulWidget {
+typedef QuestionItemChanged<T> = void Function(T value);
+
+class QuestionItem<T> extends StatefulWidget {
   final Question question;
-  final Function onChanged;
+  final QuestionItemChanged<T> onChanged;
 
   const QuestionItem({
+    Key key,
     @required this.question,
     @required this.onChanged,
-  }) : assert(onChanged != null);
+  })  : assert(onChanged != null),
+        super(key: key);
 
   @override
-  _QuestionItemState createState() => _QuestionItemState();
+  _QuestionItemState<T> createState() => _QuestionItemState<T>();
 }
 
-class _QuestionItemState extends State<QuestionItem> {
+class _QuestionItemState<T> extends State<QuestionItem<T>> {
   dynamic currentValue;
 
   @override
@@ -29,24 +33,10 @@ class _QuestionItemState extends State<QuestionItem> {
     }
   }
 
-  void _handleRadioChange(int value) {
+  void _handleChange(dynamic value) {
     setState(() {
       currentValue = value;
-      widget.onChanged?.call(value);
-    });
-  }
-
-  void _handleTextChange(String value) {
-    setState(() {
-      currentValue = value;
-      widget.onChanged?.call(value as dynamic);
-    });
-  }
-
-  void _handleTemperatureChange(double value) {
-    setState(() {
-      currentValue = value;
-      widget.onChanged?.call(value as dynamic);
+      widget.onChanged?.call(value as T);
     });
   }
 
@@ -59,7 +49,7 @@ class _QuestionItemState extends State<QuestionItem> {
           axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
           value: currentValue as int,
           semanticLabels: scaleQuestion.semanticLabels,
-          onChanged: _handleRadioChange,
+          onChanged: _handleChange,
         );
         break;
       case TemperatureQuestion:
@@ -68,7 +58,7 @@ class _QuestionItemState extends State<QuestionItem> {
           padding: const EdgeInsets.only(top: 20.0),
           child: TemperatureField(
             initialValue: temperatureQuestion.initialValue,
-            onChanged: _handleTemperatureChange,
+            onChanged: _handleChange,
           ),
         );
         break;
@@ -78,7 +68,7 @@ class _QuestionItemState extends State<QuestionItem> {
           padding: const EdgeInsets.only(top: 20.0),
           child: EntryField(
             initialValue: textFieldQuestion.initialValue,
-            onChanged: _handleTextChange,
+            onChanged: _handleChange,
           ),
         );
         break;

@@ -29,39 +29,69 @@ class QuestionView extends StatefulWidget {
 }
 
 class _QuestionViewState extends State<QuestionView> {
-  Set<Question> _answered = {};
+  Map<Question, dynamic> _answered = <Question, dynamic>{};
 
   List<Widget> _getQuestions() {
-    return widget.questions.map((Question question) {
+    return widget.questions.expand((Question question) sync* {
+      void onChanged(Question question, dynamic value) {
+        setState(() {
+          _answered[question] = value;
+        });
+        return widget.onChange?.call(question, value);
+      }
+
       switch (question.runtimeType) {
         case ScaleQuestion:
-          return QuestionItem(
+          yield QuestionItem<int>(
+            key: ValueKey<Question>(question),
             question: question,
-            onChanged: (int value) {
-              _answered.add(question);
-              return widget.onChange?.call(question, value);
-            },
+            onChanged: (int value) => onChanged(question, value),
           );
+          break;
         case TextFieldQuestion:
-          return QuestionItem(
+          yield QuestionItem<String>(
+            key: ValueKey<Question>(question),
             question: question,
-            onChanged: (String value) {
-              _answered.add(question);
-              return widget.onChange?.call(question, value);
-            },
+            onChanged: (String value) => onChanged(question, value),
           );
           break;
         case TemperatureQuestion:
-          return QuestionItem(
+          yield QuestionItem<double>(
+            key: ValueKey<Question>(question),
             question: question,
-            onChanged: (double value) {
-              _answered.add(question);
-              return widget.onChange?.call(question, value);
-            },
+            onChanged: (double value) => onChanged(question, value),
           );
           break;
+        case CompositeQuestion:
+          CompositeQuestion composite = question;
+          yield QuestionItem<dynamic>(
+            key: ValueKey<Question>(composite.children.first),
+            question: composite.children.first,
+            onChanged: (dynamic value) =>
+                onChanged(composite.children.first, value),
+          );
+          bool endReached = false;
+          for (int i = 1; i < composite.children.length; ++i) {
+            final Question child = composite.children[i];
+            if (!endReached &&
+                _answered[composite.children[i - 1]] ==
+                    composite.answers[i - 1]) {
+              yield QuestionItem<dynamic>(
+                key: ValueKey<Question>(child),
+                question: child,
+                onChanged: (dynamic value) =>
+                    onChanged(child, value),
+              );
+            } else {
+              endReached = true;
+              // Remove any answers for questions that no longer apply.
+              if (_answered.remove(child) != null) {
+                onChanged(child, null);
+              }
+            }
+          }
+          break;
       }
-      return Container();
     }).toList();
   }
 

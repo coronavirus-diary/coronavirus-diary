@@ -32,17 +32,21 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
         );
 
         // Check if we have an existing response
-        final int existingResponseIndex =
-            symptomReport.questionResponses.indexWhere(
-          (QuestionResponse response) =>
-              response.questionId == newResponse.questionId,
+        final int existingResponseIndex = symptomReport.questionResponses.indexWhere(
+          (QuestionResponse response) => response.questionId == newResponse.questionId,
         );
 
         // Replace or add the new response
         if (existingResponseIndex != -1) {
-          symptomReport.questionResponses[existingResponseIndex] = newResponse;
+          if (value == null) {
+            symptomReport.questionResponses.removeAt(existingResponseIndex);
+          } else {
+            symptomReport.questionResponses[existingResponseIndex] = newResponse;
+          }
         } else {
-          symptomReport.questionResponses.add(newResponse);
+          if (value != null) {
+            symptomReport.questionResponses.add(newResponse);
+          }
         }
 
         return symptomReport;
@@ -56,8 +60,7 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
       builder: (context, state) {
         if (state is! QuestionsStateLoaded) {
           return Container(
-            child: Text(AppLocalizations.of(context)
-                .subjectiveStepQuestionsLoadedError),
+            child: Text(AppLocalizations.of(context).subjectiveStepQuestionsLoadedError),
           );
         }
 
