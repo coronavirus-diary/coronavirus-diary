@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/utils/checkups.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/country_dropdown.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/index.dart';
