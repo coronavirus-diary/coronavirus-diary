@@ -79,8 +79,7 @@ class _QuestionViewState extends State<QuestionView> {
               yield QuestionItem<dynamic>(
                 key: ValueKey<Question>(child),
                 question: child,
-                onChanged: (dynamic value) =>
-                    onChanged(child, value),
+                onChanged: (dynamic value) => onChanged(child, value),
               );
             } else {
               endReached = true;
