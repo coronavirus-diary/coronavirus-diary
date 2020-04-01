@@ -56,11 +56,6 @@
     "description": "An error occurred while trying to fetch data"
   },
 
-  "checkupScreenHUDLabel": "Loading your assessment",
-  "@checkupScreenHUDLabel": {
-    "description": "A label that indicates that the app is busy loading the patient's assessment"
-  },
-
   "checkupScreenTitle": "Your Health Checkup",
   "@checkupScreenTitle": {
     "description": "Title for the checkup screen"
@@ -151,16 +146,6 @@
     "description": "Subsection heading for recommendations about how to measure the user's temperature"
   },
 
-  "temperatureStepPleaseEnterValueBelow": "Please enter a value below 150 ℉",
-  "@temperatureStepPleaseEnterValueBelow": {
-    "description": "Ask the user to correct their temperature reading"
-  },
-
-  "temperatureStepPleaseEnterValueAbove": "Please enter a value above 70 ℉",
-  "@temperatureStepPleaseEnterValueAbove": {
-    "description": "Ask the user to correct their temperature reading"
-  },
-
   "temperatureStepHowToDialogTitle": "Taking your Temperature",
   "@temperatureStepHowToDialogTitle": {
     "description": "Title for a dialog that explains how to take your temperature in 5 steps"
@@ -211,11 +196,6 @@
     "description": "Title that appears above the text field where the user enters their temperature"
   },
 
-  "temperatureStepInputLabel": "Enter your temperature",
-  "@temperatureStepInputLabel": {
-    "description": "Title that appears within the text field where the user enters their temperature"
-  },
-
   "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
   "@temperatureStepHelp": {
     "description": "Label for a button that brings up a help screen"
@@ -236,34 +216,9 @@
     "description": "Error that appears when the user enters their zip code incorrectly."
   },
 
-  "locationStepInvalidCountry": "Please just enter the name of your country",
-  "@locationStepInvalidCountry": {
-    "description": "Error that appears when the user enters their country incorrectly."
-  },
-
   "locationStepZipCode": "5-Digit ZIP Code",
   "@locationStepZipCode": {
     "description": "Title that appears within the text field where the user enters their ZIP code"
-  },
-
-  "locationStepCountryHelper": "If you are not in the US, what is your country?",
-  "@locationStepCountryHelper": {
-    "description": "Helper text describing what to enter in the text field for country."
-  },
-
-  "locationStepInUSA": "In the United States",
-  "@locationStepInUSA": {
-    "description": "Radio button selection indicating that the user lives in the USA."
-  },
-
-  "locationStepAnotherCountry": "In another country",
-  "@locationStepAnotherCountry": {
-    "description": "Radio button selection indicating that the user lives outside of the USA."
-  },
-
-  "locationStepCountry": "Country",
-  "@locationStepCountry": {
-    "description": "Title that appears within the text field where the user enters their country"
   },
 
   "homeScreenHeading": "Concerned about your health?",
@@ -411,24 +366,19 @@
     "description": "Label for the button that indicates that the user will accept the app license"
   },
 
-  "consentStepLoading": "Loading...",
-  "@consentStepLoading": {
-    "description": "Displayed while the app is loading the next screen"
+  "networkUnavailableBannerContinueOffline": "CONTINUE OFFLINE",
+  "@networkUnavailableBannerContinueOffline": {
+     "description": "Label for button that indicates that the user will continue using the app offline"
   },
 
-  "networkUnavailableBannerContinueOffline":"CONTINUE OFFLINE",
-  "@networkUnavailableBannerContinueOffline":{
-     "description":"Label for button that indicates that the user will continue using the app offline"
+  "networkUnavailableBannerConnectToWiFi": "CONNECT TO WIFI",
+  "@networkUnavailableBannerConnectToWiFi": {
+     "description": "Label for button that opens the system network settings"
   },
 
-  "networkUnavailableBannerConnectToWiFi":"CONNECT TO WIFI",
-  "@networkUnavailableBannerConnectToWiFi":{
-     "description":"Label for button that opens the system network settings"
-  },
-
-  "networkUnavailableBannerMessage":"You seem to be offline. Please check your network settings and try again.",
-  "@networkUnavailableBannerMessage":{
-     "description":"Message shown on the banner displayed when no network connection is detected"
+  "networkUnavailableBannerMessage": "You seem to be offline. Please check your network settings and try again.",
+  "@networkUnavailableBannerMessage": {
+     "description": "Message shown on the banner displayed when no network connection is detected"
   },
 
   "deniedConsentBackButton": "Go back to the informed consent screen",
@@ -439,11 +389,6 @@
   "questionShortnessOfBreathTitle": "Are you experiencing shortness of breath?",
   "@questionShortnessOfBreathTitle": {
     "description": "Question title."
-  },
-
-  "questionShortnessOfBreathSubtitle": "Do you feel like you can't get enough air?",
-  "@questionShortnessOfBreathSubtitle": {
-    "description": "Question subtitle."
   },
 
   "questionShortnessOfBreathAnswer0": "None",
@@ -628,16 +573,6 @@
   "questionNo": "No",
   "@questionNo": {
     "description": "Question answer."
-  },
-
-  "questionHaveYouBeenFluTestedSemantics0": "Yes, I have been tested for flu, pneumonia, or other respiratory illness.",
-  "@questionHaveYouBeenFluTestedSemantics0": {
-    "description": "Question accessibility semantics description."
-  },
-
-  "questionHaveYouBeenFluTestedSemantics1": "No, I have not been tested for flu, pneumonia, or other respiratory illness.",
-  "@questionHaveYouBeenFluTestedSemantics1": {
-    "description": "Question accessibility semantics description."
   },
 
   "questionFluTestPositiveTitle": "Was the test positive?",

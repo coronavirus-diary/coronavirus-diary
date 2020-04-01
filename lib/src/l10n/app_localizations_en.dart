@@ -62,9 +62,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'There was an error retrieving the checkup experience. Please try again later.';
 
   @override
-  String get checkupScreenHUDLabel => 'Loading your assessment';
-
-  @override
   String get checkupScreenTitle => 'Your Health Checkup';
 
   @override
@@ -134,14 +131,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get temperatureStepHowHeading => 'How?';
 
   @override
-  String get temperatureStepPleaseEnterValueBelow =>
-      'Please enter a value below 150 ℉';
-
-  @override
-  String get temperatureStepPleaseEnterValueAbove =>
-      'Please enter a value above 70 ℉';
-
-  @override
   String get temperatureStepHowToDialogTitle => 'Taking your Temperature';
 
   @override
@@ -178,9 +167,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get temperatureStepTitle => 'Take your temperature';
 
   @override
-  String get temperatureStepInputLabel => 'Enter your temperature';
-
-  @override
   String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
 
   @override
@@ -193,24 +179,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get locationStepInvalidZipCode => 'Please enter a valid USPS ZIP code';
 
   @override
-  String get locationStepInvalidCountry =>
-      'Please just enter the name of your country';
-
-  @override
   String get locationStepZipCode => '5-Digit ZIP Code';
-
-  @override
-  String get locationStepCountryHelper =>
-      'If you are not in the US, what is your country?';
-
-  @override
-  String get locationStepInUSA => 'In the United States';
-
-  @override
-  String get locationStepAnotherCountry => 'In another country';
-
-  @override
-  String get locationStepCountry => 'Country';
 
   @override
   String get homeScreenHeading => 'Concerned about your health?';
@@ -308,9 +277,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get consentStepIAgree => 'I AGREE';
 
   @override
-  String get consentStepLoading => 'Loading...';
-
-  @override
   String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
 
   @override
@@ -327,10 +293,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   @override
   String get questionShortnessOfBreathTitle =>
       'Are you experiencing shortness of breath?';
-
-  @override
-  String get questionShortnessOfBreathSubtitle =>
-      'Do you feel like you can\'t get enough air?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'None';
@@ -448,14 +410,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get questionNo => 'No';
-
-  @override
-  String get questionHaveYouBeenFluTestedSemantics0 =>
-      'Yes, I have been tested for flu, pneumonia, or other respiratory illness.';
-
-  @override
-  String get questionHaveYouBeenFluTestedSemantics1 =>
-      'No, I have not been tested for flu, pneumonia, or other respiratory illness.';
 
   @override
   String get questionFluTestPositiveTitle => 'Was the test positive?';
