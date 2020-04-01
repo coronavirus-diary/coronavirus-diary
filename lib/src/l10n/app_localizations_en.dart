@@ -49,9 +49,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'There was an error retrieving the checkup experience. Please try again later.';
 
   @override
-  String get checkupScreenHUDLabel => 'Submitting your report';
-
-  @override
   String get checkupScreenTitle => 'Your Health Checkup';
 
   @override
@@ -190,10 +187,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'If you continue to experience symptoms, please check back tomorrow.';
 
   @override
-  String get homeScreenViewMyAssessment => 'VIEW MY ASSESSMENT';
-
-  @override
-  String get systemReportLoadingAssessment => 'Loading your assessment';
+  String get systemReportSubmitting => 'Submitting your report';
 
   @override
   String get systemReportBackToHomePage => 'Go back to the home page';

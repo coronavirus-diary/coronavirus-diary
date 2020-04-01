@@ -143,7 +143,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
             color: Theme.of(context).colorScheme.surface,
             opacity: 1.0,
             labelStyle: Theme.of(context).textTheme.headline,
-            label: localizations.systemReportLoadingAssessment,
+            label: localizations.systemReportSubmitting,
           ),
           builder: (context) {
             return ChangeNotifierProvider<PageController>.value(

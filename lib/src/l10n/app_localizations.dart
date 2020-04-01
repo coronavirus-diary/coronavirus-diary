@@ -122,9 +122,6 @@ abstract class AppLocalizations {
   // An error occurred while trying to fetch data
   String get checkupScreenErrorRetrievingExperience;
 
-  // A label that indicates that the app is busy submitting the patient's assessment
-  String get checkupScreenHUDLabel;
-
   // Title for the checkup screen
   String get checkupScreenTitle;
 
@@ -233,11 +230,8 @@ abstract class AppLocalizations {
   // Tell a user that has already completed their checkup that they can check again tomorrow
   String get homeScreenCheckBackTomorrow;
 
-  // View the assessment of the checkup data
-  String get homeScreenViewMyAssessment;
-
   // Label next to loading indicator
-  String get systemReportLoadingAssessment;
+  String get systemReportSubmitting;
 
   // Tooltip for the back button
   String get systemReportBackToHomePage;

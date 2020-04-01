@@ -41,11 +41,6 @@
     "description": "An error occurred while trying to fetch data"
   },
 
-  "checkupScreenHUDLabel": "Submitting your report",
-  "@checkupScreenHUDLabel": {
-    "description": "A label that indicates that the app is busy submitting the patient's assessment"
-  },
-
   "checkupScreenTitle": "Your Health Checkup",
   "@checkupScreenTitle": {
     "description": "Title for the checkup screen"
@@ -241,13 +236,8 @@
     "description": "Tell a user that has already completed their checkup that they can check again tomorrow"
   },
 
-  "homeScreenViewMyAssessment": "VIEW MY ASSESSMENT",
-  "@homeScreenViewMyAssessment": {
-    "description": "View the assessment of the checkup data"
-  },
-
-  "systemReportLoadingAssessment": "Loading your assessment",
-  "@systemReportLoadingAssessment": {
+  "systemReportSubmitting": "Submitting your report",
+  "@systemReportSubmitting": {
     "description": "Label next to loading indicator"
   },
 

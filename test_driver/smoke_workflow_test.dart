@@ -89,7 +89,7 @@ void main() {
 
   test('User can tap on delete data and back to the first page', () async {
     // Go back to the home page.
-    await driver.tap(find.byTooltip('Back'));
+    await driver.tap(find.byTooltip('Return to home'));
 
     // Click on the delete data button.
     await driver.tap(find.byTooltip('DEBUG MODE ONLY: Clear user data'));
