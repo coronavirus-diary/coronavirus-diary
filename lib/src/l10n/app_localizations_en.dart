@@ -495,4 +495,14 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
+
+  @override
+  String get locationStepNoCountrySelected => 'None selected';
+
+  @override
+  String get locationStepCountrySearchPrompt =>
+      'Please select the country where you are located';
+
+  @override
+  String get locationStepCountryButtonLabel => 'Country:';
 }

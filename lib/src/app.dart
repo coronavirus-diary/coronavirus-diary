@@ -1,4 +1,5 @@
 import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
+import 'package:covidnearme/src/l10n/country_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,7 +31,8 @@ class App extends StatelessWidget {
               theme: appTheme,
               routes: appRoutes,
               initialRoute: getInitialRoute(state),
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              localizationsDelegates: AppLocalizations.localizationsDelegates
+                  .followedBy([CountryLocalizations.delegate]),
               supportedLocales: AppLocalizations.supportedLocales,
             ),
           );

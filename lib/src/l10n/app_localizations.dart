@@ -505,6 +505,15 @@ abstract class AppLocalizations {
 
   // Let the user that they can scroll to see more content
   String get scrollMoreIndicatorMessage;
+
+  // Menu item displayed with no country is yet selected.
+  String get locationStepNoCountrySelected;
+
+  // Menu item displayed with no country is yet selected.
+  String get locationStepCountrySearchPrompt;
+
+  // Label for the dropdown button that selects a country.
+  String get locationStepCountryButtonLabel;
 }
 
 class _AppLocalizationsDelegate
