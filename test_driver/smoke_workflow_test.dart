@@ -67,7 +67,7 @@ void main() {
 
     // Finally, there is a progress screen and a contact screen.
     await driver.waitFor(find.text('Stay Safe'));
-  }, skip: true); // This test can't run due to location permission dialog.
+  });
 
   test('User can tap on delete data and back to the first page', () async {
     // Click on the delete data button.
