@@ -131,9 +131,6 @@ abstract class AppLocalizations {
   // An error occurred while trying to fetch data
   String get checkupScreenErrorRetrievingExperience;
 
-  // A label that indicates that the app is busy loading the patient's assessment
-  String get checkupScreenHUDLabel;
-
   // Title for the checkup screen
   String get checkupScreenTitle;
 
@@ -182,12 +179,6 @@ abstract class AppLocalizations {
   // Subsection heading for recommendations about how to measure the user's temperature
   String get temperatureStepHowHeading;
 
-  // Ask the user to correct their temperature reading
-  String get temperatureStepPleaseEnterValueBelow;
-
-  // Ask the user to correct their temperature reading
-  String get temperatureStepPleaseEnterValueAbove;
-
   // Title for a dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogTitle;
 
@@ -218,9 +209,6 @@ abstract class AppLocalizations {
   // Title that appears above the text field where the user enters their temperature
   String get temperatureStepTitle;
 
-  // Title that appears within the text field where the user enters their temperature
-  String get temperatureStepInputLabel;
-
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
 
@@ -233,23 +221,8 @@ abstract class AppLocalizations {
   // Error that appears when the user enters their zip code incorrectly.
   String get locationStepInvalidZipCode;
 
-  // Error that appears when the user enters their country incorrectly.
-  String get locationStepInvalidCountry;
-
   // Title that appears within the text field where the user enters their ZIP code
   String get locationStepZipCode;
-
-  // Helper text describing what to enter in the text field for country.
-  String get locationStepCountryHelper;
-
-  // Radio button selection indicating that the user lives in the USA.
-  String get locationStepInUSA;
-
-  // Radio button selection indicating that the user lives outside of the USA.
-  String get locationStepAnotherCountry;
-
-  // Title that appears within the text field where the user enters their country
-  String get locationStepCountry;
 
   // Heading text for the home screen
   String get homeScreenHeading;
@@ -335,9 +308,6 @@ abstract class AppLocalizations {
   // Label for the button that indicates that the user will accept the app license
   String get consentStepIAgree;
 
-  // Displayed while the app is loading the next screen
-  String get consentStepLoading;
-
   // Label for button that indicates that the user will continue using the app offline
   String get networkUnavailableBannerContinueOffline;
 
@@ -352,9 +322,6 @@ abstract class AppLocalizations {
 
   // Question title.
   String get questionShortnessOfBreathTitle;
-
-  // Question subtitle.
-  String get questionShortnessOfBreathSubtitle;
 
   // Question answer.
   String get questionShortnessOfBreathAnswer0;
@@ -466,12 +433,6 @@ abstract class AppLocalizations {
 
   // Question answer.
   String get questionNo;
-
-  // Question accessibility semantics description.
-  String get questionHaveYouBeenFluTestedSemantics0;
-
-  // Question accessibility semantics description.
-  String get questionHaveYouBeenFluTestedSemantics1;
 
   // Question title.
   String get questionFluTestPositiveTitle;
