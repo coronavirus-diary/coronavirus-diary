@@ -152,8 +152,7 @@ class NotSymptomReportEvent extends SymptomReportEvent {}
 
 class FakeSymptomReportsRepository implements SymptomReportsRepository {
   @override
-  Future<void> completeSymptomReport(String id) async {
-  }
+  Future<void> completeSymptomReport(String id) async {}
 
   @override
   Future<SymptomReport> createSymptomReport(SymptomReport report) async {

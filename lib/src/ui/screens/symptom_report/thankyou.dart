@@ -8,7 +8,7 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/stay_safe.dart';
 
 class ThankYouScreen extends StatefulWidget {
-  static const routeName = 'symptom-report/thankyou';
+  static const routeName = '/symptom-report/thankyou';
 
   @override
   _ThankYouScreenState createState() => _ThankYouScreenState();

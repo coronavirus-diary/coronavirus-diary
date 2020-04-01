@@ -53,8 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
               localizations.getStartedStepJoined,
-              semanticsLabel:
-              localizations.getStartedStepJoinedSemanticsLabel,
+              semanticsLabel: localizations.getStartedStepJoinedSemanticsLabel,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.title,
             ),
@@ -114,10 +113,10 @@ class _HomeScreenState extends State<HomeScreen> {
             leading: kReleaseMode
                 ? null
                 : IconButton(
-              onPressed: _debugRestart,
-              icon: Icon(Icons.delete),
-              tooltip: 'DEBUG MODE ONLY: Clear user data',
-            ),
+                    onPressed: _debugRestart,
+                    icon: Icon(Icons.delete),
+                    tooltip: 'DEBUG MODE ONLY: Clear user data',
+                  ),
           ),
           body: NetworkUnavailableBanner.wrap(
             ScrollableBody(

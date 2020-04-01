@@ -70,8 +70,8 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   }
 
   Widget _getUnloadedBody(
-      SymptomReportState symptomReportState,
-      ) {
+    SymptomReportState symptomReportState,
+  ) {
     if (symptomReportState is SymptomReportStateNotCreated) {
       context.bloc<SymptomReportBloc>().add(const StartSymptomReport());
     }
@@ -90,7 +90,11 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     );
   }
 
-  void _handleCheckupCompletion(SymptomReportStateCompleted symptomReportState,) {
+  void _handleCheckupCompletion(
+    SymptomReportStateCompleted symptomReportState,
+  ) {
+    // TODO(goderbauer): Reset the SymptomsReport bloc.
+
     // Navigate to assessment view
     Navigator.pushReplacementNamed(
       context,
@@ -99,8 +103,8 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   }
 
   Widget _getBody(
-      SymptomReportState symptomReportState,
-      ) {
+    SymptomReportState symptomReportState,
+  ) {
     switch (symptomReportState.runtimeType) {
       case SymptomReportStateNotCreated:
       case SymptomReportStateCreating:
@@ -146,8 +150,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
               value: _pageController,
               child: Scaffold(
                 appBar: AppBar(
-                  title:
-                  Text(AppLocalizations.of(context).checkupScreenTitle),
+                  title: Text(AppLocalizations.of(context).checkupScreenTitle),
                   leading: IconButton(
                     icon: Icon(Icons.close),
                     onPressed: () => Navigator.pop(context),
