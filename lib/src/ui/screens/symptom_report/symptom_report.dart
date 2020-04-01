@@ -93,7 +93,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   void _handleCheckupCompletion(
     SymptomReportStateCompleted symptomReportState,
   ) {
-    // TODO(goderbauer): Reset the SymptomsReport bloc.
+    // TODO(goderbauer): Reset the SymptomsReport bloc: https://github.com/coronavirus-diary/coronavirus-diary/issues/171
 
     // Navigate to assessment view
     Navigator.pushReplacementNamed(
