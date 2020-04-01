@@ -216,7 +216,7 @@
     "description": "Title that appears within the textfield where the user enters their temperature"
   },
 
-  "temperatureStepHelp": "How to check your temperature",
+  "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
   "@temperatureStepHelp": {
     "description": "Label for a button that brings up a help screen"
   },
@@ -291,7 +291,7 @@
     "description": "Tell a user that has already completed their checkup that they can check again tomorrow"
   },
 
-  "homeScreenViewMyAssessment": "View my assessment",
+  "homeScreenViewMyAssessment": "VIEW MY ASSESSMENT",
   "@homeScreenViewMyAssessment": {
     "description": "View the assessment of the checkup data"
   },
