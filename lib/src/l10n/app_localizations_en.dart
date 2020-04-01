@@ -31,35 +31,25 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Thank you for considering joining our effort. If you change your mind, you can come back later.';
 
   @override
-  String get assessmentScreenTitle => 'Your Personalized Assessment';
+  String get thankYouScreenTitle => 'Thank you';
 
   @override
-  String get negativeAssessmentTestingCriteria =>
-      'You don\'t meet testing criteria';
+  String get thankYouScreenReturnToHome => 'Return to home';
 
   @override
-  String get negativeAssessmentCheckInTomorrow =>
-      'If you continue to experience symptoms, please check in tomorrow.';
+  String get thankYouScreenDataSubmission =>
+      'Thank you for submitting your data and supporting the COVID-19 response effort.';
 
   @override
-  String get negativeAssessmentConsultPhysician =>
-      'If they become serious, please consult a physician.';
-
-  @override
-  String get positiveAssessmentConsultPhysician =>
-      'Please contact your physician';
-
-  @override
-  String get positiveAssessmentShowingSymptoms =>
-      'You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.';
-
-  @override
-  String get positiveAssessmentDoNotPanic =>
-      'Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.';
+  String get thankYouScreenCallToAction =>
+      'Please come back tomorrow to report your symptoms again.';
 
   @override
   String get checkupScreenErrorRetrievingExperience =>
       'There was an error retrieving the checkup experience. Please try again later.';
+
+  @override
+  String get checkupScreenHUDLabel => 'Submitting your report';
 
   @override
   String get checkupScreenTitle => 'Your Health Checkup';

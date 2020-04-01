@@ -1,4 +1,3 @@
-import 'package:covidnearme/src/data/models/assessments.dart';
 import 'package:covidnearme/src/data/models/symptom_report.dart';
 
 abstract class SymptomReportState {
@@ -28,11 +27,5 @@ class SymptomReportStateCompleting extends SymptomReportState {
 }
 
 class SymptomReportStateCompleted extends SymptomReportState {
-  final Assessment assessment;
-
-  const SymptomReportStateCompleted({this.assessment});
-
-  @override
-  String toString() =>
-      'SymptomReportStateCompleted { assessment: $assessment }';
+  const SymptomReportStateCompleted();
 }

@@ -107,29 +107,23 @@ abstract class AppLocalizations {
   // The app's response if the user does not agree to the informed consent question
   String get deniedConsentMessage;
 
-  // The title of the AssessmentScreen
-  String get assessmentScreenTitle;
+  // The title of the ThankYou screen.
+  String get thankYouScreenTitle;
 
-  // The patient does not require further testing
-  String get negativeAssessmentTestingCriteria;
+  // Return back to the home screen.
+  String get thankYouScreenReturnToHome;
 
-  // The patient should check in again tomorrow
-  String get negativeAssessmentCheckInTomorrow;
+  // A note thanking the user for submitting their data.
+  String get thankYouScreenDataSubmission;
 
-  // Advise the patient to consult a doctor if their symptoms worsen
-  String get negativeAssessmentConsultPhysician;
-
-  // Advise the patient to consult a doctor
-  String get positiveAssessmentConsultPhysician;
-
-  // Advise the patient to avoid contact with others until they've seen a doctor
-  String get positiveAssessmentShowingSymptoms;
-
-  // Advise the patient to remain calm
-  String get positiveAssessmentDoNotPanic;
+  // Asking the user to report their symptoms again tomorrow.
+  String get thankYouScreenCallToAction;
 
   // An error occurred while trying to fetch data
   String get checkupScreenErrorRetrievingExperience;
+  
+  // A label that indicates that the app is busy submitting the patient's assessment
+  String get checkupScreenHUDLabel;
 
   // Title for the checkup screen
   String get checkupScreenTitle;
