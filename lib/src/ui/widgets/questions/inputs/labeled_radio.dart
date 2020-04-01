@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/ui/widgets/questions/inputs/toggleable_radio.dart';
 import 'package:flutter/material.dart';
 
 class LabeledRadio<T> extends StatelessWidget {
@@ -11,7 +12,7 @@ class LabeledRadio<T> extends StatelessWidget {
     this.axis = Axis.horizontal,
   }) : assert(axis != null);
 
-  final VoidCallback onChanged;
+  final ValueChanged<T> onChanged;
   final T value;
   final T groupValue;
   final String label;
@@ -41,8 +42,8 @@ class LabeledRadio<T> extends StatelessWidget {
           explicitChildNodes: false,
           label: semanticsLabel,
           value: semanticsValue,
-          child: Radio<T>(
-            onChanged: (T value) => onChanged(),
+          child: ToggleableRadio<T>(
+            onChanged: onChanged,
             value: value,
             groupValue: groupValue,
             activeColor: Theme.of(context).colorScheme.secondary,
@@ -50,7 +51,7 @@ class LabeledRadio<T> extends StatelessWidget {
         ),
         ExcludeSemantics(
           child: GestureDetector(
-            onTap: onChanged,
+            onTap: () => onChanged(value),
             child: Text(label, style: Theme.of(context).textTheme.button),
           ),
         ),
