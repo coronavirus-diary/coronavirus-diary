@@ -11,8 +11,7 @@ SymptomReport _$SymptomReportFromJson(Map<String, dynamic> json) {
     userId: json['user_id'] as String,
     location: json['location'] == null
         ? null
-        : SymptomReportLocation.fromJson(
-            json['location'] as Map<String, dynamic>),
+        : UserLocation.fromJson(json['location'] as Map<String, dynamic>),
     questionResponses: (json['question_responses'] as List)
         ?.map((e) => e == null
             ? null
@@ -44,16 +43,14 @@ Map<String, dynamic> _$QuestionResponseToJson(QuestionResponse instance) =>
       'response': instance.response,
     };
 
-SymptomReportLocation _$SymptomReportLocationFromJson(
-    Map<String, dynamic> json) {
-  return SymptomReportLocation(
+UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
+  return UserLocation(
     zipCode: json['zip_code'] as String,
     country: json['country'] as String,
   );
 }
 
-Map<String, dynamic> _$SymptomReportLocationToJson(
-        SymptomReportLocation instance) =>
+Map<String, dynamic> _$UserLocationToJson(UserLocation instance) =>
     <String, dynamic>{
       'zip_code': instance.zipCode,
       'country': instance.country,

@@ -14,6 +14,9 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
     lastAssessment: json['last_assessment'] == null
         ? null
         : Assessment.fromJson(json['last_assessment'] as Map<String, dynamic>),
+    location: json['location'] == null
+        ? null
+        : UserLocation.fromJson(json['location'] as Map<String, dynamic>),
   );
 }
 
@@ -23,4 +26,5 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) =>
       'completed_tutorial': instance.completedTutorial,
       'agreed_to_terms': instance.agreedToTerms,
       'last_assessment': instance.lastAssessment?.toJson(),
+      'location': instance.location?.toJson(),
     };

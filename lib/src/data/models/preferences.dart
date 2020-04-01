@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 import 'package:uuid/uuid_util.dart';
@@ -12,12 +13,14 @@ class Preferences {
   final bool completedTutorial;
   final bool agreedToTerms;
   final Assessment lastAssessment;
+  final UserLocation location;
 
   Preferences({
     String userId,
     bool completedTutorial,
     this.agreedToTerms,
     this.lastAssessment,
+    this.location,
   })  : completedTutorial = completedTutorial ?? false,
         userId = userId ??
             Uuid().v4(
@@ -30,12 +33,14 @@ class Preferences {
     bool completedTutorial,
     bool agreedToTerms,
     Assessment lastAssessment,
+    UserLocation location,
   }) {
     return Preferences(
       userId: this.userId,
       completedTutorial: completedTutorial ?? this.completedTutorial,
       agreedToTerms: agreedToTerms ?? this.agreedToTerms,
       lastAssessment: lastAssessment ?? this.lastAssessment,
+      location: location ?? this.location,
     );
   }
 
@@ -45,5 +50,5 @@ class Preferences {
 
   @override
   String toString() =>
-      'Preferences { userId: $userId, lastAssessment: $lastAssessment }';
+      'Preferences { userId: $userId, lastAssessment: $lastAssessment, agreedToTerms: $agreedToTerms, location: $location }';
 }

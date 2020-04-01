@@ -36,6 +36,9 @@ void main() {
 
     // Now agree.
     await driver.tap(find.text('I AGREE'));
+
+    // Now submit an empty default location.
+    await driver.tap(find.text('SUBMIT'));
   });
 
   test('User can go back from the checkup screen to home', () async {

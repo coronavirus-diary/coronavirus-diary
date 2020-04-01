@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -18,7 +16,10 @@ class ConsentStep extends StatelessWidget {
     );
     context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
 
-    if (response) {
+    if (response && newPreferences.location != null) {
+      // If the user consented, but they have already specified their location,
+      // skip the location step.
+
       // Navigate to home page and put it at the
       // bottom of the navigation stack if consent is given.
       Navigator.pushNamedAndRemoveUntil(
@@ -27,7 +28,7 @@ class ConsentStep extends StatelessWidget {
         (Route<dynamic> route) => false,
       );
     } else {
-      // Advance to the denied consent page if consent is not given.
+      // Advance to the ConsentBranch step.
       Provider.of<PageController>(context, listen: false).nextPage(
         duration: Duration(milliseconds: 400),
         curve: Curves.easeInOut,

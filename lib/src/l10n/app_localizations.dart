@@ -215,16 +215,19 @@ abstract class AppLocalizations {
   // Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogReturn;
 
-  // Title that appears above the textfield where the user enters their temperature
+  // Title that appears above the text field where the user enters their temperature
   String get temperatureStepTitle;
 
-  // Title that appears within the textfield where the user enters their temperature
+  // Title that appears within the text field where the user enters their temperature
   String get temperatureStepInputLabel;
 
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
 
-  // Title that appears above the textfield where the user enters their location
+  // Title that appears above the text field where the user enters their location during the tutorial
+  String get tutorialLocationStepTitle;
+
+  // Title that appears above the text field where the user enters their location
   String get locationStepTitle;
 
   // Error that appears when the user enters their zip code incorrectly.
@@ -233,7 +236,7 @@ abstract class AppLocalizations {
   // Error that appears when the user enters their country incorrectly.
   String get locationStepInvalidCountry;
 
-  // Title that appears within the textfield where the user enters their ZIP code
+  // Title that appears within the text field where the user enters their ZIP code
   String get locationStepZipCode;
 
   // Helper text describing what to enter in the text field for country.
@@ -245,7 +248,7 @@ abstract class AppLocalizations {
   // Radio button selection indicating that the user lives outside of the USA.
   String get locationStepAnotherCountry;
 
-  // Title that appears within the textfield where the user enters their country
+  // Title that appears within the text field where the user enters their country
   String get locationStepCountry;
 
   // Heading text for the home screen
