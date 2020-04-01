@@ -266,6 +266,12 @@ abstract class AppLocalizations {
   // View the assessment of the checkup data
   String get homeScreenViewMyAssessment;
 
+  // Label next to loading indicator
+  String get systemReportLoadingAssessment;
+
+  // Tooltip for the back button
+  String get systemReportBackToHomePage;
+
   // Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime
   String get shareAppDownloadPrompt;
 

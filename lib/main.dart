@@ -5,7 +5,7 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 import 'src/app.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   BlocSupervisor.delegate = await AppHydratedBlocDelegate.build();
   runApp(Phoenix(

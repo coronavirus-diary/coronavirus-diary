@@ -5,80 +5,93 @@ import 'package:test/test.dart';
 void main() {
   FlutterDriver driver;
 
-  setUp(() async {
+  setUpAll(() async {
     driver = await FlutterDriver.connect();
+    await Future.delayed(const Duration(seconds: 5));
+    await driver.waitUntilFirstFrameRasterized();
+  });
+
+  tearDownAll(() async {
+    if (driver != null) {
+      await driver.close();
+    }
   });
 
   test('User can reach checkup and share screen', () async {
     // The welcome screen shows a "learn more" button.
-    final learnMoreButton = find.text('Click here to learn more');
-    await driver.tap(learnMoreButton);
+    await driver.tap(find.text('LEARN MORE'));
 
     // The agree to terms screen shows an "agree" and "no" button.
-    final agreeButton = find.text('I agree');
-    await driver.tap(agreeButton);
+    // Click "no" the first time.
+    await driver.tap(find.text('NO'));
 
     // Click here to get started page.
-    final getStartedButton = find.text('Click here to get started');
-    await driver.tap(getStartedButton);
+    await driver.waitFor(find.text('Consent Declined'));
 
-    // The main options selection screen has a share and a checkup option.
-    final shareButton = find.text('Share now');
-    await driver.waitFor(shareButton);
+    // Click on the close button.
+    await driver.tap(find.byTooltip('Go back to the informed consent screen'));
 
-    final checkupButton = find.text('Check up on your health');
-    await driver.waitFor(checkupButton);
+    // Back on the informed consent screen.
+    await driver.waitFor(find.text('DID NOT AGREE'));
+
+    // Now agree.
+    await driver.tap(find.text('I AGREE'));
   });
 
   test('User can go back from the checkup screen to home', () async {
-    // From state above, proceede to checkup screen.
-    final checkupButton = find.text('Check up on your health');
-    await driver.tap(checkupButton);
-
-    // Click on the close button.
-    final closeButton = find.byTooltip('Go back to the home page.');
-    await driver.tap(closeButton);
-
-    // Back on the home screen.
-    await driver.waitFor(find.text('Check up on your health'));
+    await driver.scrollUntilVisible(
+      find.byType('SingleChildScrollView'),
+      find.byValueKey('SHARE NOW'),
+      dyScroll: -100,
+    );
+    await driver.tap(find.byValueKey('START HEALTH CHECKUP'));
+    await driver.waitFor(find.text('START CHECKUP'));
+    await driver.tap(find.byTooltip('Go back to the home page'));
+    await driver.waitFor(find.byValueKey('START HEALTH CHECKUP'));
   });
 
   test('User can checkup on their health', () async {
-    // From state above, proceede to checkup screen.
-    final checkupButton = find.text('Check up on your health');
-    await driver.tap(checkupButton);
+    // From state above, proceed to checkup screen.
+    await driver.tap(find.byValueKey('START HEALTH CHECKUP'));
 
     // The first screen says "Its time for your checkup."
     // No actions need to be taken.
-    final startCheckup = find.text('Start checkup');
-    await driver.tap(startCheckup);
+    await driver.tap(find.text('START CHECKUP'));
 
-    // There are three preconfigured questions:
-    // 1. Shortness of breath
-    // 2. cough
-    // 3. fever
-    // These will need value keys or other labels so the driver test
-    // c an confirm that values update correctly.
-    await driver.tap(find.text('Continue'));
+    // TODO(gspencergoog): The individual questions will need value keys or
+    // other labels so the driver test can confirm that values update correctly.
 
-    // Take your temperature is a text entry that
-    // does not require any values.
-    await driver.tap(find.text('Submit'));
+    // Can't tap the NEXT button until it's visible.
+    await driver.scrollUntilVisible(
+      find.byValueKey('ScrollableBody'),
+      find.text('NEXT'),
+      dyScroll: -100,
+    );
+    await driver.tap(find.text('NEXT'));
+
+    // Can't tap the NEXT button until it's visible.
+    await driver.scrollUntilVisible(
+      find.byValueKey('ScrollableBody'),
+      find.text('NEXT'),
+      dyScroll: -100,
+    );
+    await driver.tap(find.text('NEXT'));
+
+    // Take your temperature is a text entry that does not require any values.
+    await driver.tap(find.text('SUBMIT'));
 
     // Finally, there is a progress screen and a contact screen.
     await driver.waitFor(find.text('Stay Safe'));
   });
 
   test('User can tap on delete data and back to the first page', () async {
+    // Go back to the home page.
+    await driver.tap(find.byTooltip('Back'));
+
     // Click on the delete data button.
-    final deleteDataButton = find.byTooltip('DEBUG MODE ONLY: Clear user data');
-    await driver.tap(deleteDataButton);
+    await driver.tap(find.byTooltip('DEBUG MODE ONLY: Clear user data'));
 
     // Back to the welcome screen.
     await driver.waitFor(find.text('Welcome to the CovidNearMe App'));
-  });
-
-  tearDown(() async {
-    await driver?.close();
   });
 }

@@ -7,6 +7,10 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 import 'bob.dart';
 
+/// Used by driver tests to disable the TickerMode in the indicator, since that
+/// messes with driver tests.
+bool debugDisableTickerMode = false;
+
 class ScrollMoreIndicator extends StatefulWidget {
   const ScrollMoreIndicator({
     Key key,
@@ -130,7 +134,9 @@ class _ScrollMoreIndicatorState extends State<ScrollMoreIndicator> {
                   duration: const Duration(milliseconds: 100),
                   curve: Curves.easeInOut,
                   child: TickerMode(
-                    enabled: !_atBottom || !_steadyState,
+                    enabled: debugDisableTickerMode
+                        ? false
+                        : !_atBottom || !_steadyState,
                     child: Center(
                       heightFactor: 1.0,
                       child: GestureDetector(

@@ -231,6 +231,12 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get homeScreenViewMyAssessment => 'VIEW MY ASSESSMENT';
 
   @override
+  String get systemReportLoadingAssessment => 'Loading your assessment';
+
+  @override
+  String get systemReportBackToHomePage => 'Go back to the home page';
+
+  @override
   String get shareAppDownloadPrompt =>
       'Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK';
 
