@@ -24,11 +24,11 @@ We will not sell this data. It will only be used for public health and research 
 If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"No\".''';
 
   @override
-  String get deniedConsentHeading => 'Consent denied';
+  String get deniedConsentHeading => 'Consent Declined';
 
   @override
   String get deniedConsentMessage =>
-      'We need you to grant the App consent to perform the required action.';
+      'Thank you for considering joining our effort. If you change your mind, you can come back later.';
 
   @override
   String get assessmentScreenTitle => 'Your Personalized Assessment';

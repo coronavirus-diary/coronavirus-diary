@@ -6,12 +6,12 @@
     "description": "The long informed consent question asked of users"
   },
 
-  "deniedConsentHeading": "Consent denied",
+  "deniedConsentHeading": "Consent Declined",
   "@deniedConsentHeading":  {
     "description": "Heading for the page show reminds the user that they've said no"
   },
 
-  "deniedConsentMessage": "We need you to grant the App consent to perform the required action.",
+  "deniedConsentMessage": "Thank you for considering joining our effort. If you change your mind, you can come back later.",
   "@deniedConsentMessage":  {
     "description": "The app's response if the user does not agree to the informed consent question"
   },
