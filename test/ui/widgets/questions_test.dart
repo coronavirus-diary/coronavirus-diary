@@ -104,7 +104,8 @@ void main() {
 
     Finder findRadio(int value) {
       return find.byWidgetPredicate(
-        (Widget widget) => widget is ToggleableRadio<int> && widget.value == value,
+        (Widget widget) =>
+            widget is ToggleableRadio<int> && widget.value == value,
       );
     }
 

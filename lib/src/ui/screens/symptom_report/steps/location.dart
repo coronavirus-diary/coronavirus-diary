@@ -56,7 +56,8 @@ class _LocationStepState extends State<LocationStep> {
             builder: (BuildContext context, SymptomReportState state) {
           final SymptomReportStateInProgress symptomReportState = state;
           final UserLocation currentLocation =
-              symptomReportState?.symptomReport?.location ?? preferencesState.preferences.location;
+              symptomReportState?.symptomReport?.location ??
+                  preferencesState.preferences.location;
           return LocationEntry(
             updateData: (UserLocation location) => _updateData(
               location: location,

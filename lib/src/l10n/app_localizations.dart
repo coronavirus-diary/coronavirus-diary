@@ -121,7 +121,7 @@ abstract class AppLocalizations {
 
   // An error occurred while trying to fetch data
   String get checkupScreenErrorRetrievingExperience;
-  
+
   // A label that indicates that the app is busy submitting the patient's assessment
   String get checkupScreenHUDLabel;
 
