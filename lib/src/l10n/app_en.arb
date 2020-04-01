@@ -16,39 +16,24 @@
     "description": "The app's response if the user does not agree to the informed consent question"
   },
 
-  "assessmentScreenTitle": "Your Personalized Assessment",
-  "@assessmentScreenTitle": {
-    "description": "The title of the AssessmentScreen"
+  "thankYouScreenTitle": "Thank you",
+  "@thankYouScreenTitle":  {
+    "description": "The title of the ThankYou screen"
   },
 
-  "negativeAssessmentTestingCriteria": "You don't meet testing criteria",
-  "@negativeAssessmentTestingCriteria": {
-    "description": "The patient does not require further testing"
+  "thankYouScreenReturnToHome": "Return to home",
+  "@thankYouScreenReturnToHome":  {
+    "description": "Return back to the home screen"
   },
 
-  "negativeAssessmentCheckInTomorrow": "If you continue to experience symptoms, please check in tomorrow.",
-  "@negativeAssessmentCheckInTomorrow": {
-    "description": "The patient should check in again tomorrow"
+  "thankYouScreenDataSubmission": "Thank you for submitting your data and supporting the COVID-19 response effort.",
+  "@thankYouScreenDataSubmission":  {
+    "description": "A note thanking the user for submitting their data"
   },
 
-  "negativeAssessmentConsultPhysician": "If they become serious, please consult a physician.",
-  "@negativeAssessmentConsultPhysician": {
-    "description": "Advise the patient to consult a doctor if their symptoms worsen"
-  },
-
-  "positiveAssessmentConsultPhysician": "Please contact your physician",
-  "@positiveAssessmentConsultPhysician": {
-    "description": "Advise the patient to consult a doctor"
-  },
-
-  "positiveAssessmentShowingSymptoms": "You are showing symptoms that may be of concern. Please limit your contact with other people until you have a chance to follow up with a physician.",
-  "@positiveAssessmentShowingSymptoms": {
-    "description": "Advise the patient to avoid contact with others until they've seen a doctor"
-  },
-
-  "positiveAssessmentDoNotPanic":  "Do not panic. This is only a preliminary assessment and not a formal medical diagnosis.",
-  "@positiveAssessmentDoNotPanic": {
-    "description": "Advise the patient to remain calm"
+  "thankYouScreenCallToAction": "Please come back tomorrow to report your symptoms again.",
+  "@thankYouScreenCallToAction":  {
+    "description": "Asking the user to report their symptoms again tomorrow"
   },
 
   "checkupScreenErrorRetrievingExperience": "There was an error retrieving the checkup experience. Please try again later.",
@@ -251,13 +236,8 @@
     "description": "Tell a user that has already completed their checkup that they can check again tomorrow"
   },
 
-  "homeScreenViewMyAssessment": "VIEW MY ASSESSMENT",
-  "@homeScreenViewMyAssessment": {
-    "description": "View the assessment of the checkup data"
-  },
-
-  "systemReportLoadingAssessment": "Loading your assessment",
-  "@systemReportLoadingAssessment": {
+  "systemReportSubmitting": "Submitting your report",
+  "@systemReportSubmitting": {
     "description": "Label next to loading indicator"
   },
 

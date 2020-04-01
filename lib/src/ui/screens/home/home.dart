@@ -7,7 +7,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/share.dart';
@@ -31,129 +30,74 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _getBody(PreferencesState state) {
-    final DateTime now = DateTime.now();
-    final DateTime today = DateTime(now.year, now.month, now.day);
     final localizations = AppLocalizations.of(context);
-
-    if (state.preferences.lastAssessment == null ||
-        state.preferences.lastAssessment.processed.isBefore(today)) {
-      return Column(
-        children: <Widget>[
-          if (!state.preferences.completedTutorial)
-            Container(
-              width: double.infinity,
-              color: Theme.of(context).accentColor.withOpacity(0.5),
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-              margin: EdgeInsets.only(bottom: 20),
-              child: Center(
-                child: FaIcon(
-                  FontAwesomeIcons.handHoldingHeart,
-                  color: Colors.white,
-                  size: 80,
-                ),
-              ),
-            ),
-          if (!state.preferences.completedTutorial)
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 40),
-              margin: EdgeInsets.only(bottom: 20),
-              child: Text(
-                localizations.getStartedStepJoined,
-                semanticsLabel:
-                    localizations.getStartedStepJoinedSemanticsLabel,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.title,
-              ),
-            ),
+    return Column(
+      children: <Widget>[
+        if (!state.preferences.completedTutorial)
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
+            width: double.infinity,
+            color: Theme.of(context).accentColor.withOpacity(0.5),
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
             margin: EdgeInsets.only(bottom: 20),
-            child: FaIcon(
-              FontAwesomeIcons.questionCircle,
-              size: 80,
+            child: Center(
+              child: FaIcon(
+                FontAwesomeIcons.handHoldingHeart,
+                color: Colors.white,
+                size: 80,
+              ),
             ),
           ),
+        if (!state.preferences.completedTutorial)
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40),
             margin: EdgeInsets.only(bottom: 20),
             child: Text(
-              localizations.homeScreenHeading,
+              localizations.getStartedStepJoined,
+              semanticsLabel: localizations.getStartedStepJoinedSemanticsLabel,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.title,
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Text(
-              localizations.homeScreenDoYouHaveSymptoms,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.body2,
-            ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          margin: EdgeInsets.only(bottom: 20),
+          child: FaIcon(
+            FontAwesomeIcons.questionCircle,
+            size: 80,
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 40),
-            width: double.infinity,
-            child: RaisedButton(
-              key: ValueKey<String>('START HEALTH CHECKUP'),
-              onPressed: () =>
-                  Navigator.pushNamed(context, SymptomReportScreen.routeName),
-              child: Text(localizations.homeScreenCheckupButtonLabel),
-            ),
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          margin: EdgeInsets.only(bottom: 20),
+          child: Text(
+            localizations.homeScreenHeading,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.title,
           ),
-          ShareApp(),
-        ],
-      );
-    } else {
-      return Column(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 20),
-            child: FaIcon(
-              FontAwesomeIcons.checkCircle,
-              size: 80,
-            ),
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          margin: EdgeInsets.only(bottom: 20),
+          child: Text(
+            localizations.homeScreenDoYouHaveSymptoms,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.body2,
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Text(
-              localizations.homeScreenYouHaveCompletedCheckup,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.title,
-            ),
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          margin: EdgeInsets.only(bottom: 40),
+          width: double.infinity,
+          child: RaisedButton(
+            key: ValueKey<String>('START HEALTH CHECKUP'),
+            onPressed: () =>
+                Navigator.pushNamed(context, SymptomReportScreen.routeName),
+            child: Text(localizations.homeScreenCheckupButtonLabel),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Text(
-              localizations.homeScreenCheckBackTomorrow,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle,
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 40),
-            width: double.infinity,
-            child: RaisedButton(
-              key: ValueKey<String>('VIEW MY ASSESSMENT'),
-              onPressed: () => Navigator.pushNamed(
-                context,
-                AssessmentScreen.routeName,
-                arguments: AssessmentScreenArguments(
-                  assessment: state.preferences.lastAssessment,
-                ),
-              ),
-              child: Text(localizations.homeScreenViewMyAssessment),
-            ),
-          ),
-          ShareApp(),
-        ],
-      );
-    }
+        ),
+        ShareApp(),
+      ],
+    );
   }
 
   @override

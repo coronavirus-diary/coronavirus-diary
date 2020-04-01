@@ -8,8 +8,6 @@ import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:meta/meta.dart';
 import 'symptom_report.dart';
 
-export 'package:covidnearme/src/data/models/assessments.dart';
-
 class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   final PreferencesState preferencesState;
   final SymptomReportsRepository symptomReportsRepository;
@@ -83,13 +81,9 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
         await symptomReportsRepository.updateSymptomReport(currentReport);
 
     // Complete checkup
-    final Assessment assessment =
-        await symptomReportsRepository.completeSymptomReport(report.userId);
-
-    // TODO: remove this when API is integrated
-    print(assessment.toJson().toString());
+    await symptomReportsRepository.completeSymptomReport(report.userId);
 
     // Complete checkup using API
-    yield SymptomReportStateCompleted(assessment: assessment);
+    yield const SymptomReportStateCompleted();
   }
 }

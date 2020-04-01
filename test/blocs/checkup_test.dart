@@ -140,8 +140,7 @@ void main() {
           isA<SymptomReportStateInProgress>()
             ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
           const SymptomReportStateCompleting(),
-          isA<SymptomReportStateCompleted>()
-            ..having((s) => s.assessment, 'assessment', isNotNull),
+          const SymptomReportStateCompleted(),
           emitsDone,
         ],
       ),
@@ -153,9 +152,7 @@ class NotSymptomReportEvent extends SymptomReportEvent {}
 
 class FakeSymptomReportsRepository implements SymptomReportsRepository {
   @override
-  Future<Assessment> completeSymptomReport(String id) async {
-    return Assessment();
-  }
+  Future<void> completeSymptomReport(String id) async {}
 
   @override
   Future<SymptomReport> createSymptomReport(SymptomReport report) async {

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
 import 'package:provider/provider.dart';
 
-import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
@@ -92,33 +91,18 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   }
 
   void _handleCheckupCompletion(
-    PreferencesState preferencesState,
     SymptomReportStateCompleted symptomReportState,
   ) {
-    // Remember assessment
-    if (preferencesState.preferences.lastAssessment !=
-        symptomReportState.assessment) {
-      Preferences newPreferences = preferencesState.preferences.cloneWith(
-        lastAssessment: symptomReportState.assessment,
-        // If they've completed an assessment, then don't show them the welcome
-        // screen again.
-        completedTutorial: true,
-      );
-      context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
-    }
+    // TODO(goderbauer): Reset the SymptomsReport bloc: https://github.com/coronavirus-diary/coronavirus-diary/issues/171
 
     // Navigate to assessment view
     Navigator.pushReplacementNamed(
       context,
-      AssessmentScreen.routeName,
-      arguments: AssessmentScreenArguments(
-        assessment: symptomReportState.assessment,
-      ),
+      ThankYouScreen.routeName,
     );
   }
 
   Widget _getBody(
-    PreferencesState preferencesState,
     SymptomReportState symptomReportState,
   ) {
     switch (symptomReportState.runtimeType) {
@@ -138,53 +122,46 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    return BlocBuilder<PreferencesBloc, PreferencesState>(
+    return BlocConsumer<SymptomReportBloc, SymptomReportState>(
+      listener: (context, state) {
+        if (state is SymptomReportStateCompleting) {
+          if (!_showLoadingAssessmentHUD) {
+            setState(() {
+              _showLoadingAssessmentHUD = true;
+            });
+          }
+        } else if (state is SymptomReportStateCompleted) {
+          _handleCheckupCompletion(state);
+        }
+      },
       builder: (context, state) {
-        final PreferencesState preferencesState = state;
+        final SymptomReportState checkupState = state;
 
-        return BlocConsumer<SymptomReportBloc, SymptomReportState>(
-          listener: (context, state) {
-            if (state is SymptomReportStateCompleting) {
-              if (!_showLoadingAssessmentHUD) {
-                setState(() {
-                  _showLoadingAssessmentHUD = true;
-                });
-              }
-            } else if (state is SymptomReportStateCompleted) {
-              _handleCheckupCompletion(preferencesState, state);
-            }
-          },
-          builder: (context, state) {
-            final SymptomReportState checkupState = state;
-
-            return WidgetHUD(
-              showHUD: _showLoadingAssessmentHUD,
-              hud: HUD(
-                color: Theme.of(context).colorScheme.surface,
-                opacity: 1.0,
-                labelStyle: Theme.of(context).textTheme.headline,
-                label: localizations.systemReportLoadingAssessment,
-              ),
-              builder: (context) {
-                return ChangeNotifierProvider<PageController>.value(
-                  value: _pageController,
-                  child: Scaffold(
-                    appBar: AppBar(
-                      title:
-                          Text(AppLocalizations.of(context).checkupScreenTitle),
-                      leading: IconButton(
-                        icon: Icon(Icons.close),
-                        onPressed: () => Navigator.pop(context),
-                        tooltip: localizations.systemReportBackToHomePage,
-                      ),
-                    ),
-                    backgroundColor: Theme.of(context).backgroundColor,
-                    body: NetworkUnavailableBanner.wrap(
-                      _getBody(preferencesState, checkupState),
-                    ),
+        return WidgetHUD(
+          showHUD: _showLoadingAssessmentHUD,
+          hud: HUD(
+            color: Theme.of(context).colorScheme.surface,
+            opacity: 1.0,
+            labelStyle: Theme.of(context).textTheme.headline,
+            label: localizations.systemReportSubmitting,
+          ),
+          builder: (context) {
+            return ChangeNotifierProvider<PageController>.value(
+              value: _pageController,
+              child: Scaffold(
+                appBar: AppBar(
+                  title: Text(AppLocalizations.of(context).checkupScreenTitle),
+                  leading: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () => Navigator.pop(context),
+                    tooltip: localizations.systemReportBackToHomePage,
                   ),
-                );
-              },
+                ),
+                backgroundColor: Theme.of(context).backgroundColor,
+                body: NetworkUnavailableBanner.wrap(
+                  _getBody(checkupState),
+                ),
+              ),
             );
           },
         );
