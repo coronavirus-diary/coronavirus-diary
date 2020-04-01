@@ -1,11 +1,11 @@
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/ui/screens/thankyou/thankyou.dart';
+import 'package:covidnearme/src/ui/screens/symptom_report/thankyou.dart';
 
 import 'screens/home/home.dart';
 import 'screens/tutorial/tutorial.dart';
 
-export 'screens/thankyou/thankyou.dart';
+export 'screens/symptom_report/thankyou.dart';
 export 'screens/home/home.dart';
 export 'screens/tutorial/tutorial.dart';
 
