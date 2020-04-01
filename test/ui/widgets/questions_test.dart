@@ -2,6 +2,7 @@ import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/blocs/utils.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/radio_button_scale.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_item.dart';
+import 'package:covidnearme/src/ui/widgets/questions/inputs/toggleable_radio.dart';
 import 'package:file/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -103,7 +104,7 @@ void main() {
 
     Finder findRadio(int value) {
       return find.byWidgetPredicate(
-        (Widget widget) => widget is Radio<int> && widget.value == value,
+        (Widget widget) => widget is ToggleableRadio<int> && widget.value == value,
       );
     }
 
@@ -118,7 +119,7 @@ void main() {
       equals(1),
     );
     expect(
-      (tester.widget(findRadio(1)) as Radio<int>).groupValue,
+      (tester.widget(findRadio(1)) as ToggleableRadio<int>).groupValue,
       equals(1),
     );
     expect(
