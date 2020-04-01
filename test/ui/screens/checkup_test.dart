@@ -1,3 +1,9 @@
+import 'package:file/memory.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_test/flutter_test.dart';
+
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/questions/questions_bloc.dart';
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
@@ -6,12 +12,8 @@ import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/l10n/app_localizations_en.dart';
+import 'package:covidnearme/src/l10n/country_localizations.dart';
 import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
-import 'package:file/memory.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   setUp(() async {
@@ -76,7 +78,7 @@ Widget setUpCheckupScreen({
   );
   preferences ??= PreferencesBloc();
   return MaterialApp(
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: AppLocalizations.localizationsDelegates.followedBy([CountryLocalizations.delegate]),
     supportedLocales: AppLocalizations.supportedLocales,
     home: Scaffold(
       body: BlocProvider(

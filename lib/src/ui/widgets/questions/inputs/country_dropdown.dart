@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/widgets/questions/inputs/country_codes.dart';
+import 'package:covidnearme/src/l10n/country_localizations.dart';
 
 typedef CountryDropdownSearchFunction = List<int> Function(
     String keyword, List<DropdownMenuItem<String>> items);
@@ -34,9 +34,8 @@ class _CountryDropdownState extends State<CountryDropdown> {
 
   void didChangeDependencies() {
     super.didChangeDependencies();
-    AppLocalizations localizations = AppLocalizations.of(context);
-    _updateCountryCodes(localizations);
-    _dropdownItems = _getDropdownItems(context, localizations);
+    _updateCountryCodes(context);
+    _dropdownItems = _getDropdownItems(context);
   }
 
   List<int> _findItemsForSearch(
@@ -58,20 +57,27 @@ class _CountryDropdownState extends State<CountryDropdown> {
     return results;
   }
 
-  void _updateCountryCodes(AppLocalizations localizations) {
-    countryCodeToName = getCountryCodeMap(localizations);
+  void _updateCountryCodes(BuildContext context) {
+    final CountryLocalizations localizations = CountryLocalizations.of(context);
+    countryCodeToName = localizations.countryNames;
     nameToCountryCode = <String, String>{};
     for (final String code in countryCodeToName.keys) {
       nameToCountryCode[countryCodeToName[code]] = code;
     }
   }
 
-  List<DropdownMenuItem<String>> _getDropdownItems(
-      BuildContext context, AppLocalizations localizations) {
-    final List<String> countries = nameToCountryCode.keys.toList();
+  List<DropdownMenuItem<String>> _getDropdownItems(BuildContext context) {
+    final CountryLocalizations countryLocalizations =
+        CountryLocalizations.of(context);
+    final AppLocalizations appLocalizations = AppLocalizations.of(context);
+
+    final List<String> countries =
+        countryLocalizations.countryNames.values.toList();
+    final String unitedStates = countryLocalizations.countryNames['US'];
     countries.sort();
-    countries.remove(countryCodeToName['US']);
-    countries.insert(0, countryCodeToName['US']);
+    // Move the United States first in the list.
+    countries.remove(unitedStates);
+    countries.insert(0, unitedStates);
     final List<DropdownMenuItem<String>> result = countries
         .map<DropdownMenuItem<String>>(
           (String country) => DropdownMenuItem<String>(
@@ -89,7 +95,7 @@ class _CountryDropdownState extends State<CountryDropdown> {
     result.insert(
       0,
       DropdownMenuItem<String>(
-        child: Text(localizations.locationStepNoCountrySelected,
+        child: Text(appLocalizations.locationStepNoCountrySelected,
             style: Theme.of(context).textTheme.button.copyWith(
                   fontStyle: FontStyle.italic,
                 )),
@@ -103,7 +109,7 @@ class _CountryDropdownState extends State<CountryDropdown> {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     if (countryCodeToName == null) {
-      _updateCountryCodes(localizations);
+      _updateCountryCodes(context);
     }
 
     return ConstrainedBox(
