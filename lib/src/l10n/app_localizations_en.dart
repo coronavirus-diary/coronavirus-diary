@@ -181,7 +181,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get temperatureStepInputLabel => 'Enter your temperature';
 
   @override
-  String get temperatureStepHelp => 'How to check your temperature';
+  String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
 
   @override
   String get locationStepTitle => 'Enter your location';
@@ -228,7 +228,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'If you continue to experience symptoms, please check back tomorrow.';
 
   @override
-  String get homeScreenViewMyAssessment => 'View my assessment';
+  String get homeScreenViewMyAssessment => 'VIEW MY ASSESSMENT';
 
   @override
   String get shareAppDownloadPrompt =>
