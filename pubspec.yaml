@@ -36,6 +36,7 @@ dependencies:
   hydrated_bloc: ^3.0.0
   intl: ^0.16.0
   meta: ^1.1.8
+  package_info: ^0.4.0+16
   path: ^1.6.4
   path_provider: ^1.6.5
   provider: ^4.0.4

@@ -10,6 +10,7 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/share.dart';
+import 'package:package_info/package_info.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -117,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: Icon(Icons.delete),
                     tooltip: 'DEBUG MODE ONLY: Clear user data',
                   ),
+            actions: <Widget>[_MainMenu()],
           ),
           body: NetworkUnavailableBanner.wrap(
             ScrollableBody(
@@ -131,6 +133,45 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       },
+    );
+  }
+}
+
+class _MainMenu extends StatelessWidget {
+  static const String copyright = '© 2020 Josh Smith';
+
+  @override
+  Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context);
+    return PopupMenuButton(
+      itemBuilder: (BuildContext context) {
+        return <PopupMenuItem<String>>[
+          PopupMenuItem<String>(
+            value: 'About',
+            child: Text(
+              localizations.homeMenuAbout,
+              semanticsLabel: localizations.homeMenuAboutSemantics,
+            ),
+          ),
+        ];
+      },
+      onSelected: (String selection) async {
+        assert(selection == 'About');
+        PackageInfo packageInfo = await PackageInfo.fromPlatform();
+        showAboutDialog(
+          context: context,
+          applicationVersion:
+              '${packageInfo.version}.${packageInfo.buildNumber}',
+          applicationLegalese: copyright,
+          applicationIcon: Image(
+            width: 50,
+            height: 50,
+            image: AssetImage('assets/images/icon.png'),
+          ),
+        );
+      },
+      icon: Icon(Icons.more_vert),
+      tooltip: localizations.homeMenuTooltip,
     );
   }
 }
