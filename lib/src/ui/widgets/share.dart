@@ -51,6 +51,7 @@ class ShareApp extends StatelessWidget {
           Container(
             width: double.infinity,
             child: RaisedButton(
+              key: ValueKey<String>('SHARE NOW'),
               onPressed: _shareApp,
               child: Text(localizations.shareAppNow),
             ),

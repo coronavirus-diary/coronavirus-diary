@@ -1,12 +1,12 @@
-import 'package:covidnearme/src/blocs/questions/questions.dart';
-import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
@@ -137,6 +137,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
         final PreferencesState preferencesState = state;
@@ -162,7 +163,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                 color: Theme.of(context).colorScheme.surface,
                 opacity: 1.0,
                 labelStyle: Theme.of(context).textTheme.headline,
-                label: 'Loading your assessment',
+                label: localizations.systemReportLoadingAssessment,
               ),
               builder: (context) {
                 return ChangeNotifierProvider<PageController>.value(
@@ -174,7 +175,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                       leading: IconButton(
                         icon: Icon(Icons.close),
                         onPressed: () => Navigator.pop(context),
-                        tooltip: 'Go back to the home page.',
+                        tooltip: localizations.systemReportBackToHomePage,
                       ),
                     ),
                     backgroundColor: Theme.of(context).backgroundColor,

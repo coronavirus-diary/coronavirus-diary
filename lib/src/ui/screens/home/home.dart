@@ -96,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.only(bottom: 40),
             width: double.infinity,
             child: RaisedButton(
+              key: ValueKey<String>('START HEALTH CHECKUP'),
               onPressed: () =>
                   Navigator.pushNamed(context, SymptomReportScreen.routeName),
               child: Text(localizations.homeScreenCheckupButtonLabel),
@@ -138,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.only(bottom: 40),
             width: double.infinity,
             child: RaisedButton(
+              key: ValueKey<String>('VIEW MY ASSESSMENT'),
               onPressed: () => Navigator.pushNamed(
                 context,
                 AssessmentScreen.routeName,
