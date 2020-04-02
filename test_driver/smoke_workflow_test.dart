@@ -18,8 +18,8 @@ void main() {
   });
 
   test('User can reach checkup and share screen', () async {
-    // The welcome screen shows a "learn more" button.
-    await driver.tap(find.text('LEARN MORE'));
+    // The welcome screen shows a "get started" button.
+    await driver.tap(find.text('GET STARTED'));
 
     // The agree to terms screen shows an "agree" and "no" button.
     // Click "no" the first time.

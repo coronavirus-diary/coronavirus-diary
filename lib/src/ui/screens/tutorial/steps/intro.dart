@@ -27,13 +27,22 @@ class IntroStep extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
-                margin: EdgeInsets.only(bottom: 40),
+                margin: EdgeInsets.only(bottom: 10),
                 child: Text(
                   localizations.tutorialIntroStepWelcome,
                   semanticsLabel:
                       localizations.tutorialIntroStepWelcomeSemanticsLabel,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.title,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.only(bottom: 30),
+                child: Text(
+                  localizations.tutorialIntroStepDescription,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
               Container(
@@ -84,7 +93,7 @@ class IntroStep extends StatelessWidget {
                       curve: Curves.easeInOut,
                     )
                   },
-                  child: Text(localizations.tutorialIntroStepLearnMore),
+                  child: Text(localizations.tutorialIntroStepGetStarted),
                 ),
               ),
             ],
