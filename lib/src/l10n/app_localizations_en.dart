@@ -39,7 +39,7 @@ You can come back later and enter new information on a different day. We will kn
 
 We will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.
 
-If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don't agree\".''';
+If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don\'t agree\".''';
 
   @override
   String get deniedConsentHeading => 'Consent Declined';

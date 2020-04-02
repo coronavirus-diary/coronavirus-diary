@@ -44,6 +44,7 @@ class _IntroStepState extends State<IntroStep> {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<SymptomReportBloc, SymptomReportState>(
+      key: ValueKey('symptomReportIntroStep'),
       builder: (context, state) {
         final SymptomReportStateInProgress symptomReportState = state;
         return ScrollableBody(
@@ -124,6 +125,7 @@ class _IntroStepState extends State<IntroStep> {
                   margin: EdgeInsets.symmetric(vertical: 20),
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: RaisedButton(
+                    key: ValueKey('symptomReportIntroStepStartButton'),
                     onPressed: () {
                       Provider.of<SymptomReportController>(context,
                               listen: false)

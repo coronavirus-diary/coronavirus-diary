@@ -37,6 +37,7 @@ class ConsentStep extends StatelessWidget implements SymptomReportStep {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
+      key: ValueKey('symptomReportConsentStep'),
       builder: (context, state) {
         final bool agreed = state.preferences.acceptedInformedConsent != null &&
             state.preferences.acceptedInformedConsent;

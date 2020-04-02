@@ -52,6 +52,7 @@ class _LocationStepState extends State<LocationStep> {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
+      key: ValueKey('symptomReportLocationStep'),
       builder: (BuildContext context, PreferencesState preferencesState) {
         return BlocBuilder<SymptomReportBloc, SymptomReportState>(
             builder: (BuildContext context, SymptomReportState state) {

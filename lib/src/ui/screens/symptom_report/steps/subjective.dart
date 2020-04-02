@@ -61,6 +61,7 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsBloc, QuestionsState>(
+      key: ValueKey('symptomReportSubjectiveStep'),
       builder: (context, state) {
         if (state is! QuestionsStateLoaded) {
           return Container(
