@@ -21,24 +21,25 @@ void main() {
         storageDirectory: MemoryFileSystem.test().currentDirectory);
   });
 
-  testWidgets('CheckupScreen transitions from loading to health checkup',
+  testWidgets(
+      'symptomReportScreen transitions from loading to health symptomReport',
       (tester) async {
-    await tester.pumpWidget(setUpCheckupScreen());
+    await tester.pumpWidget(setUpSymptomReportScreen());
 
     // Loading screen
-    expect(find.text('Loading your health checkup'), findsOneWidget);
+    expect(find.text('Loading your health symptomReport'), findsOneWidget);
 
     // Finish loading transition.
     await tester.pumpAndSettle();
 
-    expect(find.text("It's time for your checkup."), findsOneWidget);
+    expect(find.text("It's time for your symptomReport."), findsOneWidget);
   });
 
   testWidgets('Cannot advance to the next screen by scrolling', (tester) async {
-    const String page1 = "It's time for your checkup.";
+    const String page1 = "It's time for your symptomReport.";
     const String page2 = "Step 1 of 2";
 
-    await tester.pumpWidget(setUpCheckupScreen());
+    await tester.pumpWidget(setUpSymptomReportScreen());
     await tester.pumpAndSettle();
 
     expect(find.text(page1), findsOneWidget);
@@ -50,29 +51,29 @@ void main() {
 
   testWidgets('Can advance to the next screen by clicking button',
       (tester) async {
-    const String page1 = "It's time for your checkup.";
+    const String page1 = "It's time for your symptom report.";
     const String page2 = "Step 1 of 2";
 
-    await tester.pumpWidget(setUpCheckupScreen());
+    await tester.pumpWidget(setUpSymptomReportScreen());
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('START CHECKUP'));
+    await tester.tap(find.text('START symptomReport'));
     await tester.pumpAndSettle();
     expect(find.text(page1), findsNothing);
     expect(find.text(page2), findsOneWidget);
   });
 }
 
-Widget setUpCheckupScreen({
+Widget setUpSymptomReportScreen({
   QuestionsBloc questions,
-  SymptomReportBloc checkup,
+  SymptomReportBloc symptomReport,
   PreferencesBloc preferences,
 }) {
   questions ??= QuestionsBloc(
     questionsRepository: QuestionsRepository(),
     localizations: AppLocalizationsEn(),
   );
-  checkup ??= SymptomReportBloc(
+  symptomReport ??= SymptomReportBloc(
     preferencesState: PreferencesState(preferences: Preferences()),
     symptomReportsRepository: SymptomReportsRepository(),
   );
@@ -85,7 +86,7 @@ Widget setUpCheckupScreen({
       body: BlocProvider(
         create: (BuildContext context) => questions,
         child: BlocProvider(
-          create: (BuildContext context) => checkup,
+          create: (BuildContext context) => symptomReport,
           child: BlocProvider(
             create: (BuildContext context) => preferences,
             child: SymptomReportScreenBody(),

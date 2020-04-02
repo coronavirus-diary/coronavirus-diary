@@ -1,9 +1,10 @@
-import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report_controller.dart';
 
 class StepFinishedButton extends StatelessWidget {
   const StepFinishedButton({
@@ -37,10 +38,7 @@ class StepFinishedButton extends StatelessWidget {
     if (isLastStep) {
       context.bloc<SymptomReportBloc>().add(CompleteSymptomReport());
     } else {
-      Provider.of<PageController>(context, listen: false).nextPage(
-        duration: Duration(milliseconds: 400),
-        curve: Curves.easeInOut,
-      );
+      Provider.of<SymptomReportController>(context, listen: false).next();
     }
   }
 

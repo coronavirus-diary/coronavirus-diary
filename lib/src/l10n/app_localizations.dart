@@ -287,17 +287,17 @@ abstract class AppLocalizations {
   // Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers
   String get getStartedStepJoinedSemanticsLabel;
 
-  // Label for the button that indicates that the user did not accept the app license
-  String get consentStepDidNotAgree;
-
   // Label for the button that indicates that the user will not accept the app license
-  String get consentStepNo;
+  String get consentStepDecline;
 
-  // Label for the button that indicates that the user did accept the app license
-  String get consentStepAgreed;
+  // Label for the button that indicates that the user did not accept the app license
+  String get consentStepDeclineActive;
 
   // Label for the button that indicates that the user will accept the app license
-  String get consentStepIAgree;
+  String get consentStepAgree;
+
+  // Label for the button that indicates that the user did accept the app license
+  String get consentStepAgreeActive;
 
   // Label for button that indicates that the user will continue using the app offline
   String get networkUnavailableBannerContinueOffline;

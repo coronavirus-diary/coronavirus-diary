@@ -39,14 +39,14 @@ You can come back later and enter new information on a different day. We will kn
 
 We will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.
 
-If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"No\".''';
+If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don't agree\".''';
 
   @override
   String get deniedConsentHeading => 'Consent Declined';
 
   @override
   String get deniedConsentMessage =>
-      'Thank you for considering joining our effort. If you change your mind, you can come back later.';
+      'Thank you for considering joining our effort. If you change your mind and decide to consent later, try reporting your symptoms again. You will be asked for your consent again and then you can accept it and enter your symptoms.';
 
   @override
   String get thankYouScreenTitle => 'Thank you';
@@ -253,16 +253,16 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'You\'ve joined the Covid Near Me community!';
 
   @override
-  String get consentStepDidNotAgree => 'DID NOT AGREE';
+  String get consentStepDecline => 'I DON\'T AGREE';
 
   @override
-  String get consentStepNo => 'NO';
+  String get consentStepDeclineActive => 'I DID NOT AGREE';
 
   @override
-  String get consentStepAgreed => 'AGREED';
+  String get consentStepAgree => 'I AGREE';
 
   @override
-  String get consentStepIAgree => 'I AGREE';
+  String get consentStepAgreeActive => 'I AGREED';
 
   @override
   String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
