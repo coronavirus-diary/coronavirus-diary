@@ -21,46 +21,47 @@ void main() {
         storageDirectory: MemoryFileSystem.test().currentDirectory);
   });
 
-  testWidgets(
-      'symptomReportScreen transitions from loading to health symptomReport',
+  testWidgets('Symptom Report screen transitions from loading to first screen',
       (tester) async {
     await tester.pumpWidget(setUpSymptomReportScreen());
 
     // Loading screen
-    expect(find.text('Loading your health symptomReport'), findsOneWidget);
+    expect(find.byKey(ValueKey("symptomReportIntroStepStartButton")),
+        findsNothing);
 
     // Finish loading transition.
     await tester.pumpAndSettle();
 
-    expect(find.text("It's time for your symptomReport."), findsOneWidget);
+    expect(find.byKey(ValueKey("symptomReportIntroStepStartButton")),
+        findsOneWidget);
   });
 
   testWidgets('Cannot advance to the next screen by scrolling', (tester) async {
-    const String page1 = "It's time for your symptomReport.";
-    const String page2 = "Step 1 of 2";
+    const Key page1 = ValueKey("symptomReportIntroStep");
+    const Key page2 = ValueKey("symptomReportConsentStep");
 
     await tester.pumpWidget(setUpSymptomReportScreen());
     await tester.pumpAndSettle();
 
-    expect(find.text(page1), findsOneWidget);
-    await tester.drag(find.text(page1), Offset(-400, 0));
+    expect(find.byKey(page1), findsOneWidget);
+    await tester.drag(find.byKey(page1), Offset(-400, 0));
     await tester.pumpAndSettle();
-    expect(find.text(page1), findsOneWidget);
-    expect(find.text(page2), findsNothing);
+    expect(find.byKey(page1), findsOneWidget);
+    expect(find.byKey(page2), findsNothing);
   });
 
   testWidgets('Can advance to the next screen by clicking button',
       (tester) async {
-    const String page1 = "It's time for your symptom report.";
-    const String page2 = "Step 1 of 2";
+    const Key page1 = ValueKey("symptomReportIntroStep");
+    const Key page2 = ValueKey("symptomReportConsentStep");
 
     await tester.pumpWidget(setUpSymptomReportScreen());
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('START symptomReport'));
+    await tester.tap(find.byKey(ValueKey("symptomReportIntroStepStartButton")));
     await tester.pumpAndSettle();
-    expect(find.text(page1), findsNothing);
-    expect(find.text(page2), findsOneWidget);
+    expect(find.byKey(page1), findsNothing);
+    expect(find.byKey(page2), findsOneWidget);
   });
 }
 
