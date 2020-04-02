@@ -51,7 +51,13 @@ class LabeledRadio<T> extends StatelessWidget {
         ),
         ExcludeSemantics(
           child: GestureDetector(
-            onTap: () => onChanged(value),
+            onTap: () {
+              if (groupValue == value) {
+                onChanged(null);
+              } else {
+                onChanged(value);
+              }
+            },
             child: Text(label, style: Theme.of(context).textTheme.button),
           ),
         ),
