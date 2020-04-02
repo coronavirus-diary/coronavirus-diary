@@ -42,6 +42,7 @@ dependencies:
   provider: ^4.0.4
   searchable_dropdown: ^1.1.2
   share: ^0.6.3+6
+  url_launcher: ^5.4.2
   uuid: ^2.0.4
 
 dev_dependencies:
