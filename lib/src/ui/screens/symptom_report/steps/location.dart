@@ -13,6 +13,7 @@ import 'index.dart';
 
 class LocationStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => false;
+  bool get showProgress => true;
 
   @override
   _LocationStepState createState() => _LocationStepState();

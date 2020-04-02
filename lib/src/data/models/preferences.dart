@@ -9,13 +9,13 @@ part 'preferences.g.dart';
 class Preferences {
   final String userId;
   final bool completedTutorial;
-  final bool agreedToTerms;
+  final bool acceptedInformedConsent;
   final UserLocation location;
 
   Preferences({
     String userId,
     bool completedTutorial,
-    this.agreedToTerms,
+    this.acceptedInformedConsent,
     this.location,
   })  : completedTutorial = completedTutorial ?? false,
         userId = userId ??
@@ -27,13 +27,14 @@ class Preferences {
 
   Preferences cloneWith({
     bool completedTutorial,
-    bool agreedToTerms,
+    bool acceptedInformedConsent,
     UserLocation location,
   }) {
     return Preferences(
       userId: this.userId,
       completedTutorial: completedTutorial ?? this.completedTutorial,
-      agreedToTerms: agreedToTerms ?? this.agreedToTerms,
+      acceptedInformedConsent:
+          acceptedInformedConsent ?? this.acceptedInformedConsent,
       location: location ?? this.location,
     );
   }
@@ -44,5 +45,5 @@ class Preferences {
 
   @override
   String toString() =>
-      'Preferences { userId: $userId, agreedToTerms: $agreedToTerms, location: $location }';
+      'Preferences { userId: $userId, acceptedInformedConsent: $acceptedInformedConsent, location: $location }';
 }

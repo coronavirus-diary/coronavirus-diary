@@ -1,10 +1,11 @@
-import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
+import '../tutorial_controller.dart';
 
 class IntroStep extends StatelessWidget {
   @override
@@ -77,13 +78,9 @@ class IntroStep extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: RaisedButton(
-                  onPressed: () => {
-                    Provider.of<PageController>(context, listen: false)
-                        .nextPage(
-                      duration: Duration(milliseconds: 400),
-                      curve: Curves.easeInOut,
-                    )
-                  },
+                  onPressed: () =>
+                      Provider.of<TutorialController>(context, listen: false)
+                          .next(),
                   child: Text(localizations.tutorialIntroStepLearnMore),
                 ),
               ),
