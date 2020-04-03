@@ -46,7 +46,7 @@
     "description": "The title of the ThankYou screen"
   },
 
-  "thankYouScreenReturnToHome": "Return to home",
+  "thankYouScreenReturnToHome": "RETURN TO HOME",
   "@thankYouScreenReturnToHome":  {
     "description": "Return back to the home screen"
   },
@@ -166,11 +166,6 @@
     "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
   },
 
-  "temperatureStepTemperatureLabel": "Temperature",
-  "@temperatureStepTemperatureLabel": {
-    "description": "Label for entry field"
-  },
-
   "temperatureStepHowToDialogStep1": "Wash your hands using soap and water",
   "@temperatureStepHowToDialogStep1": {
     "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
@@ -199,11 +194,6 @@
   "temperatureStepHowToDialogReturn": "RETURN TO CHECKUP",
   "@temperatureStepHowToDialogReturn": {
     "description": "Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepTitle": "Take your temperature",
-  "@temperatureStepTitle": {
-    "description": "Title that appears above the text field where the user enters their temperature"
   },
 
   "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
@@ -249,16 +239,6 @@
   "homeScreenCheckupButtonLabel": "START HEALTH CHECKUP",
   "@homeScreenCheckupButtonLabel": {
     "description": "Label for a button that shows the checkup screen"
-  },
-
-  "homeScreenYouHaveCompletedCheckup": "You have completed your checkup for today!",
-  "@homeScreenYouHaveCompletedCheckup": {
-    "description": "Tell the user that they've already completed a checkup today"
-  },
-
-  "homeScreenCheckBackTomorrow": "If you continue to experience symptoms, please check back tomorrow.",
-  "@homeScreenCheckBackTomorrow": {
-    "description": "Tell a user that has already completed their checkup that they can check again tomorrow"
   },
 
   "systemReportSubmitting": "Submitting your report",

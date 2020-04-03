@@ -63,24 +63,14 @@ void main() {
 
     // TODO(gspencergoog): The individual questions will need value keys or
     // other labels so the driver test can confirm that values update correctly.
-
-    // Can't tap the NEXT button until it's visible.
-    await driver.scrollUntilVisible(
-      find.byValueKey('ScrollableBody'),
-      find.text('NEXT'),
-      dyScroll: -100,
-    );
     await driver.tap(find.text('NEXT'));
 
-    // Can't tap the NEXT button until it's visible.
+    // Can't tap the SUBMIT button until it's visible.
     await driver.scrollUntilVisible(
       find.byValueKey('ScrollableBody'),
-      find.text('NEXT'),
+      find.text('SUBMIT'),
       dyScroll: -100,
     );
-    await driver.tap(find.text('NEXT'));
-
-    // Take your temperature is a text entry that does not require any values.
     await driver.tap(find.text('SUBMIT'));
 
     // Finally, there is a progress screen and a contact screen.
@@ -89,7 +79,7 @@ void main() {
 
   test('User can tap on delete data and back to the first page', () async {
     // Go back to the home page.
-    await driver.tap(find.byTooltip('Return to home'));
+    await driver.tap(find.text('RETURN TO HOME'));
 
     // Click on the delete data button.
     await driver.tap(find.byTooltip('DEBUG MODE ONLY: Clear user data'));

@@ -191,9 +191,6 @@ abstract class AppLocalizations {
   // Error that is displayed if the temperature entered is not in a valid temperature range.
   String get temperatureStepTemperatureOutOfRangeError;
 
-  // Label for entry field
-  String get temperatureStepTemperatureLabel;
-
   // Step 1 in the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogStep1;
 
@@ -211,9 +208,6 @@ abstract class AppLocalizations {
 
   // Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogReturn;
-
-  // Title that appears above the text field where the user enters their temperature
-  String get temperatureStepTitle;
 
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
@@ -238,12 +232,6 @@ abstract class AppLocalizations {
 
   // Label for a button that shows the checkup screen
   String get homeScreenCheckupButtonLabel;
-
-  // Tell the user that they've already completed a checkup today
-  String get homeScreenYouHaveCompletedCheckup;
-
-  // Tell a user that has already completed their checkup that they can check again tomorrow
-  String get homeScreenCheckBackTomorrow;
 
   // Label next to loading indicator
   String get systemReportSubmitting;

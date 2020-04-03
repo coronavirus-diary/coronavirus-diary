@@ -10,7 +10,7 @@ import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
 class SubjectiveStep extends StatefulWidget implements SymptomReportStep {
-  bool get isLastStep => false;
+  bool get isLastStep => true;
 
   @override
   _SubjectiveStepState createState() => _SubjectiveStepState();

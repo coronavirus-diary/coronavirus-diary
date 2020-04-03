@@ -52,7 +52,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get thankYouScreenTitle => 'Thank you';
 
   @override
-  String get thankYouScreenReturnToHome => 'Return to home';
+  String get thankYouScreenReturnToHome => 'RETURN TO HOME';
 
   @override
   String get thankYouScreenDataSubmission =>
@@ -143,9 +143,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Please enter a valid temperature value.';
 
   @override
-  String get temperatureStepTemperatureLabel => 'Temperature';
-
-  @override
   String get temperatureStepHowToDialogStep1 =>
       'Wash your hands using soap and water';
 
@@ -167,9 +164,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get temperatureStepHowToDialogReturn => 'RETURN TO CHECKUP';
-
-  @override
-  String get temperatureStepTitle => 'Take your temperature';
 
   @override
   String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
@@ -195,14 +189,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get homeScreenCheckupButtonLabel => 'START HEALTH CHECKUP';
-
-  @override
-  String get homeScreenYouHaveCompletedCheckup =>
-      'You have completed your checkup for today!';
-
-  @override
-  String get homeScreenCheckBackTomorrow =>
-      'If you continue to experience symptoms, please check back tomorrow.';
 
   @override
   String get systemReportSubmitting => 'Submitting your report';
