@@ -151,8 +151,6 @@ class _LinkTextSpan extends TextSpan {
 }
 
 class _MainMenu extends StatelessWidget {
-  static const String copyright = '© 2020 Josh Smith';
-
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
@@ -188,7 +186,7 @@ class _MainMenu extends StatelessWidget {
               child: AboutDialog(
                 applicationVersion:
                     '${packageInfo.version}.${packageInfo.buildNumber}',
-                applicationLegalese: copyright,
+                applicationLegalese: localizations.aboutBoxCopyright,
                 applicationIcon: Image(
                   width: 50,
                   height: 50,
@@ -202,30 +200,13 @@ class _MainMenu extends StatelessWidget {
                         children: <TextSpan>[
                           TextSpan(
                             style: aboutTextStyle,
-                            text:
-                                'An open source project from the Coronavirus Diary '
-                                'community. Learn more about the Coronavirus Diary '
-                                'community at ',
+                            text: localizations.aboutBoxDescription,
                           ),
                           _LinkTextSpan(
                             style: linkStyle,
-                            url: 'https://covidnearme.org',
-                          ),
-                          TextSpan(
-                            style: aboutTextStyle,
-                            text:
-                                '.\n\nTo view the source code for this application, '
-                                'please visit the ',
-                          ),
-                          _LinkTextSpan(
-                            style: linkStyle,
+                            text: localizations.aboutBoxLinkText,
                             url:
                                 'https://github.com/coronavirus-diary/coronavirus-diary',
-                            text: 'coronavirus-diary github repo',
-                          ),
-                          TextSpan(
-                            style: aboutTextStyle,
-                            text: '.',
                           ),
                         ],
                       ),

@@ -107,6 +107,15 @@ abstract class AppLocalizations {
   // Semantic Label for the about button in the home page menu.
   String get homeMenuAboutSemantics;
 
+  // Description in the 'About' box, above a hyperlink to the source website.
+  String get aboutBoxDescription;
+
+  // Text label on a hyperlink to the source code for the app.
+  String get aboutBoxLinkText;
+
+  // Copyright notice in the 'About' box.
+  String get aboutBoxCopyright;
+
   // The long informed consent question asked of users
   String get consentStepQuestion;
 
