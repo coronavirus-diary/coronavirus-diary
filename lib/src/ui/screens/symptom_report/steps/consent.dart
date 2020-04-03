@@ -87,6 +87,8 @@ class ConsentStep extends StatelessWidget implements SymptomReportStep {
                         ConstrainedBox(
                           constraints: BoxConstraints(minHeight: 60),
                           child: RaisedButton(
+                            key: ValueKey(
+                                'symptomReportInformedConsentRejectButton'),
                             onPressed: () => _handleResponse(
                               context: context,
                               state: state,
@@ -110,6 +112,8 @@ class ConsentStep extends StatelessWidget implements SymptomReportStep {
                         ConstrainedBox(
                           constraints: BoxConstraints(minHeight: 60),
                           child: RaisedButton(
+                            key: ValueKey(
+                                'symptomReportInformedConsentAcceptButton'),
                             onPressed: () => _handleResponse(
                               context: context,
                               state: state,

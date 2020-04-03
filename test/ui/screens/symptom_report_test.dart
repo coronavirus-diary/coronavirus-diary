@@ -26,13 +26,13 @@ void main() {
     await tester.pumpWidget(setUpSymptomReportScreen());
 
     // Loading screen
-    expect(find.byKey(ValueKey("symptomReportIntroStepStartButton")),
+    expect(find.byKey(ValueKey("symptomReportIntroStepContinueButton")),
         findsNothing);
 
     // Finish loading transition.
     await tester.pumpAndSettle();
 
-    expect(find.byKey(ValueKey("symptomReportIntroStepStartButton")),
+    expect(find.byKey(ValueKey("symptomReportIntroStepContinueButton")),
         findsOneWidget);
   });
 
@@ -58,7 +58,8 @@ void main() {
     await tester.pumpWidget(setUpSymptomReportScreen());
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(ValueKey("symptomReportIntroStepStartButton")));
+    await tester
+        .tap(find.byKey(ValueKey("symptomReportIntroStepContinueButton")));
     await tester.pumpAndSettle();
     expect(find.byKey(page1), findsNothing);
     expect(find.byKey(page2), findsOneWidget);

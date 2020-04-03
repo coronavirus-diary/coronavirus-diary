@@ -7,7 +7,8 @@ import 'steps/index.dart';
 import 'tutorial_controller.dart';
 
 final tutorialPageList = <Widget>[
-  IntroStep(),
+  TutorialIntroStep(),
+  TutorialLocationStep(),
 ];
 
 class TutorialScreen extends StatefulWidget {

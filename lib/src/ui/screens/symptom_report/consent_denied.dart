@@ -11,9 +11,11 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
+      key: ValueKey('symptomReportConsentDeniedScreen'),
       appBar: AppBar(
         brightness: Brightness.light,
         leading: IconButton(
+          key: ValueKey('symptomReportConsentDeniedCloseButton'),
           tooltip: localizations.deniedConsentBackButton,
           icon: Icon(Icons.close),
           onPressed: () => Navigator.pop(context),
