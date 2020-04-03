@@ -62,13 +62,21 @@ loose version of Git Flow and actively welcome your pull requests:
       $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart tools/gen_l10n.dart --arb-dir lib/src/l10n
       ```
     - If you modified any file paired with a `.g.dart` file, regenerate the
-     `JsonSerializable` generated code with:
+      `JsonSerializable` generated code with:
       ```
       flutter pub run build_runner build --delete-conflicting-outputs
       ```
     - Reformat the code with `flutter format .`
     - Check for analysis errors with `flutter analyze .` (Analysis warnings are
       also considered errors).
+    - Verify all tests pass locally:
+      ```
+      # For unit tests
+      flutter test
+
+      # For driver tests
+      flutter drive --target=test_driver/smoke_workflow.dart
+      ```
 
 1. Issue that pull request!
 
