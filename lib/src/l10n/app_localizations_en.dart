@@ -52,7 +52,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get thankYouScreenTitle => 'Thank you';
 
   @override
-  String get thankYouScreenReturnToHome => 'Return to home';
+  String get thankYouScreenReturnToHome => 'RETURN TO HOME';
 
   @override
   String get thankYouScreenDataSubmission =>

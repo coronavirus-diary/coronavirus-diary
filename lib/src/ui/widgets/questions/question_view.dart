@@ -104,7 +104,10 @@ class _QuestionViewState extends State<QuestionView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ..._getQuestions(),
-            StepFinishedButton(validated: true),
+            StepFinishedButton(
+              validated: true,
+              isLastStep: widget.isLastStep,
+            ),
             SizedBox(height: 20),
           ],
         ),

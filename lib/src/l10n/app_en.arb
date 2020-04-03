@@ -46,7 +46,7 @@
     "description": "The title of the ThankYou screen"
   },
 
-  "thankYouScreenReturnToHome": "Return to home",
+  "thankYouScreenReturnToHome": "RETURN TO HOME",
   "@thankYouScreenReturnToHome":  {
     "description": "Return back to the home screen"
   },
