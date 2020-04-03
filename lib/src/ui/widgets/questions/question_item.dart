@@ -49,7 +49,7 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
           axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
           value: currentValue as int,
           semanticLabels: scaleQuestion.semanticLabels,
-          onChanged: _handleChange,
+          onChanged: (int value) => _handleChange(scaleQuestion.values[value]),
         );
         break;
       case TemperatureQuestion:

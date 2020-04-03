@@ -23,6 +23,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^3.2.0
+  flutter_dotenv: ^2.1.0
   flutter_hud:
     git:
       url: https://github.com/eyro-labs/flutter_hud.git
@@ -35,11 +36,13 @@ dependencies:
   font_awesome_flutter: ^8.7.0
   hydrated_bloc: ^3.0.0
   intl: ^0.16.0
+  logging: ^0.11.4
   meta: ^1.1.8
   package_info: ^0.4.0+16
   path: ^1.6.4
   path_provider: ^1.6.5
   provider: ^4.0.4
+  retrofit: ^1.3.1+1
   searchable_dropdown: ^1.1.2
   share: ^0.6.3+6
   url_launcher: ^5.4.2
@@ -55,6 +58,7 @@ dev_dependencies:
   json_serializable: ^3.2.5
   mockito: ^4.1.1
   pedantic: ^1.8.0
+  retrofit_generator: ^1.3.1+9
   test: ^1.9.4
 
 flutter:

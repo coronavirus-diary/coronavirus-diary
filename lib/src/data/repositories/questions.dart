@@ -7,9 +7,10 @@ class QuestionsRepository {
   Future<List<Question>> listQuestions(AppLocalizations localizations) async =>
       [
         ScaleQuestion(
-          id: '5325',
+          id: 'shortness_of_breath',
           title: localizations.questionShortnessOfBreathTitle,
           initialValue: null,
+          values: ['none', 'mild', 'moderate', 'severe'],
           labels: [
             localizations.questionShortnessOfBreathAnswer0,
             localizations.questionShortnessOfBreathAnswer1,
@@ -24,9 +25,10 @@ class QuestionsRepository {
           ],
         ),
         ScaleQuestion(
-          id: '32444',
+          id: 'cough',
           title: localizations.questionHaveACoughTitle,
           initialValue: null,
+          values: ['none', 'mild', 'moderate', 'severe'],
           labels: [
             localizations.questionHaveACoughAnswer0,
             localizations.questionHaveACoughAnswer1,
@@ -41,9 +43,10 @@ class QuestionsRepository {
           ],
         ),
         ScaleQuestion(
-          id: '4664',
+          id: 'fever',
           title: localizations.questionHaveAFeverTitle,
           initialValue: null,
+          values: ['no', 'maybe', 'severe'],
           labels: [
             localizations.questionHaveAFeverAnswer0,
             localizations.questionHaveAFeverAnswer1,
@@ -56,15 +59,14 @@ class QuestionsRepository {
           ],
         ),
         TemperatureQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '1',
+          id: 'temperature',
           title: localizations.questionHowHighWasYourFever,
         ),
         ScaleQuestion(
-          // TODO(gspencergoog): Insert correct ID here.
-          id: '0',
+          id: 'nausea',
           title: localizations.questionHaveNauseaTitle,
           initialValue: null,
+          values: ['none', 'mild', 'moderate', 'severe'],
           labels: [
             localizations.questionHaveNauseaAnswer0,
             localizations.questionHaveNauseaAnswer1,
@@ -81,10 +83,10 @@ class QuestionsRepository {
         CompositeQuestion(
           children: <Question>[
             ScaleQuestion(
-              // TODO(gspencergoog): Insert correct ID here.
-              id: '2',
+              id: 'tested_for_flu_etc',
               title: localizations.questionHaveYouBeenFluTestedTitle,
               initialValue: null,
+              values: ['no', 'yes'],
               labels: [
                 localizations.questionNo,
                 localizations.questionYes,
@@ -95,10 +97,10 @@ class QuestionsRepository {
               ],
             ),
             ScaleQuestion(
-              // TODO(gspencergoog): Insert correct ID here.
-              id: '3',
+              id: 'tested_positive_for_flu_etc',
               title: localizations.questionFluTestPositiveTitle,
               initialValue: null,
+              values: ['no', 'yes'],
               labels: [
                 localizations.questionNo,
                 localizations.questionYes,
@@ -109,8 +111,7 @@ class QuestionsRepository {
               ],
             ),
             TextFieldQuestion(
-              // TODO(gspencergoog): Insert correct ID here.
-              id: '4',
+              id: 'tested_positive_for_what',
               title: localizations.questionWhatWasPositiveTitle,
               initialValue: null,
             ),
@@ -120,10 +121,10 @@ class QuestionsRepository {
         CompositeQuestion(
           children: <Question>[
             ScaleQuestion(
-              // TODO(gspencergoog): Insert correct ID here.
-              id: '5',
+              id: 'tried_to_get_tested_for_covid19',
               title: localizations.questionTryForTestingTitle,
               initialValue: null,
+              values: ['no', 'yes'],
               labels: [
                 localizations.questionNo,
                 localizations.questionYes,
@@ -134,11 +135,17 @@ class QuestionsRepository {
               ],
             ),
             ScaleQuestion(
-              // TODO(gspencergoog): Insert correct ID here.
-              id: '6',
+              id: 'covid19_result',
               title: localizations.questionCovid19TestResultTitle,
               vertical: true,
               initialValue: null,
+              values: [
+                'negative',
+                'positive',
+                'i_dont_know_yet',
+                'no_available_tests',
+                'turned_away',
+              ],
               labels: [
                 localizations.questionCovid19TestResultAnswer0,
                 localizations.questionCovid19TestResultAnswer1,

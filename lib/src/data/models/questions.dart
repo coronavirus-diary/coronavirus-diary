@@ -142,6 +142,7 @@ class ScaleQuestion extends Question {
   final String title;
   final String subtitle;
   final int initialValue;
+  final List<String> values;
   final List<String> labels;
   final List<String> semanticLabels;
   final bool vertical;
@@ -151,6 +152,7 @@ class ScaleQuestion extends Question {
     @required this.title,
     this.subtitle,
     this.initialValue,
+    this.values,
     @required this.labels,
     @required this.semanticLabels,
     this.vertical = false,

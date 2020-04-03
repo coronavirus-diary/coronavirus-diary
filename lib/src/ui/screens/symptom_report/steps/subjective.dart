@@ -28,15 +28,15 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
       context: context,
       updateFunction: (SymptomReport symptomReport) {
         final QuestionResponse newResponse = QuestionResponse(
-          questionId: question.id,
-          response: value,
+          questionIdentifier: question.id,
+          response: value.toString(),
         );
 
         // Check if we have an existing response
         final int existingResponseIndex =
             symptomReport.questionResponses.indexWhere(
           (QuestionResponse response) =>
-              response.questionId == newResponse.questionId,
+              response.questionIdentifier == newResponse.questionIdentifier,
         );
 
         // Replace or add the new response
