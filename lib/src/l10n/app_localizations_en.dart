@@ -9,6 +9,24 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get homeMenuTooltip => 'More';
+
+  @override
+  String get homeMenuAbout => 'About CovidNearMe';
+
+  @override
+  String get homeMenuAboutSemantics => 'About Covid Near Me';
+
+  @override
+  String get aboutBoxDescription =>
+      '''This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.
+
+''';
+
+  @override
+  String get aboutBoxLinkText => 'Coronavirus Diary on GitHub';
+
+  @override
   String get consentStepQuestion => '''# Informed Consent
 
 Since the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.

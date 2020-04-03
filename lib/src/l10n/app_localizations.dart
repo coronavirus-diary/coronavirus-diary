@@ -98,6 +98,21 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
+  // Tooltip for the 'three dots' main menu on the home page.
+  String get homeMenuTooltip;
+
+  // Label for the about button in the home page menu.
+  String get homeMenuAbout;
+
+  // Semantic Label for the about button in the home page menu.
+  String get homeMenuAboutSemantics;
+
+  // Description in the 'About' box, above a hyperlink to the source website.
+  String get aboutBoxDescription;
+
+  // Text label on a hyperlink to the source code for the app.
+  String get aboutBoxLinkText;
+
   // The long informed consent question asked of users
   String get consentStepQuestion;
 

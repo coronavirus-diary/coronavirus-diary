@@ -36,11 +36,13 @@ dependencies:
   hydrated_bloc: ^3.0.0
   intl: ^0.16.0
   meta: ^1.1.8
+  package_info: ^0.4.0+16
   path: ^1.6.4
   path_provider: ^1.6.5
   provider: ^4.0.4
   searchable_dropdown: ^1.1.2
   share: ^0.6.3+6
+  url_launcher: ^5.4.2
   uuid: ^2.0.4
 
 dev_dependencies:
