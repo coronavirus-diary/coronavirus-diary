@@ -95,6 +95,6 @@ void main() {
     await driver.tap(find.byTooltip('DEBUG MODE ONLY: Clear user data'));
 
     // Back to the welcome screen.
-    await driver.waitFor(find.text('Welcome to the CovidNearMe App'));
+    await driver.waitFor(find.text('Welcome to CovidNearMe'));
   });
 }
