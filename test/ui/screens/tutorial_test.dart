@@ -1,12 +1,12 @@
-import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/blocs/utils.dart';
-import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/screens/tutorial/steps/intro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:file/memory.dart';
+
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/utils.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/screens/tutorial/steps/index.dart';
 
 void main() {
   setUp(() async {
@@ -16,7 +16,7 @@ void main() {
 
   testWidgets('Tutorial intro step displays learn more button',
       (WidgetTester tester) async {
-    await tester.pumpWidget(setUpTutorialScreen(child: IntroStep()));
+    await tester.pumpWidget(setUpTutorialScreen(child: TutorialIntroStep()));
 
     expect(find.text('LEARN MORE'), findsOneWidget);
   });

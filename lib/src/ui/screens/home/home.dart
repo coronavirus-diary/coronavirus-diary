@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
           margin: EdgeInsets.only(bottom: 40),
           width: double.infinity,
           child: RaisedButton(
-            key: ValueKey<String>('START HEALTH CHECKUP'),
+            key: ValueKey<String>('homeScreenStartSymptomReport'),
             onPressed: () =>
                 Navigator.pushNamed(context, SymptomReportScreen.routeName),
             child: Text(localizations.homeScreenCheckupButtonLabel),
@@ -106,6 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PreferencesBloc, PreferencesState>(
+      key: ValueKey('homeScreen'),
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
@@ -116,6 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
             leading: kReleaseMode
                 ? null
                 : IconButton(
+                    key: ValueKey('homeDebugDeleteDataButton'),
                     onPressed: _debugRestart,
                     icon: Icon(Icons.delete),
                     tooltip: 'DEBUG MODE ONLY: Clear user data',

@@ -52,6 +52,7 @@ class StepFinishedButton extends StatelessWidget {
           alignment: isLastStep ? null : AlignmentDirectional.centerEnd,
           width: 400,
           child: RaisedButton(
+            key: ValueKey('stepFinishedButton'),
             onPressed: validated ? () => _handleOnPressed(context) : null,
             child: Text(isLastStep
                 ? localizations.checkupStepFinishedSubmit

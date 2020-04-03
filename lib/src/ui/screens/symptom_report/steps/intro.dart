@@ -125,7 +125,7 @@ class _IntroStepState extends State<IntroStep> {
                   margin: EdgeInsets.symmetric(vertical: 20),
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: RaisedButton(
-                    key: ValueKey('symptomReportIntroStepStartButton'),
+                    key: ValueKey('symptomReportIntroStepContinueButton'),
                     onPressed: () {
                       Provider.of<SymptomReportController>(context,
                               listen: false)

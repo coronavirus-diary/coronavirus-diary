@@ -7,11 +7,12 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
 import '../tutorial_controller.dart';
 
-class IntroStep extends StatelessWidget {
+class TutorialIntroStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return SafeArea(
+      key: ValueKey('tutorialIntroStep'),
       child: ScrollableBody(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 40),
@@ -78,6 +79,7 @@ class IntroStep extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: RaisedButton(
+                  key: ValueKey('tutorialIntroStepContinueButton'),
                   onPressed: () =>
                       Provider.of<TutorialController>(context, listen: false)
                           .next(),
