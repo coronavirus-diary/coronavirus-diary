@@ -20,7 +20,7 @@ class _TutorialLocationStepState extends State<TutorialLocationStep> {
     UserLocation location,
     @required PreferencesState preferencesState,
   }) {
-    if (location.zipCode != null) {
+    if (location.postalCode != null) {
       location.country = 'US';
     }
     assert(location.country != null);

@@ -107,14 +107,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.';
 
   @override
-  String get introStepSwitchLabelContributeData =>
-      'Contribute my data to the COVID-19 response effort.';
-
-  @override
-  String get introStepSwitchLabelCollectPostalCode =>
-      'We will collect your zip code.';
-
-  @override
   String get introStepButtonStartLabel => 'START CHECKUP';
 
   @override

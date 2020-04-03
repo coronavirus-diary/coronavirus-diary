@@ -25,7 +25,7 @@ class _LocationStepState extends State<LocationStep> {
     @required SymptomReportState symptomReportState,
     @required PreferencesState preferencesState,
   }) {
-    if (location.zipCode != null) {
+    if (location.postalCode != null) {
       location.country = 'US';
     }
     assert(location.country != null);

@@ -47,6 +47,7 @@ ScaleQuestion _$ScaleQuestionFromJson(Map<String, dynamic> json) {
     title: json['title'] as String,
     subtitle: json['subtitle'] as String,
     initialValue: json['initial_value'] as int,
+    values: (json['values'] as List)?.map((e) => e as String)?.toList(),
     labels: (json['labels'] as List)?.map((e) => e as String)?.toList(),
     semanticLabels:
         (json['semantic_labels'] as List)?.map((e) => e as String)?.toList(),
@@ -60,6 +61,7 @@ Map<String, dynamic> _$ScaleQuestionToJson(ScaleQuestion instance) =>
       'title': instance.title,
       'subtitle': instance.subtitle,
       'initial_value': instance.initialValue,
+      'values': instance.values,
       'labels': instance.labels,
       'semantic_labels': instance.semanticLabels,
       'vertical': instance.vertical,

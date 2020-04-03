@@ -161,12 +161,6 @@ abstract class AppLocalizations {
   // Explain what the app will tell the patient once they have answered the questions
   String get introStepAtTheEnd;
 
-  // Explain that turning the switch on means that the patient data will be shared with the COVID-19 response effort
-  String get introStepSwitchLabelContributeData;
-
-  // Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's zip code
-  String get introStepSwitchLabelCollectPostalCode;
-
   // Starts the checkup by showing the first checkup screen
   String get introStepButtonStartLabel;
 

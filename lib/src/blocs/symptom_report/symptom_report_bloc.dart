@@ -1,11 +1,11 @@
 import 'dart:async';
-
-import 'package:covidnearme/src/data/models/symptom_report.dart';
-import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:meta/meta.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
+import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
+import 'package:covidnearme/src/utils/env.dart' show appEnv;
 import 'symptom_report.dart';
 
 class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
@@ -24,66 +24,57 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   Stream<SymptomReportState> mapEventToState(SymptomReportEvent event) async* {
     switch (event.runtimeType) {
       case StartSymptomReport:
-        yield* _mapStartCheckupToState(event);
+        yield* _mapStartSymptomReportToState(event);
         break;
       case UpdateSymptomReport:
-        yield* _mapUpdateCheckupToState(event);
+        yield* _mapUpdateSymptomReportToState(event);
         break;
       case CompleteSymptomReport:
-        yield* _mapCompleteCheckupToState(event);
+        yield* _mapCompleteSymptomReportToState(event);
         break;
     }
   }
 
-  Stream<SymptomReportState> _mapStartCheckupToState(
+  Stream<SymptomReportState> _mapStartSymptomReportToState(
       StartSymptomReport event) async* {
     yield const SymptomReportStateCreating();
 
-    // Create checkup using API
-    final SymptomReport newReport =
-        await symptomReportsRepository.createSymptomReport(
-      SymptomReport(
-        userId: preferencesState.preferences.userId,
-      ),
+    // Create symptom report
+    final SymptomReport newReport = SymptomReport(
+      userId: preferencesState.preferences.userId,
+      isFake: appEnv['ENVIRONMENT'] == 'debug',
     );
 
     yield SymptomReportStateInProgress(symptomReport: newReport);
   }
 
-  Stream<SymptomReportState> _mapUpdateCheckupToState(
+  Stream<SymptomReportState> _mapUpdateSymptomReportToState(
       UpdateSymptomReport event) async* {
-    // Exit if checkup is not in progress
+    // Exit if symptom report is not in progress
     if (state is! SymptomReportStateInProgress) return;
 
-    // Set state to updated checkup
+    // Set state to updated symptom report
     yield SymptomReportStateInProgress(
       symptomReport: event.updatedSymptomReport,
     );
   }
 
-  Stream<SymptomReportState> _mapCompleteCheckupToState(
+  Stream<SymptomReportState> _mapCompleteSymptomReportToState(
       CompleteSymptomReport event) async* {
-    // Exit if checkup is not in progress
+    // Exit if symptom report is not in progress
     if (state is! SymptomReportStateInProgress) return;
 
     // Notify app that we are waiting to submit data
     yield const SymptomReportStateCompleting();
 
-    // Retrieve current checkup
+    // Retrieve current symptom report
     final SymptomReportStateInProgress currentState = state;
     final SymptomReport currentReport = currentState.symptomReport;
 
-    // TODO: remove this when API is integrated
-    print(currentReport.toJson().toString());
+    // Send symptom report to server
+    await symptomReportsRepository.createSymptomReport(currentReport);
 
-    // Make sure checkup is up to date on server
-    final SymptomReport report =
-        await symptomReportsRepository.updateSymptomReport(currentReport);
-
-    // Complete checkup
-    await symptomReportsRepository.completeSymptomReport(report.userId);
-
-    // Complete checkup using API
+    // Notify app of completion
     yield const SymptomReportStateCompleted();
   }
 }
