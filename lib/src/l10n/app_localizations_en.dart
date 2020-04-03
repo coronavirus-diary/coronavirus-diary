@@ -27,9 +27,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutBoxLinkText => 'Coronavirus Diary on GitHub';
 
   @override
-  String get aboutBoxCopyright => 'Copyright © 2020 Josh Smith';
-
-  @override
   String get consentStepQuestion => '''# Informed Consent
 
 Since the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.

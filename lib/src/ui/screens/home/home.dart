@@ -186,7 +186,6 @@ class _MainMenu extends StatelessWidget {
               child: AboutDialog(
                 applicationVersion:
                     '${packageInfo.version}.${packageInfo.buildNumber}',
-                applicationLegalese: localizations.aboutBoxCopyright,
                 applicationIcon: Image(
                   width: 50,
                   height: 50,

@@ -113,9 +113,6 @@ abstract class AppLocalizations {
   // Text label on a hyperlink to the source code for the app.
   String get aboutBoxLinkText;
 
-  // Copyright notice in the 'About' box.
-  String get aboutBoxCopyright;
-
   // The long informed consent question asked of users
   String get consentStepQuestion;
 
