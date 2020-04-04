@@ -224,7 +224,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get tutorialIntroStepDescription =>
-      'CovidNearMe is a US Centers for Disease Control project to help the public respond to the novel coronavirus (COVID-19). It allows you to:';
+      'CovidNearMe lets you view statistics about COVID-19 in your local area and submit your symptoms to inform the disease response efforts.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>

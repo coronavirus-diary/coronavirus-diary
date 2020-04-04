@@ -291,7 +291,7 @@
     "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
   },
 
-  "tutorialIntroStepDescription": "CovidNearMe is a US Centers for Disease Control project to help the public respond to the novel coronavirus (COVID-19). It allows you to:",
+  "tutorialIntroStepDescription": "CovidNearMe lets you view statistics about COVID-19 in your local area and submit your symptoms to inform the disease response efforts.",
   "@tutorialIntroStepDescription": {
     "description": "Brief description below the name of the app."
   },
