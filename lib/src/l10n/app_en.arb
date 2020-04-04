@@ -226,11 +226,6 @@
     "description": "Heading text for the home screen"
   },
 
-  "homeScreenHeading": "Concerned about your health?",
-  "@homeScreenHeading": {
-    "description": "Heading text for the home screen"
-  },
-
   "homeScreenDoYouHaveSymptoms": "Are you experiencing symptoms? Have you been in contact with someone who is infected?",
   "@homeScreenDoYouHaveSymptoms": {
     "description": "Subheading text for the home screen"
