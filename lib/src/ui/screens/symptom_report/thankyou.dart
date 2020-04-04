@@ -19,8 +19,10 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
+      key: ValueKey('symptomReportThankYouScreen'),
       appBar: AppBar(
         leading: IconButton(
+          key: ValueKey('symptomReportThankYouCloseButton'),
           icon: Icon(Icons.close),
           tooltip: localizations.thankYouScreenReturnToHome,
           onPressed: () {

@@ -11,6 +11,7 @@ import 'index.dart';
 
 class SubjectiveStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => true;
+  bool get showProgress => true;
 
   @override
   _SubjectiveStepState createState() => _SubjectiveStepState();
@@ -60,6 +61,7 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsBloc, QuestionsState>(
+      key: ValueKey('symptomReportSubjectiveStep'),
       builder: (context, state) {
         if (state is! QuestionsStateLoaded) {
           return Container(

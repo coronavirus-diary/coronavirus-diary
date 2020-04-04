@@ -1,17 +1,19 @@
-import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report_controller.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => false;
+  bool get showProgress => false;
 
   @override
   _IntroStepState createState() => _IntroStepState();
@@ -42,6 +44,7 @@ class _IntroStepState extends State<IntroStep> {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<SymptomReportBloc, SymptomReportState>(
+      key: ValueKey('symptomReportIntroStep'),
       builder: (context, state) {
         final SymptomReportStateInProgress symptomReportState = state;
         return ScrollableBody(
@@ -122,12 +125,11 @@ class _IntroStepState extends State<IntroStep> {
                   margin: EdgeInsets.symmetric(vertical: 20),
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: RaisedButton(
+                    key: ValueKey('symptomReportIntroStepContinueButton'),
                     onPressed: () {
-                      Provider.of<PageController>(context, listen: false)
-                          .nextPage(
-                        duration: Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
+                      Provider.of<SymptomReportController>(context,
+                              listen: false)
+                          .next();
                     },
                     child: Text(localizations.introStepButtonStartLabel),
                   ),

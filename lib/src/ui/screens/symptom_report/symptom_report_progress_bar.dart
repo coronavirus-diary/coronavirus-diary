@@ -3,21 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 
 class SymptomReportProgressBar extends StatelessWidget {
-  final int currentIndex;
-  final int stepsLength;
+  final int currentProgressStep;
+  final int totalProgressSteps;
   final double percentComplete;
 
   const SymptomReportProgressBar({
-    this.currentIndex,
-    this.stepsLength,
-  }) : percentComplete = currentIndex / stepsLength;
+    this.currentProgressStep,
+    this.totalProgressSteps,
+  }) : percentComplete = currentProgressStep / totalProgressSteps;
 
   @override
   Widget build(BuildContext context) {
     // Remember to update this if steps are added that do not count towards the total
     final AppLocalizations localizations = AppLocalizations.of(context);
-    String percentCompleteText = localizations
-        .checkupProgressBarPercentCompleteText(currentIndex, stepsLength);
+    String percentCompleteText =
+        localizations.checkupProgressBarPercentCompleteText(
+            currentProgressStep, totalProgressSteps);
     return Align(
       alignment: Alignment.topCenter,
       child: Column(

@@ -98,7 +98,8 @@ class _CountsPerDayTimeSeriesChartState
     }
   }
 
-  List<charts.Series<_TimeSeries, DateTime>> _createSeriesList(BuildContext context) {
+  List<charts.Series<_TimeSeries, DateTime>> _createSeriesList(
+      BuildContext context) {
     final localizations = AppLocalizations.of(context);
     return [
       _createSeries(
@@ -166,9 +167,12 @@ class _SelectedInfo extends StatelessWidget {
     return Column(
       children: [
         Text(statisticsByLocation.date),
-        Text('${localizations.statisticsLabelCases}: ${statisticsByLocation.cases}'),
-        Text('${localizations.statisticsLabelDeaths}: ${statisticsByLocation.deaths}'),
-        Text('${localizations.statisticsLabelRecoveries}: ${statisticsByLocation.recoveries}'),
+        Text(
+            '${localizations.statisticsLabelCases}: ${statisticsByLocation.cases}'),
+        Text(
+            '${localizations.statisticsLabelDeaths}: ${statisticsByLocation.deaths}'),
+        Text(
+            '${localizations.statisticsLabelRecoveries}: ${statisticsByLocation.recoveries}'),
       ],
     );
   }

@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -64,7 +63,9 @@ import 'app_localizations_en.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : assert(locale != null), localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+      : assert(locale != null),
+        localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   // ignore: unused_field
   final String localeName;
@@ -73,7 +74,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -85,7 +87,8 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -93,9 +96,7 @@ abstract class AppLocalizations {
   ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en')
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
   // Tooltip for the 'three dots' main menu on the home page.
   String get homeMenuTooltip;
@@ -286,17 +287,17 @@ abstract class AppLocalizations {
   // Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers
   String get getStartedStepJoinedSemanticsLabel;
 
-  // Label for the button that indicates that the user did not accept the app license
-  String get consentStepDidNotAgree;
-
   // Label for the button that indicates that the user will not accept the app license
-  String get consentStepNo;
+  String get consentStepDecline;
 
-  // Label for the button that indicates that the user did accept the app license
-  String get consentStepAgreed;
+  // Label for the button that indicates that the user did not accept the app license
+  String get consentStepDeclineActive;
 
   // Label for the button that indicates that the user will accept the app license
-  String get consentStepIAgree;
+  String get consentStepAgree;
+
+  // Label for the button that indicates that the user did accept the app license
+  String get consentStepAgreeActive;
 
   // Label for button that indicates that the user will continue using the app offline
   String get networkUnavailableBannerContinueOffline;
@@ -485,7 +486,8 @@ abstract class AppLocalizations {
   String get statisticsLabelRecoveries;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -494,16 +496,19 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['en'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations _lookupAppLocalizations(Locale locale) {
-  switch(locale.languageCode) {
-    case 'en': return AppLocalizationsEn();
+  switch (locale.languageCode) {
+    case 'en':
+      return AppLocalizationsEn();
   }
-  assert(false, 'AppLocalizations.delegate failed to load unsupported locale "$locale"');
+  assert(false,
+      'AppLocalizations.delegate failed to load unsupported locale "$locale"');
   return null;
 }
