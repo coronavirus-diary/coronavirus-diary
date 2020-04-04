@@ -643,5 +643,20 @@
   "locationStepCountryButtonLabel": "Country:",
   "@locationStepCountryButtonLabel": {
     "description": "Label for the dropdown button that selects a country."
+  },
+
+  "statisticsLabelCases": "Cases",
+  "@statisticsLabelCases": {
+    "description": "Label for Cases statistics on the statistics screen."
+  },
+
+  "statisticsLabelDeaths": "Deaths",
+  "@statisticsLabelDeaths": {
+    "description": "Label for Deaths statistics on the statistics screen."
+  },
+
+  "statisticsLabelRecoveries": "Recoveries",
+  "@statisticsLabelRecoveries": {
+    "description": "Label for Recoveries statistics on the statistics screen."
   }
 }
