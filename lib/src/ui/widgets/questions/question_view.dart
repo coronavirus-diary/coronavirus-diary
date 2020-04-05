@@ -42,10 +42,10 @@ class _QuestionViewState extends State<QuestionView> {
 
       switch (question.runtimeType) {
         case ScaleQuestion:
-          yield QuestionItem<int>(
+          yield QuestionItem<String>(
             key: ValueKey<Question>(question),
             question: question,
-            onChanged: (int value) => onChanged(question, value),
+            onChanged: (String value) => onChanged(question, value),
           );
           break;
         case TextFieldQuestion:
