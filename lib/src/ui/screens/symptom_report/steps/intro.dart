@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+import '../symptom_report_controller.dart';
 import 'index.dart';
 
 class IntroStep extends StatefulWidget implements SymptomReportStep {
@@ -66,12 +67,9 @@ class _IntroStepState extends State<IntroStep> {
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: RaisedButton(
                 key: ValueKey('symptomReportIntroStepContinueButton'),
-                onPressed: () {
-                  Provider.of<PageController>(context, listen: false).nextPage(
-                    duration: Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
-                  );
-                },
+                onPressed: () =>
+                    Provider.of<SymptomReportController>(context, listen: false)
+                        .next(),
                 child: Text(localizations.introStepButtonStartLabel),
               ),
             ),

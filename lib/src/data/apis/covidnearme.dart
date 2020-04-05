@@ -23,4 +23,4 @@ Dio _createDio() {
   ));
 }
 
-final covidNearMeApi = CovidNearMeApi(_createDio());
+CovidNearMeApi covidNearMeApi = CovidNearMeApi(_createDio());

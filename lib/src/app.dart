@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/assets/theme.dart';
 import 'package:covidnearme/src/ui/router.dart';
-
-import 'blocs/symptom_report/symptom_report.dart';
 
 class App extends StatelessWidget {
   const App({Key key}) : super(key: key);

@@ -45,12 +45,13 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
       case ScaleQuestion:
         final ScaleQuestion scaleQuestion = widget.question;
         return RadioButtonScale(
-          labels: scaleQuestion.labels,
-          axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
-          value: currentValue as int,
-          semanticLabels: scaleQuestion.semanticLabels,
-          onChanged: (int value) => _handleChange(scaleQuestion.values[value]),
-        );
+            labels: scaleQuestion.labels,
+            axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
+            value: scaleQuestion.values.indexOf(currentValue),
+            semanticLabels: scaleQuestion.semanticLabels,
+            onChanged: (int value) {
+              _handleChange(value != null ? scaleQuestion.values[value] : null);
+            });
         break;
       case TemperatureQuestion:
         final TemperatureQuestion temperatureQuestion = widget.question;

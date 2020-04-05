@@ -21,7 +21,9 @@ void main() {
     // Tap next on the tutorial screen
     await driver.tap(find.byValueKey('tutorialIntroStepContinueButton'));
 
-    // Tap next on the location screen
+    // Enter location and tap next
+    await driver.tap(find.byValueKey('ZIP Code'));
+    await driver.enterText('98101');
     await driver.tap(find.byValueKey('tutorialLocationStepContinueButton'));
   });
 
