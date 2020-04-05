@@ -141,7 +141,7 @@ class ScaleQuestion extends Question {
   final String id;
   final String title;
   final String subtitle;
-  final int initialValue;
+  final String initialValue;
   final List<String> values;
   final List<String> labels;
   final List<String> semanticLabels;
