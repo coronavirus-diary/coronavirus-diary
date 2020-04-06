@@ -26,7 +26,7 @@ class StepFinishedButton extends StatelessWidget {
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                localizations.checkupStepFinishedAnswerAllQuestions,
+                localizations.symptomReportAnswerAllQuestions,
                 textAlign: isLastStep ? TextAlign.center : TextAlign.end,
               ),
             ),
@@ -55,8 +55,8 @@ class StepFinishedButton extends StatelessWidget {
             key: ValueKey('stepFinishedButton'),
             onPressed: validated ? () => _handleOnPressed(context) : null,
             child: Text(isLastStep
-                ? localizations.checkupStepFinishedSubmit
-                : localizations.checkupStepFinishedNext),
+                ? localizations.symptomReportSubmitButton
+                : localizations.symptomReportNextButton),
           ),
         ),
         AnimatedSwitcher(

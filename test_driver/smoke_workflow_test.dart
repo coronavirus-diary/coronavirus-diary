@@ -28,7 +28,7 @@ void main() {
   });
 
   test('User can complete a symptom report', () async {
-    // From state above, proceed to checkup screen.
+    // From state above, proceed to symptom report screen.
     await driver.tap(find.byValueKey('homeScreenStartSymptomReport'));
 
     // Intro screen is shown, continue
@@ -65,12 +65,18 @@ void main() {
     );
     await driver.tap(find.byValueKey('stepFinishedButton'));
 
-    // Finally, there is a progress screen and a contact screen.
-    await driver.waitFor(find.text('Stay Safe'));
+    // Ensure that thank you page is shown.
+    await driver.waitFor(find.byValueKey('symptomReportThankYouScreen'));
   });
 
-  test('User can tap on delete data and back to the first page', () async {
-    await driver.tap(find.byValueKey('symptomReportThankYouCloseButton'));
+  test('User can return to the home screen', () async {
+    await driver.scrollUntilVisible(
+      find.byValueKey('ScrollableBody'),
+      find.byValueKey('symptomReportThankYouFinishButton'),
+      dyScroll: -100,
+    );
+    await driver.tap(find.byValueKey('symptomReportThankYouFinishButton'));
+    await driver.waitFor(find.byValueKey('homeScreen'));
   });
 
   test('User can tap on delete data and go back to the tutorial', () async {

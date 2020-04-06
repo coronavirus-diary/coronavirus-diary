@@ -66,7 +66,7 @@ class _LocationStepState extends State<LocationStep> {
               symptomReportState: symptomReportState,
               preferencesState: preferencesState,
             ),
-            title: localizations.locationStepTitle,
+            title: localizations.symptomReportLocationStepTitle,
             location: currentLocation,
             finish: StepFinishedButton(
               validated: true,

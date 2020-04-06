@@ -20,7 +20,7 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
           icon: Icon(Icons.close),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(localizations.checkupScreenTitle),
+        title: Text(localizations.symptomReportTitle),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

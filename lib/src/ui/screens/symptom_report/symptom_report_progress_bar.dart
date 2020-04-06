@@ -17,7 +17,7 @@ class SymptomReportProgressBar extends StatelessWidget {
     // Remember to update this if steps are added that do not count towards the total
     final AppLocalizations localizations = AppLocalizations.of(context);
     String percentCompleteText =
-        localizations.checkupProgressBarPercentCompleteText(
+        localizations.symptomReportProgressBarPercentCompleteText(
             currentProgressStep, totalProgressSteps);
     return Align(
       alignment: Alignment.topCenter,

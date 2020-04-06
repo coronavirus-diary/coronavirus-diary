@@ -52,25 +52,39 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get thankYouScreenTitle => 'Thank you';
 
   @override
-  String get thankYouScreenReturnToHome => 'RETURN TO HOME';
+  String get thankYouScreenFinishButton => 'Finish';
 
   @override
   String get thankYouScreenDataSubmission =>
-      'Thank you for submitting your data and supporting the COVID-19 response effort.';
+      'Thank you for supporting the COVID-19 response effort. Your answers have been anonymously submitted.';
 
   @override
   String get thankYouScreenCallToAction =>
-      'Please come back tomorrow to report your symptoms again.';
+      'If you continue to experience symptoms, please check in again tomorrow.';
 
   @override
-  String get checkupScreenErrorRetrievingExperience =>
-      'There was an error retrieving the checkup experience. Please try again later.';
+  String get thankYouScreenSeriousSymptoms =>
+      'If they become serious, please consult a physician.';
 
   @override
-  String get checkupScreenTitle => 'Your Health Checkup';
+  String get thankYouScreenSafetyTipsButton => 'Safety tips';
 
   @override
-  String checkupProgressBarPercentCompleteText(int stepIndex, int stepCount) {
+  String get thankYouScreenShareAppButton => 'Share the app';
+
+  @override
+  String get symptomReportLoading => 'Loading the symptom report experience.';
+
+  @override
+  String get symptomReportErrorRetrievingExperience =>
+      'There was an error retrieving the symptom report experience. Please try again later.';
+
+  @override
+  String get symptomReportTitle => 'Report Your Symptoms';
+
+  @override
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
     final intl.NumberFormat stepIndexNumberFormat =
         intl.NumberFormat.compactLong(
       locale: localeName,
@@ -86,31 +100,35 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   }
 
   @override
-  String get checkupStepFinishedSubmit => 'SUBMIT';
+  String get symptomReportSubmitButton => 'SUBMIT';
 
   @override
-  String get checkupStepFinishedNext => 'NEXT';
+  String get symptomReportNextButton => 'NEXT';
 
   @override
-  String get checkupStepFinishedAnswerAllQuestions =>
+  String get symptomReportAnswerAllQuestions =>
       'Please answer all the questions to continue';
 
   @override
-  String get introStepTimeForYourCheckup => 'It\'s time for your checkup.';
+  String get symptomReportIntroStepTitle => 'Report Your Symptoms';
 
   @override
-  String get introStepWeWillAskQuestions =>
-      'We will ask you a few questions and have you take your temperature.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'You will be asked a few questions about your health.';
 
   @override
-  String get introStepAtTheEnd =>
-      'At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.';
+  String get symptomReportIntroStepDataContribution =>
+      'Your answers will be anonymously submitted to a secure server and used to inform COVID-19 response efforts by providing medical experts and policy makers with information and predictive models.';
 
   @override
-  String get introStepButtonStartLabel => 'START CHECKUP';
+  String get symptomReportIntroStepStartButton => 'TAP TO START';
 
   @override
-  String get subjectiveStepQuestionsLoadedError =>
+  String get symptomReportLocationStepTitle =>
+      'Confirm the location in which you are experiencing symptoms';
+
+  @override
+  String get questionsStepQuestionsLoadedError =>
       'Questions could not be loaded.';
 
   @override
@@ -155,13 +173,13 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Take out your thermometer and record your temperature.';
 
   @override
-  String get temperatureStepHowToDialogReturn => 'RETURN TO CHECKUP';
+  String get temperatureStepHowToDialogReturn => 'RETURN TO SYMPTOM REPORT';
 
   @override
   String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
 
   @override
-  String get tutorialLocationStepTitle => 'Enter your location';
+  String get tutorialLocationStepTitle => 'What is your location?';
 
   @override
   String get locationStepTitle => 'Verify your location';
@@ -173,14 +191,11 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get locationStepZipCode => '5-Digit ZIP Code';
 
   @override
-  String get homeScreenHeading => 'Concerned about your health?';
+  String get homeScreenReportSymptomsTitle => 'Report Your Symptoms';
 
   @override
-  String get homeScreenDoYouHaveSymptoms =>
-      'Are you experiencing symptoms? Have you been in contact with someone who is infected?';
-
-  @override
-  String get homeScreenCheckupButtonLabel => 'START HEALTH CHECKUP';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Are you feeling sick? Anonymously report your symptoms and aid the COVID-19 response effort.';
 
   @override
   String get systemReportSubmitting => 'Submitting your report';
@@ -193,7 +208,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK';
 
   @override
-  String get shareAppProtectYourCommunity => 'Protect Your Community';
+  String get shareAppTitle => 'Support Your Community';
 
   @override
   String get shareAppWithFriendsEtc =>
@@ -220,33 +235,25 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get tutorialIntroStepDescription =>
-      'CovidNearMe lets you view statistics about COVID-19 in your local area and submit your symptoms to inform the disease response efforts.';
+      'CovidNearMe lets you view local COVID-19 statistics and submit your symptoms to inform the disease response efforts.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>
       'Welcome to the Covid Near Me App';
 
   @override
-  String get tutorialIntroStepCompleteACheckup =>
-      'Complete a daily health checkup.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Get local information about COVID-19.';
 
   @override
-  String get tutorialIntroStepReceiveAssessment =>
-      'Receive a personalized health assessment.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Anonymously submit your symptoms.';
 
   @override
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
 
   @override
-  String get tutorialIntroStepGetStarted => 'GET STARTED';
-
-  @override
-  String get getStartedStepJoined =>
-      'You\'ve joined the CovidNearMe community!';
-
-  @override
-  String get getStartedStepJoinedSemanticsLabel =>
-      'You\'ve joined the Covid Near Me community!';
+  String get tutorialIntroStepGetStarted => 'TAP HERE TO GET STARTED';
 
   @override
   String get consentStepDecline => 'I DON\'T AGREE';

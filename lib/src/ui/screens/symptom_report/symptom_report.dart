@@ -56,9 +56,9 @@ class SymptomReportScreenBody extends StatefulWidget {
 
 class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   // Storing the page controller at this level so that we can access it
-  // across the entire checkup experience
+  // across the entire symptom report experience
   PageController _pageController;
-  bool _showLoadingAssessmentHUD = false;
+  bool _showSubmittingReportHUD = false;
   List<SymptomReportStep> steps = [];
 
   @override
@@ -79,7 +79,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     if (symptomReportState is SymptomReportStateNotCreated) {
       context.bloc<SymptomReportBloc>().add(const StartSymptomReport());
     }
-    return LoadingIndicator('Loading your health checkup');
+    return LoadingIndicator(AppLocalizations.of(context).symptomReportLoading);
   }
 
   Widget _getErrorBody() {
@@ -87,19 +87,19 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Text(
-          AppLocalizations.of(context).checkupScreenErrorRetrievingExperience,
+          AppLocalizations.of(context).symptomReportErrorRetrievingExperience,
           textAlign: TextAlign.center,
         ),
       ),
     );
   }
 
-  void _handleCheckupCompletion(
+  void _handleSymptomReportCompletion(
     SymptomReportStateCompleted symptomReportState,
   ) {
-    // TODO(goderbauer): Reset the SymptomsReport bloc: https://github.com/coronavirus-diary/coronavirus-diary/issues/171
+    // TODO(goderbauer): Reset the SymptomReport bloc: https://github.com/coronavirus-diary/coronavirus-diary/issues/171
 
-    // Navigate to assessment view
+    // Navigate to thank you screen
     Navigator.pushReplacementNamed(
       context,
       ThankYouScreen.routeName,
@@ -134,20 +134,20 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
         return BlocConsumer<SymptomReportBloc, SymptomReportState>(
           listener: (context, state) {
             if (state is SymptomReportStateCompleting) {
-              if (!_showLoadingAssessmentHUD) {
+              if (!_showSubmittingReportHUD) {
                 setState(() {
-                  _showLoadingAssessmentHUD = true;
+                  _showSubmittingReportHUD = true;
                 });
               }
             } else if (state is SymptomReportStateCompleted) {
-              _handleCheckupCompletion(state);
+              _handleSymptomReportCompletion(state);
             }
           },
           builder: (context, state) {
-            final SymptomReportState checkupState = state;
+            final SymptomReportState symptomReportState = state;
 
             return WidgetHUD(
-              showHUD: _showLoadingAssessmentHUD,
+              showHUD: _showSubmittingReportHUD,
               hud: HUD(
                 color: Theme.of(context).colorScheme.surface,
                 opacity: 1.0,
@@ -165,7 +165,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                   child: Scaffold(
                     appBar: AppBar(
                       title:
-                          Text(AppLocalizations.of(context).checkupScreenTitle),
+                          Text(AppLocalizations.of(context).symptomReportTitle),
                       leading: IconButton(
                         icon: Icon(Icons.close),
                         onPressed: () => Navigator.pop(context),
@@ -174,7 +174,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                     ),
                     backgroundColor: Theme.of(context).backgroundColor,
                     body: NetworkUnavailableBanner.wrap(
-                      _getBody(checkupState),
+                      _getBody(symptomReportState),
                     ),
                   ),
                 );

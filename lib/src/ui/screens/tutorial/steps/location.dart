@@ -54,7 +54,7 @@ class _TutorialLocationStepState extends State<TutorialLocationStep> {
                 onPressed: () =>
                     Provider.of<TutorialController>(context, listen: false)
                         .next(),
-                child: Text(localizations.checkupStepFinishedSubmit),
+                child: Text(localizations.symptomReportSubmitButton),
               ),
             ),
           );

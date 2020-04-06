@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'consent.dart';
 import 'intro.dart';
 import 'location.dart';
-import 'subjective.dart';
+import 'questions.dart';
 
 export 'consent.dart';
 export 'intro.dart';
 export 'location.dart';
-export 'subjective.dart';
+export 'questions.dart';
 
 abstract class SymptomReportStep extends Widget {
   SymptomReportStep();
@@ -23,7 +23,7 @@ List<SymptomReportStep> getSteps(PreferencesState preferencesState) => [
       if (preferencesState.preferences.acceptedInformedConsent != true)
         ConsentStep(),
       LocationStep(),
-      SubjectiveStep(),
+      QuestionsStep(),
     ];
 
 int getProgressStepCount(List<SymptomReportStep> steps) =>

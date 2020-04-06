@@ -46,33 +46,53 @@
     "description": "The title of the ThankYou screen"
   },
 
-  "thankYouScreenReturnToHome": "RETURN TO HOME",
-  "@thankYouScreenReturnToHome":  {
-    "description": "Return back to the home screen"
+  "thankYouScreenFinishButton": "Finish",
+  "@thankYouScreenFinishButton":  {
+    "description": "Return to the home screen"
   },
 
-  "thankYouScreenDataSubmission": "Thank you for submitting your data and supporting the COVID-19 response effort.",
+  "thankYouScreenDataSubmission": "Thank you for supporting the COVID-19 response effort. Your answers have been anonymously submitted.",
   "@thankYouScreenDataSubmission":  {
     "description": "A note thanking the user for submitting their data"
   },
 
-  "thankYouScreenCallToAction": "Please come back tomorrow to report your symptoms again.",
+  "thankYouScreenCallToAction": "If you continue to experience symptoms, please check in again tomorrow.",
   "@thankYouScreenCallToAction":  {
-    "description": "Asking the user to report their symptoms again tomorrow"
+    "description": "Ask the user to report their symptoms again tomorrow"
   },
 
-  "checkupScreenErrorRetrievingExperience": "There was an error retrieving the checkup experience. Please try again later.",
-  "@checkupScreenErrorRetrievingExperience": {
+  "thankYouScreenSeriousSymptoms": "If they become serious, please consult a physician.",
+  "@thankYouScreenSeriousSymptoms":  {
+    "description": "Ask the user to contact a physician if their symptoms become serious"
+  },
+
+  "thankYouScreenSafetyTipsButton": "Safety tips",
+  "@thankYouScreenSafetyTipsButton":  {
+    "description": "Button for safety tips"
+  },
+
+  "thankYouScreenShareAppButton": "Share the app",
+  "@thankYouScreenShareAppButton":  {
+    "description": "Button for sharing the app"
+  },
+
+  "symptomReportLoading": "Loading the symptom report experience.",
+  "@symptomReportLoading": {
+    "description": "Tell the user that the symptom report is loading"
+  },
+
+  "symptomReportErrorRetrievingExperience": "There was an error retrieving the symptom report experience. Please try again later.",
+  "@symptomReportErrorRetrievingExperience": {
     "description": "An error occurred while trying to fetch data"
   },
 
-  "checkupScreenTitle": "Your Health Checkup",
-  "@checkupScreenTitle": {
-    "description": "Title for the checkup screen"
+  "symptomReportTitle": "Report Your Symptoms",
+  "@symptomReportTitle": {
+    "description": "Title for the symptom report screen"
   },
 
-  "checkupProgressBarPercentCompleteText": "Step {stepIndex} of {stepCount}",
-  "@checkupProgressBarPercentCompleteText": {
+  "symptomReportProgressBarPercentCompleteText": "Step {stepIndex} of {stepCount}",
+  "@symptomReportProgressBarPercentCompleteText": {
     "description": "Which step in the overall process is the patient currently working on",
     "placeholders": {
       "stepIndex": {
@@ -86,44 +106,49 @@
     }
   },
 
-  "checkupStepFinishedSubmit": "SUBMIT",
-  "@checkupStepFinishedSubmit": {
-    "description": "Submit the data for the checkup"
+  "symptomReportSubmitButton": "SUBMIT",
+  "@symptomReportSubmitButton": {
+    "description": "Submit the symptom report"
   },
 
-  "checkupStepFinishedNext": "NEXT",
-  "@checkupStepFinishedNext": {
-    "description": "Continue to the next checkup screen"
+  "symptomReportNextButton": "NEXT",
+  "@symptomReportNextButton": {
+    "description": "Continue to the next symptom report step"
   },
 
-  "checkupStepFinishedAnswerAllQuestions": "Please answer all the questions to continue",
-  "@checkupStepFinishedAnswerAllQuestions": {
+  "symptomReportAnswerAllQuestions": "Please answer all the questions to continue",
+  "@symptomReportAnswerAllQuestions": {
     "description": "Prompt when all the questions haven't been answered yet."
   },
 
-  "introStepTimeForYourCheckup": "It's time for your checkup.",
-  "@introStepTimeForYourCheckup": {
-    "description": "Heading at the top of the Your Health Checkup screen"
+  "symptomReportIntroStepTitle": "Report Your Symptoms",
+  "@symptomReportIntroStepTitle": {
+    "description": "Title for the symptom report intro step"
   },
 
-  "introStepWeWillAskQuestions": "We will ask you a few questions and have you take your temperature.",
-  "@introStepWeWillAskQuestions": {
-    "description": "Tell the patient what they will be doing with the app"
+  "symptomReportIntroStepHealthQuestions": "You will be asked a few questions about your health.",
+  "@symptomReportIntroStepHealthQuestions": {
+    "description": "Tell the user that they will be asked questions"
   },
 
-  "introStepAtTheEnd": "At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.",
-  "@introStepAtTheEnd": {
-    "description": "Explain what the app will tell the patient once they have answered the questions"
+  "symptomReportIntroStepDataContribution": "Your answers will be anonymously submitted to a secure server and used to inform COVID-19 response efforts by providing medical experts and policy makers with information and predictive models.",
+  "@symptomReportIntroStepDataContribution": {
+    "description": "Explain that the data will be submitted anonymously and used for COVID-19 response efforts"
   },
 
-  "introStepButtonStartLabel": "START CHECKUP",
-  "@introStepButtonStartLabel": {
-    "description": "Starts the checkup by showing the first checkup screen"
+  "symptomReportIntroStepStartButton": "TAP TO START",
+  "@symptomReportIntroStepStartButton": {
+    "description": "Starts the symptom report by showing the first step"
   },
 
-  "subjectiveStepQuestionsLoadedError": "Questions could not be loaded.",
-  "@subjectiveStepQuestionsLoadedError": {
-    "description": "An internal error occurred, the checkup questions failed to load"
+  "symptomReportLocationStepTitle": "Confirm the location in which you are experiencing symptoms",
+  "@symptomReportLocationStepTitle": {
+    "description": "Title for the symptom report location step"
+  },
+
+  "questionsStepQuestionsLoadedError": "Questions could not be loaded.",
+  "@questionsStepQuestionsLoadedError": {
+    "description": "An internal error occurred, the symptom report questions failed to load"
   },
 
   "temperatureStepWhenHeading": "When?",
@@ -181,9 +206,9 @@
     "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
   },
 
-  "temperatureStepHowToDialogReturn": "RETURN TO CHECKUP",
+  "temperatureStepHowToDialogReturn": "RETURN TO SYMPTOM REPORT",
   "@temperatureStepHowToDialogReturn": {
-    "description": "Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps"
+    "description": "Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps"
   },
 
   "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
@@ -191,7 +216,7 @@
     "description": "Label for a button that brings up a help screen"
   },
 
-  "tutorialLocationStepTitle": "Enter your location",
+  "tutorialLocationStepTitle": "What is your location?",
   "@tutorialLocationStepTitle": {
     "description": "Title that appears above the text field where the user enters their location during the tutorial"
   },
@@ -211,19 +236,14 @@
     "description": "Title that appears within the text field where the user enters their ZIP code"
   },
 
-  "homeScreenHeading": "Concerned about your health?",
-  "@homeScreenHeading": {
+  "homeScreenReportSymptomsTitle": "Report Your Symptoms",
+  "@homeScreenReportSymptomsTitle": {
     "description": "Heading text for the home screen"
   },
 
-  "homeScreenDoYouHaveSymptoms": "Are you experiencing symptoms? Have you been in contact with someone who is infected?",
-  "@homeScreenDoYouHaveSymptoms": {
+  "homeScreenReportSymptomsSubtitle": "Are you feeling sick? Anonymously report your symptoms and aid the COVID-19 response effort.",
+  "@homeScreenReportSymptomsSubtitle": {
     "description": "Subheading text for the home screen"
-  },
-
-  "homeScreenCheckupButtonLabel": "START HEALTH CHECKUP",
-  "@homeScreenCheckupButtonLabel": {
-    "description": "Label for a button that shows the checkup screen"
   },
 
   "systemReportSubmitting": "Submitting your report",
@@ -241,8 +261,8 @@
     "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime"
   },
 
-  "shareAppProtectYourCommunity": "Protect Your Community",
-  "@shareAppProtectYourCommunity": {
+  "shareAppTitle": "Support Your Community",
+  "@shareAppTitle": {
     "description": "Title for the app sharing sheet, see https://pub.dev/packages/share"
   },
 
@@ -281,7 +301,7 @@
     "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
   },
 
-  "tutorialIntroStepDescription": "CovidNearMe lets you view statistics about COVID-19 in your local area and submit your symptoms to inform the disease response efforts.",
+  "tutorialIntroStepDescription": "CovidNearMe lets you view local COVID-19 statistics and submit your symptoms to inform the disease response efforts.",
   "@tutorialIntroStepDescription": {
     "description": "Brief description below the name of the app."
   },
@@ -291,14 +311,14 @@
     "description": "Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers"
   },
 
-  "tutorialIntroStepCompleteACheckup": "Complete a daily health checkup.",
-  "@tutorialIntroStepCompleteACheckup": {
-    "description": "Describes the outcome of running the app"
+  "tutorialIntroStepLocalStatistics": "Get local information about COVID-19.",
+  "@tutorialIntroStepLocalStatistics": {
+    "description": "Describes an action you can take using the app"
   },
 
-  "tutorialIntroStepReceiveAssessment": "Receive a personalized health assessment.",
-  "@tutorialIntroStepReceiveAssessment": {
-    "description": "Describes the benefit of the app"
+  "tutorialIntroStepSubmitSymptoms": "Anonymously submit your symptoms.",
+  "@tutorialIntroStepSubmitSymptoms": {
+    "description": "Describes an action you can take using the app"
   },
 
   "tutorialIntroStepAidEffort": "Aid COVID-19 response efforts.",
@@ -306,19 +326,9 @@
     "description": "Describes the benefit of the app to the community."
   },
 
-  "tutorialIntroStepGetStarted": "GET STARTED",
+  "tutorialIntroStepGetStarted": "TAP HERE TO GET STARTED",
   "@tutorialIntroStepGetStarted": {
     "description": "Label for the button that shows the next app screen"
-  },
-
-  "getStartedStepJoined": "You've joined the CovidNearMe community!",
-  "@getStartedStepJoined": {
-    "description": "Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated"
-  },
-
-  "getStartedStepJoinedSemanticsLabel": "You've joined the Covid Near Me community!",
-  "@getStartedStepJoinedSemanticsLabel": {
-    "description": "Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers"
   },
 
   "consentStepDecline": "I DON'T AGREE",

@@ -18,7 +18,8 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(setUpTutorialScreen(child: TutorialIntroStep()));
 
-    expect(find.text('GET STARTED'), findsOneWidget);
+    expect(find.byKey(ValueKey('tutorialIntroStepContinueButton')),
+        findsOneWidget);
   });
 }
 

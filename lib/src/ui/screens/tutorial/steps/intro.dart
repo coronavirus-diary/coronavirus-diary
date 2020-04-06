@@ -53,9 +53,9 @@ class TutorialIntroStep extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     TutorialStep(
-                      text: localizations.tutorialIntroStepCompleteACheckup,
+                      text: localizations.tutorialIntroStepLocalStatistics,
                       icon: FaIcon(
-                        FontAwesomeIcons.check,
+                        FontAwesomeIcons.mapMarked,
                         size: 30,
                       ),
                       leadingBackgroundColor:
@@ -63,7 +63,7 @@ class TutorialIntroStep extends StatelessWidget {
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
-                      text: localizations.tutorialIntroStepReceiveAssessment,
+                      text: localizations.tutorialIntroStepSubmitSymptoms,
                       icon: FaIcon(
                         FontAwesomeIcons.heartbeat,
                         size: 30,

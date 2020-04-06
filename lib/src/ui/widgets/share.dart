@@ -32,7 +32,7 @@ class ShareApp extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 10),
             child: Text(
-              localizations.shareAppProtectYourCommunity,
+              localizations.shareAppTitle,
               style: Theme.of(context).textTheme.title,
               textAlign: TextAlign.center,
             ),

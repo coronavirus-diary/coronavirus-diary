@@ -36,69 +36,57 @@ class _HomeScreenState extends State<HomeScreen> {
     final localizations = AppLocalizations.of(context);
     return Column(
       children: <Widget>[
-        if (!state.preferences.completedTutorial)
-          Container(
-            width: double.infinity,
-            color: Theme.of(context).accentColor.withOpacity(0.5),
-            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Center(
-              child: FaIcon(
-                FontAwesomeIcons.handHoldingHeart,
-                color: Colors.white,
-                size: 80,
+        Card(
+          margin: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 10,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(7),
+            side: BorderSide(
+              color: Colors.black26,
+              width: 1.0,
+            ),
+          ),
+          child: ListTile(
+            contentPadding: EdgeInsets.all(20),
+            key: ValueKey<String>('homeScreenStartSymptomReport'),
+            onTap: () =>
+                Navigator.pushNamed(context, SymptomReportScreen.routeName),
+            leading: FaIcon(
+              FontAwesomeIcons.heartbeat,
+              color: Colors.red,
+              size: 40,
+            ),
+            title: Container(
+              padding: EdgeInsets.only(bottom: 5),
+              child: Text(
+                localizations.homeScreenReportSymptomsTitle,
+                style: Theme.of(context).textTheme.title.copyWith(
+                      fontSize: 22,
+                    ),
               ),
             ),
-          ),
-        if (!state.preferences.completedTutorial)
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Text(
-              localizations.getStartedStepJoined,
-              semanticsLabel: localizations.getStartedStepJoinedSemanticsLabel,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.title,
+            subtitle: Text(
+              localizations.homeScreenReportSymptomsSubtitle,
+              style: Theme.of(context).textTheme.subtitle,
             ),
           ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          margin: EdgeInsets.only(bottom: 20),
-          child: FaIcon(
-            FontAwesomeIcons.questionCircle,
-            size: 80,
-          ),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          margin: EdgeInsets.only(bottom: 20),
-          child: Text(
-            localizations.homeScreenHeading,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.title,
+        Card(
+          margin: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 10,
           ),
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          margin: EdgeInsets.only(bottom: 20),
-          child: Text(
-            localizations.homeScreenDoYouHaveSymptoms,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.body2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(7),
+            side: BorderSide(
+              color: Colors.black26,
+              width: 1.0,
+            ),
           ),
+          child: ShareApp(),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          margin: EdgeInsets.only(bottom: 40),
-          width: double.infinity,
-          child: RaisedButton(
-            key: ValueKey<String>('homeScreenStartSymptomReport'),
-            onPressed: () =>
-                Navigator.pushNamed(context, SymptomReportScreen.routeName),
-            child: Text(localizations.homeScreenCheckupButtonLabel),
-          ),
-        ),
-        ShareApp(),
       ],
     );
   }
@@ -127,10 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
           body: NetworkUnavailableBanner.wrap(
             ScrollableBody(
               child: Container(
-                padding: state.preferences.completedTutorial
-                    ? EdgeInsets.symmetric(vertical: 40)
-                    : EdgeInsets.only(bottom: 40),
-                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(vertical: 20),
                 child: _getBody(state),
               ),
             ),
