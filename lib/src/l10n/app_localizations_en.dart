@@ -9,6 +9,24 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get homeMenuTooltip => 'More';
+
+  @override
+  String get homeMenuAbout => 'About CovidNearMe';
+
+  @override
+  String get homeMenuAboutSemantics => 'About Covid Near Me';
+
+  @override
+  String get aboutBoxDescription =>
+      '''This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.
+
+''';
+
+  @override
+  String get aboutBoxLinkText => 'Coronavirus Diary on GitHub';
+
+  @override
   String get consentStepQuestion => '''# Informed Consent
 
 Since the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.
@@ -21,20 +39,20 @@ You can come back later and enter new information on a different day. We will kn
 
 We will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.
 
-If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"No\".''';
+If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don\'t agree\".''';
 
   @override
   String get deniedConsentHeading => 'Consent Declined';
 
   @override
   String get deniedConsentMessage =>
-      'Thank you for considering joining our effort. If you change your mind, you can come back later.';
+      'Thank you for considering joining our effort. If you change your mind and decide to consent later, try reporting your symptoms again. You will be asked for your consent again and then you can accept it and enter your symptoms.';
 
   @override
   String get thankYouScreenTitle => 'Thank you';
 
   @override
-  String get thankYouScreenReturnToHome => 'Return to home';
+  String get thankYouScreenReturnToHome => 'RETURN TO HOME';
 
   @override
   String get thankYouScreenDataSubmission =>
@@ -89,14 +107,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'At the end, you will receive a personalized COVID-19 risk assessment and recommendations for staying healthy.';
 
   @override
-  String get introStepSwitchLabelContributeData =>
-      'Contribute my data to the COVID-19 response effort.';
-
-  @override
-  String get introStepSwitchLabelCollectPostalCode =>
-      'We will collect your zip code.';
-
-  @override
   String get introStepButtonStartLabel => 'START CHECKUP';
 
   @override
@@ -125,9 +135,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Please enter a valid temperature value.';
 
   @override
-  String get temperatureStepTemperatureLabel => 'Temperature';
-
-  @override
   String get temperatureStepHowToDialogStep1 =>
       'Wash your hands using soap and water';
 
@@ -149,9 +156,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get temperatureStepHowToDialogReturn => 'RETURN TO CHECKUP';
-
-  @override
-  String get temperatureStepTitle => 'Take your temperature';
 
   @override
   String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
@@ -177,14 +181,6 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get homeScreenCheckupButtonLabel => 'START HEALTH CHECKUP';
-
-  @override
-  String get homeScreenYouHaveCompletedCheckup =>
-      'You have completed your checkup for today!';
-
-  @override
-  String get homeScreenCheckBackTomorrow =>
-      'If you continue to experience symptoms, please check back tomorrow.';
 
   @override
   String get systemReportSubmitting => 'Submitting your report';
@@ -253,16 +249,16 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'You\'ve joined the Covid Near Me community!';
 
   @override
-  String get consentStepDidNotAgree => 'DID NOT AGREE';
+  String get consentStepDecline => 'I DON\'T AGREE';
 
   @override
-  String get consentStepNo => 'NO';
+  String get consentStepDeclineActive => 'I DID NOT AGREE';
 
   @override
-  String get consentStepAgreed => 'AGREED';
+  String get consentStepAgree => 'I AGREE';
 
   @override
-  String get consentStepIAgree => 'I AGREE';
+  String get consentStepAgreeActive => 'I AGREED';
 
   @override
   String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';

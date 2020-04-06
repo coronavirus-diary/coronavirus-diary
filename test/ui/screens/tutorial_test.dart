@@ -1,13 +1,12 @@
-import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/blocs/utils.dart';
-import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/screens/tutorial/steps/consent.dart';
-import 'package:covidnearme/src/ui/screens/tutorial/steps/intro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:file/memory.dart';
+
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/utils.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/screens/tutorial/steps/index.dart';
 
 void main() {
   setUp(() async {
@@ -17,60 +16,9 @@ void main() {
 
   testWidgets('Tutorial intro step displays get started button',
       (WidgetTester tester) async {
-    await tester.pumpWidget(setUpTutorialScreen(child: IntroStep()));
+    await tester.pumpWidget(setUpTutorialScreen(child: TutorialIntroStep()));
 
     expect(find.text('GET STARTED'), findsOneWidget);
-  });
-
-  testWidgets('Tutorial consent step displays correctly',
-      (WidgetTester tester) async {
-    // Displays Yes/No buttons.
-    await tester.pumpWidget(Container());
-    await tester.pumpWidget(setUpTutorialScreen(child: ConsentStep()));
-
-    expect(find.text('NO'), findsOneWidget);
-    expect(find.text('I AGREE'), findsOneWidget);
-
-    // Doesn't have large text at a text scale factor of 1.0.
-    await tester.pumpWidget(
-      setUpTutorialScreen(
-        child: ConsentStep(),
-        textScaleFactor: 1.0,
-      ),
-    );
-
-    // Finish loading transition.
-    await tester.pumpAndSettle();
-
-    // 200 is relatively arbitrary limit, but works with the current text.
-    expect(find.byElementPredicate((Element element) {
-      return (element.widget.runtimeType == RichText &&
-          (element.widget as RichText)
-              .text
-              .toPlainText()
-              .contains('COVID-19') &&
-          element.size.height < 200);
-    }), findsWidgets);
-
-    // Does have large text at a text scale factor of 3.0.
-    await tester.pumpWidget(
-      setUpTutorialScreen(
-        child: ConsentStep(),
-        textScaleFactor: 3.0,
-      ),
-    );
-
-    // Finish loading transition.
-    await tester.pumpAndSettle();
-
-    expect(find.byElementPredicate((Element element) {
-      return (element.widget.runtimeType == RichText &&
-          (element.widget as RichText)
-              .text
-              .toPlainText()
-              .contains('COVID-19') &&
-          element.size.height > 200);
-    }), findsWidgets);
   });
 }
 

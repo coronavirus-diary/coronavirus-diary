@@ -13,6 +13,7 @@ import 'index.dart';
 
 class LocationStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => false;
+  bool get showProgress => true;
 
   @override
   _LocationStepState createState() => _LocationStepState();
@@ -24,7 +25,7 @@ class _LocationStepState extends State<LocationStep> {
     @required SymptomReportState symptomReportState,
     @required PreferencesState preferencesState,
   }) {
-    if (location.zipCode != null) {
+    if (location.postalCode != null) {
       location.country = 'US';
     }
     assert(location.country != null);
@@ -51,6 +52,7 @@ class _LocationStepState extends State<LocationStep> {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
+      key: ValueKey('symptomReportLocationStep'),
       builder: (BuildContext context, PreferencesState preferencesState) {
         return BlocBuilder<SymptomReportBloc, SymptomReportState>(
             builder: (BuildContext context, SymptomReportState state) {

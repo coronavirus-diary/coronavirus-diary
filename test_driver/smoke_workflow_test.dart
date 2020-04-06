@@ -17,84 +17,67 @@ void main() {
     }
   });
 
-  test('User can reach checkup and share screen', () async {
-    // The welcome screen shows a "get started" button.
-    await driver.tap(find.text('GET STARTED'));
+  test('User can complete tutorial', () async {
+    // Tap next on the tutorial screen
+    await driver.tap(find.byValueKey('tutorialIntroStepContinueButton'));
 
-    // The agree to terms screen shows an "agree" and "no" button.
-    // Click "no" the first time.
-    await driver.tap(find.text('NO'));
-
-    // Click here to get started page.
-    await driver.waitFor(find.text('Consent Declined'));
-
-    // Click on the close button.
-    await driver.tap(find.byTooltip('Go back to the informed consent screen'));
-
-    // Back on the informed consent screen.
-    await driver.waitFor(find.text('DID NOT AGREE'));
-
-    // Now agree.
-    await driver.tap(find.text('I AGREE'));
-
-    // Now submit an empty default location.
-    await driver.tap(find.text('SUBMIT'));
+    // Enter location and tap next
+    await driver.tap(find.byValueKey('ZIP Code'));
+    await driver.enterText('98101');
+    await driver.tap(find.byValueKey('tutorialLocationStepContinueButton'));
   });
 
-  test('User can go back from the checkup screen to home', () async {
-    await driver.scrollUntilVisible(
-      find.byType('SingleChildScrollView'),
-      find.byValueKey('SHARE NOW'),
-      dyScroll: -100,
-    );
-    await driver.tap(find.byValueKey('START HEALTH CHECKUP'));
-    await driver.waitFor(find.text('START CHECKUP'));
-    await driver.tap(find.byTooltip('Go back to the home page'));
-    await driver.waitFor(find.byValueKey('START HEALTH CHECKUP'));
-  });
-
-  test('User can checkup on their health', () async {
+  test('User can complete a symptom report', () async {
     // From state above, proceed to checkup screen.
-    await driver.tap(find.byValueKey('START HEALTH CHECKUP'));
+    await driver.tap(find.byValueKey('homeScreenStartSymptomReport'));
 
-    // The first screen says "Its time for your checkup."
-    // No actions need to be taken.
-    await driver.tap(find.text('START CHECKUP'));
+    // Intro screen is shown, continue
+    await driver.tap(find.byValueKey('symptomReportIntroStepContinueButton'));
 
+    // Informed consent screen is shown, don't accept
+    await driver.tap(
+      find.byValueKey('symptomReportInformedConsentRejectButton'),
+    );
+
+    // Consent declined screen is shown, close it
+    await driver.tap(find.byValueKey('symptomReportConsentDeniedCloseButton'));
+
+    // Restart symptom report process
+    await driver.tap(find.byValueKey('homeScreenStartSymptomReport'));
+    await driver.tap(find.byValueKey('symptomReportIntroStepContinueButton'));
+
+    // Now, agree.
+    await driver
+        .tap(find.byValueKey('symptomReportInformedConsentAcceptButton'));
+
+    // Enter a location and continue
+    await driver.tap(find.byValueKey('stepFinishedButton'));
+
+    // Answer the questions
     // TODO(gspencergoog): The individual questions will need value keys or
     // other labels so the driver test can confirm that values update correctly.
 
-    // Can't tap the NEXT button until it's visible.
+    // Continue.
     await driver.scrollUntilVisible(
       find.byValueKey('ScrollableBody'),
-      find.text('NEXT'),
+      find.byValueKey('stepFinishedButton'),
       dyScroll: -100,
     );
-    await driver.tap(find.text('NEXT'));
-
-    // Can't tap the NEXT button until it's visible.
-    await driver.scrollUntilVisible(
-      find.byValueKey('ScrollableBody'),
-      find.text('NEXT'),
-      dyScroll: -100,
-    );
-    await driver.tap(find.text('NEXT'));
-
-    // Take your temperature is a text entry that does not require any values.
-    await driver.tap(find.text('SUBMIT'));
+    await driver.tap(find.byValueKey('stepFinishedButton'));
 
     // Finally, there is a progress screen and a contact screen.
     await driver.waitFor(find.text('Stay Safe'));
   });
 
   test('User can tap on delete data and back to the first page', () async {
-    // Go back to the home page.
-    await driver.tap(find.byTooltip('Return to home'));
+    await driver.tap(find.byValueKey('symptomReportThankYouCloseButton'));
+  });
 
+  test('User can tap on delete data and go back to the tutorial', () async {
     // Click on the delete data button.
-    await driver.tap(find.byTooltip('DEBUG MODE ONLY: Clear user data'));
+    await driver.tap(find.byValueKey('homeDebugDeleteDataButton'));
 
     // Back to the welcome screen.
-    await driver.waitFor(find.text('Welcome to CovidNearMe'));
+    await driver.waitFor(find.byValueKey('tutorialIntroStep'));
   });
 }

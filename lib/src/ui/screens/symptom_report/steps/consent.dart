@@ -6,32 +6,29 @@ import 'package:provider/provider.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
+import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report_controller.dart';
+import 'index.dart';
 
-class ConsentStep extends StatelessWidget {
+class ConsentStep extends StatelessWidget implements SymptomReportStep {
+  bool get isLastStep => false;
+  bool get showProgress => false;
+
   void _handleResponse(
       {BuildContext context, PreferencesState state, bool response}) {
     // Save response
     Preferences newPreferences = state.preferences.cloneWith(
-      agreedToTerms: response,
+      acceptedInformedConsent: response,
     );
     context.bloc<PreferencesBloc>().add(UpdatePreferences(newPreferences));
 
-    if (response && newPreferences.location != null) {
-      // If the user consented, but they have already specified their location,
-      // skip the location step.
-
-      // Navigate to home page and put it at the
-      // bottom of the navigation stack if consent is given.
-      Navigator.pushNamedAndRemoveUntil(
-        context,
-        HomeScreen.routeName,
-        (Route<dynamic> route) => false,
-      );
+    if (response) {
+      // Advance to the next step
+      Provider.of<SymptomReportController>(context, listen: false).next();
     } else {
-      // Advance to the ConsentBranch step.
-      Provider.of<PageController>(context, listen: false).nextPage(
-        duration: Duration(milliseconds: 400),
-        curve: Curves.easeInOut,
+      // Show the consent denied screen
+      Navigator.pushReplacementNamed(
+        context,
+        SymptomReportConsentDeniedScreen.routeName,
       );
     }
   }
@@ -40,11 +37,13 @@ class ConsentStep extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
+      key: ValueKey('symptomReportConsentStep'),
       builder: (context, state) {
-        final bool agreed = state.preferences.agreedToTerms != null &&
-            state.preferences.agreedToTerms;
-        final bool rejected = state.preferences.agreedToTerms != null &&
-            !state.preferences.agreedToTerms;
+        final bool agreed = state.preferences.acceptedInformedConsent != null &&
+            state.preferences.acceptedInformedConsent;
+        final bool rejected =
+            state.preferences.acceptedInformedConsent != null &&
+                !state.preferences.acceptedInformedConsent;
 
         return SafeArea(
           child: Stack(
@@ -88,6 +87,8 @@ class ConsentStep extends StatelessWidget {
                         ConstrainedBox(
                           constraints: BoxConstraints(minHeight: 60),
                           child: RaisedButton(
+                            key: ValueKey(
+                                'symptomReportInformedConsentRejectButton'),
                             onPressed: () => _handleResponse(
                               context: context,
                               state: state,
@@ -101,16 +102,18 @@ class ConsentStep extends StatelessWidget {
                                         Icons.close,
                                         color: Colors.red,
                                       ),
-                                      Text(
-                                          localizations.consentStepDidNotAgree),
+                                      Text(localizations
+                                          .consentStepDeclineActive),
                                     ],
                                   )
-                                : Text(localizations.consentStepNo),
+                                : Text(localizations.consentStepDecline),
                           ),
                         ),
                         ConstrainedBox(
                           constraints: BoxConstraints(minHeight: 60),
                           child: RaisedButton(
+                            key: ValueKey(
+                                'symptomReportInformedConsentAcceptButton'),
                             onPressed: () => _handleResponse(
                               context: context,
                               state: state,
@@ -124,10 +127,11 @@ class ConsentStep extends StatelessWidget {
                                         Icons.check,
                                         color: Colors.green,
                                       ),
-                                      Text(localizations.consentStepAgreed),
+                                      Text(
+                                          localizations.consentStepAgreeActive),
                                     ],
                                   )
-                                : Text(localizations.consentStepIAgree),
+                                : Text(localizations.consentStepAgree),
                           ),
                         ),
                       ],

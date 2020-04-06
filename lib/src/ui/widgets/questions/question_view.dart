@@ -42,10 +42,10 @@ class _QuestionViewState extends State<QuestionView> {
 
       switch (question.runtimeType) {
         case ScaleQuestion:
-          yield QuestionItem<int>(
+          yield QuestionItem<String>(
             key: ValueKey<Question>(question),
             question: question,
-            onChanged: (int value) => onChanged(question, value),
+            onChanged: (String value) => onChanged(question, value),
           );
           break;
         case TextFieldQuestion:
@@ -104,7 +104,10 @@ class _QuestionViewState extends State<QuestionView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ..._getQuestions(),
-            StepFinishedButton(validated: true),
+            StepFinishedButton(
+              validated: true,
+              isLastStep: widget.isLastStep,
+            ),
             SizedBox(height: 20),
           ],
         ),
