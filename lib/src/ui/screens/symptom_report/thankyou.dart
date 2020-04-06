@@ -150,8 +150,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                 child: RaisedButton(
                   key: ValueKey('symptomReportThankYouFinishButton'),
                   onPressed: () => Navigator.pop(context),
-                  child: Text(
-                      localizations.thankYouScreenFinishButton),
+                  child: Text(localizations.thankYouScreenFinishButton),
                 ),
               ),
             ],

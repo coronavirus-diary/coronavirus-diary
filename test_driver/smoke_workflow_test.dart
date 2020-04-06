@@ -79,6 +79,40 @@ void main() {
     await driver.waitFor(find.byValueKey('homeScreen'));
   });
 
+  test('User can enter a second report', () async {
+    // From state above, proceed to symptom report screen.
+    await driver.tap(find.byValueKey('homeScreenStartSymptomReport'));
+
+    // Intro screen is shown, continue
+    await driver.tap(find.byValueKey('symptomReportIntroStepContinueButton'));
+
+    // Enter a location and continue
+    await driver.tap(find.byValueKey('stepFinishedButton'));
+
+    // Answer the questions
+    // TODO(gspencergoog): The individual questions will need value keys or
+    // other labels so the driver test can confirm that values update correctly.
+
+    // Continue.
+    await driver.scrollUntilVisible(
+      find.byValueKey('ScrollableBody'),
+      find.byValueKey('stepFinishedButton'),
+      dyScroll: -100,
+    );
+    await driver.tap(find.byValueKey('stepFinishedButton'));
+
+    // Ensure that thank you page is shown.
+    await driver.waitFor(find.byValueKey('symptomReportThankYouScreen'));
+
+    await driver.scrollUntilVisible(
+      find.byValueKey('ScrollableBody'),
+      find.byValueKey('symptomReportThankYouFinishButton'),
+      dyScroll: -100,
+    );
+    await driver.tap(find.byValueKey('symptomReportThankYouFinishButton'));
+    await driver.waitFor(find.byValueKey('homeScreen'));
+  });
+
   test('User can tap on delete data and go back to the tutorial', () async {
     // Click on the delete data button.
     await driver.tap(find.byValueKey('homeDebugDeleteDataButton'));
