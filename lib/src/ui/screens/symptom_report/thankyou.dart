@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:share/share.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 
 class ThankYouScreen extends StatefulWidget {
@@ -84,7 +85,8 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                   children: <Widget>[
                     Expanded(
                       child: RaisedButton(
-                        onPressed: () => {},
+                        onPressed: () => Navigator.of(context)
+                            .pushNamed(StaySafeScreen.routeName),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7),
                           side: BorderSide(
