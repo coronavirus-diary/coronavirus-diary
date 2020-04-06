@@ -116,7 +116,7 @@ class QuestionsRepository {
               initialValue: null,
             ),
           ],
-          answers: <dynamic>[1, 1],
+          answers: <dynamic>['yes', 'yes'],
         ),
         CompositeQuestion(
           children: <Question>[
@@ -162,7 +162,7 @@ class QuestionsRepository {
               ],
             ),
           ],
-          answers: <dynamic>[1],
+          answers: <dynamic>['yes'],
         ),
       ];
 }
