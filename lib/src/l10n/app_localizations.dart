@@ -268,7 +268,7 @@ abstract class AppLocalizations {
   String get staySafeLimitContact;
 
   // Step 3 for the screen that lists 3 steps for staying safe
-  String get staySafeCheckBackIf;
+  String get staySafeContactPhysician;
 
   // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
   String get tutorialIntroStepWelcome;

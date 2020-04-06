@@ -221,14 +221,16 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get staySafeTitle => 'Stay Safe';
 
   @override
-  String get staySafeWashYourHands => 'Wash your hands';
+  String get staySafeWashYourHands =>
+      'Wash your hands frequently and for at least 20 seconds.';
 
   @override
-  String get staySafeLimitContact => 'Limit contact with other people.';
+  String get staySafeLimitContact =>
+      'Limit contact with other people. Practice social distancing.';
 
   @override
-  String get staySafeCheckBackIf =>
-      'Check back in if you continue to experience symptoms.';
+  String get staySafeContactPhysician =>
+      'Contact a physician if your symptoms become serious.';
 
   @override
   String get tutorialIntroStepWelcome => 'Welcome to CovidNearMe';

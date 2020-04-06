@@ -256,7 +256,7 @@
     "description": "Tooltip for the back button"
   },
 
-  "shareAppDownloadPrompt": "Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK",
+  "shareAppDownloadPrompt": "Download this app to view local COVID-19 statistics and support the community by anonymously reporting your symptoms: APP_LINK",
   "@shareAppDownloadPrompt": {
     "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime"
   },
@@ -266,7 +266,7 @@
     "description": "Title for the app sharing sheet, see https://pub.dev/packages/share"
   },
 
-  "shareAppWithFriendsEtc": "Share this app with your friends, coworkers, and family (especially grandparents).",
+  "shareAppWithFriendsEtc": "Share this app with your friends, family, and coworkers.",
   "@shareAppWithFriendsEtc": {
     "description": "Subheading for the app sharing sheet, see https://pub.dev/packages/share"
   },
@@ -281,18 +281,18 @@
     "description": "Title for the screen that lists 3 steps for staying safe"
   },
 
-  "staySafeWashYourHands": "Wash your hands",
+  "staySafeWashYourHands": "Wash your hands frequently and for at least 20 seconds.",
   "@staySafeWashYourHands": {
     "description": "Step 1 for the screen that lists 3 steps for staying safe"
   },
 
-  "staySafeLimitContact": "Limit contact with other people.",
+  "staySafeLimitContact": "Limit contact with other people. Practice social distancing.",
   "@staySafeLimitContact": {
     "description": "Step 2 for the screen that lists 3 steps for staying safe"
   },
 
-  "staySafeCheckBackIf": "Check back in if you continue to experience symptoms.",
-  "@staySafeCheckBackIf": {
+  "staySafeContactPhysician": "Contact a physician if your symptoms become serious.",
+  "@staySafeContactPhysician": {
     "description": "Step 3 for the screen that lists 3 steps for staying safe"
   },
 
