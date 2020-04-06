@@ -46,7 +46,7 @@
     "description": "The title of the ThankYou screen"
   },
 
-  "thankYouScreenFinishButton": "Finish",
+  "thankYouScreenFinishButton": "FINISH",
   "@thankYouScreenFinishButton":  {
     "description": "Return to the home screen"
   },
@@ -66,12 +66,12 @@
     "description": "Ask the user to contact a physician if their symptoms become serious"
   },
 
-  "thankYouScreenSafetyTipsButton": "Safety tips",
+  "thankYouScreenSafetyTipsButton": "SAFETY TIPS",
   "@thankYouScreenSafetyTipsButton":  {
     "description": "Button for safety tips"
   },
 
-  "thankYouScreenShareAppButton": "Share the app",
+  "thankYouScreenShareAppButton": "SHARE THE APP",
   "@thankYouScreenShareAppButton":  {
     "description": "Button for sharing the app"
   },

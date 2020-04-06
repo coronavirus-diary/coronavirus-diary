@@ -52,7 +52,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get thankYouScreenTitle => 'Thank you';
 
   @override
-  String get thankYouScreenFinishButton => 'Finish';
+  String get thankYouScreenFinishButton => 'FINISH';
 
   @override
   String get thankYouScreenDataSubmission =>
@@ -67,10 +67,10 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'If they become serious, please consult a physician.';
 
   @override
-  String get thankYouScreenSafetyTipsButton => 'Safety tips';
+  String get thankYouScreenSafetyTipsButton => 'SAFETY TIPS';
 
   @override
-  String get thankYouScreenShareAppButton => 'Share the app';
+  String get thankYouScreenShareAppButton => 'SHARE THE APP';
 
   @override
   String get symptomReportLoading => 'Loading the symptom report experience.';
