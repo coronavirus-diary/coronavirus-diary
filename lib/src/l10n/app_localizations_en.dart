@@ -205,14 +205,14 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get shareAppDownloadPrompt =>
-      'Worried that you might have COVID-19? Download this app to check up on your health and support your community: APP_LINK';
+      'Download this app to view local COVID-19 statistics and support the community by anonymously reporting your symptoms: APP_LINK';
 
   @override
   String get shareAppTitle => 'Support Your Community';
 
   @override
   String get shareAppWithFriendsEtc =>
-      'Share this app with your friends, coworkers, and family (especially grandparents).';
+      'Share this app with your friends, family, and coworkers.';
 
   @override
   String get shareAppNow => 'SHARE NOW';
