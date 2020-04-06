@@ -87,10 +87,11 @@ void main() {
   });
 
   test('User can tap on delete data and go back to the tutorial', () async {
-    // Click on the delete data button.
-    await driver.tap(find.byValueKey('homeDebugDeleteDataButton'));
+    // Open the menu and tap on the delete data button.
+    await driver.tap(find.byValueKey('homeScreenMenuButton'));
+    await driver.tap(find.byValueKey('homeScreenDebugDeleteDataButton'));
 
-    // Back to the welcome screen.
+    // Ensure that we are back at the welcome screen.
     await driver.waitFor(find.byValueKey('tutorialIntroStep'));
   });
 }

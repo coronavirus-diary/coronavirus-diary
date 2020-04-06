@@ -24,14 +24,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void _debugRestart() {
-    // Clear state
-    context.bloc<PreferencesBloc>().add(UpdatePreferences(Preferences()));
-
-    // Restart app
-    Phoenix.rebirth(context);
-  }
-
   Widget _getBody(PreferencesState state) {
     final localizations = AppLocalizations.of(context);
     return Column(
@@ -102,14 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
               'CovidNearMe',
               semanticsLabel: 'Covid Near Me',
             ),
-            leading: kReleaseMode
-                ? null
-                : IconButton(
-                    key: ValueKey('homeDebugDeleteDataButton'),
-                    onPressed: _debugRestart,
-                    icon: Icon(Icons.delete),
-                    tooltip: 'DEBUG MODE ONLY: Clear user data',
-                  ),
             actions: <Widget>[_MainMenu()],
           ),
           body: NetworkUnavailableBanner.wrap(
@@ -129,83 +113,115 @@ class _HomeScreenState extends State<HomeScreen> {
 class _LinkTextSpan extends TextSpan {
   _LinkTextSpan({TextStyle style, String url, String text})
       : super(
-            style: style,
-            text: text ?? url,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                launch(url, forceSafariVC: false);
-              });
+          style: style,
+          text: text ?? url,
+          recognizer: TapGestureRecognizer()
+            ..onTap = () {
+              launch(url, forceSafariVC: false);
+            },
+        );
 }
 
 class _MainMenu extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  void _showAboutDialog(BuildContext context) async {
     final ThemeData themeData = Theme.of(context);
+    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
     final TextStyle aboutTextStyle = themeData.textTheme.body2;
     final TextStyle linkStyle =
         themeData.textTheme.body2.copyWith(color: Color(0xff0000ff));
     final AppLocalizations localizations = AppLocalizations.of(context);
+
+    await showDialog<void>(
+      context: context,
+      useRootNavigator: true,
+      builder: (BuildContext context) {
+        return Theme(
+          data: themeData.copyWith(
+            buttonTheme: themeData.buttonTheme.copyWith(
+              colorScheme: themeData.colorScheme,
+            ),
+          ),
+          child: AboutDialog(
+            applicationVersion:
+                '${packageInfo.version}.${packageInfo.buildNumber}',
+            applicationIcon: Image(
+              width: 50,
+              height: 50,
+              image: AssetImage('assets/images/icon.png'),
+            ),
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 24.0),
+                child: RichText(
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        style: aboutTextStyle,
+                        text: localizations.aboutBoxDescription,
+                      ),
+                      _LinkTextSpan(
+                        style: linkStyle,
+                        text: localizations.aboutBoxLinkText,
+                        url:
+                            'https://github.com/coronavirus-diary/coronavirus-diary',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _debugClearData(BuildContext context) {
+    // Clear state
+    context.bloc<PreferencesBloc>().add(UpdatePreferences(Preferences()));
+
+    // Restart app
+    Phoenix.rebirth(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context);
+
     return PopupMenuButton(
+      key: ValueKey('homeScreenMenuButton'),
+      onSelected: (String selection) async {
+        switch (selection) {
+          case 'about':
+            _showAboutDialog(context);
+            break;
+          case 'clear_data':
+            _debugClearData(context);
+            break;
+        }
+      },
+      icon: Icon(Icons.more_vert),
+      tooltip: localizations.homeMenuTooltip,
       itemBuilder: (BuildContext context) {
         return <PopupMenuItem<String>>[
           PopupMenuItem<String>(
-            value: 'About',
+            value: 'about',
             child: Text(
               localizations.homeMenuAbout,
               semanticsLabel: localizations.homeMenuAboutSemantics,
             ),
           ),
+          if (kReleaseMode == false)
+            PopupMenuItem<String>(
+              key: ValueKey('homeScreenDebugDeleteDataButton'),
+              value: 'clear_data',
+              child: Text('DEBUG MODE ONLY: Clear user data'),
+              textStyle: TextStyle(
+                color: Colors.red,
+              ),
+            ),
         ];
       },
-      onSelected: (String selection) async {
-        assert(selection == 'About');
-        PackageInfo packageInfo = await PackageInfo.fromPlatform();
-        await showDialog<void>(
-          context: context,
-          useRootNavigator: true,
-          builder: (BuildContext context) {
-            return Theme(
-              data: themeData.copyWith(
-                buttonTheme: themeData.buttonTheme.copyWith(
-                  colorScheme: themeData.colorScheme,
-                ),
-              ),
-              child: AboutDialog(
-                applicationVersion:
-                    '${packageInfo.version}.${packageInfo.buildNumber}',
-                applicationIcon: Image(
-                  width: 50,
-                  height: 50,
-                  image: AssetImage('assets/images/icon.png'),
-                ),
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 24.0),
-                    child: RichText(
-                      text: TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                            style: aboutTextStyle,
-                            text: localizations.aboutBoxDescription,
-                          ),
-                          _LinkTextSpan(
-                            style: linkStyle,
-                            text: localizations.aboutBoxLinkText,
-                            url:
-                                'https://github.com/coronavirus-diary/coronavirus-diary',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
-      icon: Icon(Icons.more_vert),
-      tooltip: localizations.homeMenuTooltip,
     );
   }
 }
