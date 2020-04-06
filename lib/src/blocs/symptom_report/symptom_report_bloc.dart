@@ -32,6 +32,9 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
       case CompleteSymptomReport:
         yield* _mapCompleteSymptomReportToState(event);
         break;
+      case ClearSymptomReport:
+        yield* _mapClearSymptomReportToState(event);
+        break;
     }
   }
 
@@ -76,5 +79,15 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
 
     // Notify app of completion
     yield const SymptomReportStateCompleted();
+  }
+
+  Stream<SymptomReportState> _mapClearSymptomReportToState(
+      ClearSymptomReport event) async* {
+    assert(
+      state is SymptomReportStateCompleted,
+      'Must be in completed state to clear symptom report, not ${state.runtimeType}.',
+    );
+
+    yield const SymptomReportStateNotCreated();
   }
 }

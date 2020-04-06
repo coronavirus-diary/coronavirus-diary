@@ -95,9 +95,11 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   }
 
   void _handleSymptomReportCompletion(
+    BuildContext context,
     SymptomReportStateCompleted symptomReportState,
   ) {
-    // TODO(goderbauer): Reset the SymptomReport bloc: https://github.com/coronavirus-diary/coronavirus-diary/issues/171
+    // Move back to the not created state, to clear out the symptom report.
+    context.bloc<SymptomReportBloc>().add(const ClearSymptomReport());
 
     // Navigate to thank you screen
     Navigator.pushReplacementNamed(
@@ -140,7 +142,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                 });
               }
             } else if (state is SymptomReportStateCompleted) {
-              _handleSymptomReportCompletion(state);
+              _handleSymptomReportCompletion(context, state);
             }
           },
           builder: (context, state) {

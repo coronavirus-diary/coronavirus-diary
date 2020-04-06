@@ -27,3 +27,7 @@ class UpdateSymptomReport extends SymptomReportEvent {
 class CompleteSymptomReport extends SymptomReportEvent {
   const CompleteSymptomReport();
 }
+
+class ClearSymptomReport extends SymptomReportEvent {
+  const ClearSymptomReport();
+}
