@@ -42,7 +42,7 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
     // Create symptom report
     final SymptomReport newReport = SymptomReport(
       userId: preferencesState.preferences.userId,
-      isFake: appEnv['ENVIRONMENT'] == 'debug',
+      isFake: appEnv['ENVIRONMENT'] != 'production',
     );
 
     yield SymptomReportStateInProgress(symptomReport: newReport);
