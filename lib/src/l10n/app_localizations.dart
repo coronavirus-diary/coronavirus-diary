@@ -125,47 +125,63 @@ abstract class AppLocalizations {
   // The title of the ThankYou screen
   String get thankYouScreenTitle;
 
-  // Return back to the home screen
-  String get thankYouScreenReturnToHome;
+  // Return to the home screen
+  String get thankYouScreenFinishButton;
 
   // A note thanking the user for submitting their data
   String get thankYouScreenDataSubmission;
 
-  // Asking the user to report their symptoms again tomorrow
+  // Ask the user to report their symptoms again tomorrow
   String get thankYouScreenCallToAction;
 
-  // An error occurred while trying to fetch data
-  String get checkupScreenErrorRetrievingExperience;
+  // Ask the user to contact a physician if their symptoms become serious
+  String get thankYouScreenSeriousSymptoms;
 
-  // Title for the checkup screen
-  String get checkupScreenTitle;
+  // Button for safety tips
+  String get thankYouScreenSafetyTipsButton;
+
+  // Button for sharing the app
+  String get thankYouScreenShareAppButton;
+
+  // Tell the user that the symptom report is loading
+  String get symptomReportLoading;
+
+  // An error occurred while trying to fetch data
+  String get symptomReportErrorRetrievingExperience;
+
+  // Title for the symptom report screen
+  String get symptomReportTitle;
 
   // Which step in the overall process is the patient currently working on
-  String checkupProgressBarPercentCompleteText(int stepIndex, int stepCount);
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount);
 
-  // Submit the data for the checkup
-  String get checkupStepFinishedSubmit;
+  // Submit the symptom report
+  String get symptomReportSubmitButton;
 
-  // Continue to the next checkup screen
-  String get checkupStepFinishedNext;
+  // Continue to the next symptom report step
+  String get symptomReportNextButton;
 
   // Prompt when all the questions haven't been answered yet.
-  String get checkupStepFinishedAnswerAllQuestions;
+  String get symptomReportAnswerAllQuestions;
 
-  // Heading at the top of the Your Health Checkup screen
-  String get introStepTimeForYourCheckup;
+  // Title for the symptom report intro step
+  String get symptomReportIntroStepTitle;
 
-  // Tell the patient what they will be doing with the app
-  String get introStepWeWillAskQuestions;
+  // Tell the user that they will be asked questions
+  String get symptomReportIntroStepHealthQuestions;
 
-  // Explain what the app will tell the patient once they have answered the questions
-  String get introStepAtTheEnd;
+  // Explain that the data will be submitted anonymously and used for COVID-19 response efforts
+  String get symptomReportIntroStepDataContribution;
 
-  // Starts the checkup by showing the first checkup screen
-  String get introStepButtonStartLabel;
+  // Starts the symptom report by showing the first step
+  String get symptomReportIntroStepStartButton;
 
-  // An internal error occurred, the checkup questions failed to load
-  String get subjectiveStepQuestionsLoadedError;
+  // Title for the symptom report location step
+  String get symptomReportLocationStepTitle;
+
+  // An internal error occurred, the symptom report questions failed to load
+  String get questionsStepQuestionsLoadedError;
 
   // Subsection heading for recommendations about when to measure the user's temperature
   String get temperatureStepWhenHeading;
@@ -200,7 +216,7 @@ abstract class AppLocalizations {
   // Step 5 in the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogStep5;
 
-  // Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps
+  // Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogReturn;
 
   // Label for a button that brings up a help screen
@@ -219,13 +235,10 @@ abstract class AppLocalizations {
   String get locationStepZipCode;
 
   // Heading text for the home screen
-  String get homeScreenHeading;
+  String get homeScreenReportSymptomsTitle;
 
   // Subheading text for the home screen
-  String get homeScreenDoYouHaveSymptoms;
-
-  // Label for a button that shows the checkup screen
-  String get homeScreenCheckupButtonLabel;
+  String get homeScreenReportSymptomsSubtitle;
 
   // Label next to loading indicator
   String get systemReportSubmitting;
@@ -237,7 +250,7 @@ abstract class AppLocalizations {
   String get shareAppDownloadPrompt;
 
   // Title for the app sharing sheet, see https://pub.dev/packages/share
-  String get shareAppProtectYourCommunity;
+  String get shareAppTitle;
 
   // Subheading for the app sharing sheet, see https://pub.dev/packages/share
   String get shareAppWithFriendsEtc;
@@ -266,23 +279,17 @@ abstract class AppLocalizations {
   // Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers
   String get tutorialIntroStepWelcomeSemanticsLabel;
 
-  // Describes the outcome of running the app
-  String get tutorialIntroStepCompleteACheckup;
+  // Describes an action you can take using the app
+  String get tutorialIntroStepLocalStatistics;
 
-  // Describes the benefit of the app
-  String get tutorialIntroStepReceiveAssessment;
+  // Describes an action you can take using the app
+  String get tutorialIntroStepSubmitSymptoms;
 
   // Describes the benefit of the app to the community.
   String get tutorialIntroStepAidEffort;
 
   // Label for the button that shows the next app screen
   String get tutorialIntroStepGetStarted;
-
-  // Heading that's shown after the user has agreed to the app license. The name of the app, CovidNearMe, should not be translated
-  String get getStartedStepJoined;
-
-  // Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers
-  String get getStartedStepJoinedSemanticsLabel;
 
   // Label for the button that indicates that the user will not accept the app license
   String get consentStepDecline;

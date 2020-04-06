@@ -11,14 +11,30 @@
 4. Create an environment configuration file (.env) with the structure shown in [the example .env file](env.example).
 
 5. Run the project using your IDE or the Flutter CLI:
-   ```
+   ```sh
    flutter run
    ```
 
 ## Useful commands
+### Testing
+#### Unit tests
+```sh
+flutter test
+```
+
+#### Driver tests
+```sh
+flutter drive --target=test_driver/smoke_workflow.dart
+```
+
 ### Regenerate apis, blocs and JSON models
 ```sh
 flutter pub run build_runner watch
+```
+
+### Regenerate localization files
+```sh
+$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart tools/gen_l10n.dart --arb-dir lib/src/l10n
 ```
 
 ### Clean the project's build folders

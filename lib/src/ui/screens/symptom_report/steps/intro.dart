@@ -39,7 +39,7 @@ class _IntroStepState extends State<IntroStep> {
               margin: EdgeInsets.only(bottom: 20),
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                localizations.introStepTimeForYourCheckup,
+                localizations.symptomReportIntroStepTitle,
                 style: Theme.of(context).textTheme.title,
                 textAlign: TextAlign.center,
               ),
@@ -48,7 +48,7 @@ class _IntroStepState extends State<IntroStep> {
               margin: EdgeInsets.only(bottom: 20),
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                localizations.introStepWeWillAskQuestions,
+                localizations.symptomReportIntroStepHealthQuestions,
                 style: Theme.of(context).textTheme.subtitle,
                 textAlign: TextAlign.center,
               ),
@@ -57,7 +57,7 @@ class _IntroStepState extends State<IntroStep> {
               margin: EdgeInsets.only(bottom: 20),
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                localizations.introStepAtTheEnd,
+                localizations.symptomReportIntroStepDataContribution,
                 style: Theme.of(context).textTheme.subtitle,
                 textAlign: TextAlign.center,
               ),
@@ -70,7 +70,7 @@ class _IntroStepState extends State<IntroStep> {
                 onPressed: () =>
                     Provider.of<SymptomReportController>(context, listen: false)
                         .next(),
-                child: Text(localizations.introStepButtonStartLabel),
+                child: Text(localizations.symptomReportIntroStepStartButton),
               ),
             ),
           ],

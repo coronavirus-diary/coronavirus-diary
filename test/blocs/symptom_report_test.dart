@@ -7,8 +7,8 @@ import 'package:pedantic/pedantic.dart';
 
 void main() {
   test(
-      'CheckupBloc only responds to StartCheckup, UpdateCheckup, and '
-      'CompleteCheckup', () async {
+      'SymptomReportBloc only responds to StartSymptomReport, UpdateSymptomReport, and '
+      'CompleteSymptomReport', () async {
     final bloc = SymptomReportBloc(
       symptomReportsRepository: FakeSymptomReportsRepository(),
       preferencesState: FakePreferencesState(),

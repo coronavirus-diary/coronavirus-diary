@@ -9,16 +9,16 @@ import 'package:covidnearme/src/ui/widgets/questions/question_view.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'index.dart';
 
-class SubjectiveStep extends StatefulWidget implements SymptomReportStep {
+class QuestionsStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => true;
   bool get showProgress => true;
 
   @override
-  _SubjectiveStepState createState() => _SubjectiveStepState();
+  _QuestionsStepState createState() => _QuestionsStepState();
 }
 
-class _SubjectiveStepState extends State<SubjectiveStep> {
-  void _updateCheckup(
+class _QuestionsStepState extends State<QuestionsStep> {
+  void _updateSymptomReport(
     Question question,
     dynamic value,
     SymptomReportStateInProgress symptomReportState,
@@ -61,23 +61,23 @@ class _SubjectiveStepState extends State<SubjectiveStep> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionsBloc, QuestionsState>(
-      key: ValueKey('symptomReportSubjectiveStep'),
+      key: ValueKey('symptomReportQuestionsStep'),
       builder: (context, state) {
         if (state is! QuestionsStateLoaded) {
           return Container(
-            child: Text(AppLocalizations.of(context)
-                .subjectiveStepQuestionsLoadedError),
+            child: Text(
+                AppLocalizations.of(context).questionsStepQuestionsLoadedError),
           );
         }
 
         final QuestionsStateLoaded questionState = state;
         return BlocBuilder<SymptomReportBloc, SymptomReportState>(
           builder: (context, state) {
-            final SymptomReportStateInProgress checkupState = state;
+            final SymptomReportStateInProgress symptomReportState = state;
             return QuestionView(
               questions: questionState.questions,
               onChange: (Question question, dynamic value) =>
-                  _updateCheckup(question, value, checkupState),
+                  _updateSymptomReport(question, value, symptomReportState),
               isLastStep: widget.isLastStep,
             );
           },

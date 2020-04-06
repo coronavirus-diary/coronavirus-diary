@@ -1,11 +1,10 @@
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
-import 'package:covidnearme/src/ui/widgets/share.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share/share.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
-import 'package:covidnearme/src/ui/widgets/stay_safe.dart';
 
 class ThankYouScreen extends StatefulWidget {
   static const routeName = '/symptom-report/thankyou';
@@ -22,9 +21,8 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
       key: ValueKey('symptomReportThankYouScreen'),
       appBar: AppBar(
         leading: IconButton(
-          key: ValueKey('symptomReportThankYouCloseButton'),
           icon: Icon(Icons.close),
-          tooltip: localizations.thankYouScreenReturnToHome,
+          tooltip: localizations.thankYouScreenFinishButton,
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -41,11 +39,11 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: FaIcon(
                   FontAwesomeIcons.heartbeat,
-                  size: 70,
+                  size: 80,
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(bottom: 20),
+                margin: EdgeInsets.only(bottom: 40),
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
                   localizations.thankYouScreenTitle,
@@ -60,7 +58,6 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                   localizations.thankYouScreenDataSubmission,
                   style:
                       Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
-                  textAlign: TextAlign.center,
                 ),
               ),
               Container(
@@ -70,7 +67,80 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                   localizations.thankYouScreenCallToAction,
                   style:
                       Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
-                  textAlign: TextAlign.center,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  localizations.thankYouScreenSeriousSymptoms,
+                  style:
+                      Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 40),
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: RaisedButton(
+                        onPressed: () => {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(7),
+                          side: BorderSide(
+                            color: Colors.black26,
+                            width: 1.0,
+                          ),
+                        ),
+                        color: Colors.white,
+                        textColor: Theme.of(context).primaryColor,
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(bottom: 10),
+                              child: FaIcon(
+                                FontAwesomeIcons.check,
+                                size: 40,
+                              ),
+                            ),
+                            Text(localizations.thankYouScreenSafetyTipsButton
+                                .toUpperCase()),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                    ),
+                    Expanded(
+                      child: RaisedButton(
+                        onPressed: () =>
+                            Share.share(localizations.shareAppDownloadPrompt),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(7),
+                          side: BorderSide(
+                            color: Colors.black26,
+                            width: 1.0,
+                          ),
+                        ),
+                        color: Colors.white,
+                        textColor: Theme.of(context).primaryColor,
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(bottom: 10),
+                              child: FaIcon(
+                                FontAwesomeIcons.shareAlt,
+                                size: 40,
+                              ),
+                            ),
+                            Text(localizations.thankYouScreenShareAppButton
+                                .toUpperCase()),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
@@ -78,12 +148,12 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 width: double.infinity,
                 child: RaisedButton(
+                  key: ValueKey('symptomReportThankYouFinishButton'),
                   onPressed: () => Navigator.pop(context),
-                  child: Text(localizations.thankYouScreenReturnToHome),
+                  child: Text(
+                      localizations.thankYouScreenFinishButton.toUpperCase()),
                 ),
               ),
-              ShareApp(),
-              StaySafe(),
             ],
           ),
         ),
