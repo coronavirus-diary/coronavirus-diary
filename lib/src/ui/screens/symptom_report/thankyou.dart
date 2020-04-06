@@ -105,8 +105,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                                 size: 40,
                               ),
                             ),
-                            Text(localizations.thankYouScreenSafetyTipsButton
-                                .toUpperCase()),
+                            Text(localizations.thankYouScreenSafetyTipsButton),
                           ],
                         ),
                       ),
@@ -136,8 +135,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                                 size: 40,
                               ),
                             ),
-                            Text(localizations.thankYouScreenShareAppButton
-                                .toUpperCase()),
+                            Text(localizations.thankYouScreenShareAppButton),
                           ],
                         ),
                       ),
@@ -153,7 +151,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                   key: ValueKey('symptomReportThankYouFinishButton'),
                   onPressed: () => Navigator.pop(context),
                   child: Text(
-                      localizations.thankYouScreenFinishButton.toUpperCase()),
+                      localizations.thankYouScreenFinishButton),
                 ),
               ),
             ],
