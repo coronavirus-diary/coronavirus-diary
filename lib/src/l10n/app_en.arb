@@ -136,7 +136,7 @@
     "description": "Explain that the data will be submitted anonymously and used for COVID-19 response efforts"
   },
 
-  "symptomReportIntroStepStartButton": "TAP TO START",
+  "symptomReportIntroStepStartButton": "START",
   "@symptomReportIntroStepStartButton": {
     "description": "Starts the symptom report by showing the first step"
   },
@@ -326,7 +326,7 @@
     "description": "Describes the benefit of the app to the community."
   },
 
-  "tutorialIntroStepGetStarted": "TAP HERE TO GET STARTED",
+  "tutorialIntroStepGetStarted": "GET STARTED",
   "@tutorialIntroStepGetStarted": {
     "description": "Label for the button that shows the next app screen"
   },
