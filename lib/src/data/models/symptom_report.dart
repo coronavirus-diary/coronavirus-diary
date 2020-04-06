@@ -5,17 +5,16 @@ part 'symptom_report.g.dart';
 @JsonSerializable(explicitToJson: true)
 class SymptomReport {
   String userId;
+  bool isFake;
   UserLocation location;
   List<QuestionResponse> questionResponses;
-  bool dataContributionPreference;
 
   SymptomReport({
     this.userId,
+    this.isFake = false,
     this.location,
     List<QuestionResponse> questionResponses,
-    bool dataContributionPreference,
-  })  : dataContributionPreference = dataContributionPreference ?? true,
-        questionResponses = questionResponses ?? [];
+  }) : questionResponses = questionResponses ?? [];
 
   factory SymptomReport.fromJson(Map<String, dynamic> json) =>
       _$SymptomReportFromJson(json);
@@ -25,11 +24,11 @@ class SymptomReport {
 
 @JsonSerializable()
 class QuestionResponse {
-  String questionId;
-  dynamic response;
+  String questionIdentifier;
+  String response;
 
   QuestionResponse({
-    this.questionId,
+    this.questionIdentifier,
     this.response,
   });
 
@@ -41,14 +40,13 @@ class QuestionResponse {
 
 @JsonSerializable()
 class UserLocation {
-  String zipCode;
-
   /// ISO 3166-1 alpha-2.
   String country;
+  String postalCode;
 
   UserLocation({
-    this.zipCode,
     this.country,
+    this.postalCode,
   });
 
   factory UserLocation.fromJson(Map<String, dynamic> json) =>

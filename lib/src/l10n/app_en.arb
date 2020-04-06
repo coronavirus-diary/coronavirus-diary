@@ -1,7 +1,32 @@
 {
   "@@locale": "en",
 
-  "consentStepQuestion": "# Informed Consent\n\nSince the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.\n\nYou are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.\n\nTotal daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.\n\nYou can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.\n\nWe will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.\n\nIf this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"No\".",
+  "homeMenuTooltip": "More",
+  "@homeMenuTooltip":  {
+    "description": "Tooltip for the 'three dots' main menu on the home page."
+  },
+
+  "homeMenuAbout": "About CovidNearMe",
+  "@homeMenuAbout":  {
+    "description": "Label for the about button in the home page menu."
+  },
+
+  "homeMenuAboutSemantics": "About Covid Near Me",
+  "@homeMenuAboutSemantics":  {
+    "description": "Semantic Label for the about button in the home page menu."
+  },
+
+  "aboutBoxDescription": "This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.\n\n",
+  "@aboutBoxDescription":  {
+    "description": "Description in the 'About' box, above a hyperlink to the source website."
+  },
+
+  "aboutBoxLinkText": "Coronavirus Diary on GitHub",
+  "@aboutBoxLinkText":  {
+    "description": "Text label on a hyperlink to the source code for the app."
+  },
+
+  "consentStepQuestion": "# Informed Consent\n\nSince the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.\n\nYou are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.\n\nTotal daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.\n\nYou can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.\n\nWe will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.\n\nIf this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don't agree\".",
   "@consentStepQuestion": {
     "description": "The long informed consent question asked of users"
   },
@@ -11,7 +36,7 @@
     "description": "Heading for the page show reminds the user that they've said no"
   },
 
-  "deniedConsentMessage": "Thank you for considering joining our effort. If you change your mind, you can come back later.",
+  "deniedConsentMessage": "Thank you for considering joining our effort. If you change your mind and decide to consent later, try reporting your symptoms again. You will be asked for your consent again and then you can accept it and enter your symptoms.",
   "@deniedConsentMessage":  {
     "description": "The app's response if the user does not agree to the informed consent question"
   },
@@ -21,7 +46,7 @@
     "description": "The title of the ThankYou screen"
   },
 
-  "thankYouScreenReturnToHome": "Return to home",
+  "thankYouScreenReturnToHome": "RETURN TO HOME",
   "@thankYouScreenReturnToHome":  {
     "description": "Return back to the home screen"
   },
@@ -91,16 +116,6 @@
     "description": "Explain what the app will tell the patient once they have answered the questions"
   },
 
-  "introStepSwitchLabelContributeData": "Contribute my data to the COVID-19 response effort.",
-  "@introStepSwitchLabelContributeData": {
-    "description": "Explain that turning the switch on means that the patient data will be shared with the COVID-19 response effort"
-  },
-
-  "introStepSwitchLabelCollectPostalCode": "We will collect your zip code.",
-  "@introStepSwitchLabelCollectPostalCode": {
-    "description": "Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's zip code"
-  },
-
   "introStepButtonStartLabel": "START CHECKUP",
   "@introStepButtonStartLabel": {
     "description": "Starts the checkup by showing the first checkup screen"
@@ -141,11 +156,6 @@
     "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
   },
 
-  "temperatureStepTemperatureLabel": "Temperature",
-  "@temperatureStepTemperatureLabel": {
-    "description": "Label for entry field"
-  },
-
   "temperatureStepHowToDialogStep1": "Wash your hands using soap and water",
   "@temperatureStepHowToDialogStep1": {
     "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
@@ -174,11 +184,6 @@
   "temperatureStepHowToDialogReturn": "RETURN TO CHECKUP",
   "@temperatureStepHowToDialogReturn": {
     "description": "Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepTitle": "Take your temperature",
-  "@temperatureStepTitle": {
-    "description": "Title that appears above the text field where the user enters their temperature"
   },
 
   "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
@@ -211,11 +216,6 @@
     "description": "Heading text for the home screen"
   },
 
-  "homeScreenHeading": "Concerned about your health?",
-  "@homeScreenHeading": {
-    "description": "Heading text for the home screen"
-  },
-
   "homeScreenDoYouHaveSymptoms": "Are you experiencing symptoms? Have you been in contact with someone who is infected?",
   "@homeScreenDoYouHaveSymptoms": {
     "description": "Subheading text for the home screen"
@@ -224,16 +224,6 @@
   "homeScreenCheckupButtonLabel": "START HEALTH CHECKUP",
   "@homeScreenCheckupButtonLabel": {
     "description": "Label for a button that shows the checkup screen"
-  },
-
-  "homeScreenYouHaveCompletedCheckup": "You have completed your checkup for today!",
-  "@homeScreenYouHaveCompletedCheckup": {
-    "description": "Tell the user that they've already completed a checkup today"
-  },
-
-  "homeScreenCheckBackTomorrow": "If you continue to experience symptoms, please check back tomorrow.",
-  "@homeScreenCheckBackTomorrow": {
-    "description": "Tell a user that has already completed their checkup that they can check again tomorrow"
   },
 
   "systemReportSubmitting": "Submitting your report",
@@ -331,24 +321,24 @@
     "description": "Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers"
   },
 
-  "consentStepDidNotAgree": "DID NOT AGREE",
-  "@consentStepDidNotAgree": {
-    "description": "Label for the button that indicates that the user did not accept the app license"
-  },
-
-  "consentStepNo": "NO",
-  "@consentStepNo": {
+  "consentStepDecline": "I DON'T AGREE",
+  "@consentStepDecline": {
     "description": "Label for the button that indicates that the user will not accept the app license"
   },
 
-  "consentStepAgreed": "AGREED",
-  "@consentStepAgreed": {
-    "description": "Label for the button that indicates that the user did accept the app license"
+  "consentStepDeclineActive": "I DID NOT AGREE",
+  "@consentStepDeclineActive": {
+    "description": "Label for the button that indicates that the user did not accept the app license"
   },
 
-  "consentStepIAgree": "I AGREE",
-  "@consentStepIAgree": {
+  "consentStepAgree": "I AGREE",
+  "@consentStepAgree": {
     "description": "Label for the button that indicates that the user will accept the app license"
+  },
+
+  "consentStepAgreeActive": "I AGREED",
+  "@consentStepAgreeActive": {
+    "description": "Label for the button that indicates that the user did accept the app license"
   },
 
   "networkUnavailableBannerContinueOffline": "CONTINUE OFFLINE",

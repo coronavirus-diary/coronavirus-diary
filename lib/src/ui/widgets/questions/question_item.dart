@@ -33,10 +33,11 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
     }
   }
 
-  void _handleChange(dynamic value) {
+  void _handleChange(dynamic realValue, [dynamic widgetValue]) {
     setState(() {
-      currentValue = value;
-      widget.onChanged?.call(value as T);
+      currentValue = realValue;
+      if (widgetValue == null) widgetValue = realValue;
+      widget.onChanged?.call(widgetValue as T);
     });
   }
 
@@ -47,9 +48,14 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
         return RadioButtonScale(
           labels: scaleQuestion.labels,
           axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
-          value: currentValue as int,
+          value: scaleQuestion.values.indexOf(currentValue),
           semanticLabels: scaleQuestion.semanticLabels,
-          onChanged: _handleChange,
+          onChanged: (int value) {
+            _handleChange(
+              value != null ? scaleQuestion.values[value] : null,
+              value,
+            );
+          },
         );
         break;
       case TemperatureQuestion:

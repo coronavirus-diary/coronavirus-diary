@@ -33,7 +33,10 @@ class _LocationEntryState extends State<LocationEntry> {
   bool get _isUSA => _displayedLocation.country == "US";
   // Keep the values entered, so that when switching between modes,
   // they stick, but we don't have to update the preferences values.
-  UserLocation _displayedLocation = UserLocation(country: 'US', zipCode: null);
+  UserLocation _displayedLocation = UserLocation(
+    country: 'US',
+    postalCode: null,
+  );
 
   LocalKey zipCodeKey = ValueKey<String>('ZIP Code');
   LocalKey countryKey = ValueKey<String>('Country');
@@ -51,9 +54,9 @@ class _LocationEntryState extends State<LocationEntry> {
   bool _updateValidity() {
     bool valid = false;
     if (_isUSA) {
-      valid = _displayedLocation.zipCode != null &&
-          _displayedLocation.zipCode.isNotEmpty &&
-          _validateZipCode(_displayedLocation.zipCode) == null;
+      valid = _displayedLocation.postalCode != null &&
+          _displayedLocation.postalCode.isNotEmpty &&
+          _validateZipCode(_displayedLocation.postalCode) == null;
       if (_zipIsValid != valid) {
         setState(() {
           _zipIsValid = valid;
@@ -71,7 +74,7 @@ class _LocationEntryState extends State<LocationEntry> {
   }
 
   void _updateLocation(UserLocation location) {
-    if (location.zipCode != null) {
+    if (location.postalCode != null) {
       location.country = 'US';
     }
     assert(location.country != null);
@@ -90,7 +93,7 @@ class _LocationEntryState extends State<LocationEntry> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    _displayedLocation.zipCode ??= widget.location?.zipCode ?? '';
+    _displayedLocation.postalCode ??= widget.location?.postalCode ?? '';
     _displayedLocation.country ??= widget.location?.country ?? '';
 
     return ScrollableBody(
@@ -116,16 +119,18 @@ class _LocationEntryState extends State<LocationEntry> {
                   ),
                 ),
               CountryDropdown(
-                onChanged: (String value) => _updateLocation(
-                    UserLocation(country: value, zipCode: null)),
+                onChanged: (String value) => _updateLocation(UserLocation(
+                  country: value,
+                  postalCode: null,
+                )),
                 value: _displayedLocation.country,
               ),
               if (_isUSA)
                 EntryField(
                   key: zipCodeKey,
-                  initialValue: _displayedLocation.zipCode,
+                  initialValue: _displayedLocation.postalCode,
                   onChanged: (String value) => _updateLocation(
-                      UserLocation(zipCode: value, country: 'US')),
+                      UserLocation(postalCode: value, country: 'US')),
                   label: localizations.locationStepZipCode,
                   keyboardType: TextInputType.numberWithOptions(
                       decimal: false, signed: false),

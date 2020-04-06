@@ -8,7 +8,9 @@
 
 3. Fork this repository and clone your fork.
 
-4. Run the project using your IDE or the Flutter CLI:
+4. Create an environment configuration file (.env) with the structure shown in [the example .env file](env.example).
+
+5. Run the project using your IDE or the Flutter CLI:
    ```
    flutter run
    ```

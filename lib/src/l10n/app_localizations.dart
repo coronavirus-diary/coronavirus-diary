@@ -98,6 +98,21 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
+  // Tooltip for the 'three dots' main menu on the home page.
+  String get homeMenuTooltip;
+
+  // Label for the about button in the home page menu.
+  String get homeMenuAbout;
+
+  // Semantic Label for the about button in the home page menu.
+  String get homeMenuAboutSemantics;
+
+  // Description in the 'About' box, above a hyperlink to the source website.
+  String get aboutBoxDescription;
+
+  // Text label on a hyperlink to the source code for the app.
+  String get aboutBoxLinkText;
+
   // The long informed consent question asked of users
   String get consentStepQuestion;
 
@@ -146,12 +161,6 @@ abstract class AppLocalizations {
   // Explain what the app will tell the patient once they have answered the questions
   String get introStepAtTheEnd;
 
-  // Explain that turning the switch on means that the patient data will be shared with the COVID-19 response effort
-  String get introStepSwitchLabelContributeData;
-
-  // Explain that turning the switch on also means that the COVID-19 response effort will ask for the patient's zip code
-  String get introStepSwitchLabelCollectPostalCode;
-
   // Starts the checkup by showing the first checkup screen
   String get introStepButtonStartLabel;
 
@@ -176,9 +185,6 @@ abstract class AppLocalizations {
   // Error that is displayed if the temperature entered is not in a valid temperature range.
   String get temperatureStepTemperatureOutOfRangeError;
 
-  // Label for entry field
-  String get temperatureStepTemperatureLabel;
-
   // Step 1 in the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogStep1;
 
@@ -196,9 +202,6 @@ abstract class AppLocalizations {
 
   // Return to the checkup screen from the dialog that explains how to take your temperature in 5 steps
   String get temperatureStepHowToDialogReturn;
-
-  // Title that appears above the text field where the user enters their temperature
-  String get temperatureStepTitle;
 
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
@@ -223,12 +226,6 @@ abstract class AppLocalizations {
 
   // Label for a button that shows the checkup screen
   String get homeScreenCheckupButtonLabel;
-
-  // Tell the user that they've already completed a checkup today
-  String get homeScreenYouHaveCompletedCheckup;
-
-  // Tell a user that has already completed their checkup that they can check again tomorrow
-  String get homeScreenCheckBackTomorrow;
 
   // Label next to loading indicator
   String get systemReportSubmitting;
@@ -287,17 +284,17 @@ abstract class AppLocalizations {
   // Semantics label for getStartedStepJoined which makes CovidNearMe legible for screen readers
   String get getStartedStepJoinedSemanticsLabel;
 
-  // Label for the button that indicates that the user did not accept the app license
-  String get consentStepDidNotAgree;
-
   // Label for the button that indicates that the user will not accept the app license
-  String get consentStepNo;
+  String get consentStepDecline;
 
-  // Label for the button that indicates that the user did accept the app license
-  String get consentStepAgreed;
+  // Label for the button that indicates that the user did not accept the app license
+  String get consentStepDeclineActive;
 
   // Label for the button that indicates that the user will accept the app license
-  String get consentStepIAgree;
+  String get consentStepAgree;
+
+  // Label for the button that indicates that the user did accept the app license
+  String get consentStepAgreeActive;
 
   // Label for button that indicates that the user will continue using the app offline
   String get networkUnavailableBannerContinueOffline;

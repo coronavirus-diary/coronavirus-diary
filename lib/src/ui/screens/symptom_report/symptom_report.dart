@@ -4,6 +4,7 @@ import 'package:flutter_hud/flutter_hud.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
@@ -11,7 +12,9 @@ import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 
+import 'symptom_report_controller.dart';
 import 'symptom_report_loaded_body.dart';
+import 'steps/index.dart';
 
 class SymptomReportScreen extends StatefulWidget {
   static const routeName = '/symptom_report';
@@ -56,6 +59,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   // across the entire checkup experience
   PageController _pageController;
   bool _showLoadingAssessmentHUD = false;
+  List<SymptomReportStep> steps = [];
 
   @override
   void initState() {
@@ -102,15 +106,13 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     );
   }
 
-  Widget _getBody(
-    SymptomReportState symptomReportState,
-  ) {
+  Widget _getBody(SymptomReportState symptomReportState) {
     switch (symptomReportState.runtimeType) {
       case SymptomReportStateNotCreated:
       case SymptomReportStateCreating:
         return _getUnloadedBody(symptomReportState);
       case SymptomReportStateInProgress:
-        return SymptomReportLoadedBody();
+        return SymptomReportLoadedBody(steps: steps);
       case SymptomReportStateCompleting:
       case SymptomReportStateCompleted:
         return Container();
@@ -122,46 +124,61 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    return BlocConsumer<SymptomReportBloc, SymptomReportState>(
-      listener: (context, state) {
-        if (state is SymptomReportStateCompleting) {
-          if (!_showLoadingAssessmentHUD) {
-            setState(() {
-              _showLoadingAssessmentHUD = true;
-            });
-          }
-        } else if (state is SymptomReportStateCompleted) {
-          _handleCheckupCompletion(state);
-        }
-      },
+    return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
-        final SymptomReportState checkupState = state;
+        final PreferencesState preferencesState = state;
+        if (steps.isEmpty) {
+          steps = getSteps(state);
+        }
 
-        return WidgetHUD(
-          showHUD: _showLoadingAssessmentHUD,
-          hud: HUD(
-            color: Theme.of(context).colorScheme.surface,
-            opacity: 1.0,
-            labelStyle: Theme.of(context).textTheme.headline,
-            label: localizations.systemReportSubmitting,
-          ),
-          builder: (context) {
-            return ChangeNotifierProvider<PageController>.value(
-              value: _pageController,
-              child: Scaffold(
-                appBar: AppBar(
-                  title: Text(AppLocalizations.of(context).checkupScreenTitle),
-                  leading: IconButton(
-                    icon: Icon(Icons.close),
-                    onPressed: () => Navigator.pop(context),
-                    tooltip: localizations.systemReportBackToHomePage,
-                  ),
-                ),
-                backgroundColor: Theme.of(context).backgroundColor,
-                body: NetworkUnavailableBanner.wrap(
-                  _getBody(checkupState),
-                ),
+        return BlocConsumer<SymptomReportBloc, SymptomReportState>(
+          listener: (context, state) {
+            if (state is SymptomReportStateCompleting) {
+              if (!_showLoadingAssessmentHUD) {
+                setState(() {
+                  _showLoadingAssessmentHUD = true;
+                });
+              }
+            } else if (state is SymptomReportStateCompleted) {
+              _handleCheckupCompletion(state);
+            }
+          },
+          builder: (context, state) {
+            final SymptomReportState checkupState = state;
+
+            return WidgetHUD(
+              showHUD: _showLoadingAssessmentHUD,
+              hud: HUD(
+                color: Theme.of(context).colorScheme.surface,
+                opacity: 1.0,
+                labelStyle: Theme.of(context).textTheme.headline,
+                label: localizations.systemReportSubmitting,
               ),
+              builder: (context) {
+                return Provider<SymptomReportController>.value(
+                  value: SymptomReportController(
+                    context: context,
+                    pageController: _pageController,
+                    preferencesState: preferencesState,
+                    steps: steps,
+                  ),
+                  child: Scaffold(
+                    appBar: AppBar(
+                      title:
+                          Text(AppLocalizations.of(context).checkupScreenTitle),
+                      leading: IconButton(
+                        icon: Icon(Icons.close),
+                        onPressed: () => Navigator.pop(context),
+                        tooltip: localizations.systemReportBackToHomePage,
+                      ),
+                    ),
+                    backgroundColor: Theme.of(context).backgroundColor,
+                    body: NetworkUnavailableBanner.wrap(
+                      _getBody(checkupState),
+                    ),
+                  ),
+                );
+              },
             );
           },
         );
