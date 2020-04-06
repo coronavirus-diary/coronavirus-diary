@@ -216,7 +216,11 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Check back in if you continue to experience symptoms.';
 
   @override
-  String get tutorialIntroStepWelcome => 'Welcome to the CovidNearMe App';
+  String get tutorialIntroStepWelcome => 'Welcome to CovidNearMe';
+
+  @override
+  String get tutorialIntroStepDescription =>
+      'CovidNearMe lets you view statistics about COVID-19 in your local area and submit your symptoms to inform the disease response efforts.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>
@@ -234,7 +238,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
 
   @override
-  String get tutorialIntroStepLearnMore => 'LEARN MORE';
+  String get tutorialIntroStepGetStarted => 'GET STARTED';
 
   @override
   String get getStartedStepJoined =>

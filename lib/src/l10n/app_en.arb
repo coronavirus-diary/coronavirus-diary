@@ -276,9 +276,14 @@
     "description": "Step 3 for the screen that lists 3 steps for staying safe"
   },
 
-  "tutorialIntroStepWelcome": "Welcome to the CovidNearMe App",
+  "tutorialIntroStepWelcome": "Welcome to CovidNearMe",
   "@tutorialIntroStepWelcome": {
     "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
+  },
+
+  "tutorialIntroStepDescription": "CovidNearMe lets you view statistics about COVID-19 in your local area and submit your symptoms to inform the disease response efforts.",
+  "@tutorialIntroStepDescription": {
+    "description": "Brief description below the name of the app."
   },
 
   "tutorialIntroStepWelcomeSemanticsLabel": "Welcome to the Covid Near Me App",
@@ -301,8 +306,8 @@
     "description": "Describes the benefit of the app to the community."
   },
 
-  "tutorialIntroStepLearnMore": "LEARN MORE",
-  "@tutorialIntroStepLearnMore": {
+  "tutorialIntroStepGetStarted": "GET STARTED",
+  "@tutorialIntroStepGetStarted": {
     "description": "Label for the button that shows the next app screen"
   },
 

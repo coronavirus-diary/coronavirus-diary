@@ -14,11 +14,11 @@ void main() {
         storageDirectory: MemoryFileSystem.test().currentDirectory);
   });
 
-  testWidgets('Tutorial intro step displays learn more button',
+  testWidgets('Tutorial intro step displays get started button',
       (WidgetTester tester) async {
     await tester.pumpWidget(setUpTutorialScreen(child: TutorialIntroStep()));
 
-    expect(find.text('LEARN MORE'), findsOneWidget);
+    expect(find.text('GET STARTED'), findsOneWidget);
   });
 }
 
