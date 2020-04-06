@@ -33,11 +33,10 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
     }
   }
 
-  void _handleChange(dynamic realValue, [dynamic widgetValue]) {
+  void _handleChange(dynamic value) {
     setState(() {
-      currentValue = realValue;
-      if (widgetValue == null) widgetValue = realValue;
-      widget.onChanged?.call(widgetValue as T);
+      currentValue = value;
+      widget.onChanged?.call(value as T);
     });
   }
 
@@ -51,10 +50,7 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
           value: scaleQuestion.values.indexOf(currentValue),
           semanticLabels: scaleQuestion.semanticLabels,
           onChanged: (int value) {
-            _handleChange(
-              value != null ? scaleQuestion.values[value] : null,
-              value,
-            );
+            _handleChange(value != null ? scaleQuestion.values[value] : null);
           },
         );
         break;
