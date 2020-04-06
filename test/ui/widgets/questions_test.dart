@@ -40,7 +40,7 @@ void main() {
     await tester.pumpWidget(
       setUpConfiguration(
         QuestionItem(
-          onChanged: (int value) {},
+          onChanged: (String value) {},
           question: ScaleQuestion(
             id: '0',
             title: 'title',
