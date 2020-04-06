@@ -121,7 +121,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Your answers will be anonymously submitted to a secure server and used to inform COVID-19 response efforts by providing medical experts and policy makers with information and predictive models.';
 
   @override
-  String get symptomReportIntroStepStartButton => 'TAP TO START';
+  String get symptomReportIntroStepStartButton => 'START';
 
   @override
   String get symptomReportLocationStepTitle =>
@@ -255,7 +255,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
 
   @override
-  String get tutorialIntroStepGetStarted => 'TAP HERE TO GET STARTED';
+  String get tutorialIntroStepGetStarted => 'GET STARTED';
 
   @override
   String get consentStepDecline => 'I DON\'T AGREE';
