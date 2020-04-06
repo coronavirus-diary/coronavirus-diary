@@ -211,7 +211,7 @@ class _MainMenu extends StatelessWidget {
               semanticsLabel: localizations.homeMenuAboutSemantics,
             ),
           ),
-          if (kReleaseMode == false)
+          if (!kReleaseMode)
             PopupMenuItem<String>(
               key: ValueKey('homeScreenDebugDeleteDataButton'),
               value: 'clear_data',
