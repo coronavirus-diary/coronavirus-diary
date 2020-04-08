@@ -241,9 +241,9 @@
     "description": "Tooltip for the back button"
   },
 
-  "shareAppDownloadPrompt": "Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! APP_LINK",
+  "shareAppDownloadPrompt": "Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! {{ APP_LINK }}",
   "@shareAppDownloadPrompt": {
-    "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime"
+    "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The {{ APP_LINK }} word should not be translated, it will be replaced by a link the app at runtime"
   },
 
   "homeScreenShareAppTitle": "Help protect your community by sharing the app",

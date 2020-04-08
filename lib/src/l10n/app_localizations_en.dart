@@ -199,7 +199,7 @@ If you do so, you will be asked for your consent again. You can then accept it a
 
   @override
   String get shareAppDownloadPrompt =>
-      'Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! APP_LINK';
+      'Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! {{ APP_LINK }}';
 
   @override
   String get homeScreenShareAppTitle =>

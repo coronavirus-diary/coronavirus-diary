@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:package_info/package_info.dart';
-import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
@@ -13,6 +12,7 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/utils/share.dart';
 import 'home_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,10 +25,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void _shareApp() {
-    Share.share(AppLocalizations.of(context).shareAppDownloadPrompt);
-  }
-
   Widget _getBody(PreferencesState state) {
     final AppLocalizations localizations = AppLocalizations.of(context);
 
@@ -59,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           subtitle: Text(localizations.homeScreenShareAppSubtitle),
           button: RaisedButton(
             key: ValueKey('homeScreenShareAppButton'),
-            onPressed: _shareApp,
+            onPressed: () => shareApp(context),
             child: Text(localizations.homeScreenShareAppButton),
           ),
         ),
