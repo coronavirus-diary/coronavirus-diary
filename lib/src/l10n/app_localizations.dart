@@ -222,18 +222,6 @@ abstract class AppLocalizations {
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
 
-  // Title that appears above the text field where the user enters their location during the tutorial
-  String get tutorialLocationStepTitle;
-
-  // Title that appears above the text field where the user enters their location
-  String get locationStepTitle;
-
-  // Error that appears when the user enters their zip code incorrectly.
-  String get locationStepInvalidZipCode;
-
-  // Title that appears within the text field where the user enters their ZIP code
-  String get locationStepZipCode;
-
   // Heading text for the home screen
   String get homeScreenReportSymptomsTitle;
 
@@ -290,6 +278,18 @@ abstract class AppLocalizations {
 
   // Label for the button that shows the next app screen
   String get tutorialIntroStepGetStarted;
+
+  // Title that appears above the text field where the user enters their location during the tutorial
+  String get tutorialLocationStepTitle;
+
+  // Title that appears above the text field where the user enters their location
+  String get locationStepTitle;
+
+  // Error that appears when the user enters their zip code incorrectly.
+  String get locationStepInvalidZipCode;
+
+  // Title that appears within the text field where the user enters their ZIP code
+  String get locationStepZipCode;
 
   // Label for the button that indicates that the user will not accept the app license
   String get consentStepDecline;

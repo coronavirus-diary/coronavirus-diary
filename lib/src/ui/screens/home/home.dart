@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:package_info/package_info.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
-import 'package:covidnearme/src/ui/widgets/share.dart';
-import 'package:package_info/package_info.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'share.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           child: ListTile(
-            contentPadding: EdgeInsets.all(20),
+            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             key: ValueKey<String>('homeScreenStartSymptomReport'),
             onTap: () =>
                 Navigator.pushNamed(context, SymptomReportScreen.routeName),

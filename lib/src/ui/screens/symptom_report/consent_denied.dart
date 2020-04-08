@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 class SymptomReportConsentDeniedScreen extends StatelessWidget {
   static const routeName = '/symptom_report/denied_consent';
@@ -13,7 +12,6 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
     return Scaffold(
       key: ValueKey('symptomReportConsentDeniedScreen'),
       appBar: AppBar(
-        brightness: Brightness.light,
         leading: IconButton(
           key: ValueKey('symptomReportConsentDeniedCloseButton'),
           tooltip: localizations.deniedConsentBackButton,
@@ -32,32 +30,28 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
               size: 100,
             ),
           ),
-          Text(
-            localizations.deniedConsentHeading,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.only(left: 40, right: 40, bottom: 20),
+            child: Text(
+              localizations.deniedConsentHeading,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Theme.of(context).primaryColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           Flexible(
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 8,
-              ),
-              child: Markdown(
-                physics: NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.fromLTRB(20, 40, 20, 150),
-                data: localizations.deniedConsentMessage,
-                styleSheet:
-                    MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
-                  h1Align: WrapAlignment.center,
-                  p: Theme.of(context).textTheme.body2.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface,
-                      ),
-                  textScaleFactor: MediaQuery.of(context).textScaleFactor,
-                ),
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Text(
+                localizations.deniedConsentMessage,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.body2.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                      fontSize: 16,
+                    ),
               ),
             ),
           ),

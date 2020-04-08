@@ -31,12 +31,12 @@
     "description": "The long informed consent question asked of users"
   },
 
-  "deniedConsentHeading": "Consent Declined",
+  "deniedConsentHeading": "We cannot collect information without your Informed Consent",
   "@deniedConsentHeading":  {
     "description": "Heading for the page show reminds the user that they've said no"
   },
 
-  "deniedConsentMessage": "Thank you for considering joining our effort. If you change your mind and decide to consent later, try reporting your symptoms again. You will be asked for your consent again and then you can accept it and enter your symptoms.",
+  "deniedConsentMessage": "Thank you for considering joining our effort. You can return whenever you like.\n\nIf you do so, you will be asked for your consent again. You can then accept it and enter your symptoms.",
   "@deniedConsentMessage":  {
     "description": "The app's response if the user does not agree to the informed consent question"
   },
@@ -56,12 +56,12 @@
     "description": "A note thanking the user for submitting their data"
   },
 
-  "thankYouScreenCallToAction": "If you continue to experience symptoms, please check in again tomorrow.",
+  "thankYouScreenCallToAction": "Repeat the health check-up if you continue to feel symptoms tomorrow.",
   "@thankYouScreenCallToAction":  {
     "description": "Ask the user to report their symptoms again tomorrow"
   },
 
-  "thankYouScreenSeriousSymptoms": "If they become serious, please consult a physician.",
+  "thankYouScreenSeriousSymptoms": "If your symptoms worsen, consult your health care provider.",
   "@thankYouScreenSeriousSymptoms":  {
     "description": "Ask the user to contact a physician if their symptoms become serious"
   },
@@ -76,17 +76,17 @@
     "description": "Button for sharing the app"
   },
 
-  "symptomReportLoading": "Loading the symptom report experience.",
+  "symptomReportLoading": "Loading",
   "@symptomReportLoading": {
     "description": "Tell the user that the symptom report is loading"
   },
 
-  "symptomReportErrorRetrievingExperience": "There was an error retrieving the symptom report experience. Please try again later.",
+  "symptomReportErrorRetrievingExperience": "There was an error and the symptom questions could not be loaded. Please try again later.",
   "@symptomReportErrorRetrievingExperience": {
     "description": "An error occurred while trying to fetch data"
   },
 
-  "symptomReportTitle": "Report Your Symptoms",
+  "symptomReportTitle": "Record your symptoms",
   "@symptomReportTitle": {
     "description": "Title for the symptom report screen"
   },
@@ -111,7 +111,7 @@
     "description": "Submit the symptom report"
   },
 
-  "symptomReportNextButton": "NEXT",
+  "symptomReportNextButton": "CONTINUE",
   "@symptomReportNextButton": {
     "description": "Continue to the next symptom report step"
   },
@@ -121,27 +121,27 @@
     "description": "Prompt when all the questions haven't been answered yet."
   },
 
-  "symptomReportIntroStepTitle": "Report Your Symptoms",
+  "symptomReportIntroStepTitle": "Record your symptoms",
   "@symptomReportIntroStepTitle": {
     "description": "Title for the symptom report intro step"
   },
 
-  "symptomReportIntroStepHealthQuestions": "You will be asked a few questions about your health.",
+  "symptomReportIntroStepHealthQuestions": "Answer a few simple questions about your health to start tracking your symptoms.",
   "@symptomReportIntroStepHealthQuestions": {
     "description": "Tell the user that they will be asked questions"
   },
 
-  "symptomReportIntroStepDataContribution": "Your answers will be anonymously submitted to a secure server and used to inform COVID-19 response efforts by providing medical experts and policy makers with information and predictive models.",
+  "symptomReportIntroStepDataContribution": "Your answers are anonymous and will be used to help aid COVID-19 response efforts. Experts will use your anonymous information to predict and improve disease responses.",
   "@symptomReportIntroStepDataContribution": {
     "description": "Explain that the data will be submitted anonymously and used for COVID-19 response efforts"
   },
 
-  "symptomReportIntroStepStartButton": "START",
+  "symptomReportIntroStepStartButton": "GET STARTED",
   "@symptomReportIntroStepStartButton": {
     "description": "Starts the symptom report by showing the first step"
   },
 
-  "symptomReportLocationStepTitle": "Confirm the location in which you are experiencing symptoms",
+  "symptomReportLocationStepTitle": "What's your current location?",
   "@symptomReportLocationStepTitle": {
     "description": "Title for the symptom report location step"
   },
@@ -156,12 +156,12 @@
     "description": "Subsection heading for recommendations about when to measure the user's temperature"
   },
 
-  "temperatureStepWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising",
+  "temperatureStepWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising.",
   "@temperatureStepWait30Minutes": {
     "description": "User advice"
   },
 
-  "temperatureStepWait6Hours": "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)",
+  "temperatureStepWait6Hours": "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin).",
   "@temperatureStepWait6Hours": {
     "description": "User advice"
   },
@@ -171,7 +171,7 @@
     "description": "Subsection heading for recommendations about how to measure the user's temperature"
   },
 
-  "temperatureStepHowToDialogTitle": "Taking your Temperature",
+  "temperatureStepHowToDialogTitle": "When and how to take your temperature",
   "@temperatureStepHowToDialogTitle": {
     "description": "Title for a dialog that explains how to take your temperature in 5 steps"
   },
@@ -181,7 +181,7 @@
     "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
   },
 
-  "temperatureStepHowToDialogStep1": "Wash your hands using soap and water",
+  "temperatureStepHowToDialogStep1": "Wash your hands using soap and water.",
   "@temperatureStepHowToDialogStep1": {
     "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
   },
@@ -206,47 +206,27 @@
     "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
   },
 
-  "temperatureStepHowToDialogReturn": "RETURN TO SYMPTOM REPORT",
+  "temperatureStepHowToDialogReturn": "CLOSE",
   "@temperatureStepHowToDialogReturn": {
     "description": "Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps"
   },
 
-  "temperatureStepHelp": "HOW TO TAKE YOUR TEMPERATURE",
+  "temperatureStepHelp": "NEED HELP? TAP FOR INSTRUCTIONS",
   "@temperatureStepHelp": {
     "description": "Label for a button that brings up a help screen"
   },
 
-  "tutorialLocationStepTitle": "What is your location?",
-  "@tutorialLocationStepTitle": {
-    "description": "Title that appears above the text field where the user enters their location during the tutorial"
-  },
-
-  "locationStepTitle": "Verify your location",
-  "@locationStepTitle": {
-    "description": "Title that appears above the text field where the user enters their location"
-  },
-
-  "locationStepInvalidZipCode": "Please enter a valid USPS ZIP code",
-  "@locationStepInvalidZipCode": {
-    "description": "Error that appears when the user enters their zip code incorrectly."
-  },
-
-  "locationStepZipCode": "5-Digit ZIP Code",
-  "@locationStepZipCode": {
-    "description": "Title that appears within the text field where the user enters their ZIP code"
-  },
-
-  "homeScreenReportSymptomsTitle": "Report Your Symptoms",
+  "homeScreenReportSymptomsTitle": "Record your symptoms",
   "@homeScreenReportSymptomsTitle": {
     "description": "Heading text for the home screen"
   },
 
-  "homeScreenReportSymptomsSubtitle": "Are you feeling sick? Anonymously report your symptoms and aid the COVID-19 response effort.",
+  "homeScreenReportSymptomsSubtitle": "Quick and easy health check-in",
   "@homeScreenReportSymptomsSubtitle": {
     "description": "Subheading text for the home screen"
   },
 
-  "systemReportSubmitting": "Submitting your report",
+  "systemReportSubmitting": "Submitting your symptoms",
   "@systemReportSubmitting": {
     "description": "Label next to loading indicator"
   },
@@ -256,22 +236,22 @@
     "description": "Tooltip for the back button"
   },
 
-  "shareAppDownloadPrompt": "Download this app to view local COVID-19 statistics and support the community by anonymously reporting your symptoms: APP_LINK",
+  "shareAppDownloadPrompt": "Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! APP_LINK",
   "@shareAppDownloadPrompt": {
     "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime"
   },
 
-  "shareAppTitle": "Support Your Community",
+  "shareAppTitle": "Help protect your community by sharing the app",
   "@shareAppTitle": {
     "description": "Title for the app sharing sheet, see https://pub.dev/packages/share"
   },
 
-  "shareAppWithFriendsEtc": "Share this app with your friends, family, and coworkers.",
+  "shareAppWithFriendsEtc": "Share the app with friends and family and keep your community healthy",
   "@shareAppWithFriendsEtc": {
     "description": "Subheading for the app sharing sheet, see https://pub.dev/packages/share"
   },
 
-  "shareAppNow": "SHARE NOW",
+  "shareAppNow": "SHARE",
   "@shareAppNow": {
     "description": "Final prompt to share the app for the app sharing sheeting, see https://pub.dev/packages/share"
   },
@@ -301,7 +281,7 @@
     "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
   },
 
-  "tutorialIntroStepDescription": "CovidNearMe lets you view local COVID-19 statistics and submit your symptoms to inform the disease response efforts.",
+  "tutorialIntroStepDescription": "CovidNearMe helps you track your health and stay up-to-date",
   "@tutorialIntroStepDescription": {
     "description": "Brief description below the name of the app."
   },
@@ -329,6 +309,26 @@
   "tutorialIntroStepGetStarted": "GET STARTED",
   "@tutorialIntroStepGetStarted": {
     "description": "Label for the button that shows the next app screen"
+  },
+
+  "tutorialLocationStepTitle": "What's your current location?",
+  "@tutorialLocationStepTitle": {
+    "description": "Title that appears above the text field where the user enters their location during the tutorial"
+  },
+
+  "locationStepTitle": "Verify your location",
+  "@locationStepTitle": {
+    "description": "Title that appears above the text field where the user enters their location"
+  },
+
+  "locationStepInvalidZipCode": "Please enter a valid 5-digit Zip Code",
+  "@locationStepInvalidZipCode": {
+    "description": "Error that appears when the user enters their zip code incorrectly."
+  },
+
+  "locationStepZipCode": "Zip Code",
+  "@locationStepZipCode": {
+    "description": "Title that appears within the text field where the user enters their ZIP code"
   },
 
   "consentStepDecline": "I DON'T AGREE",

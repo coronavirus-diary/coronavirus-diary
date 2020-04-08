@@ -42,11 +42,14 @@ We will not sell this data. It will only be used for public health and research 
 If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don\'t agree\".''';
 
   @override
-  String get deniedConsentHeading => 'Consent Declined';
+  String get deniedConsentHeading =>
+      'We cannot collect information without your Informed Consent';
 
   @override
   String get deniedConsentMessage =>
-      'Thank you for considering joining our effort. If you change your mind and decide to consent later, try reporting your symptoms again. You will be asked for your consent again and then you can accept it and enter your symptoms.';
+      '''Thank you for considering joining our effort. You can return whenever you like.
+
+If you do so, you will be asked for your consent again. You can then accept it and enter your symptoms.''';
 
   @override
   String get thankYouScreenTitle => 'Thank you';
@@ -60,11 +63,11 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get thankYouScreenCallToAction =>
-      'If you continue to experience symptoms, please check in again tomorrow.';
+      'Repeat the health check-up if you continue to feel symptoms tomorrow.';
 
   @override
   String get thankYouScreenSeriousSymptoms =>
-      'If they become serious, please consult a physician.';
+      'If your symptoms worsen, consult your health care provider.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'SAFETY TIPS';
@@ -73,14 +76,14 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get thankYouScreenShareAppButton => 'SHARE THE APP';
 
   @override
-  String get symptomReportLoading => 'Loading the symptom report experience.';
+  String get symptomReportLoading => 'Loading';
 
   @override
   String get symptomReportErrorRetrievingExperience =>
-      'There was an error retrieving the symptom report experience. Please try again later.';
+      'There was an error and the symptom questions could not be loaded. Please try again later.';
 
   @override
-  String get symptomReportTitle => 'Report Your Symptoms';
+  String get symptomReportTitle => 'Record your symptoms';
 
   @override
   String symptomReportProgressBarPercentCompleteText(
@@ -103,29 +106,28 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get symptomReportSubmitButton => 'SUBMIT';
 
   @override
-  String get symptomReportNextButton => 'NEXT';
+  String get symptomReportNextButton => 'CONTINUE';
 
   @override
   String get symptomReportAnswerAllQuestions =>
       'Please answer all the questions to continue';
 
   @override
-  String get symptomReportIntroStepTitle => 'Report Your Symptoms';
+  String get symptomReportIntroStepTitle => 'Record your symptoms';
 
   @override
   String get symptomReportIntroStepHealthQuestions =>
-      'You will be asked a few questions about your health.';
+      'Answer a few simple questions about your health to start tracking your symptoms.';
 
   @override
   String get symptomReportIntroStepDataContribution =>
-      'Your answers will be anonymously submitted to a secure server and used to inform COVID-19 response efforts by providing medical experts and policy makers with information and predictive models.';
+      'Your answers are anonymous and will be used to help aid COVID-19 response efforts. Experts will use your anonymous information to predict and improve disease responses.';
 
   @override
-  String get symptomReportIntroStepStartButton => 'START';
+  String get symptomReportIntroStepStartButton => 'GET STARTED';
 
   @override
-  String get symptomReportLocationStepTitle =>
-      'Confirm the location in which you are experiencing symptoms';
+  String get symptomReportLocationStepTitle => 'What\'s your current location?';
 
   @override
   String get questionsStepQuestionsLoadedError =>
@@ -136,17 +138,18 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get temperatureStepWait30Minutes =>
-      'Wait 30 minutes after eating, drinking, or exercising';
+      'Wait 30 minutes after eating, drinking, or exercising.';
 
   @override
   String get temperatureStepWait6Hours =>
-      'Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin)';
+      'Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin).';
 
   @override
   String get temperatureStepHowHeading => 'How?';
 
   @override
-  String get temperatureStepHowToDialogTitle => 'Taking your Temperature';
+  String get temperatureStepHowToDialogTitle =>
+      'When and how to take your temperature';
 
   @override
   String get temperatureStepTemperatureOutOfRangeError =>
@@ -154,7 +157,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get temperatureStepHowToDialogStep1 =>
-      'Wash your hands using soap and water';
+      'Wash your hands using soap and water.';
 
   @override
   String get temperatureStepHowToDialogStep2 =>
@@ -173,49 +176,37 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'Take out your thermometer and record your temperature.';
 
   @override
-  String get temperatureStepHowToDialogReturn => 'RETURN TO SYMPTOM REPORT';
+  String get temperatureStepHowToDialogReturn => 'CLOSE';
 
   @override
-  String get temperatureStepHelp => 'HOW TO TAKE YOUR TEMPERATURE';
+  String get temperatureStepHelp => 'NEED HELP? TAP FOR INSTRUCTIONS';
 
   @override
-  String get tutorialLocationStepTitle => 'What is your location?';
-
-  @override
-  String get locationStepTitle => 'Verify your location';
-
-  @override
-  String get locationStepInvalidZipCode => 'Please enter a valid USPS ZIP code';
-
-  @override
-  String get locationStepZipCode => '5-Digit ZIP Code';
-
-  @override
-  String get homeScreenReportSymptomsTitle => 'Report Your Symptoms';
+  String get homeScreenReportSymptomsTitle => 'Record your symptoms';
 
   @override
   String get homeScreenReportSymptomsSubtitle =>
-      'Are you feeling sick? Anonymously report your symptoms and aid the COVID-19 response effort.';
+      'Quick and easy health check-in';
 
   @override
-  String get systemReportSubmitting => 'Submitting your report';
+  String get systemReportSubmitting => 'Submitting your symptoms';
 
   @override
   String get systemReportBackToHomePage => 'Go back to the home page';
 
   @override
   String get shareAppDownloadPrompt =>
-      'Download this app to view local COVID-19 statistics and support the community by anonymously reporting your symptoms: APP_LINK';
+      'Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! APP_LINK';
 
   @override
-  String get shareAppTitle => 'Support Your Community';
+  String get shareAppTitle => 'Help protect your community by sharing the app';
 
   @override
   String get shareAppWithFriendsEtc =>
-      'Share this app with your friends, family, and coworkers.';
+      'Share the app with friends and family and keep your community healthy';
 
   @override
-  String get shareAppNow => 'SHARE NOW';
+  String get shareAppNow => 'SHARE';
 
   @override
   String get staySafeTitle => 'Stay Safe';
@@ -237,7 +228,7 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get tutorialIntroStepDescription =>
-      'CovidNearMe lets you view local COVID-19 statistics and submit your symptoms to inform the disease response efforts.';
+      'CovidNearMe helps you track your health and stay up-to-date';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>
@@ -256,6 +247,19 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get tutorialIntroStepGetStarted => 'GET STARTED';
+
+  @override
+  String get tutorialLocationStepTitle => 'What\'s your current location?';
+
+  @override
+  String get locationStepTitle => 'Verify your location';
+
+  @override
+  String get locationStepInvalidZipCode =>
+      'Please enter a valid 5-digit Zip Code';
+
+  @override
+  String get locationStepZipCode => 'Zip Code';
 
   @override
   String get consentStepDecline => 'I DON\'T AGREE';
