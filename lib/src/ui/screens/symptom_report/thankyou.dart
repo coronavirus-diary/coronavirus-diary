@@ -1,11 +1,11 @@
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:share/share.dart';
 
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/utils/share.dart';
 
 class ThankYouScreen extends StatefulWidget {
   static const routeName = '/symptom-report/thankyou';
@@ -115,8 +115,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                     ),
                     Expanded(
                       child: RaisedButton(
-                        onPressed: () =>
-                            Share.share(localizations.shareAppDownloadPrompt),
+                        onPressed: () => shareApp(context),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7),
                           side: BorderSide(
