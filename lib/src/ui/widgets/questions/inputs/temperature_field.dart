@@ -94,7 +94,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
 
   Future<void> _showInstructions(BuildContext context) async {
     final categoryFontStyle = TextStyle(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).colorScheme.primary,
       fontWeight: FontWeight.bold,
       fontSize: 18,
     );

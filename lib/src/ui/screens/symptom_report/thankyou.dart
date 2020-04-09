@@ -95,7 +95,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                           ),
                         ),
                         color: Colors.white,
-                        textColor: Theme.of(context).primaryColor,
+                        textColor: Theme.of(context).colorScheme.primary,
                         child: Column(
                           children: <Widget>[
                             Container(
@@ -124,7 +124,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                           ),
                         ),
                         color: Colors.white,
-                        textColor: Theme.of(context).primaryColor,
+                        textColor: Theme.of(context).colorScheme.primary,
                         child: Column(
                           children: <Widget>[
                             Container(

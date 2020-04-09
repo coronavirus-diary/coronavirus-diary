@@ -69,8 +69,11 @@ class _TutorialScreenState extends State<TutorialScreen> {
 
 ThemeData _getTutorialTheme(BuildContext context) {
   return Theme.of(context).copyWith(
-    primaryColor: Colors.white,
-    scaffoldBackgroundColor: Theme.of(context).primaryColor,
+    colorScheme: Theme.of(context).colorScheme.copyWith(
+          primary: Colors.white,
+          background: Theme.of(context).colorScheme.primary,
+        ),
+    scaffoldBackgroundColor: Theme.of(context).colorScheme.primary,
     buttonTheme: Theme.of(context).buttonTheme.copyWith(
           buttonColor: Theme.of(context).accentColor,
         ),

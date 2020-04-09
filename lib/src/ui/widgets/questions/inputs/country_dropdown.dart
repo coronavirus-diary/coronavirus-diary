@@ -137,7 +137,7 @@ class _CountryDropdownState extends State<CountryDropdown> {
                 items: _dropdownItems,
                 style: Theme.of(context).textTheme.subhead,
                 value: widget.value,
-                iconEnabledColor: Theme.of(context).primaryColor,
+                iconEnabledColor: Theme.of(context).colorScheme.primary,
                 iconSize: 40,
                 isExpanded: true,
               ),

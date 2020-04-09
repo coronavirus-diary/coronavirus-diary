@@ -36,7 +36,7 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
               localizations.deniedConsentHeading,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         HomeCard(
           leading: FaIcon(
             FontAwesomeIcons.handHoldingHeart,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             size: 40,
           ),
           title: Text(localizations.homeScreenShareAppTitle),

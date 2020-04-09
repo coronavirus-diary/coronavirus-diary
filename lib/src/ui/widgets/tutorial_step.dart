@@ -43,7 +43,7 @@ class TutorialStep extends StatelessWidget {
       padding: leadingPadding ?? EdgeInsets.all(12),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: leadingBackgroundColor ?? Theme.of(context).primaryColor,
+        color: leadingBackgroundColor ?? Theme.of(context).colorScheme.primary,
       ),
       child: leadingChild,
     );
