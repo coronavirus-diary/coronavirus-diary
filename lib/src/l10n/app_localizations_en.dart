@@ -182,6 +182,17 @@ If you do so, you will be asked for your consent again. You can then accept it a
   String get temperatureStepHelp => 'NEED HELP? TAP FOR INSTRUCTIONS';
 
   @override
+  String get homeScreenLocalStatisticsTitle =>
+      'Get local COVID-19 news and information';
+
+  @override
+  String get homeScreenLocalStatisticsSubtitle =>
+      'See statistics and get up-to-date information on your community';
+
+  @override
+  String get homeScreenLocalStatisticsButton => 'GET STARTED';
+
+  @override
   String get homeScreenReportSymptomsTitle => 'Record your symptoms';
 
   @override
@@ -469,4 +480,26 @@ If you do so, you will be asked for your consent again. You can then accept it a
 
   @override
   String get locationStepCountryButtonLabel => 'Country:';
+
+  @override
+  String get localStatisticsTitle => 'Local COVID-19 Statistics';
+
+  @override
+  String get localStatisticsNoLocationSelected =>
+      'Select a location to view its statistics.';
+
+  @override
+  String get localStatisticsLocationInput => 'Zip Code or Country';
+
+  @override
+  String get localStatisticsRecentLocationsMenuTitle => 'Recent locations';
+
+  @override
+  String get statisticsLabelCases => 'Cases';
+
+  @override
+  String get statisticsLabelDeaths => 'Deaths';
+
+  @override
+  String get statisticsLabelRecoveries => 'Recoveries';
 }
