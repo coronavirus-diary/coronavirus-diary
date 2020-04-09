@@ -222,11 +222,14 @@ abstract class AppLocalizations {
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
 
-  // Heading text for the home screen
+  // Heading text for the report symptoms card on the home screen
   String get homeScreenReportSymptomsTitle;
 
-  // Subheading text for the home screen
+  // Subheading text for the report symptoms card on the home screen
   String get homeScreenReportSymptomsSubtitle;
+
+  // Button text for the report symptoms card on the home screen
+  String get homeScreenReportSymptomsButton;
 
   // Label next to loading indicator
   String get systemReportSubmitting;
@@ -237,14 +240,14 @@ abstract class AppLocalizations {
   // Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime
   String get shareAppDownloadPrompt;
 
-  // Title for the app sharing sheet, see https://pub.dev/packages/share
-  String get shareAppTitle;
+  // Heading text for the share app card on the home screen
+  String get homeScreenShareAppTitle;
 
-  // Subheading for the app sharing sheet, see https://pub.dev/packages/share
-  String get shareAppWithFriendsEtc;
+  // Subheading text for the share app card on the home screen
+  String get homeScreenShareAppSubtitle;
 
-  // Final prompt to share the app for the app sharing sheeting, see https://pub.dev/packages/share
-  String get shareAppNow;
+  // Button text for the share app card on the home screen
+  String get homeScreenShareAppButton;
 
   // Title for the screen that lists 3 steps for staying safe
   String get staySafeTitle;

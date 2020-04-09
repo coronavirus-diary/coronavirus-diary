@@ -29,12 +29,13 @@ void main() {
 
   Future<void> enterSymptomReport({bool consent = false}) async {
     // Restart symptom report process
-    await driver.tap(find.byValueKey('homeScreenStartSymptomReport'));
+    await driver.tap(find.byValueKey('homeScreenReportSymptomsButton'));
     await driver.tap(find.byValueKey('symptomReportIntroStepContinueButton'));
 
     // If still need to accept the consent, agree.
     if (consent) {
-      await driver.tap(find.byValueKey('symptomReportInformedConsentAcceptButton'));
+      await driver
+          .tap(find.byValueKey('symptomReportInformedConsentAcceptButton'));
     }
 
     // Enter a location and continue
@@ -66,7 +67,7 @@ void main() {
 
   test('User can complete a symptom report', () async {
     // From state above, proceed to symptom report screen.
-    await driver.tap(find.byValueKey('homeScreenStartSymptomReport'));
+    await driver.tap(find.byValueKey('homeScreenReportSymptomsButton'));
 
     // Intro screen is shown, continue
     await driver.tap(find.byValueKey('symptomReportIntroStepContinueButton'));
