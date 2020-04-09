@@ -97,49 +97,46 @@ class _LocationEntryState extends State<LocationEntry> {
     _displayedLocation.country ??= widget.location?.country ?? '';
 
     return ScrollableBody(
-      child: Container(
-        color: Theme.of(context).backgroundColor,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              if (widget.title != null)
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: Text(
-                      widget.title,
-                      style: Theme.of(context).textTheme.title.copyWith(
-                            fontSize: 26,
-                          ),
-                      textAlign: TextAlign.center,
-                    ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            if (widget.title != null)
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Text(
+                    widget.title,
+                    style: Theme.of(context).textTheme.title.copyWith(
+                          fontSize: 26,
+                        ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-              CountryDropdown(
-                onChanged: (String value) => _updateLocation(UserLocation(
-                  country: value,
-                  postalCode: null,
-                )),
-                value: _displayedLocation.country,
               ),
-              if (_isUSA)
-                EntryField(
-                  key: zipCodeKey,
-                  initialValue: _displayedLocation.postalCode,
-                  onChanged: (String value) => _updateLocation(
-                      UserLocation(postalCode: value, country: 'US')),
-                  label: localizations.locationStepZipCode,
-                  keyboardType: TextInputType.numberWithOptions(
-                      decimal: false, signed: false),
-                  validator: (String string) =>
-                      _validateZipCode(string, localizations),
-                ),
-              if (widget.finish != null) widget.finish,
-            ],
-          ),
+            CountryDropdown(
+              onChanged: (String value) => _updateLocation(UserLocation(
+                country: value,
+                postalCode: null,
+              )),
+              value: _displayedLocation.country,
+            ),
+            if (_isUSA)
+              EntryField(
+                key: zipCodeKey,
+                initialValue: _displayedLocation.postalCode,
+                onChanged: (String value) => _updateLocation(
+                    UserLocation(postalCode: value, country: 'US')),
+                label: localizations.locationStepZipCode,
+                keyboardType: TextInputType.numberWithOptions(
+                    decimal: false, signed: false),
+                validator: (String string) =>
+                    _validateZipCode(string, localizations),
+              ),
+            if (widget.finish != null) widget.finish,
+          ],
         ),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const Color _primaryColor = Color(0xff143a65);
-const Color _accentColor = Color(0xff5dcaab);
+const Color _primaryColor = Color(0xff003a68);
+const Color _accentColor = Color(0xff00dfb7);
 const Color _textColor = _primaryColor;
 
 final ThemeData appTheme = ThemeData.light().copyWith(
@@ -22,11 +22,15 @@ final ThemeData appTheme = ThemeData.light().copyWith(
     labelStyle: TextStyle(color: _textColor),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(2),
-      borderSide: BorderSide.none,
+      borderSide: BorderSide(
+        color: Colors.black,
+      ),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(2),
-      borderSide: BorderSide.none,
+      borderSide: BorderSide(
+        color: Colors.black,
+      ),
     ),
     contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
     errorStyle: TextStyle(

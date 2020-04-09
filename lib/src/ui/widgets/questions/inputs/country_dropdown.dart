@@ -95,10 +95,12 @@ class _CountryDropdownState extends State<CountryDropdown> {
     result.insert(
       0,
       DropdownMenuItem<String>(
-        child: Text(appLocalizations.locationStepNoCountrySelected,
-            style: Theme.of(context).textTheme.button.copyWith(
-                  fontStyle: FontStyle.italic,
-                )),
+        child: Text(
+          appLocalizations.locationStepNoCountrySelected,
+          style: Theme.of(context).textTheme.button.copyWith(
+                fontStyle: FontStyle.italic,
+              ),
+        ),
         value: 'None',
       ),
     );
@@ -120,11 +122,14 @@ class _CountryDropdownState extends State<CountryDropdown> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(localizations.locationStepCountryButtonLabel,
-                  style: Theme.of(context).textTheme.title),
+              child: Text(
+                localizations.locationStepCountryButtonLabel,
+                style: Theme.of(context).textTheme.title,
+              ),
             ),
             Expanded(
               child: SearchableDropdown(
+                menuBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 searchHint: widget.searchHint ??
                     Text(localizations.locationStepCountrySearchPrompt),
                 onChanged: widget.onChanged,
@@ -132,6 +137,7 @@ class _CountryDropdownState extends State<CountryDropdown> {
                 items: _dropdownItems,
                 style: Theme.of(context).textTheme.subhead,
                 value: widget.value,
+                iconEnabledColor: Theme.of(context).primaryColor,
                 iconSize: 40,
                 isExpanded: true,
               ),

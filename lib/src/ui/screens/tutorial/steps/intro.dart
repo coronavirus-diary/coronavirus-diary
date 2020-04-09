@@ -25,6 +25,7 @@ class TutorialIntroStep extends StatelessWidget {
                 child: FaIcon(
                   FontAwesomeIcons.bookMedical,
                   size: 80,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               Container(
@@ -57,9 +58,9 @@ class TutorialIntroStep extends StatelessWidget {
                       icon: FaIcon(
                         FontAwesomeIcons.mapMarked,
                         size: 30,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      leadingBackgroundColor:
-                          Theme.of(context).accentColor.withOpacity(0.5),
+                      leadingBackgroundColor: Theme.of(context).primaryColor,
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
@@ -67,9 +68,9 @@ class TutorialIntroStep extends StatelessWidget {
                       icon: FaIcon(
                         FontAwesomeIcons.heartbeat,
                         size: 30,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      leadingBackgroundColor:
-                          Theme.of(context).accentColor.withOpacity(0.5),
+                      leadingBackgroundColor: Theme.of(context).primaryColor,
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
@@ -77,9 +78,9 @@ class TutorialIntroStep extends StatelessWidget {
                       icon: FaIcon(
                         FontAwesomeIcons.handHoldingHeart,
                         size: 30,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      leadingBackgroundColor:
-                          Theme.of(context).accentColor.withOpacity(0.5),
+                      leadingBackgroundColor: Theme.of(context).primaryColor,
                       leadingPadding: EdgeInsets.all(20),
                     ),
                   ],
