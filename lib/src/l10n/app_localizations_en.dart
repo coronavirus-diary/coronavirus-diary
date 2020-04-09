@@ -43,31 +43,26 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
 
   @override
   String get deniedConsentHeading =>
-      'We cannot collect information without your Informed Consent';
+      'CovidNearMe can\'t collect information without your informed consent.';
 
   @override
   String get deniedConsentMessage =>
-      '''Thank you for considering joining our effort. You can return whenever you like.
-
-If you do so, you will be asked for your consent again. You can then accept it and enter your symptoms.''';
+      'You can return whenever you like. You\'ll be asked to agree to the Informed Consent and can continue recording your symptoms to help support COVID-19 response efforts.';
 
   @override
-  String get thankYouScreenTitle => 'Thank you';
+  String get thankYouScreenTitle =>
+      'Thank you for sharing your symptoms to support disease response efforts!';
 
   @override
   String get thankYouScreenFinishButton => 'FINISH';
 
   @override
-  String get thankYouScreenDataSubmission =>
-      'Thank you for supporting the COVID-19 response effort. Your answers have been anonymously submitted.';
-
-  @override
   String get thankYouScreenCallToAction =>
-      'Repeat the health check-up if you continue to feel symptoms tomorrow.';
+      'If you continue to feel symptoms tomorrow, record your symptoms again in the app.';
 
   @override
   String get thankYouScreenSeriousSymptoms =>
-      'If your symptoms worsen, consult your health care provider.';
+      'If your symptoms worsen, contact your healthcare provider.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'SAFETY TIPS';
@@ -224,26 +219,30 @@ If you do so, you will be asked for your consent again. You can then accept it a
   String get homeScreenShareAppButton => 'SHARE';
 
   @override
-  String get staySafeTitle => 'Stay Safe';
+  String get safetyTipsTitle => 'How to stay healthy';
 
   @override
-  String get staySafeWashYourHands =>
-      'Wash your hands frequently and for at least 20 seconds.';
+  String get safetyTipsSubtitle =>
+      'Here are some effective ways to protect your health and help your community stop the spread of disease.';
 
   @override
-  String get staySafeLimitContact =>
-      'Limit contact with other people. Practice social distancing.';
+  String get safetyTipsWashYourHands =>
+      'Wash your hands frequently for at least 20 seconds using soap and water. Avoid touching your eyes, nose, and mouth, especially in public. Always cover your coughs and sneezes with the inside of your elbow.';
 
   @override
-  String get staySafeContactPhysician =>
-      'Contact a physician if your symptoms become serious.';
+  String get safetyTipsSocialDistancing =>
+      'Practice social distancing, which means limiting contact with other people. Maintain at least 6 feet of distance between yourself and others when you\'re outside of your home.';
+
+  @override
+  String get safetyTipsContactPhysician =>
+      'If your symptoms worsen, contact a healthcare provider.';
 
   @override
   String get tutorialIntroStepWelcome => 'Welcome to CovidNearMe';
 
   @override
   String get tutorialIntroStepDescription =>
-      'CovidNearMe helps you track your health and stay up-to-date';
+      'Stay up to date with local COVID-19 statistics and help support relief efforts.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>

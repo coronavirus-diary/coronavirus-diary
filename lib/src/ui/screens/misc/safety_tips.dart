@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/tutorial_step.dart';
 
-class StaySafeScreen extends StatelessWidget {
-  static const routeName = '/stay-safe';
+class SafetyTipsScreen extends StatelessWidget {
+  static const routeName = '/safety-tips';
 
   @override
   Widget build(BuildContext context) {
@@ -13,25 +13,34 @@ class StaySafeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(localizations.staySafeTitle),
+        title: Text(localizations.safetyTipsTitle),
       ),
       body: Container(
         color: Colors.white.withOpacity(0.2),
-        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+        padding: EdgeInsets.all(40),
         child: Column(
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(bottom: 20),
+              margin: EdgeInsets.only(bottom: 10),
               child: Text(
-                localizations.staySafeTitle,
+                localizations.safetyTipsTitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.title,
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 10),
+              margin: EdgeInsets.only(bottom: 40),
+              child: Text(
+                localizations.safetyTipsSubtitle,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.subtitle,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 15),
               child: TutorialStep(
-                text: localizations.staySafeWashYourHands,
+                text: localizations.safetyTipsWashYourHands,
+                contentPadding: EdgeInsets.all(0),
                 leadingBackgroundColor: Theme.of(context).accentColor,
                 icon: SvgPicture.asset(
                   'assets/images/icons/handwash.svg',
@@ -41,9 +50,10 @@ class StaySafeScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 10),
+              margin: EdgeInsets.only(bottom: 15),
               child: TutorialStep(
-                text: localizations.staySafeLimitContact,
+                text: localizations.safetyTipsSocialDistancing,
+                contentPadding: EdgeInsets.all(0),
                 leadingBackgroundColor: Theme.of(context).accentColor,
                 icon: SvgPicture.asset(
                   'assets/images/icons/socialdistance.svg',
@@ -53,9 +63,8 @@ class StaySafeScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 10),
               child: TutorialStep(
-                text: localizations.staySafeContactPhysician,
+                text: localizations.safetyTipsContactPhysician,
                 leadingBackgroundColor: Theme.of(context).accentColor,
                 icon: SvgPicture.asset(
                   'assets/images/icons/contactprovider.svg',

@@ -41,6 +41,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                 child: FaIcon(
                   FontAwesomeIcons.heartbeat,
                   size: 80,
+                  color: Colors.red,
                 ),
               ),
               Container(
@@ -50,15 +51,6 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                   localizations.thankYouScreenTitle,
                   style: Theme.of(context).textTheme.title,
                   textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 20),
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: Text(
-                  localizations.thankYouScreenDataSubmission,
-                  style:
-                      Theme.of(context).textTheme.body2.copyWith(fontSize: 16),
                 ),
               ),
               Container(
@@ -86,7 +78,7 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                     Expanded(
                       child: RaisedButton(
                         onPressed: () => Navigator.of(context)
-                            .pushNamed(StaySafeScreen.routeName),
+                            .pushNamed(SafetyTipsScreen.routeName),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7),
                           side: BorderSide(
