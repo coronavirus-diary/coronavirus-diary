@@ -25,7 +25,7 @@ class TutorialIntroStep extends StatelessWidget {
                 child: FaIcon(
                   FontAwesomeIcons.bookMedical,
                   size: 80,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               Container(
@@ -60,7 +60,8 @@ class TutorialIntroStep extends StatelessWidget {
                         size: 30,
                         color: Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      leadingBackgroundColor: Theme.of(context).primaryColor,
+                      leadingBackgroundColor:
+                          Theme.of(context).colorScheme.primary,
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
@@ -70,7 +71,8 @@ class TutorialIntroStep extends StatelessWidget {
                         size: 30,
                         color: Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      leadingBackgroundColor: Theme.of(context).primaryColor,
+                      leadingBackgroundColor:
+                          Theme.of(context).colorScheme.primary,
                       leadingPadding: EdgeInsets.all(20),
                     ),
                     TutorialStep(
@@ -80,7 +82,8 @@ class TutorialIntroStep extends StatelessWidget {
                         size: 30,
                         color: Theme.of(context).scaffoldBackgroundColor,
                       ),
-                      leadingBackgroundColor: Theme.of(context).primaryColor,
+                      leadingBackgroundColor:
+                          Theme.of(context).colorScheme.primary,
                       leadingPadding: EdgeInsets.all(20),
                     ),
                   ],
