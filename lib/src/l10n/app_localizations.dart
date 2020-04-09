@@ -222,6 +222,15 @@ abstract class AppLocalizations {
   // Label for a button that brings up a help screen
   String get temperatureStepHelp;
 
+  // Heading text for the local statistics card on the home screen
+  String get homeScreenLocalStatisticsTitle;
+
+  // Subheading text for the local statistics card on the home screen
+  String get homeScreenLocalStatisticsSubtitle;
+
+  // Button text for the local statistics card on the home screen
+  String get homeScreenLocalStatisticsButton;
+
   // Heading text for the report symptoms card on the home screen
   String get homeScreenReportSymptomsTitle;
 
@@ -482,6 +491,27 @@ abstract class AppLocalizations {
 
   // Label for the dropdown button that selects a country.
   String get locationStepCountryButtonLabel;
+
+  // Title for the local statistics screen.
+  String get localStatisticsTitle;
+
+  // Text shown when the user has not selected a location.
+  String get localStatisticsNoLocationSelected;
+
+  // Text for the local statistics location picker.
+  String get localStatisticsLocationInput;
+
+  // Title of the local statistics recent locations menu.
+  String get localStatisticsRecentLocationsMenuTitle;
+
+  // Label for Cases statistics on the statistics screen.
+  String get statisticsLabelCases;
+
+  // Label for Deaths statistics on the statistics screen.
+  String get statisticsLabelDeaths;
+
+  // Label for Recoveries statistics on the statistics screen.
+  String get statisticsLabelRecoveries;
 }
 
 class _AppLocalizationsDelegate

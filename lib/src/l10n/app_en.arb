@@ -216,6 +216,21 @@
     "description": "Label for a button that brings up a help screen"
   },
 
+  "homeScreenLocalStatisticsTitle": "Get local COVID-19 news and information",
+  "@homeScreenLocalStatisticsTitle": {
+    "description": "Heading text for the local statistics card on the home screen"
+  },
+
+  "homeScreenLocalStatisticsSubtitle": "See statistics and get up-to-date information on your community",
+  "@homeScreenLocalStatisticsSubtitle": {
+    "description": "Subheading text for the local statistics card on the home screen"
+  },
+
+  "homeScreenLocalStatisticsButton": "GET STARTED",
+  "@homeScreenLocalStatisticsButton": {
+    "description": "Button text for the local statistics card on the home screen"
+  },
+
   "homeScreenReportSymptomsTitle": "Record your symptoms",
   "@homeScreenReportSymptomsTitle": {
     "description": "Heading text for the report symptoms card on the home screen"
@@ -648,5 +663,40 @@
   "locationStepCountryButtonLabel": "Country:",
   "@locationStepCountryButtonLabel": {
     "description": "Label for the dropdown button that selects a country."
+  },
+
+  "localStatisticsTitle": "Local COVID-19 Statistics",
+  "@localStatisticsTitle": {
+    "description": "Title for the local statistics screen."
+  },
+
+  "localStatisticsNoLocationSelected": "Select a location to view its statistics.",
+  "@localStatisticsNoLocationSelected": {
+    "description": "Text shown when the user has not selected a location."
+  },
+
+  "localStatisticsLocationInput": "Zip Code or Country",
+  "@localStatisticsLocationInput": {
+    "description": "Text for the local statistics location picker."
+  },
+
+  "localStatisticsRecentLocationsMenuTitle": "Recent locations",
+  "@localStatisticsRecentLocationsMenuTitle": {
+    "description": "Title of the local statistics recent locations menu."
+  },
+
+  "statisticsLabelCases": "Cases",
+  "@statisticsLabelCases": {
+    "description": "Label for Cases statistics on the statistics screen."
+  },
+
+  "statisticsLabelDeaths": "Deaths",
+  "@statisticsLabelDeaths": {
+    "description": "Label for Deaths statistics on the statistics screen."
+  },
+
+  "statisticsLabelRecoveries": "Recoveries",
+  "@statisticsLabelRecoveries": {
+    "description": "Label for Recoveries statistics on the statistics screen."
   }
 }
