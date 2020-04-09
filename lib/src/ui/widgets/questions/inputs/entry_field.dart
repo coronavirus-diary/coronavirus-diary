@@ -42,8 +42,6 @@ class EntryField extends StatelessWidget {
           initialValue: initialValue,
           onChanged: onChanged,
           decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            enabledBorder: OutlineInputBorder(),
             labelText: label,
             suffix: suffix != null ? Text(suffix) : null,
             helperText: helperText,
@@ -56,7 +54,6 @@ class EntryField extends StatelessWidget {
           autofocus: autofocus,
           inputFormatters: inputFormatters,
           style: TextStyle(
-            color: Colors.black,
             fontSize: 20,
           ),
         ),
