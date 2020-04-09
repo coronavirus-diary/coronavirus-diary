@@ -81,6 +81,9 @@ ThemeData _getTutorialTheme(BuildContext context) {
           color: Colors.white,
         ),
     textTheme: Theme.of(context).textTheme.copyWith(
+          caption: Theme.of(context).textTheme.caption.copyWith(
+                color: Colors.white,
+              ),
           button: Theme.of(context).textTheme.button.copyWith(
                 color: Colors.white,
               ),

@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/ui/widgets/small_brand.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -21,15 +22,6 @@ class TutorialIntroStep extends StatelessWidget {
             children: <Widget>[
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),
-                margin: EdgeInsets.only(bottom: 20),
-                child: FaIcon(
-                  FontAwesomeIcons.bookMedical,
-                  size: 80,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
                 margin: EdgeInsets.only(bottom: 10),
                 child: Text(
                   localizations.tutorialIntroStepWelcome,
@@ -47,6 +39,11 @@ class TutorialIntroStep extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16),
                 ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                margin: EdgeInsets.only(bottom: 30),
+                child: SmallBrand(),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 40),

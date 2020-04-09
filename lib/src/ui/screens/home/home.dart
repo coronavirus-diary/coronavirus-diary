@@ -12,6 +12,7 @@ import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
+import 'package:covidnearme/src/ui/widgets/small_brand.dart';
 import 'package:covidnearme/src/utils/share.dart';
 import 'home_card.dart';
 
@@ -58,6 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () => shareApp(context),
             child: Text(localizations.homeScreenShareAppButton),
           ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 20,
+          ),
+          child: SmallBrand(),
         ),
       ],
     );
