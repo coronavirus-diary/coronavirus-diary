@@ -128,9 +128,6 @@ abstract class AppLocalizations {
   // Return to the home screen
   String get thankYouScreenFinishButton;
 
-  // A note thanking the user for submitting their data
-  String get thankYouScreenDataSubmission;
-
   // Ask the user to report their symptoms again tomorrow
   String get thankYouScreenCallToAction;
 
@@ -258,17 +255,20 @@ abstract class AppLocalizations {
   // Button text for the share app card on the home screen
   String get homeScreenShareAppButton;
 
-  // Title for the screen that lists 3 steps for staying safe
-  String get staySafeTitle;
+  // Title for the safety tips screen
+  String get safetyTipsTitle;
 
-  // Step 1 for the screen that lists 3 steps for staying safe
-  String get staySafeWashYourHands;
+  // Subtitle for the safety tips screen
+  String get safetyTipsSubtitle;
 
-  // Step 2 for the screen that lists 3 steps for staying safe
-  String get staySafeLimitContact;
+  // Safety tips screen: handwashing tip
+  String get safetyTipsWashYourHands;
 
-  // Step 3 for the screen that lists 3 steps for staying safe
-  String get staySafeContactPhysician;
+  // Safety tips screen: social distancing tip
+  String get safetyTipsSocialDistancing;
+
+  // Safety tips screen: contact physician tip
+  String get safetyTipsContactPhysician;
 
   // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
   String get tutorialIntroStepWelcome;

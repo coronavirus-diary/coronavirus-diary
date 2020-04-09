@@ -33,6 +33,7 @@ class _IntroStepState extends State<IntroStep> {
               child: FaIcon(
                 FontAwesomeIcons.heartbeat,
                 size: 100,
+                color: Colors.red,
               ),
             ),
             Container(

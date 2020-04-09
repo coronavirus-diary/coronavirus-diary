@@ -7,6 +7,7 @@ class TutorialStep extends StatelessWidget {
   final EdgeInsetsGeometry leadingPadding;
   final Color leadingBackgroundColor;
   final Color numberColor;
+  final EdgeInsetsGeometry contentPadding;
   final Color textColor;
   final double fontSize;
 
@@ -17,6 +18,7 @@ class TutorialStep extends StatelessWidget {
     this.leadingPadding,
     this.leadingBackgroundColor,
     this.numberColor,
+    this.contentPadding,
     this.textColor,
     this.fontSize = 18.0,
   }) : assert(icon == null || number == null,
@@ -51,6 +53,13 @@ class TutorialStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    EdgeInsetsGeometry contentPaddingCalculated;
+    if (contentPadding != null) {
+      contentPaddingCalculated = contentPadding;
+    } else if (icon != null || number != null) {
+      contentPaddingCalculated = EdgeInsets.only(top: 10);
+    }
+
     return Container(
       margin: EdgeInsets.only(bottom: 10),
       child: Row(
@@ -58,17 +67,15 @@ class TutorialStep extends StatelessWidget {
         children: <Widget>[
           if (icon != null || number != null) _getLeading(context),
           Flexible(
-            child: Column(
-              children: <Widget>[
-                if (icon != null || number != null) SizedBox(height: 10),
-                Text(
-                  text,
-                  style: TextStyle(
-                    fontSize: fontSize,
-                    color: textColor,
-                  ),
+            child: Container(
+              padding: contentPaddingCalculated,
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontSize: fontSize,
+                  color: textColor,
                 ),
-              ],
+              ),
             ),
           ),
         ],
