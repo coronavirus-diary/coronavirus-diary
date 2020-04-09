@@ -36,17 +36,17 @@
     "description": "The long informed consent question asked of users"
   },
 
-  "deniedConsentHeading": "We cannot collect information without your Informed Consent",
+  "deniedConsentHeading": "CovidNearMe can't collect information without your informed consent.",
   "@deniedConsentHeading":  {
     "description": "Heading for the page show reminds the user that they've said no"
   },
 
-  "deniedConsentMessage": "Thank you for considering joining our effort. You can return whenever you like.\n\nIf you do so, you will be asked for your consent again. You can then accept it and enter your symptoms.",
+  "deniedConsentMessage": "You can return whenever you like. You'll be asked to agree to the Informed Consent and can continue recording your symptoms to help support COVID-19 response efforts.",
   "@deniedConsentMessage":  {
     "description": "The app's response if the user does not agree to the informed consent question"
   },
 
-  "thankYouScreenTitle": "Thank you",
+  "thankYouScreenTitle": "Thank you for sharing your symptoms to support disease response efforts!",
   "@thankYouScreenTitle":  {
     "description": "The title of the ThankYou screen"
   },
@@ -56,17 +56,12 @@
     "description": "Return to the home screen"
   },
 
-  "thankYouScreenDataSubmission": "Thank you for supporting the COVID-19 response effort. Your answers have been anonymously submitted.",
-  "@thankYouScreenDataSubmission":  {
-    "description": "A note thanking the user for submitting their data"
-  },
-
-  "thankYouScreenCallToAction": "Repeat the health check-up if you continue to feel symptoms tomorrow.",
+  "thankYouScreenCallToAction": "If you continue to feel symptoms tomorrow, record your symptoms again in the app.",
   "@thankYouScreenCallToAction":  {
     "description": "Ask the user to report their symptoms again tomorrow"
   },
 
-  "thankYouScreenSeriousSymptoms": "If your symptoms worsen, consult your health care provider.",
+  "thankYouScreenSeriousSymptoms": "If your symptoms worsen, contact your healthcare provider.",
   "@thankYouScreenSeriousSymptoms":  {
     "description": "Ask the user to contact a physician if their symptoms become serious"
   },
@@ -281,24 +276,29 @@
     "description": "Button text for the share app card on the home screen"
   },
 
-  "staySafeTitle": "Stay Safe",
-  "@staySafeTitle": {
-    "description": "Title for the screen that lists 3 steps for staying safe"
+  "safetyTipsTitle": "How to stay healthy",
+  "@safetyTipsTitle": {
+    "description": "Title for the safety tips screen"
   },
 
-  "staySafeWashYourHands": "Wash your hands frequently and for at least 20 seconds.",
-  "@staySafeWashYourHands": {
-    "description": "Step 1 for the screen that lists 3 steps for staying safe"
+  "safetyTipsSubtitle": "Here are some effective ways to protect your health and help your community stop the spread of disease.",
+  "@safetyTipsSubtitle": {
+    "description": "Subtitle for the safety tips screen"
   },
 
-  "staySafeLimitContact": "Limit contact with other people. Practice social distancing.",
-  "@staySafeLimitContact": {
-    "description": "Step 2 for the screen that lists 3 steps for staying safe"
+  "safetyTipsWashYourHands": "Wash your hands frequently for at least 20 seconds using soap and water. Avoid touching your eyes, nose, and mouth, especially in public. Always cover your coughs and sneezes with the inside of your elbow.",
+  "@safetyTipsWashYourHands": {
+    "description": "Safety tips screen: handwashing tip"
   },
 
-  "staySafeContactPhysician": "Contact a physician if your symptoms become serious.",
-  "@staySafeContactPhysician": {
-    "description": "Step 3 for the screen that lists 3 steps for staying safe"
+  "safetyTipsSocialDistancing": "Practice social distancing, which means limiting contact with other people. Maintain at least 6 feet of distance between yourself and others when you're outside of your home.",
+  "@safetyTipsSocialDistancing": {
+    "description": "Safety tips screen: social distancing tip"
+  },
+
+  "safetyTipsContactPhysician": "If your symptoms worsen, contact a healthcare provider.",
+  "@safetyTipsContactPhysician": {
+    "description": "Safety tips screen: contact physician tip"
   },
 
   "tutorialIntroStepWelcome": "Welcome to CovidNearMe",
@@ -306,7 +306,7 @@
     "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
   },
 
-  "tutorialIntroStepDescription": "CovidNearMe helps you track your health and stay up-to-date",
+  "tutorialIntroStepDescription": "Stay up to date with local COVID-19 statistics and help support relief efforts.",
   "@tutorialIntroStepDescription": {
     "description": "Brief description below the name of the app."
   },
