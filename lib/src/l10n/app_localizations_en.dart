@@ -9,6 +9,9 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get brandingCallout => 'Developed in partnership with:';
+
+  @override
   String get homeMenuTooltip => 'More';
 
   @override

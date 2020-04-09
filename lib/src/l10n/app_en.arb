@@ -1,6 +1,11 @@
 {
   "@@locale": "en",
 
+  "brandingCallout": "Developed in partnership with:",
+  "@brandingCallout":  {
+    "description": "Callout used above partner logos."
+  },
+
   "homeMenuTooltip": "More",
   "@homeMenuTooltip":  {
     "description": "Tooltip for the 'three dots' main menu on the home page."
