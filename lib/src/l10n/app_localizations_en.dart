@@ -189,6 +189,9 @@ If you do so, you will be asked for your consent again. You can then accept it a
       'Quick and easy health check-in';
 
   @override
+  String get homeScreenReportSymptomsButton => 'GET STARTED';
+
+  @override
   String get systemReportSubmitting => 'Submitting your symptoms';
 
   @override
@@ -199,14 +202,15 @@ If you do so, you will be asked for your consent again. You can then accept it a
       'Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! APP_LINK';
 
   @override
-  String get shareAppTitle => 'Help protect your community by sharing the app';
+  String get homeScreenShareAppTitle =>
+      'Help protect your community by sharing the app';
 
   @override
-  String get shareAppWithFriendsEtc =>
+  String get homeScreenShareAppSubtitle =>
       'Share the app with friends and family and keep your community healthy';
 
   @override
-  String get shareAppNow => 'SHARE';
+  String get homeScreenShareAppButton => 'SHARE';
 
   @override
   String get staySafeTitle => 'Stay Safe';

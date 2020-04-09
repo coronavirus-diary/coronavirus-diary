@@ -5,14 +5,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:package_info/package_info.dart';
+import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
-import 'package:covidnearme/src/ui/screens/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/ui/router.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
-import 'share.dart';
+import 'home_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -24,60 +25,43 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  void _shareApp() {
+    Share.share(AppLocalizations.of(context).shareAppDownloadPrompt);
+  }
+
   Widget _getBody(PreferencesState state) {
-    final localizations = AppLocalizations.of(context);
+    final AppLocalizations localizations = AppLocalizations.of(context);
+
     return Column(
       children: <Widget>[
-        Card(
-          margin: EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 10,
+        HomeCard(
+          leading: FaIcon(
+            FontAwesomeIcons.heartbeat,
+            color: Colors.red,
+            size: 40,
           ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(7),
-            side: BorderSide(
-              color: Colors.black26,
-              width: 1.0,
-            ),
-          ),
-          child: ListTile(
-            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            key: ValueKey<String>('homeScreenStartSymptomReport'),
-            onTap: () =>
+          title: Text(localizations.homeScreenReportSymptomsTitle),
+          subtitle: Text(localizations.homeScreenReportSymptomsSubtitle),
+          button: RaisedButton(
+            key: ValueKey('homeScreenReportSymptomsButton'),
+            onPressed: () =>
                 Navigator.pushNamed(context, SymptomReportScreen.routeName),
-            leading: FaIcon(
-              FontAwesomeIcons.heartbeat,
-              color: Colors.red,
-              size: 40,
-            ),
-            title: Container(
-              padding: EdgeInsets.only(bottom: 5),
-              child: Text(
-                localizations.homeScreenReportSymptomsTitle,
-                style: Theme.of(context).textTheme.title.copyWith(
-                      fontSize: 22,
-                    ),
-              ),
-            ),
-            subtitle: Text(
-              localizations.homeScreenReportSymptomsSubtitle,
-              style: Theme.of(context).textTheme.subtitle,
-            ),
+            child: Text(localizations.homeScreenReportSymptomsButton),
           ),
         ),
-        Card(
-          margin: EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 10,
+        HomeCard(
+          leading: FaIcon(
+            FontAwesomeIcons.handHoldingHeart,
+            color: Theme.of(context).primaryColor,
+            size: 40,
           ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(7),
-            side: BorderSide(
-              color: Colors.black26,
-              width: 1.0,
-            ),
+          title: Text(localizations.homeScreenShareAppTitle),
+          subtitle: Text(localizations.homeScreenShareAppSubtitle),
+          button: RaisedButton(
+            key: ValueKey('homeScreenShareAppButton'),
+            onPressed: _shareApp,
+            child: Text(localizations.homeScreenShareAppButton),
           ),
-          child: ShareApp(),
         ),
       ],
     );

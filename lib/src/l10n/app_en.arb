@@ -218,12 +218,17 @@
 
   "homeScreenReportSymptomsTitle": "Record your symptoms",
   "@homeScreenReportSymptomsTitle": {
-    "description": "Heading text for the home screen"
+    "description": "Heading text for the report symptoms card on the home screen"
   },
 
   "homeScreenReportSymptomsSubtitle": "Quick and easy health check-in",
   "@homeScreenReportSymptomsSubtitle": {
-    "description": "Subheading text for the home screen"
+    "description": "Subheading text for the report symptoms card on the home screen"
+  },
+
+  "homeScreenReportSymptomsButton": "GET STARTED",
+  "@homeScreenReportSymptomsButton": {
+    "description": "Button text for the report symptoms card on the home screen"
   },
 
   "systemReportSubmitting": "Submitting your symptoms",
@@ -241,19 +246,19 @@
     "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The APP_LINK word should not be translated, it will be replaced by a link the app at runtime"
   },
 
-  "shareAppTitle": "Help protect your community by sharing the app",
-  "@shareAppTitle": {
-    "description": "Title for the app sharing sheet, see https://pub.dev/packages/share"
+  "homeScreenShareAppTitle": "Help protect your community by sharing the app",
+  "@homeScreenShareAppTitle": {
+    "description": "Heading text for the share app card on the home screen"
   },
 
-  "shareAppWithFriendsEtc": "Share the app with friends and family and keep your community healthy",
-  "@shareAppWithFriendsEtc": {
-    "description": "Subheading for the app sharing sheet, see https://pub.dev/packages/share"
+  "homeScreenShareAppSubtitle": "Share the app with friends and family and keep your community healthy",
+  "@homeScreenShareAppSubtitle": {
+    "description": "Subheading text for the share app card on the home screen"
   },
 
-  "shareAppNow": "SHARE",
-  "@shareAppNow": {
-    "description": "Final prompt to share the app for the app sharing sheeting, see https://pub.dev/packages/share"
+  "homeScreenShareAppButton": "SHARE",
+  "@homeScreenShareAppButton": {
+    "description": "Button text for the share app card on the home screen"
   },
 
   "staySafeTitle": "Stay Safe",
