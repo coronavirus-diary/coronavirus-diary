@@ -489,6 +489,9 @@ abstract class AppLocalizations {
   // Label for button that opens the system network settings
   String get networkUnavailableBannerConnectToWiFi;
 
+  // Generic message shown when a request to the server fails.
+  String get networkRequestError;
+
   // Message shown on the banner displayed when no network connection is detected
   String get networkUnavailableBannerMessage;
 

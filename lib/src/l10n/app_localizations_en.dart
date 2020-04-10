@@ -474,6 +474,10 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get networkUnavailableBannerConnectToWiFi => 'CONNECT TO WIFI';
 
   @override
+  String get networkRequestError =>
+      'There was an error and your request could not be completed.';
+
+  @override
   String get networkUnavailableBannerMessage =>
       'You seem to be offline. Please check your network settings and try again.';
 

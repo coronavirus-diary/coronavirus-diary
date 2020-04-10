@@ -660,6 +660,11 @@
      "description": "Label for button that opens the system network settings"
   },
 
+  "networkRequestError": "There was an error and your request could not be completed.",
+  "@networkRequestError": {
+    "description": "Generic message shown when a request to the server fails."
+  },
+
   "networkUnavailableBannerMessage": "You seem to be offline. Please check your network settings and try again.",
   "@networkUnavailableBannerMessage": {
      "description": "Message shown on the banner displayed when no network connection is detected"
