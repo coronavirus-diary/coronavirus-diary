@@ -41,10 +41,10 @@ class SafetyTipsScreen extends StatelessWidget {
               child: TutorialStep(
                 text: localizations.safetyTipsWashYourHands,
                 contentPadding: EdgeInsets.all(0),
-                leadingBackgroundColor: Theme.of(context).accentColor,
+                leadingBackgroundColor: Theme.of(context).primaryColor,
                 icon: SvgPicture.asset(
                   'assets/images/icons/handwash.svg',
-                  color: Theme.of(context).accentIconTheme.color,
+                  color: Theme.of(context).primaryIconTheme.color,
                   width: 40,
                 ),
               ),
@@ -54,10 +54,10 @@ class SafetyTipsScreen extends StatelessWidget {
               child: TutorialStep(
                 text: localizations.safetyTipsSocialDistancing,
                 contentPadding: EdgeInsets.all(0),
-                leadingBackgroundColor: Theme.of(context).accentColor,
+                leadingBackgroundColor: Theme.of(context).primaryColor,
                 icon: SvgPicture.asset(
                   'assets/images/icons/socialdistance.svg',
-                  color: Theme.of(context).accentIconTheme.color,
+                  color: Theme.of(context).primaryIconTheme.color,
                   width: 40,
                 ),
               ),
@@ -65,10 +65,10 @@ class SafetyTipsScreen extends StatelessWidget {
             Container(
               child: TutorialStep(
                 text: localizations.safetyTipsContactPhysician,
-                leadingBackgroundColor: Theme.of(context).accentColor,
+                leadingBackgroundColor: Theme.of(context).primaryColor,
                 icon: SvgPicture.asset(
                   'assets/images/icons/contactprovider.svg',
-                  color: Theme.of(context).accentIconTheme.color,
+                  color: Theme.of(context).primaryIconTheme.color,
                   width: 40,
                 ),
               ),

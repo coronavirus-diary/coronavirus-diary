@@ -98,6 +98,30 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en')];
 
+  // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
+  String get tutorialIntroStepWelcome;
+
+  // Brief description below the name of the app.
+  String get tutorialIntroStepDescription;
+
+  // Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers
+  String get tutorialIntroStepWelcomeSemanticsLabel;
+
+  // Describes an action you can take using the app
+  String get tutorialIntroStepLocalStatistics;
+
+  // Describes an action you can take using the app
+  String get tutorialIntroStepSubmitSymptoms;
+
+  // Describes the benefit of the app to the community.
+  String get tutorialIntroStepAidEffort;
+
+  // Label for the button that shows the next app screen
+  String get tutorialIntroStepGetStarted;
+
+  // Title that appears above the text field where the user enters their location during the tutorial
+  String get tutorialLocationStepTitle;
+
   // Callout used above partner logos.
   String get brandingCallout;
 
@@ -116,32 +140,32 @@ abstract class AppLocalizations {
   // Text label on a hyperlink to the source code for the app.
   String get aboutBoxLinkText;
 
-  // The long informed consent question asked of users
-  String get consentStepQuestion;
+  // Heading text for the local statistics card on the home screen
+  String get homeScreenLocalStatisticsTitle;
 
-  // Heading for the page show reminds the user that they've said no
-  String get deniedConsentHeading;
+  // Subheading text for the local statistics card on the home screen
+  String get homeScreenLocalStatisticsSubtitle;
 
-  // The app's response if the user does not agree to the informed consent question
-  String get deniedConsentMessage;
+  // Button text for the local statistics card on the home screen
+  String get homeScreenLocalStatisticsButton;
 
-  // The title of the ThankYou screen
-  String get thankYouScreenTitle;
+  // Heading text for the report symptoms card on the home screen
+  String get homeScreenReportSymptomsTitle;
 
-  // Return to the home screen
-  String get thankYouScreenFinishButton;
+  // Subheading text for the report symptoms card on the home screen
+  String get homeScreenReportSymptomsSubtitle;
 
-  // Ask the user to report their symptoms again tomorrow
-  String get thankYouScreenCallToAction;
+  // Button text for the report symptoms card on the home screen
+  String get homeScreenReportSymptomsButton;
 
-  // Ask the user to contact a physician if their symptoms become serious
-  String get thankYouScreenSeriousSymptoms;
+  // Heading text for the share app card on the home screen
+  String get homeScreenShareAppTitle;
 
-  // Button for safety tips
-  String get thankYouScreenSafetyTipsButton;
+  // Subheading text for the share app card on the home screen
+  String get homeScreenShareAppSubtitle;
 
-  // Button for sharing the app
-  String get thankYouScreenShareAppButton;
+  // Button text for the share app card on the home screen
+  String get homeScreenShareAppButton;
 
   // Tell the user that the symptom report is loading
   String get symptomReportLoading;
@@ -177,134 +201,8 @@ abstract class AppLocalizations {
   // Starts the symptom report by showing the first step
   String get symptomReportIntroStepStartButton;
 
-  // Title for the symptom report location step
-  String get symptomReportLocationStepTitle;
-
-  // An internal error occurred, the symptom report questions failed to load
-  String get questionsStepQuestionsLoadedError;
-
-  // Subsection heading for recommendations about when to measure the user's temperature
-  String get temperatureStepWhenHeading;
-
-  // User advice
-  String get temperatureStepWait30Minutes;
-
-  // User advice
-  String get temperatureStepWait6Hours;
-
-  // Subsection heading for recommendations about how to measure the user's temperature
-  String get temperatureStepHowHeading;
-
-  // Title for a dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogTitle;
-
-  // Error that is displayed if the temperature entered is not in a valid temperature range.
-  String get temperatureStepTemperatureOutOfRangeError;
-
-  // Step 1 in the dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogStep1;
-
-  // Step 2 in the dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogStep2;
-
-  // Step 3 in the dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogStep3;
-
-  // Step 4 in the dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogStep4;
-
-  // Step 5 in the dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogStep5;
-
-  // Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps
-  String get temperatureStepHowToDialogReturn;
-
-  // Label for a button that brings up a help screen
-  String get temperatureStepHelp;
-
-  // Heading text for the local statistics card on the home screen
-  String get homeScreenLocalStatisticsTitle;
-
-  // Subheading text for the local statistics card on the home screen
-  String get homeScreenLocalStatisticsSubtitle;
-
-  // Button text for the local statistics card on the home screen
-  String get homeScreenLocalStatisticsButton;
-
-  // Heading text for the report symptoms card on the home screen
-  String get homeScreenReportSymptomsTitle;
-
-  // Subheading text for the report symptoms card on the home screen
-  String get homeScreenReportSymptomsSubtitle;
-
-  // Button text for the report symptoms card on the home screen
-  String get homeScreenReportSymptomsButton;
-
-  // Label next to loading indicator
-  String get systemReportSubmitting;
-
-  // Tooltip for the back button
-  String get systemReportBackToHomePage;
-
-  // Prompt for the app sharing sheet, see https://pub.dev/packages/share. The {{ APP_LINK }} word should not be translated, it will be replaced by a link the app at runtime
-  String get shareAppDownloadPrompt;
-
-  // Heading text for the share app card on the home screen
-  String get homeScreenShareAppTitle;
-
-  // Subheading text for the share app card on the home screen
-  String get homeScreenShareAppSubtitle;
-
-  // Button text for the share app card on the home screen
-  String get homeScreenShareAppButton;
-
-  // Title for the safety tips screen
-  String get safetyTipsTitle;
-
-  // Subtitle for the safety tips screen
-  String get safetyTipsSubtitle;
-
-  // Safety tips screen: handwashing tip
-  String get safetyTipsWashYourHands;
-
-  // Safety tips screen: social distancing tip
-  String get safetyTipsSocialDistancing;
-
-  // Safety tips screen: contact physician tip
-  String get safetyTipsContactPhysician;
-
-  // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
-  String get tutorialIntroStepWelcome;
-
-  // Brief description below the name of the app.
-  String get tutorialIntroStepDescription;
-
-  // Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers
-  String get tutorialIntroStepWelcomeSemanticsLabel;
-
-  // Describes an action you can take using the app
-  String get tutorialIntroStepLocalStatistics;
-
-  // Describes an action you can take using the app
-  String get tutorialIntroStepSubmitSymptoms;
-
-  // Describes the benefit of the app to the community.
-  String get tutorialIntroStepAidEffort;
-
-  // Label for the button that shows the next app screen
-  String get tutorialIntroStepGetStarted;
-
-  // Title that appears above the text field where the user enters their location during the tutorial
-  String get tutorialLocationStepTitle;
-
-  // Title that appears above the text field where the user enters their location
-  String get locationStepTitle;
-
-  // Error that appears when the user enters their zip code incorrectly.
-  String get locationStepInvalidZipCode;
-
-  // Title that appears within the text field where the user enters their ZIP code
-  String get locationStepZipCode;
+  // The long informed consent question asked of users
+  String get consentStepQuestion;
 
   // Label for the button that indicates that the user will not accept the app license
   String get consentStepDecline;
@@ -318,17 +216,44 @@ abstract class AppLocalizations {
   // Label for the button that indicates that the user did accept the app license
   String get consentStepAgreeActive;
 
-  // Label for button that indicates that the user will continue using the app offline
-  String get networkUnavailableBannerContinueOffline;
+  // Heading for the page show reminds the user that they've said no
+  String get deniedConsentHeading;
 
-  // Label for button that opens the system network settings
-  String get networkUnavailableBannerConnectToWiFi;
+  // The app's response if the user does not agree to the informed consent question
+  String get deniedConsentMessage;
 
-  // Message shown on the banner displayed when no network connection is detected
-  String get networkUnavailableBannerMessage;
+  // Text for the safety tips button on the denied consent screen
+  String get deniedConsentSafetyTipsButton;
 
-  // Label for the back button on the denied consent screen
-  String get deniedConsentBackButton;
+  // Title for the symptom report location step
+  String get symptomReportLocationStepTitle;
+
+  // An internal error occurred, the symptom report questions failed to load
+  String get questionsStepQuestionsLoadedError;
+
+  // Label next to loading indicator
+  String get systemReportSubmitting;
+
+  // Tooltip for the back button
+  String get systemReportBackToHomePage;
+
+  // The title of the ThankYou screen
+  String get thankYouScreenTitle;
+
+  // Return to the home screen
+  String get thankYouScreenFinishButton;
+
+  // Ask the user to report their symptoms again tomorrow
+  String get thankYouScreenCallToAction;
+
+  // Ask the user to contact a physician if their symptoms become serious
+  String get thankYouScreenSeriousSymptoms;
+
+  // Button for safety tips
+  String get thankYouScreenSafetyTipsButton;
+
+  // Button for sharing the app
+  String get thankYouScreenShareAppButton;
 
   // Question title.
   String get questionShortnessOfBreathTitle;
@@ -483,8 +408,71 @@ abstract class AppLocalizations {
   // Question answer.
   String get questionCovid19TestResultAnswer4;
 
-  // Let the user that they can scroll to see more content
-  String get scrollMoreIndicatorMessage;
+  // Label for a button that brings up a help screen
+  String get temperatureFieldHelpButton;
+
+  // Error that is displayed if the temperature entered is not in a valid temperature range.
+  String get temperatureFieldOutOfRangeError;
+
+  // Title for a dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogTitle;
+
+  // Subsection heading for recommendations about when to measure the user's temperature
+  String get temperatureDialogWhenHeading;
+
+  // User advice
+  String get temperatureDialogWait30Minutes;
+
+  // User advice
+  String get temperatureDialogWait6Hours;
+
+  // Subsection heading for recommendations about how to measure the user's temperature
+  String get temperatureDialogHowHeading;
+
+  // Step 1 in the dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogStep1;
+
+  // Step 2 in the dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogStep2;
+
+  // Step 3 in the dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogStep3;
+
+  // Step 4 in the dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogStep4;
+
+  // Step 5 in the dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogStep5;
+
+  // Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps
+  String get temperatureDialogCloseButton;
+
+  // Prompt for the app sharing sheet, see https://pub.dev/packages/share. The {{ APP_LINK }} word should not be translated, it will be replaced by a link the app at runtime
+  String get shareAppDownloadPrompt;
+
+  // Title for the safety tips screen
+  String get safetyTipsTitle;
+
+  // Subtitle for the safety tips screen
+  String get safetyTipsSubtitle;
+
+  // Safety tips screen: handwashing tip
+  String get safetyTipsWashYourHands;
+
+  // Safety tips screen: social distancing tip
+  String get safetyTipsSocialDistancing;
+
+  // Safety tips screen: contact physician tip
+  String get safetyTipsContactPhysician;
+
+  // Title that appears above the text field where the user enters their location
+  String get locationStepTitle;
+
+  // Error that appears when the user enters their zip code incorrectly.
+  String get locationStepInvalidZipCode;
+
+  // Title that appears within the text field where the user enters their ZIP code
+  String get locationStepZipCode;
 
   // Menu item displayed with no country is yet selected.
   String get locationStepNoCountrySelected;
@@ -495,11 +483,26 @@ abstract class AppLocalizations {
   // Label for the dropdown button that selects a country.
   String get locationStepCountryButtonLabel;
 
+  // Label for button that indicates that the user will continue using the app offline
+  String get networkUnavailableBannerContinueOffline;
+
+  // Label for button that opens the system network settings
+  String get networkUnavailableBannerConnectToWiFi;
+
+  // Message shown on the banner displayed when no network connection is detected
+  String get networkUnavailableBannerMessage;
+
+  // Let the user that they can scroll to see more content
+  String get scrollMoreIndicatorMessage;
+
   // Title for the local statistics screen.
   String get localStatisticsTitle;
 
   // Text shown when the user has not selected a location.
   String get localStatisticsNoLocationSelected;
+
+  // Text shown when there is no data available for a location.
+  String get localStatisticsNoDataAvailable;
 
   // Text for the local statistics location picker.
   String get localStatisticsLocationInput;

@@ -1,6 +1,46 @@
 {
   "@@locale": "en",
 
+  "tutorialIntroStepWelcome": "Welcome to CovidNearMe",
+  "@tutorialIntroStepWelcome": {
+    "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
+  },
+
+  "tutorialIntroStepDescription": "Stay up to date with local COVID-19 statistics and help support relief efforts.",
+  "@tutorialIntroStepDescription": {
+    "description": "Brief description below the name of the app."
+  },
+
+  "tutorialIntroStepWelcomeSemanticsLabel": "Welcome to the Covid Near Me App",
+  "@tutorialIntroStepWelcomeSemanticsLabel": {
+    "description": "Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers"
+  },
+
+  "tutorialIntroStepLocalStatistics": "Get local information about COVID-19.",
+  "@tutorialIntroStepLocalStatistics": {
+    "description": "Describes an action you can take using the app"
+  },
+
+  "tutorialIntroStepSubmitSymptoms": "Anonymously submit your symptoms.",
+  "@tutorialIntroStepSubmitSymptoms": {
+    "description": "Describes an action you can take using the app"
+  },
+
+  "tutorialIntroStepAidEffort": "Aid COVID-19 response efforts.",
+  "@tutorialIntroStepAidEffort": {
+    "description": "Describes the benefit of the app to the community."
+  },
+
+  "tutorialIntroStepGetStarted": "GET STARTED",
+  "@tutorialIntroStepGetStarted": {
+    "description": "Label for the button that shows the next app screen"
+  },
+
+  "tutorialLocationStepTitle": "What's your current location?",
+  "@tutorialLocationStepTitle": {
+    "description": "Title that appears above the text field where the user enters their location during the tutorial"
+  },
+
   "brandingCallout": "Created in partnership with:",
   "@brandingCallout":  {
     "description": "Callout used above partner logos."
@@ -31,49 +71,49 @@
     "description": "Text label on a hyperlink to the source code for the app."
   },
 
-  "consentStepQuestion": "# Informed Consent\n\nSince the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.\n\nYou are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.\n\nTotal daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.\n\nYou can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.\n\nWe will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.\n\nIf this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don't agree\".",
-  "@consentStepQuestion": {
-    "description": "The long informed consent question asked of users"
+  "homeScreenLocalStatisticsTitle": "Get local COVID-19 news and information",
+  "@homeScreenLocalStatisticsTitle": {
+    "description": "Heading text for the local statistics card on the home screen"
   },
 
-  "deniedConsentHeading": "CovidNearMe can't collect information without your informed consent.",
-  "@deniedConsentHeading":  {
-    "description": "Heading for the page show reminds the user that they've said no"
+  "homeScreenLocalStatisticsSubtitle": "See statistics and get up-to-date information on your community",
+  "@homeScreenLocalStatisticsSubtitle": {
+    "description": "Subheading text for the local statistics card on the home screen"
   },
 
-  "deniedConsentMessage": "You can return whenever you like. You'll be asked to agree to the Informed Consent and can continue recording your symptoms to help support COVID-19 response efforts.",
-  "@deniedConsentMessage":  {
-    "description": "The app's response if the user does not agree to the informed consent question"
+  "homeScreenLocalStatisticsButton": "GET STARTED",
+  "@homeScreenLocalStatisticsButton": {
+    "description": "Button text for the local statistics card on the home screen"
   },
 
-  "thankYouScreenTitle": "Thank you for sharing your symptoms to support disease response efforts!",
-  "@thankYouScreenTitle":  {
-    "description": "The title of the ThankYou screen"
+  "homeScreenReportSymptomsTitle": "Record your symptoms",
+  "@homeScreenReportSymptomsTitle": {
+    "description": "Heading text for the report symptoms card on the home screen"
   },
 
-  "thankYouScreenFinishButton": "FINISH",
-  "@thankYouScreenFinishButton":  {
-    "description": "Return to the home screen"
+  "homeScreenReportSymptomsSubtitle": "Quick and easy health check-in",
+  "@homeScreenReportSymptomsSubtitle": {
+    "description": "Subheading text for the report symptoms card on the home screen"
   },
 
-  "thankYouScreenCallToAction": "If you continue to feel symptoms tomorrow, record your symptoms again in the app.",
-  "@thankYouScreenCallToAction":  {
-    "description": "Ask the user to report their symptoms again tomorrow"
+  "homeScreenReportSymptomsButton": "GET STARTED",
+  "@homeScreenReportSymptomsButton": {
+    "description": "Button text for the report symptoms card on the home screen"
   },
 
-  "thankYouScreenSeriousSymptoms": "If your symptoms worsen, contact your healthcare provider.",
-  "@thankYouScreenSeriousSymptoms":  {
-    "description": "Ask the user to contact a physician if their symptoms become serious"
+  "homeScreenShareAppTitle": "Help protect your community by sharing the app",
+  "@homeScreenShareAppTitle": {
+    "description": "Heading text for the share app card on the home screen"
   },
 
-  "thankYouScreenSafetyTipsButton": "SAFETY TIPS",
-  "@thankYouScreenSafetyTipsButton":  {
-    "description": "Button for safety tips"
+  "homeScreenShareAppSubtitle": "Share the app with friends and family and keep your community healthy",
+  "@homeScreenShareAppSubtitle": {
+    "description": "Subheading text for the share app card on the home screen"
   },
 
-  "thankYouScreenShareAppButton": "SHARE THE APP",
-  "@thankYouScreenShareAppButton":  {
-    "description": "Button for sharing the app"
+  "homeScreenShareAppButton": "SHARE",
+  "@homeScreenShareAppButton": {
+    "description": "Button text for the share app card on the home screen"
   },
 
   "symptomReportLoading": "Loading",
@@ -141,219 +181,9 @@
     "description": "Starts the symptom report by showing the first step"
   },
 
-  "symptomReportLocationStepTitle": "What's your current location?",
-  "@symptomReportLocationStepTitle": {
-    "description": "Title for the symptom report location step"
-  },
-
-  "questionsStepQuestionsLoadedError": "Questions could not be loaded.",
-  "@questionsStepQuestionsLoadedError": {
-    "description": "An internal error occurred, the symptom report questions failed to load"
-  },
-
-  "temperatureStepWhenHeading": "When?",
-  "@temperatureStepWhenHeading": {
-    "description": "Subsection heading for recommendations about when to measure the user's temperature"
-  },
-
-  "temperatureStepWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising.",
-  "@temperatureStepWait30Minutes": {
-    "description": "User advice"
-  },
-
-  "temperatureStepWait6Hours": "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin).",
-  "@temperatureStepWait6Hours": {
-    "description": "User advice"
-  },
-
-  "temperatureStepHowHeading": "How?",
-  "@temperatureStepHowHeading": {
-    "description": "Subsection heading for recommendations about how to measure the user's temperature"
-  },
-
-  "temperatureStepHowToDialogTitle": "When and how to take your temperature",
-  "@temperatureStepHowToDialogTitle": {
-    "description": "Title for a dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepTemperatureOutOfRangeError": "Please enter a valid temperature value.",
-  "@temperatureStepTemperatureOutOfRangeError": {
-    "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
-  },
-
-  "temperatureStepHowToDialogStep1": "Wash your hands using soap and water.",
-  "@temperatureStepHowToDialogStep1": {
-    "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepHowToDialogStep2": "Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.",
-  "@temperatureStepHowToDialogStep2": {
-    "description": "Step 2 in the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepHowToDialogStep3": "Put the tip of your thermometer under your tongue and gently close your lips.",
-  "@temperatureStepHowToDialogStep3": {
-    "description": "Step 3 in the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepHowToDialogStep4": "Keep your lips closed and the thermometer under your tongue until you hear a beep.",
-  "@temperatureStepHowToDialogStep4": {
-    "description": "Step 4 in the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepHowToDialogStep5": "Take out your thermometer and record your temperature.",
-  "@temperatureStepHowToDialogStep5": {
-    "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepHowToDialogReturn": "CLOSE",
-  "@temperatureStepHowToDialogReturn": {
-    "description": "Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps"
-  },
-
-  "temperatureStepHelp": "NEED HELP? TAP FOR INSTRUCTIONS",
-  "@temperatureStepHelp": {
-    "description": "Label for a button that brings up a help screen"
-  },
-
-  "homeScreenLocalStatisticsTitle": "Get local COVID-19 news and information",
-  "@homeScreenLocalStatisticsTitle": {
-    "description": "Heading text for the local statistics card on the home screen"
-  },
-
-  "homeScreenLocalStatisticsSubtitle": "See statistics and get up-to-date information on your community",
-  "@homeScreenLocalStatisticsSubtitle": {
-    "description": "Subheading text for the local statistics card on the home screen"
-  },
-
-  "homeScreenLocalStatisticsButton": "GET STARTED",
-  "@homeScreenLocalStatisticsButton": {
-    "description": "Button text for the local statistics card on the home screen"
-  },
-
-  "homeScreenReportSymptomsTitle": "Record your symptoms",
-  "@homeScreenReportSymptomsTitle": {
-    "description": "Heading text for the report symptoms card on the home screen"
-  },
-
-  "homeScreenReportSymptomsSubtitle": "Quick and easy health check-in",
-  "@homeScreenReportSymptomsSubtitle": {
-    "description": "Subheading text for the report symptoms card on the home screen"
-  },
-
-  "homeScreenReportSymptomsButton": "GET STARTED",
-  "@homeScreenReportSymptomsButton": {
-    "description": "Button text for the report symptoms card on the home screen"
-  },
-
-  "systemReportSubmitting": "Submitting your symptoms",
-  "@systemReportSubmitting": {
-    "description": "Label next to loading indicator"
-  },
-
-  "systemReportBackToHomePage": "Go back to the home page",
-  "@systemReportBackToHomePage": {
-    "description": "Tooltip for the back button"
-  },
-
-  "shareAppDownloadPrompt": "Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! {{ APP_LINK }}",
-  "@shareAppDownloadPrompt": {
-    "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The {{ APP_LINK }} word should not be translated, it will be replaced by a link the app at runtime"
-  },
-
-  "homeScreenShareAppTitle": "Help protect your community by sharing the app",
-  "@homeScreenShareAppTitle": {
-    "description": "Heading text for the share app card on the home screen"
-  },
-
-  "homeScreenShareAppSubtitle": "Share the app with friends and family and keep your community healthy",
-  "@homeScreenShareAppSubtitle": {
-    "description": "Subheading text for the share app card on the home screen"
-  },
-
-  "homeScreenShareAppButton": "SHARE",
-  "@homeScreenShareAppButton": {
-    "description": "Button text for the share app card on the home screen"
-  },
-
-  "safetyTipsTitle": "How to stay healthy",
-  "@safetyTipsTitle": {
-    "description": "Title for the safety tips screen"
-  },
-
-  "safetyTipsSubtitle": "Here are some effective ways to protect your health and help your community stop the spread of disease.",
-  "@safetyTipsSubtitle": {
-    "description": "Subtitle for the safety tips screen"
-  },
-
-  "safetyTipsWashYourHands": "Wash your hands frequently for at least 20 seconds using soap and water. Avoid touching your eyes, nose, and mouth, especially in public. Always cover your coughs and sneezes with the inside of your elbow.",
-  "@safetyTipsWashYourHands": {
-    "description": "Safety tips screen: handwashing tip"
-  },
-
-  "safetyTipsSocialDistancing": "Practice social distancing, which means limiting contact with other people. Maintain at least 6 feet of distance between yourself and others when you're outside of your home.",
-  "@safetyTipsSocialDistancing": {
-    "description": "Safety tips screen: social distancing tip"
-  },
-
-  "safetyTipsContactPhysician": "If your symptoms worsen, contact a healthcare provider.",
-  "@safetyTipsContactPhysician": {
-    "description": "Safety tips screen: contact physician tip"
-  },
-
-  "tutorialIntroStepWelcome": "Welcome to CovidNearMe",
-  "@tutorialIntroStepWelcome": {
-    "description": "Heading on the initial screen. The name of the app, CovidNearMe, should not be translated"
-  },
-
-  "tutorialIntroStepDescription": "Stay up to date with local COVID-19 statistics and help support relief efforts.",
-  "@tutorialIntroStepDescription": {
-    "description": "Brief description below the name of the app."
-  },
-
-  "tutorialIntroStepWelcomeSemanticsLabel": "Welcome to the Covid Near Me App",
-  "@tutorialIntroStepWelcomeSemanticsLabel": {
-    "description": "Semantics label for tutorialIntroStepWelcome which makes CovidNearMe legible for screen readers"
-  },
-
-  "tutorialIntroStepLocalStatistics": "Get local information about COVID-19.",
-  "@tutorialIntroStepLocalStatistics": {
-    "description": "Describes an action you can take using the app"
-  },
-
-  "tutorialIntroStepSubmitSymptoms": "Anonymously submit your symptoms.",
-  "@tutorialIntroStepSubmitSymptoms": {
-    "description": "Describes an action you can take using the app"
-  },
-
-  "tutorialIntroStepAidEffort": "Aid COVID-19 response efforts.",
-  "@tutorialIntroStepAidEffort": {
-    "description": "Describes the benefit of the app to the community."
-  },
-
-  "tutorialIntroStepGetStarted": "GET STARTED",
-  "@tutorialIntroStepGetStarted": {
-    "description": "Label for the button that shows the next app screen"
-  },
-
-  "tutorialLocationStepTitle": "What's your current location?",
-  "@tutorialLocationStepTitle": {
-    "description": "Title that appears above the text field where the user enters their location during the tutorial"
-  },
-
-  "locationStepTitle": "Verify your location",
-  "@locationStepTitle": {
-    "description": "Title that appears above the text field where the user enters their location"
-  },
-
-  "locationStepInvalidZipCode": "Please enter a valid 5-digit Zip Code",
-  "@locationStepInvalidZipCode": {
-    "description": "Error that appears when the user enters their zip code incorrectly."
-  },
-
-  "locationStepZipCode": "Zip Code",
-  "@locationStepZipCode": {
-    "description": "Title that appears within the text field where the user enters their ZIP code"
+  "consentStepQuestion": "# Informed Consent\n\nSince the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.\n\nYou are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.\n\nTotal daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.\n\nYou can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.\n\nWe will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.\n\nIf this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don't agree\".",
+  "@consentStepQuestion": {
+    "description": "The long informed consent question asked of users"
   },
 
   "consentStepDecline": "I DON'T AGREE",
@@ -376,24 +206,69 @@
     "description": "Label for the button that indicates that the user did accept the app license"
   },
 
-  "networkUnavailableBannerContinueOffline": "CONTINUE OFFLINE",
-  "@networkUnavailableBannerContinueOffline": {
-     "description": "Label for button that indicates that the user will continue using the app offline"
+  "deniedConsentHeading": "CovidNearMe can't collect information without your consent",
+  "@deniedConsentHeading":  {
+    "description": "Heading for the page show reminds the user that they've said no"
   },
 
-  "networkUnavailableBannerConnectToWiFi": "CONNECT TO WIFI",
-  "@networkUnavailableBannerConnectToWiFi": {
-     "description": "Label for button that opens the system network settings"
+  "deniedConsentMessage": "If you change your mind, you can use the app at any time. You’ll be asked a couple of questions about your current symptoms and if you’ve been tested for COVID-19. Your information will be used anonymously to help support COVID-19 response efforts.",
+  "@deniedConsentMessage":  {
+    "description": "The app's response if the user does not agree to the informed consent question"
   },
 
-  "networkUnavailableBannerMessage": "You seem to be offline. Please check your network settings and try again.",
-  "@networkUnavailableBannerMessage": {
-     "description": "Message shown on the banner displayed when no network connection is detected"
+  "deniedConsentSafetyTipsButton": "GET TIPS FOR STAYING HEALTHY",
+  "@deniedConsentSafetyTipsButton":  {
+    "description": "Text for the safety tips button on the denied consent screen"
   },
 
-  "deniedConsentBackButton": "Go back to the informed consent screen",
-  "@deniedConsentBackButton": {
-    "description": "Label for the back button on the denied consent screen"
+  "symptomReportLocationStepTitle": "What's your current location?",
+  "@symptomReportLocationStepTitle": {
+    "description": "Title for the symptom report location step"
+  },
+
+  "questionsStepQuestionsLoadedError": "Questions could not be loaded.",
+  "@questionsStepQuestionsLoadedError": {
+    "description": "An internal error occurred, the symptom report questions failed to load"
+  },
+
+  "systemReportSubmitting": "Submitting your symptoms",
+  "@systemReportSubmitting": {
+    "description": "Label next to loading indicator"
+  },
+
+  "systemReportBackToHomePage": "Go back to the home page",
+  "@systemReportBackToHomePage": {
+    "description": "Tooltip for the back button"
+  },
+
+  "thankYouScreenTitle": "Thank you for sharing your symptoms to support disease response efforts!",
+  "@thankYouScreenTitle":  {
+    "description": "The title of the ThankYou screen"
+  },
+
+  "thankYouScreenFinishButton": "FINISH",
+  "@thankYouScreenFinishButton":  {
+    "description": "Return to the home screen"
+  },
+
+  "thankYouScreenCallToAction": "If you continue to feel symptoms tomorrow, record your symptoms again in the app.",
+  "@thankYouScreenCallToAction":  {
+    "description": "Ask the user to report their symptoms again tomorrow"
+  },
+
+  "thankYouScreenSeriousSymptoms": "If your symptoms worsen, contact your healthcare provider.",
+  "@thankYouScreenSeriousSymptoms":  {
+    "description": "Ask the user to contact a physician if their symptoms become serious"
+  },
+
+  "thankYouScreenSafetyTipsButton": "SAFETY TIPS",
+  "@thankYouScreenSafetyTipsButton":  {
+    "description": "Button for safety tips"
+  },
+
+  "thankYouScreenShareAppButton": "SHARE THE APP",
+  "@thankYouScreenShareAppButton":  {
+    "description": "Button for sharing the app"
   },
 
   "questionShortnessOfBreathTitle": "Are you experiencing shortness of breath?",
@@ -650,9 +525,114 @@
       "description": "Question answer."
   },
 
-  "scrollMoreIndicatorMessage": "SCROLL FOR MORE",
-  "@scrollMoreIndicatorMessage": {
-    "description": "Let the user that they can scroll to see more content"
+  "temperatureFieldHelpButton": "NEED HELP? TAP FOR INSTRUCTIONS",
+  "@temperatureFieldHelpButton": {
+    "description": "Label for a button that brings up a help screen"
+  },
+
+  "temperatureFieldOutOfRangeError": "Please enter a valid temperature value.",
+  "@temperatureFieldOutOfRangeError": {
+    "description": "Error that is displayed if the temperature entered is not in a valid temperature range."
+  },
+
+  "temperatureDialogTitle": "When and how to take your temperature",
+  "@temperatureDialogTitle": {
+    "description": "Title for a dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureDialogWhenHeading": "When?",
+  "@temperatureDialogWhenHeading": {
+    "description": "Subsection heading for recommendations about when to measure the user's temperature"
+  },
+
+  "temperatureDialogWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising.",
+  "@temperatureDialogWait30Minutes": {
+    "description": "User advice"
+  },
+
+  "temperatureDialogWait6Hours": "Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin).",
+  "@temperatureDialogWait6Hours": {
+    "description": "User advice"
+  },
+
+  "temperatureDialogHowHeading": "How?",
+  "@temperatureDialogHowHeading": {
+    "description": "Subsection heading for recommendations about how to measure the user's temperature"
+  },
+
+  "temperatureDialogStep1": "Wash your hands using soap and water.",
+  "@temperatureDialogStep1": {
+    "description": "Step 1 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureDialogStep2": "Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.",
+  "@temperatureDialogStep2": {
+    "description": "Step 2 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureDialogStep3": "Put the tip of your thermometer under your tongue and gently close your lips.",
+  "@temperatureDialogStep3": {
+    "description": "Step 3 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureDialogStep4": "Keep your lips closed and the thermometer under your tongue until you hear a beep.",
+  "@temperatureDialogStep4": {
+    "description": "Step 4 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureDialogStep5": "Take out your thermometer and record your temperature.",
+  "@temperatureDialogStep5": {
+    "description": "Step 5 in the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "temperatureDialogCloseButton": "CLOSE",
+  "@temperatureDialogCloseButton": {
+    "description": "Return to the symptom report screen from the dialog that explains how to take your temperature in 5 steps"
+  },
+
+  "shareAppDownloadPrompt": "Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! {{ APP_LINK }}",
+  "@shareAppDownloadPrompt": {
+    "description": "Prompt for the app sharing sheet, see https://pub.dev/packages/share. The {{ APP_LINK }} word should not be translated, it will be replaced by a link the app at runtime"
+  },
+
+  "safetyTipsTitle": "How to stay healthy",
+  "@safetyTipsTitle": {
+    "description": "Title for the safety tips screen"
+  },
+
+  "safetyTipsSubtitle": "Effective ways to protect your health and help your community stop the spread of disease.",
+  "@safetyTipsSubtitle": {
+    "description": "Subtitle for the safety tips screen"
+  },
+
+  "safetyTipsWashYourHands": "Wash your hands frequently for at least 20 seconds using soap and water. Avoid touching your eyes, nose, and mouth, especially in public. Always cover your coughs and sneezes with the inside of your elbow.",
+  "@safetyTipsWashYourHands": {
+    "description": "Safety tips screen: handwashing tip"
+  },
+
+  "safetyTipsSocialDistancing": "Practice social distancing, which means limiting contact with other people. Maintain at least 6 feet of distance between yourself and others when you're outside of your home.",
+  "@safetyTipsSocialDistancing": {
+    "description": "Safety tips screen: social distancing tip"
+  },
+
+  "safetyTipsContactPhysician": "If your symptoms worsen, contact a healthcare provider.",
+  "@safetyTipsContactPhysician": {
+    "description": "Safety tips screen: contact physician tip"
+  },
+
+  "locationStepTitle": "Verify your location",
+  "@locationStepTitle": {
+    "description": "Title that appears above the text field where the user enters their location"
+  },
+
+  "locationStepInvalidZipCode": "Please enter a valid 5-digit Zip Code",
+  "@locationStepInvalidZipCode": {
+    "description": "Error that appears when the user enters their zip code incorrectly."
+  },
+
+  "locationStepZipCode": "Zip Code",
+  "@locationStepZipCode": {
+    "description": "Title that appears within the text field where the user enters their ZIP code"
   },
 
   "locationStepNoCountrySelected": "None selected",
@@ -670,6 +650,26 @@
     "description": "Label for the dropdown button that selects a country."
   },
 
+  "networkUnavailableBannerContinueOffline": "CONTINUE OFFLINE",
+  "@networkUnavailableBannerContinueOffline": {
+     "description": "Label for button that indicates that the user will continue using the app offline"
+  },
+
+  "networkUnavailableBannerConnectToWiFi": "CONNECT TO WIFI",
+  "@networkUnavailableBannerConnectToWiFi": {
+     "description": "Label for button that opens the system network settings"
+  },
+
+  "networkUnavailableBannerMessage": "You seem to be offline. Please check your network settings and try again.",
+  "@networkUnavailableBannerMessage": {
+     "description": "Message shown on the banner displayed when no network connection is detected"
+  },
+
+  "scrollMoreIndicatorMessage": "SCROLL FOR MORE",
+  "@scrollMoreIndicatorMessage": {
+    "description": "Let the user that they can scroll to see more content"
+  },
+
   "localStatisticsTitle": "Local COVID-19 Statistics",
   "@localStatisticsTitle": {
     "description": "Title for the local statistics screen."
@@ -678,6 +678,11 @@
   "localStatisticsNoLocationSelected": "Select a location to view its statistics.",
   "@localStatisticsNoLocationSelected": {
     "description": "Text shown when the user has not selected a location."
+  },
+
+  "localStatisticsNoDataAvailable": "No COVID-19 data was found for this location.",
+  "@localStatisticsNoDataAvailable": {
+    "description": "Text shown when there is no data available for a location."
   },
 
   "localStatisticsLocationInput": "Zip Code or Country",

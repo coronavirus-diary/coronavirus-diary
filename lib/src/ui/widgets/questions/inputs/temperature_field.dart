@@ -71,7 +71,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
       if (degrees < _celsiusMin ||
           degrees > _fahrenheitMax ||
           (degrees < _fahrenheitMin && degrees > _celsiusMax)) {
-        return localizations.temperatureStepTemperatureOutOfRangeError;
+        return localizations.temperatureFieldOutOfRangeError;
       }
     }
     return null;
@@ -109,7 +109,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
         return Scaffold(
           appBar: AppBar(
             title: Text(
-              localizations.temperatureStepHowToDialogTitle,
+              localizations.temperatureDialogTitle,
               style: theme.textTheme.headline
                   .copyWith(color: theme.colorScheme.onBackground),
               textAlign: TextAlign.center,
@@ -122,41 +122,41 @@ class _TemperatureFieldState extends State<TemperatureField> {
               padding: EdgeInsets.all(20),
               children: <Widget>[
                 Text(
-                  localizations.temperatureStepWhenHeading,
+                  localizations.temperatureDialogWhenHeading,
                   style: categoryFontStyle,
                 ),
                 SizedBox(height: 10),
                 _InstructionStep(
-                  text: localizations.temperatureStepWait30Minutes,
+                  text: localizations.temperatureDialogWait30Minutes,
                   number: 1,
                 ),
                 _InstructionStep(
-                  text: localizations.temperatureStepWait6Hours,
+                  text: localizations.temperatureDialogWait6Hours,
                   number: 2,
                 ),
                 Text(
-                  localizations.temperatureStepHowHeading,
+                  localizations.temperatureDialogHowHeading,
                   style: categoryFontStyle,
                 ),
                 SizedBox(height: 10),
                 _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep1,
+                  text: localizations.temperatureDialogStep1,
                   number: 1,
                 ),
                 _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep2,
+                  text: localizations.temperatureDialogStep2,
                   number: 2,
                 ),
                 _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep3,
+                  text: localizations.temperatureDialogStep3,
                   number: 3,
                 ),
                 _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep4,
+                  text: localizations.temperatureDialogStep4,
                   number: 4,
                 ),
                 _InstructionStep(
-                  text: localizations.temperatureStepHowToDialogStep5,
+                  text: localizations.temperatureDialogStep5,
                   number: 5,
                 ),
                 Container(
@@ -164,8 +164,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
                   child: Center(
                     child: RaisedButton(
                       onPressed: () => Navigator.pop(context),
-                      child:
-                          Text(localizations.temperatureStepHowToDialogReturn),
+                      child: Text(localizations.temperatureDialogCloseButton),
                     ),
                   ),
                 ),
@@ -207,7 +206,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
             padding: const EdgeInsetsDirectional.only(start: 10.0, top: 10.0),
             child: RaisedButton(
               onPressed: () => _showInstructions(context),
-              child: Text(localizations.temperatureStepHelp),
+              child: Text(localizations.temperatureFieldHelpButton),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8.0),
             ),
           ),

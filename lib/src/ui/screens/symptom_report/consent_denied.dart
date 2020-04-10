@@ -1,7 +1,9 @@
 import 'dart:ui';
 
-import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
+
+import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/router.dart';
 
 class SymptomReportConsentDeniedScreen extends StatelessWidget {
   static const routeName = '/symptom_report/denied_consent';
@@ -14,7 +16,6 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           key: ValueKey('symptomReportConsentDeniedCloseButton'),
-          tooltip: localizations.deniedConsentBackButton,
           icon: Icon(Icons.close),
           onPressed: () => Navigator.pop(context),
         ),
@@ -53,6 +54,23 @@ class SymptomReportConsentDeniedScreen extends StatelessWidget {
                       fontSize: 16,
                     ),
               ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 40),
+            padding: EdgeInsets.symmetric(horizontal: 40),
+            width: double.infinity,
+            child: RaisedButton(
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(SafetyTipsScreen.routeName),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(7),
+                side: BorderSide(
+                  color: Colors.black26,
+                  width: 1.0,
+                ),
+              ),
+              child: Text(localizations.deniedConsentSafetyTipsButton),
             ),
           ),
         ],

@@ -9,6 +9,34 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get tutorialIntroStepWelcome => 'Welcome to CovidNearMe';
+
+  @override
+  String get tutorialIntroStepDescription =>
+      'Stay up to date with local COVID-19 statistics and help support relief efforts.';
+
+  @override
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Welcome to the Covid Near Me App';
+
+  @override
+  String get tutorialIntroStepLocalStatistics =>
+      'Get local information about COVID-19.';
+
+  @override
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Anonymously submit your symptoms.';
+
+  @override
+  String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
+
+  @override
+  String get tutorialIntroStepGetStarted => 'GET STARTED';
+
+  @override
+  String get tutorialLocationStepTitle => 'What\'s your current location?';
+
+  @override
   String get brandingCallout => 'Created in partnership with:';
 
   @override
@@ -30,48 +58,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutBoxLinkText => 'Coronavirus Diary on GitHub';
 
   @override
-  String get consentStepQuestion => '''# Informed Consent
-
-Since the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.
-
-You are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.
-
-Total daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.
-
-You can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.
-
-We will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.
-
-If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don\'t agree\".''';
+  String get homeScreenLocalStatisticsTitle =>
+      'Get local COVID-19 news and information';
 
   @override
-  String get deniedConsentHeading =>
-      'CovidNearMe can\'t collect information without your informed consent.';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'See statistics and get up-to-date information on your community';
 
   @override
-  String get deniedConsentMessage =>
-      'You can return whenever you like. You\'ll be asked to agree to the Informed Consent and can continue recording your symptoms to help support COVID-19 response efforts.';
+  String get homeScreenLocalStatisticsButton => 'GET STARTED';
 
   @override
-  String get thankYouScreenTitle =>
-      'Thank you for sharing your symptoms to support disease response efforts!';
+  String get homeScreenReportSymptomsTitle => 'Record your symptoms';
 
   @override
-  String get thankYouScreenFinishButton => 'FINISH';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Quick and easy health check-in';
 
   @override
-  String get thankYouScreenCallToAction =>
-      'If you continue to feel symptoms tomorrow, record your symptoms again in the app.';
+  String get homeScreenReportSymptomsButton => 'GET STARTED';
 
   @override
-  String get thankYouScreenSeriousSymptoms =>
-      'If your symptoms worsen, contact your healthcare provider.';
+  String get homeScreenShareAppTitle =>
+      'Help protect your community by sharing the app';
 
   @override
-  String get thankYouScreenSafetyTipsButton => 'SAFETY TIPS';
+  String get homeScreenShareAppSubtitle =>
+      'Share the app with friends and family and keep your community healthy';
 
   @override
-  String get thankYouScreenShareAppButton => 'SHARE THE APP';
+  String get homeScreenShareAppButton => 'SHARE';
 
   @override
   String get symptomReportLoading => 'Loading';
@@ -125,158 +141,19 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get symptomReportIntroStepStartButton => 'GET STARTED';
 
   @override
-  String get symptomReportLocationStepTitle => 'What\'s your current location?';
+  String get consentStepQuestion => '''# Informed Consent
 
-  @override
-  String get questionsStepQuestionsLoadedError =>
-      'Questions could not be loaded.';
+Since the US has been short on test kits, we are trying to figure out how many people have symptoms that could be due to COVID-19. The information gathered from this app will help predict where hospitals will be under the most strain. Hopefully, doctors and supplies can then be sent to the right places.
 
-  @override
-  String get temperatureStepWhenHeading => 'When?';
+You are anonymous. We don’t want to know who you are! We will ask for your zip code to count cases around specific hospitals. Your symptom severity will be used to guess how likely it is that you have COVID-19, and to see how many people in your region are becoming severely sick.
 
-  @override
-  String get temperatureStepWait30Minutes =>
-      'Wait 30 minutes after eating, drinking, or exercising.';
+Total daily cases for zip codes will be provided to state and local health authorities, the CDC, and the US Government to help predict which communities need the most support. We will also make a map here on this app. Data will also be analyzed for geographic trends. For example, we might see fewer cases in areas that closed schools for a long time, or perhaps we will see that the epidemic slows down in hot weather.
 
-  @override
-  String get temperatureStepWait6Hours =>
-      'Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin).';
+You can come back later and enter new information on a different day. We will know it’s you and won’t count you twice. Maybe you feel a lot worse, or you got a COVID-19 test result and would like to let us know.
 
-  @override
-  String get temperatureStepHowHeading => 'How?';
+We will not sell this data. It will only be used for public health and research and deleted after the epidemic has run its course.
 
-  @override
-  String get temperatureStepHowToDialogTitle =>
-      'When and how to take your temperature';
-
-  @override
-  String get temperatureStepTemperatureOutOfRangeError =>
-      'Please enter a valid temperature value.';
-
-  @override
-  String get temperatureStepHowToDialogStep1 =>
-      'Wash your hands using soap and water.';
-
-  @override
-  String get temperatureStepHowToDialogStep2 =>
-      'Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.';
-
-  @override
-  String get temperatureStepHowToDialogStep3 =>
-      'Put the tip of your thermometer under your tongue and gently close your lips.';
-
-  @override
-  String get temperatureStepHowToDialogStep4 =>
-      'Keep your lips closed and the thermometer under your tongue until you hear a beep.';
-
-  @override
-  String get temperatureStepHowToDialogStep5 =>
-      'Take out your thermometer and record your temperature.';
-
-  @override
-  String get temperatureStepHowToDialogReturn => 'CLOSE';
-
-  @override
-  String get temperatureStepHelp => 'NEED HELP? TAP FOR INSTRUCTIONS';
-
-  @override
-  String get homeScreenLocalStatisticsTitle =>
-      'Get local COVID-19 news and information';
-
-  @override
-  String get homeScreenLocalStatisticsSubtitle =>
-      'See statistics and get up-to-date information on your community';
-
-  @override
-  String get homeScreenLocalStatisticsButton => 'GET STARTED';
-
-  @override
-  String get homeScreenReportSymptomsTitle => 'Record your symptoms';
-
-  @override
-  String get homeScreenReportSymptomsSubtitle =>
-      'Quick and easy health check-in';
-
-  @override
-  String get homeScreenReportSymptomsButton => 'GET STARTED';
-
-  @override
-  String get systemReportSubmitting => 'Submitting your symptoms';
-
-  @override
-  String get systemReportBackToHomePage => 'Go back to the home page';
-
-  @override
-  String get shareAppDownloadPrompt =>
-      'Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! {{ APP_LINK }}';
-
-  @override
-  String get homeScreenShareAppTitle =>
-      'Help protect your community by sharing the app';
-
-  @override
-  String get homeScreenShareAppSubtitle =>
-      'Share the app with friends and family and keep your community healthy';
-
-  @override
-  String get homeScreenShareAppButton => 'SHARE';
-
-  @override
-  String get safetyTipsTitle => 'How to stay healthy';
-
-  @override
-  String get safetyTipsSubtitle =>
-      'Here are some effective ways to protect your health and help your community stop the spread of disease.';
-
-  @override
-  String get safetyTipsWashYourHands =>
-      'Wash your hands frequently for at least 20 seconds using soap and water. Avoid touching your eyes, nose, and mouth, especially in public. Always cover your coughs and sneezes with the inside of your elbow.';
-
-  @override
-  String get safetyTipsSocialDistancing =>
-      'Practice social distancing, which means limiting contact with other people. Maintain at least 6 feet of distance between yourself and others when you\'re outside of your home.';
-
-  @override
-  String get safetyTipsContactPhysician =>
-      'If your symptoms worsen, contact a healthcare provider.';
-
-  @override
-  String get tutorialIntroStepWelcome => 'Welcome to CovidNearMe';
-
-  @override
-  String get tutorialIntroStepDescription =>
-      'Stay up to date with local COVID-19 statistics and help support relief efforts.';
-
-  @override
-  String get tutorialIntroStepWelcomeSemanticsLabel =>
-      'Welcome to the Covid Near Me App';
-
-  @override
-  String get tutorialIntroStepLocalStatistics =>
-      'Get local information about COVID-19.';
-
-  @override
-  String get tutorialIntroStepSubmitSymptoms =>
-      'Anonymously submit your symptoms.';
-
-  @override
-  String get tutorialIntroStepAidEffort => 'Aid COVID-19 response efforts.';
-
-  @override
-  String get tutorialIntroStepGetStarted => 'GET STARTED';
-
-  @override
-  String get tutorialLocationStepTitle => 'What\'s your current location?';
-
-  @override
-  String get locationStepTitle => 'Verify your location';
-
-  @override
-  String get locationStepInvalidZipCode =>
-      'Please enter a valid 5-digit Zip Code';
-
-  @override
-  String get locationStepZipCode => 'Zip Code';
+If this is all OK and you are 18 years old or older, please click \"I agree\". Otherwise, click \"I don\'t agree\".''';
 
   @override
   String get consentStepDecline => 'I DON\'T AGREE';
@@ -291,18 +168,49 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get consentStepAgreeActive => 'I AGREED';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
+  String get deniedConsentHeading =>
+      'CovidNearMe can\'t collect information without your consent';
 
   @override
-  String get networkUnavailableBannerConnectToWiFi => 'CONNECT TO WIFI';
+  String get deniedConsentMessage =>
+      'If you change your mind, you can use the app at any time. You’ll be asked a couple of questions about your current symptoms and if you’ve been tested for COVID-19. Your information will be used anonymously to help support COVID-19 response efforts.';
 
   @override
-  String get networkUnavailableBannerMessage =>
-      'You seem to be offline. Please check your network settings and try again.';
+  String get deniedConsentSafetyTipsButton => 'GET TIPS FOR STAYING HEALTHY';
 
   @override
-  String get deniedConsentBackButton =>
-      'Go back to the informed consent screen';
+  String get symptomReportLocationStepTitle => 'What\'s your current location?';
+
+  @override
+  String get questionsStepQuestionsLoadedError =>
+      'Questions could not be loaded.';
+
+  @override
+  String get systemReportSubmitting => 'Submitting your symptoms';
+
+  @override
+  String get systemReportBackToHomePage => 'Go back to the home page';
+
+  @override
+  String get thankYouScreenTitle =>
+      'Thank you for sharing your symptoms to support disease response efforts!';
+
+  @override
+  String get thankYouScreenFinishButton => 'FINISH';
+
+  @override
+  String get thankYouScreenCallToAction =>
+      'If you continue to feel symptoms tomorrow, record your symptoms again in the app.';
+
+  @override
+  String get thankYouScreenSeriousSymptoms =>
+      'If your symptoms worsen, contact your healthcare provider.';
+
+  @override
+  String get thankYouScreenSafetyTipsButton => 'SAFETY TIPS';
+
+  @override
+  String get thankYouScreenShareAppButton => 'SHARE THE APP';
 
   @override
   String get questionShortnessOfBreathTitle =>
@@ -471,7 +379,83 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
       'I was turned away because I wasn\'t sick enough';
 
   @override
-  String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
+  String get temperatureFieldHelpButton => 'NEED HELP? TAP FOR INSTRUCTIONS';
+
+  @override
+  String get temperatureFieldOutOfRangeError =>
+      'Please enter a valid temperature value.';
+
+  @override
+  String get temperatureDialogTitle => 'When and how to take your temperature';
+
+  @override
+  String get temperatureDialogWhenHeading => 'When?';
+
+  @override
+  String get temperatureDialogWait30Minutes =>
+      'Wait 30 minutes after eating, drinking, or exercising.';
+
+  @override
+  String get temperatureDialogWait6Hours =>
+      'Wait at least 6 hours after taking medicines that can lower your temperature (like Acetaminophen, Paracetamol, Ibuprofen, and Aspirin).';
+
+  @override
+  String get temperatureDialogHowHeading => 'How?';
+
+  @override
+  String get temperatureDialogStep1 => 'Wash your hands using soap and water.';
+
+  @override
+  String get temperatureDialogStep2 =>
+      'Wash the tip of your thermometer using soap and warm water or rubbing alcohol. Rinse.';
+
+  @override
+  String get temperatureDialogStep3 =>
+      'Put the tip of your thermometer under your tongue and gently close your lips.';
+
+  @override
+  String get temperatureDialogStep4 =>
+      'Keep your lips closed and the thermometer under your tongue until you hear a beep.';
+
+  @override
+  String get temperatureDialogStep5 =>
+      'Take out your thermometer and record your temperature.';
+
+  @override
+  String get temperatureDialogCloseButton => 'CLOSE';
+
+  @override
+  String get shareAppDownloadPrompt =>
+      'Download CovidNearMe to get local COVID-19 information and statistics. Support your community by contributing your symptoms anonymously! {{ APP_LINK }}';
+
+  @override
+  String get safetyTipsTitle => 'How to stay healthy';
+
+  @override
+  String get safetyTipsSubtitle =>
+      'Effective ways to protect your health and help your community stop the spread of disease.';
+
+  @override
+  String get safetyTipsWashYourHands =>
+      'Wash your hands frequently for at least 20 seconds using soap and water. Avoid touching your eyes, nose, and mouth, especially in public. Always cover your coughs and sneezes with the inside of your elbow.';
+
+  @override
+  String get safetyTipsSocialDistancing =>
+      'Practice social distancing, which means limiting contact with other people. Maintain at least 6 feet of distance between yourself and others when you\'re outside of your home.';
+
+  @override
+  String get safetyTipsContactPhysician =>
+      'If your symptoms worsen, contact a healthcare provider.';
+
+  @override
+  String get locationStepTitle => 'Verify your location';
+
+  @override
+  String get locationStepInvalidZipCode =>
+      'Please enter a valid 5-digit Zip Code';
+
+  @override
+  String get locationStepZipCode => 'Zip Code';
 
   @override
   String get locationStepNoCountrySelected => 'None selected';
@@ -484,11 +468,28 @@ If this is all OK and you are 18 years old or older, please click \"I agree\". O
   String get locationStepCountryButtonLabel => 'Country:';
 
   @override
+  String get networkUnavailableBannerContinueOffline => 'CONTINUE OFFLINE';
+
+  @override
+  String get networkUnavailableBannerConnectToWiFi => 'CONNECT TO WIFI';
+
+  @override
+  String get networkUnavailableBannerMessage =>
+      'You seem to be offline. Please check your network settings and try again.';
+
+  @override
+  String get scrollMoreIndicatorMessage => 'SCROLL FOR MORE';
+
+  @override
   String get localStatisticsTitle => 'Local COVID-19 Statistics';
 
   @override
   String get localStatisticsNoLocationSelected =>
       'Select a location to view its statistics.';
+
+  @override
+  String get localStatisticsNoDataAvailable =>
+      'No COVID-19 data was found for this location.';
 
   @override
   String get localStatisticsLocationInput => 'Zip Code or Country';

@@ -2,11 +2,11 @@
 
 This is a temporary copy of the Flutter beta version of the gen_l10n tool.
 
-Internationalization support landed in https://github.com/coronavirus-diary/coronavirus-diary/pull/95. This change enables the app to be localized for different languages.  The app now looks up messages (user visible text strings) via the AppLocalizations class, see lib/src/l10n/app_localizations.dart. This class was generated from lib/src/l10n/app_en.arb - the app's message "template" file" - using the beta version of the Flutter gen_l10n tool. The English localizations, lib/src/l10n/app_localizations_en.dart, were generated this way as well. Each message is defined by two entries in the template file. For example these entries define the message called temperatureStepWait30Minutes:
+Internationalization support landed in https://github.com/coronavirus-diary/coronavirus-diary/pull/95. This change enables the app to be localized for different languages.  The app now looks up messages (user visible text strings) via the AppLocalizations class, see lib/src/l10n/app_localizations.dart. This class was generated from lib/src/l10n/app_en.arb - the app's message "template" file" - using the beta version of the Flutter gen_l10n tool. The English localizations, lib/src/l10n/app_localizations_en.dart, were generated this way as well. Each message is defined by two entries in the template file. For example these entries define the message called temperatureDialogWait30Minutes:
 
 ```
-"temperatureStepWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising",
-"@temperatureStepWait30Minutes": {
+"temperatureDialogWait30Minutes": "Wait 30 minutes after eating, drinking, or exercising",
+"@temperatureDialogWait30Minutes": {
   "description": "User advice"
 },
 ```
