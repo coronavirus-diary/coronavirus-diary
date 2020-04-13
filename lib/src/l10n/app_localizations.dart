@@ -1,14 +1,17 @@
+
 import 'dart:async';
 
+// ignore: unused_import
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
-
-// ignore_for_file: unnecessary_brace_in_string_interps
+import 'app_localizations_es.dart';
+import 'app_localizations_ko.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_zh.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations returned
 /// by `AppLocalizations.of(context)`.
@@ -37,8 +40,7 @@ import 'app_localizations_en.dart';
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
-///   intl: 0.16.0
-///   intl_translation: 0.17.7
+///   intl: 0.16.1
 ///
 ///   # rest of dependencies
 /// ```
@@ -63,9 +65,7 @@ import 'app_localizations_en.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-      : assert(locale != null),
-        localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : assert(locale != null), localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   // ignore: unused_field
   final String localeName;
@@ -74,8 +74,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -87,8 +86,7 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -96,7 +94,34 @@ abstract class AppLocalizations {
   ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[Locale('en')];
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('en'),
+    Locale('es'),
+    Locale('es', '419'),
+    Locale('es', 'AR'),
+    Locale('es', 'BO'),
+    Locale('es', 'CL'),
+    Locale('es', 'CO'),
+    Locale('es', 'CR'),
+    Locale('es', 'DO'),
+    Locale('es', 'EC'),
+    Locale('es', 'GT'),
+    Locale('es', 'HN'),
+    Locale('es', 'MX'),
+    Locale('es', 'NI'),
+    Locale('es', 'PA'),
+    Locale('es', 'PE'),
+    Locale('es', 'PR'),
+    Locale('es', 'PY'),
+    Locale('es', 'SV'),
+    Locale('es', 'US'),
+    Locale('es', 'UY'),
+    Locale('es', 'VE'),
+    Locale('ko'),
+    Locale('ru'),
+    Locale('zh'),
+    Locale('zh', 'CN')
+  ];
 
   // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
   String get tutorialIntroStepWelcome;
@@ -177,8 +202,7 @@ abstract class AppLocalizations {
   String get symptomReportTitle;
 
   // Which step in the overall process is the patient currently working on
-  String symptomReportProgressBarPercentCompleteText(
-      int stepIndex, int stepCount);
+  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount);
 
   // Submit the symptom report
   String get symptomReportSubmitButton;
@@ -523,8 +547,7 @@ abstract class AppLocalizations {
   String get statisticsLabelRecoveries;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -533,19 +556,59 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es', 'ko', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations _lookupAppLocalizations(Locale locale) {
+  
+  
+  // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
+    case 'es': {
+      switch (locale.countryCode) {
+        case '419': return AppLocalizationsEs419();
+        case 'AR': return AppLocalizationsEsAr();
+        case 'BO': return AppLocalizationsEsBo();
+        case 'CL': return AppLocalizationsEsCl();
+        case 'CO': return AppLocalizationsEsCo();
+        case 'CR': return AppLocalizationsEsCr();
+        case 'DO': return AppLocalizationsEsDo();
+        case 'EC': return AppLocalizationsEsEc();
+        case 'GT': return AppLocalizationsEsGt();
+        case 'HN': return AppLocalizationsEsHn();
+        case 'MX': return AppLocalizationsEsMx();
+        case 'NI': return AppLocalizationsEsNi();
+        case 'PA': return AppLocalizationsEsPa();
+        case 'PE': return AppLocalizationsEsPe();
+        case 'PR': return AppLocalizationsEsPr();
+        case 'PY': return AppLocalizationsEsPy();
+        case 'SV': return AppLocalizationsEsSv();
+        case 'US': return AppLocalizationsEsUs();
+        case 'UY': return AppLocalizationsEsUy();
+        case 'VE': return AppLocalizationsEsVe();
+      }
+      break;
+    }
+    case 'zh': {
+      switch (locale.countryCode) {
+        case 'CN': return AppLocalizationsZhCn();
+      }
+      break;
+    }
   }
-  assert(false,
-      'AppLocalizations.delegate failed to load unsupported locale "$locale"');
+
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'en': return AppLocalizationsEn();
+    case 'es': return AppLocalizationsEs();
+    case 'ko': return AppLocalizationsKo();
+    case 'ru': return AppLocalizationsRu();
+    case 'zh': return AppLocalizationsZh();
+  }
+
+  assert(false, 'AppLocalizations.delegate failed to load unsupported locale "$locale"');
   return null;
 }
