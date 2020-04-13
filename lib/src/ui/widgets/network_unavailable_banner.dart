@@ -1,11 +1,18 @@
 import 'package:app_settings/app_settings.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// Displays a [MaterialBanner] when network connectivity is lost.
 class NetworkUnavailableBanner extends StatefulWidget {
+  /// Set to true when a [NetworkUnavailableBanner] is currently displayed.
+  static ValueListenable<bool> get networkUnavailableNotifier =>
+      _networkUnavailableNotifier;
+
+  static final ValueNotifier<bool> _networkUnavailableNotifier =
+      ValueNotifier<bool>(false);
   final Connectivity connectivity;
   final bool dismissible;
 
@@ -39,11 +46,17 @@ class _NetworkUnavailableBannerState extends State<NetworkUnavailableBanner> {
 
   Connectivity _connectivity;
   ConnectivityResult _lastConnectivity;
+  Stream<ConnectivityResult> _connectivityStream;
   Future<ConnectivityResult> _initialConnectivity;
 
   @override
   void initState() {
     _connectivity = widget.connectivity ?? Connectivity();
+    _connectivityStream =
+        _connectivity.onConnectivityChanged.asBroadcastStream();
+    _connectivityStream.listen((state) => NetworkUnavailableBanner
+        ._networkUnavailableNotifier
+        .value = (state == ConnectivityResult.none));
     _initialConnectivity = _connectivity.checkConnectivity();
     super.initState();
   }
@@ -58,7 +71,7 @@ class _NetworkUnavailableBannerState extends State<NetworkUnavailableBanner> {
       ) {
         if (!currentConnectivity.hasData) return Container();
         return StreamBuilder<ConnectivityResult>(
-          stream: _connectivity.onConnectivityChanged,
+          stream: _connectivityStream,
           initialData: currentConnectivity.data,
           builder: (
             BuildContext context,
