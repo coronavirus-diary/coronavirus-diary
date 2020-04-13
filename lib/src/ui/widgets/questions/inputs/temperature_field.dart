@@ -108,11 +108,17 @@ class _TemperatureFieldState extends State<TemperatureField> {
         final ThemeData theme = Theme.of(context);
         return Scaffold(
           appBar: AppBar(
-            title: Text(
-              localizations.temperatureDialogTitle,
-              style: theme.textTheme.headline
-                  .copyWith(color: theme.colorScheme.onBackground),
-              textAlign: TextAlign.center,
+            bottom: PreferredSize(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(64.0, 0.0, 16.0, 16.0),
+                child: Text(
+                  localizations.temperatureDialogTitle,
+                  style: theme.textTheme.title
+                      .copyWith(color: theme.colorScheme.onBackground),
+                  maxLines: 2,
+                ),
+              ),
+              preferredSize: Size(0.0, 80.0),
             ),
           ),
           body: ScrollMoreIndicator(
