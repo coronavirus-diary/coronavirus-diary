@@ -36,8 +36,14 @@ class _CountryLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'es', 'ru', 'vi', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+        'en',
+        'es',
+        'ko',
+        'ru',
+        'vi',
+        'zh',
+      ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_CountryLocalizationsDelegate old) => false;
@@ -47,14 +53,15 @@ CountryLocalizations _lookupCountryLocalizations(Locale locale) {
   switch (locale.languageCode) {
     case 'es':
       return const CountryLocalizationsEs();
+    case 'ko':
+      return const CountryLocalizationsKo();
     case 'ru':
       return const CountryLocalizationsRu();
     case 'vi':
       return const CountryLocalizationsVi();
-    case 'ko':
-      return const CountryLocalizationsKo();
     case 'zh':
       return const CountryLocalizationsZh();
+    case 'en':
     default:
       return const CountryLocalizationsEn();
   }
