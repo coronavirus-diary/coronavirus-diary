@@ -25,8 +25,9 @@ List<String> generateMethodParameters(Message message) {
 }
 
 String generateDateFormattingLogic(Message message) {
-  if (message.placeholders.isEmpty || !message.placeholdersRequireFormatting)
+  if (message.placeholders.isEmpty || !message.placeholdersRequireFormatting) {
     return '@(none)';
+  }
 
   final Iterable<String> formatStatements = message.placeholders
       .where((Placeholder placeholder) => placeholder.isDate)
@@ -95,9 +96,10 @@ String generatePluralMethod(Message message, AppResourceBundle bundle) {
   // To make it easier to parse the plurals message, temporarily replace each
   // "{placeholder}" parameter with "#placeholder#".
   String easyMessage = bundle.translationFor(message);
-  for (final Placeholder placeholder in message.placeholders)
+  for (final Placeholder placeholder in message.placeholders) {
     easyMessage = easyMessage.replaceAll(
         '{${placeholder.name}}', '#${placeholder.name}#');
+  }
 
   final Placeholder countPlaceholder = message.getCountPlaceholder();
   if (countPlaceholder == null) {
@@ -562,46 +564,54 @@ class LocalizationsGenerator {
   /// Sets the reference [Directory] for [l10nDirectory].
   @visibleForTesting
   void setL10nDirectory(String arbPathString) {
-    if (arbPathString == null)
+    if (arbPathString == null) {
       throw L10nException('arbPathString argument cannot be null');
+    }
+
     l10nDirectory = _fs.directory(arbPathString);
-    if (!l10nDirectory.existsSync())
+    if (!l10nDirectory.existsSync()) {
       throw FileSystemException(
           "The 'arb-dir' directory, $l10nDirectory, does not exist.\n"
           'Make sure that the correct path was provided.');
+    }
 
     final FileStat fileStat = l10nDirectory.statSync();
-    if (_isNotReadable(fileStat) || _isNotWritable(fileStat))
+    if (_isNotReadable(fileStat) || _isNotWritable(fileStat)) {
       throw FileSystemException(
           "The 'arb-dir' directory, $l10nDirectory, doesn't allow reading and writing.\n"
           'Please ensure that the user has read and write permissions.');
+    }
   }
 
   /// Sets the reference [File] for [templateArbFile].
   @visibleForTesting
   void setTemplateArbFile(String templateArbFileName) {
-    if (templateArbFileName == null)
+    if (templateArbFileName == null) {
       throw L10nException('templateArbFileName argument cannot be null');
-    if (l10nDirectory == null)
+    }
+    if (l10nDirectory == null) {
       throw L10nException(
           'l10nDirectory cannot be null when setting template arb file');
+    }
 
     templateArbFile =
         _fs.file(path.join(l10nDirectory.path, templateArbFileName));
     final String templateArbFileStatModeString =
         templateArbFile.statSync().modeString();
     if (templateArbFileStatModeString[0] == '-' &&
-        templateArbFileStatModeString[3] == '-')
+        templateArbFileStatModeString[3] == '-') {
       throw FileSystemException(
           "The 'template-arb-file', $templateArbFile, is not readable.\n"
           'Please ensure that the user has read permissions.');
+    }
   }
 
   /// Sets the reference [File] for the localizations delegate [outputFile].
   @visibleForTesting
   void setOutputFile(String outputFileString) {
-    if (outputFileString == null)
+    if (outputFileString == null) {
       throw L10nException('outputFileString argument cannot be null');
+    }
     outputFile = _fs.file(path.join(l10nDirectory.path, outputFileString));
   }
 
@@ -621,11 +631,13 @@ class LocalizationsGenerator {
   /// classes.
   @visibleForTesting
   set className(String classNameString) {
-    if (classNameString == null || classNameString.isEmpty)
+    if (classNameString == null || classNameString.isEmpty) {
       throw L10nException('classNameString argument cannot be null or empty');
-    if (!_isValidClassName(classNameString))
+    }
+    if (!_isValidClassName(classNameString)) {
       throw L10nException(
           "The 'output-class', $classNameString, is not a valid public Dart class name.\n");
+    }
     _className = classNameString;
   }
 
@@ -697,7 +709,7 @@ class LocalizationsGenerator {
     _templateArbLocale = templateBundle.locale;
     _allMessages = templateBundle.resourceIds
         .map((String id) => Message(templateBundle.resources, id));
-    for (final String resourceId in templateBundle.resourceIds)
+    for (final String resourceId in templateBundle.resourceIds) {
       if (!_isValidGetterAndMethodName(resourceId)) {
         throw L10nException(
             'Invalid ARB resource name "$resourceId" in $templateArbFile.\n'
@@ -705,6 +717,7 @@ class LocalizationsGenerator {
             'camel case, cannot start with a number or underscore, and cannot '
             'contain non-alphanumeric characters.');
       }
+    }
 
     _allBundles = AppResourceBundleCollection(l10nDirectory);
 
