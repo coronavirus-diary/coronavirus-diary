@@ -1,4 +1,3 @@
-
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -13,19 +12,24 @@ class AppLocalizationsEs extends AppLocalizations {
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -46,16 +50,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -64,16 +71,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -82,21 +92,23 @@ class AppLocalizationsEs extends AppLocalizations {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -110,16 +122,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -152,19 +167,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -173,16 +192,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -191,7 +213,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -206,16 +229,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -245,7 +272,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -290,13 +318,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -317,7 +348,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -341,13 +373,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -356,10 +391,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -368,43 +405,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -413,22 +460,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -437,10 +488,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -460,25 +513,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Latin America and the Caribbean (`es_419`).
 class AppLocalizationsEs419 extends AppLocalizationsEs {
-  AppLocalizationsEs419(): super('es_419');
+  AppLocalizationsEs419() : super('es_419');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -499,16 +557,19 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -517,16 +578,19 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -535,21 +599,23 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -563,16 +629,19 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -605,19 +674,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -626,16 +699,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -644,7 +720,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -659,16 +736,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -698,7 +779,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -743,13 +825,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -770,7 +855,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -794,13 +880,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -809,10 +898,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -821,43 +912,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -866,22 +967,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -890,10 +995,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -913,25 +1020,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
 class AppLocalizationsEsAr extends AppLocalizationsEs {
-  AppLocalizationsEsAr(): super('es_AR');
+  AppLocalizationsEsAr() : super('es_AR');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -952,16 +1064,19 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -970,16 +1085,19 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -988,21 +1106,23 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -1016,16 +1136,19 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -1058,19 +1181,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -1079,16 +1206,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -1097,7 +1227,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -1112,16 +1243,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -1151,7 +1286,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -1196,13 +1332,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -1223,7 +1362,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -1247,13 +1387,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -1262,10 +1405,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -1274,43 +1419,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -1319,22 +1474,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -1343,10 +1502,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -1366,25 +1527,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Bolivia (`es_BO`).
 class AppLocalizationsEsBo extends AppLocalizationsEs {
-  AppLocalizationsEsBo(): super('es_BO');
+  AppLocalizationsEsBo() : super('es_BO');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -1405,16 +1571,19 @@ class AppLocalizationsEsBo extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -1423,16 +1592,19 @@ class AppLocalizationsEsBo extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -1441,21 +1613,23 @@ class AppLocalizationsEsBo extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -1469,16 +1643,19 @@ class AppLocalizationsEsBo extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -1511,19 +1688,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -1532,16 +1713,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -1550,7 +1734,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -1565,16 +1750,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -1604,7 +1793,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -1649,13 +1839,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -1676,7 +1869,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -1700,13 +1894,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -1715,10 +1912,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -1727,43 +1926,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -1772,22 +1981,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -1796,10 +2009,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -1819,25 +2034,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Chile (`es_CL`).
 class AppLocalizationsEsCl extends AppLocalizationsEs {
-  AppLocalizationsEsCl(): super('es_CL');
+  AppLocalizationsEsCl() : super('es_CL');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -1858,16 +2078,19 @@ class AppLocalizationsEsCl extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -1876,16 +2099,19 @@ class AppLocalizationsEsCl extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -1894,21 +2120,23 @@ class AppLocalizationsEsCl extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -1922,16 +2150,19 @@ class AppLocalizationsEsCl extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -1964,19 +2195,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -1985,16 +2220,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -2003,7 +2241,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -2018,16 +2257,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -2057,7 +2300,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -2102,13 +2346,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -2129,7 +2376,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -2153,13 +2401,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -2168,10 +2419,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -2180,43 +2433,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -2225,22 +2488,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -2249,10 +2516,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -2272,25 +2541,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Colombia (`es_CO`).
 class AppLocalizationsEsCo extends AppLocalizationsEs {
-  AppLocalizationsEsCo(): super('es_CO');
+  AppLocalizationsEsCo() : super('es_CO');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -2311,16 +2585,19 @@ class AppLocalizationsEsCo extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -2329,16 +2606,19 @@ class AppLocalizationsEsCo extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -2347,21 +2627,23 @@ class AppLocalizationsEsCo extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -2375,16 +2657,19 @@ class AppLocalizationsEsCo extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -2417,19 +2702,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -2438,16 +2727,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -2456,7 +2748,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -2471,16 +2764,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -2510,7 +2807,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -2555,13 +2853,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -2582,7 +2883,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -2606,13 +2908,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -2621,10 +2926,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -2633,43 +2940,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -2678,22 +2995,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -2702,10 +3023,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -2725,25 +3048,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Costa Rica (`es_CR`).
 class AppLocalizationsEsCr extends AppLocalizationsEs {
-  AppLocalizationsEsCr(): super('es_CR');
+  AppLocalizationsEsCr() : super('es_CR');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -2764,16 +3092,19 @@ class AppLocalizationsEsCr extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -2782,16 +3113,19 @@ class AppLocalizationsEsCr extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -2800,21 +3134,23 @@ class AppLocalizationsEsCr extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -2828,16 +3164,19 @@ class AppLocalizationsEsCr extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -2870,19 +3209,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -2891,16 +3234,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -2909,7 +3255,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -2924,16 +3271,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -2963,7 +3314,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -3008,13 +3360,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -3035,7 +3390,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -3059,13 +3415,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -3074,10 +3433,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -3086,43 +3447,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -3131,22 +3502,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -3155,10 +3530,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -3178,25 +3555,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in the Dominican Republic (`es_DO`).
 class AppLocalizationsEsDo extends AppLocalizationsEs {
-  AppLocalizationsEsDo(): super('es_DO');
+  AppLocalizationsEsDo() : super('es_DO');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -3217,16 +3599,19 @@ class AppLocalizationsEsDo extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -3235,16 +3620,19 @@ class AppLocalizationsEsDo extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -3253,21 +3641,23 @@ class AppLocalizationsEsDo extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -3281,16 +3671,19 @@ class AppLocalizationsEsDo extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -3323,19 +3716,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -3344,16 +3741,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -3362,7 +3762,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -3377,16 +3778,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -3416,7 +3821,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -3461,13 +3867,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -3488,7 +3897,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -3512,13 +3922,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -3527,10 +3940,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -3539,43 +3954,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -3584,22 +4009,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -3608,10 +4037,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -3631,25 +4062,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Ecuador (`es_EC`).
 class AppLocalizationsEsEc extends AppLocalizationsEs {
-  AppLocalizationsEsEc(): super('es_EC');
+  AppLocalizationsEsEc() : super('es_EC');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -3670,16 +4106,19 @@ class AppLocalizationsEsEc extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -3688,16 +4127,19 @@ class AppLocalizationsEsEc extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -3706,21 +4148,23 @@ class AppLocalizationsEsEc extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -3734,16 +4178,19 @@ class AppLocalizationsEsEc extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -3776,19 +4223,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -3797,16 +4248,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -3815,7 +4269,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -3830,16 +4285,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -3869,7 +4328,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -3914,13 +4374,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -3941,7 +4404,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -3965,13 +4429,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -3980,10 +4447,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -3992,43 +4461,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -4037,22 +4516,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -4061,10 +4544,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -4084,25 +4569,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Guatemala (`es_GT`).
 class AppLocalizationsEsGt extends AppLocalizationsEs {
-  AppLocalizationsEsGt(): super('es_GT');
+  AppLocalizationsEsGt() : super('es_GT');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -4123,16 +4613,19 @@ class AppLocalizationsEsGt extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -4141,16 +4634,19 @@ class AppLocalizationsEsGt extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -4159,21 +4655,23 @@ class AppLocalizationsEsGt extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -4187,16 +4685,19 @@ class AppLocalizationsEsGt extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -4229,19 +4730,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -4250,16 +4755,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -4268,7 +4776,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -4283,16 +4792,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -4322,7 +4835,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -4367,13 +4881,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -4394,7 +4911,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -4418,13 +4936,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -4433,10 +4954,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -4445,43 +4968,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -4490,22 +5023,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -4514,10 +5051,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -4537,25 +5076,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Honduras (`es_HN`).
 class AppLocalizationsEsHn extends AppLocalizationsEs {
-  AppLocalizationsEsHn(): super('es_HN');
+  AppLocalizationsEsHn() : super('es_HN');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -4576,16 +5120,19 @@ class AppLocalizationsEsHn extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -4594,16 +5141,19 @@ class AppLocalizationsEsHn extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -4612,21 +5162,23 @@ class AppLocalizationsEsHn extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -4640,16 +5192,19 @@ class AppLocalizationsEsHn extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -4682,19 +5237,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -4703,16 +5262,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -4721,7 +5283,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -4736,16 +5299,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -4775,7 +5342,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -4820,13 +5388,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -4847,7 +5418,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -4871,13 +5443,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -4886,10 +5461,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -4898,43 +5475,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -4943,22 +5530,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -4967,10 +5558,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -4990,25 +5583,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
 class AppLocalizationsEsMx extends AppLocalizationsEs {
-  AppLocalizationsEsMx(): super('es_MX');
+  AppLocalizationsEsMx() : super('es_MX');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -5029,16 +5627,19 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -5047,16 +5648,19 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -5065,21 +5669,23 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -5093,16 +5699,19 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -5135,19 +5744,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -5156,16 +5769,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -5174,7 +5790,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -5189,16 +5806,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -5228,7 +5849,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -5273,13 +5895,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -5300,7 +5925,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -5324,13 +5950,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -5339,10 +5968,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -5351,43 +5982,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -5396,22 +6037,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -5420,10 +6065,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -5443,25 +6090,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Nicaragua (`es_NI`).
 class AppLocalizationsEsNi extends AppLocalizationsEs {
-  AppLocalizationsEsNi(): super('es_NI');
+  AppLocalizationsEsNi() : super('es_NI');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -5482,16 +6134,19 @@ class AppLocalizationsEsNi extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -5500,16 +6155,19 @@ class AppLocalizationsEsNi extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -5518,21 +6176,23 @@ class AppLocalizationsEsNi extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -5546,16 +6206,19 @@ class AppLocalizationsEsNi extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -5588,19 +6251,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -5609,16 +6276,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -5627,7 +6297,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -5642,16 +6313,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -5681,7 +6356,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -5726,13 +6402,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -5753,7 +6432,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -5777,13 +6457,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -5792,10 +6475,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -5804,43 +6489,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -5849,22 +6544,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -5873,10 +6572,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -5896,25 +6597,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Panama (`es_PA`).
 class AppLocalizationsEsPa extends AppLocalizationsEs {
-  AppLocalizationsEsPa(): super('es_PA');
+  AppLocalizationsEsPa() : super('es_PA');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -5935,16 +6641,19 @@ class AppLocalizationsEsPa extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -5953,16 +6662,19 @@ class AppLocalizationsEsPa extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -5971,21 +6683,23 @@ class AppLocalizationsEsPa extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -5999,16 +6713,19 @@ class AppLocalizationsEsPa extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -6041,19 +6758,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -6062,16 +6783,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -6080,7 +6804,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -6095,16 +6820,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -6134,7 +6863,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -6179,13 +6909,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -6206,7 +6939,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -6230,13 +6964,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -6245,10 +6982,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -6257,43 +6996,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -6302,22 +7051,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -6326,10 +7079,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -6349,25 +7104,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Peru (`es_PE`).
 class AppLocalizationsEsPe extends AppLocalizationsEs {
-  AppLocalizationsEsPe(): super('es_PE');
+  AppLocalizationsEsPe() : super('es_PE');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -6388,16 +7148,19 @@ class AppLocalizationsEsPe extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -6406,16 +7169,19 @@ class AppLocalizationsEsPe extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -6424,21 +7190,23 @@ class AppLocalizationsEsPe extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -6452,16 +7220,19 @@ class AppLocalizationsEsPe extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -6494,19 +7265,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -6515,16 +7290,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -6533,7 +7311,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -6548,16 +7327,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -6587,7 +7370,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -6632,13 +7416,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -6659,7 +7446,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -6683,13 +7471,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -6698,10 +7489,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -6710,43 +7503,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -6755,22 +7558,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -6779,10 +7586,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -6802,25 +7611,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Puerto Rico (`es_PR`).
 class AppLocalizationsEsPr extends AppLocalizationsEs {
-  AppLocalizationsEsPr(): super('es_PR');
+  AppLocalizationsEsPr() : super('es_PR');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -6841,16 +7655,19 @@ class AppLocalizationsEsPr extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -6859,16 +7676,19 @@ class AppLocalizationsEsPr extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -6877,21 +7697,23 @@ class AppLocalizationsEsPr extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -6905,16 +7727,19 @@ class AppLocalizationsEsPr extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -6947,19 +7772,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -6968,16 +7797,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -6986,7 +7818,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -7001,16 +7834,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -7040,7 +7877,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -7085,13 +7923,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -7112,7 +7953,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -7136,13 +7978,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -7151,10 +7996,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -7163,43 +8010,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -7208,22 +8065,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -7232,10 +8093,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -7255,25 +8118,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Paraguay (`es_PY`).
 class AppLocalizationsEsPy extends AppLocalizationsEs {
-  AppLocalizationsEsPy(): super('es_PY');
+  AppLocalizationsEsPy() : super('es_PY');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -7294,16 +8162,19 @@ class AppLocalizationsEsPy extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -7312,16 +8183,19 @@ class AppLocalizationsEsPy extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -7330,21 +8204,23 @@ class AppLocalizationsEsPy extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -7358,16 +8234,19 @@ class AppLocalizationsEsPy extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -7400,19 +8279,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -7421,16 +8304,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -7439,7 +8325,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -7454,16 +8341,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -7493,7 +8384,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -7538,13 +8430,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -7565,7 +8460,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -7589,13 +8485,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -7604,10 +8503,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -7616,43 +8517,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -7661,22 +8572,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -7685,10 +8600,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -7708,25 +8625,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in El Salvador (`es_SV`).
 class AppLocalizationsEsSv extends AppLocalizationsEs {
-  AppLocalizationsEsSv(): super('es_SV');
+  AppLocalizationsEsSv() : super('es_SV');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -7747,16 +8669,19 @@ class AppLocalizationsEsSv extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -7765,16 +8690,19 @@ class AppLocalizationsEsSv extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -7783,21 +8711,23 @@ class AppLocalizationsEsSv extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -7811,16 +8741,19 @@ class AppLocalizationsEsSv extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -7853,19 +8786,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -7874,16 +8811,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -7892,7 +8832,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -7907,16 +8848,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -7946,7 +8891,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -7991,13 +8937,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -8018,7 +8967,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -8042,13 +8992,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -8057,10 +9010,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -8069,43 +9024,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -8114,22 +9079,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -8138,10 +9107,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -8161,25 +9132,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in the United States (`es_US`).
 class AppLocalizationsEsUs extends AppLocalizationsEs {
-  AppLocalizationsEsUs(): super('es_US');
+  AppLocalizationsEsUs() : super('es_US');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -8200,16 +9176,19 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -8218,16 +9197,19 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -8236,21 +9218,23 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -8264,16 +9248,19 @@ class AppLocalizationsEsUs extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -8306,19 +9293,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -8327,16 +9318,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -8345,7 +9339,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -8360,16 +9355,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -8399,7 +9398,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -8444,13 +9444,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -8471,7 +9474,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -8495,13 +9499,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -8510,10 +9517,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -8522,43 +9531,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -8567,22 +9586,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -8591,10 +9614,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -8614,25 +9639,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Uruguay (`es_UY`).
 class AppLocalizationsEsUy extends AppLocalizationsEs {
-  AppLocalizationsEsUy(): super('es_UY');
+  AppLocalizationsEsUy() : super('es_UY');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -8653,16 +9683,19 @@ class AppLocalizationsEsUy extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -8671,16 +9704,19 @@ class AppLocalizationsEsUy extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -8689,21 +9725,23 @@ class AppLocalizationsEsUy extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -8717,16 +9755,19 @@ class AppLocalizationsEsUy extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -8759,19 +9800,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -8780,16 +9825,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -8798,7 +9846,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -8813,16 +9862,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -8852,7 +9905,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -8897,13 +9951,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -8924,7 +9981,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -8948,13 +10006,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -8963,10 +10024,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -8975,43 +10038,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -9020,22 +10093,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -9044,10 +10121,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';
@@ -9067,25 +10146,30 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
 /// The translations for Spanish Castilian, as used in Venezuela (`es_VE`).
 class AppLocalizationsEsVe extends AppLocalizationsEs {
-  AppLocalizationsEsVe(): super('es_VE');
+  AppLocalizationsEsVe() : super('es_VE');
 
   @override
   String get tutorialIntroStepWelcome => 'Te damos la bienvenida a CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => 'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+  String get tutorialIntroStepDescription =>
+      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Te damos la bienvenida a la app de Covid Near Me';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Te damos la bienvenida a la app de Covid Near Me';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Obtén información local sobre el COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Obtén información local sobre el COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Envía tus síntomas de forma anónima.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Envía tus síntomas de forma anónima.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Ayuda en los esfuerzos de respuesta frente al COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'COMENZAR';
@@ -9106,16 +10190,19 @@ class AppLocalizationsEsVe extends AppLocalizationsEs {
   String get homeMenuAboutSemantics => 'Acerca de Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
+  String get aboutBoxDescription =>
+      'La comunidad de Coronavirus Diary desarrolló esta app como un proyecto de código abierto. Para obtener más información y ver el código fuente, visita el siguiente vínculo.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary en GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Obtén información y noticias locales sobre el COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Obtén información y noticias locales sobre el COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Consulta estadísticas y obtén información actualizada de tu comunidad';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Consulta estadísticas y obtén información actualizada de tu comunidad';
 
   @override
   String get homeScreenLocalStatisticsButton => 'COMENZAR';
@@ -9124,16 +10211,19 @@ class AppLocalizationsEsVe extends AppLocalizationsEs {
   String get homeScreenReportSymptomsTitle => 'Registra tus síntomas';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Registro de salud rápido y fácil';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Registro de salud rápido y fácil';
 
   @override
   String get homeScreenReportSymptomsButton => 'COMENZAR';
 
   @override
-  String get homeScreenShareAppTitle => 'Comparte la app para proteger tu comunidad';
+  String get homeScreenShareAppTitle =>
+      'Comparte la app para proteger tu comunidad';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Comparte la app con amigos y familiares para proteger tu comunidad';
+  String get homeScreenShareAppSubtitle =>
+      'Comparte la app con amigos y familiares para proteger tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -9142,21 +10232,23 @@ class AppLocalizationsEsVe extends AppLocalizationsEs {
   String get symptomReportLoading => 'Cargando';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Se produjo un error y no se cargaron las preguntas de los síntomas. Vuelve a intentarlo.';
 
   @override
   String get symptomReportTitle => 'Registra tus síntomas';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -9170,16 +10262,19 @@ class AppLocalizationsEsVe extends AppLocalizationsEs {
   String get symptomReportNextButton => 'CONTINUAR';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Responde todas las preguntas para continuar';
+  String get symptomReportAnswerAllQuestions =>
+      'Responde todas las preguntas para continuar';
 
   @override
   String get symptomReportIntroStepTitle => 'Registra tus síntomas';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Responde algunas preguntas simples sobre tu salud para empezar a hacer un seguimiento de tus síntomas.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
+  String get symptomReportIntroStepDataContribution =>
+      'Tus respuestas son anónimas y se usarán para ayudar en los esfuerzos de respuesta frente al COVID-19. Profesionales expertos usarán tu información anónima para predecir y mejorar las respuestas frente a la enfermedad.';
 
   @override
   String get symptomReportIntroStepStartButton => 'COMENZAR';
@@ -9212,19 +10307,23 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get consentStepAgreeActive => 'ACEPTÉ';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe no puede recopilar información sin tu consentimiento';
+  String get deniedConsentHeading =>
+      'CovidNearMe no puede recopilar información sin tu consentimiento';
 
   @override
-  String get deniedConsentMessage => 'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
+  String get deniedConsentMessage =>
+      'Si cambias de opinión, puedes usar la app en cualquier momento. Te haremos un par de preguntas sobre tus síntomas actuales y si te realizaste la prueba de detección del COVID-19. Se usará tu información de forma anónima para ayudar en los esfuerzos de respuesta frente a la pandemia.';
 
   @override
-  String get deniedConsentSafetyTipsButton => 'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
+  String get deniedConsentSafetyTipsButton =>
+      'OBTENER SUGERENCIAS PARA MANTENERSE SALUDABLE';
 
   @override
   String get symptomReportLocationStepTitle => '¿Cuál es tu ubicación actual?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'No se pudieron cargar las respuestas.';
+  String get questionsStepQuestionsLoadedError =>
+      'No se pudieron cargar las respuestas.';
 
   @override
   String get systemReportSubmitting => 'Enviando síntomas';
@@ -9233,16 +10332,19 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get systemReportBackToHomePage => 'Regresar a la página principal';
 
   @override
-  String get thankYouScreenTitle => '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+  String get thankYouScreenTitle =>
+      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
 
   @override
-  String get thankYouScreenCallToAction => 'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
+  String get thankYouScreenCallToAction =>
+      'Si mañana sigues teniendo síntomas, vuelve a registrarlos en la app.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'CONSEJOS DE SEGURIDAD';
@@ -9251,7 +10353,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get thankYouScreenShareAppButton => 'COMPARTIR APP';
 
   @override
-  String get questionShortnessOfBreathTitle => '¿Tienes dificultad para respirar?';
+  String get questionShortnessOfBreathTitle =>
+      '¿Tienes dificultad para respirar?';
 
   @override
   String get questionShortnessOfBreathAnswer0 => 'No';
@@ -9266,16 +10369,20 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionShortnessOfBreathAnswer3 => 'Intensa';
 
   @override
-  String get questionShortnessOfBreathSemantics0 => 'Sin dificultad para respirar';
+  String get questionShortnessOfBreathSemantics0 =>
+      'Sin dificultad para respirar';
 
   @override
-  String get questionShortnessOfBreathSemantics1 => 'Dificultad para respirar leve';
+  String get questionShortnessOfBreathSemantics1 =>
+      'Dificultad para respirar leve';
 
   @override
-  String get questionShortnessOfBreathSemantics2 => 'Dificultad para respirar moderada';
+  String get questionShortnessOfBreathSemantics2 =>
+      'Dificultad para respirar moderada';
 
   @override
-  String get questionShortnessOfBreathSemantics3 => 'Dificultad para respirar intensa';
+  String get questionShortnessOfBreathSemantics3 =>
+      'Dificultad para respirar intensa';
 
   @override
   String get questionHaveACoughTitle => '¿Tienes tos?';
@@ -9305,7 +10412,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughSemantics3 => 'Tos incontrolable';
 
   @override
-  String get questionHaveNauseaTitle => '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
+  String get questionHaveNauseaTitle =>
+      '¿Sientes náuseas, como si estuvieras por vomitar o quisieras hacerlo?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'No';
@@ -9350,13 +10458,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverSemantics1 => 'Es posible que tenga fiebre';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'Tengo fiebre intensa y mucho calor';
+  String get questionHaveAFeverSemantics2 =>
+      'Tengo fiebre intensa y mucho calor';
 
   @override
-  String get questionHowHighWasYourFever => '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+  String get questionHowHighWasYourFever =>
+      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '¿Te hiciste pruebas de detección de gripe, neumonía u otra enfermedad respiratoria?';
 
   @override
   String get questionYes => 'Sí';
@@ -9377,7 +10488,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionWhatWasPositiveTitle => '¿Qué tenías?';
 
   @override
-  String get questionTryForTestingTitle => '¿Intentaste hacerte la prueba de detección del COVID-19?';
+  String get questionTryForTestingTitle =>
+      '¿Intentaste hacerte la prueba de detección del COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 => 'Sí, lo intenté';
@@ -9401,13 +10513,16 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionCovid19TestResultAnswer3 => 'La clínica no tenía pruebas';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
+  String get questionCovid19TestResultAnswer4 =>
+      'Me rechazaron porque mi enfermedad no parecía lo suficientemente grave';
 
   @override
-  String get temperatureFieldHelpButton => '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
+  String get temperatureFieldHelpButton =>
+      '¿NECESITAS AYUDA? PRESIONA PARA OBTENER INSTRUCCIONES';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Ingresa un valor de temperatura válido.';
+  String get temperatureFieldOutOfRangeError =>
+      'Ingresa un valor de temperatura válido.';
 
   @override
   String get temperatureDialogTitle => 'Cuándo y cómo tomarse la temperatura';
@@ -9416,10 +10531,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogWhenHeading => '¿Cuándo?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Espera 30 minutos después de comer, beber o hacer ejercicio.';
+  String get temperatureDialogWait30Minutes =>
+      'Espera 30 minutos después de comer, beber o hacer ejercicio.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
+  String get temperatureDialogWait6Hours =>
+      'Espera al menos 6 horas después de tomar medicamentos para bajar la temperatura (como acetaminofén, paracetamol, ibuprofeno y aspirina).';
 
   @override
   String get temperatureDialogHowHeading => '¿Cómo?';
@@ -9428,43 +10545,53 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get temperatureDialogStep1 => 'Lávate las manos con agua y jabón.';
 
   @override
-  String get temperatureDialogStep2 => 'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
+  String get temperatureDialogStep2 =>
+      'Lava la punta del termómetro con jabón y agua tibia, o frótala con alcohol. Enjuágala.';
 
   @override
-  String get temperatureDialogStep3 => 'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
+  String get temperatureDialogStep3 =>
+      'Coloca la punta del termómetro debajo de la lengua y cierra suavemente los labios.';
 
   @override
-  String get temperatureDialogStep4 => 'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
+  String get temperatureDialogStep4 =>
+      'Mantén los labios cerrados y el termómetro debajo de la lengua hasta que escuches un pitido.';
 
   @override
-  String get temperatureDialogStep5 => 'Retira el termómetro y registra la temperatura.';
+  String get temperatureDialogStep5 =>
+      'Retira el termómetro y registra la temperatura.';
 
   @override
   String get temperatureDialogCloseButton => 'CERRAR';
 
   @override
-  String get shareAppDownloadPrompt => 'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
 
   @override
-  String get safetyTipsSubtitle => 'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
+  String get safetyTipsSubtitle =>
+      'Formas efectivas de proteger tu salud y ayudar a la comunidad a detener la expansión de la enfermedad.';
 
   @override
-  String get safetyTipsWashYourHands => 'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
+  String get safetyTipsWashYourHands =>
+      'Lávate las manos frecuentemente con agua y jabón durante al menos 20 segundos. No te toques los ojos, la nariz ni la boca, especialmente en público. Si toses o estornudas, cúbrete siempre con la parte interior del codo.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
+  String get safetyTipsSocialDistancing =>
+      'Pon en práctica el distanciamiento social, que significa limitar el contacto con otras personas. Mantén al menos 2 metros de distancia con otras personas cuando no estés en tu casa.';
 
   @override
-  String get safetyTipsContactPhysician => 'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
+  String get safetyTipsContactPhysician =>
+      'Si empeoran los síntomas, comunícate con tu proveedor de atención médica.';
 
   @override
   String get locationStepTitle => 'Verifica tu ubicación';
 
   @override
-  String get locationStepInvalidZipCode => 'Ingresa un código postal válido de 5 dígitos';
+  String get locationStepInvalidZipCode =>
+      'Ingresa un código postal válido de 5 dígitos';
 
   @override
   String get locationStepZipCode => 'Código postal';
@@ -9473,22 +10600,26 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get locationStepNoCountrySelected => 'No se eligió ninguno';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Selecciona el país en el que te encuentras';
+  String get locationStepCountrySearchPrompt =>
+      'Selecciona el país en el que te encuentras';
 
   @override
   String get locationStepCountryButtonLabel => 'País:';
 
   @override
-  String get networkUnavailableBannerContinueOffline => 'CONTINUAR SIN CONEXIÓN';
+  String get networkUnavailableBannerContinueOffline =>
+      'CONTINUAR SIN CONEXIÓN';
 
   @override
   String get networkUnavailableBannerConnectToWiFi => 'CONECTARSE A WI-FI';
 
   @override
-  String get networkRequestError => 'Se produjo un error y no se pudo completar tu solicitud.';
+  String get networkRequestError =>
+      'Se produjo un error y no se pudo completar tu solicitud.';
 
   @override
-  String get networkUnavailableBannerMessage => 'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
+  String get networkUnavailableBannerMessage =>
+      'Al parecer, no tienes conexión. Revisa tu configuración de red y vuelve a intentarlo.';
 
   @override
   String get scrollMoreIndicatorMessage => 'DESPLÁZATE PARA VER MÁS';
@@ -9497,10 +10628,12 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get localStatisticsTitle => 'Estadísticas locales del COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Selecciona una ubicación para ver sus estadísticas.';
+  String get localStatisticsNoLocationSelected =>
+      'Selecciona una ubicación para ver sus estadísticas.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'No se encontraron datos sobre el COVID-19 para esta ubicación.';
+  String get localStatisticsNoDataAvailable =>
+      'No se encontraron datos sobre el COVID-19 para esta ubicación.';
 
   @override
   String get localStatisticsLocationInput => 'Código postal o país';

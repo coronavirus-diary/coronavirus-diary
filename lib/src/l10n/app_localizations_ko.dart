@@ -1,4 +1,3 @@
-
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -13,10 +12,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tutorialIntroStepWelcome => 'CovidNearMe에 오신 것을 환영합니다';
 
   @override
-  String get tutorialIntroStepDescription => '거주 지역의 최신 코로나19 통계를 확인하고 대응에 동참해 주세요.';
+  String get tutorialIntroStepDescription =>
+      '거주 지역의 최신 코로나19 통계를 확인하고 대응에 동참해 주세요.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Covid Near Me 앱에 오신 것을 환영합니다';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Covid Near Me 앱에 오신 것을 환영합니다';
 
   @override
   String get tutorialIntroStepLocalStatistics => '거주 지역의 코로나19 관련 정보를 확인하세요.';
@@ -46,7 +47,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get homeMenuAboutSemantics => 'Covid Near Me 소개';
 
   @override
-  String get aboutBoxDescription => '이 앱은 Coronavirus Diary 커뮤니티를 통해 오픈소스 프로젝트로 개발되었습니다. 소스 코드를 자세히 알아보고 확인하려면 다음 링크로 이동하세요.';
+  String get aboutBoxDescription =>
+      '이 앱은 Coronavirus Diary 커뮤니티를 통해 오픈소스 프로젝트로 개발되었습니다. 소스 코드를 자세히 알아보고 확인하려면 다음 링크로 이동하세요.';
 
   @override
   String get aboutBoxLinkText => 'GitHub의 Coronavirus Diary';
@@ -55,7 +57,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get homeScreenLocalStatisticsTitle => '거주 지역의 코로나19 소식 및 정보 확인하기';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => '지역사회의 통계를 확인하고 최신 정보를 받아 보세요.';
+  String get homeScreenLocalStatisticsSubtitle =>
+      '지역사회의 통계를 확인하고 최신 정보를 받아 보세요.';
 
   @override
   String get homeScreenLocalStatisticsButton => '시작하기';
@@ -82,21 +85,23 @@ class AppLocalizationsKo extends AppLocalizations {
   String get symptomReportLoading => '로드 중';
 
   @override
-  String get symptomReportErrorRetrievingExperience => '오류로 인해 증상 질문을 로드할 수 없습니다. 나중에 다시 시도해 보세요.';
+  String get symptomReportErrorRetrievingExperience =>
+      '오류로 인해 증상 질문을 로드할 수 없습니다. 나중에 다시 시도해 보세요.';
 
   @override
   String get symptomReportTitle => '증상 기록하기';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -116,10 +121,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get symptomReportIntroStepTitle => '증상 기록하기';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => '건강에 관한 몇 가지 간단한 질문에 답하고 증상 추적을 시작하세요.';
+  String get symptomReportIntroStepHealthQuestions =>
+      '건강에 관한 몇 가지 간단한 질문에 답하고 증상 추적을 시작하세요.';
 
   @override
-  String get symptomReportIntroStepDataContribution => '답변은 익명으로 제출되어 코로나19 대응을 지원하기 위해 사용됩니다. 전문가들이 이 정보를 활용하여 질병 관련 데이터를 예측하고 대응 노력을 개선합니다.';
+  String get symptomReportIntroStepDataContribution =>
+      '답변은 익명으로 제출되어 코로나19 대응을 지원하기 위해 사용됩니다. 전문가들이 이 정보를 활용하여 질병 관련 데이터를 예측하고 대응 노력을 개선합니다.';
 
   @override
   String get symptomReportIntroStepStartButton => '시작하기';
@@ -155,7 +162,8 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get deniedConsentHeading => 'CovidNearMe에서는 사용자의 동의 없이 정보를 수집할 수 없습니다';
 
   @override
-  String get deniedConsentMessage => '나중에라도 언제든지 앱을 사용할 수 있습니다. 현재 증상에 관한 몇 가지 질문 및 코로나19 진단 검사 여부에 답해야 합니다. 이 정보는 익명으로 처리되며 코로나19 대응을 지원하기 위해 사용됩니다.';
+  String get deniedConsentMessage =>
+      '나중에라도 언제든지 앱을 사용할 수 있습니다. 현재 증상에 관한 몇 가지 질문 및 코로나19 진단 검사 여부에 답해야 합니다. 이 정보는 익명으로 처리되며 코로나19 대응을 지원하기 위해 사용됩니다.';
 
   @override
   String get deniedConsentSafetyTipsButton => '건강한 생활을 위한 팁';
@@ -296,7 +304,8 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get questionHowHighWasYourFever => '오늘 열을 측정했다면 열이 얼마나 높았나요?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => '독감 또는 폐렴이나 기타 호흡기 질병 검사를 받은 적이 있나요?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      '독감 또는 폐렴이나 기타 호흡기 질병 검사를 받은 적이 있나요?';
 
   @override
   String get questionYes => '예';
@@ -359,7 +368,8 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get temperatureDialogWait30Minutes => '식사, 음주, 운동 후 30분 후 체온을 측정합니다.';
 
   @override
-  String get temperatureDialogWait6Hours => '아세트아미노펜, 파라세타몰, 이부프로펜, 아스피린 등 체온을 낮출 수 있는 약물을 복용한 후 적어도 6시간이 지난 후 체온을 측정합니다.';
+  String get temperatureDialogWait6Hours =>
+      '아세트아미노펜, 파라세타몰, 이부프로펜, 아스피린 등 체온을 낮출 수 있는 약물을 복용한 후 적어도 6시간이 지난 후 체온을 측정합니다.';
 
   @override
   String get temperatureDialogHowHeading => '방법';
@@ -368,13 +378,15 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get temperatureDialogStep1 => '비누와 물로 손을 씻습니다.';
 
   @override
-  String get temperatureDialogStep2 => '비누와 따뜻한 물로 체온계 끝을 씻거나 알코올을 문질러 씻어냅니다. 헹굽니다.';
+  String get temperatureDialogStep2 =>
+      '비누와 따뜻한 물로 체온계 끝을 씻거나 알코올을 문질러 씻어냅니다. 헹굽니다.';
 
   @override
   String get temperatureDialogStep3 => '혀 밑에 체온계 끝을 넣은 후 입을 살짝 다뭅니다.';
 
   @override
-  String get temperatureDialogStep4 => '혀 밑에 체온계를 넣고 입을 다문 상태로 삐 소리가 날 때까지 기다립니다.';
+  String get temperatureDialogStep4 =>
+      '혀 밑에 체온계를 넣고 입을 다문 상태로 삐 소리가 날 때까지 기다립니다.';
 
   @override
   String get temperatureDialogStep5 => '체온계를 뺀 후 체온을 기록합니다.';
@@ -383,19 +395,23 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get temperatureDialogCloseButton => '닫기';
 
   @override
-  String get shareAppDownloadPrompt => 'CovidNearMe를 다운로드하고 거주 지역 코로나19 정보 및 통계를 확인하세요. 증상을 익명으로 제공하고 지역사회를 지키는 데 동참하세요. {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'CovidNearMe를 다운로드하고 거주 지역 코로나19 정보 및 통계를 확인하세요. 증상을 익명으로 제공하고 지역사회를 지키는 데 동참하세요. {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => '건강을 지키는 방법';
 
   @override
-  String get safetyTipsSubtitle => '건강을 지키고 지역사회에서의 전염병 확산을 저지하기 위한 효과적인 방법을 확인하세요.';
+  String get safetyTipsSubtitle =>
+      '건강을 지키고 지역사회에서의 전염병 확산을 저지하기 위한 효과적인 방법을 확인하세요.';
 
   @override
-  String get safetyTipsWashYourHands => '비누와 물을 사용해 적어도 20초 동안 자주 손을 씻습니다. 눈과 코, 입을 만지지 않습니다. 특히 공공장소에서 만지지 않도록 삼갑니다. 기침하거나 재채기할 때는 항상 팔꿈치 안쪽에 합니다.';
+  String get safetyTipsWashYourHands =>
+      '비누와 물을 사용해 적어도 20초 동안 자주 손을 씻습니다. 눈과 코, 입을 만지지 않습니다. 특히 공공장소에서 만지지 않도록 삼갑니다. 기침하거나 재채기할 때는 항상 팔꿈치 안쪽에 합니다.';
 
   @override
-  String get safetyTipsSocialDistancing => '사회적 거리두기를 실천합니다. 즉, 다른 사람과의 접촉을 피해야 합니다. 집밖에서 다른 사람과 적어도 2m의 거리를 둡니다.';
+  String get safetyTipsSocialDistancing =>
+      '사회적 거리두기를 실천합니다. 즉, 다른 사람과의 접촉을 피해야 합니다. 집밖에서 다른 사람과 적어도 2m의 거리를 둡니다.';
 
   @override
   String get safetyTipsContactPhysician => '증상이 악화되는 경우 가까운 병원에 문의하세요.';
@@ -428,7 +444,8 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get networkRequestError => '오류로 인해 요청을 완료할 수 없습니다.';
 
   @override
-  String get networkUnavailableBannerMessage => '오프라인인 것 같습니다. 네트워크 설정을 확인한 다음 다시 시도해 주세요.';
+  String get networkUnavailableBannerMessage =>
+      '오프라인인 것 같습니다. 네트워크 설정을 확인한 다음 다시 시도해 주세요.';
 
   @override
   String get scrollMoreIndicatorMessage => '스크롤하여 더보기';
