@@ -1,4 +1,3 @@
-import 'package:connectivity/connectivity.dart';
 import 'package:covidnearme/src/ui/widgets/network_unavailable_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
