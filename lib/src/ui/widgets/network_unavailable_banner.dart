@@ -7,7 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// Displays a [MaterialBanner] when network connectivity is lost.
 class NetworkUnavailableBanner extends StatefulWidget {
-  /// Set to true when a [NetworkUnavailableBanner] is currently displayed.
+  /// Set to `true` when a [NetworkUnavailableBanner] is currently displayed.
   static ValueListenable<bool> get networkUnavailableNotifier =>
       _networkUnavailableNotifier;
 
