@@ -101,25 +101,6 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('es'),
     Locale('es', '419'),
-    Locale('es', 'AR'),
-    Locale('es', 'BO'),
-    Locale('es', 'CL'),
-    Locale('es', 'CO'),
-    Locale('es', 'CR'),
-    Locale('es', 'DO'),
-    Locale('es', 'EC'),
-    Locale('es', 'GT'),
-    Locale('es', 'HN'),
-    Locale('es', 'MX'),
-    Locale('es', 'NI'),
-    Locale('es', 'PA'),
-    Locale('es', 'PE'),
-    Locale('es', 'PR'),
-    Locale('es', 'PY'),
-    Locale('es', 'SV'),
-    Locale('es', 'US'),
-    Locale('es', 'UY'),
-    Locale('es', 'VE'),
     Locale('ko'),
     Locale('ru'),
     Locale('zh'),
@@ -576,44 +557,6 @@ AppLocalizations _lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case '419':
             return AppLocalizationsEs419();
-          case 'AR':
-            return AppLocalizationsEsAr();
-          case 'BO':
-            return AppLocalizationsEsBo();
-          case 'CL':
-            return AppLocalizationsEsCl();
-          case 'CO':
-            return AppLocalizationsEsCo();
-          case 'CR':
-            return AppLocalizationsEsCr();
-          case 'DO':
-            return AppLocalizationsEsDo();
-          case 'EC':
-            return AppLocalizationsEsEc();
-          case 'GT':
-            return AppLocalizationsEsGt();
-          case 'HN':
-            return AppLocalizationsEsHn();
-          case 'MX':
-            return AppLocalizationsEsMx();
-          case 'NI':
-            return AppLocalizationsEsNi();
-          case 'PA':
-            return AppLocalizationsEsPa();
-          case 'PE':
-            return AppLocalizationsEsPe();
-          case 'PR':
-            return AppLocalizationsEsPr();
-          case 'PY':
-            return AppLocalizationsEsPy();
-          case 'SV':
-            return AppLocalizationsEsSv();
-          case 'US':
-            return AppLocalizationsEsUs();
-          case 'UY':
-            return AppLocalizationsEsUy();
-          case 'VE':
-            return AppLocalizationsEsVe();
         }
         break;
       }
