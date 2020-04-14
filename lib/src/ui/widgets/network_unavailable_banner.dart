@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:app_settings/app_settings.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
@@ -7,7 +9,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// Displays a [MaterialBanner] when network connectivity is lost.
 class NetworkUnavailableBanner extends StatefulWidget {
-  /// Set to `true` when a [NetworkUnavailableBanner] is currently displayed.
+  /// Set to `true` when the network is unavailable.
   static ValueListenable<bool> get networkUnavailableNotifier =>
       _networkUnavailableNotifier;
 
@@ -46,17 +48,11 @@ class _NetworkUnavailableBannerState extends State<NetworkUnavailableBanner> {
 
   Connectivity _connectivity;
   ConnectivityResult _lastConnectivity;
-  Stream<ConnectivityResult> _connectivityStream;
   Future<ConnectivityResult> _initialConnectivity;
 
   @override
   void initState() {
     _connectivity = widget.connectivity ?? Connectivity();
-    _connectivityStream =
-        _connectivity.onConnectivityChanged.asBroadcastStream();
-    _connectivityStream.listen((state) => NetworkUnavailableBanner
-        ._networkUnavailableNotifier
-        .value = (state == ConnectivityResult.none));
     _initialConnectivity = _connectivity.checkConnectivity();
     super.initState();
   }
@@ -71,13 +67,18 @@ class _NetworkUnavailableBannerState extends State<NetworkUnavailableBanner> {
       ) {
         if (!currentConnectivity.hasData) return Container();
         return StreamBuilder<ConnectivityResult>(
-          stream: _connectivityStream,
+          stream: _connectivity.onConnectivityChanged,
           initialData: currentConnectivity.data,
           builder: (
             BuildContext context,
             AsyncSnapshot<ConnectivityResult> snapshot,
           ) {
             final connectivityResult = snapshot.data;
+            // Update value notifier after build method completes.
+            scheduleMicrotask(
+              () => NetworkUnavailableBanner._networkUnavailableNotifier.value =
+                  (connectivityResult == ConnectivityResult.none),
+            );
             if ((connectivityResult == ConnectivityResult.none) &&
                 connectivityResult != _lastConnectivity) {
               // Reset the banner dismiss state if we've lost network
