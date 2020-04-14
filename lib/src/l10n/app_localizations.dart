@@ -1,14 +1,16 @@
 import 'dart:async';
 
+// ignore: unused_import
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
-
-// ignore_for_file: unnecessary_brace_in_string_interps
+import 'app_localizations_es.dart';
+import 'app_localizations_ko.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_zh.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations returned
 /// by `AppLocalizations.of(context)`.
@@ -37,8 +39,7 @@ import 'app_localizations_en.dart';
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
-///   intl: 0.16.0
-///   intl_translation: 0.17.7
+///   intl: 0.16.1
 ///
 ///   # rest of dependencies
 /// ```
@@ -96,7 +97,15 @@ abstract class AppLocalizations {
   ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[Locale('en')];
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('en'),
+    Locale('es'),
+    Locale('es', '419'),
+    Locale('ko'),
+    Locale('ru'),
+    Locale('zh'),
+    Locale('zh', 'CN')
+  ];
 
   // Heading on the initial screen. The name of the app, CovidNearMe, should not be translated
   String get tutorialIntroStepWelcome;
@@ -534,17 +543,47 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en'].contains(locale.languageCode);
+      <String>['en', 'es', 'ko', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations _lookupAppLocalizations(Locale locale) {
+  // Lookup logic when language+country codes are specified.
+  switch (locale.languageCode) {
+    case 'es':
+      {
+        switch (locale.countryCode) {
+          case '419':
+            return AppLocalizationsEs419();
+        }
+        break;
+      }
+    case 'zh':
+      {
+        switch (locale.countryCode) {
+          case 'CN':
+            return AppLocalizationsZhCn();
+        }
+        break;
+      }
+  }
+
+  // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en':
       return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'ko':
+      return AppLocalizationsKo();
+    case 'ru':
+      return AppLocalizationsRu();
+    case 'zh':
+      return AppLocalizationsZh();
   }
+
   assert(false,
       'AppLocalizations.delegate failed to load unsupported locale "$locale"');
   return null;
