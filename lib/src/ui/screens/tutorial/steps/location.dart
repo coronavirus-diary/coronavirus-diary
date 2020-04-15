@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
+import 'package:covidnearme/src/data/models/locations.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/index.dart';
 import '../tutorial_controller.dart';
@@ -17,7 +17,7 @@ class TutorialLocationStep extends StatefulWidget {
 
 class _TutorialLocationStepState extends State<TutorialLocationStep> {
   void _updateData({
-    UserLocation location,
+    Location location,
     @required PreferencesState preferencesState,
   }) {
     if (location.postalCode != null) {
@@ -40,7 +40,7 @@ class _TutorialLocationStepState extends State<TutorialLocationStep> {
         key: ValueKey('tutorialLocationStep'),
         builder: (BuildContext context, PreferencesState preferencesState) {
           return LocationEntry(
-            updateData: (UserLocation location) => _updateData(
+            updateData: (Location location) => _updateData(
               location: location,
               preferencesState: preferencesState,
             ),

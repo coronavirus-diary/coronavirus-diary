@@ -1,9 +1,8 @@
-import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_view.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';

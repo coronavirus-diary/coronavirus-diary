@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
+import 'package:covidnearme/src/data/models/locations.dart';
+
 abstract class LocalStatisticsEvent extends Equatable {
   const LocalStatisticsEvent();
 
@@ -12,11 +14,7 @@ abstract class LocalStatisticsEvent extends Equatable {
 }
 
 class GetLocalStatistics extends LocalStatisticsEvent {
-  final String country;
-  final String zip;
+  final Location location;
 
-  const GetLocalStatistics({
-    @required this.country,
-    this.zip,
-  });
+  const GetLocalStatistics({@required this.location});
 }

@@ -25,3 +25,20 @@ Map<String, dynamic> _$LocalStatisticsEntryToJson(
       'deaths': instance.deaths,
       'recoveries': instance.recoveries,
     };
+
+LocalStatisticsLocation _$LocalStatisticsLocationFromJson(
+    Map<String, dynamic> json) {
+  return LocalStatisticsLocation(
+    name: json['name'] as String,
+    location: json['location'] == null
+        ? null
+        : Location.fromJson(json['location'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$LocalStatisticsLocationToJson(
+        LocalStatisticsLocation instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'location': instance.location?.toJson(),
+    };

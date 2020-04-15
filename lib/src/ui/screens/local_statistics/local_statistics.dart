@@ -26,8 +26,7 @@ class LocalStatisticsScreen extends StatelessWidget {
                 state is LocalStatisticsLoading) {
               if (state is LocalStatisticsNotLoaded) {
                 context.bloc<LocalStatisticsBloc>().add(GetLocalStatistics(
-                      country: preferencesState.preferences.location.country,
-                      zip: preferencesState.preferences.location.postalCode,
+                      location: preferencesState.preferences.location,
                     ));
               }
             } else if (state is LocalStatisticsLoaded) {

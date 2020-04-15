@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/index.dart';
@@ -21,7 +20,7 @@ class LocationStep extends StatefulWidget implements SymptomReportStep {
 
 class _LocationStepState extends State<LocationStep> {
   void _updateData({
-    UserLocation location,
+    Location location,
     @required SymptomReportState symptomReportState,
     @required PreferencesState preferencesState,
   }) {
@@ -57,11 +56,11 @@ class _LocationStepState extends State<LocationStep> {
         return BlocBuilder<SymptomReportBloc, SymptomReportState>(
             builder: (BuildContext context, SymptomReportState state) {
           final SymptomReportStateInProgress symptomReportState = state;
-          final UserLocation currentLocation =
+          final Location currentLocation =
               symptomReportState?.symptomReport?.location ??
                   preferencesState.preferences.location;
           return LocationEntry(
-            updateData: (UserLocation location) => _updateData(
+            updateData: (Location location) => _updateData(
               location: location,
               symptomReportState: symptomReportState,
               preferencesState: preferencesState,
