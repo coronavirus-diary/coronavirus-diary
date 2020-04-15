@@ -9,6 +9,7 @@ import 'package:covidnearme/src/utils/env.dart' show appEnv;
 import 'symptom_report.dart';
 
 export 'package:covidnearme/src/data/repositories/symptom_reports.dart';
+export 'package:covidnearme/src/data/models/locations.dart';
 export 'package:covidnearme/src/data/models/symptom_report.dart';
 
 class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {

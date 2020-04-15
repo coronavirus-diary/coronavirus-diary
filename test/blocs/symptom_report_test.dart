@@ -1,9 +1,9 @@
-import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
-import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pedantic/pedantic.dart';
+
+import 'package:covidnearme/src/blocs/preferences/preferences.dart';
+import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
+import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 
 void main() {
   test(

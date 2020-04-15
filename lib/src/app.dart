@@ -32,6 +32,7 @@ class App extends StatelessWidget {
                 create: (BuildContext context) => LocalStatisticsBloc(
                   preferencesState: state,
                   localStatisticsRepository: LocalStatisticsRepository(),
+                  context: context,
                 ),
               ),
             ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
+
+import 'package:covidnearme/src/data/models/locations.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/country_dropdown.dart';
 import 'package:covidnearme/src/ui/widgets/questions/inputs/index.dart';
@@ -18,8 +19,8 @@ class LocationEntry extends StatefulWidget {
   })  : assert(updateData != null),
         super(key: key);
 
-  final ValueChanged<UserLocation> updateData;
-  final UserLocation location;
+  final ValueChanged<Location> updateData;
+  final Location location;
   final String title;
   final Widget finish;
 
@@ -33,15 +34,16 @@ class _LocationEntryState extends State<LocationEntry> {
   bool get _isUSA => _displayedLocation.country == "US";
   // Keep the values entered, so that when switching between modes,
   // they stick, but we don't have to update the preferences values.
-  UserLocation _displayedLocation;
+  Location _displayedLocation;
 
   @override
   void initState() {
     super.initState();
-    _displayedLocation = widget.location ?? UserLocation(
-      country: 'US',
-      postalCode: null,
-    );
+    _displayedLocation = widget.location ??
+        Location(
+          country: 'US',
+          postalCode: null,
+        );
   }
 
   LocalKey zipCodeKey = ValueKey<String>('ZIP Code');
@@ -79,7 +81,7 @@ class _LocationEntryState extends State<LocationEntry> {
     return valid;
   }
 
-  void _updateLocation(UserLocation location) {
+  void _updateLocation(Location location) {
     if (location.postalCode != null) {
       location.country = 'US';
     }
@@ -123,7 +125,7 @@ class _LocationEntryState extends State<LocationEntry> {
                 ),
               ),
             CountryDropdown(
-              onChanged: (String value) => _updateLocation(UserLocation(
+              onChanged: (String value) => _updateLocation(Location(
                 country: value,
                 postalCode: null,
               )),
@@ -133,8 +135,8 @@ class _LocationEntryState extends State<LocationEntry> {
               EntryField(
                 key: zipCodeKey,
                 initialValue: _displayedLocation.postalCode,
-                onChanged: (String value) => _updateLocation(
-                    UserLocation(postalCode: value, country: 'US')),
+                onChanged: (String value) =>
+                    _updateLocation(Location(postalCode: value, country: 'US')),
                 label: localizations.locationStepZipCode,
                 keyboardType: TextInputType.numberWithOptions(
                     decimal: false, signed: false),

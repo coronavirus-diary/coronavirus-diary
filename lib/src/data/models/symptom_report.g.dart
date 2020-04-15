@@ -12,7 +12,7 @@ SymptomReport _$SymptomReportFromJson(Map<String, dynamic> json) {
     isFake: json['is_fake'] as bool,
     location: json['location'] == null
         ? null
-        : UserLocation.fromJson(json['location'] as Map<String, dynamic>),
+        : Location.fromJson(json['location'] as Map<String, dynamic>),
     questionResponses: (json['question_responses'] as List)
         ?.map((e) => e == null
             ? null
@@ -41,17 +41,4 @@ Map<String, dynamic> _$QuestionResponseToJson(QuestionResponse instance) =>
     <String, dynamic>{
       'question_identifier': instance.questionIdentifier,
       'response': instance.response,
-    };
-
-UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
-  return UserLocation(
-    country: json['country'] as String,
-    postalCode: json['postal_code'] as String,
-  );
-}
-
-Map<String, dynamic> _$UserLocationToJson(UserLocation instance) =>
-    <String, dynamic>{
-      'country': instance.country,
-      'postal_code': instance.postalCode,
     };

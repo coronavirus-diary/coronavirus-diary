@@ -1,7 +1,9 @@
-import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 import 'package:uuid/uuid_util.dart';
+
+import 'package:covidnearme/src/data/models/local_statistics.dart';
+import 'package:covidnearme/src/data/models/locations.dart';
 
 part 'preferences.g.dart';
 
@@ -10,25 +12,29 @@ class Preferences {
   final String userId;
   final bool completedTutorial;
   final bool acceptedInformedConsent;
-  final UserLocation location;
+  final Location location;
+  final List<LocalStatisticsLocation> recentLocalStatisticsLocations;
 
   Preferences({
     String userId,
     bool completedTutorial,
     this.acceptedInformedConsent,
     this.location,
+    recentLocalStatisticsLocations,
   })  : completedTutorial = completedTutorial ?? false,
         userId = userId ??
             Uuid().v4(
               options: {
                 'grng': UuidUtil.cryptoRNG,
               },
-            );
+            ),
+        recentLocalStatisticsLocations = recentLocalStatisticsLocations ?? [];
 
   Preferences cloneWith({
     bool completedTutorial,
     bool acceptedInformedConsent,
-    UserLocation location,
+    Location location,
+    List<LocalStatisticsLocation> recentLocalStatisticsLocations,
   }) {
     return Preferences(
       userId: this.userId,
@@ -36,6 +42,8 @@ class Preferences {
       acceptedInformedConsent:
           acceptedInformedConsent ?? this.acceptedInformedConsent,
       location: location ?? this.location,
+      recentLocalStatisticsLocations:
+          recentLocalStatisticsLocations ?? this.recentLocalStatisticsLocations,
     );
   }
 

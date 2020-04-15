@@ -13,7 +13,8 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
     acceptedInformedConsent: json['accepted_informed_consent'] as bool,
     location: json['location'] == null
         ? null
-        : UserLocation.fromJson(json['location'] as Map<String, dynamic>),
+        : Location.fromJson(json['location'] as Map<String, dynamic>),
+    recentLocalStatisticsLocations: json['recent_local_statistics_locations'],
   );
 }
 
@@ -23,4 +24,8 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) =>
       'completed_tutorial': instance.completedTutorial,
       'accepted_informed_consent': instance.acceptedInformedConsent,
       'location': instance.location?.toJson(),
+      'recent_local_statistics_locations': instance
+          .recentLocalStatisticsLocations
+          ?.map((e) => e?.toJson())
+          ?.toList(),
     };
