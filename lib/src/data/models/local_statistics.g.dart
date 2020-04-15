@@ -8,20 +8,20 @@ part of 'local_statistics.dart';
 
 LocalStatisticsEntry _$LocalStatisticsEntryFromJson(Map<String, dynamic> json) {
   return LocalStatisticsEntry(
-    date: json['date'] as String,
+    name: json['name'] as String,
+    date: json['date'] == null ? null : DateTime.parse(json['date'] as String),
     cases: json['cases'] as int,
     deaths: json['deaths'] as int,
     recoveries: json['recoveries'] as int,
-    name: json['name'] as String,
   );
 }
 
 Map<String, dynamic> _$LocalStatisticsEntryToJson(
         LocalStatisticsEntry instance) =>
     <String, dynamic>{
-      'date': instance.date,
+      'name': instance.name,
+      'date': instance.date?.toIso8601String(),
       'cases': instance.cases,
       'deaths': instance.deaths,
       'recoveries': instance.recoveries,
-      'name': instance.name,
     };
