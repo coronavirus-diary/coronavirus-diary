@@ -33,10 +33,16 @@ class _LocationEntryState extends State<LocationEntry> {
   bool get _isUSA => _displayedLocation.country == "US";
   // Keep the values entered, so that when switching between modes,
   // they stick, but we don't have to update the preferences values.
-  UserLocation _displayedLocation = UserLocation(
-    country: 'US',
-    postalCode: null,
-  );
+  UserLocation _displayedLocation;
+
+  @override
+  void initState() {
+    super.initState();
+    _displayedLocation = widget.location ?? UserLocation(
+      country: 'US',
+      postalCode: null,
+    );
+  }
 
   LocalKey zipCodeKey = ValueKey<String>('ZIP Code');
   LocalKey countryKey = ValueKey<String>('Country');
