@@ -38,7 +38,7 @@ class App extends StatelessWidget {
             ],
             child: MaterialApp(
               title: 'CovidNearMe',
-              theme: appTheme,
+              theme: lightTheme,
               routes: appRoutes,
               initialRoute: getInitialRoute(state),
               localizationsDelegates: AppLocalizations.localizationsDelegates
