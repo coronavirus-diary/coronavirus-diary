@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'statistics.dart';
+part of 'local_statistics.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-StatisticsByLocation _$StatisticsByLocationFromJson(Map<String, dynamic> json) {
-  return StatisticsByLocation(
+LocalStatisticsEntry _$LocalStatisticsEntryFromJson(Map<String, dynamic> json) {
+  return LocalStatisticsEntry(
     date: json['date'] as String,
     cases: json['cases'] as int,
     deaths: json['deaths'] as int,
@@ -16,8 +16,8 @@ StatisticsByLocation _$StatisticsByLocationFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$StatisticsByLocationToJson(
-        StatisticsByLocation instance) =>
+Map<String, dynamic> _$LocalStatisticsEntryToJson(
+        LocalStatisticsEntry instance) =>
     <String, dynamic>{
       'date': instance.date,
       'cases': instance.cases,

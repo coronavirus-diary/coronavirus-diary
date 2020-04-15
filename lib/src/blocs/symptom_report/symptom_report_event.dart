@@ -1,5 +1,6 @@
-import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:equatable/equatable.dart';
+
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 
 abstract class SymptomReportEvent extends Equatable {
   const SymptomReportEvent();

@@ -1,11 +1,11 @@
-import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
-import 'package:covidnearme/src/l10n/country_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:covidnearme/src/blocs/local_statistics/local_statistics.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/blocs/symptom_report/symptom_report.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/l10n/country_localizations.dart';
 import 'package:covidnearme/src/ui/assets/theme.dart';
 import 'package:covidnearme/src/ui/router.dart';
 
@@ -20,11 +20,21 @@ class App extends StatelessWidget {
       },
       child: BlocBuilder<PreferencesBloc, PreferencesState>(
         builder: (context, state) {
-          return BlocProvider<SymptomReportBloc>(
-            create: (context) => SymptomReportBloc(
-              preferencesState: state,
-              symptomReportsRepository: SymptomReportsRepository(),
-            ),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider<SymptomReportBloc>(
+                create: (BuildContext context) => SymptomReportBloc(
+                  preferencesState: state,
+                  symptomReportsRepository: SymptomReportsRepository(),
+                ),
+              ),
+              BlocProvider<LocalStatisticsBloc>(
+                create: (BuildContext context) => LocalStatisticsBloc(
+                  preferencesState: state,
+                  localStatisticsRepository: LocalStatisticsRepository(),
+                ),
+              ),
+            ],
             child: MaterialApp(
               title: 'CovidNearMe',
               theme: appTheme,

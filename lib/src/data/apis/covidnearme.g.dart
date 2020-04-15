@@ -32,4 +32,26 @@ class _CovidNearMeApi implements CovidNearMeApi {
         data: _data);
     return Future.value(null);
   }
+
+  @override
+  getLocalStatistics(country, {zip}) async {
+    ArgumentError.checkNotNull(country, 'country');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{'country': country, 'zip': zip};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final Response<List<dynamic>> _result = await _dio.request('locations',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    var value = _result.data
+        .map((dynamic i) =>
+            LocalStatisticsEntry.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return Future.value(value);
+  }
 }
