@@ -16,7 +16,7 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   SymptomReportBloc({
     @required this.preferencesState,
     @required this.symptomReportsRepository,
-    @visibleForTesting this.forceNetworkError = false,
+    @visibleForTesting this.forceNetworkError = true,
   });
 
   @override
@@ -84,15 +84,15 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
       yield SymptomReportStateInProgress(symptomReport: currentReport);
     }
 
-    if (forceNetworkError) {
-      yield* networkError();
-      return;
-    }
-
     // Send symptom report to server
     try {
       await symptomReportsRepository.createSymptomReport(currentReport);
     } catch (e) {
+      yield* networkError();
+      return;
+    }
+
+    if (forceNetworkError) {
       yield* networkError();
       return;
     }
