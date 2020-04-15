@@ -130,6 +130,15 @@ ThemeData _getTutorialTheme(BuildContext context) {
                       .inputDecorationTheme
                       .enabledBorder
                       .borderSide
+                      .copyWith(color: Colors.white.withOpacity(0.5))),
+          focusedBorder: Theme.of(context)
+              .inputDecorationTheme
+              .focusedBorder
+              .copyWith(
+                  borderSide: Theme.of(context)
+                      .inputDecorationTheme
+                      .focusedBorder
+                      .borderSide
                       .copyWith(color: Colors.white)),
           focusColor: Colors.white,
           labelStyle:

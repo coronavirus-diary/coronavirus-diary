@@ -29,6 +29,12 @@ final ThemeData appTheme = ThemeData.light().copyWith(
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(2),
       borderSide: BorderSide(
+        color: Colors.black.withOpacity(0.5),
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(2),
+      borderSide: BorderSide(
         color: Colors.black,
       ),
     ),
