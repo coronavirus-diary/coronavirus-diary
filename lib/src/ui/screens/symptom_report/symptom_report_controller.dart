@@ -4,12 +4,12 @@ import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'steps/index.dart';
 
 class SymptomReportController {
-  final PageController pageController;
+  PageController pageController;
   final PreferencesState preferencesState;
   final BuildContext context;
   final List<SymptomReportStep> steps;
 
-  const SymptomReportController({
+  SymptomReportController({
     this.context,
     this.pageController,
     this.preferencesState,

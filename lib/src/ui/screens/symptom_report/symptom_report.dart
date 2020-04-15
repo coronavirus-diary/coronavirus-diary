@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
@@ -114,7 +116,10 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
       case SymptomReportStateCreating:
         return _getUnloadedBody(symptomReportState);
       case SymptomReportStateInProgress:
-        return SymptomReportLoadedBody(steps: steps);
+        return SymptomReportLoadedBody(
+          steps: steps,
+          jumpToLastStep: _showSnackbar,
+        );
       case SymptomReportStateCompleting:
       case SymptomReportStateCompleted:
         return Container();
@@ -122,6 +127,8 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
         return _getErrorBody();
     }
   }
+
+  bool _showSnackbar = false;
 
   @override
   Widget build(BuildContext context) {
@@ -132,55 +139,83 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
         if (steps.isEmpty) {
           steps = getSteps(state);
         }
-
-        return BlocConsumer<SymptomReportBloc, SymptomReportState>(
-          listener: (context, state) {
-            if (state is SymptomReportStateCompleting) {
-              if (!_showSubmittingReportHUD) {
-                setState(() {
-                  _showSubmittingReportHUD = true;
-                });
-              }
-            } else if (state is SymptomReportStateCompleted) {
-              _handleSymptomReportCompletion(context, state);
-            }
-          },
-          builder: (context, state) {
-            final SymptomReportState symptomReportState = state;
-
-            return WidgetHUD(
-              showHUD: _showSubmittingReportHUD,
-              hud: HUD(
-                color: Theme.of(context).colorScheme.surface,
-                opacity: 1.0,
-                labelStyle: Theme.of(context).textTheme.headline,
-                label: localizations.systemReportSubmitting,
+        return WidgetHUD(
+          showHUD: _showSubmittingReportHUD,
+          hud: HUD(
+            color: Theme.of(context).colorScheme.surface,
+            opacity: 1.0,
+            labelStyle: Theme.of(context).textTheme.headline,
+            label: localizations.systemReportSubmitting,
+          ),
+          builder: (context) {
+            return Provider<SymptomReportController>.value(
+              value: SymptomReportController(
+                context: context,
+                pageController: _pageController,
+                preferencesState: preferencesState,
+                steps: steps,
               ),
-              builder: (context) {
-                return Provider<SymptomReportController>.value(
-                  value: SymptomReportController(
-                    context: context,
-                    pageController: _pageController,
-                    preferencesState: preferencesState,
-                    steps: steps,
+              child: Scaffold(
+                appBar: AppBar(
+                  title: Text(AppLocalizations.of(context).symptomReportTitle),
+                  leading: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () => Navigator.pop(context),
+                    tooltip: localizations.systemReportBackToHomePage,
                   ),
-                  child: Scaffold(
-                    appBar: AppBar(
-                      title:
-                          Text(AppLocalizations.of(context).symptomReportTitle),
-                      leading: IconButton(
-                        icon: Icon(Icons.close),
-                        onPressed: () => Navigator.pop(context),
-                        tooltip: localizations.systemReportBackToHomePage,
-                      ),
-                    ),
-                    backgroundColor: Theme.of(context).backgroundColor,
-                    body: NetworkUnavailableBanner.wrap(
+                ),
+                backgroundColor: Theme.of(context).backgroundColor,
+                body: BlocConsumer<SymptomReportBloc, SymptomReportState>(
+                  listener: (context, state) {
+                    if (state is SymptomReportStateCompleting) {
+                      if (!_showSubmittingReportHUD) {
+                        setState(() {
+                          _showSubmittingReportHUD = true;
+                        });
+                      }
+                    } else if (state is SymptomReportStateCompleted) {
+                      _handleSymptomReportCompletion(context, state);
+                    } else if (state is SymptomReportStateNetworkError) {
+                      // Pre-populate question responses from last submission attempt.
+                      BlocProvider.of<QuestionsBloc>(context).add(
+                        LoadQuestions(
+                          responses: state.symptomReport.questionResponses,
+                        ),
+                      );
+                      setState(() {
+                        _showSnackbar = true;
+                        _showSubmittingReportHUD = false;
+                      });
+                    }
+                  },
+                  builder: (context, state) {
+                    final SymptomReportState symptomReportState = state;
+                    final body = NetworkUnavailableBanner.wrap(
                       _getBody(symptomReportState),
-                    ),
-                  ),
-                );
-              },
+                    );
+                    if (_showSnackbar) {
+                      // Show the snackbar after the build method is complete.
+                      scheduleMicrotask(() {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.red,
+                            content: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Text(
+                                AppLocalizations.of(context)
+                                    .networkRequestError,
+                                style: Theme.of(context).textTheme.headline,
+                              ),
+                            ),
+                          ),
+                        );
+                      });
+                      _showSnackbar = false;
+                    }
+                    return body;
+                  },
+                ),
+              ),
             );
           },
         );

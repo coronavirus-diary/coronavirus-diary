@@ -146,6 +146,37 @@ void main() {
       ),
     );
   });
+
+  test(
+      'SymptomReportBloc can reset to SymptomReportInProgress after '
+      'encountering a network error', () async {
+    final bloc = SymptomReportBloc(
+      symptomReportsRepository: FakeSymptomReportsRepository(),
+      preferencesState: FakePreferencesState(),
+      forceNetworkError: true,
+    );
+    bloc.add(StartSymptomReport());
+    bloc.add(CompleteSymptomReport());
+    unawaited(bloc.close());
+
+    await expectLater(
+      bloc,
+      emitsInOrder(
+        [
+          const SymptomReportStateNotCreated(),
+          const SymptomReportStateCreating(),
+          isA<SymptomReportStateInProgress>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
+          const SymptomReportStateCompleting(),
+          isA<SymptomReportStateNetworkError>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
+          isA<SymptomReportStateInProgress>()
+            ..having((s) => s.symptomReport, 'symptomReport', isNotNull),
+          emitsDone,
+        ],
+      ),
+    );
+  });
 }
 
 class NotSymptomReportEvent extends SymptomReportEvent {}

@@ -40,6 +40,32 @@ class _QuestionViewState extends State<QuestionView> {
         return widget.onChange?.call(question, value);
       }
 
+      bool matchingCompositeAnswer(CompositeQuestion composite, int index) {
+        final child = composite.children[index];
+        final answer = composite.answers[index];
+        if (_answered.containsKey(child)) {
+          return _answered[child] == answer;
+        } else {
+          // Handle case where questions are pre-populated with answers.
+          switch (child.runtimeType) {
+            case ScaleQuestion:
+              final ScaleQuestion scaleQuestion = child;
+              return scaleQuestion.initialValue == answer;
+            case TextFieldQuestion:
+              final TextFieldQuestion textFieldQuestion = child;
+              return textFieldQuestion.initialValue == answer;
+            case TemperatureQuestion:
+              // TODO(bkonyi): this value is always converted to F before being
+              // saved, so repopulating a temperature field results in the F
+              // value being used.
+              final TemperatureQuestion temperatureQuestion = child;
+              return temperatureQuestion.initialValue.toString() == answer;
+            default:
+              return false;
+          }
+        }
+      }
+
       switch (question.runtimeType) {
         case ScaleQuestion:
           yield QuestionItem<String>(
@@ -73,9 +99,7 @@ class _QuestionViewState extends State<QuestionView> {
           bool endReached = false;
           for (int i = 1; i < composite.children.length; ++i) {
             final Question child = composite.children[i];
-            if (!endReached &&
-                _answered[composite.children[i - 1]] ==
-                    composite.answers[i - 1]) {
+            if (!endReached && matchingCompositeAnswer(composite, i - 1)) {
               yield QuestionItem<dynamic>(
                 key: ValueKey<Question>(child),
                 question: child,

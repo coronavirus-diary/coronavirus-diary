@@ -22,6 +22,12 @@ class SymptomReportStateInProgress extends SymptomReportState {
       'SymptomReportStateInProgress { symptomReport: $symptomReport }';
 }
 
+class SymptomReportStateNetworkError extends SymptomReportState {
+  final SymptomReport symptomReport;
+
+  const SymptomReportStateNetworkError(this.symptomReport);
+}
+
 class SymptomReportStateCompleting extends SymptomReportState {
   const SymptomReportStateCompleting();
 }

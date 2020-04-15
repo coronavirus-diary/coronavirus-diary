@@ -1,4 +1,5 @@
 import 'package:covidnearme/src/blocs/questions/questions.dart';
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:covidnearme/src/data/repositories/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/l10n/app_localizations_en.dart';
@@ -83,7 +84,10 @@ class NotQuestion extends QuestionsEvent {}
 
 class FakeQuestionsRepository implements QuestionsRepository {
   @override
-  Future<List<Question>> listQuestions(AppLocalizations localizations) {
+  Future<List<Question>> listQuestions(
+    AppLocalizations localizations,
+    List<QuestionResponse> responses,
+  ) {
     throw Exception('Failed to load.');
   }
 }
