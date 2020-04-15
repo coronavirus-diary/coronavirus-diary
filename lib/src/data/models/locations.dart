@@ -17,7 +17,4 @@ class Location {
       _$LocationFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocationToJson(this);
-
-  @override
-  List<Object> get props => [country, postalCode];
 }
