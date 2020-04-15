@@ -14,7 +14,12 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
     location: json['location'] == null
         ? null
         : Location.fromJson(json['location'] as Map<String, dynamic>),
-    recentLocalStatisticsLocations: json['recent_local_statistics_locations'],
+    recentLocalStatisticsLocations:
+        (json['recent_local_statistics_locations'] as List)
+            ?.map((e) => e == null
+                ? null
+                : LocalStatisticsLocation.fromJson(e as Map<String, dynamic>))
+            ?.toList(),
   );
 }
 

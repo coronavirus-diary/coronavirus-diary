@@ -20,7 +20,7 @@ class Preferences {
     bool completedTutorial,
     this.acceptedInformedConsent,
     this.location,
-    recentLocalStatisticsLocations,
+    List<LocalStatisticsLocation> recentLocalStatisticsLocations,
   })  : completedTutorial = completedTutorial ?? false,
         userId = userId ??
             Uuid().v4(
