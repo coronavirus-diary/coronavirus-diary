@@ -39,6 +39,8 @@ void main() {
     }
 
     // Enter a location and continue
+    // Make sure the zip code defaults to the preferences value.
+    await driver.waitFor(find.text('98101'));
     await driver.tap(find.byValueKey('stepFinishedButton'));
 
     // Answer the questions
