@@ -8,6 +8,9 @@ import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:covidnearme/src/utils/env.dart' show appEnv;
 import 'symptom_report.dart';
 
+export 'package:covidnearme/src/data/repositories/symptom_reports.dart';
+export 'package:covidnearme/src/data/models/symptom_report.dart';
+
 class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   final PreferencesState preferencesState;
   final SymptomReportsRepository symptomReportsRepository;
@@ -47,7 +50,8 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
     // Create symptom report
     final SymptomReport newReport = SymptomReport(
       userId: preferencesState.preferences.userId,
-      location: preferencesState.preferences.location, // Default to preferences location.
+      location: preferencesState
+          .preferences.location, // Default to preferences location.
       isFake: appEnv['ENVIRONMENT'] != 'production',
     );
 

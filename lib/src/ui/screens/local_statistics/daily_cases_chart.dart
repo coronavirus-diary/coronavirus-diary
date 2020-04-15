@@ -1,45 +1,22 @@
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:covidnearme/src/data/models/statistics.dart';
-import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
-/// A collection of infographics showing statistics for a given location.
-class StatisticsView extends StatelessWidget {
-  final List<StatisticsByLocation> statisticsByLocationList;
+import 'package:covidnearme/src/data/models/local_statistics.dart';
+import 'package:covidnearme/src/l10n/app_localizations.dart';
 
-  StatisticsView({this.statisticsByLocationList});
+class DailyCasesChart extends StatefulWidget {
+  final List<LocalStatisticsEntry> localStatisticsEntries;
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        // TODO: Add totals.
-        CountsPerDayTimeSeriesChart(
-          statisticsByLocationList: statisticsByLocationList,
-        ),
-        // TODO: Add cases/day bar chart.
-      ],
-    );
-  }
-}
-
-/// Time Series line chart showing counts per day of cases, deaths, and
-/// recoveries.
-class CountsPerDayTimeSeriesChart extends StatefulWidget {
-  final List<StatisticsByLocation> statisticsByLocationList;
-
-  CountsPerDayTimeSeriesChart({this.statisticsByLocationList});
+  DailyCasesChart({this.localStatisticsEntries});
 
   @override
-  _CountsPerDayTimeSeriesChartState createState() =>
-      _CountsPerDayTimeSeriesChartState();
+  _DailyCasesChartState createState() => _DailyCasesChartState();
 }
 
-class _CountsPerDayTimeSeriesChartState
-    extends State<CountsPerDayTimeSeriesChart> {
-  ValueNotifier<StatisticsByLocation> _selectedStatistics;
+class _DailyCasesChartState extends State<DailyCasesChart> {
+  ValueNotifier<LocalStatisticsEntry> _selectedStatistics;
 
   @override
   void initState() {
@@ -76,7 +53,7 @@ class _CountsPerDayTimeSeriesChartState
           ),
         ),
         if (_selectedStatistics != null)
-          ValueListenableBuilder<StatisticsByLocation>(
+          ValueListenableBuilder<LocalStatisticsEntry>(
               valueListenable: _selectedStatistics,
               builder: (context, value, child) {
                 return value == null ? Container() : _SelectedInfo(value);
@@ -92,13 +69,14 @@ class _CountsPerDayTimeSeriesChartState
       final dateFormat = DateFormat('yyyy-MM-dd');
       final dateString = dateFormat.format(date);
       print(dateString);
-      final statisticByLocation = widget.statisticsByLocationList
-          .firstWhere((e) => e.date == dateString);
+      final statisticByLocation =
+          widget.localStatisticsEntries.firstWhere((e) => e.date == dateString);
       _selectedStatistics.value = statisticByLocation;
     }
   }
 
-  List<charts.Series<_TimeSeries, DateTime>> _createSeriesList(BuildContext context) {
+  List<charts.Series<_TimeSeries, DateTime>> _createSeriesList(
+      BuildContext context) {
     final localizations = AppLocalizations.of(context);
     return [
       _createSeries(
@@ -136,8 +114,8 @@ class _CountsPerDayTimeSeriesChartState
   }
 
   List<_TimeSeries> _createTimeSeriesData(
-      int valueMapper(StatisticsByLocation s)) {
-    return widget.statisticsByLocationList
+      int valueMapper(LocalStatisticsEntry s)) {
+    return widget.localStatisticsEntries
         .map(
           (statisticsByLocation) => _TimeSeries(
             DateTime.parse(statisticsByLocation.date),
@@ -156,19 +134,22 @@ class _TimeSeries {
 }
 
 class _SelectedInfo extends StatelessWidget {
-  final StatisticsByLocation statisticsByLocation;
+  final LocalStatisticsEntry localStatisticsEntry;
 
-  _SelectedInfo(this.statisticsByLocation);
+  _SelectedInfo(this.localStatisticsEntry);
 
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context);
     return Column(
       children: [
-        Text(statisticsByLocation.date),
-        Text('${localizations.statisticsLabelCases}: ${statisticsByLocation.cases}'),
-        Text('${localizations.statisticsLabelDeaths}: ${statisticsByLocation.deaths}'),
-        Text('${localizations.statisticsLabelRecoveries}: ${statisticsByLocation.recoveries}'),
+        Text(localStatisticsEntry.date),
+        Text(
+            '${localizations.statisticsLabelCases}: ${localStatisticsEntry.cases}'),
+        Text(
+            '${localizations.statisticsLabelDeaths}: ${localStatisticsEntry.deaths}'),
+        Text(
+            '${localizations.statisticsLabelRecoveries}: ${localStatisticsEntry.recoveries}'),
       ],
     );
   }

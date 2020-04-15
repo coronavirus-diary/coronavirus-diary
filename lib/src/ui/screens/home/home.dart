@@ -33,6 +33,20 @@ class _HomeScreenState extends State<HomeScreen> {
       children: <Widget>[
         HomeCard(
           leading: FaIcon(
+            FontAwesomeIcons.mapMarked,
+            size: 40,
+          ),
+          title: Text(localizations.homeScreenLocalStatisticsTitle),
+          subtitle: Text(localizations.homeScreenLocalStatisticsSubtitle),
+          button: RaisedButton(
+            key: ValueKey('homeScreenLocalStatisticsButton'),
+            onPressed: () =>
+                Navigator.pushNamed(context, LocalStatisticsScreen.routeName),
+            child: Text(localizations.homeScreenLocalStatisticsButton),
+          ),
+        ),
+        HomeCard(
+          leading: FaIcon(
             FontAwesomeIcons.heartbeat,
             color: Colors.red,
             size: 40,
