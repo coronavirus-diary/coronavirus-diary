@@ -95,7 +95,7 @@ Widget setUpConfiguration(Widget child) {
     home: Scaffold(body: child),
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
-    theme: appTheme,
+    theme: lightTheme,
   );
 }
 
