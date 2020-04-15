@@ -4,22 +4,25 @@ part 'local_statistics.g.dart';
 
 @JsonSerializable()
 class LocalStatisticsEntry {
-  String date; // YYYY-MM-DD
+  String name;
+  DateTime date;
   int cases;
   int deaths;
   int recoveries;
-  String name;
 
   LocalStatisticsEntry({
+    this.name,
     this.date,
     this.cases,
     this.deaths,
     this.recoveries,
-    this.name,
   });
 
   factory LocalStatisticsEntry.fromJson(Map<String, dynamic> json) =>
       _$LocalStatisticsEntryFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocalStatisticsEntryToJson(this);
+
+  @override
+  String toString() => 'LocalStatisticsEntry { name: $name, date: $date }';
 }
