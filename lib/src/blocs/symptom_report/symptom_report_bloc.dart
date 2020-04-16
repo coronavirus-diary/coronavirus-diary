@@ -16,7 +16,7 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   SymptomReportBloc({
     @required this.preferencesState,
     @required this.symptomReportsRepository,
-    @visibleForTesting this.forceNetworkError = true,
+    @visibleForTesting this.forceNetworkError = false,
   });
 
   @override

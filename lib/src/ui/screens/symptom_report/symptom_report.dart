@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hud/flutter_hud.dart';
@@ -60,8 +61,10 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
   // Storing the page controller at this level so that we can access it
   // across the entire symptom report experience
   PageController _pageController;
+  bool _showSnackbar = false;
   bool _showSubmittingReportHUD = false;
   List<SymptomReportStep> steps = [];
+  SymptomReport _lastAttemptedReport;
 
   @override
   void initState() {
@@ -100,6 +103,8 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     BuildContext context,
     SymptomReportStateCompleted symptomReportState,
   ) {
+    _lastAttemptedReport = null;
+
     // Move back to the not created state, to clear out the symptom report.
     context.bloc<SymptomReportBloc>().add(const ClearSymptomReport());
 
@@ -110,7 +115,10 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     );
   }
 
-  Widget _getBody(SymptomReportState symptomReportState) {
+  Widget _getBody(
+    SymptomReportState symptomReportState,
+    List<SymptomReportStep> steps,
+  ) {
     switch (symptomReportState.runtimeType) {
       case SymptomReportStateNotCreated:
       case SymptomReportStateCreating:
@@ -128,17 +136,16 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     }
   }
 
-  bool _showSnackbar = false;
-
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
         final PreferencesState preferencesState = state;
-        if (steps.isEmpty) {
-          steps = getSteps(state);
-        }
+        final steps = getSteps(
+          state,
+          _lastAttemptedReport?.questionResponses,
+        );
         return WidgetHUD(
           showHUD: _showSubmittingReportHUD,
           hud: HUD(
@@ -176,13 +183,8 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                     } else if (state is SymptomReportStateCompleted) {
                       _handleSymptomReportCompletion(context, state);
                     } else if (state is SymptomReportStateNetworkError) {
-                      // Pre-populate question responses from last submission attempt.
-                      BlocProvider.of<QuestionsBloc>(context).add(
-                        LoadQuestions(
-                          responses: state.symptomReport.questionResponses,
-                        ),
-                      );
                       setState(() {
+                        _lastAttemptedReport = state.symptomReport;
                         _showSnackbar = true;
                         _showSubmittingReportHUD = false;
                       });
@@ -191,7 +193,7 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                   builder: (context, state) {
                     final SymptomReportState symptomReportState = state;
                     final body = NetworkUnavailableBanner.wrap(
-                      _getBody(symptomReportState),
+                      _getBody(symptomReportState, steps),
                     );
                     if (_showSnackbar) {
                       // Show the snackbar after the build method is complete.

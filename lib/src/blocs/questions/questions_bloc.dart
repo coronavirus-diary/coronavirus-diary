@@ -35,7 +35,6 @@ class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
     try {
       final questions = await questionsRepository.listQuestions(
         localizations,
-        event.responses,
       );
       yield QuestionsStateLoaded(questions);
     } on Exception catch (exception) {

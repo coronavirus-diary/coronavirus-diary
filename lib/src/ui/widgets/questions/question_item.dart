@@ -10,11 +10,13 @@ typedef QuestionItemChanged<T> = void Function(T value);
 class QuestionItem<T> extends StatefulWidget {
   final Question question;
   final QuestionItemChanged<T> onChanged;
+  final T initialValue;
 
   const QuestionItem({
     Key key,
     @required this.question,
     @required this.onChanged,
+    this.initialValue,
   })  : assert(onChanged != null),
         super(key: key);
 
@@ -28,7 +30,9 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
   @override
   void initState() {
     super.initState();
-    if (widget.question is ScaleQuestion) {
+    if (widget.initialValue != null) {
+      currentValue = widget.initialValue;
+    } else if (widget.question is ScaleQuestion) {
       currentValue = (widget.question as ScaleQuestion).initialValue;
     }
   }
@@ -41,13 +45,18 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
   }
 
   Widget _getInput() {
+    _currentOrInitialValue(initialValue) => currentValue ?? initialValue;
     switch (widget.question.runtimeType) {
       case ScaleQuestion:
         final ScaleQuestion scaleQuestion = widget.question;
         return RadioButtonScale(
           labels: scaleQuestion.labels,
           axis: scaleQuestion.vertical ? Axis.vertical : Axis.horizontal,
-          value: scaleQuestion.values.indexOf(currentValue),
+          value: scaleQuestion.values.indexOf(
+            _currentOrInitialValue(
+              widget.initialValue,
+            ),
+          ),
           semanticLabels: scaleQuestion.semanticLabels,
           onChanged: (int value) {
             _handleChange(value != null ? scaleQuestion.values[value] : null);
@@ -59,7 +68,9 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
         return Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: TemperatureField(
-            initialValue: temperatureQuestion.initialValue,
+            initialValue: _currentOrInitialValue(
+              temperatureQuestion.initialValue,
+            ),
             onChanged: _handleChange,
           ),
         );
@@ -69,7 +80,9 @@ class _QuestionItemState<T> extends State<QuestionItem<T>> {
         return Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: EntryField(
-            initialValue: textFieldQuestion.initialValue,
+            initialValue: _currentOrInitialValue(
+              textFieldQuestion.initialValue,
+            ),
             onChanged: _handleChange,
           ),
         );

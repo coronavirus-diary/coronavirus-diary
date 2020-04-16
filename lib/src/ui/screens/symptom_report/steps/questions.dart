@@ -13,6 +13,10 @@ class QuestionsStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => true;
   bool get showProgress => true;
 
+  final List<QuestionResponse> prepopulatedResponses;
+
+  const QuestionsStep(this.prepopulatedResponses);
+
   @override
   _QuestionsStepState createState() => _QuestionsStepState();
 }
@@ -76,6 +80,7 @@ class _QuestionsStepState extends State<QuestionsStep> {
             final SymptomReportStateInProgress symptomReportState = state;
             return QuestionView(
               questions: questionState.questions,
+              responses: widget.prepopulatedResponses,
               onChange: (Question question, dynamic value) =>
                   _updateSymptomReport(question, value, symptomReportState),
               isLastStep: widget.isLastStep,

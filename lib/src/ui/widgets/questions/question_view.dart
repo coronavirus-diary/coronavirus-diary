@@ -1,3 +1,4 @@
+import 'package:covidnearme/src/data/repositories/symptom_reports.dart';
 import 'package:flutter/material.dart';
 
 import 'package:covidnearme/src/data/models/questions.dart';
@@ -11,6 +12,7 @@ typedef QuestionResponseCallback = void Function(
 
 class QuestionView extends StatefulWidget {
   final List<Question> questions;
+  final List<QuestionResponse> responses;
   final Color color;
   final EdgeInsetsGeometry padding;
   final QuestionResponseCallback onChange;
@@ -18,6 +20,7 @@ class QuestionView extends StatefulWidget {
 
   const QuestionView({
     @required this.questions,
+    this.responses,
     this.color,
     this.padding,
     this.onChange,
@@ -29,13 +32,36 @@ class QuestionView extends StatefulWidget {
 }
 
 class _QuestionViewState extends State<QuestionView> {
-  Map<Question, dynamic> _answered = <Question, dynamic>{};
+  Map<String, dynamic> _answered = <String, dynamic>{};
+
+  @override
+  void initState() {
+    final idToResponse = <String, QuestionResponse>{
+      if (widget.responses != null)
+        for (final response in widget.responses)
+          response.questionIdentifier: response,
+    };
+    for (final question in widget.questions) {
+      if (idToResponse.containsKey(question.id)) {
+        _answered[question.id] = idToResponse[question.id].response;
+      }
+      if (question is CompositeQuestion) {
+        for (int i = 1; i < question.children.length; ++i) {
+          final child = question.children[i];
+          if (idToResponse.containsKey(child.id)) {
+            _answered[child.id] = idToResponse[child.id].response;
+          }
+        }
+      }
+    }
+    super.initState();
+  }
 
   List<Widget> _getQuestions() {
     return widget.questions.expand((Question question) sync* {
       void onChanged(Question question, dynamic value) {
         setState(() {
-          _answered[question] = value;
+          _answered[question.id] = value;
         });
         return widget.onChange?.call(question, value);
       }
@@ -43,33 +69,15 @@ class _QuestionViewState extends State<QuestionView> {
       bool matchingCompositeAnswer(CompositeQuestion composite, int index) {
         final child = composite.children[index];
         final answer = composite.answers[index];
-        if (_answered.containsKey(child)) {
-          return _answered[child] == answer;
-        } else {
-          // Handle case where questions are pre-populated with answers.
-          switch (child.runtimeType) {
-            case ScaleQuestion:
-              final ScaleQuestion scaleQuestion = child;
-              return scaleQuestion.initialValue == answer;
-            case TextFieldQuestion:
-              final TextFieldQuestion textFieldQuestion = child;
-              return textFieldQuestion.initialValue == answer;
-            case TemperatureQuestion:
-              // TODO(bkonyi): this value is always converted to F before being
-              // saved, so repopulating a temperature field results in the F
-              // value being used.
-              final TemperatureQuestion temperatureQuestion = child;
-              return temperatureQuestion.initialValue.toString() == answer;
-            default:
-              return false;
-          }
-        }
+        return _answered[child.id] == answer;
       }
 
+      final prepopulatedResponse = _answered[question.id].toString();
       switch (question.runtimeType) {
         case ScaleQuestion:
           yield QuestionItem<String>(
             key: ValueKey<Question>(question),
+            initialValue: prepopulatedResponse,
             question: question,
             onChanged: (String value) => onChanged(question, value),
           );
@@ -77,6 +85,7 @@ class _QuestionViewState extends State<QuestionView> {
         case TextFieldQuestion:
           yield QuestionItem<String>(
             key: ValueKey<Question>(question),
+            initialValue: prepopulatedResponse,
             question: question,
             onChanged: (String value) => onChanged(question, value),
           );
@@ -84,6 +93,7 @@ class _QuestionViewState extends State<QuestionView> {
         case TemperatureQuestion:
           yield QuestionItem<double>(
             key: ValueKey<Question>(question),
+            initialValue: double.tryParse(prepopulatedResponse ?? ''),
             question: question,
             onChanged: (double value) => onChanged(question, value),
           );
@@ -92,6 +102,7 @@ class _QuestionViewState extends State<QuestionView> {
           CompositeQuestion composite = question;
           yield QuestionItem<dynamic>(
             key: ValueKey<Question>(composite.children.first),
+            initialValue: prepopulatedResponse,
             question: composite.children.first,
             onChanged: (dynamic value) =>
                 onChanged(composite.children.first, value),
@@ -102,6 +113,7 @@ class _QuestionViewState extends State<QuestionView> {
             if (!endReached && matchingCompositeAnswer(composite, i - 1)) {
               yield QuestionItem<dynamic>(
                 key: ValueKey<Question>(child),
+                initialValue: _answered[child.id],
                 question: child,
                 onChanged: (dynamic value) => onChanged(child, value),
               );
