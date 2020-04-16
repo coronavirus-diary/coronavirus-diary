@@ -112,14 +112,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get symptomReportNextButton => '继续';
 
   @override
-  String get symptomReportAnswerAllQuestions => '请回答所有问题以继续';
+  String get symptomReportAnswerAllQuestions => '请回答所有问题，然后才能继续';
 
   @override
   String get symptomReportIntroStepTitle => '记录您的症状信息';
 
   @override
   String get symptomReportIntroStepHealthQuestions =>
-      '回答与您的健康状况有关的几个简单的问题，即可开始跟踪您的症状。';
+      '回答与您的健康状况有关的几个简单问题，即可开始跟踪您的症状。';
 
   @override
   String get symptomReportIntroStepDataContribution =>
@@ -135,9 +135,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
 您是匿名的。我们不想确定您的身份！我们会要求您提供邮政编码，以便统计特定医院周边的病例数量。我们会利用您的症状严重性数据来猜测您感染 COVID-19 的可能性，并确定您所在的区域有多少人已成为重症患者。
 
-我们会将邮政编码对应的每日病例总数提供给各州和地方的医疗卫生机构、美国疾病控制中心 (CDC) 和美国政府，帮助其预测哪些社区需要最大力度的支持。此外，我们还会在此应用内创建病例分布地图，并对相关数据进行地理趋势分析。例如，在学校长期关闭的地区，病例数量可能会比较少；或者，在天气炎热时，疫情的蔓延速度会降低。
+我们会将邮政编码对应的每日病例总数提供给各州和地方的医疗卫生机构、美国疾病控制中心 (CDC) 和美国政府，帮助其预测哪些社区需要最大力度的支持。此外，我们还会在此应用内生成病例分布地图，并对相关数据进行地理趋势分析。例如，在学校长期关闭的地区，病例数量可能会比较少；或者，在天气炎热时，疫情的蔓延速度会降低。
 
-您可以在明天或以后的日期返回此应用并输入新的信息。我们能够验证您的身份，因此不会反复将您计入总数。或许您的症状加剧了，或者您获得了 COVID-19 检测结果并想将结果信息告诉我们。无论怎样，您都可以随时在此应用中输入新的信息。
+您可以改天再返回此应用并输入新的信息。我们能够验证您的身份，因此不会反复将您计入总数。或许您的症状加剧了，或者您获得了 COVID-19 检测结果并想将结果信息告诉我们。无论怎样，您都可以随时在此应用中输入新的信息。
 
 我们不会销售这些数据。这些数据将仅用于公共卫生和研究用途；疫情结束后，这些数据将被删除。
 
@@ -391,13 +391,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get shareAppDownloadPrompt =>
-      '下载 CovidNearMe 以获取本地 COVID-19 信息和统计信息。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
+      '下载 CovidNearMe 以获取本地 COVID-19 信息和统计数据。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => '如何保持健康';
 
   @override
-  String get safetyTipsSubtitle => '保护您的健康以及帮助您的社区阻止疾病传播的有效方式。';
+  String get safetyTipsSubtitle => '保护您的健康以及帮助您的社区遏制疾病传播的有效方式。';
 
   @override
   String get safetyTipsWashYourHands =>
@@ -405,13 +405,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get safetyTipsSocialDistancing =>
-      '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 6 英尺的距离。';
+      '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 2 米的距离。';
 
   @override
   String get safetyTipsContactPhysician => '如果您的症状加剧了，请与医疗服务提供方联系。';
 
   @override
-  String get locationStepTitle => '验证您的地点';
+  String get locationStepTitle => '验证您的位置';
 
   @override
   String get locationStepInvalidZipCode => '请输入有效的 5 位数邮政编码';
@@ -576,14 +576,14 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get symptomReportNextButton => '继续';
 
   @override
-  String get symptomReportAnswerAllQuestions => '请回答所有问题以继续';
+  String get symptomReportAnswerAllQuestions => '请回答所有问题，然后才能继续';
 
   @override
   String get symptomReportIntroStepTitle => '记录您的症状信息';
 
   @override
   String get symptomReportIntroStepHealthQuestions =>
-      '回答与您的健康状况有关的几个简单的问题，即可开始跟踪您的症状。';
+      '回答与您的健康状况有关的几个简单问题，即可开始跟踪您的症状。';
 
   @override
   String get symptomReportIntroStepDataContribution =>
@@ -599,9 +599,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
 您是匿名的。我们不想确定您的身份！我们会要求您提供邮政编码，以便统计特定医院周边的病例数量。我们会利用您的症状严重性数据来猜测您感染 COVID-19 的可能性，并确定您所在的区域有多少人已成为重症患者。
 
-我们会将邮政编码对应的每日病例总数提供给各州和地方的医疗卫生机构、美国疾病控制中心 (CDC) 和美国政府，帮助其预测哪些社区需要最大力度的支持。此外，我们还会在此应用内创建病例分布地图，并对相关数据进行地理趋势分析。例如，在学校长期关闭的地区，病例数量可能会比较少；或者，在天气炎热时，疫情的蔓延速度会降低。
+我们会将邮政编码对应的每日病例总数提供给各州和地方的医疗卫生机构、美国疾病控制中心 (CDC) 和美国政府，帮助其预测哪些社区需要最大力度的支持。此外，我们还会在此应用内生成病例分布地图，并对相关数据进行地理趋势分析。例如，在学校长期关闭的地区，病例数量可能会比较少；或者，在天气炎热时，疫情的蔓延速度会降低。
 
-您可以在明天或以后的日期返回此应用并输入新的信息。我们能够验证您的身份，因此不会反复将您计入总数。或许您的症状加剧了，或者您获得了 COVID-19 检测结果并想将结果信息告诉我们。无论怎样，您都可以随时在此应用中输入新的信息。
+您可以改天再返回此应用并输入新的信息。我们能够验证您的身份，因此不会反复将您计入总数。或许您的症状加剧了，或者您获得了 COVID-19 检测结果并想将结果信息告诉我们。无论怎样，您都可以随时在此应用中输入新的信息。
 
 我们不会销售这些数据。这些数据将仅用于公共卫生和研究用途；疫情结束后，这些数据将被删除。
 
@@ -855,13 +855,13 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get shareAppDownloadPrompt =>
-      '下载 CovidNearMe 以获取本地 COVID-19 信息和统计信息。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
+      '下载 CovidNearMe 以获取本地 COVID-19 信息和统计数据。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => '如何保持健康';
 
   @override
-  String get safetyTipsSubtitle => '保护您的健康以及帮助您的社区阻止疾病传播的有效方式。';
+  String get safetyTipsSubtitle => '保护您的健康以及帮助您的社区遏制疾病传播的有效方式。';
 
   @override
   String get safetyTipsWashYourHands =>
@@ -869,13 +869,13 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get safetyTipsSocialDistancing =>
-      '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 6 英尺的距离。';
+      '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 2 米的距离。';
 
   @override
   String get safetyTipsContactPhysician => '如果您的症状加剧了，请与医疗服务提供方联系。';
 
   @override
-  String get locationStepTitle => '验证您的地点';
+  String get locationStepTitle => '验证您的位置';
 
   @override
   String get locationStepInvalidZipCode => '请输入有效的 5 位数邮政编码';

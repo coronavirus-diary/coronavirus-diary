@@ -319,7 +319,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get questionHowHighWasYourFever =>
-      'Если Вы измеряли температуру тела, насколько сильно она была повышена?';
+      'Если Вы измеряли температуру тела, до какого значения она поднялась?';
 
   @override
   String get questionHaveYouBeenFluTestedTitle =>
@@ -504,7 +504,7 @@ class AppLocalizationsRu extends AppLocalizations {
       'Недавние местоположения';
 
   @override
-  String get statisticsLabelCases => 'Случаи';
+  String get statisticsLabelCases => 'Заболело';
 
   @override
   String get statisticsLabelDeaths => 'Умерло';

@@ -10,6 +10,7 @@ import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
 import 'app_localizations_ko.dart';
 import 'app_localizations_ru.dart';
+import 'app_localizations_vi.dart';
 import 'app_localizations_zh.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations returned
@@ -103,6 +104,7 @@ abstract class AppLocalizations {
     Locale('es', '419'),
     Locale('ko'),
     Locale('ru'),
+    Locale('vi'),
     Locale('zh'),
     Locale('zh', 'CN')
   ];
@@ -542,8 +544,14 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'es', 'ko', 'ru', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+        'en',
+        'es',
+        'ko',
+        'ru',
+        'vi',
+        'zh'
+      ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -580,6 +588,8 @@ AppLocalizations _lookupAppLocalizations(Locale locale) {
       return AppLocalizationsKo();
     case 'ru':
       return AppLocalizationsRu();
+    case 'vi':
+      return AppLocalizationsVi();
     case 'zh':
       return AppLocalizationsZh();
   }

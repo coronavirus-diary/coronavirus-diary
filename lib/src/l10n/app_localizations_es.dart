@@ -13,7 +13,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get tutorialIntroStepDescription =>
-      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+      'Mantente al día con estadísticas locales del COVID-19 y apoya los esfuerzos de asistencia.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>
@@ -142,11 +142,11 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get consentStepQuestion => '''# Consentimiento informado
 
-Como EE.UU. se quedó sin kits de pruebas, estamos tratando de determinar cuántas personas tienen síntomas que podrían deberse al COVID-19. La información que se recopile con esta app ayudará a predecir cuáles serán los hospitales con mayor demanda. De esa forma, se enviarán más médicos y suministros a los lugares adecuados.
+Como EE.UU. no cuenta con suficientes kits de pruebas, estamos tratando de determinar cuántas personas tienen síntomas que podrían deberse al COVID-19. La información que se recopile con esta app ayudará a predecir cuáles serán los hospitales con mayor demanda. De esa forma, se enviarán más médicos y suministros a los lugares adecuados.
 
-Tu participación es anónima. No nos interesa saber quién eres. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de los síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
+Tu participación es anónima. No nos interesa saber quién eres. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de tus síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
 
-Las autoridades de salud estatales y locales, los CDC y el gobierno de los EE.UU. recibirán el total de casos diarios correspondientes a los códigos postales para ayudar a predecir qué comunidades necesitan más asistencia. También haremos un mapa aquí, en esta app, y analizaremos los datos en busca de tendencias geográficas. Por ejemplo, podríamos ver menos casos en áreas en las que se cerraron escuelas durante mucho tiempo, o quizás veamos que la epidemia se desacelera en climas cálidos.
+Las autoridades de salud estatales y locales, los CDC y el Gobierno de los EE.UU. recibirán el total de casos diarios correspondientes a cada código postal para ayudar a predecir qué comunidades necesitan más asistencia. También haremos un mapa aquí, en esta app, y analizaremos los datos en busca de tendencias geográficas. Por ejemplo, podríamos ver menos casos en áreas en las que se cerraron las escuelas durante mucho tiempo, o quizás veamos que la epidemia se desacelera en climas cálidos.
 
 Puedes volver más adelante e ingresar nueva información otro día. Sabremos que se trata de ti y no te contaremos dos veces. También es posible que te sientas peor o que te hayas hecho la prueba de detección del COVID-19 y quieras compartir el resultado con nosotros.
 
@@ -193,7 +193,7 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
   @override
   String get thankYouScreenTitle =>
-      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+      'Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
@@ -309,7 +309,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverAnswer1 => 'Tal vez';
 
   @override
-  String get questionHaveAFeverAnswer2 => 'De forma intensa; tengo mucho calor';
+  String get questionHaveAFeverAnswer2 =>
+      'De forma intensa; tengo la temperatura muy alta';
 
   @override
   String get questionHaveAFeverSemantics0 => 'No tengo fiebre';
@@ -319,11 +320,11 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
   @override
   String get questionHaveAFeverSemantics2 =>
-      'Tengo fiebre intensa y mucho calor';
+      'Tengo fiebre intensa, tengo la temperatura muy alta';
 
   @override
   String get questionHowHighWasYourFever =>
-      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+      '¿Qué temperatura tuviste hoy (si te la tomaste)?';
 
   @override
   String get questionHaveYouBeenFluTestedTitle =>
@@ -425,7 +426,7 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
   @override
   String get shareAppDownloadPrompt =>
-      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. Ayuda a tu comunidad con información sobre tus síntomas de forma anónima. {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
@@ -520,7 +521,7 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
   @override
   String get tutorialIntroStepDescription =>
-      'Mantente al día con estadísticas locales del COVID-19 y ayuda a respaldar los esfuerzos de asistencia.';
+      'Mantente al día con estadísticas locales del COVID-19 y apoya los esfuerzos de asistencia.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>
@@ -649,11 +650,11 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   @override
   String get consentStepQuestion => '''# Consentimiento informado
 
-Como EE.UU. se quedó sin kits de pruebas, estamos tratando de determinar cuántas personas tienen síntomas que podrían deberse al COVID-19. La información que se recopile con esta app ayudará a predecir cuáles serán los hospitales con mayor demanda. De esa forma, se enviarán más médicos y suministros a los lugares adecuados.
+Como EE.UU. no cuenta con suficientes kits de pruebas, estamos tratando de determinar cuántas personas tienen síntomas que podrían deberse al COVID-19. La información que se recopile con esta app ayudará a predecir cuáles serán los hospitales con mayor demanda. De esa forma, se enviarán más médicos y suministros a los lugares adecuados.
 
-Tu participación es anónima. No nos interesa saber quién eres. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de los síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
+Tu participación es anónima. No nos interesa saber quién eres. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de tus síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
 
-Las autoridades de salud estatales y locales, los CDC y el gobierno de los EE.UU. recibirán el total de casos diarios correspondientes a los códigos postales para ayudar a predecir qué comunidades necesitan más asistencia. También haremos un mapa aquí, en esta app, y analizaremos los datos en busca de tendencias geográficas. Por ejemplo, podríamos ver menos casos en áreas en las que se cerraron escuelas durante mucho tiempo, o quizás veamos que la epidemia se desacelera en climas cálidos.
+Las autoridades de salud estatales y locales, los CDC y el Gobierno de los EE.UU. recibirán el total de casos diarios correspondientes a cada código postal para ayudar a predecir qué comunidades necesitan más asistencia. También haremos un mapa aquí, en esta app, y analizaremos los datos en busca de tendencias geográficas. Por ejemplo, podríamos ver menos casos en áreas en las que se cerraron las escuelas durante mucho tiempo, o quizás veamos que la epidemia se desacelera en climas cálidos.
 
 Puedes volver más adelante e ingresar nueva información otro día. Sabremos que se trata de ti y no te contaremos dos veces. También es posible que te sientas peor o que te hayas hecho la prueba de detección del COVID-19 y quieras compartir el resultado con nosotros.
 
@@ -700,7 +701,7 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
   @override
   String get thankYouScreenTitle =>
-      '¡Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad!';
+      'Gracias por compartir tus síntomas para ayudar en los esfuerzos de respuesta ante esta enfermedad';
 
   @override
   String get thankYouScreenFinishButton => 'FINALIZAR';
@@ -816,7 +817,8 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveAFeverAnswer1 => 'Tal vez';
 
   @override
-  String get questionHaveAFeverAnswer2 => 'De forma intensa; tengo mucho calor';
+  String get questionHaveAFeverAnswer2 =>
+      'De forma intensa; tengo la temperatura muy alta';
 
   @override
   String get questionHaveAFeverSemantics0 => 'No tengo fiebre';
@@ -826,11 +828,11 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
   @override
   String get questionHaveAFeverSemantics2 =>
-      'Tengo fiebre intensa y mucho calor';
+      'Tengo fiebre intensa, tengo la temperatura muy alta';
 
   @override
   String get questionHowHighWasYourFever =>
-      '¿Cuánta temperatura tuviste hoy (si te la tomaste)?';
+      '¿Qué temperatura tuviste hoy (si te la tomaste)?';
 
   @override
   String get questionHaveYouBeenFluTestedTitle =>
@@ -932,7 +934,7 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
 
   @override
   String get shareAppDownloadPrompt =>
-      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. ¡Ayuda a tu comunidad con información sobre tus síntomas de forma anónima! {{ APP_LINK }}';
+      'Descarga CovidNearMe para ver estadísticas e información acerca del COVID-19. Ayuda a tu comunidad con información sobre tus síntomas de forma anónima. {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Cómo mantenerse saludable';
