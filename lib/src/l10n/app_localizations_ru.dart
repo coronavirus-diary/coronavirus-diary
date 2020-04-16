@@ -1,4 +1,3 @@
-
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -10,22 +9,28 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get tutorialIntroStepWelcome => 'Добро пожаловать в приложение CovidNearMe!';
+  String get tutorialIntroStepWelcome =>
+      'Добро пожаловать в приложение CovidNearMe!';
 
   @override
-  String get tutorialIntroStepDescription => 'Будьте в курсе местной эпидемиологической обстановки и помогайте бороться с коронавирусом COVID-19.';
+  String get tutorialIntroStepDescription =>
+      'Будьте в курсе местной эпидемиологической обстановки и помогайте бороться с коронавирусом COVID-19.';
 
   @override
-  String get tutorialIntroStepWelcomeSemanticsLabel => 'Добро пожаловать в приложение Covid Near Me!';
+  String get tutorialIntroStepWelcomeSemanticsLabel =>
+      'Добро пожаловать в приложение Covid Near Me!';
 
   @override
-  String get tutorialIntroStepLocalStatistics => 'Получайте местную информацию о коронавирусе COVID-19.';
+  String get tutorialIntroStepLocalStatistics =>
+      'Получайте местную информацию о коронавирусе COVID-19.';
 
   @override
-  String get tutorialIntroStepSubmitSymptoms => 'Анонимно отправляйте сведения о своих симптомах.';
+  String get tutorialIntroStepSubmitSymptoms =>
+      'Анонимно отправляйте сведения о своих симптомах.';
 
   @override
-  String get tutorialIntroStepAidEffort => 'Помогайте защищать людей от коронавируса COVID-19.';
+  String get tutorialIntroStepAidEffort =>
+      'Помогайте защищать людей от коронавируса COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'НАЧАТЬ';
@@ -46,16 +51,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get homeMenuAboutSemantics => 'О приложении Covid Near Me';
 
   @override
-  String get aboutBoxDescription => 'Это приложение разработано сообществом Coronavirus Diary в виде проекта с открытым исходным кодом. Чтобы узнать больше и посмотреть код, перейдите по ссылке ниже.';
+  String get aboutBoxDescription =>
+      'Это приложение разработано сообществом Coronavirus Diary в виде проекта с открытым исходным кодом. Чтобы узнать больше и посмотреть код, перейдите по ссылке ниже.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary в хранилище GitHub';
 
   @override
-  String get homeScreenLocalStatisticsTitle => 'Местные новости и сведения о коронавирусе COVID-19';
+  String get homeScreenLocalStatisticsTitle =>
+      'Местные новости и сведения о коронавирусе COVID-19';
 
   @override
-  String get homeScreenLocalStatisticsSubtitle => 'Посмотрите статистику и актуальную информацию для своего региона.';
+  String get homeScreenLocalStatisticsSubtitle =>
+      'Посмотрите статистику и актуальную информацию для своего региона.';
 
   @override
   String get homeScreenLocalStatisticsButton => 'НАЧАТЬ';
@@ -64,16 +72,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get homeScreenReportSymptomsTitle => 'Записывайте свои симптомы';
 
   @override
-  String get homeScreenReportSymptomsSubtitle => 'Проверяйте состояние здоровья быстро и без лишних усилий.';
+  String get homeScreenReportSymptomsSubtitle =>
+      'Проверяйте состояние здоровья быстро и без лишних усилий.';
 
   @override
   String get homeScreenReportSymptomsButton => 'НАЧАТЬ';
 
   @override
-  String get homeScreenShareAppTitle => 'Помогайте защищать людей в своем регионе';
+  String get homeScreenShareAppTitle =>
+      'Помогайте защищать людей в своем регионе';
 
   @override
-  String get homeScreenShareAppSubtitle => 'Делитесь приложением с друзьями и близкими и не давайте заболеванию распространяться.';
+  String get homeScreenShareAppSubtitle =>
+      'Делитесь приложением с друзьями и близкими и не давайте заболеванию распространяться.';
 
   @override
   String get homeScreenShareAppButton => 'ПОДЕЛИТЬСЯ';
@@ -82,21 +93,23 @@ class AppLocalizationsRu extends AppLocalizations {
   String get symptomReportLoading => 'Загрузка…';
 
   @override
-  String get symptomReportErrorRetrievingExperience => 'Произошла ошибка. Не удалось загрузить вопросы о симптомах. Повторите попытку позже.';
+  String get symptomReportErrorRetrievingExperience =>
+      'Произошла ошибка. Не удалось загрузить вопросы о симптомах. Повторите попытку позже.';
 
   @override
   String get symptomReportTitle => 'Запись симптомов';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -110,16 +123,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get symptomReportNextButton => 'ПРОДОЛЖИТЬ';
 
   @override
-  String get symptomReportAnswerAllQuestions => 'Чтобы продолжить, ответьте на все вопросы.';
+  String get symptomReportAnswerAllQuestions =>
+      'Чтобы продолжить, ответьте на все вопросы.';
 
   @override
   String get symptomReportIntroStepTitle => 'Запишите свои симптомы';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => 'Чтобы начать отслеживать симптомы, ответьте на несколько простых вопросов.';
+  String get symptomReportIntroStepHealthQuestions =>
+      'Чтобы начать отслеживать симптомы, ответьте на несколько простых вопросов.';
 
   @override
-  String get symptomReportIntroStepDataContribution => 'Ваши ответы анонимны. Они будут использоваться в борьбе с коронавирусом COVID-19. Благодаря этим анонимным данным эксперты смогут прогнозировать развитие ситуации и совершенствовать меры противодействия заболеванию.';
+  String get symptomReportIntroStepDataContribution =>
+      'Ваши ответы анонимны. Они будут использоваться в борьбе с коронавирусом COVID-19. Благодаря этим анонимным данным эксперты смогут прогнозировать развитие ситуации и совершенствовать меры противодействия заболеванию.';
 
   @override
   String get symptomReportIntroStepStartButton => 'НАЧАТЬ';
@@ -152,10 +168,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get consentStepAgreeActive => 'ПРИНЯТО';
 
   @override
-  String get deniedConsentHeading => 'CovidNearMe не может собирать информацию без вашего согласия';
+  String get deniedConsentHeading =>
+      'CovidNearMe не может собирать информацию без вашего согласия';
 
   @override
-  String get deniedConsentMessage => 'Если вы передумаете, то сможете начать пользоваться приложением в любое время. Мы попросим вас ответить на несколько вопросов о текущих симптомах и указать, сдавали ли вы тест на коронавирус COVID-19. Эта информация анонимна. Она будет использоваться в борьбе с распространением заболевания.';
+  String get deniedConsentMessage =>
+      'Если вы передумаете, то сможете начать пользоваться приложением в любое время. Мы попросим вас ответить на несколько вопросов о текущих симптомах и указать, сдавали ли вы тест на коронавирус COVID-19. Эта информация анонимна. Она будет использоваться в борьбе с распространением заболевания.';
 
   @override
   String get deniedConsentSafetyTipsButton => 'СОВЕТЫ ПО ЗАЩИТЕ ЗДОРОВЬЯ';
@@ -164,7 +182,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get symptomReportLocationStepTitle => 'Где вы находитесь?';
 
   @override
-  String get questionsStepQuestionsLoadedError => 'Не удалось загрузить вопросы.';
+  String get questionsStepQuestionsLoadedError =>
+      'Не удалось загрузить вопросы.';
 
   @override
   String get systemReportSubmitting => 'Отправка информации о симптомах…';
@@ -173,16 +192,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get systemReportBackToHomePage => 'Вернуться на главный экран';
 
   @override
-  String get thankYouScreenTitle => 'Спасибо, что поделились информацией о своих симптомах и помогли в борьбе с распространением заболевания!';
+  String get thankYouScreenTitle =>
+      'Спасибо, что поделились информацией о своих симптомах и помогли в борьбе с распространением заболевания!';
 
   @override
   String get thankYouScreenFinishButton => 'ГОТОВО';
 
   @override
-  String get thankYouScreenCallToAction => 'Если завтра симптомы не исчезнут, ещё раз ответьте на вопросы в приложении.';
+  String get thankYouScreenCallToAction =>
+      'Если завтра симптомы не исчезнут, ещё раз ответьте на вопросы в приложении.';
 
   @override
-  String get thankYouScreenSeriousSymptoms => 'Если почувствуете себя хуже, свяжитесь с медицинской организацией.';
+  String get thankYouScreenSeriousSymptoms =>
+      'Если почувствуете себя хуже, свяжитесь с медицинской организацией.';
 
   @override
   String get thankYouScreenSafetyTipsButton => 'СОВЕТЫ ПО БЕЗОПАСНОСТИ';
@@ -245,7 +267,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get questionHaveACoughSemantics3 => 'Неудержимый кашель';
 
   @override
-  String get questionHaveNauseaTitle => 'Вы чувствуете тошноту, словно Вас может вырвать?';
+  String get questionHaveNauseaTitle =>
+      'Вы чувствуете тошноту, словно Вас может вырвать?';
 
   @override
   String get questionHaveNauseaAnswer0 => 'Нет';
@@ -272,7 +295,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get questionHaveNauseaSemantics3 => 'Тошнота в тяжелой форме';
 
   @override
-  String get questionHaveAFeverTitle => 'Как Вы думаете, у Вас был сегодня жар?';
+  String get questionHaveAFeverTitle =>
+      'Как Вы думаете, у Вас был сегодня жар?';
 
   @override
   String get questionHaveAFeverAnswer0 => 'Нет';
@@ -290,13 +314,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get questionHaveAFeverSemantics1 => 'Возможно, у меня жар';
 
   @override
-  String get questionHaveAFeverSemantics2 => 'У меня сильный жар (я словно горю)';
+  String get questionHaveAFeverSemantics2 =>
+      'У меня сильный жар (я словно горю)';
 
   @override
-  String get questionHowHighWasYourFever => 'Если Вы измеряли температуру тела, до какого значения она поднялась?';
+  String get questionHowHighWasYourFever =>
+      'Если Вы измеряли температуру тела, до какого значения она поднялась?';
 
   @override
-  String get questionHaveYouBeenFluTestedTitle => 'Вы проходили проверку на грипп, пневмонию или другое респираторное заболевание?';
+  String get questionHaveYouBeenFluTestedTitle =>
+      'Вы проходили проверку на грипп, пневмонию или другое респираторное заболевание?';
 
   @override
   String get questionYes => 'Да';
@@ -305,7 +332,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get questionNo => 'Нет';
 
   @override
-  String get questionFluTestPositiveTitle => 'Заболевание было подтверждено тестом?';
+  String get questionFluTestPositiveTitle =>
+      'Заболевание было подтверждено тестом?';
 
   @override
   String get questionFluTestPositiveSemantics0 => 'Да, тест положительный.';
@@ -317,22 +345,27 @@ class AppLocalizationsRu extends AppLocalizations {
   String get questionWhatWasPositiveTitle => 'Что у Вас диагностировали?';
 
   @override
-  String get questionTryForTestingTitle => 'Вы пробовали сдать тест на коронавирус COVID-19?';
+  String get questionTryForTestingTitle =>
+      'Вы пробовали сдать тест на коронавирус COVID-19?';
 
   @override
-  String get questionTryForTestingSemantics0 => 'Да, была попытка сдать тест на коронавирус COVID-19.';
+  String get questionTryForTestingSemantics0 =>
+      'Да, была попытка сдать тест на коронавирус COVID-19.';
 
   @override
-  String get questionTryForTestingSemantics1 => 'Нет, не было попытки сдать тест на коронавирус COVID-19.';
+  String get questionTryForTestingSemantics1 =>
+      'Нет, не было попытки сдать тест на коронавирус COVID-19.';
 
   @override
   String get questionCovid19TestResultTitle => 'С каким результатом?';
 
   @override
-  String get questionCovid19TestResultAnswer0 => 'У меня нет коронавируса COVID-19';
+  String get questionCovid19TestResultAnswer0 =>
+      'У меня нет коронавируса COVID-19';
 
   @override
-  String get questionCovid19TestResultAnswer1 => 'У меня есть коронавирус COVID-19';
+  String get questionCovid19TestResultAnswer1 =>
+      'У меня есть коронавирус COVID-19';
 
   @override
   String get questionCovid19TestResultAnswer2 => 'Я пока не знаю';
@@ -341,25 +374,30 @@ class AppLocalizationsRu extends AppLocalizations {
   String get questionCovid19TestResultAnswer3 => 'В клинике не было тестов';
 
   @override
-  String get questionCovid19TestResultAnswer4 => 'Мне отказали, поскольку симптомы слабо выражены';
+  String get questionCovid19TestResultAnswer4 =>
+      'Мне отказали, поскольку симптомы слабо выражены';
 
   @override
   String get temperatureFieldHelpButton => 'НУЖНА ПОМОЩЬ? ПОЛУЧИТЬ ИНСТРУКЦИИ';
 
   @override
-  String get temperatureFieldOutOfRangeError => 'Введите действительное значение температуры тела.';
+  String get temperatureFieldOutOfRangeError =>
+      'Введите действительное значение температуры тела.';
 
   @override
-  String get temperatureDialogTitle => 'Как правильно измерять температуру тела';
+  String get temperatureDialogTitle =>
+      'Как правильно измерять температуру тела';
 
   @override
   String get temperatureDialogWhenHeading => 'Когда?';
 
   @override
-  String get temperatureDialogWait30Minutes => 'Подождите 30 минут после еды, питья или выполнения упражнений.';
+  String get temperatureDialogWait30Minutes =>
+      'Подождите 30 минут после еды, питья или выполнения упражнений.';
 
   @override
-  String get temperatureDialogWait6Hours => 'Подождите как минимум 6 часов после приема медикаментов, понижающих температуру тела, например ацетаминофена, парацетамола, ибупрофена или аспирина.';
+  String get temperatureDialogWait6Hours =>
+      'Подождите как минимум 6 часов после приема медикаментов, понижающих температуру тела, например ацетаминофена, парацетамола, ибупрофена или аспирина.';
 
   @override
   String get temperatureDialogHowHeading => 'Как?';
@@ -368,43 +406,53 @@ class AppLocalizationsRu extends AppLocalizations {
   String get temperatureDialogStep1 => 'Вымойте руки водой с мылом.';
 
   @override
-  String get temperatureDialogStep2 => 'Вымойте кончик термометра теплой водой с мылом или протрите его медицинским спиртом. Ополосните.';
+  String get temperatureDialogStep2 =>
+      'Вымойте кончик термометра теплой водой с мылом или протрите его медицинским спиртом. Ополосните.';
 
   @override
-  String get temperatureDialogStep3 => 'Положите кончик термометра под язык и осторожно закройте рот.';
+  String get temperatureDialogStep3 =>
+      'Положите кончик термометра под язык и осторожно закройте рот.';
 
   @override
-  String get temperatureDialogStep4 => 'Держите градусник под языком и не открывайте рот, пока не услышите сигнал.';
+  String get temperatureDialogStep4 =>
+      'Держите градусник под языком и не открывайте рот, пока не услышите сигнал.';
 
   @override
-  String get temperatureDialogStep5 => 'Достаньте термометр и запишите результат измерения.';
+  String get temperatureDialogStep5 =>
+      'Достаньте термометр и запишите результат измерения.';
 
   @override
   String get temperatureDialogCloseButton => 'ЗАКРЫТЬ';
 
   @override
-  String get shareAppDownloadPrompt => 'Скачайте приложение CovidNearMe, чтобы получать местную информацию и статистику, связанную с коронавирусом COVID-19. Помогите защитить тех, кто живет в вашем регионе, предоставив анонимные данные о своих симптомах. {{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      'Скачайте приложение CovidNearMe, чтобы получать местную информацию и статистику, связанную с коронавирусом COVID-19. Помогите защитить тех, кто живет в вашем регионе, предоставив анонимные данные о своих симптомах. {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Что делать, чтобы не заболеть';
 
   @override
-  String get safetyTipsSubtitle => 'Далее перечислены эффективные способы защитить себя и помочь в предотвращении распространения заболевания среди жителей вашего региона.';
+  String get safetyTipsSubtitle =>
+      'Далее перечислены эффективные способы защитить себя и помочь в предотвращении распространения заболевания среди жителей вашего региона.';
 
   @override
-  String get safetyTipsWashYourHands => 'Часто мойте руки водой с мылом (не меньше 20 секунд). Постарайтесь не трогать глаза, нос и рот, особенно в общественных местах. Всегда прикрывайте рот сгибом локтя, когда чихаете или кашляете.';
+  String get safetyTipsWashYourHands =>
+      'Часто мойте руки водой с мылом (не меньше 20 секунд). Постарайтесь не трогать глаза, нос и рот, особенно в общественных местах. Всегда прикрывайте рот сгибом локтя, когда чихаете или кашляете.';
 
   @override
-  String get safetyTipsSocialDistancing => 'Соблюдайте правила социального дистанцирования, ограничив контакты с другими людьми. Если вы вышли из дома, следите, чтобы расстояние между вами и другими людьми составляло как минимум два метра.';
+  String get safetyTipsSocialDistancing =>
+      'Соблюдайте правила социального дистанцирования, ограничив контакты с другими людьми. Если вы вышли из дома, следите, чтобы расстояние между вами и другими людьми составляло как минимум два метра.';
 
   @override
-  String get safetyTipsContactPhysician => 'Если почувствуете себя хуже, свяжитесь с медицинской организацией.';
+  String get safetyTipsContactPhysician =>
+      'Если почувствуете себя хуже, свяжитесь с медицинской организацией.';
 
   @override
   String get locationStepTitle => 'Подтвердите свое местоположение';
 
   @override
-  String get locationStepInvalidZipCode => 'Введите действительный пятизначный почтовый индекс.';
+  String get locationStepInvalidZipCode =>
+      'Введите действительный пятизначный почтовый индекс.';
 
   @override
   String get locationStepZipCode => 'Почтовый индекс';
@@ -413,7 +461,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get locationStepNoCountrySelected => 'Ничего не выбрано';
 
   @override
-  String get locationStepCountrySearchPrompt => 'Выберите страну, где вы находитесь';
+  String get locationStepCountrySearchPrompt =>
+      'Выберите страну, где вы находитесь';
 
   @override
   String get locationStepCountryButtonLabel => 'Страна:';
@@ -425,28 +474,34 @@ class AppLocalizationsRu extends AppLocalizations {
   String get networkUnavailableBannerConnectToWiFi => 'ПОДКЛЮЧИТЬСЯ К WI-FI';
 
   @override
-  String get networkRequestError => 'Произошла ошибка. Не удалось выполнить ваш запрос.';
+  String get networkRequestError =>
+      'Произошла ошибка. Не удалось выполнить ваш запрос.';
 
   @override
-  String get networkUnavailableBannerMessage => 'У вас нет подключения к Интернету. Проверьте сетевые настройки и повторите попытку.';
+  String get networkUnavailableBannerMessage =>
+      'У вас нет подключения к Интернету. Проверьте сетевые настройки и повторите попытку.';
 
   @override
   String get scrollMoreIndicatorMessage => 'ПРОКРУТИТЬ ДАЛЬШЕ';
 
   @override
-  String get localStatisticsTitle => 'Местная статистика распространения коронавируса COVID-19';
+  String get localStatisticsTitle =>
+      'Местная статистика распространения коронавируса COVID-19';
 
   @override
-  String get localStatisticsNoLocationSelected => 'Чтобы увидеть статистику, выберите местоположение.';
+  String get localStatisticsNoLocationSelected =>
+      'Чтобы увидеть статистику, выберите местоположение.';
 
   @override
-  String get localStatisticsNoDataAvailable => 'Для этого местоположения не найдены данные, связанные с коронавирусом COVID-19.';
+  String get localStatisticsNoDataAvailable =>
+      'Для этого местоположения не найдены данные, связанные с коронавирусом COVID-19.';
 
   @override
   String get localStatisticsLocationInput => 'Почтовый индекс или страна';
 
   @override
-  String get localStatisticsRecentLocationsMenuTitle => 'Недавние местоположения';
+  String get localStatisticsRecentLocationsMenuTitle =>
+      'Недавние местоположения';
 
   @override
   String get statisticsLabelCases => 'Заболело';

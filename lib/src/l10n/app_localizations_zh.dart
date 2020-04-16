@@ -1,4 +1,3 @@
-
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
@@ -13,7 +12,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tutorialIntroStepWelcome => '欢迎使用 CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => '及时了解本地新型冠状病毒肺炎 (COVID-19) 的相关统计信息，为抗疫工作提供支持。';
+  String get tutorialIntroStepDescription =>
+      '及时了解本地新型冠状病毒肺炎 (COVID-19) 的相关统计信息，为抗疫工作提供支持。';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel => '欢迎使用 Covid Near Me 应用';
@@ -46,7 +46,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get homeMenuAboutSemantics => '关于 Covid Near Me';
 
   @override
-  String get aboutBoxDescription => '此应用是 Coronavirus Diary 社区开发的一个开源项目。要了解详情并查看源代码，请访问以下链接。';
+  String get aboutBoxDescription =>
+      '此应用是 Coronavirus Diary 社区开发的一个开源项目。要了解详情并查看源代码，请访问以下链接。';
 
   @override
   String get aboutBoxLinkText => '在 GitHub 上查看 Coronavirus Diary';
@@ -88,15 +89,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get symptomReportTitle => '记录您的症状信息';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -116,10 +118,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get symptomReportIntroStepTitle => '记录您的症状信息';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => '回答与您的健康状况有关的几个简单问题，即可开始跟踪您的症状。';
+  String get symptomReportIntroStepHealthQuestions =>
+      '回答与您的健康状况有关的几个简单问题，即可开始跟踪您的症状。';
 
   @override
-  String get symptomReportIntroStepDataContribution => '您的回答是匿名的，并将用于协助开展 COVID-19 抗疫工作。专家会利用您的匿名信息来预测并改进抗疫措施。';
+  String get symptomReportIntroStepDataContribution =>
+      '您的回答是匿名的，并将用于协助开展 COVID-19 抗疫工作。专家会利用您的匿名信息来预测并改进抗疫措施。';
 
   @override
   String get symptomReportIntroStepStartButton => '开始使用';
@@ -155,7 +159,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get deniedConsentHeading => 'CovidNearMe 在未经您同意的情况下无法收集信息';
 
   @override
-  String get deniedConsentMessage => '如果您改变了主意，可以随时使用此应用。您需要回答与您目前的症状有关的几个问题，并说明您是否已接受 COVID-19 检测。您的信息将以匿名的方式用于协助开展 COVID-19 抗疫工作。';
+  String get deniedConsentMessage =>
+      '如果您改变了主意，可以随时使用此应用。您需要回答与您目前的症状有关的几个问题，并说明您是否已接受 COVID-19 检测。您的信息将以匿名的方式用于协助开展 COVID-19 抗疫工作。';
 
   @override
   String get deniedConsentSafetyTipsButton => '获取关于如何保持健康的提示';
@@ -179,7 +184,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get thankYouScreenFinishButton => '完成';
 
   @override
-  String get thankYouScreenCallToAction => '如果您明天仍然感觉自己有相关症状，请在此应用中再次记录相关的症状信息。';
+  String get thankYouScreenCallToAction =>
+      '如果您明天仍然感觉自己有相关症状，请在此应用中再次记录相关的症状信息。';
 
   @override
   String get thankYouScreenSeriousSymptoms => '如果您的症状加剧了，请与医疗服务提供方联系。';
@@ -359,7 +365,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get temperatureDialogWait30Minutes => '吃饭、喝水或运动后等待 30 分钟。';
 
   @override
-  String get temperatureDialogWait6Hours => '服用可以降低体温的药物（例如对乙酰氨基酚、布洛芬和阿司匹林）后等待至少 6 个小时。';
+  String get temperatureDialogWait6Hours =>
+      '服用可以降低体温的药物（例如对乙酰氨基酚、布洛芬和阿司匹林）后等待至少 6 个小时。';
 
   @override
   String get temperatureDialogHowHeading => '如何测量？';
@@ -383,7 +390,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get temperatureDialogCloseButton => '关闭';
 
   @override
-  String get shareAppDownloadPrompt => '下载 CovidNearMe 以获取本地 COVID-19 信息和统计数据。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      '下载 CovidNearMe 以获取本地 COVID-19 信息和统计数据。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => '如何保持健康';
@@ -392,10 +400,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get safetyTipsSubtitle => '保护您的健康以及帮助您的社区遏制疾病传播的有效方式。';
 
   @override
-  String get safetyTipsWashYourHands => '经常使用肥皂和水洗手，每次洗手至少持续 20 秒。避免触摸您的眼睛、鼻子和嘴巴，特别是在公共场合。每次咳嗽和打喷嚏时都应使用手肘内侧遮掩口鼻。';
+  String get safetyTipsWashYourHands =>
+      '经常使用肥皂和水洗手，每次洗手至少持续 20 秒。避免触摸您的眼睛、鼻子和嘴巴，特别是在公共场合。每次咳嗽和打喷嚏时都应使用手肘内侧遮掩口鼻。';
 
   @override
-  String get safetyTipsSocialDistancing => '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 2 米的距离。';
+  String get safetyTipsSocialDistancing =>
+      '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 2 米的距离。';
 
   @override
   String get safetyTipsContactPhysician => '如果您的症状加剧了，请与医疗服务提供方联系。';
@@ -460,13 +470,14 @@ class AppLocalizationsZh extends AppLocalizations {
 
 /// The translations for Chinese, as used in China (`zh_CN`).
 class AppLocalizationsZhCn extends AppLocalizationsZh {
-  AppLocalizationsZhCn(): super('zh_CN');
+  AppLocalizationsZhCn() : super('zh_CN');
 
   @override
   String get tutorialIntroStepWelcome => '欢迎使用 CovidNearMe';
 
   @override
-  String get tutorialIntroStepDescription => '及时了解本地新型冠状病毒肺炎 (COVID-19) 的相关统计信息，为抗疫工作提供支持。';
+  String get tutorialIntroStepDescription =>
+      '及时了解本地新型冠状病毒肺炎 (COVID-19) 的相关统计信息，为抗疫工作提供支持。';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel => '欢迎使用 Covid Near Me 应用';
@@ -499,7 +510,8 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get homeMenuAboutSemantics => '关于 Covid Near Me';
 
   @override
-  String get aboutBoxDescription => '此应用是 Coronavirus Diary 社区开发的一个开源项目。要了解详情并查看源代码，请访问以下链接。';
+  String get aboutBoxDescription =>
+      '此应用是 Coronavirus Diary 社区开发的一个开源项目。要了解详情并查看源代码，请访问以下链接。';
 
   @override
   String get aboutBoxLinkText => '在 GitHub 上查看 Coronavirus Diary';
@@ -541,15 +553,16 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get symptomReportTitle => '记录您的症状信息';
 
   @override
-  String symptomReportProgressBarPercentCompleteText(int stepIndex, int stepCount) {
-    final intl.NumberFormat stepIndexNumberFormat = intl.NumberFormat.compactLong(
+  String symptomReportProgressBarPercentCompleteText(
+      int stepIndex, int stepCount) {
+    final intl.NumberFormat stepIndexNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepIndexString = stepIndexNumberFormat.format(stepIndex);
-    final intl.NumberFormat stepCountNumberFormat = intl.NumberFormat.compactLong(
+    final intl.NumberFormat stepCountNumberFormat =
+        intl.NumberFormat.compactLong(
       locale: localeName,
-      
     );
     final String stepCountString = stepCountNumberFormat.format(stepCount);
 
@@ -569,10 +582,12 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get symptomReportIntroStepTitle => '记录您的症状信息';
 
   @override
-  String get symptomReportIntroStepHealthQuestions => '回答与您的健康状况有关的几个简单问题，即可开始跟踪您的症状。';
+  String get symptomReportIntroStepHealthQuestions =>
+      '回答与您的健康状况有关的几个简单问题，即可开始跟踪您的症状。';
 
   @override
-  String get symptomReportIntroStepDataContribution => '您的回答是匿名的，并将用于协助开展 COVID-19 抗疫工作。专家会利用您的匿名信息来预测并改进抗疫措施。';
+  String get symptomReportIntroStepDataContribution =>
+      '您的回答是匿名的，并将用于协助开展 COVID-19 抗疫工作。专家会利用您的匿名信息来预测并改进抗疫措施。';
 
   @override
   String get symptomReportIntroStepStartButton => '开始使用';
@@ -608,7 +623,8 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get deniedConsentHeading => 'CovidNearMe 在未经您同意的情况下无法收集信息';
 
   @override
-  String get deniedConsentMessage => '如果您改变了主意，可以随时使用此应用。您需要回答与您目前的症状有关的几个问题，并说明您是否已接受 COVID-19 检测。您的信息将以匿名的方式用于协助开展 COVID-19 抗疫工作。';
+  String get deniedConsentMessage =>
+      '如果您改变了主意，可以随时使用此应用。您需要回答与您目前的症状有关的几个问题，并说明您是否已接受 COVID-19 检测。您的信息将以匿名的方式用于协助开展 COVID-19 抗疫工作。';
 
   @override
   String get deniedConsentSafetyTipsButton => '获取关于如何保持健康的提示';
@@ -632,7 +648,8 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get thankYouScreenFinishButton => '完成';
 
   @override
-  String get thankYouScreenCallToAction => '如果您明天仍然感觉自己有相关症状，请在此应用中再次记录相关的症状信息。';
+  String get thankYouScreenCallToAction =>
+      '如果您明天仍然感觉自己有相关症状，请在此应用中再次记录相关的症状信息。';
 
   @override
   String get thankYouScreenSeriousSymptoms => '如果您的症状加剧了，请与医疗服务提供方联系。';
@@ -812,7 +829,8 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get temperatureDialogWait30Minutes => '吃饭、喝水或运动后等待 30 分钟。';
 
   @override
-  String get temperatureDialogWait6Hours => '服用可以降低体温的药物（例如对乙酰氨基酚、布洛芬和阿司匹林）后等待至少 6 个小时。';
+  String get temperatureDialogWait6Hours =>
+      '服用可以降低体温的药物（例如对乙酰氨基酚、布洛芬和阿司匹林）后等待至少 6 个小时。';
 
   @override
   String get temperatureDialogHowHeading => '如何测量？';
@@ -836,7 +854,8 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get temperatureDialogCloseButton => '关闭';
 
   @override
-  String get shareAppDownloadPrompt => '下载 CovidNearMe 以获取本地 COVID-19 信息和统计数据。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
+  String get shareAppDownloadPrompt =>
+      '下载 CovidNearMe 以获取本地 COVID-19 信息和统计数据。匿名提供您的症状信息，为您的社区尽一份力！{{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => '如何保持健康';
@@ -845,10 +864,12 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get safetyTipsSubtitle => '保护您的健康以及帮助您的社区遏制疾病传播的有效方式。';
 
   @override
-  String get safetyTipsWashYourHands => '经常使用肥皂和水洗手，每次洗手至少持续 20 秒。避免触摸您的眼睛、鼻子和嘴巴，特别是在公共场合。每次咳嗽和打喷嚏时都应使用手肘内侧遮掩口鼻。';
+  String get safetyTipsWashYourHands =>
+      '经常使用肥皂和水洗手，每次洗手至少持续 20 秒。避免触摸您的眼睛、鼻子和嘴巴，特别是在公共场合。每次咳嗽和打喷嚏时都应使用手肘内侧遮掩口鼻。';
 
   @override
-  String get safetyTipsSocialDistancing => '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 2 米的距离。';
+  String get safetyTipsSocialDistancing =>
+      '注意保持社交距离，也就是说限制与他人的接触。出门在外时，请与他人保持至少 2 米的距离。';
 
   @override
   String get safetyTipsContactPhysician => '如果您的症状加剧了，请与医疗服务提供方联系。';
