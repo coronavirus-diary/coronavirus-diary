@@ -85,7 +85,7 @@
   "questionHaveAFeverSemantics0": "Жара нет",
   "questionHaveAFeverSemantics1": "Возможно, у меня жар",
   "questionHaveAFeverSemantics2": "У меня сильный жар (я словно горю)",
-  "questionHowHighWasYourFever": "Если Вы измеряли температуру тела, насколько сильно она была повышена?",
+  "questionHowHighWasYourFever": "Если Вы измеряли температуру тела, до какого значения она поднялась?",
   "questionHaveYouBeenFluTestedTitle": "Вы проходили проверку на грипп, пневмонию или другое респираторное заболевание?",
   "questionYes": "Да",
   "questionNo": "Нет",
@@ -137,7 +137,7 @@
   "localStatisticsNoDataAvailable": "Для этого местоположения не найдены данные, связанные с коронавирусом COVID-19.",
   "localStatisticsLocationInput": "Почтовый индекс или страна",
   "localStatisticsRecentLocationsMenuTitle": "Недавние местоположения",
-  "statisticsLabelCases": "Случаи",
+  "statisticsLabelCases": "Заболело",
   "statisticsLabelDeaths": "Умерло",
   "statisticsLabelRecoveries": "Выздоровело"
 }
