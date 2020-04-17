@@ -1,5 +1,4 @@
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
-import 'package:covidnearme/src/data/models/symptom_report.dart';
 import 'package:flutter/material.dart';
 
 import 'consent.dart';
@@ -19,16 +18,12 @@ abstract class SymptomReportStep extends Widget {
   bool get showProgress;
 }
 
-List<SymptomReportStep> getSteps(
-  PreferencesState preferencesState,
-  List<QuestionResponse> prepopulatedResponses,
-) =>
-    [
+List<SymptomReportStep> getSteps(PreferencesState preferencesState) => [
       IntroStep(),
       if (preferencesState.preferences.acceptedInformedConsent != true)
         ConsentStep(),
       LocationStep(),
-      QuestionsStep(prepopulatedResponses),
+      QuestionsStep(),
     ];
 
 int getProgressStepCount(List<SymptomReportStep> steps) =>

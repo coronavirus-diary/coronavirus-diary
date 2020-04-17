@@ -142,10 +142,9 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
     return BlocBuilder<PreferencesBloc, PreferencesState>(
       builder: (context, state) {
         final PreferencesState preferencesState = state;
-        final steps = getSteps(
-          state,
-          _lastAttemptedReport?.questionResponses,
-        );
+        if (steps.isEmpty) {
+          steps = getSteps(state);
+        }
         return WidgetHUD(
           showHUD: _showSubmittingReportHUD,
           hud: HUD(
@@ -155,13 +154,20 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
             label: localizations.systemReportSubmitting,
           ),
           builder: (context) {
-            return Provider<SymptomReportController>.value(
-              value: SymptomReportController(
-                context: context,
-                pageController: _pageController,
-                preferencesState: preferencesState,
-                steps: steps,
-              ),
+            return MultiProvider(
+              providers: [
+                Provider<SymptomReportController>.value(
+                  value: SymptomReportController(
+                    context: context,
+                    pageController: _pageController,
+                    preferencesState: preferencesState,
+                    steps: steps,
+                  ),
+                ),
+                Provider<SymptomReport>.value(
+                  value: _lastAttemptedReport,
+                )
+              ],
               child: Scaffold(
                 appBar: AppBar(
                   title: Text(AppLocalizations.of(context).symptomReportTitle),
