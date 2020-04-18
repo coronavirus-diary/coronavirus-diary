@@ -11,6 +11,7 @@ import 'local_statistics.dart';
 
 export 'package:covidnearme/src/data/repositories/local_statistics.dart';
 export 'package:covidnearme/src/data/models/local_statistics.dart';
+export 'package:covidnearme/src/data/models/locations.dart';
 
 class LocalStatisticsBloc
     extends Bloc<LocalStatisticsEvent, LocalStatisticsState> {

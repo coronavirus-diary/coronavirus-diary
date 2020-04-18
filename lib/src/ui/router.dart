@@ -2,6 +2,7 @@ import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 
 import 'screens/home/home.dart';
 import 'screens/local_statistics/local_statistics.dart';
+import 'screens/local_statistics/location.dart';
 import 'screens/misc/safety_tips.dart';
 import 'screens/symptom_report/consent_denied.dart';
 import 'screens/symptom_report/symptom_report.dart';
@@ -10,6 +11,7 @@ import 'screens/tutorial/tutorial.dart';
 
 export 'screens/home/home.dart';
 export 'screens/local_statistics/local_statistics.dart';
+export 'screens/local_statistics/location.dart';
 export 'screens/misc/safety_tips.dart';
 export 'screens/symptom_report/consent_denied.dart';
 export 'screens/symptom_report/symptom_report.dart';
@@ -19,6 +21,8 @@ export 'screens/tutorial/tutorial.dart';
 var appRoutes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   LocalStatisticsScreen.routeName: (context) => LocalStatisticsScreen(),
+  LocalStatisticsLocationScreen.routeName: (context) =>
+      LocalStatisticsLocationScreen(),
   SafetyTipsScreen.routeName: (context) => SafetyTipsScreen(),
   SymptomReportConsentDeniedScreen.routeName: (context) =>
       SymptomReportConsentDeniedScreen(),

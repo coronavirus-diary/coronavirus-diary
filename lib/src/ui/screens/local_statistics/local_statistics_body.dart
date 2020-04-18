@@ -1,10 +1,11 @@
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:covidnearme/src/ui/screens/local_statistics/daily_case_chart.dart';
-import 'package:covidnearme/src/ui/screens/local_statistics/totals_area.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'package:covidnearme/src/data/models/local_statistics.dart';
+import 'package:covidnearme/src/ui/screens/local_statistics/daily_case_chart.dart';
+import 'package:covidnearme/src/ui/screens/local_statistics/totals_area.dart';
+import 'package:covidnearme/src/ui/router.dart';
 
 class LocalStatisticsBody extends StatefulWidget {
   final List<LocalStatisticsEntry> localStatisticsEntries;
@@ -64,7 +65,10 @@ class _LocalStatisticsBodyState extends State<LocalStatisticsBody> {
                 subtitle: Text(DateFormat.yMMMd().format(value.date),
                     style: Theme.of(context).textTheme.caption),
                 trailing: IconButton(
-                  onPressed: () => {},
+                  onPressed: () => Navigator.pushNamed(
+                    context,
+                    LocalStatisticsLocationScreen.routeName,
+                  ),
                   icon: Icon(Icons.edit),
                 ),
               ),
