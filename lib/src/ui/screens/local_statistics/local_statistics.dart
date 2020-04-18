@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:covidnearme/src/blocs/local_statistics/local_statistics.dart';
 import 'package:covidnearme/src/blocs/preferences/preferences.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
+import 'package:covidnearme/src/ui/widgets/loading_indicator.dart';
 import 'local_statistics_body.dart';
 
 class LocalStatisticsScreen extends StatelessWidget {
@@ -29,6 +30,9 @@ class LocalStatisticsScreen extends StatelessWidget {
                       location: preferencesState.preferences.location,
                     ));
               }
+              body = Center(
+                child: LoadingIndicator(),
+              );
             } else if (state is LocalStatisticsLoaded) {
               body = LocalStatisticsBody(
                 localStatisticsEntries: state.localStatisticsEntries,
