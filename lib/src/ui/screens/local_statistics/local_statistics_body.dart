@@ -44,30 +44,38 @@ class _LocalStatisticsBodyState extends State<LocalStatisticsBody> {
         ),
       ),
       builder: (context, value, child) {
-        return Container(
-          padding: EdgeInsets.symmetric(vertical: 20),
-          child: Column(
-            children: <Widget>[
-              Container(
-                child: Text(
+        return Column(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Theme.of(context).dividerColor,
+                    width: 1,
+                  ),
+                ),
+              ),
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                title: Text(
                   value.name,
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.subhead,
+                ),
+                subtitle: Text(DateFormat.yMMMd().format(value.date),
+                    style: Theme.of(context).textTheme.caption),
+                trailing: IconButton(
+                  onPressed: () => {},
+                  icon: Icon(Icons.edit),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                child: Text(
-                  DateFormat.yMMMd().format(value.date),
-                  style: Theme.of(context).textTheme.subtitle,
-                ),
-              ),
-              TotalsArea(
-                localStatisticsEntry: value,
-              ),
-              Expanded(child: Container()),
-              child,
-            ],
-          ),
+            ),
+            Expanded(
+              child: child,
+            ),
+            TotalsArea(
+              localStatisticsEntry: value,
+            ),
+          ],
         );
       },
     );
