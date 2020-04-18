@@ -16,29 +16,26 @@ class DailyCaseChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 360,
-      child: charts.TimeSeriesChart(
-        _createSeriesList(context),
-        animate: true,
-        behaviors: [
-          charts.SeriesLegend(),
-          charts.SelectNearest(
-            eventTrigger: charts.SelectionTrigger.tapAndDrag,
-          ),
-        ],
-        selectionModels: [
-          charts.SelectionModelConfig(
-            type: charts.SelectionModelType.info,
-            changedListener: onDateSelected,
-          )
-        ],
-        defaultRenderer: charts.LineRendererConfig(
-          includePoints: true,
+    return charts.TimeSeriesChart(
+      _createSeriesList(context),
+      animate: true,
+      behaviors: [
+        charts.SeriesLegend(),
+        charts.SelectNearest(
+          eventTrigger: charts.SelectionTrigger.tapAndDrag,
         ),
-        primaryMeasureAxis: charts.AxisSpec(
-          showAxisLine: true,
-        ),
+      ],
+      selectionModels: [
+        charts.SelectionModelConfig(
+          type: charts.SelectionModelType.info,
+          changedListener: onDateSelected,
+        )
+      ],
+      defaultRenderer: charts.LineRendererConfig(
+        includePoints: true,
+      ),
+      primaryMeasureAxis: charts.AxisSpec(
+        showAxisLine: true,
       ),
     );
   }
@@ -49,17 +46,17 @@ class DailyCaseChart extends StatelessWidget {
     return [
       _createSeries(
         id: localizations.statisticsLabelCases,
-        color: Colors.blue,
+        color: Theme.of(context).colorScheme.primary,
         data: _createTimeSeriesData((statistics) => statistics.cases),
       ),
       _createSeries(
         id: localizations.statisticsLabelDeaths,
-        color: Colors.red,
+        color: Theme.of(context).colorScheme.error,
         data: _createTimeSeriesData((statistics) => statistics.deaths),
       ),
       _createSeries(
         id: localizations.statisticsLabelRecoveries,
-        color: Colors.green,
+        color: Theme.of(context).colorScheme.secondary,
         data: _createTimeSeriesData((statistics) => statistics.recoveries),
       )
     ];

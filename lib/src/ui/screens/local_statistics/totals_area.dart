@@ -13,24 +13,32 @@ class TotalsArea extends StatelessWidget {
     final AppLocalizations localizations = AppLocalizations.of(context);
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: Theme.of(context).dividerColor,
+            width: 1,
+          ),
+        ),
+      ),
+      margin: EdgeInsets.only(top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           TotalsDisplay(
             number: localStatisticsEntry.cases,
             description: localizations.statisticsLabelCases,
-            color: Colors.blue,
+            color: Theme.of(context).colorScheme.primary,
           ),
           TotalsDisplay(
             number: localStatisticsEntry.deaths,
             description: localizations.statisticsLabelDeaths,
-            color: Colors.red,
+            color: Theme.of(context).colorScheme.error,
           ),
           TotalsDisplay(
             number: localStatisticsEntry.recoveries,
             description: localizations.statisticsLabelRecoveries,
-            color: Colors.green,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ],
       ),
@@ -52,18 +60,19 @@ class TotalsDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: EdgeInsets.all(20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            number.toString(),
-            style: Theme.of(context).textTheme.display1.copyWith(
+            description,
+            style: Theme.of(context).textTheme.overline.copyWith(
                   color: color,
                 ),
           ),
           Text(
-            description,
-            style: Theme.of(context).textTheme.body1,
+            number.toString(),
+            style: Theme.of(context).textTheme.body2,
           ),
         ],
       ),
