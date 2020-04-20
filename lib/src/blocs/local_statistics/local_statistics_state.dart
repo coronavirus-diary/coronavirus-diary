@@ -1,4 +1,5 @@
 import 'package:covidnearme/src/data/models/local_statistics.dart';
+import 'package:covidnearme/src/data/models/locations.dart';
 
 abstract class LocalStatisticsState {
   const LocalStatisticsState();
@@ -13,11 +14,17 @@ class LocalStatisticsLoading extends LocalStatisticsState {
 }
 
 class LocalStatisticsError extends LocalStatisticsState {
-  const LocalStatisticsError();
+  final LocalStatisticsResponse localStatisticsResponse;
+  final Location location;
+
+  const LocalStatisticsError({
+    this.localStatisticsResponse,
+    this.location,
+  });
 }
 
 class LocalStatisticsLoaded extends LocalStatisticsState {
-  final List<LocalStatisticsEntry> localStatisticsEntries;
+  final LocalStatisticsResponse localStatisticsResponse;
 
-  const LocalStatisticsLoaded({this.localStatisticsEntries});
+  const LocalStatisticsLoaded({this.localStatisticsResponse});
 }

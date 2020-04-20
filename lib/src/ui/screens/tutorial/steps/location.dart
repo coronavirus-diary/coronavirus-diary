@@ -20,10 +20,6 @@ class _TutorialLocationStepState extends State<TutorialLocationStep> {
     Location location,
     @required PreferencesState preferencesState,
   }) {
-    if (location.postalCode != null) {
-      location.country = 'US';
-    }
-    assert(location.country != null);
     setState(() {
       // Save response to preferences to update default.
       Preferences newPreferences = preferencesState.preferences.cloneWith(

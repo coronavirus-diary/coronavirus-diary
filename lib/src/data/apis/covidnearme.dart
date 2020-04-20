@@ -1,33 +1,39 @@
-import 'package:dio/dio.dart';
-import 'package:retrofit/retrofit.dart';
+import "dart:async";
+import 'package:chopper/chopper.dart';
 
 import 'package:covidnearme/src/utils/env.dart' show appEnv;
-import 'package:covidnearme/src/data/models/local_statistics.dart';
 import 'package:covidnearme/src/data/models/symptom_report.dart';
-part 'covidnearme.g.dart';
 
-@RestApi()
-abstract class CovidNearMeApi {
-  factory CovidNearMeApi(Dio dio) = _CovidNearMeApi;
+part 'covidnearme.chopper.dart';
 
-  @POST('symptom_report/create')
-  Future<void> createSymptomReport(@Body() SymptomReport symptomReport);
+@ChopperApi()
+abstract class CovidNearMeService extends ChopperService {
+  static CovidNearMeService create([ChopperClient client]) =>
+      _$CovidNearMeService(client);
 
-  @GET('locations')
-  Future<List<LocalStatisticsEntry>> getLocalStatistics(
+  @Post(path: 'symptom_report/create')
+  Future<Response> createSymptomReport(@Body() SymptomReport symptomReport);
+
+  @Get(path: 'locations')
+  Future<Response> getLocalStatistics(
     @Query('country') String country, {
     @Query('zip') String zip,
   });
 }
 
-Dio _createDio() {
-  return Dio(BaseOptions(
-    baseUrl: appEnv['COVIDNEARME_API_URL'],
-    headers: {
-      'Accept': 'application/json',
-      'Authorization': appEnv['COVIDNEARME_API_KEY'],
-    },
-  ));
-}
-
-CovidNearMeApi covidNearMeApi = CovidNearMeApi(_createDio());
+ChopperClient covidNearMeClient = ChopperClient(
+  baseUrl: appEnv['COVIDNEARME_API_URL'],
+  converter: JsonConverter(),
+  errorConverter: JsonConverter(),
+  interceptors: [
+    (Request request) async => request.copyWith(
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': appEnv['COVIDNEARME_API_KEY'],
+          },
+        ),
+  ],
+  services: [CovidNearMeService.create()],
+);
+CovidNearMeService covidNearMeService =
+    covidNearMeClient.getService<CovidNearMeService>();

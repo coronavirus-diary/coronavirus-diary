@@ -17,4 +17,8 @@ class Location {
       _$LocationFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocationToJson(this);
+
+  @override
+  String toString() =>
+      'Preferences { country: $country, postalCode: $postalCode }';
 }

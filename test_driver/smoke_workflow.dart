@@ -7,9 +7,9 @@ import 'package:covidnearme/src/ui/widgets/scroll_more_indicator.dart';
 
 Future<void> main() async {
   debugDisableTickerMode = true;
-  covidNearMeApi = FakeCovidNearMeApi();
+  covidNearMeService = FakeCovidNearMeService();
   enableFlutterDriverExtension();
   await entrypoint.main();
 }
 
-class FakeCovidNearMeApi extends Mock implements CovidNearMeApi {}
+class FakeCovidNearMeService extends Mock implements CovidNearMeService {}

@@ -9,6 +9,10 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 
 import 'index.dart';
 
+const countriesWithPostalCode = [
+  'US',
+];
+
 class LocationEntry extends StatefulWidget {
   const LocationEntry({
     Key key,
@@ -30,29 +34,27 @@ class LocationEntry extends StatefulWidget {
 
 class _LocationEntryState extends State<LocationEntry> {
   bool _countryIsValid = false;
-  bool _zipIsValid = false;
-  bool get _isUSA => _displayedLocation.country == "US";
+  bool _postalCodeIsValid = false;
   // Keep the values entered, so that when switching between modes,
   // they stick, but we don't have to update the preferences values.
   Location _displayedLocation;
 
+  bool get _selectedCountrySupportsPostalCode =>
+      countriesWithPostalCode.contains(_displayedLocation.country);
+
   @override
   void initState() {
     super.initState();
-    _displayedLocation = widget.location ??
-        Location(
-          country: 'US',
-          postalCode: null,
-        );
+    _displayedLocation = widget.location ?? Location();
   }
 
-  LocalKey zipCodeKey = ValueKey<String>('ZIP Code');
+  LocalKey postalCodeKey = ValueKey<String>('ZIP Code');
   LocalKey countryKey = ValueKey<String>('Country');
 
-  String _validateZipCode(String value, [AppLocalizations localizations]) {
-    if (value != '') {
-      final int zipValue = int.tryParse(value, radix: 10);
-      if (value.length != 5 || zipValue == null) {
+  String _validatePostalCode(String value, [AppLocalizations localizations]) {
+    if (value != null && value.isNotEmpty) {
+      final int postalValue = int.tryParse(value, radix: 10);
+      if (value.length != 5 || postalValue == null) {
         return localizations?.locationStepInvalidZipCode ?? '';
       }
     }
@@ -60,31 +62,27 @@ class _LocationEntryState extends State<LocationEntry> {
   }
 
   bool _updateValidity() {
-    bool valid = false;
-    if (_isUSA) {
-      valid = _displayedLocation.postalCode != null &&
-          _displayedLocation.postalCode.isNotEmpty &&
-          _validateZipCode(_displayedLocation.postalCode) == null;
-      if (_zipIsValid != valid) {
-        setState(() {
-          _zipIsValid = valid;
-        });
-      }
-    } else {
-      valid = _displayedLocation.country != 'None';
-      if (_countryIsValid != valid) {
-        setState(() {
-          _countryIsValid = valid;
-        });
-      }
+    // Validate country
+    final bool newCountryValidity = _displayedLocation.country != 'None';
+    if (_countryIsValid != newCountryValidity) {
+      setState(() {
+        _countryIsValid = newCountryValidity;
+      });
     }
-    return valid;
+
+    // Validate postal code
+    final bool newPostalCodeValidity =
+        _validatePostalCode(_displayedLocation.postalCode) == null;
+    if (_postalCodeIsValid != newPostalCodeValidity) {
+      setState(() {
+        _postalCodeIsValid = newPostalCodeValidity;
+      });
+    }
+
+    return _countryIsValid && _postalCodeIsValid;
   }
 
   void _updateLocation(Location location) {
-    if (location.postalCode != null) {
-      location.country = 'US';
-    }
     assert(location.country != null);
     setState(() {
       _displayedLocation = location;
@@ -101,8 +99,8 @@ class _LocationEntryState extends State<LocationEntry> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations localizations = AppLocalizations.of(context);
-    _displayedLocation.postalCode ??= widget.location?.postalCode ?? '';
     _displayedLocation.country ??= widget.location?.country ?? '';
+    _displayedLocation.postalCode ??= widget.location?.postalCode ?? '';
 
     return ScrollableBody(
       child: Padding(
@@ -131,17 +129,19 @@ class _LocationEntryState extends State<LocationEntry> {
               )),
               value: _displayedLocation.country,
             ),
-            if (_isUSA)
+            if (_selectedCountrySupportsPostalCode)
               EntryField(
-                key: zipCodeKey,
+                key: postalCodeKey,
                 initialValue: _displayedLocation.postalCode,
-                onChanged: (String value) =>
-                    _updateLocation(Location(postalCode: value, country: 'US')),
+                onChanged: (String value) => _updateLocation(Location(
+                  postalCode: value,
+                  country: _displayedLocation.country,
+                )),
                 label: localizations.locationStepZipCode,
                 keyboardType: TextInputType.numberWithOptions(
                     decimal: false, signed: false),
                 validator: (String string) =>
-                    _validateZipCode(string, localizations),
+                    _validatePostalCode(string, localizations),
               ),
             if (widget.finish != null) widget.finish,
           ],
