@@ -11,10 +11,12 @@ import 'symptom_report.dart';
 class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
   final PreferencesState preferencesState;
   final SymptomReportsRepository symptomReportsRepository;
+  final bool forceNetworkError;
 
   SymptomReportBloc({
     @required this.preferencesState,
     @required this.symptomReportsRepository,
+    @visibleForTesting this.forceNetworkError = false,
   });
 
   @override
@@ -75,8 +77,26 @@ class SymptomReportBloc extends Bloc<SymptomReportEvent, SymptomReportState> {
     final SymptomReportStateInProgress currentState = state;
     final SymptomReport currentReport = currentState.symptomReport;
 
+    networkError() async* {
+      // Notify that a network error has occurred. The current report will be
+      // used to repopulate the questions that were answered.
+      yield SymptomReportStateNetworkError(currentReport);
+      // Reset state to in-progress.
+      yield SymptomReportStateInProgress(symptomReport: currentReport);
+    }
+
     // Send symptom report to server
-    await symptomReportsRepository.createSymptomReport(currentReport);
+    try {
+      await symptomReportsRepository.createSymptomReport(currentReport);
+    } catch (e) {
+      yield* networkError();
+      return;
+    }
+
+    if (forceNetworkError) {
+      yield* networkError();
+      return;
+    }
 
     // Notify app of completion
     yield const SymptomReportStateCompleted();

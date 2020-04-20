@@ -7,11 +7,14 @@ import 'package:covidnearme/src/blocs/questions/questions.dart';
 import 'package:covidnearme/src/l10n/app_localizations.dart';
 import 'package:covidnearme/src/ui/widgets/questions/question_view.dart';
 import 'package:covidnearme/src/ui/utils/symptom_reports.dart';
+import 'package:provider/provider.dart';
 import 'index.dart';
 
 class QuestionsStep extends StatefulWidget implements SymptomReportStep {
   bool get isLastStep => true;
   bool get showProgress => true;
+
+  const QuestionsStep();
 
   @override
   _QuestionsStepState createState() => _QuestionsStepState();
@@ -76,6 +79,7 @@ class _QuestionsStepState extends State<QuestionsStep> {
             final SymptomReportStateInProgress symptomReportState = state;
             return QuestionView(
               questions: questionState.questions,
+              responses: Provider.of<SymptomReport>(context)?.questionResponses,
               onChange: (Question question, dynamic value) =>
                   _updateSymptomReport(question, value, symptomReportState),
               isLastStep: widget.isLastStep,

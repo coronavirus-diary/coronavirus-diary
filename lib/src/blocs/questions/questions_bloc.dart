@@ -33,7 +33,9 @@ class QuestionsBloc extends Bloc<QuestionsEvent, QuestionsState> {
     yield const QuestionsStateLoading();
 
     try {
-      final questions = await questionsRepository.listQuestions(localizations);
+      final questions = await questionsRepository.listQuestions(
+        localizations,
+      );
       yield QuestionsStateLoaded(questions);
     } on Exception catch (exception) {
       developer.log(
