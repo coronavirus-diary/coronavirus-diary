@@ -24,7 +24,6 @@ class TemperatureField extends StatefulWidget {
   final double initialValue;
   final String helperText;
 
-  // Always returns values in fahrenheit.
   final ValueChanged<double> onChanged;
 
   final String label;
@@ -60,11 +59,6 @@ class _TemperatureFieldState extends State<TemperatureField> {
     _degrees = widget.initialValue;
   }
 
-  double _toFahrenheit(double value) {
-    if (_isFahrenheit) return value;
-    return value * (9.0 / 5.0) + 32.0;
-  }
-
   String _validateTemperature(String value, AppLocalizations localizations) {
     if (value.isNotEmpty) {
       final double degrees = double.parse(value);
@@ -89,7 +83,7 @@ class _TemperatureFieldState extends State<TemperatureField> {
       return;
     }
     _reportedDegrees = degrees;
-    widget.onChanged?.call(_toFahrenheit(_reportedDegrees));
+    widget.onChanged?.call(_reportedDegrees);
   }
 
   Future<void> _showInstructions(BuildContext context) async {
