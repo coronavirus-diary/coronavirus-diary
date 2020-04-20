@@ -19,15 +19,16 @@ class Preferences {
     String userId,
     bool completedTutorial,
     this.acceptedInformedConsent,
-    this.location,
+    Location location,
     List<LocalStatisticsLocation> recentLocalStatisticsLocations,
-  })  : completedTutorial = completedTutorial ?? false,
-        userId = userId ??
+  })  : userId = userId ??
             Uuid().v4(
               options: {
                 'grng': UuidUtil.cryptoRNG,
               },
             ),
+        completedTutorial = completedTutorial ?? false,
+        location = location ?? Location(country: 'US'),
         recentLocalStatisticsLocations = recentLocalStatisticsLocations ?? [];
 
   Preferences cloneWith({

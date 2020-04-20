@@ -15,17 +15,7 @@ class LocalStatisticsLocationScreen extends StatefulWidget {
 
 class _LocalStatisticsLocationScreenState
     extends State<LocalStatisticsLocationScreen> {
-  Location _selectedLocation;
-
-  void _selectNewLocation(Location location) {
-    if (location.postalCode != null) {
-      location.country = 'US';
-    }
-    assert(location.country != null);
-    setState(() {
-      _selectedLocation = location;
-    });
-  }
+  Location _selectedLocation = Location(country: 'US');
 
   void _saveAndExit() {
     context
@@ -44,7 +34,9 @@ class _LocalStatisticsLocationScreenState
         title: Text(localizations.localStatisticsLocationInput),
       ),
       body: LocationEntry(
-        updateData: _selectNewLocation,
+        updateData: (Location location) => setState(() {
+          _selectedLocation = location;
+        }),
         location: _selectedLocation,
         finish: Container(
           padding: EdgeInsets.symmetric(horizontal: 20),

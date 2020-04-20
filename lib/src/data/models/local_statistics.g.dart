@@ -6,6 +6,26 @@ part of 'local_statistics.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+LocalStatisticsResponse _$LocalStatisticsResponseFromJson(
+    Map<String, dynamic> json) {
+  return LocalStatisticsResponse(
+    localStatisticsEntries: (json['local_statistics_entries'] as List)
+        ?.map((e) => e == null
+            ? null
+            : LocalStatisticsEntry.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    error: json['error'] as String,
+  );
+}
+
+Map<String, dynamic> _$LocalStatisticsResponseToJson(
+        LocalStatisticsResponse instance) =>
+    <String, dynamic>{
+      'local_statistics_entries':
+          instance.localStatisticsEntries?.map((e) => e?.toJson())?.toList(),
+      'error': instance.error,
+    };
+
 LocalStatisticsEntry _$LocalStatisticsEntryFromJson(Map<String, dynamic> json) {
   return LocalStatisticsEntry(
     name: json['name'] as String,

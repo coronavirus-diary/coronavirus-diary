@@ -6,6 +6,37 @@ import 'locations.dart';
 part 'local_statistics.g.dart';
 
 @JsonSerializable()
+class LocalStatisticsResponse {
+  final List<LocalStatisticsEntry> localStatisticsEntries;
+  final String error;
+
+  const LocalStatisticsResponse({
+    this.localStatisticsEntries,
+    this.error,
+  });
+
+  factory LocalStatisticsResponse.fromJson(dynamic json) {
+    if (json is List) {
+      return _$LocalStatisticsResponseFromJson({
+        'local_statistics_entries': json,
+      });
+    } else if (json.containsKey('message')) {
+      return _$LocalStatisticsResponseFromJson({
+        'error': json['message'],
+      });
+    } else {
+      return _$LocalStatisticsResponseFromJson(json);
+    }
+  }
+
+  Map<String, dynamic> toJson() => _$LocalStatisticsResponseToJson(this);
+
+  @override
+  String toString() =>
+      'LocalStatisticsResponse { localStatisticsEntries: $localStatisticsEntries, error: $error }';
+}
+
+@JsonSerializable()
 class LocalStatisticsEntry {
   String name;
   DateTime date;

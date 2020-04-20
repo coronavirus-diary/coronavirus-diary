@@ -43,14 +43,28 @@ class LocalStatisticsBloc
     yield const LocalStatisticsLoading();
 
     // Fetch local statistics
-    List<LocalStatisticsEntry> localStatisticsEntries =
+    LocalStatisticsResponse localStatisticsResponse =
         await localStatisticsRepository.getLocalStatistics(
             location: event.location);
 
-    // Add location to recents
-    _addNewRecentLocation(localStatisticsEntries[0].name, event.location);
+    // Handle error
+    if (localStatisticsResponse.error != null) {
+      yield LocalStatisticsError(
+        localStatisticsResponse: localStatisticsResponse,
+        location: event.location,
+      );
+      return;
+    }
 
-    yield LocalStatisticsLoaded(localStatisticsEntries: localStatisticsEntries);
+    // Add location to recents
+    _addNewRecentLocation(
+      localStatisticsResponse.localStatisticsEntries[0].name,
+      event.location,
+    );
+
+    yield LocalStatisticsLoaded(
+      localStatisticsResponse: localStatisticsResponse,
+    );
   }
 
   _addNewRecentLocation(String newLocationName, Location newLocation) {
