@@ -177,7 +177,6 @@ class _SymptomReportScreenBodyState extends State<SymptomReportScreenBody> {
                     tooltip: localizations.systemReportBackToHomePage,
                   ),
                 ),
-                backgroundColor: Theme.of(context).backgroundColor,
                 body: BlocConsumer<SymptomReportBloc, SymptomReportState>(
                   listener: (context, state) {
                     if (state is SymptomReportStateCompleting) {
