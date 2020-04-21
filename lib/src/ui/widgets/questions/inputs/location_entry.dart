@@ -9,9 +9,9 @@ import 'package:covidnearme/src/ui/widgets/scrollable_body.dart';
 
 import 'index.dart';
 
-const countriesWithPostalCode = [
+const countriesWithPostalCode = {
   'US',
-];
+};
 
 class LocationEntry extends StatefulWidget {
   const LocationEntry({
@@ -47,9 +47,6 @@ class _LocationEntryState extends State<LocationEntry> {
     super.initState();
     _displayedLocation = widget.location ?? Location();
   }
-
-  LocalKey postalCodeKey = ValueKey<String>('ZIP Code');
-  LocalKey countryKey = ValueKey<String>('Country');
 
   String _validatePostalCode(String value, [AppLocalizations localizations]) {
     if (value != null && value.isNotEmpty) {
@@ -131,7 +128,7 @@ class _LocationEntryState extends State<LocationEntry> {
             ),
             if (_selectedCountrySupportsPostalCode)
               EntryField(
-                key: postalCodeKey,
+                key: ValueKey('postalCodeEntryField'),
                 initialValue: _displayedLocation.postalCode,
                 onChanged: (String value) => _updateLocation(Location(
                   postalCode: value,
