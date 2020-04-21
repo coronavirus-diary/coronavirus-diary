@@ -28,7 +28,6 @@ dependencies:
     git:
       url: https://github.com/eyro-labs/flutter_hud.git
       ref: 0d5ed29fc2aa97dff2863ab824dba48264048c6a
-  flutter_launcher_icons: ^0.7.3
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.3.4
@@ -56,6 +55,7 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.4
   json_serializable: ^3.2.5
   mockito: ^4.1.1
   pedantic: ^1.8.0
