@@ -50,9 +50,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutBoxDescription =>
-      '''This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.
-
-''';
+      'This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary on GitHub';

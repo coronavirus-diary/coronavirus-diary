@@ -61,7 +61,7 @@
     "description": "Semantic Label for the about button in the home page menu."
   },
 
-  "aboutBoxDescription": "This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.\n\n",
+  "aboutBoxDescription": "This app is developed as an open source project by the Coronavirus Diary community. To learn more and view the source code, please visit the link below.",
   "@aboutBoxDescription":  {
     "description": "Description in the 'About' box, above a hyperlink to the source website."
   },
