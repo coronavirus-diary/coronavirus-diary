@@ -35,7 +35,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tutorialLocationStepTitle => '현재 위치';
 
   @override
-  String get brandingCallout => '다음 파트너와의 협력으로 제작되었습니다.';
+  String get brandingCallout => '다음 파트너와 협력하여 제작하였습니다.';
 
   @override
   String get homeMenuTooltip => '더보기';
@@ -48,7 +48,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get aboutBoxDescription =>
-      '이 앱은 Coronavirus Diary 커뮤니티를 통해 오픈소스 프로젝트로 개발되었습니다. 소스 코드를 자세히 알아보고 확인하려면 다음 링크로 이동하세요.';
+      '이 앱은 Coronavirus Diary 커뮤니티에서 오픈소스 프로젝트로 개발했습니다. 소스 코드를 자세히 알아보고 확인하려면 다음 링크로 이동하세요.';
 
   @override
   String get aboutBoxLinkText => 'GitHub의 Coronavirus Diary';
@@ -134,13 +134,13 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get consentStepQuestion => '''# 정보 기반 동의
 
-Google에서는 미국 내 진단 검사 키트 공급이 원활하지 않은 현 상황에서 얼마나 많은 사람이 코로나19로 인해 발생할 수 있는 증상을 겪고 있는지 확인하고자 노력하고 있습니다. 이 앱을 통해 수집된 정보는 어떤 병원이 가장 수요가 많은지 예측하는 데 도움을 줍니다. 이를 통해 필요한 곳에 의료진 및 장비를 전달할 수 있게 되기를 바랍니다.
+Google에서는 미국 내 진단 검사 키트 공급이 원활하지 않은 현 상황에서 얼마나 많은 사람이 코로나19로 인해 발생할 수 있는 증상을 겪고 있는지 확인하고자 노력하고 있습니다. 이 앱을 통해 수집된 정보는 어느 지역의 병원이 가장 의료 자원 부족에 시달리고 있는지 예측하는 데 도움을 줍니다. 이를 통해 필요한 곳에 의료진 및 장비를 전달할 수 있게 되기를 바랍니다.
 
-정보는 익명으로 제공됩니다. Google에서는 사용자의 신원을 파악하지 않습니다. 다만 특정 병원 주변에서 발생한 감염자 수를 집계하기 위해 우편번호를 요청합니다. 증상 강도는 사용자의 코로나19 감염 가능성 및 사용자가 거주하는 지역에서 얼마나 많은 사람이 중증 환자로 분류될지 판단하는 데 사용됩니다.
+정보는 익명으로 제공됩니다. Google에서는 사용자의 신원을 파악하지 않습니다. 다만 특정 병원 주변에서 발생한 의심 환자 수를 집계하기 위해 우편번호를 요청합니다. 증상 강도는 사용자의 코로나19 감염 가능성 및 사용자가 거주하는 지역에 얼마나 많은 중증 환자가 있는지 판단하는 데 사용됩니다.
 
-우편번호별 총 일일 감염자 수는 주정부 및 현지 보건 당국, CDC, 미국 정부에서 어떤 지역사회에 가장 많은 지원이 필요한지 예측하는 데 도움을 주기 위해 제공됩니다. 또한 Google에서는 이 앱에 지도를 만들 예정이며, 데이터를 분석해 지리적 동향을 파악할 것입니다. 예를 들어 장기간 학교가 폐쇄된 지역에서 감염자가 적게 발생할 수도 있고, 날씨가 더워지면 바이러스 확산세가 느려질 수도 있습니다.
+우편번호별 총 일일 의심 환자 수는 주정부 및 현지 보건 당국, CDC, 미국 정부에서 어떤 지역사회에 가장 많은 지원이 필요한지 예측하는 데 도움을 주기 위해 제공됩니다. 또한 Google에서는 이 앱에 지도를 만들 예정이며, 데이터를 분석해 지리적 동향을 파악할 것입니다. 예를 들어 장기간 학교가 폐쇄된 지역에서 감염자가 적게 발생할 수도 있고, 날씨가 더워지면 바이러스 확산세가 느려질 수도 있습니다.
 
-사용자는 나중에 다시 돌아와 다른 날짜의 새로운 정보를 입력할 수 있습니다. Google에서는 데이터 중복이 발생하지 않도록 사용자를 확인합니다. 증세가 매우 나빠지거나, 코로나19 진단 검사 결과를 받은 후 이를 알리고 싶을 수도 있습니다.
+사용자는 나중에 다시 돌아와 다른 날짜의 새로운 정보를 입력할 수 있습니다. Google에서는 데이터 중복이 발생하지 않도록 사용자를 확인합니다. 증세가 매우 나빠지거나 코로나19 진단 검사 결과를 받은 후 이를 알리고 싶을 수도 있습니다.
 
 Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공중 보건 및 연구용으로만 사용되며 코로나19 사태가 종식된 후 삭제됩니다.
 
@@ -365,7 +365,8 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
   String get temperatureDialogWhenHeading => '시기';
 
   @override
-  String get temperatureDialogWait30Minutes => '식사, 음주, 운동 후 30분 후 체온을 측정합니다.';
+  String get temperatureDialogWait30Minutes =>
+      '식사, 음주, 운동 후에는 30분 후에 체온을 측정 합니다.';
 
   @override
   String get temperatureDialogWait6Hours =>
@@ -407,7 +408,7 @@ Google에서는 이 데이터를 판매하지 않습니다. 이 데이터는 공
 
   @override
   String get safetyTipsWashYourHands =>
-      '비누와 물을 사용해 적어도 20초 동안 자주 손을 씻습니다. 눈과 코, 입을 만지지 않습니다. 특히 공공장소에서 만지지 않도록 삼갑니다. 기침하거나 재채기할 때는 항상 팔꿈치 안쪽에 합니다.';
+      '비누와 물을 사용해 적어도 20초 동안 자주 손을 씻습니다. 특히 공공장소에서 눈과 코, 입을 만지지 않습니다. 기침하거나 재채기할 때는 항상 팔꿈치 안쪽에 합니다.';
 
   @override
   String get safetyTipsSocialDistancing =>

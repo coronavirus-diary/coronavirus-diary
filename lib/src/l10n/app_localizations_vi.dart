@@ -484,7 +484,7 @@ Nếu bạn đồng ý với tất cả những điều trên và bạn đã đ�
       'Có vẻ như bạn không có kết nối mạng. Vui lòng kiểm tra các tùy chọn cài đặt mạng của bạn rồi thử lại.';
 
   @override
-  String get scrollMoreIndicatorMessage => 'CUỘN ĐỂ XEM THÊM';
+  String get scrollMoreIndicatorMessage => 'DI CHUYỂN XUỐNG ĐỂ XEM THÊM';
 
   @override
   String get localStatisticsTitle =>
