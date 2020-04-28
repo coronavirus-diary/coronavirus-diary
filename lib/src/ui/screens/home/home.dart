@@ -159,7 +159,7 @@ class _MainMenu extends StatelessWidget {
                     children: <TextSpan>[
                       TextSpan(
                         style: aboutTextStyle,
-                        text: localizations.aboutBoxDescription,
+                        text: '${localizations.aboutBoxDescription}\n\n',
                       ),
                       _LinkTextSpan(
                         style: linkStyle,
