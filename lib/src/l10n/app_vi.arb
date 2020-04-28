@@ -131,7 +131,7 @@
   "networkUnavailableBannerConnectToWiFi": "KẾT NỐI WI-FI",
   "networkRequestError": "Đã xảy ra lỗi nên yêu cầu của bạn chưa thể hoàn thành.",
   "networkUnavailableBannerMessage": "Có vẻ như bạn không có kết nối mạng. Vui lòng kiểm tra các tùy chọn cài đặt mạng của bạn rồi thử lại.",
-  "scrollMoreIndicatorMessage": "CUỘN ĐỂ XEM THÊM",
+  "scrollMoreIndicatorMessage": "DI CHUYỂN XUỐNG ĐỂ XEM THÊM",
   "localStatisticsTitle": "Số liệu thống kê về COVID-19 ở địa phương",
   "localStatisticsNoLocationSelected": "Chọn một vị trí để xem số liệu thống kê liên quan.",
   "localStatisticsNoDataAvailable": "Không tìm thấy dữ liệu nào về COVID-19 cho vị trí này.",
