@@ -14,7 +14,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get tutorialIntroStepDescription =>
-      'Будьте в курсе местной эпидемиологической обстановки и помогайте бороться с коронавирусом COVID-19.';
+      'Будьте в курсе местной эпидемиологической обстановки и помогайте бороться с коронавирусной инфекцией COVID-19.';
 
   @override
   String get tutorialIntroStepWelcomeSemanticsLabel =>
@@ -22,7 +22,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get tutorialIntroStepLocalStatistics =>
-      'Получайте местную информацию о коронавирусе COVID-19.';
+      'Получайте местную информацию о COVID-19.';
 
   @override
   String get tutorialIntroStepSubmitSymptoms =>
@@ -30,7 +30,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get tutorialIntroStepAidEffort =>
-      'Помогайте защищать людей от коронавируса COVID-19.';
+      'Помогайте защищать людей от COVID-19.';
 
   @override
   String get tutorialIntroStepGetStarted => 'НАЧАТЬ';
@@ -39,7 +39,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get tutorialLocationStepTitle => 'Где вы находитесь?';
 
   @override
-  String get brandingCallout => 'Создано совместно с нашими партнерами:';
+  String get brandingCallout => 'Создано при участии';
 
   @override
   String get homeMenuTooltip => 'Ещё';
@@ -52,14 +52,14 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get aboutBoxDescription =>
-      'Это приложение разработано сообществом Coronavirus Diary в виде проекта с открытым исходным кодом. Чтобы узнать больше и посмотреть код, перейдите по ссылке ниже.';
+      'Приложение создано сообществом Coronavirus Diary как проект с открытым исходным кодом. Чтобы узнать больше и посмотреть код, перейдите по ссылке ниже.';
 
   @override
   String get aboutBoxLinkText => 'Coronavirus Diary в хранилище GitHub';
 
   @override
   String get homeScreenLocalStatisticsTitle =>
-      'Местные новости и сведения о коронавирусе COVID-19';
+      'Местные новости и сведения о COVID-19';
 
   @override
   String get homeScreenLocalStatisticsSubtitle =>
@@ -73,7 +73,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get homeScreenReportSymptomsSubtitle =>
-      'Проверяйте состояние здоровья быстро и без лишних усилий.';
+      'Регистрируйте состояние здоровья быстро и без лишних усилий.';
 
   @override
   String get homeScreenReportSymptomsButton => 'НАЧАТЬ';
@@ -135,7 +135,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get symptomReportIntroStepDataContribution =>
-      'Ваши ответы анонимны. Они будут использоваться в борьбе с коронавирусом COVID-19. Благодаря этим анонимным данным эксперты смогут прогнозировать развитие ситуации и совершенствовать меры противодействия заболеванию.';
+      'Ваши ответы анонимны. Они будут использоваться в борьбе с коронавирусной инфекцией COVID-19. Благодаря этим анонимным данным эксперты смогут прогнозировать развитие ситуации и совершенствовать меры противодействия заболеванию.';
 
   @override
   String get symptomReportIntroStepStartButton => 'НАЧАТЬ';
@@ -143,13 +143,13 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get consentStepQuestion => '''# Информированное добровольное согласие
 
-В США не хватает тестов для диагностики, поэтому мы хотим выяснить, у скольких человек есть симптомы, которые могут быть вызваны коронавирусом COVID-19. Информация, собранная с помощью этого приложения, позволит спрогнозировать, в какие больницы поступит наибольшее число заболевших. Надеемся, что это поможет направить врачей и ресурсы туда, где они больше всего нужны.
+В США не хватает тестов для диагностики, поэтому мы хотим выяснить, у скольких человек есть симптомы, которые могут быть вызваны коронавирусной инфекцией COVID-19. Информация, собранная с помощью этого приложения, позволит прогнозировать, в какие больницы поступит наибольшее число заболевших. Надеемся, что это поможет направить врачей и ресурсы туда, где они больше всего нужны.
 
-Вы пользуетесь приложением анонимно. Нам не нужно знать, кто Вы! Чтобы определять количество случаев на территориях, закрепленных за определенными больницами, мы собираем данные о почтовых индексах. Вероятность того, что у Вас коронавирус COVID-19, будет определяться по тяжести симптомов. По этому же показателю будет отслеживаться количество тяжело заболевших людей в Вашем регионе.
+Вы пользуетесь приложением анонимно. Нам не нужно знать, кто Вы! Чтобы определять количество случаев заболевания на территориях, закрепленных за определенными больницами, мы собираем данные о почтовых индексах. Вероятность того, что у Вас коронавирусная инфекция COVID-19, будет определяться по тяжести симптомов. По этому же показателю будет отслеживаться количество тяжело заболевших людей в Вашем регионе.
 
 Чтобы определить, где потребуется наибольшая поддержка, общее число ежедневных случаев заболевания по каждому почтовому индексу будет передаваться государственным и местным органам здравоохранения, Центрам по контролю и профилактике заболеваний США (CDC), а также правительству США. Мы также добавим в приложение карту. С помощью анализа данных будут определяться тенденции распространения заболевания. Не исключено, что меньше случаев заболевания будет зафиксировано в тех районах, где в течение длительного времени закрыты школы или, например, стоит жаркая погода.
 
-Вы можете зайти в приложение на другой день и ввести новые данные. Мы поймем, что это Вы, и посчитаем Ваш случай только один раз. Возможно, Вы захотите сообщить о том, что Вам стало хуже или Вы получили результаты теста на коронавирус COVID-19.
+Вы можете зайти в приложение на другой день и ввести новые данные. Мы поймем, что это Вы, и посчитаем Ваш случай только один раз. Возможно, Вы захотите сообщить о том, что Вам стало хуже или Вы получили результаты теста на COVID-19.
 
 Мы не будем продавать эти данные. Они будут использоваться только для исследований и анализа распространения заболевания. После окончания пандемии эта информация будет удалена.
 
@@ -173,7 +173,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get deniedConsentMessage =>
-      'Если вы передумаете, то сможете начать пользоваться приложением в любое время. Мы попросим вас ответить на несколько вопросов о текущих симптомах и указать, сдавали ли вы тест на коронавирус COVID-19. Эта информация анонимна. Она будет использоваться в борьбе с распространением заболевания.';
+      'Если вы передумаете, то сможете начать пользоваться приложением в любое время. Мы попросим вас ответить на несколько вопросов о текущих симптомах и указать, сдавали ли вы тест на COVID-19. Эта информация анонимна. Она будет использоваться в борьбе с распространением заболевания.';
 
   @override
   String get deniedConsentSafetyTipsButton => 'СОВЕТЫ ПО ЗАЩИТЕ ЗДОРОВЬЯ';
@@ -346,26 +346,24 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get questionTryForTestingTitle =>
-      'Вы пробовали сдать тест на коронавирус COVID-19?';
+      'Вы пробовали сдать тест на COVID-19?';
 
   @override
   String get questionTryForTestingSemantics0 =>
-      'Да, была попытка сдать тест на коронавирус COVID-19.';
+      'Да, была попытка сдать тест на COVID-19.';
 
   @override
   String get questionTryForTestingSemantics1 =>
-      'Нет, не было попытки сдать тест на коронавирус COVID-19.';
+      'Нет, не было попытки сдать тест на COVID-19.';
 
   @override
   String get questionCovid19TestResultTitle => 'С каким результатом?';
 
   @override
-  String get questionCovid19TestResultAnswer0 =>
-      'У меня нет коронавируса COVID-19';
+  String get questionCovid19TestResultAnswer0 => 'У меня нет COVID-19';
 
   @override
-  String get questionCovid19TestResultAnswer1 =>
-      'У меня есть коронавирус COVID-19';
+  String get questionCovid19TestResultAnswer1 => 'У меня есть COVID-19';
 
   @override
   String get questionCovid19TestResultAnswer2 => 'Я пока не знаю';
@@ -378,7 +376,7 @@ class AppLocalizationsRu extends AppLocalizations {
       'Мне отказали, поскольку симптомы слабо выражены';
 
   @override
-  String get temperatureFieldHelpButton => 'НУЖНА ПОМОЩЬ? ПОЛУЧИТЬ ИНСТРУКЦИИ';
+  String get temperatureFieldHelpButton => 'НУЖНА ПОМОЩЬ? НАЖМИТЕ';
 
   @override
   String get temperatureFieldOutOfRangeError =>
@@ -426,7 +424,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get shareAppDownloadPrompt =>
-      'Скачайте приложение CovidNearMe, чтобы получать местную информацию и статистику, связанную с коронавирусом COVID-19. Помогите защитить тех, кто живет в вашем регионе, предоставив анонимные данные о своих симптомах. {{ APP_LINK }}';
+      'Скачайте приложение CovidNearMe, чтобы получать местную информацию и статистику, связанную с COVID-19. Помогите защитить тех, кто живет в вашем регионе, предоставив анонимные данные о своих симптомах. {{ APP_LINK }}';
 
   @override
   String get safetyTipsTitle => 'Что делать, чтобы не заболеть';
@@ -486,7 +484,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get localStatisticsTitle =>
-      'Местная статистика распространения коронавируса COVID-19';
+      'Местная статистика распространения COVID-19';
 
   @override
   String get localStatisticsNoLocationSelected =>
@@ -494,7 +492,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get localStatisticsNoDataAvailable =>
-      'Для этого местоположения не найдены данные, связанные с коронавирусом COVID-19.';
+      'Для этого местоположения не найдены данные, связанные с COVID-19.';
 
   @override
   String get localStatisticsLocationInput => 'Почтовый индекс или страна';

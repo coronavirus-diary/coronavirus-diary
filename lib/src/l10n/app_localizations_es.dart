@@ -79,11 +79,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get homeScreenShareAppTitle =>
-      'Comparte la app para proteger tu comunidad';
+      'Comparte la app para proteger a tu comunidad';
 
   @override
   String get homeScreenShareAppSubtitle =>
-      'Comparte la app con amigos y familiares para proteger tu comunidad';
+      'Comparte la app con amigos y familiares para proteger a tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -144,7 +144,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
 Como EE.UU. no cuenta con suficientes kits de pruebas, estamos tratando de determinar cuántas personas tienen síntomas que podrían deberse al COVID-19. La información que se recopile con esta app ayudará a predecir cuáles serán los hospitales con mayor demanda. De esa forma, se enviarán más médicos y suministros a los lugares adecuados.
 
-Tu participación es anónima. No nos interesa saber quién eres. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de tus síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
+Tu participación es anónima; no nos interesa conocer tu identidad. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de tus síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
 
 Las autoridades de salud estatales y locales, los CDC y el Gobierno de los EE.UU. recibirán el total de casos diarios correspondientes a cada código postal para ayudar a predecir qué comunidades necesitan más asistencia. También haremos un mapa aquí, en esta app, y analizaremos los datos en busca de tendencias geográficas. Por ejemplo, podríamos ver menos casos en áreas en las que se cerraron las escuelas durante mucho tiempo, o quizás veamos que la epidemia se desacelera en climas cálidos.
 
@@ -152,7 +152,7 @@ Puedes volver más adelante e ingresar nueva información otro día. Sabremos qu
 
 No venderemos esos datos. Solo los usaremos para fines de salud pública e investigación, y los borraremos cuando finalice la epidemia.
 
-Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". De lo contrario, haz clic en \"No acepto\".''';
+Si estás de acuerdo con todo lo anterior y eres mayor de 18 años, haz clic en \"Acepto\". De lo contrario, haz clic en \"No acepto\".''';
 
   @override
   String get consentStepDecline => 'NO ACEPTO';
@@ -257,7 +257,7 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughAnswer2 => 'Moderada';
 
   @override
-  String get questionHaveACoughAnswer3 => 'Incontrolable. ¡Me duele!';
+  String get questionHaveACoughAnswer3 => 'Incontrolable y me duele';
 
   @override
   String get questionHaveACoughSemantics0 => 'Sin tos';
@@ -587,11 +587,11 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
   @override
   String get homeScreenShareAppTitle =>
-      'Comparte la app para proteger tu comunidad';
+      'Comparte la app para proteger a tu comunidad';
 
   @override
   String get homeScreenShareAppSubtitle =>
-      'Comparte la app con amigos y familiares para proteger tu comunidad';
+      'Comparte la app con amigos y familiares para proteger a tu comunidad';
 
   @override
   String get homeScreenShareAppButton => 'COMPARTIR';
@@ -652,7 +652,7 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
 
 Como EE.UU. no cuenta con suficientes kits de pruebas, estamos tratando de determinar cuántas personas tienen síntomas que podrían deberse al COVID-19. La información que se recopile con esta app ayudará a predecir cuáles serán los hospitales con mayor demanda. De esa forma, se enviarán más médicos y suministros a los lugares adecuados.
 
-Tu participación es anónima. No nos interesa saber quién eres. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de tus síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
+Tu participación es anónima; no nos interesa conocer tu identidad. Solo necesitaremos saber tu código postal para contar casos en hospitales específicos. Se usará la gravedad de tus síntomas para determinar la probabilidad de que tengas COVID-19 y para ver cuántas personas de tu región se están enfermando gravemente.
 
 Las autoridades de salud estatales y locales, los CDC y el Gobierno de los EE.UU. recibirán el total de casos diarios correspondientes a cada código postal para ayudar a predecir qué comunidades necesitan más asistencia. También haremos un mapa aquí, en esta app, y analizaremos los datos en busca de tendencias geográficas. Por ejemplo, podríamos ver menos casos en áreas en las que se cerraron las escuelas durante mucho tiempo, o quizás veamos que la epidemia se desacelera en climas cálidos.
 
@@ -660,7 +660,7 @@ Puedes volver más adelante e ingresar nueva información otro día. Sabremos qu
 
 No venderemos esos datos. Solo los usaremos para fines de salud pública e investigación, y los borraremos cuando finalice la epidemia.
 
-Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". De lo contrario, haz clic en \"No acepto\".''';
+Si estás de acuerdo con todo lo anterior y eres mayor de 18 años, haz clic en \"Acepto\". De lo contrario, haz clic en \"No acepto\".''';
 
   @override
   String get consentStepDecline => 'NO ACEPTO';
@@ -765,7 +765,7 @@ Si estás de acuerdo con todo y eres mayor de 18 años, haz clic en \"Acepto\". 
   String get questionHaveACoughAnswer2 => 'Moderada';
 
   @override
-  String get questionHaveACoughAnswer3 => 'Incontrolable. ¡Me duele!';
+  String get questionHaveACoughAnswer3 => 'Incontrolable y me duele';
 
   @override
   String get questionHaveACoughSemantics0 => 'Sin tos';
